@@ -6,7 +6,7 @@
 
 {% include head.html %}
 
-<body style="display: none">
+<body>
     {% include header.html place="downloads" %}
 
     <section class="section">        
@@ -45,35 +45,13 @@
                 </thead>
             </table>
         </div>
+
+        {{ site | jsonify }}
     </section>
 
     <div id="wrapper"></div>
 
     {% include footer.html %}
-
-    {% raw %}
-    
-    <script id="downloads-template" type="text-x-dot-template">
-        <tbody>
-            {{~it.releases :release:index}}
-            <tr>
-                <td>{{=release.name}}</td>
-                <td>{{=release.date}}</td>
-                <td><a href="{{=release.assetUrl}}">{{=release.assetName}}</a></td>
-                <td>
-                    <a class="button is-small is-pulled-right" href="{{=release.url}}" target="_blank">
-                        <span class="icon is-small">
-                            <i class="fa fa-github"></i>
-                        </span>
-                        <span>GitHub</span>
-                    </a>
-                </td>
-            </tr>
-            {{~}}
-        </tbody>
-    </script>
-    
-    {% endraw %}
 
 </body>
 
