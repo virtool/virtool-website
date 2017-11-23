@@ -43,6 +43,24 @@
                         <th></th>
                     </tr>
                 </thead>
+
+                <tbody>
+                    {% for release in site.data.releases.software %}
+                        <tr>
+                            <td>{{release.name}}</td>
+                            <td>{{release.date}}</td>
+                            <td><a href="{{release.download_url}}">Download</a></td>
+                            <td>
+                                <a class="button is-small is-pulled-right" href="{{release.html_url}}" target="_blank">
+                                    <span class="icon is-small">
+                                        <i class="fa fa-github"></i>
+                                    </span>
+                                    <span>GitHub</span>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
             </table>
         </div>
 
