@@ -13,7 +13,7 @@
         <div class="container">
             <h1 class="title is-4">Software</h1>
 
-            <table id="software-downloads" class="table is-fullwidth">
+            <table class="table is-fullwidth">
                 <thead>
                     <tr>
                         <th>Version</th>
@@ -24,24 +24,24 @@
                 </thead>
 
                 <tbody>
-                        {% for release in site.data.releases.software %}
-                            {% if release.prerelease == false %}
-                                <tr>
-                                    <td>{{release.name}}</td>
-                                    <td>{{release.date}}</td>
-                                    <td><a href="{{release.download_url}}">Download</a></td>
-                                    <td>
-                                        <a class="button is-small is-pulled-right" href="{{release.html_url}}" target="_blank">
-                                            <span class="icon is-small">
-                                                <i class="fa fa-github"></i>
-                                            </span>
-                                            <span>GitHub</span>
-                                        </a>
-                                    </td>
-                                </tr>
-                            {% endif %}
-                        {% endfor %}
-                    </tbody>
+                    {% for release in site.data.releases.software %}
+                        {% if release.prerelease == false %}
+                            <tr>
+                                <td>{{release.name}}</td>
+                                <td>{{release.date}}</td>
+                                <td><a href="{{release.download_url}}">Download</a></td>
+                                <td>
+                                    <a class="button is-small is-pulled-right" href="{{release.html_url}}" target="_blank">
+                                        <span class="icon is-small">
+                                            <i class="fa fa-github"></i>
+                                        </span>
+                                        <span>GitHub</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                </tbody>
             </table>
         </div>
     </section>
@@ -54,7 +54,7 @@
                 The database is currently in development. The v1.0.0 release of the database will coincide with the release of Virtool 2.0.0.
             </div>
 
-            <table id="database-downloads" class="table is-fullwidth">
+            <table class="table is-fullwidth">
                 <thead>
                     <tr>
                         <th>Version</th>
@@ -62,11 +62,29 @@
                         <th>Download</th>
                         <th></th>
                     </tr>
-                </thead>                
+                </thead>
+                
+                <tbody>
+                    {% for release in site.data.releases.database %}
+                        {% if release.prerelease == false %}
+                            <tr>
+                                <td>{{release.name}}</td>
+                                <td>{{release.date}}</td>
+                                <td><a href="{{release.download_url}}">Download</a></td>
+                                <td>
+                                    <a class="button is-small is-pulled-right" href="{{release.html_url}}" target="_blank">
+                                        <span class="icon is-small">
+                                            <i class="fa fa-github"></i>
+                                        </span>
+                                        <span>GitHub</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                </tbody>
             </table>
         </div>
-
-        {{ site.data.releases | jsonify }}
     </section>
 
     <div id="wrapper"></div>
