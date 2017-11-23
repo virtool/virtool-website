@@ -1,19 +1,24 @@
+{% assign count = 0 %}
+
 <tbody>
     {% for release in include.releases %}
         {% if release.prerelease == false %}
-            <tr>
-                <td>{{release.name}}</td>
-                <td>{{release.published_at | date: "%Y-%m-%d"}}</td>
-                <td><a href="{{release.download_url}}">Download</a></td>
-                <td>
-                    <a class="button is-small is-pulled-right" href="{{release.html_url}}" target="_blank">
-                        <span class="icon is-small">
-                            <i class="fa fa-github"></i>
-                        </span>
-                        <span>GitHub</span>
-                    </a>
-                </td>
-            </tr>
+            {% if count < 5 %}
+                {% assign count = count | plus: 1 %}
+                <tr>
+                    <td>{{release.name}}</td>
+                    <td>{{release.published_at | date: "%Y-%m-%d"}}</td>
+                    <td><a href="{{release.download_url}}">Download</a></td>
+                    <td>
+                        <a class="button is-small is-pulled-right" href="{{release.html_url}}" target="_blank">
+                            <span class="icon is-small">
+                                <i class="fa fa-github"></i>
+                            </span>
+                            <span>GitHub</span>
+                        </a>
+                    </td>
+                </tr>
+            {% endif %}
         {% endif %}
     {% endfor %}
 </tbody>
