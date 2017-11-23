@@ -1,0 +1,80 @@
+---
+---
+<!doctype html>
+
+<html>
+
+{% include head.html %}
+
+<body style="display: none">
+    {% include header.html place="downloads" %}
+
+    <section class="section">        
+        <div class="container">
+            <h1 class="title is-4">Software</h1>
+
+            <table id="software-downloads" class="table is-fullwidth">
+                <thead>
+                    <tr>
+                        <th>Version</th>
+                        <th>Date</th>
+                        <th>Download</th>
+                        <th></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </section>
+
+    <section class="section">        
+        <div class="container">
+            <h1 class="title is-4">Databases</h1>
+
+            <div class="notification is-warning">
+                The database is currently in development. The v1.0.0 release of the database will coincide with the release of Virtool 2.0.0.
+            </div>
+
+            <table id="database-downloads" class="table is-fullwidth">
+                <thead>
+                    <tr>
+                        <th>Version</th>
+                        <th>Date</th>
+                        <th>Download</th>
+                        <th></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </section>
+
+    <div id="wrapper"></div>
+
+    {% include footer.html %}
+
+    {% raw %}
+    
+    <script id="downloads-template" type="text-x-dot-template">
+        <tbody>
+            {{~it.releases :release:index}}
+            <tr>
+                <td>{{=release.name}}</td>
+                <td>{{=release.date}}</td>
+                <td><a href="{{=release.assetUrl}}">{{=release.assetName}}</a></td>
+                <td>
+                    <a class="button is-small is-pulled-right" href="{{=release.url}}" target="_blank">
+                        <span class="icon is-small">
+                            <i class="fa fa-github"></i>
+                        </span>
+                        <span>GitHub</span>
+                    </a>
+                </td>
+            </tr>
+            {{~}}
+        </tbody>
+    </script>
+    
+    {% endraw %}
+
+</body>
+
+</html>
