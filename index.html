@@ -1,0 +1,156 @@
+---
+---
+{% include head.html %}
+
+<body>
+    {% include header.html place="home" %}
+
+    <section class="hero is-primary is-medium">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Viral infection diagnostics using next-generation sequencing
+                </h1>
+
+                <h2 class="subtitle tags" style="margin-top: 15px">
+                    <span class="tag is-success is-medium">Sample Management</span>
+                    <span class="tag is-success is-medium">Analysis</span>
+                    <span class="tag is-success is-medium">ISO Compliance</span>
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="title is-4">Sample Management</h1>
+            <h2 class="subtitle is-6">
+                Track samples from creation to analysis. Quickly and easily search and filter sample records.
+            </h2>
+            <img src="images/sample-manager.png" class="image"/>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="title is-4">Sample Creation</h1>
+            <h2 class="subtitle is-6">
+                Create sample records from paired and unpaired FASTQ files. Error correction, trimming, and quality
+                assessment is performed automatically.
+            </h2>
+            <img src="images/sample-creation.png" class="image"/>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="title is-4">Library QA</h1>
+            <h2 class="subtitle is-6">
+                View sample quality metrics generated during import in clean, readable graphics. Graphics are familiar to
+                users of <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a>, the most commonly
+                used next-gen QC tool. Export quality graphics to PDF.
+            </h2>
+            <img src="images/sample-quality.png" class="image square"/>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="title is-4">Detection of Known Viruses</h1>
+            <h2 class="subtitle is-6">
+                Quickly assess sample libraries for the presence of viruses in Virtool's reference
+                database. Based on tools such as <a href="http://bowtie-bio.sourceforge.net/bowtie2/index.shtml">Bowtie2</a> and
+                <a href="https://sourceforge.net/projects/pathoscope/files/">Pathoscope</a>.
+            </h2>
+            <img src="images/pathoscope-viewer.png" class="image"/>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="title is-4">Discovery of Novel Viruses</h1>
+            <h2 class="subtitle is-6">
+                Use our novel analytical pipeline, <a href="https://github.com/virtool/nuvs">NuVs</a>, to find previously unknown viruses.
+                Uses <a href="http://cab.spbu.ru/software/spades/">SPAdes</a> and <a href="http://hmmer.org/">HMMER</a>. Inpired by
+                <a href="http://derisilab.ucsf.edu/software/vFam/">vFAM</a>.
+            </h2>
+            <img src="images/nuvs.png" class="image"/>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="title is-4">Virus Database</h1>
+            <h2 class="subtitle is-6">
+                Easily browse and edit the viruses Virtool looks for in your samples. See our
+                <a href="https://github.com/virtool/virtool-database">official database</a>  import it into your Virtool instance.
+            </h2>
+            <img src="images/virus-manage.png" class="image" style="margin-bottom: 15px" />
+            <img src="images/virus-detail.png" class="image"/>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="title is-4">Virus History</h1>
+            <h2 class="subtitle is-6">
+                Track every change ever made to the virus database and revert changes not yet integrated into mapping indices.
+            </h2>
+            <img src="images/virus-history.png" class="image"/>
+        </div>    
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="title is-4">Job Management</h1>
+            <h2 class="subtitle is-6">
+                Manage resource-intensive tasks such as analyses or sample creation.
+            </h2>
+            <img src="images/job-management.png" class="image"/>
+        </div>    
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="title is-4">User Management</h1>
+            <h2 class="subtitle is-6">
+                Create and manage users, groups, and permissions to control access.
+            </h2>
+            <img src="images/user-admin.png" class="image"/>
+        </div>    
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="title is-4">Software Updates</h1>
+            <h2 class="subtitle is-6">
+                Easily receive and install software updates from us.
+            </h2>
+            <img src="images/software-updates.png" class="image"/>
+        </div>    
+    </section>
+
+    <section class="logo-strip">
+        <div style="display: flex; align-items: center; justify-content: center; margin-top: 50px;">
+            <a href="https://www.mongodb.com">
+                <img style="width:150px" src="images/mongo.svg" />
+            </a>
+            <a class="python-logo" href="https://www.python.org/">
+                <img style="width:150px" src="images/python.svg" />
+            </a>
+            <a class="react-logo" href="https://facebook.github.io/react/">
+                <img style="width:50px" src="images/react.svg" />
+            </a>
+            <a href="http://getbootstrap.com/">
+                <img style="width:40px" src="images/bootstrap.svg" />
+            </a>
+        </div>
+    </section>
+
+    <div id="wrapper"></div>
+
+    {% include footer.html %}
+
+    <script src="/js/jquery-3.1.1.min.js"></script>
+
+    </body>
