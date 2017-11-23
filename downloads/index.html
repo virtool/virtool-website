@@ -25,7 +25,7 @@
 
                 <tbody>
                         {% for release in site.data.releases.software %}
-                            {% if !release.prerelease %}
+                            {% if release.prerelease == false %}
                                 <tr>
                                     <td>{{release.name}}</td>
                                     <td>{{release.date}}</td>
