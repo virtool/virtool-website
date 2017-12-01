@@ -3,6 +3,15 @@ import base64
 import json
 import requests
 
+RELEASE_KEYS = [
+    "name",
+    "body",
+    "draft",
+    "prerelease",
+    "published_at",
+    "html_url"
+]
+
 
 def format_release(release):
     """
@@ -53,7 +62,14 @@ def get_release_data(username, token):
 
             releases += body
 
-        release_data[key] = [virtool.updates.format_release(r) for r in releases if r["assets"]]
+        releases = [format_release(r) for r in releases if r["assets"]]
+
+        releases = [r for r in releases if not r["draft"]]
+
+        for release in releases:
+            release.pop("draft")
+
+        release_data[key] = releases
 
     return release_data
 
@@ -98,4 +114,7 @@ if __name__ == "__main__":
 
     data = get_release_data(args.github_username, args.github_token)
 
-    update_website_json(data, args.github_username, args.github_token)
+    with open("_data/releases.json", "w") as f:
+        json.dump(data, f, indent=4)
+
+    # update_website_json(data, args.github_username, args.github_token)
