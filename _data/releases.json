@@ -1,6 +1,18 @@
 {
     "software": [
         {
+            "name": "v2.0.0-beta.10",
+            "body": "- hide (reserve) read files that are being used in sample creation jobs (resolves #281)\r\n- make file removal more effecient\r\n- only return unreserved files at files API endpoints\r\n- live refresh sample data as it is updated on the server",
+            "prerelease": true,
+            "published_at": "2017-12-04T19:05:48Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v2.0.0-beta.10",
+            "filename": "virtool.tar.gz",
+            "content_type": "application/gzip",
+            "size": 45552879,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v2.0.0-beta.10/virtool.tar.gz",
+            "asset_error": false
+        },
+        {
             "name": "v2.0.0-beta.9",
             "body": "- automatically reload browser after software update\r\n- automatically clean up orphaned subtractions\r\n- update API key and session permissions when user or group data changes\r\n- add report issue button to user context menu\r\n- add ``no_sentry`` command-line argument to disable error reporting\r\n- hide sample and subtraction creation buttons for non-permitted users\r\n- allow removal of subtractions\r\n- update some Python dependencies\r\n- further improve software release workflow\r\n- fix issues with URL being affected by virus creation modal\r\n- fix alignment of HMM page counter\r\n- fix non-functional sample removal",
             "prerelease": true,
