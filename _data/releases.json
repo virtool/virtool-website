@@ -1,6 +1,18 @@
 {
     "software": [
         {
+            "name": "v2.0.0-beta.9",
+            "body": "- automatically reload browser after software update\r\n- automatically clean up orphaned subtractions\r\n- update API key and session permissions when user or group data changes\r\n- add report issue button to user context menu\r\n- add ``no_sentry`` command-line argument to disable error reporting\r\n- hide sample and subtraction creation buttons for non-permitted users\r\n- allow removal of subtractions\r\n- update some Python dependencies\r\n- further improve software release workflow\r\n- fix issues with URL being affected by virus creation modal\r\n- fix alignment of HMM page counter\r\n- fix non-functional sample removal",
+            "prerelease": true,
+            "published_at": "2017-12-01T23:56:53Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v2.0.0-beta.9",
+            "filename": "virtool.tar.gz",
+            "content_type": "application/gzip",
+            "size": 45554618,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v2.0.0-beta.9/virtool.tar.gz",
+            "asset_error": false
+        },
+        {
             "name": "v2.0.0-beta.8",
             "body": "- use pagination in indexes viewer\r\n- refresh indexes list after starting new build (resolves #250)\r\n- always fetch latest indexes when indexes viewer loads\r\n- make loading status more obvious with spinners in some places\r\n- fix unwanted ``<input />`` focus in settings views\r\n- fix rendering error for empty viruses\r\n- automatically select a new isolate after it has been added\r\n- fix duplicate id error when adding new subtraction (resolves #260)\r\n- fix #263 \r\n- fix #264 \r\n- fix #266\r\n\r\n",
             "prerelease": true,
