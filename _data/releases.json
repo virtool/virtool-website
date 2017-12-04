@@ -1,6 +1,18 @@
 {
     "software": [
         {
+            "name": "v2.0.0-beta.11",
+            "body": "- allow pagination of files and subtractions views\r\n- allow pagination of files and subtractions API endpoints\r\n- show message when no BLAST hits were found for a NuVs contig sequence",
+            "prerelease": true,
+            "published_at": "2017-12-04T22:23:34Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v2.0.0-beta.11",
+            "filename": "virtool.tar.gz",
+            "content_type": "application/gzip",
+            "size": 45551882,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v2.0.0-beta.11/virtool.tar.gz",
+            "asset_error": false
+        },
+        {
             "name": "v2.0.0-beta.10",
             "body": "- hide (reserve) read files that are being used in sample creation jobs (resolves #281)\r\n- make file removal more effecient\r\n- only return unreserved files at files API endpoints\r\n- live refresh sample data as it is updated on the server",
             "prerelease": true,
