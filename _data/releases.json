@@ -1,6 +1,18 @@
 {
     "software": [
         {
+            "name": "v2.0.0-beta.12",
+            "body": "- fix pagination issues in file manager views\r\n- fix subtraction creation pop-up visiblity issues (#294)\r\n- fix PathoscopeBowtie failures due to subtraction names containing special characters (#293)\r\n- don't autofocus on input field in subtraction creation form\r\n- fix rendering issue in NuVs BLAST result views\r\n- fix freeze when reverting virus history then navigating back to _Virus_ tab (#287)",
+            "prerelease": true,
+            "published_at": "2017-12-05T21:06:20Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v2.0.0-beta.12",
+            "filename": "virtool.tar.gz",
+            "content_type": "application/gzip",
+            "size": 45555191,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v2.0.0-beta.12/virtool.tar.gz",
+            "asset_error": false
+        },
+        {
             "name": "v2.0.0-beta.11",
             "body": "- allow pagination of files and subtractions views\r\n- allow pagination of files and subtractions API endpoints\r\n- show message when no BLAST hits were found for a NuVs contig sequence",
             "prerelease": true,
