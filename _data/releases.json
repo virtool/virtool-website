@@ -1,6 +1,18 @@
 {
     "software": [
         {
+            "name": "v2.0.0-beta.13",
+            "body": "- server optimizations\r\n- disable click for in-progress analysis items (#299)\r\n- fix recurring ``InvalidStateError`` during a bad ``_to_list`` callback (#170)\r\n- fix authentication for requests authorized by API keys\r\n- implement job pagination and searching (#298)",
+            "prerelease": true,
+            "published_at": "2017-12-07T23:59:27Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v2.0.0-beta.13",
+            "filename": "virtool.tar.gz",
+            "content_type": "application/gzip",
+            "size": 45541615,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v2.0.0-beta.13/virtool.tar.gz",
+            "asset_error": false
+        },
+        {
             "name": "v2.0.0-beta.12",
             "body": "- fix pagination issues in file manager views\r\n- fix subtraction creation pop-up visiblity issues (#294)\r\n- fix PathoscopeBowtie failures due to subtraction names containing special characters (#293)\r\n- don't autofocus on input field in subtraction creation form\r\n- fix rendering issue in NuVs BLAST result views\r\n- fix freeze when reverting virus history then navigating back to _Virus_ tab (#287)",
             "prerelease": true,
