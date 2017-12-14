@@ -8,15 +8,29 @@
     <section class="hero is-primary is-medium">
         <div class="hero-body">
             <div class="container">
-                <h1 class="title">
-                    Viral infection diagnostics using next-generation sequencing
-                </h1>
+                <div class="has-text-centered" style="margin-bottom: 35px">
+                    <h1 class="title" style="margin-bottom: 32px">
+                        Virtool                        
+                    </h1>
 
-                <h2 class="subtitle tags" style="margin-top: 15px">
-                    <span class="tag is-success is-medium">Sample Management</span>
-                    <span class="tag is-success is-medium">Analysis</span>
-                    <span class="tag is-success is-medium">ISO Compliance</span>
-                </h2>
+                    <h2 class="subtitle">
+                        Viral infection diagnostics using next-generation sequencing.
+                    </h2>
+                </div>
+
+                {% for release in site.data.releases.software %}
+                    {% if release.prerelease == false %}
+                        <p class="field has-text-centered">
+                            <a class="button is-medium" href="{{release.download_url}}">
+                                <span class="icon">
+                                    <i class="fa fa-linux"></i>
+                                </span>
+                                <span> Download Virtool {{ release.name }}</span>
+                            </a>
+                        </p>
+                        {% break %}
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
     </section>
