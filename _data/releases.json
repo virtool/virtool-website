@@ -1,6 +1,18 @@
 {
     "software": [
         {
+            "name": "v2.0.1",
+            "body": "- prevent creation of samples with no associated files\r\n- block viewing of sample detail when import is not complete",
+            "prerelease": false,
+            "published_at": "2018-01-08T21:50:51Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v2.0.1",
+            "filename": "virtool.tar.gz",
+            "content_type": "application/gzip",
+            "size": 45580418,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v2.0.1/virtool.tar.gz",
+            "asset_error": false
+        },
+        {
             "name": "v2.0.0",
             "body": "- fix incorrect numbering in page position indicators\r\n- fix failing error-tracking initialization (Sentry.io)\r\n- fix default sample rights settings view\r\n- reintroduce and fix sample rights tab in sample detail view\r\n- make rendering of sample detail views dependent on users' rights to that sample\r\n- filter results of sample find API based on requesting users' rights\r\n- fix brief display of incorrect HMM detail on open\r\n- completely close file watcher processes on server restart (#306, #183)\r\n- add ``remove_file`` and ``upload_file`` permission types\r\n- rename ``modify_options`` permission to ``modify_settings``\r\n- permission-protect all applicable API endpoints\r\n- remove server lifecycle API endpoints",
             "prerelease": false,
