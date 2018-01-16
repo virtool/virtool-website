@@ -97,6 +97,21 @@ def update_website_json(data, username, token):
     })
 
 
+def download_database_release(url, path):
+    resp = requests.get(url, stream=True)
+
+    raw = resp.raw
+
+    with open(path, "wb") as f:
+        while True:
+            chunk = raw.read(1024, decode_content=True)
+
+            if not chunk:
+                break
+
+            f.write(chunk)
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
@@ -117,4 +132,6 @@ if __name__ == "__main__":
     with open("_data/releases.json", "w") as f:
         json.dump(data, f, indent=4)
 
-    # update_website_json(data, args.github_username, args.github_token)
+    latest_database_url = data["database"][0]["download_url"]
+    
+    download_database_release(latest_database_url, "./viruses.json.gz")
