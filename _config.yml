@@ -24,6 +24,8 @@ plugins:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - vendor
+  - _database_src
 
 sass:
   sass_dir: style
