@@ -31,5 +31,7 @@ module.exports = {
             verbose: true,
             allowExternal: true
         })
-    ]
+    ],
+
+    watch: true
 }
