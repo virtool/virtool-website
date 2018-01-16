@@ -4,7 +4,7 @@ var CleanPlugin = require("clean-webpack-plugin");
 
 module.exports = {
 
-    entry: ["babel-polyfill", path.resolve(__dirname, "./main.js")],
+    entry: ["babel-polyfill", "./main.js"],
 
     module: {
         rules: [
@@ -28,7 +28,8 @@ module.exports = {
         }),
 
         new CleanPlugin([path.resolve(__dirname, "../database")], {
-            verbose: true
+            verbose: true,
+            allowExternal: true
         })
     ]
 }
