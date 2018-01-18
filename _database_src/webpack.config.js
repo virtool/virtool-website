@@ -29,7 +29,8 @@ module.exports = {
 
         new CleanPlugin([path.resolve(__dirname, "../database")], {
             verbose: true,
-            allowExternal: true
+            allowExternal: true,
+            watch: true
         })
     ],
 
