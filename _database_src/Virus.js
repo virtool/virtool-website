@@ -1,13 +1,5 @@
 import React from 'react';
 
-const VirusLink = ({ virus, name, abbreviation, onClick }) => (
-    <a className="button is-fullwidth"  virus={virus} onClick={() => onClick(virus)}>
-        <div className={name}>
-            {name} <sub>{abbreviation}</sub>
-        </div>
-    </a>
-);
-
 export default class Virus extends React.Component {
     handleClick = (e) => {
         this.props.onClick(this.props.virus);
@@ -31,9 +23,6 @@ export default class Virus extends React.Component {
                     {name} <sub>{abbreviation}</sub>
                 </div>
             </a>
-            
-            
-            //<VirusLink virus={this.props} name={this.props.name} abbreviation={this.props.abbreviation} onClick={this.props.onClick}/>
         );
     }
 }
