@@ -1,14 +1,38 @@
 {
     "software": [
         {
+            "name": "v2.0.3",
+            "body": "- performance improvements for web client\r\n- reduction in web client payload size\r\n- fix ``DocumentToLarge`` exception for large NuVs result sets\r\n- add progress bar for analysis loading",
+            "prerelease": false,
+            "published_at": "2018-01-18T20:18:09Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v2.0.3",
+            "filename": "virtool.tar.gz",
+            "content_type": "application/gzip",
+            "size": 45470375,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v2.0.3/virtool.tar.gz",
+            "asset_error": false
+        },
+        {
+            "name": "v2.0.2",
+            "body": "- prevent unhandled error ``struct.error`` during PathoscopeBowtie\r\n- fixes #314 \r\n- fixes #315 ",
+            "prerelease": false,
+            "published_at": "2018-01-17T18:20:27Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v2.0.2",
+            "filename": "virtool.tar.gz",
+            "content_type": "application/gzip",
+            "size": 45467035,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v2.0.2/virtool.tar.gz",
+            "asset_error": false
+        },
+        {
             "name": "v2.0.1",
             "body": "- prevent creation of samples with no associated files\r\n- block viewing of sample detail when import is not complete",
             "prerelease": false,
-            "published_at": "2018-01-08T21:50:51Z",
+            "published_at": "2018-01-17T18:18:37Z",
             "html_url": "https://github.com/virtool/virtool/releases/tag/v2.0.1",
             "filename": "virtool.tar.gz",
             "content_type": "application/gzip",
-            "size": 45580418,
+            "size": 45468914,
             "download_url": "https://github.com/virtool/virtool/releases/download/v2.0.1/virtool.tar.gz",
             "asset_error": false
         },
