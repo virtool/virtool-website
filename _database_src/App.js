@@ -3,6 +3,14 @@ import Request from "superagent";
 import Virus from "./Virus";
 import VirusPage from "./VirusPage";
 import Paginator from "./Paginator";
+import {
+    BrowserRouter,
+    Route,
+    Link,
+    Switch,
+    Redirect
+} from 'react-router-dom'
+
 
 export default class App extends React.Component {
 
@@ -32,13 +40,13 @@ export default class App extends React.Component {
         this.setState({virusActive: name});
     }
 
-    render () {
-        if (this.state.viruses === null) {
+    render () {    
+        if (this.state.viruses === null) {                                          /* avoids errors if there is no access to viral database data */
             return <div />;
         }
 
         const i = this.state.page;
-        const slice = this.state.viruses.slice(i * 10 - 10, i * 10);
+        const slice = this.state.viruses.slice(i * 10 - 10, i * 10);                /* displays 10 virus tabs per page */
 
         const virusComponents = slice.map((virus, index) =>
             <Virus key={index} virus={virus} onClick={this.setVirusActive} />
@@ -55,19 +63,21 @@ export default class App extends React.Component {
                         {virusComponents}
                     </div>
 
-                    <Paginator onClick={this.setPage} totalPages={totalPages} currentPage={this.state.page} />
+                        {/*FIX ME: url updates on clicks, but cannot access specific pages via url inputs :(*/}
+                        <Route exact path="/database/" component={() => <Paginator onClick={this.setPage} totalPages={totalPages} currentPage={this.state.page} />}/>
+                        <Route path="/database/:num" render={(props) => <Paginator onClick={this.setPage} totalPages={totalPages} currentPage={this.state.page} {...props} />} />
                 </div>
             );
         } else {
             renderChoice = (
-                <VirusPage virus={this.state.virusActive} />
+                    <VirusPage virus={this.state.virusActive} />
             );
         }
 
         return (
-                <React.Fragment>
+                <BrowserRouter>
                     {renderChoice}
-                </React.Fragment>
+                </BrowserRouter>
         );
     }    
 }

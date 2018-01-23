@@ -1,4 +1,9 @@
 import React from 'react';
+import {
+    BrowserRouter as Router,
+    Route,
+    Link
+} from 'react-router-dom'
 
 export default class Virus extends React.Component {
     handleClick = (e) => {
@@ -18,11 +23,11 @@ export default class Virus extends React.Component {
 
         return (
             
-            <a className="button is-fullwidth" style={buttonStyle} virus={this.props.virus} onClick={this.handleClick}>
+            <Link to={`/database/${this.props.virus._id}`} className="button is-fullwidth" style={buttonStyle} virus={this.props.virus} onClick={this.handleClick}>
                 <div className={name}>
                     {name} <sub>{abbreviation}</sub>
                 </div>
-            </a>
+            </Link>
         );
     }
 }

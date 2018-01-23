@@ -1,5 +1,10 @@
 import React from 'react';
-import IsolateTab from './IsolateTab'
+import IsolateTab from './IsolateTab';
+import {
+    BrowserRouter as Router,
+    Route,
+    Link
+} from 'react-router-dom';
 
 
 export default class Isolate extends React.Component {
@@ -52,11 +57,11 @@ export default class Isolate extends React.Component {
 
         return (
             <React.Fragment>
-                <div className="is-fullwidth" onClick={this.handleClick} style={isoTabStyle}>
-                    <a className="is-fullwidth" style={{color: "black"}}>
-                        {sourceType} {sourceName}
-                    </a>
-                </div>
+                <Link to={`/database/${sequence[0].virus_id}/${sourceId}`} className="is-fullwidth" style={{color: "black"}}>
+                    <div className="is-fullwidth" onClick={this.handleClick} style={isoTabStyle}>
+                            {sourceType} {sourceName}   
+                    </div>
+                </Link>
                 {renderChoice}
             </React.Fragment>
         );
