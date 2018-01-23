@@ -31056,10 +31056,17 @@ var Isolate = function (_React$Component) {
         value: function render() {
             var isolate = this.props.iso;
             var sourceType = isolate.source_type.charAt(0).toUpperCase() + isolate.source_type.slice(1);
-            var sourceName = isolate.source_name;
             var sourceDefault = isolate.default ? "Yes" : "No";
             var sourceId = isolate.id;
             var sequence = isolate.sequences;
+
+            var sourceName = void 0;
+
+            if (isolate.source_name === "unknown") {
+                sourceName = "isolate";
+            } else {
+                sourceName = isolate.source_name;
+            }
 
             var isoTabStyle = {
                 border: "1px solid #d9d9d9",
@@ -31159,11 +31166,24 @@ var IsolateTab = function (_React$Component) {
             var _this2 = this;
 
             var isolate = this.props.isoInfo;
-            var sourceType = isolate.source_type.charAt(0).toUpperCase() + isolate.source_type.slice(1);
-            var sourceName = isolate.source_name;
             var sourceDefault = isolate.default ? "Yes" : "No";
             var sourceId = isolate.id;
             var sequence = isolate.sequences;
+
+            var sourceType = void 0;
+            var sourceName = void 0;
+
+            if (isolate.source_type === "unknown") {
+                sourceType = "Isolate";
+            } else {
+                sourceType = isolate.source_type.charAt(0).toUpperCase() + isolate.source_type.slice(1);
+            }
+
+            if (isolate.source_name === "unknown") {
+                sourceName = "Unknown";
+            } else {
+                sourceName = isolate.source_name;
+            }
 
             var iconStyle = {
                 borderRadius: "50%",

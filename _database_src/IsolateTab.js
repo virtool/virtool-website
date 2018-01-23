@@ -9,11 +9,24 @@ export default class IsolateTab extends React.Component {
 
     render () {
         const isolate = this.props.isoInfo;
-        const sourceType = isolate.source_type.charAt(0).toUpperCase() + isolate.source_type.slice(1);
-        const sourceName = isolate.source_name;
         const sourceDefault = isolate.default ? "Yes" : "No";
         const sourceId = isolate.id;
         const sequence = isolate.sequences;
+
+        let sourceType;
+        let sourceName;
+
+        if (isolate.source_type === "unknown") {
+            sourceType = "Isolate";
+        } else {
+            sourceType = isolate.source_type.charAt(0).toUpperCase() + isolate.source_type.slice(1);
+        }
+
+        if (isolate.source_name === "unknown") {
+            sourceName = "Unknown";
+        } else {
+            sourceName = isolate.source_name;
+        }
 
         const iconStyle = {
             borderRadius: "50%",

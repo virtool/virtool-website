@@ -25,10 +25,17 @@ export default class Isolate extends React.Component {
     render() {
         const isolate = this.props.iso;
         const sourceType = isolate.source_type.charAt(0).toUpperCase() + isolate.source_type.slice(1);
-        const sourceName = isolate.source_name;
         const sourceDefault = isolate.default ? "Yes" : "No";
         const sourceId = isolate.id;
         const sequence = isolate.sequences;
+
+        let sourceName;
+
+        if (isolate.source_name === "unknown") {
+            sourceName = "isolate";
+        } else {
+            sourceName = isolate.source_name;
+        }
 
         const isoTabStyle = {
             border: "1px solid #d9d9d9",
