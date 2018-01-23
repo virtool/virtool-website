@@ -2,9 +2,10 @@ import React from "react";
 import Request from "superagent";
 import Virus from "./Virus";
 import VirusPage from "./VirusPage";
-import Paginator from "./Paginator";
+import Pager from "./Pager";
 import {
     BrowserRouter,
+    HashRouter,
     Route,
     Link,
     Switch,
@@ -19,8 +20,8 @@ export default class App extends React.Component {
 
         this.state = {
             viruses: null,
-            page: 1,
-            virusActive: null
+            virusActive: null,
+
         };
     }
 
@@ -30,10 +31,6 @@ export default class App extends React.Component {
             .then((res) => {                
                 this.setState({viruses: res.body.data});
             })
-    }
-    
-    setPage = (page) => {
-        this.setState({page});
     }
 
     setVirusActive = (name) => {
@@ -45,39 +42,26 @@ export default class App extends React.Component {
             return <div />;
         }
 
-        const i = this.state.page;
-        const slice = this.state.viruses.slice(i * 10 - 10, i * 10);                /* displays 10 virus tabs per page */
-
-        const virusComponents = slice.map((virus, index) =>
-            <Virus key={index} virus={virus} onClick={this.setVirusActive} />
-        );
-
         const totalPages = Math.ceil(this.state.viruses.length / 10);
 
         let renderChoice;
 
-        if (!this.state.virusActive) {
-            renderChoice = (
-                <div>
-                    <div className="container" style={{marginTop: "20px", marginBottom: "20px"}}>
-                        {virusComponents}
-                    </div>
-
-                        {/*FIX ME: url updates on clicks, but cannot access specific pages via url inputs :(*/}
-                        <Route exact path="/database/" component={() => <Paginator onClick={this.setPage} totalPages={totalPages} currentPage={this.state.page} />}/>
-                        <Route path="/database/:num" render={(props) => <Paginator onClick={this.setPage} totalPages={totalPages} currentPage={this.state.page} {...props} />} />
-                </div>
-            );
-        } else {
-            renderChoice = (
-                    <VirusPage virus={this.state.virusActive} />
-            );
-        }
+        renderChoice = (
+            <div>
+                <Switch>
+                    <Route exact path="/">
+                        <Redirect to="/viruses/1" />
+                    </Route>
+                    <Route path="/viruses/:num" render={({ match }) => <Pager match={match} virusData={this.state.viruses} totalPages={totalPages} />} />
+                    <Route path="/virus/:id" render={({ match }) => <VirusPage match={match} virusData={this.state.viruses} />} />
+                </Switch>
+            </div>
+        );
 
         return (
-                <BrowserRouter>
+                <HashRouter>
                     {renderChoice}
-                </BrowserRouter>
+                </HashRouter>
         );
     }    
 }

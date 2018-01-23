@@ -28616,8 +28616,6 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(6);
@@ -28636,9 +28634,9 @@ var _VirusPage = __webpack_require__(383);
 
 var _VirusPage2 = _interopRequireDefault(_VirusPage);
 
-var _Paginator = __webpack_require__(388);
+var _Pager = __webpack_require__(418);
 
-var _Paginator2 = _interopRequireDefault(_Paginator);
+var _Pager2 = _interopRequireDefault(_Pager);
 
 var _reactRouterDom = __webpack_require__(389);
 
@@ -28658,18 +28656,14 @@ var App = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
-        _this.setPage = function (page) {
-            _this.setState({ page: page });
-        };
-
         _this.setVirusActive = function (name) {
             _this.setState({ virusActive: name });
         };
 
         _this.state = {
             viruses: null,
-            page: 1,
             virusActive: null
+
         };
         return _this;
     }
@@ -28693,39 +28687,34 @@ var App = function (_React$Component) {
                 return _react2.default.createElement("div", null);
             }
 
-            var i = this.state.page;
-            var slice = this.state.viruses.slice(i * 10 - 10, i * 10); /* displays 10 virus tabs per page */
-
-            var virusComponents = slice.map(function (virus, index) {
-                return _react2.default.createElement(_Virus2.default, { key: index, virus: virus, onClick: _this3.setVirusActive });
-            });
-
             var totalPages = Math.ceil(this.state.viruses.length / 10);
 
             var renderChoice = void 0;
 
-            if (!this.state.virusActive) {
-                renderChoice = _react2.default.createElement(
-                    "div",
+            renderChoice = _react2.default.createElement(
+                "div",
+                null,
+                _react2.default.createElement(
+                    _reactRouterDom.Switch,
                     null,
                     _react2.default.createElement(
-                        "div",
-                        { className: "container", style: { marginTop: "20px", marginBottom: "20px" } },
-                        virusComponents
+                        _reactRouterDom.Route,
+                        { exact: true, path: "/" },
+                        _react2.default.createElement(_reactRouterDom.Redirect, { to: "/viruses/1" })
                     ),
-                    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/database/", component: function component() {
-                            return _react2.default.createElement(_Paginator2.default, { onClick: _this3.setPage, totalPages: totalPages, currentPage: _this3.state.page });
+                    _react2.default.createElement(_reactRouterDom.Route, { path: "/viruses/:num", render: function render(_ref) {
+                            var match = _ref.match;
+                            return _react2.default.createElement(_Pager2.default, { match: match, virusData: _this3.state.viruses, totalPages: totalPages });
                         } }),
-                    _react2.default.createElement(_reactRouterDom.Route, { path: "/database/:num", render: function render(props) {
-                            return _react2.default.createElement(_Paginator2.default, _extends({ onClick: _this3.setPage, totalPages: totalPages, currentPage: _this3.state.page }, props));
+                    _react2.default.createElement(_reactRouterDom.Route, { path: "/virus/:id", render: function render(_ref2) {
+                            var match = _ref2.match;
+                            return _react2.default.createElement(_VirusPage2.default, { match: match, virusData: _this3.state.viruses });
                         } })
-                );
-            } else {
-                renderChoice = _react2.default.createElement(_VirusPage2.default, { virus: this.state.virusActive });
-            }
+                )
+            );
 
             return _react2.default.createElement(
-                _reactRouterDom.BrowserRouter,
+                _reactRouterDom.HashRouter,
                 null,
                 renderChoice
             );
@@ -30841,7 +30830,7 @@ var Virus = function (_React$Component) {
 
             return _react2.default.createElement(
                 _reactRouterDom.Link,
-                { to: '/database/' + this.props.virus._id, className: 'button is-fullwidth', style: buttonStyle, virus: this.props.virus, onClick: this.handleClick },
+                { to: '/virus/' + this.props.virus._id, className: 'button is-fullwidth', style: buttonStyle, virus: this.props.virus },
                 _react2.default.createElement(
                     'div',
                     { className: name },
@@ -30903,11 +30892,17 @@ var VirusPage = function (_React$Component) {
     _createClass(VirusPage, [{
         key: 'render',
         value: function render() {
-            var _props$virus = this.props.virus,
-                name = _props$virus.name,
-                abbreviation = _props$virus.abbreviation,
-                isolates = _props$virus.isolates,
-                _id = _props$virus._id;
+            var _this2 = this;
+
+            var virus = this.props.virusData.filter(function (virusEntry) {
+                return virusEntry._id === _this2.props.match.params.id;
+            });
+
+            var _virus$ = virus[0],
+                name = _virus$.name,
+                abbreviation = _virus$.abbreviation,
+                isolates = _virus$.isolates,
+                _id = _virus$._id;
 
 
             var strains = isolates.map(function (isolate, index) {
@@ -31095,8 +31090,8 @@ var Isolate = function (_React$Component) {
                 _react2.default.Fragment,
                 null,
                 _react2.default.createElement(
-                    _reactRouterDom.Link,
-                    { to: '/database/' + sequence[0].virus_id + '/' + sourceId, className: 'is-fullwidth', style: { color: "black" } },
+                    'a',
+                    { className: 'is-fullwidth', style: { color: "black" } },
                     _react2.default.createElement(
                         'div',
                         { className: 'is-fullwidth', onClick: this.handleClick, style: isoTabStyle },
@@ -31154,8 +31149,14 @@ var IsolateTab = function (_React$Component) {
     }
 
     _createClass(IsolateTab, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            this.node.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
 
             var isolate = this.props.isoInfo;
             var sourceType = isolate.source_type.charAt(0).toUpperCase() + isolate.source_type.slice(1);
@@ -31175,8 +31176,10 @@ var IsolateTab = function (_React$Component) {
             });
 
             return _react2.default.createElement(
-                _react2.default.Fragment,
-                null,
+                'div',
+                { ref: function ref(node) {
+                        return _this2.node = node;
+                    } },
                 _react2.default.createElement(
                     'h4',
                     null,
@@ -31368,8 +31371,8 @@ var Sequence = function (_React$Component) {
                 _react2.default.Fragment,
                 null,
                 _react2.default.createElement(
-                    _reactRouterDom.Link,
-                    { to: '/database/' + sequence.virus_id + '/' + sequence.isolate_id + '/' + sequence._id, className: 'is-fullwidth', style: { borderRadius: "0", margin: "0 0 -1px 0", color: "black" } },
+                    'a',
+                    { className: 'is-fullwidth', style: { borderRadius: "0", margin: "0 0 -1px 0", color: "black" } },
                     _react2.default.createElement(
                         'div',
                         { className: 'is-fullwidth', style: seqButtonStyle, onClick: this.handleClick },
@@ -31431,11 +31434,20 @@ var SequenceTab = function (_React$Component) {
     }
 
     _createClass(SequenceTab, [{
+        key: "componentDidMount",
+        value: function componentDidMount() {
+            this.node.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    }, {
         key: "render",
         value: function render() {
+            var _this2 = this;
+
             return _react2.default.createElement(
                 "table",
-                { className: "table is-bordered is-fullwidth", style: { tableLayout: "fixed", margin: "20px 0 0 0" } },
+                { className: "table is-bordered is-fullwidth", ref: function ref(node) {
+                        return _this2.node = node;
+                    }, style: { tableLayout: "fixed", margin: "20px 0 0 0" } },
                 _react2.default.createElement(
                     "tbody",
                     null,
@@ -31510,139 +31522,7 @@ var SequenceTab = function (_React$Component) {
 exports.default = SequenceTab;
 
 /***/ }),
-/* 388 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(6);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(389);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var navStyle = {
-    margin: "0 -1px 0 0",
-    borderRadius: "0"
-};
-
-var PaginationLink = function PaginationLink(_ref) {
-    var page = _ref.page,
-        curPage = _ref.curPage,
-        _onClick = _ref.onClick,
-        symbol = _ref.symbol;
-    return _react2.default.createElement(
-        'li',
-        { onClick: function onClick() {
-                return _onClick(page);
-            } },
-        _react2.default.createElement(
-            _reactRouterDom.Link,
-            { to: '/database/' + page, className: page === curPage ? "pagination-link is-current" : "pagination-link", style: navStyle },
-            symbol
-        )
-    );
-};
-
-var Paginator = function (_React$Component) {
-    _inherits(Paginator, _React$Component);
-
-    function Paginator() {
-        _classCallCheck(this, Paginator);
-
-        return _possibleConstructorReturn(this, (Paginator.__proto__ || Object.getPrototypeOf(Paginator)).apply(this, arguments));
-    }
-
-    _createClass(Paginator, [{
-        key: 'range',
-        value: function range(start, end) {
-            return Array(end - start + 1).fill().map(function (_, i) {
-                return start + i;
-            });
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var _this2 = this;
-
-            var thisPage = this.props.currentPage;
-
-            if (this.props.match) {
-                thisPage = parseInt(this.props.match.params.num);
-            }
-
-            var startPage = void 0,
-                endPage = void 0;
-
-            if (this.props.totalPages <= 10) {
-                startPage = 1;
-                endPage = this.props.totalPages;
-            } else {
-                if (this.props.currentPage <= 6) {
-                    startPage = 1;
-                    endPage = 10;
-                } else if (this.props.currentPage + 4 >= this.props.totalPages) {
-                    startPage = this.props.totalPages - 9;
-                    endPage = this.props.totalPages;
-                } else {
-                    startPage = this.props.currentPage - 5;
-                    endPage = this.props.currentPage + 4;
-                }
-            }
-
-            var linkItems = this.range(startPage, endPage).map(function (page) {
-                return _react2.default.createElement(PaginationLink, { key: page, page: page, curPage: thisPage, onClick: _this2.props.onClick, symbol: page });
-            });
-
-            return _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement(
-                    'nav',
-                    { className: 'pagination is-centered', role: 'navigation', 'aria-label': 'pagination' },
-                    _react2.default.createElement(
-                        'ul',
-                        { className: 'pagination-list' },
-                        _react2.default.createElement(PaginationLink, { key: -1, page: 1, curPage: this.props.currentPage + 1, onClick: this.props.onClick, symbol: '<<' }),
-                        _react2.default.createElement(PaginationLink, { key: 0,
-                            page: this.props.currentPage - 1 < 1 ? this.props.currentPage : this.props.currentPage - 1,
-                            curPage: this.props.currentPage + 1,
-                            onClick: this.props.onClick,
-                            symbol: '<' }),
-                        linkItems,
-                        _react2.default.createElement(PaginationLink, { key: 11,
-                            page: this.props.currentPage + 1 > this.props.totalPages ? this.props.currentPage : this.props.currentPage + 1,
-                            curPage: this.props.currentPage - 1,
-                            onClick: this.props.onClick,
-                            symbol: '>' }),
-                        _react2.default.createElement(PaginationLink, { key: 12, page: this.props.totalPages, curPage: this.props.currentPage - 1, onClick: this.props.onClick, symbol: '>>' })
-                    )
-                )
-            );
-        }
-    }]);
-
-    return Paginator;
-}(_react2.default.Component);
-
-exports.default = Paginator;
-
-/***/ }),
+/* 388 */,
 /* 389 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -35346,6 +35226,155 @@ module.exports = function hoistNonReactStatics(targetComponent, sourceComponent,
     return targetComponent;
 };
 
+
+/***/ }),
+/* 418 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Virus = __webpack_require__(382);
+
+var _Virus2 = _interopRequireDefault(_Virus);
+
+var _reactRouterDom = __webpack_require__(389);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var navStyle = {
+    margin: "0 -1px 0 0",
+    borderRadius: "0"
+};
+
+var PagerLink = function PagerLink(_ref) {
+    var page = _ref.page,
+        curPage = _ref.curPage,
+        onClick = _ref.onClick,
+        symbol = _ref.symbol;
+    return _react2.default.createElement(
+        'li',
+        null,
+        _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/viruses/' + page, className: page === curPage ? "pagination-link is-current" : "pagination-link", style: navStyle },
+            symbol
+        )
+    );
+};
+
+var Pager = function (_React$Component) {
+    _inherits(Pager, _React$Component);
+
+    function Pager() {
+        _classCallCheck(this, Pager);
+
+        return _possibleConstructorReturn(this, (Pager.__proto__ || Object.getPrototypeOf(Pager)).apply(this, arguments));
+    }
+
+    _createClass(Pager, [{
+        key: 'range',
+        value: function range(start, end) {
+            return Array(end - start + 1).fill().map(function (_, i) {
+                return start + i;
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var thisPage = void 0;
+
+            if (this.props.match) {
+                thisPage = parseInt(this.props.match.params.num);
+            } else {
+                thisPage = 1;
+            }
+
+            var startPage = void 0,
+                endPage = void 0;
+
+            if (this.props.totalPages <= 10) {
+                startPage = 1;
+                endPage = this.props.totalPages;
+            } else {
+                if (thisPage <= 6) {
+                    startPage = 1;
+                    endPage = 10;
+                } else if (thisPage + 4 >= this.props.totalPages) {
+                    startPage = this.props.totalPages - 9;
+                    endPage = this.props.totalPages;
+                } else {
+                    startPage = thisPage - 5;
+                    endPage = thisPage + 4;
+                }
+            }
+
+            var linkItems = this.range(startPage, endPage).map(function (page) {
+                return _react2.default.createElement(PagerLink, { key: page, page: page, curPage: thisPage, symbol: page });
+            });
+
+            var i = thisPage;
+            var slice = this.props.virusData.slice(i * 10 - 10, i * 10);
+
+            var virusComponents = slice.map(function (virus, index) {
+                return _react2.default.createElement(_Virus2.default, { key: index, virus: virus });
+            });
+
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                    'div',
+                    { className: 'container', style: { marginTop: "20px", marginBottom: "20px" } },
+                    virusComponents
+                ),
+                _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(
+                        'nav',
+                        { className: 'pagination is-centered', role: 'navigation', 'aria-label': 'pagination' },
+                        _react2.default.createElement(
+                            'ul',
+                            { className: 'pagination-list' },
+                            _react2.default.createElement(PagerLink, { key: -1, page: 1, curPage: this.props.currentPage + 1, symbol: '<<' }),
+                            _react2.default.createElement(PagerLink, { key: 0,
+                                page: thisPage - 1 < 1 ? thisPage : thisPage - 1,
+                                curPage: thisPage + 1,
+                                symbol: '<' }),
+                            linkItems,
+                            _react2.default.createElement(PagerLink, { key: 11,
+                                page: thisPage + 1 > this.props.totalPages ? thisPage : thisPage + 1,
+                                curPage: thisPage - 1,
+                                symbol: '>' }),
+                            _react2.default.createElement(PagerLink, { key: 12, page: this.props.totalPages, curPage: thisPage - 1, symbol: '>>' })
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Pager;
+}(_react2.default.Component);
+
+exports.default = Pager;
 
 /***/ })
 /******/ ]);

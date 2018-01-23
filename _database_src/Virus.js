@@ -23,7 +23,7 @@ export default class Virus extends React.Component {
 
         return (
             
-            <Link to={`/database/${this.props.virus._id}`} className="button is-fullwidth" style={buttonStyle} virus={this.props.virus} onClick={this.handleClick}>
+            <Link to={`/virus/${this.props.virus._id}`} className="button is-fullwidth" style={buttonStyle} virus={this.props.virus}>
                 <div className={name}>
                     {name} <sub>{abbreviation}</sub>
                 </div>

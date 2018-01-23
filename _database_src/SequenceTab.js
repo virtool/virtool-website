@@ -2,9 +2,13 @@ import React from 'react';
 
 export default class SequenceTab extends React.Component {
 
+    componentDidMount() {
+        this.node.scrollIntoView({behavior: "smooth", block: "start"});
+    }
+
     render() {
         return (
-            <table className="table is-bordered is-fullwidth" style={{tableLayout: "fixed", margin: "20px 0 0 0"}}>
+            <table className="table is-bordered is-fullwidth" ref={node => this.node = node} style={{tableLayout: "fixed", margin: "20px 0 0 0"}}>
                 <tbody>
                     <tr>
                         <th>Accession</th>

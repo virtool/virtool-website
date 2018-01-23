@@ -39,7 +39,7 @@ export default class Sequence extends React.Component {
 
         return (
             <React.Fragment>
-                <Link to={`/database/${sequence.virus_id}/${sequence.isolate_id}/${sequence._id}`} className="is-fullwidth" style={{borderRadius: "0", margin: "0 0 -1px 0", color: "black"}}>
+                <a className="is-fullwidth" style={{borderRadius: "0", margin: "0 0 -1px 0", color: "black"}}>
                     <div className="is-fullwidth" style={seqButtonStyle} onClick={this.handleClick}>       
                             <span className="tag" style={{backgroundColor: "#3c8786", color: "white"}}>
                                 {sequence._id}
@@ -50,7 +50,7 @@ export default class Sequence extends React.Component {
                             </span>
                         {renderChoice}
                     </div>
-                </Link>
+                </a>
             </React.Fragment>
         );
     }

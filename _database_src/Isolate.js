@@ -57,11 +57,11 @@ export default class Isolate extends React.Component {
 
         return (
             <React.Fragment>
-                <Link to={`/database/${sequence[0].virus_id}/${sourceId}`} className="is-fullwidth" style={{color: "black"}}>
+                <a className="is-fullwidth" style={{color: "black"}}>
                     <div className="is-fullwidth" onClick={this.handleClick} style={isoTabStyle}>
                             {sourceType} {sourceName}   
                     </div>
-                </Link>
+                </a>
                 {renderChoice}
             </React.Fragment>
         );

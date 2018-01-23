@@ -3,8 +3,11 @@ import Sequence from './Sequence';
 
 export default class IsolateTab extends React.Component {
 
-    render () {
+    componentDidMount() {
+        this.node.scrollIntoView({behavior: "smooth", block: "start"});
+    }
 
+    render () {
         const isolate = this.props.isoInfo;
         const sourceType = isolate.source_type.charAt(0).toUpperCase() + isolate.source_type.slice(1);
         const sourceName = isolate.source_name;
@@ -24,7 +27,7 @@ export default class IsolateTab extends React.Component {
         );
 
         return (
-            <React.Fragment>
+            <div ref={node => this.node = node}>
                 <h4><strong>{sourceType} {sourceName}</strong></h4>
                 <br />
                 <table className="table is-bordered is-fullwidth">
@@ -54,7 +57,7 @@ export default class IsolateTab extends React.Component {
                 <h4><strong>Sequences</strong> <span className="tag" style={iconStyle}>{sequence.length}</span></h4>   
                 <br />
                 {seqArray}
-            </React.Fragment>
+            </div>
         );
     }
 }
