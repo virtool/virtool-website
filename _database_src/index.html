@@ -34,10 +34,12 @@
 
     <body>
         {% include header.html place="database" %}
-        <section class="section" >
-            <div id="app-container" />
-            <div class="loader pre-app" style="border: 16px solid #f3f3f3; border-top: 16px solid #3c8786; border-radius: 50%; margin:auto;"></div>
-        </section>
+        <div id="content">
+            <section class="section" >
+                <div id="app-container" style="min-height: 100vh" />
+                <div class="loader pre-app" style="border: 16px solid #f3f3f3; border-top: 16px solid #3c8786; border-radius: 50%; margin:auto;"></div>
+            </section>
+        </div>
         {% include footer.html %}
     </body>
 

@@ -1,7 +1,7 @@
 import React from 'react';
-import Search from "./Search";
 import Virus from "./Virus";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import _ from 'lodash';
 
 const navStyle = {
     margin: "0 -1px 0 0",
@@ -19,9 +19,10 @@ const PagerLink = ({ page, curPage, onClick, symbol }) => (
 export default class Pager extends React.Component {
     constructor (props) {
         super(props);
-        this.state = {
-            searchTerm: ""
-        };
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        window.scrollTo(0, 0);
     }
 
     range(start, end) {
@@ -68,11 +69,6 @@ export default class Pager extends React.Component {
 
         return (
             <div>
-                <div className="container" >
-                    <div className="title is-4" style={{margin: "0 0 20px 0"}} > Database of Viral Genomes </div>
-                </div>
-                <Search term={this.state.term} onChange={(term) => this.setState({term: term})} />
-
                 <div className="container" style={{marginTop: "20px", marginBottom: "20px"}}>
                     {virusComponents}
                 </div>
