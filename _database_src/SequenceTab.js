@@ -3,7 +3,7 @@ import React from 'react';
 export default class SequenceTab extends React.Component {
 
     componentDidMount() {
-        this.node.scrollIntoView({behavior: "smooth", block: "start"});
+        this.node.scrollIntoView({behavior: "smooth"});
     }
 
     render() {

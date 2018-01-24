@@ -4,7 +4,7 @@ import Sequence from './Sequence';
 export default class IsolateTab extends React.Component {
 
     componentDidMount() {
-        this.node.scrollIntoView({behavior: "smooth", block: "start"});
+        this.node.scrollIntoView({behavior: "smooth"});
     }
 
     render () {

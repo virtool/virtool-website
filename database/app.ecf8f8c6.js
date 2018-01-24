@@ -48258,7 +48258,7 @@ var IsolateTab = function (_React$Component) {
     _createClass(IsolateTab, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            this.node.scrollIntoView({ behavior: "smooth", block: "start" });
+            this.node.scrollIntoView({ behavior: "smooth" });
         }
     }, {
         key: 'render',
@@ -48477,6 +48477,15 @@ var Sequence = function (_React$Component) {
                 backgroundColor: "#dcefef"
             };
 
+            var defStyle = {
+                display: "inline-block",
+                maxWidth: "70vw",
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                verticalAlign: "top"
+            };
+
             var renderChoice = void 0;
 
             if (this.state.isActive) {
@@ -48502,7 +48511,7 @@ var Sequence = function (_React$Component) {
                         '\xA0',
                         _react2.default.createElement(
                             'span',
-                            null,
+                            { style: defStyle },
                             sequence.definition
                         ),
                         renderChoice
@@ -48554,7 +48563,7 @@ var SequenceTab = function (_React$Component) {
     _createClass(SequenceTab, [{
         key: "componentDidMount",
         value: function componentDidMount() {
-            this.node.scrollIntoView({ behavior: "smooth", block: "start" });
+            this.node.scrollIntoView({ behavior: "smooth" });
         }
     }, {
         key: "render",

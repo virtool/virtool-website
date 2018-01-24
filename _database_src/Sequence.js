@@ -21,7 +21,16 @@ export default class Sequence extends React.Component {
             border: "1px solid #d9d9d9",
             padding: "10px 10px",
             margin: "0 0 -1px 0",
-            backgroundColor: "#dcefef"
+            backgroundColor: "#dcefef",
+        };
+
+        const defStyle = {
+            display: "inline-block", 
+            maxWidth: "70vw", 
+            whiteSpace: "nowrap", 
+            overflow: "hidden", 
+            textOverflow: "ellipsis", 
+            verticalAlign: "top"
         };
 
         let renderChoice;
@@ -40,8 +49,8 @@ export default class Sequence extends React.Component {
                                 {sequence._id}
                             </span> 
                                 &nbsp; 
-                            <span>    
-                                {sequence.definition} 
+                            <span style={defStyle}>    
+                                    {sequence.definition} 
                             </span>
                         {renderChoice}
                     </div>
