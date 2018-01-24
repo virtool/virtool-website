@@ -48479,10 +48479,11 @@ var Sequence = function (_React$Component) {
 
             var defStyle = {
                 display: "inline-block",
-                maxWidth: "70vw",
                 whiteSpace: "nowrap",
                 overflow: "hidden",
                 textOverflow: "ellipsis",
+                minWidth: "0",
+                maxWidth: "60vw",
                 verticalAlign: "top"
             };
 
@@ -48511,7 +48512,7 @@ var Sequence = function (_React$Component) {
                         '\xA0',
                         _react2.default.createElement(
                             'span',
-                            { style: defStyle },
+                            { className: 'is-fullwidth', style: defStyle },
                             sequence.definition
                         ),
                         renderChoice

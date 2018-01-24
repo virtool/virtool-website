@@ -26,10 +26,11 @@ export default class Sequence extends React.Component {
 
         const defStyle = {
             display: "inline-block", 
-            maxWidth: "70vw", 
             whiteSpace: "nowrap", 
             overflow: "hidden", 
             textOverflow: "ellipsis", 
+            minWidth: "0",
+            maxWidth: "60vw",
             verticalAlign: "top"
         };
 
@@ -45,13 +46,13 @@ export default class Sequence extends React.Component {
             <React.Fragment>
                 <a className="is-fullwidth" style={{borderRadius: "0", margin: "0 0 -1px 0", color: "black"}}>
                     <div className="is-fullwidth" style={seqButtonStyle} onClick={this.handleClick}>       
-                            <span className="tag" style={{backgroundColor: "#3c8786", color: "white"}}>
-                                {sequence._id}
-                            </span> 
-                                &nbsp; 
-                            <span style={defStyle}>    
-                                    {sequence.definition} 
-                            </span>
+                        <span className="tag" style={{backgroundColor: "#3c8786", color: "white"}}>
+                            {sequence._id}
+                        </span> 
+                            &nbsp; 
+                        <span className="is-fullwidth" style={defStyle}>    
+                                {sequence.definition} 
+                        </span>
                         {renderChoice}
                     </div>
                 </a>
