@@ -27,6 +27,9 @@ export default class App extends React.Component {
             .then((res) => {                
                 this.setState({viruses: res.body.data});
             })
+
+            const ele = document.getElementById('pre-app');
+            ele.outerHTML = "<div />";           
     }
 
     setSearch = (term) => {

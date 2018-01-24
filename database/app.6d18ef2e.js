@@ -45830,6 +45830,9 @@ var App = function (_React$Component) {
             _superagent2.default.get('/viruses.json').then(function (res) {
                 _this2.setState({ viruses: res.body.data });
             });
+
+            var ele = document.getElementById('pre-app');
+            ele.outerHTML = "<div />";
         }
     }, {
         key: "render",
