@@ -1,12 +1,11 @@
 import React from 'react';
 import Isolate from './Isolate';
+import _ from 'lodash';
 
 export default class VirusPage extends React.Component {
 
     render() {
-        const virus = this.props.virusData.filter(virusEntry => virusEntry._id === this.props.match.params.id);
-
-        const { name, abbreviation, isolates, _id,  } = virus[0];
+        const { name, abbreviation, isolates, _id } = _.find(this.props.virusData, { '_id':  this.props.match.params.id});
 
         const strains = isolates.map((isolate, index) =>
             <Isolate key={index} iso={isolate} />
@@ -21,7 +20,7 @@ export default class VirusPage extends React.Component {
         return (
             <div className="container">
 
-                    <h1 className="title is-4" style={{margin: "20px 0 20px 0"}}><span>{name}</span> <br /> <span className="subtitle" style={{fontSize: "16px", color: "gray"}}>{abbreviation}</span></h1>
+                    <h1 className="title is-4" style={{margin: "0 0 20px 0"}}><span>{name}</span> <br /> <span className="subtitle" style={{fontSize: "16px", color: "gray"}}>{abbreviation}</span></h1>
 
                     <table className="table is-bordered is-fullwidth">
                     <tbody>

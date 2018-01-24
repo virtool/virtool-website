@@ -20,7 +20,6 @@ export default class App extends React.Component {
 
         this.state = {
             viruses: null,
-            virusActive: null,
 
         };
     }
@@ -42,11 +41,9 @@ export default class App extends React.Component {
             return <div />;
         }
 
-        const totalPages = Math.ceil(this.state.viruses.length / 10);
+        const totalPages = Math.ceil(this.state.viruses.length / 15);
 
-        let renderChoice;
-
-        renderChoice = (
+        const renderChoice = (
             <div>
                 <Switch>
                     <Route exact path="/">

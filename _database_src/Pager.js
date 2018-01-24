@@ -1,4 +1,5 @@
 import React from 'react';
+import Search from "./Search";
 import Virus from "./Virus";
 import {
     BrowserRouter as Router,
@@ -21,9 +22,18 @@ const PagerLink = ({ page, curPage, onClick, symbol }) => (
 
 export default class Pager extends React.Component {
 
+    constructor (props) {
+        super(props);
+        this.state = {
+            term: ""
+        };
+    }
+
     range(start, end) {
         return Array(end - start + 1).fill().map((_, i) => start + i);
     }
+
+
 
     render() {
         let thisPage;
@@ -57,7 +67,7 @@ export default class Pager extends React.Component {
         );
 
         const i = thisPage;
-        const slice = this.props.virusData.slice(i * 10 - 10, i * 10);                
+        const slice = this.props.virusData.slice(i * 15 - 15, i * 15);                
 
         const virusComponents = slice.map((virus, index) =>
             <Virus key={index} virus={virus} />
@@ -65,6 +75,11 @@ export default class Pager extends React.Component {
 
         return (
             <div>
+                <div className="container" >
+                    <div className="title is-4" style={{margin: "0 0 20px 0"}} > Database of Viral Genomes </div>
+                </div>
+                <Search term={this.state.term} onChange={(term) => this.setState({term: term})} />
+
                 <div className="container" style={{marginTop: "20px", marginBottom: "20px"}}>
                     {virusComponents}
                 </div>
