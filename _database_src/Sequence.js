@@ -1,10 +1,5 @@
 import React from 'react';
 import SequenceTab from './SequenceTab';
-import {
-    BrowserRouter as Router,
-    Route,
-    Link
-} from 'react-router-dom';
 
 export default class Sequence extends React.Component {
     constructor(props) {

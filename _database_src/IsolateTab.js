@@ -34,7 +34,6 @@ export default class IsolateTab extends React.Component {
             color: "white"
         };
 
-
         const seqArray = sequence.map((seq, index) =>
             <Sequence key={index} seq={seq} />
         );

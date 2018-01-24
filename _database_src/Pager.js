@@ -1,11 +1,7 @@
 import React from 'react';
 import Search from "./Search";
 import Virus from "./Virus";
-import {
-    BrowserRouter as Router,
-    Route,
-    Link
-} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const navStyle = {
     margin: "0 -1px 0 0",
@@ -13,19 +9,18 @@ const navStyle = {
 };
 
 const PagerLink = ({ page, curPage, onClick, symbol }) => (
-        <li>
-            <Link to={`/viruses/${page}`} className={page === curPage ? "pagination-link is-current" : "pagination-link"} style={navStyle}>
-                {symbol}
-            </Link>
-        </li>
+    <li>
+        <Link to={`/viruses/${page}`} className={page === curPage ? "pagination-link is-current" : "pagination-link"} style={navStyle}>
+            {symbol}
+        </Link>
+    </li>
 );
 
 export default class Pager extends React.Component {
-
     constructor (props) {
         super(props);
         this.state = {
-            term: ""
+            searchTerm: ""
         };
     }
 
@@ -33,18 +28,16 @@ export default class Pager extends React.Component {
         return Array(end - start + 1).fill().map((_, i) => start + i);
     }
 
-
-
     render() {
+        const virusNum = this.props.num;
         let thisPage;
+        let startPage, endPage;
 
         if (this.props.match) {
             thisPage = parseInt(this.props.match.params.num);
         } else {
             thisPage = 1;
         }
-
-        let startPage, endPage;
 
         if (this.props.totalPages <= 10) {
             startPage = 1;
@@ -67,7 +60,7 @@ export default class Pager extends React.Component {
         );
 
         const i = thisPage;
-        const slice = this.props.virusData.slice(i * 15 - 15, i * 15);                
+        const slice = this.props.virusData.slice(i * virusNum - virusNum, i * virusNum);                
 
         const virusComponents = slice.map((virus, index) =>
             <Virus key={index} virus={virus} />
@@ -86,7 +79,7 @@ export default class Pager extends React.Component {
                 <div>
                     <nav className="pagination is-centered" role="navigation" aria-label="pagination">
                         <ul className="pagination-list">
-                            <PagerLink key={-1}  page={1} curPage={this.props.currentPage + 1} symbol="&lt;&lt;" />
+                            <PagerLink  key={-1}  page={1} curPage={this.props.currentPage + 1} symbol="&lt;&lt;" />
                             <PagerLink  key={0}                                        
                                         page={(thisPage - 1) < 1 ? thisPage : (thisPage - 1)} 
                                         curPage={thisPage + 1}  
@@ -96,7 +89,7 @@ export default class Pager extends React.Component {
                                         page={(thisPage + 1) > this.props.totalPages ? thisPage : (thisPage + 1)} 
                                         curPage={thisPage - 1} 
                                         symbol="&gt;" />
-                            <PagerLink key={12} page={this.props.totalPages} curPage={thisPage - 1} symbol="&gt;&gt;" />
+                            <PagerLink  key={12} page={this.props.totalPages} curPage={thisPage - 1} symbol="&gt;&gt;" />
                         </ul>    
                     </nav>
                 </div>

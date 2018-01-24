@@ -1,15 +1,7 @@
 import React from 'react';
-import {
-    BrowserRouter as Router,
-    Route,
-    Link
-} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default class Virus extends React.Component {
-    handleClick = (e) => {
-        this.props.onClick(this.props.virus);
-    };
-
 
     render() {
         const { name, abbreviation } = this.props.virus;
@@ -21,10 +13,9 @@ export default class Virus extends React.Component {
             borderRadius: "0"
         };
 
-        return (
-            
-            <Link to={`/virus/${this.props.virus._id}`} className="button is-fullwidth" style={buttonStyle} virus={this.props.virus}>
-                <div className={name}>
+        return (           
+            <Link to={`/virus/${this.props.virus._id}`} className="button is-fullwidth" style={buttonStyle}>
+                <div>
                     {name} <sub>{abbreviation}</sub>
                 </div>
             </Link>
