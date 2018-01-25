@@ -35,7 +35,14 @@
     <body>
         {% include header.html place="database" %}
         <div id="content">
-            <div class="loader" id="pre-app" style="border: 16px solid #f3f3f3; border-top: 16px solid #3c8786; border-radius: 50%; margin:auto;"></div>
+            <div id="pre-app">
+                <div style="margin: 30px auto; float: center;">
+                        <svg style="display:block; margin: auto; fill: #3c8786;animation: spinAround infinite 10s linear;">
+                                <use xlink:href="#icon-vtlogo"></use>
+                        </svg>
+                </div>
+            </div>
+
             <section class="section" >
                 <div id="app-container" style="min-height: 100vh" />
             </section>

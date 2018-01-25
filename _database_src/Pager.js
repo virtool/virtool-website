@@ -29,6 +29,11 @@ export default class Pager extends React.Component {
         return Array(end - start + 1).fill().map((_, i) => start + i);
     }
 
+    componentDidMount () {
+        const ele = document.getElementById('pre-app');
+        ele.outerHTML = "<div />";           
+    }
+
     render() {
         const virusNum = this.props.num;
         let thisPage;

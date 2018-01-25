@@ -45830,9 +45830,6 @@ var App = function (_React$Component) {
             _superagent2.default.get('/viruses.json').then(function (res) {
                 _this2.setState({ viruses: res.body.data });
             });
-
-            var ele = document.getElementById('pre-app');
-            ele.outerHTML = "<div />";
         }
     }, {
         key: "render",
@@ -52402,6 +52399,12 @@ var Pager = function (_React$Component) {
             return Array(end - start + 1).fill().map(function (_, i) {
                 return start + i;
             });
+        }
+    }, {
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var ele = document.getElementById('pre-app');
+            ele.outerHTML = "<div />";
         }
     }, {
         key: 'render',
