@@ -31,15 +31,18 @@ export default class Sequence extends React.Component {
             overflow: "hidden", 
             textOverflow: "ellipsis", 
             minWidth: "0",
-            maxWidth: "60vw",
+            maxWidth: "50vw",
             verticalAlign: "top"
         };
 
         let renderChoice;
+        let iconFlip;
 
         if (this.state.isActive) {
+            iconFlip =  "fa fa-caret-up"; 
             renderChoice = <SequenceTab chosenSeq={sequence} />
         } else {
+            iconFlip =  "fa fa-caret-down"; 
             renderChoice = <div />
         }
 
@@ -53,6 +56,9 @@ export default class Sequence extends React.Component {
                             &nbsp; 
                         <span className="is-fullwidth" style={defStyle}>    
                                 {sequence.definition} 
+                        </span>
+                        <span className="icon" style={{float: "right"}}>
+                            <i className={iconFlip} aria-hidden="true"></i>
                         </span>
                         {renderChoice}
                     </div>

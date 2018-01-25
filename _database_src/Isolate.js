@@ -50,14 +50,17 @@ export default class Isolate extends React.Component {
         };
 
         let renderChoice;
+        let iconFlip;
 
-        if (this.state.isActive) {                    
+        if (this.state.isActive) { 
+            iconFlip =  "fa fa-caret-up";                 
             renderChoice = (
                 <div className="tile is-child box" style={boxStyle}>
                     <IsolateTab isoInfo={this.state.activeIsolate}/>
                 </div> 
             );
-        } else {                                
+        } else {              
+            iconFlip = "fa fa-caret-down";                  
             renderChoice = <div />
         }
 
@@ -66,6 +69,9 @@ export default class Isolate extends React.Component {
                 <a className="is-fullwidth" style={{color: "black"}}>
                     <div className="is-fullwidth" ref={node => this.node = node} onClick={this.handleClick} style={isoTabStyle}>
                         {sourceType} {sourceName}   
+                        <span className="icon" style={{float: "right"}}>
+                            <i className={iconFlip} aria-hidden="true"></i>
+                        </span> 
                     </div>
                 </a>
                 {renderChoice}

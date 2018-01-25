@@ -48203,14 +48203,17 @@ var Isolate = function (_React$Component) {
             };
 
             var renderChoice = void 0;
+            var iconFlip = void 0;
 
             if (this.state.isActive) {
+                iconFlip = "fa fa-caret-up";
                 renderChoice = _react2.default.createElement(
                     'div',
                     { className: 'tile is-child box', style: boxStyle },
                     _react2.default.createElement(_IsolateTab2.default, { isoInfo: this.state.activeIsolate })
                 );
             } else {
+                iconFlip = "fa fa-caret-down";
                 renderChoice = _react2.default.createElement('div', null);
             }
 
@@ -48227,7 +48230,12 @@ var Isolate = function (_React$Component) {
                             }, onClick: this.handleClick, style: isoTabStyle },
                         sourceType,
                         ' ',
-                        sourceName
+                        sourceName,
+                        _react2.default.createElement(
+                            'span',
+                            { className: 'icon', style: { float: "right" } },
+                            _react2.default.createElement('i', { className: iconFlip, 'aria-hidden': 'true' })
+                        )
                     )
                 ),
                 renderChoice
@@ -48507,15 +48515,18 @@ var Sequence = function (_React$Component) {
                 overflow: "hidden",
                 textOverflow: "ellipsis",
                 minWidth: "0",
-                maxWidth: "60vw",
+                maxWidth: "50vw",
                 verticalAlign: "top"
             };
 
             var renderChoice = void 0;
+            var iconFlip = void 0;
 
             if (this.state.isActive) {
+                iconFlip = "fa fa-caret-up";
                 renderChoice = _react2.default.createElement(_SequenceTab2.default, { chosenSeq: sequence });
             } else {
+                iconFlip = "fa fa-caret-down";
                 renderChoice = _react2.default.createElement('div', null);
             }
 
@@ -48538,6 +48549,11 @@ var Sequence = function (_React$Component) {
                             'span',
                             { className: 'is-fullwidth', style: defStyle },
                             sequence.definition
+                        ),
+                        _react2.default.createElement(
+                            'span',
+                            { className: 'icon', style: { float: "right" } },
+                            _react2.default.createElement('i', { className: iconFlip, 'aria-hidden': 'true' })
                         ),
                         renderChoice
                     )
