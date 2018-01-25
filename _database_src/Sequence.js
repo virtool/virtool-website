@@ -27,6 +27,7 @@ export default class Sequence extends React.Component {
         const defStyle = {
             display: "inline-block", 
             whiteSpace: "nowrap", 
+            overflowWrap: "break-word",
             overflow: "hidden", 
             textOverflow: "ellipsis", 
             minWidth: "0",

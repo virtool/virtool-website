@@ -3,7 +3,14 @@ import Isolate from './Isolate';
 import _ from 'lodash';
 
 export default class VirusPage extends React.Component {
-
+/*
+    componentDidMount () {
+        const ele = document.getElementById('pre-app');
+        if (ele) {
+            ele.outerHTML = "<div />";  
+        }         
+    }
+*/
     render() {
         const { name, abbreviation, isolates, _id } = _.find(this.props.virusData, { '_id':  this.props.match.params.id});
 

@@ -26,6 +26,11 @@ export default class App extends React.Component {
             .get('/viruses.json')
             .then((res) => {                
                 this.setState({viruses: res.body.data});
+            }).then(() => {
+                const ele = document.getElementById('pre-app');
+                if (ele) {
+                    ele.outerHTML = "<div />"; 
+                }
             })          
     }
 

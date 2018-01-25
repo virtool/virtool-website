@@ -45829,6 +45829,11 @@ var App = function (_React$Component) {
 
             _superagent2.default.get('/viruses.json').then(function (res) {
                 _this2.setState({ viruses: res.body.data });
+            }).then(function () {
+                var ele = document.getElementById('pre-app');
+                if (ele) {
+                    ele.outerHTML = "<div />";
+                }
             });
         }
     }, {
@@ -47998,6 +48003,15 @@ var VirusPage = function (_React$Component) {
 
     _createClass(VirusPage, [{
         key: 'render',
+
+        /*
+            componentDidMount () {
+                const ele = document.getElementById('pre-app');
+                if (ele) {
+                    ele.outerHTML = "<div />";  
+                }         
+            }
+        */
         value: function render() {
             var _$find = _lodash2.default.find(this.props.virusData, { '_id': this.props.match.params.id }),
                 name = _$find.name,
@@ -48489,6 +48503,7 @@ var Sequence = function (_React$Component) {
             var defStyle = {
                 display: "inline-block",
                 whiteSpace: "nowrap",
+                overflowWrap: "break-word",
                 overflow: "hidden",
                 textOverflow: "ellipsis",
                 minWidth: "0",
@@ -52402,12 +52417,13 @@ var Pager = function (_React$Component) {
         value: function componentDidUpdate(prevProps, prevState) {
             window.scrollTo(0, 0);
         }
-    }, {
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            var ele = document.getElementById('pre-app');
-            ele.outerHTML = "<div />";
-        }
+        /*
+            componentDidMount () {
+                const ele = document.getElementById('pre-app');
+                ele.outerHTML = "<div />";           
+            }
+        */
+
     }, {
         key: 'range',
         value: function range(start, end) {
