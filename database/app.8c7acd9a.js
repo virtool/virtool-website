@@ -48674,7 +48674,7 @@ var SequenceTab = function (_React$Component) {
                             null,
                             _react2.default.createElement(
                                 "div",
-                                { className: "content", style: { maxWidth: "100%", maxHeight: "100px", overflow: "auto", wordWrap: "break-word" } },
+                                { className: "content", style: { maxWidth: "100%", maxHeight: "100px", overflowX: "hidden", overflowY: "auto", wordWrap: "break-word" } },
                                 this.props.chosenSeq.sequence
                             )
                         )

@@ -25,7 +25,7 @@ export default class SequenceTab extends React.Component {
                     <tr>
                         <th>Sequence</th>
                         <td>
-                            <div className="content" style={{maxWidth: "100%", maxHeight: "100px", overflow: "auto", wordWrap: "break-word"}}>
+                            <div className="content" style={{maxWidth: "100%", maxHeight: "100px", overflowX: "hidden", overflowY: "auto", wordWrap: "break-word"}}>
                                 {this.props.chosenSeq.sequence}
                             </div>
                         </td>
