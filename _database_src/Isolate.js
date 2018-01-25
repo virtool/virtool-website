@@ -12,6 +12,10 @@ export default class Isolate extends React.Component {
         };
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        this.node.scrollIntoView({behavior: "smooth"});
+    }
+
     handleClick = () => {
         this.setState({isActive: !this.state.isActive});
         this.setState({activeIsolate: this.props.iso});
@@ -60,7 +64,7 @@ export default class Isolate extends React.Component {
         return (
             <React.Fragment>
                 <a className="is-fullwidth" style={{color: "black"}}>
-                    <div className="is-fullwidth" onClick={this.handleClick} style={isoTabStyle}>
+                    <div className="is-fullwidth" ref={node => this.node = node} onClick={this.handleClick} style={isoTabStyle}>
                         {sourceType} {sourceName}   
                     </div>
                 </a>

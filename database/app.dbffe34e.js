@@ -48152,8 +48152,15 @@ var Isolate = function (_React$Component) {
     }
 
     _createClass(Isolate, [{
+        key: 'componentDidUpdate',
+        value: function componentDidUpdate(prevProps, prevState) {
+            this.node.scrollIntoView({ behavior: "smooth" });
+        }
+    }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             var isolate = this.props.iso;
             var sourceType = isolate.source_type.charAt(0).toUpperCase() + isolate.source_type.slice(1);
             var sourceDefault = isolate.default ? "Yes" : "No";
@@ -48201,7 +48208,9 @@ var Isolate = function (_React$Component) {
                     { className: 'is-fullwidth', style: { color: "black" } },
                     _react2.default.createElement(
                         'div',
-                        { className: 'is-fullwidth', onClick: this.handleClick, style: isoTabStyle },
+                        { className: 'is-fullwidth', ref: function ref(node) {
+                                return _this2.node = node;
+                            }, onClick: this.handleClick, style: isoTabStyle },
                         sourceType,
                         ' ',
                         sourceName
@@ -52394,17 +52403,17 @@ var Pager = function (_React$Component) {
             window.scrollTo(0, 0);
         }
     }, {
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var ele = document.getElementById('pre-app');
+            ele.outerHTML = "<div />";
+        }
+    }, {
         key: 'range',
         value: function range(start, end) {
             return Array(end - start + 1).fill().map(function (_, i) {
                 return start + i;
             });
-        }
-    }, {
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            var ele = document.getElementById('pre-app');
-            ele.outerHTML = "<div />";
         }
     }, {
         key: 'render',
