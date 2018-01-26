@@ -1,41 +1,16 @@
 import React from 'react';
-import Virus from "./Virus";
+import Virus from './Virus';
+import PagerLink from './PagerLink';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
 
-const navStyle = {
-    margin: "0 -1px 0 0",
-    borderRadius: "0",
-};
-
-const PagerLink = ({ page, curPage, onClick, symbol }) => (
-    <li>
-        <Link to={`/viruses/${page}`} className={page === curPage ? "pagination-link is-current" : "pagination-link"} style={navStyle}>
-            {symbol}
-        </Link>
-    </li>
-);
-
 export default class Pager extends React.Component {
-    constructor (props) {
-        super(props);
-    }
 
     componentDidUpdate(prevProps, prevState) {
         window.scrollTo(0, 0);
     }
-/*
-    componentDidMount () {
-        const ele = document.getElementById('pre-app');
-        ele.outerHTML = "<div />";           
-    }
-*/
-    range(start, end) {
-        return Array(end - start + 1).fill().map((_, i) => start + i);
-    }
 
-    render() {
-        const virusNum = this.props.num;
+    selectedPage() {
         let thisPage;
         let startPage, endPage;
 
@@ -61,12 +36,22 @@ export default class Pager extends React.Component {
             }
         }
 
-        const linkItems = this.range(startPage, endPage).map(page =>
+        return {
+            thisPage,
+            startPage,
+            endPage
+        };
+    }
+
+    render() {
+        const virusNum = this.props.num;
+        const { thisPage, startPage, endPage } = this.selectedPage();
+
+        const linkItems = _.range(startPage, endPage).map(page =>
             <PagerLink key={page}  page={page} curPage={thisPage} symbol={page} />
         );
 
-        const i = thisPage;
-        const slice = this.props.virusData.slice(i * virusNum - virusNum, i * virusNum);                
+        const slice = this.props.virusData.slice(thisPage * virusNum - virusNum, thisPage * virusNum);                
 
         const virusComponents = slice.map((virus, index) =>
             <Virus key={index} virus={virus} />

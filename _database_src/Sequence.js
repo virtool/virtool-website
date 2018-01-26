@@ -1,5 +1,6 @@
 import React from 'react';
 import SequenceTab from './SequenceTab';
+import Caret from './Caret';
 
 export default class Sequence extends React.Component {
     constructor(props) {
@@ -36,34 +37,27 @@ export default class Sequence extends React.Component {
         };
 
         let renderChoice;
-        let iconFlip;
 
         if (this.state.isActive) {
-            iconFlip =  "fa fa-caret-up"; 
             renderChoice = <SequenceTab chosenSeq={sequence} />
         } else {
-            iconFlip =  "fa fa-caret-down"; 
             renderChoice = <div />
         }
 
         return (
-            <React.Fragment>
-                <a className="is-fullwidth" style={{borderRadius: "0", margin: "0 0 -1px 0", color: "black"}}>
-                    <div className="is-fullwidth" style={seqButtonStyle} onClick={this.handleClick}>       
-                        <span className="tag" style={{backgroundColor: "#3c8786", color: "white"}}>
-                            {sequence._id}
-                        </span> 
-                            &nbsp; 
-                        <span className="is-fullwidth" style={defStyle}>    
-                                {sequence.definition} 
-                        </span>
-                        <span className="icon" style={{float: "right"}}>
-                            <i className={iconFlip} aria-hidden="true"></i>
-                        </span>
-                        {renderChoice}
-                    </div>
-                </a>
-            </React.Fragment>
+            <a className="is-fullwidth" style={{borderRadius: "0", margin: "0 0 -1px 0", color: "black"}}>
+                <div className="is-fullwidth" style={seqButtonStyle} onClick={this.handleClick}>       
+                    <span className="tag" style={{backgroundColor: "#3c8786", color: "white"}}>
+                        {sequence._id}
+                    </span> 
+                        &nbsp; 
+                    <span className="is-fullwidth" style={defStyle}>    
+                            {sequence.definition} 
+                    </span>
+                    <Caret isActive={this.state.isActive} />
+                    {renderChoice}
+                </div>
+            </a>
         );
     }
 }

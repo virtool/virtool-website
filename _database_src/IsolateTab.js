@@ -8,25 +8,11 @@ export default class IsolateTab extends React.Component {
     }
 
     render () {
-        const isolate = this.props.isoInfo;
-        const sourceDefault = isolate.default ? "Yes" : "No";
-        const sourceId = isolate.id;
-        const sequence = isolate.sequences;
-
-        let sourceType;
-        let sourceName;
-
-        if (isolate.source_type === "unknown") {
-            sourceType = "Isolate";
-        } else {
-            sourceType = isolate.source_type.charAt(0).toUpperCase() + isolate.source_type.slice(1);
-        }
-
-        if (isolate.source_name === "unknown") {
-            sourceName = "Unknown";
-        } else {
-            sourceName = isolate.source_name;
-        }
+        const sourceType = this.props.isoType;
+        const sourceName = this.props.isoName;
+        const isDefault = this.props.isDef;
+        const isolateId = this.props.isoId;
+        const sequences = this.props.isoSeq;
 
         const iconStyle = {
             borderRadius: "50%",
@@ -34,13 +20,17 @@ export default class IsolateTab extends React.Component {
             color: "white"
         };
 
-        const seqArray = sequence.map((seq, index) =>
+        const seqArray = sequences.map((seq, index) =>
             <Sequence key={index} seq={seq} />
         );
 
         return (
             <div ref={node => this.node = node}>
-                <h4><strong>{sourceType} {sourceName}</strong></h4>
+                <h4>
+                    <strong>
+                        {sourceType} {sourceName}
+                    </strong>
+                </h4>
                 <br />
                 <table className="table is-bordered is-fullwidth">
                     <tbody>                      
@@ -58,15 +48,22 @@ export default class IsolateTab extends React.Component {
                         </tr>
                         <tr>
                             <th>Default</th>
-                            <td>{sourceDefault}</td>
+                            <td>{isDefault}</td>
                         </tr>
                         <tr>
                             <th>Unique ID</th>
-                            <td>{sourceId}</td>
+                            <td>{isolateId}</td>
                         </tr>                        
                     </tbody>
                 </table>
-                <h4><strong>Sequences</strong> <span className="tag" style={iconStyle}>{sequence.length}</span></h4>   
+                <h4>
+                    <strong>
+                        Sequences &nbsp;
+                    </strong> 
+                    <span className="tag" style={iconStyle}>
+                        {sequences.length}
+                    </span>
+                </h4>   
                 <br />
                 {seqArray}
             </div>

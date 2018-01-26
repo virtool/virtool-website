@@ -1,8 +1,11 @@
 import React from 'react';
 import IsolateTab from './IsolateTab';
+import Caret from './Caret';
 import { Link } from 'react-router-dom';
+import _ from 'lodash';
 
 export default class Isolate extends React.Component {
+
     constructor(props) {
         super(props);
 
@@ -17,24 +20,19 @@ export default class Isolate extends React.Component {
     }
 
     handleClick = () => {
-        this.setState({isActive: !this.state.isActive});
-        this.setState({activeIsolate: this.props.iso});
+        this.setState({
+            isActive: !this.state.isActive, 
+            activeIsolate: this.props.iso
+        });
     }
 
     render() {
         const isolate = this.props.iso;
-        const sourceType = isolate.source_type.charAt(0).toUpperCase() + isolate.source_type.slice(1);
-        const sourceDefault = isolate.default ? "Yes" : "No";
-        const sourceId = isolate.id;
-        const sequence = isolate.sequences;
-
-        let sourceName;
-
-        if (isolate.source_name === "unknown") {
-            sourceName = "isolate";
-        } else {
-            sourceName = isolate.source_name;
-        }
+        const sourceType = _.capitalize(isolate.source_type);
+        const sourceName = isolate.sourceName === "unknown" ? "isolate" : isolate.source_name;
+        const isDefault = isolate.default ? "Yes" : "No";
+        const isolateId = isolate.id;
+        const sequences = isolate.sequences;
 
         const isoTabStyle = {
             border: "1px solid #d9d9d9",
@@ -50,17 +48,14 @@ export default class Isolate extends React.Component {
         };
 
         let renderChoice;
-        let iconFlip;
 
-        if (this.state.isActive) { 
-            iconFlip =  "fa fa-caret-up";                 
+        if (this.state.isActive) {                 
             renderChoice = (
                 <div className="tile is-child box" style={boxStyle}>
-                    <IsolateTab isoInfo={this.state.activeIsolate}/>
+                    <IsolateTab isoType={sourceType} isoName={sourceName} isDef={isDefault} isoId={isolateId} isoSeq={sequences} />
                 </div> 
             );
-        } else {              
-            iconFlip = "fa fa-caret-down";                  
+        } else {                                
             renderChoice = <div />
         }
 
@@ -69,9 +64,7 @@ export default class Isolate extends React.Component {
                 <a className="is-fullwidth" style={{color: "black"}}>
                     <div className="is-fullwidth" ref={node => this.node = node} onClick={this.handleClick} style={isoTabStyle}>
                         {sourceType} {sourceName}   
-                        <span className="icon" style={{float: "right"}}>
-                            <i className={iconFlip} aria-hidden="true"></i>
-                        </span> 
+                        <Caret isActive={this.state.isActive} />
                     </div>
                 </a>
                 {renderChoice}
@@ -79,4 +72,3 @@ export default class Isolate extends React.Component {
         );
     }
 }
-
