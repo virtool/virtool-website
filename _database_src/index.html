@@ -1,0 +1,52 @@
+---
+---
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <head>
+        <link rel="stylesheet" href="/style/style.css">
+        <link rel="stylesheet" href="/style/font-awesome.min.css">
+        <link rel="icon" href="/style/favicon.ico" type="image/x-icon"/>
+
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "WebSite",
+                "name": "Virtool",
+                "url": "https://www.virtool.ca"
+            }
+        </script>
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "Organization",
+                "url": "https://www.virtool.ca",
+                "logo": "https://avatars3.githubusercontent.com/u/19957602?v=3&s=200"
+            }
+        </script>
+    </head>
+
+    <body>
+        {% include header.html place="database" %}
+        <div id="content">
+            <div id="pre-app">
+                <div style="margin: 30px auto; float: center;">
+                    <div class="loader" style="margin:10vw auto;float:center;border:10px solid #f3f3f3;border-top:10px solid #3c8786;border-radius:50%;width:5vw;height:5vw;animation:spinAround 1s linear infinite;">
+                    </div>
+                </div>
+            </div>
+
+            <section class="section" >
+                <div id="app-container" style="min-height: 100vh" />
+            </section>
+        </div>
+        {% include footer.html %}
+    </body>
+
+</html>
