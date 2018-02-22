@@ -1,4 +1,5 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "My New Hugo Site"
-theme = "docuapi"
+title = "Virtool"
+theme = "virtool"
+staticDir = ["static"]
