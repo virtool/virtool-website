@@ -16,8 +16,9 @@
             </a>
         </div>
         <div class="navbar-start">
+            {{ $currentPage := . }}
             {{ range sort .Site.Menus.main "Weight" }}
-                <a class="navbar-item" href="{{ .URL }}">
+                <a class="navbar-item{{ if $currentPage.IsMenuCurrent "main" . }} is-active{{ end }}" href="{{ .URL }}">
                     {{ .Name }}
                 </a>
             {{ end }}
