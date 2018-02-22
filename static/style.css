@@ -21,6 +21,13 @@ body {
 .vtlogo-svg {
   fill: white; }
 
+.card.is-docs-type {
+  cursor: pointer;
+  transform: scale(1);
+  transition: 150ms transform ease-in-out; }
+  .card.is-docs-type:hover {
+    transform: scale(1.05); }
+
 /*! bulma.io v0.6.2 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {
   from {
