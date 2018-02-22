@@ -1,5 +1,3 @@
-+++
-title = "Test"
-+++
-
-Hello world
+---
+title: "Home"
+---
