@@ -13,6 +13,12 @@ RELEASE_KEYS = [
 ]
 
 
+def get_latest(releases):
+    for release in releases:
+        if release["prerelease"] is False:
+            return release
+
+
 def format_release(release):
     """
     Format a raw GitHub release object (dict) to something that can be sent to clients.
@@ -127,11 +133,20 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    data = get_release_data(args.github_username, args.github_token)
+    downloaded = get_release_data(args.github_username, args.github_token)
 
-    with open("_data/releases.json", "w") as f:
+    data = dict()
+
+    for key in ["database", "hmm", "software"]:
+        releases = downloaded[key]
+        data[key] = {
+            "latest": get_latest(releases),
+            "releases": releases
+        }
+
+    with open("data/releases.json", "w") as f:
         json.dump(data, f, indent=4)
 
-    latest_database_url = data["database"][0]["download_url"]
+    latest_database_url = data["database"]["latest"]["download_url"]
     
     download_database_release(latest_database_url, "./viruses.json.gz")
