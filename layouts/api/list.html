@@ -1,0 +1,51 @@
+{{ define "main" }}
+<div class="container">
+    <section class="section">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+            <ul>
+                <li><a href="/docs/api">API Documentation</a></li>
+                <li><a href="#">{{ .Title }}</a></li>
+            </ul>
+        </nav>
+
+        <div class="columns">
+            <div class="column">
+                <aside class="menu">
+                    <p class="menu-label">
+                        Overview
+                    </p>
+                    <ul class="menu-list">
+                        <li><a>Authentication</a></li>
+                        <li><a>Errors</a></li>
+                    </ul>
+                    <p class="menu-label">
+                        Endpoints
+                    </p>
+                    <ul class="menu-list">
+                        <li><a>Account</a></li>
+                        <li><a>Uploads</a></li>
+                        <li><a>Samples</a></li>
+                        <li><a>Analyses</a></li>
+                        <li><a>Viruses</a></li>
+                        <li><a>Indexes</a></li>
+                        <li><a>History</a></li>
+                        <li><a>HMMs</a></li>
+                        <li><a>Subtraction</a></li>
+                        <li><a>GenBank</a></li>
+                        <li><a>Users</a></li>
+                        <li><a>Groups</a></li>
+                    </ul>
+                </aside>
+            </div>
+
+            <div class="column">
+                {{ .Content }}                
+            </div>
+        </div>
+    </section>
+
+    {{ range .Site.Menus.api }}
+        <p>{{.Name}} {{.Children}}</p>
+    {{ end }}
+</div>
+{{ end }}
