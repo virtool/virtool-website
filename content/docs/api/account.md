@@ -7,7 +7,7 @@ menu:
         weight: 10
 ---
 
-This endpoint allows authorized users to modify their accounts. Unauthorized clients will receive ``401 Unauthorized`` for calls to all account endpoints.
+These endpoints allow authorized users to query and modify their accounts. Unauthorized clients will receive ``401 Unauthorized`` for calls to all account endpoints.
 
 # Get
 
@@ -17,13 +17,11 @@ Get the complete respresentation for the account associated with the current ses
 GET /api/account
 ```
 
-## Headers
+## Response
 
 ```
 Status: 200 OK
 ```
-
-## Response
 
 ```json
 {
@@ -59,22 +57,17 @@ Status: 200 OK
 
 # Edit
 
+Change the email address associated with the account associated with the current session or API key.
+
 ```
 PATCH /api/account
 ```
-
-Change the email address associated with the account associated with the current session or API key.
 
 ## Input
 
 | Name  | Type    | Description                                     |
 | :---- | :------ | :---------------------------------------------- |
 | email | string  | an email address                                |
-
-## Headers
-```
-Status: 200 OK
-```
 
 ## Example
 
@@ -89,6 +82,10 @@ PATCH /api/account/settings
 ```
 
 ## Response
+
+```
+Status: 200 OK
+```
 
 ```json
 {
@@ -126,19 +123,17 @@ PATCH /api/account/settings
 
 # Get Settings
 
+Get the settings for the account associated with the current session or API key.
+
 ```
 GET /api/account/settings
 ```
 
-Get the settings for ther account associated with the current session or API key.
-
-## Headers
+## Response
 
 ```
 Status: 200 OK
 ```
-
-## Response
 
 ```json
 {
@@ -151,13 +146,13 @@ Status: 200 OK
 
 # Edit Settings
 
+Update the settings for the account associated with the current session or API key. All fields are optional.
+
 ```
 PATCH /api/account/settings
 ```
 
-Update the settings for the account associated with the current session or API key. All fields are optional.
-
-**Input**
+## Input
 
 | Name                      | Type    | Description                                     |
 | :------------------------ | :------ | :---------------------------------------------- |
@@ -178,13 +173,11 @@ PATCH /api/account/settings
 }
 ```
 
-## Headers
+## Response
 
 ```
 Status: 200 OK
 ```
-
-## Response
 
 ```json
 {
@@ -197,11 +190,11 @@ Status: 200 OK
 
 # Change Password
 
+Change the password for the account associated with the current session or API key.
+
 ```
 PUT /api/account/password
 ```
-
-Change the password for the account associated with the current session or API key.
 
 ## Input
 
@@ -209,12 +202,6 @@ Change the password for the account associated with the current session or API k
 | :----------- | :----- | :------- | :-------------------------------- |
 | old_password | string | false    | the old password for verification |
 | new_password | string | false    | the new password                  |
-
-## Headers
-
-```
-Status: 200 OK
-```
 
 ## Example
 
@@ -231,6 +218,10 @@ PUT /api/account/password
 
 ## Response
 
+```
+Status: 200 OK
+```
+
 ```json
 
 {
@@ -241,19 +232,17 @@ PUT /api/account/password
 
 # Get API Keys
 
+List all API keys for the active account. The keys themselves are not returned.
+
 ```
 GET /api/account/keys
 ```
 
-List all API keys for the active account. The keys themselves are not returned.
-
-## Headers
+## Response
 
 ```
 Status: 200 OK
 ```
-
-## Response
 
 ```json
 [
@@ -284,11 +273,12 @@ Status: 200 OK
 
 
 # Create API Key
+
+Create a new API key with the provided permissions. The response to this request is the only time the key string will be returned by the API.
+
 ```
 POST /api/account/keys
 ```
-
-Create a new API key with the provided permissions. The response to this request is the only time the key string will be returned by the API.
 
 ## Input
 
@@ -312,13 +302,11 @@ POST /api/account/keys
 }
 ```
 
-## Headers
+## Response
 
 ```
 Status: 201 Created
 ```
-
-## Response
 
 ```json
 {
@@ -347,7 +335,7 @@ Status: 201 Created
 ```
 
 
-## Update API Key {#update_key}
+# Update API Key {#update_key}
 
 Change the permissions of an existing API key.
 
@@ -355,13 +343,13 @@ Change the permissions of an existing API key.
 PATCH /api/account/keys/:id
 ```
 
-**Input**
+## Input
 
 | Name         | Type   | Optional | Description                                                                                                 |
 | :----------- | :----- | :------- | :---------------------------------------------------------------------------------------------------------- |
 | permissions  | object | true     | An object describing the permissions the new key will have. Any unset permissions will default to ``false`` |
 
-**Example**
+## Example
 
 ```
 PATCH /api/account/keys/test%202_0
@@ -376,13 +364,11 @@ PATCH /api/account/keys/test%202_0
 }
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {
@@ -410,36 +396,38 @@ Status: 200 OK
 ```
 
 
-## Delete API Key {#delete_key}
+# Delete API Key {#delete_key}
+
+Delete an existing API key.
 
 ```
 DELETE /api/account/keys/:id
 ```
 
-Delete an existing API key.
 
-**Example**
-
-```
-DELETE /api/account/keys/test%202_0
-```
-
-**Headers**
+## Example
 
 ```
-Status: No content
+DELETE /api/account/keys/test_1
+```
+
+## Response
+
+```
+Status: 204 No content
 ```
 
 
-## Logout {#logout}
+# Logout {#logout}
+
+Logout by invalidating the current session. It will have no effect for connections authenticated with an API key.
+
 
 ```
 GET /api/account/logout
 ```
 
-Logout by invalidating the current session. It will have no effect for connections authenticated with an API key.
-
-**Headers**
+## Response
 
 ```
 Status: 204 No Content

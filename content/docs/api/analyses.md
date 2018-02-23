@@ -11,19 +11,23 @@ Analyses are the results of a given Virtool analytical pipelines on a single sam
 
 # Get
 
+Get a complete analysis document.
+
 ```
 GET /api/analyses/:analysis_id
 ```
 
-Get a complete analysis document.
+## Example
 
-**Headers**
+```
+GET /api/analyses/uskrqsxm
+```
+
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {
@@ -51,19 +55,19 @@ Status: 200 OK
 
 # Remove
 
-```
-DELETE /api/analyses/:analysis_id
-```
-
 Remove and existing analysis. This request will fail with ``409 Conflict`` if the analysis is still in progress. Cancel the associated job first.
 
-**Example**
+```
+DELETE /api/analyses/:analysis_id
+```
+
+## Example
 
 ```
 DELETE /api/analyses/:analysis_id
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 204 No content
@@ -71,25 +75,23 @@ Status: 204 No content
 
 # BLAST Contig
 
+BLAST a contig that was generated as part of a NuVs analysis. This request will fail with ``400 Bad Request`` for non-NuVs analyses.
+
 ```
 PUT /api/analyses/:analysis_id/:sequence_index/blast
 ```
 
-BLAST a contig that was generated as part of a NuVs analysis. This request will fail with ``400 Bad Request`` for non-NuVs analyses.
-
-**Example**
+## Example
 
 ```
 PUT /api/analyses/yzgqgbld/5/blast
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {
@@ -102,19 +104,19 @@ Status: 200 OK
 
 # Remove BLAST
 
-```
-DELETE /api/analyses/:analysis_id/:sequence_index/blast
-```
-
 Remove a BLAST record from a NuVs contig. This request will fail with ``400 Bad Request`` for non-NuVs analyses.
 
-**Example**
+```
+DELETE /api/analyses/:analysis_id/:sequence_index/blast
+```
+
+## Example
 
 ```
 DELETE /api/analyses/:analysis_id/:sequence_index/blast
 ```
 
-**Headers**
+## Response
 
 ```
 204 No content

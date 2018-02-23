@@ -9,13 +9,15 @@ menu:
 
 Samples represent Illumina sequencing libraries.
 
-## Find {#find}
+# Find
+
+Find samples based on the sample name or creator username.
 
 ```
 GET /api/samples
 ```
 
-**Params**
+## Params
 
 | Name     | Type    | Default | Description                            |
 | :---     | :------ | :------ | :------------------------------------- |
@@ -23,13 +25,17 @@ GET /api/samples
 | page     | integer | 1       | page number of results to return       |
 | per_page | integer | 15      | number of documents to return per page |
 
-**Headers**
+## Example
+
+```
+GET /api/samples?find=test&page=1
+```
+
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {
@@ -58,27 +64,25 @@ Status: 200 OK
 ```
 
 
-## Get {#get}
+# Get
+
+Get the complete representation of a sample.
 
 ```
 GET /api/samples/:sample_id
 ```
 
-Get the complete representation of a sample.
-
-**Example**
+## Example
 
 ```
 GET /api/samples/htosefxu
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {
@@ -130,30 +134,28 @@ Status: 200 OK
 }
 ```
 
-## Create {#create}
+# Create {#create}
+
+Creates a sample record and starts a job that populates the record from a FASTQ file stored in the file manager.
+
+The array of files must contain only one or two items. Samples with arrays containing one item will be assumed to by derived from single-end libraries, while arrays with two items will correspond to paired-end libraries.
 
 ```
 POST /api/samples
 ```
 
-Starts a job that creates a Virtool sample from a file stored in the file manager.
-
-Sample names must be case-insensitive unique.
-
-The array of files must contain only one or two items. Samples with arrays containing one item will be assumed to by derived from single-end libraries, while arrays with two items will correspond to paired-end libraries.
-
-**Input**
+## Input
 
 | Name        | Type   | Description                                            |
 | :---------- | :----- | :----------------------------------------------------- |
-| name        | string | a new name for the sample                              |
+| name        | string | a **unique** name for the sample                       |
 | host        | string | the exact \(not subtraction\) host                     |
 | isolate     | string | the originating isolate                                |
 | locale      | string | the location in which the sample was collected         |
 | subtraction | string | the ``id`` of a previously imported subtraction genome |
 | files       | array  | ids of previously uploaded files                       |
 
-**Example**
+## Example
 
 ```json
 {
@@ -168,13 +170,11 @@ The array of files must contain only one or two items. Samples with arrays conta
 }
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 201 Created
 ```
-
-**Response**
 
 ```json
 {
@@ -209,15 +209,16 @@ Status: 201 Created
 }
 ```
 
-## Edit {#edit}
+# Edit {#edit}
+
+Update modifiable fields of a sample.
+
 
 ```
 PATCH /api/samples/:sample_id
 ```
 
-Update modifiable fields of a sample.
-
-**Input**
+## Input
 
 | Name        | Type   | Description                                              |
 | :---------- | :----- | :------------------------------------------------------- |
@@ -226,7 +227,7 @@ Update modifiable fields of a sample.
 | isolate     | string | the originating isolate                                  |
 | locale      | string | the location in which the sample was collected           |
 
-**Example**
+## Example
 
 ```
 PATCH /api/samples/oggjipxw
@@ -241,13 +242,11 @@ PATCH /api/samples/oggjipxw
 }
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {
@@ -267,13 +266,15 @@ Status: 200 OK
 ```
 
 
-## Edit rights {#edit_rights}
+# Edit rights {#edit_rights}
+
+Edit the access rights for a sample.
 
 ```
 PATCH /api/samples/:sample_id/rights
 ```
 
-**Input**
+## Input
 
 | Name         | Type    | Description                 |
 | :----------- | :------ | :-------------------------- |
@@ -283,7 +284,7 @@ PATCH /api/samples/:sample_id/rights
 | all\_read    | boolean | all users can read sample   |
 | all\_write   | boolean | all users can modify sample |
 
-**Example**
+## Example
 
 ```
 PATCH /api/samples/oggjipxw/rights
@@ -297,13 +298,11 @@ PATCH /api/samples/oggjipxw/rights
 }
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {
@@ -316,48 +315,48 @@ Status: 200 OK
 ```
 
 
-## Remove {#remove}
+# Remove {#remove}
+
+Remove an existing sample record and its associated data files.
 
 ```
 DELETE /api/samples/:sample_id
 ```
 
-Remove and existing sample record and its associated data files.s
-
-**Example**
+## Example
 
 ```
 DELETE /api/samples/oggjipxw
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 204 No Content
 ```
 
 
-## List analyses {#list_analyses}
+# List analyses {#list_analyses}
+
+Retrieve a summary list of analyses associated with a sample.
+
+Returned documents do not include diagnostic data. Use the [analyses](/docs/api/analyses) endpoints for more extensive modification and querying of analysis data.
 
 ```
 GET /api/samples/:sample_id/analyses
 ```
 
-Retrieve a summary list of analyses associated with a sample. Returned documents do not include diagnostic data. Use the [analyses](web-api/analyses) endpoints for more extensive modification and querying of analysis data.
-
-**Example**
+## Example
 
 ```
 GET /api/samples/htosefxu/analyses
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {
@@ -407,22 +406,24 @@ Status: 200 OK
 }
 ```
 
-## Analyze {#analyze}
+# Analyze {#analyze}
+
+Immediately create and placeholder analysis record for a sample and start an analysis job. When the job succeeds the analysis document will be populated.
 
 ```
 POST /api/samples/:sample_id/analyses
 ```
 
-**Input**
+## Input
 
 | Name      | Type   | Description                                   |
 | :-------- | :----- | :-------------------------------------------- |
-| algorithm | string | the algorithm name \(eg. pathoscope\_bowtie\) |
+| algorithm | string | the algorithm name \(*eg*. pathoscope\_bowtie\) |
 
-**Example**
+## Example
 
 ```
-POST /api/samples/htosefxu
+POST /api/samples/htosefxu/analyses
 ```
 
 ```json
@@ -431,14 +432,12 @@ POST /api/samples/htosefxu
 }
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 201 Created
 Location: /api/analyses/fbzypgva
 ```
-
-**Response**
 
 ```json
 {

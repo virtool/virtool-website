@@ -16,29 +16,27 @@ Upload a Illumina read file                     | /upload/reads
 Upload a .hmm file for use with NuVs            | /upload/hmm            
 Upload a host FASTA file                        | /upload/host           
 
-## Uploading a file {#upload}
+# Upload a file {#upload}
+
+Uploads a file into Virtool file manager. The file will given a unique ID composed of an 8-character random alphanumeric string and the supplied ``name`` query parameter separated by a dash.
 
 ```
 POST /upload/:file_type?name=filename
 ```
 
-**Information**
-
-Uploads a file into Virtool file manager. The file will given a unique ID composed of an 8-character random alphanumeric string and the supplied ``name`` query parameter separated by a dash.
-
-**Query**
+## Query
 
 | Name     | Type    | Optional | Description                            |
 | :------- | :------ | :------- | :------------------------------------- |
 | name     | string  | false    | the display name for the file          |
 
-**Headers**
+## Headers
 
 ```
 Status: 201 Created
 ```
 
-**Response**
+## Response
 ```json
 {
     "id" : "iqdhxivo-viruses.json.gz",
@@ -56,17 +54,19 @@ Status: 201 Created
 }
 ```
 
-## Deleting an Upload {#delete}
+# Delete an Upload {#delete}
+
+Testing
 
 ```
 DELETE /api/files/:file_id
 ```
 
-**Information**
+## Information
 
 Deletes a previously uploaded file based on its ``id``.
 
-**Headers**
+## Headers
 
 ```
 Status: 204 No content
