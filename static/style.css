@@ -1,33 +1,5 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Roboto");
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column; }
-
-#wrapper {
-  flex: 1; }
-
-.image {
-  padding: 5px;
-  border: 1px solid #ddd; }
-
-.logo-strip {
-  margin-top: 30px;
-  margin-bottom: 60px; }
-  .logo-strip a {
-    padding: 5px; }
-
-.vtlogo-svg {
-  fill: white; }
-
-.card.is-docs-type {
-  cursor: pointer;
-  transform: scale(1);
-  transition: 150ms transform ease-in-out; }
-  .card.is-docs-type:hover {
-    transform: scale(1.05); }
-
 /*! bulma.io v0.6.2 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {
   from {
@@ -1540,7 +1512,7 @@ a.box:active {
     border-color: #dbdbdb;
     box-shadow: none;
     opacity: 0.5; }
-  .button.is-fullwidth {
+  .button.is-fullwidth, div.api-docs table.button {
     display: flex;
     width: 100%; }
   .button.is-loading {
@@ -1928,8 +1900,9 @@ a.box:active {
   .input.is-large,
   .textarea.is-large {
     font-size: 1.5rem; }
-  .input.is-fullwidth,
-  .textarea.is-fullwidth {
+  .input.is-fullwidth, div.api-docs table.input,
+  .textarea.is-fullwidth,
+  div.api-docs table.textarea {
     display: block;
     width: 100%; }
   .input.is-inline,
@@ -2126,9 +2099,9 @@ a.box:active {
     font-size: 1.5rem; }
   .select.is-disabled::after {
     border-color: #7a7a7a; }
-  .select.is-fullwidth {
+  .select.is-fullwidth, div.api-docs table.select {
     width: 100%; }
-    .select.is-fullwidth select {
+    .select.is-fullwidth select, div.api-docs table.select select {
       width: 100%; }
   .select.is-loading::after {
     animation: spinAround 500ms infinite linear;
@@ -2369,9 +2342,9 @@ a.box:active {
     border-width: 0 1px 1px; }
   .file.is-centered {
     justify-content: center; }
-  .file.is-fullwidth .file-label {
+  .file.is-fullwidth .file-label, div.api-docs table.file .file-label {
     width: 100%; }
-  .file.is-fullwidth .file-name {
+  .file.is-fullwidth .file-name, div.api-docs table.file .file-name {
     flex-grow: 1;
     max-width: none; }
   .file.is-right {
@@ -2801,7 +2774,7 @@ a.box:active {
     position: absolute;
     right: 0.5rem;
     top: 0.5rem; }
-  .notification .title,
+  .notification .title, .notification div.api-docs h1, div.api-docs .notification h1, .notification div.api-docs h2, div.api-docs .notification h2,
   .notification .subtitle,
   .notification .content {
     color: currentColor; }
@@ -2924,119 +2897,143 @@ a.box:active {
   .progress.is-large {
     height: 1.5rem; }
 
-.table {
+.table, div.api-docs table {
   background-color: white;
   color: #363636;
   margin-bottom: 1.5rem; }
-  .table td,
-  .table th {
+  .table td, div.api-docs table td,
+  .table th,
+  div.api-docs table th {
     border: 1px solid #dbdbdb;
     border-width: 0 0 1px;
     padding: 0.5em 0.75em;
     vertical-align: top; }
-    .table td.is-white,
-    .table th.is-white {
+    .table td.is-white, div.api-docs table td.is-white,
+    .table th.is-white,
+    div.api-docs table th.is-white {
       background-color: white;
       border-color: white;
       color: #0a0a0a; }
-    .table td.is-black,
-    .table th.is-black {
+    .table td.is-black, div.api-docs table td.is-black,
+    .table th.is-black,
+    div.api-docs table th.is-black {
       background-color: #0a0a0a;
       border-color: #0a0a0a;
       color: white; }
-    .table td.is-light,
-    .table th.is-light {
+    .table td.is-light, div.api-docs table td.is-light,
+    .table th.is-light,
+    div.api-docs table th.is-light {
       background-color: whitesmoke;
       border-color: whitesmoke;
       color: #363636; }
-    .table td.is-dark,
-    .table th.is-dark {
+    .table td.is-dark, div.api-docs table td.is-dark,
+    .table th.is-dark,
+    div.api-docs table th.is-dark {
       background-color: #363636;
       border-color: #363636;
       color: whitesmoke; }
-    .table td.is-primary,
-    .table th.is-primary {
+    .table td.is-primary, div.api-docs table td.is-primary,
+    .table th.is-primary,
+    div.api-docs table th.is-primary {
       background-color: #3c8786;
       border-color: #3c8786;
       color: #fff; }
-    .table td.is-link,
-    .table th.is-link {
+    .table td.is-link, div.api-docs table td.is-link,
+    .table th.is-link,
+    div.api-docs table th.is-link {
       background-color: #3273dc;
       border-color: #3273dc;
       color: #fff; }
-    .table td.is-info,
-    .table th.is-info {
+    .table td.is-info, div.api-docs table td.is-info,
+    .table th.is-info,
+    div.api-docs table th.is-info {
       background-color: #209cee;
       border-color: #209cee;
       color: #fff; }
-    .table td.is-success,
-    .table th.is-success {
+    .table td.is-success, div.api-docs table td.is-success,
+    .table th.is-success,
+    div.api-docs table th.is-success {
       background-color: #60af98;
       border-color: #60af98;
       color: #fff; }
-    .table td.is-warning,
-    .table th.is-warning {
+    .table td.is-warning, div.api-docs table td.is-warning,
+    .table th.is-warning,
+    div.api-docs table th.is-warning {
       background-color: #ffdd57;
       border-color: #ffdd57;
       color: rgba(0, 0, 0, 0.7); }
-    .table td.is-danger,
-    .table th.is-danger {
+    .table td.is-danger, div.api-docs table td.is-danger,
+    .table th.is-danger,
+    div.api-docs table th.is-danger {
       background-color: #ff3860;
       border-color: #ff3860;
       color: #fff; }
-    .table td.is-narrow,
-    .table th.is-narrow {
+    .table td.is-narrow, div.api-docs table td.is-narrow,
+    .table th.is-narrow,
+    div.api-docs table th.is-narrow {
       white-space: nowrap;
       width: 1%; }
-    .table td.is-selected,
-    .table th.is-selected {
+    .table td.is-selected, div.api-docs table td.is-selected,
+    .table th.is-selected,
+    div.api-docs table th.is-selected {
       background-color: #3c8786;
       color: #fff; }
-      .table td.is-selected a,
+      .table td.is-selected a, div.api-docs table td.is-selected a,
       .table td.is-selected strong,
+      div.api-docs table td.is-selected strong,
       .table th.is-selected a,
-      .table th.is-selected strong {
+      div.api-docs table th.is-selected a,
+      .table th.is-selected strong,
+      div.api-docs table th.is-selected strong {
         color: currentColor; }
-  .table th {
+  .table th, div.api-docs table th {
     color: #363636;
     text-align: left; }
-  .table tr.is-selected {
+  .table tr.is-selected, div.api-docs table tr.is-selected {
     background-color: #3c8786;
     color: #fff; }
-    .table tr.is-selected a,
-    .table tr.is-selected strong {
+    .table tr.is-selected a, div.api-docs table tr.is-selected a,
+    .table tr.is-selected strong,
+    div.api-docs table tr.is-selected strong {
       color: currentColor; }
-    .table tr.is-selected td,
-    .table tr.is-selected th {
+    .table tr.is-selected td, div.api-docs table tr.is-selected td,
+    .table tr.is-selected th,
+    div.api-docs table tr.is-selected th {
       border-color: #fff;
       color: currentColor; }
-  .table thead td,
-  .table thead th {
+  .table thead td, div.api-docs table thead td,
+  .table thead th,
+  div.api-docs table thead th {
     border-width: 0 0 2px;
     color: #363636; }
-  .table tfoot td,
-  .table tfoot th {
+  .table tfoot td, div.api-docs table tfoot td,
+  .table tfoot th,
+  div.api-docs table tfoot th {
     border-width: 2px 0 0;
     color: #363636; }
-  .table tbody tr:last-child td,
-  .table tbody tr:last-child th {
+  .table tbody tr:last-child td, div.api-docs table tbody tr:last-child td,
+  .table tbody tr:last-child th,
+  div.api-docs table tbody tr:last-child th {
     border-bottom-width: 0; }
-  .table.is-bordered td,
-  .table.is-bordered th {
+  .table.is-bordered td, div.api-docs table.is-bordered td,
+  .table.is-bordered th,
+  div.api-docs table.is-bordered th {
     border-width: 1px; }
-  .table.is-bordered tr:last-child td,
-  .table.is-bordered tr:last-child th {
+  .table.is-bordered tr:last-child td, div.api-docs table.is-bordered tr:last-child td,
+  .table.is-bordered tr:last-child th,
+  div.api-docs table.is-bordered tr:last-child th {
     border-bottom-width: 1px; }
-  .table.is-fullwidth {
+  .table.is-fullwidth, div.api-docs table {
     width: 100%; }
-  .table.is-hoverable tbody tr:not(.is-selected):hover {
+  .table.is-hoverable tbody tr:not(.is-selected):hover, div.api-docs table.is-hoverable tbody tr:not(.is-selected):hover {
     background-color: #fafafa; }
-  .table.is-hoverable.is-striped tbody tr:not(.is-selected):hover {
+  .table.is-hoverable.is-striped tbody tr:not(.is-selected):hover, div.api-docs table.is-hoverable.is-striped tbody tr:not(.is-selected):hover {
     background-color: whitesmoke; }
-  .table.is-narrow td,
-  .table.is-narrow th {
+  .table.is-narrow td, div.api-docs table.is-narrow td,
+  .table.is-narrow th,
+  div.api-docs table.is-narrow th {
     padding: 0.25em 0.5em; }
-  .table.is-striped tbody tr:not(.is-selected):nth-child(even) {
+  .table.is-striped tbody tr:not(.is-selected):nth-child(even), div.api-docs table.is-striped tbody tr:not(.is-selected):nth-child(even) {
     background-color: #fafafa; }
 
 .tags {
@@ -3161,52 +3158,54 @@ a.box:active {
 a.tag:hover {
   text-decoration: underline; }
 
-.title,
+.title, div.api-docs h1, div.api-docs h2,
 .subtitle {
   word-break: break-word; }
-  .title:not(:last-child),
+  .title:not(:last-child), div.api-docs h1:not(:last-child), div.api-docs h2:not(:last-child),
   .subtitle:not(:last-child) {
     margin-bottom: 1.5rem; }
-  .title em,
+  .title em, div.api-docs h1 em, div.api-docs h2 em,
   .title span,
+  div.api-docs h1 span,
+  div.api-docs h2 span,
   .subtitle em,
   .subtitle span {
     font-weight: inherit; }
-  .title sub,
+  .title sub, div.api-docs h1 sub, div.api-docs h2 sub,
   .subtitle sub {
     font-size: 0.75em; }
-  .title sup,
+  .title sup, div.api-docs h1 sup, div.api-docs h2 sup,
   .subtitle sup {
     font-size: 0.75em; }
-  .title .tag,
+  .title .tag, div.api-docs h1 .tag, div.api-docs h2 .tag,
   .subtitle .tag {
     vertical-align: middle; }
 
-.title {
+.title, div.api-docs h1, div.api-docs h2 {
   color: #363636;
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.125; }
-  .title strong {
+  .title strong, div.api-docs h1 strong, div.api-docs h2 strong {
     color: inherit;
     font-weight: inherit; }
-  .title + .highlight {
+  .title + .highlight, div.api-docs h1 + .highlight, div.api-docs h2 + .highlight {
     margin-top: -0.75rem; }
-  .title:not(.is-spaced) + .subtitle {
+  .title:not(.is-spaced) + .subtitle, div.api-docs h1:not(.is-spaced) + .subtitle, div.api-docs h2:not(.is-spaced) + .subtitle {
     margin-top: -1.5rem; }
-  .title.is-1 {
+  .title.is-1, div.api-docs h1.is-1, div.api-docs h2.is-1 {
     font-size: 3rem; }
-  .title.is-2 {
+  .title.is-2, div.api-docs h1.is-2, div.api-docs h2.is-2 {
     font-size: 2.5rem; }
-  .title.is-3 {
+  .title.is-3, div.api-docs h1.is-3, div.api-docs h2.is-3 {
     font-size: 2rem; }
-  .title.is-4 {
+  .title.is-4, div.api-docs h1.is-4, div.api-docs h2.is-4 {
     font-size: 1.5rem; }
-  .title.is-5 {
+  .title.is-5, div.api-docs h1, div.api-docs h2.is-5 {
     font-size: 1.25rem; }
-  .title.is-6 {
+  .title.is-6, div.api-docs h1.is-6, div.api-docs h2 {
     font-size: 1rem; }
-  .title.is-7 {
+  .title.is-7, div.api-docs h1.is-7, div.api-docs h2.is-7 {
     font-size: 0.75rem; }
 
 .subtitle {
@@ -3217,7 +3216,7 @@ a.tag:hover {
   .subtitle strong {
     color: #363636;
     font-weight: 600; }
-  .subtitle:not(.is-spaced) + .title {
+  .subtitle:not(.is-spaced) + .title, div.api-docs .subtitle:not(.is-spaced) + h1, div.api-docs .subtitle:not(.is-spaced) + h2 {
     margin-top: -1.5rem; }
   .subtitle.is-1 {
     font-size: 3rem; }
@@ -3227,9 +3226,9 @@ a.tag:hover {
     font-size: 2rem; }
   .subtitle.is-4 {
     font-size: 1.5rem; }
-  .subtitle.is-5 {
+  .subtitle.is-5, div.api-docs h1.subtitle {
     font-size: 1.25rem; }
-  .subtitle.is-6 {
+  .subtitle.is-6, div.api-docs h2.subtitle {
     font-size: 1rem; }
   .subtitle.is-7 {
     font-size: 0.75rem; }
@@ -3557,7 +3556,7 @@ a.dropdown-item {
   flex-grow: 0;
   flex-shrink: 0;
   justify-content: center; }
-  .level-item .title,
+  .level-item .title, .level-item div.api-docs h1, div.api-docs .level-item h1, .level-item div.api-docs h2, div.api-docs .level-item h2,
   .level-item .subtitle {
     margin-bottom: 0; }
   @media screen and (max-width: 768px) {
@@ -4983,7 +4982,7 @@ label.panel-block {
     background-color: white;
     border-color: #dbdbdb;
     border-bottom-color: transparent !important; }
-  .tabs.is-fullwidth li {
+  .tabs.is-fullwidth li, div.api-docs table.tabs li {
     flex-grow: 1;
     flex-shrink: 0; }
   .tabs.is-toggle a {
@@ -5100,12 +5099,12 @@ label.panel-block {
     width: 33.33333%; }
   .columns.is-mobile > .column.is-offset-4 {
     margin-left: 33.33333%; }
-  .columns.is-mobile > .column.is-5 {
+  .columns.is-mobile > .column.is-5, div.api-docs .columns.is-mobile > h1.column {
     flex: none;
     width: 41.66667%; }
   .columns.is-mobile > .column.is-offset-5 {
     margin-left: 41.66667%; }
-  .columns.is-mobile > .column.is-6 {
+  .columns.is-mobile > .column.is-6, div.api-docs .columns.is-mobile > h2.column {
     flex: none;
     width: 50%; }
   .columns.is-mobile > .column.is-offset-6 {
@@ -5322,12 +5321,12 @@ label.panel-block {
       width: 33.33333%; }
     .column.is-offset-4, .column.is-offset-4-tablet {
       margin-left: 33.33333%; }
-    .column.is-5, .column.is-5-tablet {
+    .column.is-5, div.api-docs h1.column, .column.is-5-tablet {
       flex: none;
       width: 41.66667%; }
     .column.is-offset-5, .column.is-offset-5-tablet {
       margin-left: 41.66667%; }
-    .column.is-6, .column.is-6-tablet {
+    .column.is-6, div.api-docs h2.column, .column.is-6-tablet {
       flex: none;
       width: 50%; }
     .column.is-offset-6, .column.is-offset-6-tablet {
@@ -5858,9 +5857,9 @@ label.panel-block {
     --columnGap: 0.75rem; }
   .columns.is-variable.is-4 {
     --columnGap: 1rem; }
-  .columns.is-variable.is-5 {
+  .columns.is-variable.is-5, div.api-docs h1.columns.is-variable {
     --columnGap: 1.25rem; }
-  .columns.is-variable.is-6 {
+  .columns.is-variable.is-6, div.api-docs h2.columns.is-variable {
     --columnGap: 1.5rem; }
   .columns.is-variable.is-7 {
     --columnGap: 1.75rem; }
@@ -5905,10 +5904,10 @@ label.panel-block {
     .tile.is-4 {
       flex: none;
       width: 33.33333%; }
-    .tile.is-5 {
+    .tile.is-5, div.api-docs h1.tile {
       flex: none;
       width: 41.66667%; }
-    .tile.is-6 {
+    .tile.is-6, div.api-docs h2.tile {
       flex: none;
       width: 50%; }
     .tile.is-7 {
@@ -5945,7 +5944,7 @@ label.panel-block {
     .hero.is-white a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-white strong {
       color: inherit; }
-    .hero.is-white .title {
+    .hero.is-white .title, .hero.is-white div.api-docs h1, div.api-docs .hero.is-white h1, .hero.is-white div.api-docs h2, div.api-docs .hero.is-white h2 {
       color: #0a0a0a; }
     .hero.is-white .subtitle {
       color: rgba(10, 10, 10, 0.9); }
@@ -5989,7 +5988,7 @@ label.panel-block {
     .hero.is-black a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-black strong {
       color: inherit; }
-    .hero.is-black .title {
+    .hero.is-black .title, .hero.is-black div.api-docs h1, div.api-docs .hero.is-black h1, .hero.is-black div.api-docs h2, div.api-docs .hero.is-black h2 {
       color: white; }
     .hero.is-black .subtitle {
       color: rgba(255, 255, 255, 0.9); }
@@ -6033,7 +6032,7 @@ label.panel-block {
     .hero.is-light a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-light strong {
       color: inherit; }
-    .hero.is-light .title {
+    .hero.is-light .title, .hero.is-light div.api-docs h1, div.api-docs .hero.is-light h1, .hero.is-light div.api-docs h2, div.api-docs .hero.is-light h2 {
       color: #363636; }
     .hero.is-light .subtitle {
       color: rgba(54, 54, 54, 0.9); }
@@ -6077,7 +6076,7 @@ label.panel-block {
     .hero.is-dark a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-dark strong {
       color: inherit; }
-    .hero.is-dark .title {
+    .hero.is-dark .title, .hero.is-dark div.api-docs h1, div.api-docs .hero.is-dark h1, .hero.is-dark div.api-docs h2, div.api-docs .hero.is-dark h2 {
       color: whitesmoke; }
     .hero.is-dark .subtitle {
       color: rgba(245, 245, 245, 0.9); }
@@ -6121,7 +6120,7 @@ label.panel-block {
     .hero.is-primary a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-primary strong {
       color: inherit; }
-    .hero.is-primary .title {
+    .hero.is-primary .title, .hero.is-primary div.api-docs h1, div.api-docs .hero.is-primary h1, .hero.is-primary div.api-docs h2, div.api-docs .hero.is-primary h2 {
       color: #fff; }
     .hero.is-primary .subtitle {
       color: rgba(255, 255, 255, 0.9); }
@@ -6165,7 +6164,7 @@ label.panel-block {
     .hero.is-link a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-link strong {
       color: inherit; }
-    .hero.is-link .title {
+    .hero.is-link .title, .hero.is-link div.api-docs h1, div.api-docs .hero.is-link h1, .hero.is-link div.api-docs h2, div.api-docs .hero.is-link h2 {
       color: #fff; }
     .hero.is-link .subtitle {
       color: rgba(255, 255, 255, 0.9); }
@@ -6209,7 +6208,7 @@ label.panel-block {
     .hero.is-info a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-info strong {
       color: inherit; }
-    .hero.is-info .title {
+    .hero.is-info .title, .hero.is-info div.api-docs h1, div.api-docs .hero.is-info h1, .hero.is-info div.api-docs h2, div.api-docs .hero.is-info h2 {
       color: #fff; }
     .hero.is-info .subtitle {
       color: rgba(255, 255, 255, 0.9); }
@@ -6253,7 +6252,7 @@ label.panel-block {
     .hero.is-success a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-success strong {
       color: inherit; }
-    .hero.is-success .title {
+    .hero.is-success .title, .hero.is-success div.api-docs h1, div.api-docs .hero.is-success h1, .hero.is-success div.api-docs h2, div.api-docs .hero.is-success h2 {
       color: #fff; }
     .hero.is-success .subtitle {
       color: rgba(255, 255, 255, 0.9); }
@@ -6297,7 +6296,7 @@ label.panel-block {
     .hero.is-warning a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-warning strong {
       color: inherit; }
-    .hero.is-warning .title {
+    .hero.is-warning .title, .hero.is-warning div.api-docs h1, div.api-docs .hero.is-warning h1, .hero.is-warning div.api-docs h2, div.api-docs .hero.is-warning h2 {
       color: rgba(0, 0, 0, 0.7); }
     .hero.is-warning .subtitle {
       color: rgba(0, 0, 0, 0.9); }
@@ -6341,7 +6340,7 @@ label.panel-block {
     .hero.is-danger a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-danger strong {
       color: inherit; }
-    .hero.is-danger .title {
+    .hero.is-danger .title, .hero.is-danger div.api-docs h1, div.api-docs .hero.is-danger h1, .hero.is-danger div.api-docs h2, div.api-docs .hero.is-danger h2 {
       color: #fff; }
     .hero.is-danger .subtitle {
       color: rgba(255, 255, 255, 0.9); }
@@ -6456,5 +6455,44 @@ label.panel-block {
 .footer {
   background-color: whitesmoke;
   padding: 3rem 1.5rem 6rem; }
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
+
+#wrapper {
+  flex: 1; }
+
+.image {
+  padding: 5px;
+  border: 1px solid #ddd; }
+
+.logo-strip {
+  margin-top: 30px;
+  margin-bottom: 60px; }
+  .logo-strip a {
+    padding: 5px; }
+
+.vtlogo-svg {
+  fill: white; }
+
+.card.is-docs-type {
+  cursor: pointer;
+  transform: scale(1);
+  transition: 150ms transform ease-in-out; }
+  .card.is-docs-type:hover {
+    transform: scale(1.05); }
+
+div.api-docs h1 + p {
+  margin-top: 0.5rem;
+  margin-bottom: 2rem; }
+  div.api-docs h1 + p + pre {
+    background-color: #3273dc;
+    color: white; }
+    div.api-docs h1 + p + pre code {
+      font-weight: bolder; }
+div.api-docs h2 {
+  margin-top: 1.2rem; }
 
 /*# sourceMappingURL=style.css.map */
