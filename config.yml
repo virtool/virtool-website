@@ -4,4 +4,4 @@ title: "Virtool"
 theme: "virtool"
 staticDir: ["static"]
 
-
+pygmentsCodeFences: true
