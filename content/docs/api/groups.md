@@ -4,26 +4,24 @@ type: "api"
 menu:
     api:
         parent: endpoints
-        weight: 110
+        weight: 120
 ---
 
 Manage user groups.
 
-## List {#list}
+# List {#list}
+
+List all existing user groups.
 
 ```
 GET /api/groups
 ```
 
-List all existing user groups.
-
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 [
@@ -64,28 +62,25 @@ Status: 200 OK
 ]
 ```
 
+# Get {#get}
 
-## Get {#get}
+Get the complete representation of a single user group.
 
 ```
 GET /api/groups/:group_id
 ```
 
-Get the complete representation of a single user group.
-
-**Example**
+## Example
 
 ```
-/api/groups/administrator
+GET /api/groups/administrator
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {
@@ -108,21 +103,21 @@ Status: 200 OK
 ```
 
 
-## Create {#create}
+# Create {#create}
+
+Create a new group. New groups have no permissions. Requestors must have the ``modify_users`` permission.
 
 ```
 POST /api/groups
 ```
 
-Create a new group. New groups have no permissions. Requestors must have the ``modify_users`` permission.
-
-**Input**
+## Input
 
 | Name     | Type   | Description                                 |
 | :------- | :----- | :------------------------------------------ |
 | group_id | string | a unique id and display name for the group  |
 
-**Example**
+## Example
 
 ```
 POST /api/groups
@@ -134,13 +129,11 @@ POST /api/groups
 }
 ```
 
-**Headers**
+## Response
 
 ```
 Status 201: Created
 ```
-
-**Response**
 
 ```json
 {
@@ -163,18 +156,14 @@ Status 201: Created
 ```
 
 
-## Update Permissions {#set_permissions}
+# Update Permissions {#set_permissions}
+
+Update the permissions of an existing group. Requestors must have the ``modify_users`` permission.
+
+Unset permissions will retain their previous setting.
 
 ```
 PATCH /api/groups/:id
-```
-
-Update the permissions of an existing group. Requestors must have the ``modify_users`` permission. Unset permissions will retain their previous setting.
-
-**Headers**
-
-```
-Status: 200 OK
 ```
 
 **Input**
@@ -193,7 +182,7 @@ Status: 200 OK
 | remove_host     | boolean | members can remove host documents and files               |
 | modify_options  | boolean | members can modify global options                         |
 
-**Example**
+## Example
 
 ```
 PATCH /api/groups/foobar
@@ -208,13 +197,11 @@ PATCH /api/groups/foobar
 }
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {
@@ -236,22 +223,21 @@ Status: 200 OK
 }
 ```
 
+# Remove {#remove}
 
-## Remove {#remove}
+Remove an existing group. Requestors must have the ``modify_users`` permission. This request will fail with ``400 Bad Request`` for the built-in administrator group.
 
 ```
 DELETE /api/groups/:group_id
 ```
 
-Remove an existing group. Requestors must have the ``modify_users`` permission. This request will fail with ``400 Bad Request`` for the built-in administrator group.
-
-**Example**
+## Example
 
 ```
 DELETE /api/groups/foobar
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 204 No Content

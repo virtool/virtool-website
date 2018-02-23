@@ -24,19 +24,18 @@ Uploads a file into Virtool file manager. The file will given a unique ID compos
 POST /upload/:file_type?name=filename
 ```
 
-## Query
+## Parameters
 
 | Name     | Type    | Optional | Description                            |
 | :------- | :------ | :------- | :------------------------------------- |
 | name     | string  | false    | the display name for the file          |
 
-## Headers
+## Response
 
 ```
 Status: 201 Created
 ```
 
-## Response
 ```json
 {
     "id" : "iqdhxivo-viruses.json.gz",
@@ -56,17 +55,13 @@ Status: 201 Created
 
 # Delete an Upload {#delete}
 
-Testing
+Delete a previously uploaded file.
 
 ```
 DELETE /api/files/:file_id
 ```
 
-## Information
-
-Deletes a previously uploaded file based on its ``id``.
-
-## Headers
+## Response
 
 ```
 Status: 204 No content

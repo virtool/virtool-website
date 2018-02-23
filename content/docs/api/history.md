@@ -4,39 +4,37 @@ type: "api"
 menu:
     api:
         parent: endpoints
-        weight: 70
+        weight: 80
 ---
 
 Read and modify virus history.
 
-## Find {#find}
+# Find {#find}
+
+List all virus changes with the most recent changes first. All parameters are optional.
 
 ```
 GET /api/history
 ```
 
-List all virus changes with the most recent changes first. All parameters are optional.
-
-**Parameters**
+## Parameters
 
 | Name     | Type    | Default   | Description                            |
 | :------- | :------ | :-------  | :------------------------------------- |
 | page     | integer | 1         | page number of results to return       |
 | per_page | integer | 15        | number of documents to return per page |
 
-**Example**
+## Example
 
 ```
 GET /api/history?page=1&per_page=2
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {
@@ -87,27 +85,25 @@ Status: 200 OK
 ```
 
 
-## Get {#get}
+# Get {#get}
+
+Get the complete representation of a single virus change.
 
 ```
 GET /api/history/:change_id
 ```
 
-Get the complete representation of a single virus change.
-
-**Example**
+## Example
 
 ```
 GET /api/history/c93ec9a9.1
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {
@@ -148,21 +144,21 @@ Status: 200 OK
 }
 ```
 
-## Revert {#revert}
+# Revert {#revert}
+
+Revert a specific change and all changes that occurred after it. Changes that have been included in index builds cannot be reverted.
 
 ```
 DELETE /api/history/:change_id
 ```
 
-Revert a specific change and all changes that occurred after it. Changes that have been included in index builds cannot be reverted.
-
-**Example**
+## Example
 
 ```
 DELETE /api/history/c93ec9a9.1
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 204 No Content

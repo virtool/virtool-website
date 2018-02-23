@@ -7,7 +7,7 @@ menu:
         weight: 20
 ---
 
-#### JSON Errors
+# JSON Errors
 
 JSON input that cannot be parsed, results in a ``400 Bad Request`` response. No more information is provided with the
 response, so make sure your JSON is formatted properly!
@@ -19,11 +19,8 @@ response, so make sure your JSON is formatted properly!
 }
 ```
 
-- [jsonapi.org](http://jsonapi.org/>)
-- [Python JSON encoder and decoder](https://docs.python.org/3.5/library/json.html)
 
-
-#### Authorization Errors
+# Authorization Errors
 
 For some endpoints, an authorized session is required. Authorized sessions are obtained by logging in through the browser.
 Accessing user-specific endpoints like ``GET /api/account`` without an authorized session will result in the following
@@ -37,7 +34,7 @@ error:
 ```
 
 
-#### Validation Errors
+# Validation Errors
 
 JSON input data for POST and PUT endpoints and URL queries are validated using Cerberus.
 

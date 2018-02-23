@@ -1,31 +1,36 @@
 ---
 title: "Genbank"
 type: "api"
+menu:
+    api:
+        parent: endpoints
+        weight: 130
 ---
 
 Provides endpoints for interacting with NCBI Genbank via the Virtool server.
 
-## Get {#get}
+# Get {#get}
+
+Get a Virtool-style sequence document for the given accession.
+
+The data is retrieved from GenBank and converted into a palatable format.
 
 ```
 GET /api/genbank/:accession
 ```
 
-Get a Virtool-style sequence document for the given accession. The data is retrieved from GenBank and converted into a
-palatable format.
-
-**Example**
+## Example
 
 ```
 GET /api/genbank/KJ406323
 ```
 
-**Headers**
+## Response
+
 ```
 Status: 200 OK
 ```
 
-**Response**
 ```json
 {
     "id": "KJ406323",

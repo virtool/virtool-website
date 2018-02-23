@@ -4,39 +4,40 @@ type: "api"
 menu:
     api:
         parent: endpoints
-        weight: 80
+        weight: 90
 ---
 
 Manage and query HMM annotations and files.
 
-### Find {#find}
+# Find {#find}
+
+Find HMM annotations.
 
 ```
-GET /api/hmms/annotations
+GET /api/hmms?find=rep&per_page=2
 ```
 
-Retrieve a list of HMM annotations.
-
-**Parameters**
+## Parameters
 
 | Name     | Type    | Default   | Description                            |
 | :------- | :------ | :-------  | :------------------------------------- |
+| find     | string  | 	         | term to search by                      |
 | page     | integer | 1         | page number of results to return       |
 | per_page | integer | 15        | number of documents to return per page |
 
-**Example**
+## Example
 
 ```
 GET /api/hmms/page=1&per_page=2
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
 
-**Response**
+
 
 ```json
 {
@@ -53,47 +54,52 @@ Status: 200 OK
 				"replication associated protein",
 				"Rep"
 			],
-			"id": "mqybgqar"
+			"id": "ulryufil"
 		},
 		{
 			"families": {
 				"None": 1,
-				"Geminiviridae": 203
+				"Poxviridae": 1,
+				"Geminiviridae": 196
 			},
-			"cluster": 3,
-			"count": 216,
+			"cluster": 5,
+			"count": 208,
 			"names": [
-				"AC2 protein",
-				"C2 protein",
-				"AC2"
+				"replication enhancer protein",
+				"AC3 protein",
+				"C3 protein"
 			],
-			"id": "zltnktou"
+			"id": "impzkkno"
 		}
 	],
 	"total_count": 4717,
-	"found_count": 4717,
-	"page_count": 2359,
+	"found_count": 79,
+	"page_count": 40,
 	"per_page": 2,
 	"page": 1,
 	"file_exists": true
 }
 ```
 
-### Get {#get}
+# Get {#get}
+
+Get the complete representation of a single HMM annotation.
 
 ```
 GET /api/hmms/annotations/:hmm_id
 ```
 
-Get the complete representation of a single HMM annotation.
-
-**Example**
+## Example
 
 ```
 GET /api/hmms/annotations/zltnktou
 ```
 
-**Response**
+## Response
+
+```
+Status: 200 OK
+```
 
 ```json
 {
@@ -136,22 +142,19 @@ GET /api/hmms/annotations/zltnktou
 }
 ```
 
+# Get Install {#get_install}
 
-### Get Install {#get_install}
+Get the status of the most recent or current install process.
 
 ```
 GET /api/hmms/install
 ```
 
-Get the status of the most recent or current install process.
-
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {
@@ -166,21 +169,21 @@ Status: 200 OK
 ```
 
 
-### Install {#install}
+# Install {#install}
+
+Automatically install the official HMM profiles and annotations.
+
+If data have already been installed, this operation will safely remove the profiles and any unused annotations and reinstall the offical profiles and annotations.
 
 ```
 PATCH /api/hmms/install
 ```
 
-Automatically install the official HMM profiles and annotations. If data have already been installed, this operation will safely remove the profiles and any unused annotations and reinstall the offical profiles and annotations.
-
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {

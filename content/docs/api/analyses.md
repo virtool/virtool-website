@@ -4,7 +4,7 @@ type: "api"
 menu:
     api:
         parent: endpoints
-        weight: 40
+        weight: 50
 ---
 
 Analyses are the results of a given Virtool analytical pipelines on a single sample.

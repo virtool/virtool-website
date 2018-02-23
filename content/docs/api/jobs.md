@@ -1,23 +1,21 @@
 ---
 title: "Jobs"
 type: "api"
+menu:
+    api:
+        parent: endpoints
+        weight: 60
 ---
 
-Endpoints for 
+# Find {#find}
 
-* [Find](#find)
-* [Get](#get)
-* [Cancel](#cancel)
-* [Remove](#remove)
-* [Clear](#clear)
-
-## Find {#find}
+Find jobs by task name or the originating username.
 
 ```
 GET /api/jobs?find=nuvs
 ```
 
-**Query**
+## Parameters
 
 | Name     | Type    | Default |Description                             |
 | :------- | :------ | :------ | :------------------------------------- |
@@ -25,13 +23,11 @@ GET /api/jobs?find=nuvs
 | page     | integer | 1       | page number of results to return       |
 | per_page | integer | 15      | number of documents to return per page |
 
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {
@@ -72,25 +68,23 @@ Status: 200 OK
 ```
 
 
-## Get {#get}
+# Get {#get}
 
 ```
 GET /api/jobs/:job_id
 ```
 
-**Example**
+## Example
 
 ```
 GET /api/jobs/zzpugkyt
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {
@@ -138,22 +132,21 @@ Status: 200 OK
 }
 ```
 
+# Cancel {#cancel}
 
-## Cancel {#cancel}
+Cancel a job safely and cleanly. Cancellation stops all processes and cleans up intermediate data.
+
+Attempting to cancel a job more than once or cancel a finished job will result in no change, but will still return a ``200 OK`` response.
 
 ```
 PUT /api/jobs/:job_id/cancel
 ```
 
-Cancel a job safely and cleanly. Cancelling stops all processes and cleans up intermediate data. Attempting to cancel a job more than once or cancel a finished job will result in no change, but will still return a ``200 OK`` response.
-
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {
@@ -208,53 +201,52 @@ Status: 200 OK
 }
 ```
 
+# Remove {#remove}
 
-## Remove {#remove}
+Remove a job that is complete, cancelled, or errored. If the requested job is running or waiting to run, ``409 Conflict`` will be returned.
 
 ```
 DELETE /api/jobs/:job_id
 ```
 
-Remove a job that is complete, cancelled, or errored. If the requested job is running or waiting to run, ``409 Conflict`` will be returned.
-
-**Example**
+## Example
 
 ```
 DELETE /api/jobs/zzpugkyt
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 204 No Content
 ```
 
-## Clear {#clear}
+# Clear {#clear}
+
+Clear completed, failed, or all finished jobs.
 
 ```
 DELETE /api/jobs/:job_state
 ```
 
-**Values for ``job_state``**
+## Values for ``job_state``
 
 | Value    | Description                                                   |
 | :------- | :------------------------------------------------------------ |
 | complete | jobs whose state is ``complete``                              |
 | failed   | jobs whose state is ``errored`` or ``cancelled``              |
 
-**Example**
+## Example
 
 ```
 DELETE /api/jobs/finished
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {

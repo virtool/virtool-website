@@ -4,56 +4,37 @@ type: "api"
 menu:
     api:
         parent: endpoints
-        weight: 50
+        weight: 60
 ---
 
+# Find
 
-Manage viruses and their history.
-
-* [Find](#find)
-* [Get](#get)
-* [Create](#create)
-* [Edit](#edit)
-* [Remove](#remove)
-* [List Isolates](#list_isolates)
-* [Get Isolate](#get_isolate)
-* [Add Isolate](#add_isolate)
-* [Edit Isolate](#edit_isolate)
-* [Set Default Isolate](#set_default_isolate)
-* [Remove Isolate](#remove_isolate)
-* [Add Sequence](#add_sequence)
-* [Edit Sequence](#edit_sequence)
-* [Remove Sequence](#remove_sequence)
-* [List History](#list_history)
-
-## Find
+Find viruses by their name or abbreviation
 
 ```
 GET /api/viruses
 ```
 
-**Parameters**
+## Parameters
 
 | Name     | Type    | Default   | Description                            |
 | :------- | :------ | :-------  | :------------------------------------- |
-| find     | string  | ``null``  | name or abbreviation to filter by      |
+| find     | string  | ``null``  | name or abbreviation to find   by      |
 | verified | boolean | ``false`` | only show verified viruses             |
 | page     | integer | 1         | page number of results to return       |
 | per_page | integer | 15        | number of documents to return per page |
 
-**Example**
+## Example
 
 ```
-GET http://localhost:9950/api/viruses?find=tobacco&per_page=4
+GET /api/viruses?find=tobacco&per_page=4
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {
@@ -97,25 +78,25 @@ Status: 200 OK
 ```
 
 
-## Get
+# Get
+
+Get a complete representation of a virus.
 
 ```
 GET /api/viruses/:virus_id
 ```
 
-**Example**
+## Example
 
 ```
 GET /api/viruses/a15f9837
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {
@@ -163,26 +144,26 @@ Status: 200 OK
 ```
 
 
-## Create
+# Create
+
+Create a new virus given a name and abbreviation.
+
+Virus names and abbreviations must be unique within the database. Requesting a name or abbreviation that is already in use will result in a ``409 Conflict``. Uniqueness tests for virus names are **case-insensitive**.
+
+Isolates and sequence data must be added in separate requests.
 
 ```
 POST /api/viruses
 ```
 
-**Information**
-
-Isolates and sequence data must be added in separate requests.
-
-Virus names and abbreviations must be unique within the database. Requesting a name or abbreviation that is already in use will result in a ``409 Conflict``. Uniqueness tests for virus names are **case-insensitive**.
-
-**Input**
+## Input
 
 | Name         | Type   | Optional | Description                   |
 | :----------- | :----- | :------- | :---------------------------- |
 | name         | string | False    | the virus name                |
 | abbreviation | string | True     | an abbreviation for the virus |
 
-**Example**
+## Example
 
 ```
 POST /api/viruses
@@ -195,13 +176,11 @@ POST /api/viruses
 }
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 201 Created
 ```
-
-**Response**
 
 ```json
 {
@@ -237,17 +216,17 @@ Status: 201 Created
 ```
 
 
-## Edit
+# Edit
+
+Edit an existing virus by changing its name, abbreviation, or schema.
+
+Virus names and abbreviations must be unique within the database. Requesting a name or abbreviation that is already in use will result in a ``409 Conflict``. Uniqueness tests for virus names are **case-insensitive**.
 
 ```
 PATCH /api/viruses/:virus_id
 ```
 
-**Information**
-
-Virus names and abbreviations must be unique within the database. Requesting a name or abbreviation that is already in use will result in a ``409 Conflict``. Uniqueness tests for virus names are **case-insensitive**.
-
-**Input**
+## Input
 
 | Name         | Type   | Optional | Description                   |
 | :----------- | :----- | :------- | :---------------------------- |
@@ -267,13 +246,11 @@ PATCH /api/viruses/uxusjtcl
 }
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {
@@ -309,48 +286,45 @@ Status: 200 OK
 ```
 
 
-## Remove
+# Remove
+
+Removes a virus, its isolates, and sequences.
 
 ```
 DELETE /api/viruses/:virus_id
 ```
 
-**Information**
-
-Removes a virus, its isolates, and sequences.
-
-**Example**
+## Example
 
 ```
 DELETE /api/viruses/uxusjtcl
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 204 No content
 ```
 
+# List Isolates {#list_isolates}
 
-## List Isolates {#list_isolates}
+List the isolates for a given virus.
 
 ```
 GET /api/viruses/:virus_id/isolates
 ```
 
-List the isolates for a given virus.
+## Example
 
-**Example**
+```
+GET /api/viruses/a15f9837/isolates
+```
 
-/api/viruses/a15f9837/isolates
-
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 [
@@ -386,27 +360,25 @@ Status: 200 OK
 ```
 
 
-## Get Isolate {#get_isolate}
+# Get Isolate {#get_isolate}
+
+Get the complete representation of a single isolate.
 
 ```
 GET /api/viruses/:virus_id/isolates/:isolate_id
 ```
 
-Get the complete representation of a single isolate.
-
-**Example**
+## Example
 
 ```
 GET /api/viruses/a15f9837/isolates/0jrrxdxh
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {
@@ -426,15 +398,17 @@ Status: 200 OK
 ```
 
 
-### Add Isolate {#add_isolate}
+# Add Isolate {#add_isolate}
+
+Add a new isolate.
+
+Setting the isolate to default will steal default status from any existing default isolate. The first added isolate will be set to default regardless of input.
 
 ```
 POST /api/viruses/:virus_id/isolates
 ```
 
-Add a new isolate. Setting the isolate to default will steal default status from any existing default isolate. The first added isolate will be set to default regardless of input.
-
-**Input**
+## Input
 
 | Name         | Type    | Optional | Description                          |
 | :----------- | :------ | :------- | :----------------------------------- |
@@ -443,7 +417,7 @@ Add a new isolate. Setting the isolate to default will steal default status from
 | default      | boolean | True     | set the isolate as default           |
 
 
-**Example**
+## Example
 
 ```
 POST /api/viruses/a15f9837/isolates
@@ -456,13 +430,11 @@ POST /api/viruses/a15f9837/isolates
 }
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 201 Created
 ```
-
-**Response**
 
 ```json
 {
@@ -475,22 +447,22 @@ Status: 201 Created
 ```
 
 
-## Edit Isolate {#edit_isolate}
+# Edit Isolate {#edit_isolate}
+
+Edit an existing isolate.
 
 ```
 PATCH /api/viruses/:virus_id/isolates/:isolate_id
 ```
 
-Edit an existing isolate.
-
-**Input**
+## Input
 
 | Name         | Type    | Optional | Description                          |
 | :----------- | :------ | :------- | :----------------------------------- |
 | source_type  | string  | True     | a source type (eg. isolate, variant) |
 | source_name  | string  | True     | a source name (eg. 8816-v2, Jal-01)  |
 
-**Example**
+## Example
 
 ```
 PATCH /api/viruses/a15f9837/isolates/utcvsgwz
@@ -502,13 +474,11 @@ PATCH /api/viruses/a15f9837/isolates/utcvsgwz
 }
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {
@@ -520,27 +490,25 @@ Status: 200 OK
 }
 ```
 
-## Set Default Isolate {#set_default_isolate}
+# Set Default Isolate {#set_default_isolate}
+
+Sets an isolate as default **and** unsets any existing default isolate. Take no input.
 
 ```
 PUT /api/viruses/:virus_id/isolates/:isolate_id/default
 ```
 
-Sets an isolate as default **and** unsets any existing default isolate. Take no input.
-
-**Example**
+## Example
 
 ```
 PUT /api/viruses/a15f9837/isolates/utcvsgwz/default
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {
@@ -552,33 +520,28 @@ Status: 200 OK
 }
 ```
 
+# Remove Isolate {#remove_isolate}
 
-## Remove Isolate {#remove_isolate}
+Removes an isolate and its sequences. If it is the default isolate, the first isolate in the list will be set as default.
 
 ```
 DELETE /api/viruses/:virus_id/isolates/:isolate_id
 ```
 
-Removes an isolate and its sequences. If it is the default isolate, the first isolate in the list will be set as default.
-
-**Example**
+## Example
 
 ```
 DELETE /api/viruses/a15f9837/isolates/utcvsgwz/default
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 204 No content
 ```
 
 
-## Add Sequence {#add_sequence}
-
-```
-POST /api/viruses/:virus_id/isolates/:isolate_id/sequences
-```
+# Add Sequence {#add_sequence}
 
 Add a sequence to an isolate.
 
@@ -588,7 +551,11 @@ Providing a value for ``segment`` will have no effect unless the parents virus h
 
 Values provided for ``sequence`` must be plain text, **not** FASTA formatted. Sequences are automatically stripped of whitespace.
 
-**Input**
+```
+POST /api/viruses/:virus_id/isolates/:isolate_id/sequences
+```
+
+## Input
 
 | Name         | Type   | Optional | Description                                  |
 | :----------- | :----- | :------- | :------------------------------------------- |
@@ -598,7 +565,7 @@ Values provided for ``sequence`` must be plain text, **not** FASTA formatted. Se
 | segment      | string | true     | the schema segment associated with the virus |
 | sequence     | string | false    | an abbreviation for the virus                |
 
-**Example**
+## Example
 
 ```
 POST /api/viruses/a15f9837/isolates/utcvsgwz/sequences
@@ -612,13 +579,11 @@ POST /api/viruses/a15f9837/isolates/utcvsgwz/sequences
 }
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 201 Created
 ```
-
-**Response**
 
 ```json
 {
@@ -632,12 +597,7 @@ Status: 201 Created
 }
 ```
 
-
-## Edit Sequence {#edit_sequence}
-
-```
-PATCH /api/viruses/:virus_id/isolates/:isolate_id/sequences/:sequence_id
-```
+# Edit Sequence {#edit_sequence}
 
 Edit an existing sequence.
 
@@ -645,7 +605,11 @@ Providing a value for ``segment`` will have no effect unless the parents virus h
 
 Values provided for ``sequence`` must be plain text, **not** FASTA formatted. Sequences are automatically stripped of whitespace.
 
-**Input**
+```
+PATCH /api/viruses/:virus_id/isolates/:isolate_id/sequences/:sequence_id
+```
+
+## Input
 
 | Name         | Type   | Optional | Description                                  |
 | :----------- | :----- | :------- | :------------------------------------------- |
@@ -654,7 +618,7 @@ Values provided for ``sequence`` must be plain text, **not** FASTA formatted. Se
 | segment      | string | true     | the schema segment for the sequence          |
 | sequence     | string | false    | the sequence                                 |
 
-**Example**
+## Example
 
 ```
 PATCH /api/viruses/a15f9837/isolates/utcvsgwz/sequences/foobar
@@ -667,13 +631,11 @@ PATCH /api/viruses/a15f9837/isolates/utcvsgwz/sequences/foobar
 }
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {
@@ -687,51 +649,47 @@ Status: 200 OK
 }
 ```
 
+# Remove Sequence {#remove_sequence}
 
-## Remove Sequence {#remove_sequence}
+Remove an existing sequence from an isolate.
 
 ```
 DELETE /api/viruses/:virus_id/isolates/:isolate_id/sequences/:sequence_id
 ```
 
-Remove an existing sequence from an isolate.
-
-**Example**
+## Example
 
 ```
 DELETE /api/viruses/a15f9837/isolates/utcvsgwz/sequences/foobar
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 204 No Content
 ```
 
+# List History {#list_history}
 
-## List History {#list_history}
+Retrieves a list of all changes made to the virus.
+
+See [history endpoints](/docs/api/history/) for more advanced querying and modification of history data.
 
 ```
 GET /api/viruses/:virus_id/history
 ```
 
-Retrieves a list of all changes made to the virus.
-
-See [history endpoints](history.md) for more advanced querying and modification of history data.
-
-**Example**
+## Example
 
 ```
 GET /api/viruses/a15f9837/history
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 [

@@ -4,26 +4,24 @@ type: "api"
 menu:
     api:
         parent: endpoints
-        weight: 100
+        weight: 110
 ---
 
 Methods intended for administrative management of users.
 
-## List {#list}
+# List {#list}
+
+Get a list of complete representations of all users. The requestor must have the ``modify_user`` permission.
 
 ```
 GET /api/users
 ```
 
-Get a list of complete representations of all users. The requestor must have the ``modify_user`` permission.
-
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 [
@@ -76,32 +74,25 @@ Status: 200 OK
 ]
 ```
 
+# Get {#get}
 
-## Get {#get}
+Get the complete representation of a single user.
 
 ```
 GET /api/users/:user_id
 ```
 
-**Headers**
-
-```
-Status: 200 OK
-```
-
-**Example**
+## Example
 
 ```
 GET /api/users/fred
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {
@@ -129,13 +120,13 @@ Status: 200 OK
 ```
 
 
-## Create {#create}
+# Create {#create}
+
+Create a new user. The requestor must have the ``modify_user`` permission.
 
 ```
 POST /api/users
 ```
-
-Create a new user. The requestor must have the ``modify_user`` permission.
 
 **Input**
 
@@ -143,9 +134,9 @@ Create a new user. The requestor must have the ``modify_user`` permission.
 | :---------- | :----- | :------- | :----------------------------------------------- |
 | user_id     | String | True     | the desired username                             |
 | password    | String | True     | the desired password                             |
-| force_reset | String | False    | force password reset on login (default=``True``) |
+| force_reset | String | False    | force password reset on login (default=``true``) |
 
-**Example**
+## Example
 
 ```
 POST /api/users
@@ -158,13 +149,11 @@ POST /api/users
 }
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 201 Created
 ```
-
-**Response**
 
 ```json
 {
@@ -192,15 +181,15 @@ Status: 201 Created
 ```
 
 
-## Edit {#edit}
+# Edit {#edit}
+
+Change the password, primary group, or force reset setting of an existing user.
 
 ```
 PATCH /api/users/:user_id
 ```
 
-Change the password, primary group, or force reset setting of an existing user.
-
-**Input**
+## Input
 
 | Name        | Type     | Description                                       |
 | :---------- | :------- | :------------------------------------------------ |
@@ -208,7 +197,7 @@ Change the password, primary group, or force reset setting of an existing user.
 | password    | string   | the new password                                  |
 | primary_group | string | the users primary group used for sample rights    |          
 
-**Example**
+## Example
 
 ```
 PATCH /api/users/fred
@@ -221,13 +210,11 @@ PATCH /api/users/fred
 }
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {
@@ -255,21 +242,22 @@ Status: 200 OK
 ```
 
 
-## Add To Group {#add_group}
+# Add To Group {#add_group}
+
+Add a user to a user group.
+
 
 ```
 POST /api/users/:user_id/group
 ```
 
-Add a user to a user group.
-
-**Input**
+## Input
 
 | Name     | Type   | Description                                       |
 | :------- | :----- | :------------------------------------------------ |
 | group_id | string | force a password reset next time the user logs in |
 
-**Example**
+## Example
 
 ```
 POST /api/users/fred/group
@@ -281,13 +269,11 @@ POST /api/users/fred/group
 }
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 200 Created
 ```
-
-**Response**
 
 ```json
 {
@@ -316,28 +302,25 @@ Status: 200 Created
 }
 ```
 
+# Remove From Group {#remove_group}
 
-## Remove From Group {#remove_group}
+Remove a user from a user group.
 
 ```
 DELETE /api/users/:user_id/groups/:group_id
 ```
 
-Remove a user from a user group.
-
-**Example**
+## Example
 
 ```
 DELETE /api/users/fred/groups/foobar
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 [
@@ -346,21 +329,21 @@ Status: 200 OK
 ```
 
 
-## Remove {#remove}
+# Remove {#remove}
+
+Remove a user account. The requestor must have the ``modify_user`` permission.
 
 ```
 DELETE /api/users/:user_id
 ```
 
-**Example**
+## Example
 
 ```
 DELETE /api/users/bill
 ```
 
-Remove a user account. The requestor must have the ``modify_user`` permission.
-
-**Headers**
+## Response
 
 ```
 Status: 204 No content

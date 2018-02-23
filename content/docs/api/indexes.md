@@ -4,24 +4,22 @@ type: "api"
 menu:
     api:
         parent: endpoints
-        weight: 60
+        weight: 70
 ---
 
-## Find
+# List
+
+List all virus reference indexes. Takes no query or input.
 
 ```
 GET /api/indexes
 ```
 
-Find virus reference indexes. Takes no query or input.
-
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {
@@ -52,29 +50,27 @@ Status: 200 OK
 ```
 
 
-## Get
+# Get
+
+Get indexes by their unique id or version number.
 
 ```
 GET /api/indexes/:index_id
 GET /api/indexes/:index_version
 ```
 
-Get indexes by their unique id or version number.
-
-**Example**
+## Example
 
 ```
 GET /api/indexes/jiwncaqr
 GET /api/indexes/0
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {
@@ -113,21 +109,19 @@ Status: 200 OK
 ```
 
 
-## Get Unbuilt
+# Get Unbuilt
+
+Return all history associated with unbuilt changes. This information would be included next time an index build is triggered.
 
 ```
 GET /api/indexes/unbuilt
 ```
 
-Return all history associated with unbuilt changes. This information would be included next time an index build is triggered.
-
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {
@@ -154,22 +148,19 @@ Status: 200 OK
 }
 ```
 
+# Create
 
-## Create
+Create an index by starting a new index build job.
 
 ```
 POST /api/indexes
 ```
 
-Create an index by starting a new index build job.
-
-**Headers**
+## Response
 
 ```
 Status: 201 Created
 ```
-
-**Response**
 
 ```json
 {
@@ -192,29 +183,27 @@ Status: 201 Created
 }
 ```
 
-## Find History {#find_history}
+# Find History {#find_history}
+
+Find the virus changes that are included in a given index build.
 
 ```
 GET /api/indexes/:index_id/history
 GET /api/indexes/:index_version/history
 ```
 
-Find the virus changes that are included in a given index build.
-
-**Example**
+## Example
 
 ```
 GET /api/indexes/bznqwjsa/history
 GET /api/indexes/1/history
 ```
 
-**Headers**
+## Response
 
 ```
 Status: 200 OK
 ```
-
-**Response**
 
 ```json
 {

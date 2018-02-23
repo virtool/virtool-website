@@ -4,7 +4,7 @@ type: "api"
 menu:
     api:
         parent: endpoints
-        weight: 30
+        weight: 40
 ---
 
 Samples represent Illumina sequencing libraries.
@@ -17,7 +17,7 @@ Find samples based on the sample name or creator username.
 GET /api/samples
 ```
 
-## Params
+## Parameters
 
 | Name     | Type    | Default | Description                            |
 | :---     | :------ | :------ | :------------------------------------- |
