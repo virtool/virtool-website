@@ -11,7 +11,7 @@
         <div class="columns">
             <div class="column is-2">
                 <aside class="menu">
-                    {{ range .Site.Menus.manual }}
+                    {{ range .Site.Menus.api }}
                         <p class="menu-label">
                             {{ .Name }}
                         </p>
@@ -25,6 +25,21 @@
                         </ul>
                     {{ end }}
                 </aside>
+            </div>
+
+            <div class="column is-10 api-docs">
+                {{ $divided := (split .Content "<h1") }}
+                {{ $length := sub (len $divided) 1 }}
+
+                {{ range first 1 $divided }}
+                    {{ safeHTML . }}
+                {{ end }}
+
+                {{ range last $length $divided }}
+                    <div class="box">
+                        {{ safeHTML (delimit (slice "<h1" .) "") }}
+                    </div>
+                {{ end }}
             </div>
         </div>    
     </section>
