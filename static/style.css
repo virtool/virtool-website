@@ -3027,13 +3027,13 @@ a.box:active {
     width: 100%; }
   .table.is-hoverable tbody tr:not(.is-selected):hover, div.api-docs table.is-hoverable tbody tr:not(.is-selected):hover {
     background-color: #fafafa; }
-  .table.is-hoverable.is-striped tbody tr:not(.is-selected):hover, div.api-docs table.is-hoverable.is-striped tbody tr:not(.is-selected):hover {
+  .table.is-hoverable.is-striped tbody tr:not(.is-selected):hover, div.api-docs table.is-hoverable tbody tr:not(.is-selected):hover {
     background-color: whitesmoke; }
   .table.is-narrow td, div.api-docs table.is-narrow td,
   .table.is-narrow th,
   div.api-docs table.is-narrow th {
     padding: 0.25em 0.5em; }
-  .table.is-striped tbody tr:not(.is-selected):nth-child(even), div.api-docs table.is-striped tbody tr:not(.is-selected):nth-child(even) {
+  .table.is-striped tbody tr:not(.is-selected):nth-child(even), div.api-docs table tbody tr:not(.is-selected):nth-child(even) {
     background-color: #fafafa; }
 
 .tags {
@@ -6484,15 +6484,17 @@ body {
   .card.is-docs-type:hover {
     transform: scale(1.05); }
 
-div.api-docs h1 + p {
+div.api-docs p {
   margin-top: 0.5rem;
-  margin-bottom: 2rem; }
-  div.api-docs h1 + p + pre {
-    background-color: #3273dc;
-    color: white; }
-    div.api-docs h1 + p + pre code {
-      font-weight: bolder; }
+  margin-bottom: 1rem; }
+div.api-docs div.box pre:first-of-type {
+  background-color: #3273dc;
+  color: white; }
+  div.api-docs div.box pre:first-of-type code {
+    font-weight: bolder; }
 div.api-docs h2 {
   margin-top: 1.2rem; }
+div.api-docs div.highlight {
+  overflow-x: scroll; }
 
 /*# sourceMappingURL=style.css.map */

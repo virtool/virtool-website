@@ -40,21 +40,23 @@ div.api-docs
     table
         @extend .table
         @extend .is-fullwidth
+        @extend .is-striped
 
     h1
         @extend .title
         @extend .is-5
 
-        + p
-            margin-top: 0.5rem
-            margin-bottom: 2rem
+    p
+        margin-top: 0.5rem
+        margin-bottom: 1rem
 
-            + pre
-                background-color: $blue
-                color: white
+    div.box
+        pre:first-of-type
+            background-color: $blue
+            color: white
 
-                code
-                    font-weight: bolder
+            code
+                font-weight: bolder
 
     h2
         @extend .title
@@ -62,5 +64,5 @@ div.api-docs
 
         margin-top: 1.2rem
 
-    p:first-child
-        @extend .box
+    div.highlight
+        overflow-x: scroll

@@ -1,6 +1,6 @@
 {{ define "main" }}
-<div class="container">
-    <section class="section">
+<section class="section">
+    <div class="container">    
         <nav class="breadcrumb" aria-label="breadcrumbs">
             <ul>
                 <li><a class="title is-4" href="/docs/api">API Documentation</a></li>
@@ -28,9 +28,22 @@
             </div>
 
             <div class="column api-docs">
-                {{ .Content }}
+                {{ $divided := (split .Content "<h1") }}
+                {{ $length := sub (len $divided) 1 }}
+
+                {{ range first 1 $divided }}
+                    <div class="box">
+                        {{ safeHTML . }}
+                    </div>
+                {{ end }}
+
+                {{ range last $length $divided }}
+                    <div class="box">
+                        {{ safeHTML (delimit (slice "<h1" .) "") }}
+                    </div>
+                {{ end }}
             </div>
-        </div>
-    </section>
-</div>
+        </div>    
+    </div>
+</section>
 {{ end }}
