@@ -6479,10 +6479,15 @@ body {
 
 .card.is-docs-type {
   cursor: pointer;
+  margin: 1rem;
   transform: scale(1);
-  transition: 150ms transform ease-in-out; }
+  transition: 150ms transform ease-in-out;
+  width: 100%; }
   .card.is-docs-type:hover {
     transform: scale(1.05); }
+
+.icon + span {
+  padding-left: 0.5rem; }
 
 div.docs {
   display: flex;
