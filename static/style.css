@@ -6484,17 +6484,22 @@ body {
   .card.is-docs-type:hover {
     transform: scale(1.05); }
 
-div.api-docs p {
-  margin-top: 0.5rem;
-  margin-bottom: 1rem; }
-div.api-docs div.box pre:first-of-type {
-  background-color: #3273dc;
-  color: white; }
-  div.api-docs div.box pre:first-of-type code {
-    font-weight: bolder; }
-div.api-docs h2 {
-  margin-top: 1.2rem; }
-div.api-docs div.highlight {
-  overflow-x: scroll; }
+div.api-docs {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; }
+  div.api-docs p {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem; }
+  div.api-docs div.box > pre:first-of-type {
+    margin-bottom: 2rem;
+    background-color: #39807f;
+    color: white; }
+    div.api-docs div.box > pre:first-of-type code {
+      font-weight: bolder; }
+  div.api-docs h2 {
+    margin-top: 1.2rem; }
+  div.api-docs div.highlight pre {
+    overflow-x: scroll; }
 
 /*# sourceMappingURL=style.css.map */

@@ -37,6 +37,10 @@ body
         transform: scale(1.05)
 
 div.api-docs
+    display: flex
+    flex-direction: column
+    align-items: stretch
+
     table
         @extend .table
         @extend .is-fullwidth
@@ -51,8 +55,9 @@ div.api-docs
         margin-bottom: 1rem
 
     div.box
-        pre:first-of-type
-            background-color: $blue
+        > pre:first-of-type
+            margin-bottom: 2rem
+            background-color: darken($primary, 2%)
             color: white
 
             code
@@ -65,4 +70,5 @@ div.api-docs
         margin-top: 1.2rem
 
     div.highlight
-        overflow-x: scroll
+        pre
+            overflow-x: scroll
