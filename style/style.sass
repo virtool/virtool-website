@@ -36,7 +36,7 @@ body
     &:hover        
         transform: scale(1.05)
 
-div.api-docs
+div.docs
     display: flex
     flex-direction: column
     align-items: stretch
@@ -50,25 +50,32 @@ div.api-docs
         @extend .title
         @extend .is-5
 
-    p
-        margin-top: 0.5rem
-        margin-bottom: 1rem
-
-    div.box
-        > pre:first-of-type
-            margin-bottom: 2rem
-            background-color: darken($primary, 2%)
-            color: white
-
-            code
-                font-weight: bolder
-
     h2
         @extend .title
         @extend .is-6
 
-        margin-top: 1.2rem
+    p
+        margin-top: 0.5rem
+        margin-bottom: 1rem
 
-    div.highlight
-        pre
-            overflow-x: scroll
+    &.docs-manual
+
+        h2
+
+    &.docs-api
+
+        div.box
+            > pre:first-of-type
+                margin-bottom: 2rem
+                background-color: darken($primary, 2%)
+                color: white
+
+                code
+                    font-weight: bolder
+
+        h2
+            margin-top: 1.2rem
+
+        div.highlight
+            pre
+                overflow-x: scroll
