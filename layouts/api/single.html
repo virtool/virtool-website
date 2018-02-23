@@ -1,36 +1,36 @@
 {{ define "main" }}
-    <div class="container">
-        <section class="section">
-            <nav class="breadcrumb" aria-label="breadcrumbs">
-                <ul>
-                    <li><a class="title is-4" href="/docs/api">API Documentation</a></li>
-                    <li><a href="#">{{ .Title }}</a></li>
-                </ul>
-            </nav>
-    
-            <div class="columns">
-                <div class="column is-narrow">
-                    <aside class="menu" style="min-width: 12rem">
-                        {{ range .Site.Menus.api }}
-                            <p class="menu-label">
-                                {{ .Name }}
-                            </p>
+<div class="container">
+    <section class="section">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+            <ul>
+                <li><a class="title is-4" href="/docs/api">API Documentation</a></li>
+                <li><a href="#">{{ .Title }}</a></li>
+            </ul>
+        </nav>
 
-                            <ul class="menu-list">
-                                {{ range .Children }}
-                                    <li>
-                                        <a href="{{ .URL }}">{{ .Name }}</a>
-                                    </li>                                
-                                {{ end }}
-                            </ul>
-                        {{ end }}
-                    </aside>
-                </div>
-    
-                <div class="column api-docs">
-                    {{ .Content }}
-                </div>
+        <div class="columns">
+            <div class="column is-narrow">
+                <aside class="menu" style="min-width: 10rem">
+                    {{ range .Site.Menus.api }}
+                        <p class="menu-label">
+                            {{ .Name }}
+                        </p>
+
+                        <ul class="menu-list">
+                            {{ range .Children }}
+                                <li>
+                                    <a href="{{ .URL }}">{{ .Name }}</a>
+                                </li>                                
+                            {{ end }}
+                        </ul>
+                    {{ end }}
+                </aside>
             </div>
-        </section>
-    </div>
+
+            <div class="column api-docs">
+                {{ .Content }}
+            </div>
+        </div>
+    </section>
+</div>
 {{ end }}
