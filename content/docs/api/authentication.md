@@ -3,7 +3,7 @@ title: "Authentication"
 type: "api"
 menu:
     api:
-        parent: overview
+        parent: Overview
         weight: 10
 ---
 

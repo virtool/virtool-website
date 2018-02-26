@@ -92,6 +92,3 @@ Virtool relies on a number of common bioinformatics programs. These should be av
 | [Bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml) | 2.3.2 | High-throughput read alignment |
 | [SPAdes](http://bioinf.spbau.ru/spades) | v3.8.1 | De novo assembly |
 | [HMMER](http://hmmer.org/) | 3.1b2 | Motif detection |
-
-
-

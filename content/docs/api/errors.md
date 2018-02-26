@@ -3,7 +3,7 @@ title: "Errors"
 type: "api"
 menu:
     api:
-        parent: overview
+        parent: Overview
         weight: 20
 ---
 

@@ -1,4 +1,6 @@
 {{ define "main" }}
+
+{{ $currentPage := . }}
 <div class="container">
     <section class="section">
         <div class="level">
@@ -6,7 +8,8 @@
                 <div class="level-item">
                     <nav class="breadcrumb" aria-label="breadcrumbs">
                         <ul>
-                            <li><a class="title is-4" href="/docs/manual">User Manual</a></li>
+                            <li><a class="title is-4" href="/docs">Docs</a></li>
+                            <li><a class="title is-5" href="/docs/manual">Manual</a></li>
                             <li><a href="#">{{ .Title }}</a></li>
                         </ul>
                     </nav>
@@ -33,7 +36,9 @@
                         <ul class="menu-list">
                             {{ range .Children }}
                                 <li>
-                                    <a href="{{ .URL }}">{{ .Name }}</a>
+                                    <a class="{{ if $currentPage.IsMenuCurrent "manual" . }}is-active{{ end }}" href="{{ .URL }}">
+                                        {{ .Name }}
+                                    </a>
                                 </li>                                
                             {{ end }}
                         </ul>

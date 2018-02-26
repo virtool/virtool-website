@@ -3,7 +3,7 @@ title: "Analyses"
 type: "api"
 menu:
     api:
-        parent: endpoints
+        parent: Endpoints
         weight: 50
 ---
 

@@ -3,7 +3,7 @@ title: "Account"
 type: "api"
 menu:
     api:
-        parent: endpoints
+        parent: Endpoints
         weight: 10
 ---
 

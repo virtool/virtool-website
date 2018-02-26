@@ -3,7 +3,7 @@ title: "History"
 type: "api"
 menu:
     api:
-        parent: endpoints
+        parent: Endpoints
         weight: 80
 ---
 

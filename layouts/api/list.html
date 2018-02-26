@@ -1,34 +1,20 @@
 {{ define "main" }}
 <div class="container">
     <section class="section">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-            <ul>
-                <li><a class="title is-4" href="/docs/api">API Documentation</a></li>
-            </ul>
-        </nav>
-
-        <div class="columns is-multiline">
-            {{ range .Site.Menus.api }}
-                {{ range .Children }}
-                <div class="column is-4">
-                    <a href="{{ .URL }}">
-                        <div class="card is-docs-type">                    
-                            <header class="card-header">
-                                <p class="card-header-title">
-                                    {{ .Name }}
-                                </p>                      
-                            </header>
-                            <div class="card-content">
-                                <div class="content">
-                                    Test
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+        <div class="level">
+            <div class="level-left">
+                <div class="level-item">
+                    <nav class="breadcrumb" aria-label="breadcrumbs">
+                        <ul>
+                            <li><a class="title is-4" href="/docs">Docs</a></li>
+                            <li><a class="title is-5" href="/docs/api">API</a></li>
+                        </ul>
+                    </nav>
                 </div>
-                {{ end }}
-            {{ end }}
+            </div>
         </div>
+
+        {{ partial "tiles.html" .Site.Menus.api }}   
     </section>
 </div>
 {{ end }}

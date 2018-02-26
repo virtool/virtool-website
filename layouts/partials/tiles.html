@@ -1,0 +1,42 @@
+{{ range . }}
+    <h2 class="title is-5">
+            {{ .Name }}
+        </h2>
+
+    {{ $children := .Children }}
+
+    {{ range $index, $value := .Children }}
+        {{ if or (eq $index 0) (modBool $index 3) }}
+            {{ if or (eq $index 0) (modBool $index 3) }}
+            <div class="tile is-ancestor">
+                {{ $first := eq $index 0 }}
+                {{ if $first }}
+                    {{ range first 3 $children }}
+                    <a href="{{ .URL }}" class="tile is-4">                    
+                        <div class="card is-fullwidth is-docs-type">                    
+                            <header class="card-header">
+                                <p class="card-header-title">
+                                    {{ .Name }}
+                                </p>                      
+                            </header>
+                        </div>
+                    </a>
+                    {{ end }}
+                {{ else }}
+                    {{ range first 3 (after $index $children) }}
+                    <a href="{{ .URL }}" class="tile is-4">                    
+                        <div class="card is-fullwidth is-docs-type">                    
+                            <header class="card-header">
+                                <p class="card-header-title">
+                                    {{ .Name }}
+                                </p>                      
+                            </header>
+                        </div>
+                    </a>
+                    {{ end }}
+                {{ end }}
+            </div>
+            {{ end }}
+        {{ end }}
+    {{ end }}
+{{ end }}

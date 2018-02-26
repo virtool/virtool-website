@@ -1,12 +1,27 @@
 {{ define "main" }}
 <div class="container">
-    <section class="section">    
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-            <ul>
-                <li><a class="title is-4" href="/docs/api">HTTP API</a></li>
-                <li><a href="#">{{ .Title }}</a></li>
-            </ul>
-        </nav>
+    <section class="section"> 
+        <div class="level">
+            <div class="level-left">
+                <div class="level-item">
+                    <nav class="breadcrumb" aria-label="breadcrumbs">
+                        <ul>
+                            <li><a class="title is-4" href="/docs">Docs</a></li>
+                            <li><a class="title is-5" href="/docs/api">API</a></li>
+                            <li><a href="#">{{ .Title }}</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="level-right">
+                <div class="level-item is-size-7">
+                    <div class="tags has-addons">
+                        <span class="tag is-dark">Updated</span>
+                        <span class="tag is-info">{{ .GitInfo.AuthorDate.Format "January 2, 2006" }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="columns">
             <div class="column is-2">

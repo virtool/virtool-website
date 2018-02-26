@@ -9,11 +9,16 @@ menu:
 
 If you are using HTTPS or running Virtool on a public server, we suggest running it behind a reverse proxy server such as [NGINX](https://www.nginx.com/).
 
-> #### danger::Important
->
-> It is not currently possible to load balance more than one Virtool instance using NGINX or any other load balancer or reverse proxy server.
 
 # NGINX
+<article class="message is-warning is-flowing">
+  <div class="message-header">
+    Warning
+  </div>
+  <div class="message-body">
+    It is not currently possible to load balance more than one Virtool instance using NGINX or any other load balancer or reverse proxy server.
+  </div>
+</article>
 
 Because Virtool makes use of Websockets, some advanced configuration of NGINX is required. First, make sure you are running at least version 1.3.13 of NGINX.
 

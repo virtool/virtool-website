@@ -32,10 +32,14 @@ Error messages will appear if the connection fails or the provided database name
 
 !["Setup MongoDB connection](/docs_images/setup_connect_mongodb.png)
 
-> #### info::Note
-> More advanced MongoDB configurations, including improved security features, will be
-> available in future releases.
-
+<article class="message is-info is-flowing">
+  <div class="message-header">
+    Note
+  </div>
+  <div class="message-body">
+    More advanced MongoDB configurations, including improved security features, will be available in future releases.
+  </div>
+</article>
 
 # Add First User {#first_user}
 

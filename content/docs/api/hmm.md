@@ -3,7 +3,7 @@ title: "HMM"
 type: "api"
 menu:
     api:
-        parent: endpoints
+        parent: Endpoints
         weight: 90
 ---
 
