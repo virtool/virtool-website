@@ -6486,7 +6486,7 @@ body {
   .card.is-docs-type:hover {
     transform: scale(1.05); }
 
-.icon + span {
+p.card-header-title .icon + span {
   padding-left: 0.5rem; }
 
 div.docs {
