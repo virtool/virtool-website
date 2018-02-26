@@ -1,8 +1,8 @@
 ---
-title: "User Management"
+title: "Administration"
 type: "manual"
 menu:
     manual:
         parent: "Reference"
-        weight: 110
+        weight: 100
 ---
