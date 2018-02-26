@@ -11,10 +11,10 @@ menu:
 
 We recommend the following minimum specifications for serving Virtool:
 
-* Linux operating system
-* 32 GB RAM
-* 1 TB fast storage
-* 1 Gb network connection
+- Linux operating system
+- 32 GB RAM
+- 1 TB fast storage
+- 1 Gb network connection
 
 Higher CPU clock speeds and core counts will allow more operations to be run in parallel.
 
@@ -41,9 +41,14 @@ Before you can start using Virtool, it must be installed on your system.
    nohup ./run &
    ```
 
-> #### note::Important
->
-> We suggest running Virtool as a dedicated user.
+<article class="message is-info">
+  <div class="message-header">
+    Note
+  </div>
+  <div class="message-body">
+    We suggest running Virtool as a dedicated user.
+  </div>
+</article>
 
 # MongoDB {#mongodb}
 
@@ -76,7 +81,7 @@ You will receive output similar to the following if MongoDB is running:
            └─11844 /usr/bin/mongod --quiet --config /etc/mongod.conf
 ```
 
-## External Software {#external_software}
+# External Software {#external_software}
 
 Virtool relies on a number of common bioinformatics programs. These should be available in your `PATH` so Virtool can find them. You will encounter errors if these programs are not available.
 

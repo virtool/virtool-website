@@ -1,5 +1,5 @@
 ---
-title: "Settings"
+title: "Subtraction"
 type: "manual"
 menu:
     manual:

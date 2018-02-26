@@ -29,19 +29,13 @@ Some settings are account-specific. These can be modified under the *Settings* t
 
 ## Show Unique ID Fields
 
-In certain situations, you can make the internal unique IDs for various Virtool data records visible in the UI.
+In certain situations, you can make visible the internal unique IDs for various Virtool data records. By default, these unique IDs are not shown.
 
-These IDs are used in Virtool URLs. For examples:
-
-> http://localhost:9950/viruses/c93ec9a9/virus
-
-They are also useful for debugging.
-
-By default, these unique IDs are not shown.
+They are useful for debugging.
 
 ## Quick Analyze
 
-Virtool can be configured to allow you to easily start analyses from the sample listing page.
+Virtool can be configured to allow you to quickly start analyses from the sample listing page.
 
 By default, triggering quick analysis results in an algorithm selection dialog being shown before the job is started.
 
@@ -58,7 +52,6 @@ API keys are account-specific and are generated under the *API* tab in the *Acco
 ## Creating an API Key
 
 1. Click **<i class="fa fa-key"></i> Create** to show the API key creation form.
-
    ![](/docs_images/account_api_create.png)
 
 2. Name the API key. Names do not have to be unique.
@@ -68,26 +61,15 @@ API keys are account-specific and are generated under the *API* tab in the *Acco
 4. Click <i class="vtfont i-floppy"></i> to create the key.
 
 5. The key will be shown only once. Make sure you keep it somewhere safe.
-
    ![](/docs_images/account_api_key.png)
    
 6. Use the key to access the API with the help of the [API documentation](/web-api/authorization.html).
 
-> #### danger::Important
-> If permissions are removed from your account after the key is created, they will also be removed from the key.
-
-
-## Example
-
-Imagine you have created a script that automatically uploads FASTQ files to a storage volume accessible to Virtool and you want to trigger creation of a sample from an uploaded file.
-
-First, refer to the [Virtool API documentation](/web-api.html) to learn how to manage 
-
-
-
-
-
-
-
-
-
+<article class="message is-warning">
+  <div class="message-header">
+    Warning
+  </div>
+  <div class="message-body">
+    If permissions are removed from your account after the key is created, they will also be removed from the key.
+  </div>
+</article>

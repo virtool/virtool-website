@@ -34,7 +34,7 @@ The virus reference database is fully editable. You can change the name and abbr
 
 The viral reference database can be searched and viewed easily from your web browser. Clicking on _Viruses_ in the main navigation bar will bring you to the following view.
 
-![](/assets/viruses_browse.png)
+![](/docs_images/viruses_browse.png)
 
 In the virus database browser, you can:
 
@@ -47,11 +47,11 @@ In the virus database browser, you can:
 
 Open the dialog for adding an isolate by clicking the <i class="vtfont i-new-entry"></i> icon in the rights corner of the _Isolates_ header:
 
-![Isolates Header](/assets/viruses_isolates_header.png)
+![Isolates Header](/docs_images/viruses_isolates_header.png)
 
 Fill the _Source Type_ and _Source Name_ fields. These fields are combined to create an isolate name. They are 
 
-![Add Isolate Dialog](/assets/viruses_add_isolate.png)
+![Add Isolate Dialog](/docs_images/viruses_add_isolate.png)
 
 - both fields are optional and the isolate named will be **Unamed** if they are both   empty
 - in a single virus, multiple isolates can have the same name

@@ -6496,6 +6496,28 @@ div.docs {
   div.docs p {
     margin-top: 0.5rem;
     margin-bottom: 1rem; }
+  div.docs.docs-manual img {
+    max-width: 100%;
+    min-width: auto;
+    padding: 5px;
+    border: 1px solid #ddd; }
+  div.docs.docs-manual h1:not(:first-child) {
+    padding-top: 2.2rem; }
+  div.docs.docs-manual h2 {
+    margin: 1.8rem 0 0.8rem 0; }
+  div.docs.docs-manual ul {
+    padding-left: 1rem;
+    padding-bottom: 0.8rem;
+    list-style-type: disc;
+    list-style-position: inside; }
+  div.docs.docs-manual ol {
+    padding-left: 1.8rem; }
+  div.docs.docs-manual article.message {
+    margin-top: 2.2rem; }
+    div.docs.docs-manual article.message.is-flowing {
+      margin-top: 0.6rem; }
+  div.docs.docs-manual li img {
+    margin-top: 0.6rem; }
   div.docs.docs-api div.box > pre:first-of-type {
     margin-bottom: 2rem;
     background-color: #39807f;

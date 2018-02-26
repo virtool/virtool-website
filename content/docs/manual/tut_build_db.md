@@ -21,7 +21,6 @@ Instead of starting a virus database from scratch, you can do a one-time of impo
 We will use the offical database for this tutorial.
 
 1. Go to the [Virtool downloads page](https://www.virtool.ca/downloads) and download the latest database release.
-
    !["Virus database download"](/docs_images/virus_db_download.png)
    
 2. Click the download link to get a ``viruses.json.gz`` file.
@@ -42,8 +41,8 @@ We will use the offical database for this tutorial.
 ## 1.2 Browsing Viruses {#browsing}
 
 1. Go to **Viruses** in the main navigation menu
-2. Since no viruses have been created, you should see something like this:
 
+2. Since no viruses have been created, you should see something like this:
    !["Viruses view when empty"](/docs_images/viruses_browse_empty.png)
 
 # 1.3 Creating a Virus {#creating}
@@ -79,7 +78,6 @@ Examples of source names are: *A*, *Canada*, *8801-VLH*, or anything really.
 4. Notice that the **Isolate Name** field changes with the other two fields. This will be the display name for the isolate.
 
 5. Save the changes. The new isolate appear in the isolate editor.
-
    !["Virus detail with one empty isolate"](/docs_images/viruses_isolates_no_seq.png)
     
 6. You can edit or remove the isolate by clicking <i class="vtfont i-pencil"></i> and <i class="vtfont i-remove"></i>.
@@ -89,15 +87,12 @@ Examples of source names are: *A*, *Canada*, *8801-VLH*, or anything really.
 Sequences are members of isolates. Many isolates will only have one sequence. If the virus in question is multipartite,  more than one sequence would be assigned to each isolate.
 
 1. Click <i class="vtfont i-new-entry"></i> near the **Sequences** heading to bring up a dialog for creating sequences.
-
    !["Sequence addition dialog"](/docs_images/viruses_sequences_create.png)
    
 2. Fill out the form fields. The **Host** field is optional. You can pull sequence records from GenBank by entering a valid GenBank accession in the **Accession** field and clicking <i class="vtfont i-wand"></i>.
-
    !["Populate sequence addition dialog"](/docs_images/viruses_sequences_create_ex.png)   
    
 3. Save the new virus. It will appear in the isolate editor.
-
    !["Populated virus detail view"](/docs_images/viruses_isolates_has_seq.png)
      
 4. Click on the sequence entry to expand it and view all the data associated with the sequence record.

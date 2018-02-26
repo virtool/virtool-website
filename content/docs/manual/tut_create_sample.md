@@ -12,5 +12,5 @@ Samples are generated from single Illumina samples.
 ## Uploading FASTQ
 
 1. Go the _Samples_ view via the main navigation bar.
-   !["Sample Manager"](/assets/samples_main.png)
+   !["Sample Manager"](/docs_images/samples_main.png)
 

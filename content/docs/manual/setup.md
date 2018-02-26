@@ -16,7 +16,8 @@ After installing Virtool, the server can be started by issuing the following com
 ```
 Use ``./run --help`` to see an overview of additional command line arguments Virtool can accept.
 
-By default, the server listens at ``localhost:9950``. When you visit this address for the first time, you will be confronted with a one-time setup interface. This will allow you to configure the essential settings required for Virtool to run.
+By default, the server listens at ``localhost:9950``. When you visit this address for the first time, you will be confronted with a one-time setup interface. This 
+will allow you to configure the essential settings required for Virtool to run.
 
 !["Setup page overview"](/docs_images/setup_overview.png)
 
@@ -40,10 +41,16 @@ Error messages will appear if the connection fails or the provided database name
 
 An administrative user account must be created during setup. After setup, this account can be used to add more user accounts and populate Virtool with data. The first user account can be added using the following form.
 
-> #### danger::Important
-> We strongly recommend **not** making this account a generic adminstrative account. Doing so defeats Virtool's built-in auditing, which is designed in accordance with [ISO 17025:2005](https://www.iso.org/standard/39883.html). Each account should correspond to an individual user.
-
 ![](/docs_images/setup_first_user.png)
+
+<article class="message is-danger is-flowing">
+  <div class="message-header">
+    Important
+  </div>
+  <div class="message-body">
+    We strongly recommend <strong>not</strong> making this account a generic adminstrative account. Doing so defeats Virtool's built-in auditing, which is designed in accordance with <a href="https://www.iso.org/standard/39883.html">ISO 17025:2005</a>. Each account should correspond to an individual user.
+  </div>
+</article>
 
 
 # Set Data Path {#data_path}
@@ -68,11 +75,16 @@ The primary method for making Illumina FASTQ files available to Virtool for samp
 
 It is also possible to set a path accessible to the server that will be watched for new read files. Any FASTQ files dropped in this watch directory will be pulled into Virtool and made available for sample creation.
 
-> #### danger::Important
-> Files dropped in the watch directory will be removed once they have been pulled into Virtool. Do not unintentionally place your only copy of a sample FASTQ file in the watch path.
-
 ![](/docs_images/setup_path_watch.png)
 
+<article class="message is-warning is-flowing">
+  <div class="message-header">
+    Warning
+  </div>
+  <div class="message-body">
+    Files dropped in the watch directory will be removed once they have been pulled into Virtool. Do not place your only copy of a sample FASTQ file in the watch path.
+  </div>
+</article>
 
 # Save and Restart
 
