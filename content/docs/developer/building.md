@@ -1,5 +1,5 @@
 ---
-title: "Build Virtool"
+title: "Building"
 type: "developer"
 menu:
     developer:
