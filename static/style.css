@@ -6490,6 +6490,9 @@ p.card-header-title .icon + span {
 .level-item.tags {
   justify-content: left; }
 
+.level-item.contains-nav {
+  justify-content: left; }
+
 div.docs div.table-wrapper {
   overflow-x: auto; }
 div.docs h1.docs-header {
