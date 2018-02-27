@@ -20,3 +20,6 @@ menu:
           Weight: 20
         - Name: "Reference"
           Weight: 30
+    developer:
+      - Name: "Guide"
+        Weight: 10
