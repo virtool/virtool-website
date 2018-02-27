@@ -3,20 +3,23 @@
 {{ $currentPage := . }}
 <div class="section">
     <div class="container">
-        <div>
-            <nav class="breadcrumb" aria-label="breadcrumbs">
-                <ul>
-                    <li><a class="title is-4" href="/docs">Docs</a></li>
-                    <li><a class="title is-5" href="/docs/manual">Manual</a></li>
-                    <li><a href="#">{{ .Title }}</a></li>
-                </ul>
-            </nav>
-            <div class="level-right is-hidden-touch">
-                <div class="level-item is-size-7">
-                    <div class="tags has-addons">
-                        <span class="tag is-dark">Updated</span>
-                        <span class="tag is-info">{{ .GitInfo.AuthorDate.Format "January 2, 2006" }}</span>
-                    </div>
+        <div class="level">
+            <div class="level-left">
+                <div class="level-item">
+                    <nav class="breadcrumb " aria-label="breadcrumbs">
+                        <ul>
+                            <li><a class="title is-4" href="/docs">Docs</a></li>
+                            <li><a class="title is-5" href="/docs/manual">Manual</a></li>
+                            <li><a href="#">{{ .Title }}</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            
+            <div class="level-right">
+                <div class="level-item tags has-addons">
+                    <span class="tag is-dark">Updated</span>
+                    <span class="tag is-info">{{ .GitInfo.AuthorDate.Format "January 2, 2006" }}</span>
                 </div>
             </div>
         </div>
