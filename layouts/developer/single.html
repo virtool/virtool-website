@@ -1,0 +1,61 @@
+{{ define "main" }}
+<div class="section">
+    <div class="container">
+        <div class="level">
+            <div class="level-left">
+                <div class="level-item contains-nav">
+                    <nav class="breadcrumb " aria-label="breadcrumbs">
+                        <ul>
+                            <li><a class="title is-4" href="/docs">Docs</a></li>
+                            <li><a class="title is-5" href="/docs/api">API</a></li>
+                            <li><a href="#">{{ .Title }}</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>            
+            <div class="level-right">
+                <div class="level-item tags has-addons">
+                    <span class="tag is-dark">Updated</span>
+                    <span class="tag is-info">{{ .GitInfo.AuthorDate.Format "January 2, 2006" }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column is-2 is-hidden-touch">
+                <aside class="menu">
+                    {{ range .Site.Menus.api }}
+                        <p class="menu-label">
+                            {{ .Name }}
+                        </p>
+
+                        <ul class="menu-list">
+                            {{ range .Children }}
+                                <li>
+                                    <a href="{{ .URL }}">{{ .Name }}</a>
+                                </li>                                
+                            {{ end }}
+                        </ul>
+                    {{ end }}
+                </aside>
+            </div>
+
+            <div class="column is-10 docs docs-api">
+                {{ $replaced := (replaceRE "<table>([\\s\\S]*?)<\\/table>" "<div class='table-wrapper'><table>$1</table></div>" .Content) }}
+                {{ $divided := (split $replaced "<h1") }}
+                {{ $length := sub (len $divided) 1 }}
+
+                {{ range first 1 $divided }}
+                    {{ safeHTML . }}
+                {{ end }}
+
+                {{ range last $length $divided }}
+                    <div class="box">
+                        {{ safeHTML (delimit (slice "<h1" .) "") }}
+                    </div>
+                {{ end }}
+            </div>   
+        </div>
+    </div>
+</div>
+
+{{ end }}
