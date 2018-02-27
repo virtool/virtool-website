@@ -6456,17 +6456,9 @@ label.panel-block {
   background-color: whitesmoke;
   padding: 3rem 1.5rem 6rem; }
 
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column; }
-
-#wrapper {
-  flex: 1; }
-
 .image, img {
   padding: 5px;
-  border: 1px solid #ddd; }
+  border: 0.1rem solid #ddd; }
 
 .logo-strip {
   margin-top: 30px;
@@ -6481,55 +6473,60 @@ body {
   cursor: pointer;
   margin: 1rem;
   transform: scale(1);
-  transition: 150ms transform ease-in-out;
-  width: 100%; }
+  transition: 150ms transform ease-in-out; }
   .card.is-docs-type:hover {
     transform: scale(1.05); }
+
+.tile-menu {
+  margin-top: -1rem;
+  padding-top: 1.2rem;
+  border-top: 0.1rem solid black; }
+  .tile-menu:not(:last-of-type) {
+    margin-bottom: 3.6rem; }
 
 p.card-header-title .icon + span {
   padding-left: 0.5rem; }
 
-div.docs {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch; }
-  div.docs div.table-wrapper {
-    overflow-x: auto; }
-  div.docs h1.docs-header {
-    border-bottom: 0.1rem solid black;
-    padding-bottom: 1rem; }
-  div.docs p {
-    margin-top: 0.5rem;
-    margin-bottom: 1rem; }
-  div.docs.docs-manual img {
-    max-width: 100%;
-    min-width: auto;
-    padding: 5px;
-    border: 1px solid #ddd; }
-  div.docs.docs-manual h1:not(:first-child) {
-    padding-top: 1.2rem; }
-  div.docs.docs-manual h2 {
-    margin: 1.8rem 0 0.8rem 0; }
-  div.docs.docs-manual ul {
-    padding-left: 1rem;
-    padding-bottom: 0.8rem;
-    list-style-type: disc;
-    list-style-position: inside; }
-  div.docs.docs-manual ol {
-    padding-left: 1.8rem; }
-  div.docs.docs-manual article.message {
-    margin-top: 2.2rem; }
-    div.docs.docs-manual article.message.is-flowing {
-      margin-top: 0.6rem; }
-  div.docs.docs-manual li img {
+.level-item.tags {
+  justify-content: left; }
+
+div.docs div.table-wrapper {
+  overflow-x: auto; }
+div.docs h1.docs-header {
+  border-bottom: 0.1rem solid black;
+  padding-bottom: 1rem; }
+div.docs p {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem; }
+div.docs.docs-manual img {
+  max-width: 100%;
+  min-width: auto;
+  padding: 5px;
+  border: 0.1rem solid #ddd; }
+div.docs.docs-manual h1:not(:first-child) {
+  padding-top: 1.2rem; }
+div.docs.docs-manual h2 {
+  margin: 1.8rem 0 0.8rem 0; }
+div.docs.docs-manual ul {
+  padding-left: 1rem;
+  padding-bottom: 0.8rem;
+  list-style-type: disc;
+  list-style-position: inside; }
+div.docs.docs-manual ol {
+  padding-left: 1.3rem; }
+div.docs.docs-manual article.message {
+  margin-top: 2.2rem; }
+  div.docs.docs-manual article.message.is-flowing {
     margin-top: 0.6rem; }
-  div.docs.docs-api div.box > pre:first-of-type {
-    margin-bottom: 2rem;
-    background-color: #39807f;
-    color: white; }
-    div.docs.docs-api div.box > pre:first-of-type code {
-      font-weight: bolder; }
-  div.docs.docs-api h2 {
-    margin-top: 1.2rem; }
+div.docs.docs-manual li img {
+  margin-top: 0.6rem; }
+div.docs.docs-api div.box > pre:first-of-type {
+  margin-bottom: 2rem;
+  background-color: #39807f;
+  color: white; }
+  div.docs.docs-api div.box > pre:first-of-type code {
+    font-weight: bolder; }
+div.docs.docs-api h2 {
+  margin-top: 1.2rem; }
 
 /*# sourceMappingURL=style.css.map */

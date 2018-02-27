@@ -7,17 +7,9 @@ $family-sans-serif: "Roboto", BlinkMacSystemFont, -apple-system, "Segoe UI", "Ox
 
 @import "bulma/bulma.sass"
 
-body
-    display: flex
-    min-height: 100vh
-    flex-direction: column
-
-#wrapper
-    flex: 1
-
 .image
     padding: 5px
-    border: 1px solid #ddd
+    border: 0.1rem solid #ddd
 
 img
     @extend .image
@@ -36,20 +28,27 @@ img
     margin: 1rem
     transform: scale(1)
     transition: 150ms transform ease-in-out
-    width: 100%
 
     &:hover        
         transform: scale(1.05)
+
+.tile-menu
+    margin-top: -1rem
+    padding-top: 1.2rem
+    border-top: 0.1rem solid black
+
+    &:not(:last-of-type)
+        margin-bottom: 3.6rem
 
 p.card-header-title
     .icon
         + span
             padding-left: 0.5rem
 
+.level-item.tags
+    justify-content: left
+
 div.docs
-    display: flex
-    flex-direction: column
-    align-items: stretch
 
     div.table-wrapper
         overflow-x: auto
@@ -81,7 +80,7 @@ div.docs
             max-width: 100%
             min-width: auto
             padding: 5px
-            border: 1px solid #ddd
+            border: 0.1rem solid #ddd
 
         h1:not(:first-child)
             padding-top: 1.2rem
@@ -96,7 +95,7 @@ div.docs
             list-style-position: inside
 
         ol
-            padding-left: 1.8rem
+            padding-left: 1.3rem
 
         article.message
             margin-top: 2.2rem
