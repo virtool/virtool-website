@@ -24,7 +24,7 @@ Because Virtool makes use of Websockets, some advanced configuration of NGINX is
 
 We have used the following `nginx.conf` to serve Virtool behind NGINX using Websockets and HTTPS.
 
-```
+```term
 user www-data;
 worker_processes 1;
 

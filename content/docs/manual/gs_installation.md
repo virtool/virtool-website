@@ -9,7 +9,7 @@ menu:
 
 # System Requirements {#system_requirements}
 
-We recommend the following minimum specifications for serving Virtool:
+We recommend the following minimum specifications for running a Virtool server:
 
 - Linux operating system
 - 32 GB RAM
@@ -29,15 +29,15 @@ Before you can start using Virtool, it must be installed on your system.
 1. Download the latest Virtool release from the [Virtool website](http://www.virtool.ca "Virtool Website").
 
 2. Unpack the downloaded archive.
-   ```shell
+   ```term
    tar -xvf virtool.tar.gz
    ```
 3. Move the unpacked directory to your installation location:
-   ```shell
+   ```term
    mv virtool /opt
    ```
 4. Run in the background using `nohup`.
-   ```
+   ```term
    nohup ./run &
    ```
 
@@ -69,7 +69,7 @@ sudo service mongod status
 
 You will receive output similar to the following if MongoDB is running:
 
-```
+```term
 ● mongod.service - High-performance, schema-free document-oriented database
    Loaded: loaded (/etc/systemd/system/mongod.service; disabled; vendor preset: enabled)
    Active: active (running) since Fri 2017-04-21 15:55:59 PDT; 2s ago

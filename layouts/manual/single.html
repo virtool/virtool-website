@@ -1,21 +1,17 @@
 {{ define "main" }}
 
 {{ $currentPage := . }}
-<div class="container">
-    <section class="section">
-        <div class="level">
-            <div class="level-left">
-                <div class="level-item">
-                    <nav class="breadcrumb" aria-label="breadcrumbs">
-                        <ul>
-                            <li><a class="title is-4" href="/docs">Docs</a></li>
-                            <li><a class="title is-5" href="/docs/manual">Manual</a></li>
-                            <li><a href="#">{{ .Title }}</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-            <div class="level-right">
+<div class="section">
+    <div class="container">
+        <div>
+            <nav class="breadcrumb" aria-label="breadcrumbs">
+                <ul>
+                    <li><a class="title is-4" href="/docs">Docs</a></li>
+                    <li><a class="title is-5" href="/docs/manual">Manual</a></li>
+                    <li><a href="#">{{ .Title }}</a></li>
+                </ul>
+            </nav>
+            <div class="level-right is-hidden-touch">
                 <div class="level-item is-size-7">
                     <div class="tags has-addons">
                         <span class="tag is-dark">Updated</span>
@@ -26,7 +22,7 @@
         </div>
 
         <div class="columns">
-            <div class="column is-3">
+            <div class="column is-3-desktop is-hidden-touch">
                 <aside class="menu">
                     {{ range .Site.Menus.manual }}
                         <p class="menu-label">
@@ -46,11 +42,14 @@
                 </aside>
             </div>
 
-            <div class="column is-9 docs docs-manual">
+            <div class="column is-9-desktop is-12-touch docs docs-manual">
+                <h1 class="title is-4 docs-header">
+                    {{ .Name }}
+                </h1>
                 {{ .Content }}
             </div>
-        </div>    
-    </section>
+        </div>
+    </div>
 </div>
 
 {{ end }}

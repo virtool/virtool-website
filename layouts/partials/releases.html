@@ -13,7 +13,8 @@
         <tr> 
             <td>{{ .name }}</td> 
             <td>{{ dateFormat "2006-01-02" .published_at }}</td> 
-            <td><a href="{{ .download_url }}">Download</a></td> 
+            <td>
+                <a class="is-hidden-touch" href="{{ .download_url }}">Download</a></td> 
             <td> 
                 <a class="button is-small is-pulled-right" href="{{ .html_url }}" target="_blank"> 
                     <span class="icon is-small"> 

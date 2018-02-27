@@ -11,12 +11,18 @@ Virtool is built for detecting viruses. The collection of viral sequences used f
 
 The viral database in a fresh install of Virtool is completely empty. At least one valid virus must be added to the database in order to start analyzing samples.
 
-# 1.1 Importing a Virus Database {#importing}
+# 1. Importing a Virus Database {#importing}
 
 Instead of starting a virus database from scratch, you can do a one-time of import someone else's database or [our offical one](https://www.virtool.ca/downloads).
 
-> #### info::Note
-> A virus database file can only be imported into an empty instance of Virtool. You cannot import viruses into an already populated database.
+<article class="message is-info is-flowing">
+  <div class="message-header">
+    Note
+  </div>
+  <div class="message-body">
+    A virus database file can only be imported into an empty instance of Virtool. You cannot import viruses into an already populated database.
+  </div>
+</article>
 
 We will use the offical database for this tutorial.
 
@@ -38,14 +44,14 @@ We will use the offical database for this tutorial.
 
 7. Refresh the browser if the imported data doesn't appear when the progress bar finishes.
 
-## 1.2 Browsing Viruses {#browsing}
+# 2. Browsing Viruses {#browsing}
 
 1. Go to **Viruses** in the main navigation menu
 
 2. Since no viruses have been created, you should see something like this:
    !["Viruses view when empty"](/docs_images/viruses_browse_empty.png)
 
-# 1.3 Creating a Virus {#creating}
+# 3. Creating a Virus {#creating}
 
 Creating the first virus requires only a name. You can optionally provide an abbreviation.
 
@@ -59,7 +65,7 @@ Creating the first virus requires only a name. You can optionally provide an abb
 4. The virus should now appear in the virus manager.
    !["Virus view with modified virus"](/docs_images/viruses_browse_tmv.png)
 
-# 1.4 Adding an Isolate {#adding_an_isolate}
+# 4. Adding an Isolate {#adding_an_isolate}
 
 Isolates are how sequence data are organized within the virus record. To maintain continuity with virus sequence records in Genbank, isolates in Virtool are identified by a **source type** and **source name**. These two fields are concatenated to form the isolate's name.
 
@@ -82,7 +88,7 @@ Examples of source names are: *A*, *Canada*, *8801-VLH*, or anything really.
     
 6. You can edit or remove the isolate by clicking <i class="vtfont i-pencil"></i> and <i class="vtfont i-remove"></i>.
 
-# 1.5 Adding a Sequence {#adding_a_sequence}
+# 5. Adding a Sequence {#adding_a_sequence}
 
 Sequences are members of isolates. Many isolates will only have one sequence. If the virus in question is multipartite,  more than one sequence would be assigned to each isolate.
 
@@ -97,7 +103,7 @@ Sequences are members of isolates. Many isolates will only have one sequence. If
      
 4. Click on the sequence entry to expand it and view all the data associated with the sequence record.
 
-# 1.6 Building the Index {#building_an_index}
+# 6. Building the Index {#building_an_index}
 
 Before the imported data can be used in analyses, an optimized index must be built. Think of this as a publication or commit step.
 
