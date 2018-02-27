@@ -1,0 +1,17 @@
+<div class="column is-2 is-hidden-touch">
+    <aside class="menu">
+        {{ range . }}
+            <p class="menu-label">
+                {{ .Name }}
+            </p>
+
+            <ul class="menu-list">
+                {{ range .Children }}
+                    <li>
+                        <a href="{{ .URL }}">{{ .Name }}</a>
+                    </li>                                
+                {{ end }}
+            </ul>
+        {{ end }}
+    </aside>
+</div>

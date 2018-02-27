@@ -21,23 +21,7 @@
             </div>
         </div>
         <div class="columns">
-            <div class="column is-2 is-hidden-touch">
-                <aside class="menu">
-                    {{ range .Site.Menus.api }}
-                        <p class="menu-label">
-                            {{ .Name }}
-                        </p>
-
-                        <ul class="menu-list">
-                            {{ range .Children }}
-                                <li>
-                                    <a href="{{ .URL }}">{{ .Name }}</a>
-                                </li>                                
-                            {{ end }}
-                        </ul>
-                    {{ end }}
-                </aside>
-            </div>
+            {{ partial "side.html" .Site.Menus.api }}
 
             <div class="column is-10 docs docs-api">
                 {{ $replaced := (replaceRE "<table>([\\s\\S]*?)<\\/table>" "<div class='table-wrapper'><table>$1</table></div>" .Content) }}

@@ -7,7 +7,7 @@
                     <nav class="breadcrumb " aria-label="breadcrumbs">
                         <ul>
                             <li><a class="title is-4" href="/docs">Docs</a></li>
-                            <li><a class="title is-5" href="/docs/api">API</a></li>
+                            <li><a class="title is-5" href="/docs/developer">Developer</a></li>
                             <li><a href="#">{{ .Title }}</a></li>
                         </ul>
                     </nav>
@@ -21,23 +21,7 @@
             </div>
         </div>
         <div class="columns">
-            <div class="column is-2 is-hidden-touch">
-                <aside class="menu">
-                    {{ range .Site.Menus.developer }}
-                        <p class="menu-label">
-                            {{ .Name }}
-                        </p>
-
-                        <ul class="menu-list">
-                            {{ range .Children }}
-                                <li>
-                                    <a href="{{ .URL }}">{{ .Name }}</a>
-                                </li>                                
-                            {{ end }}
-                        </ul>
-                    {{ end }}
-                </aside>
-            </div>
+            {{ partial "side.html" .Site.Menus.developer }}
 
             <div class="column is-10 docs docs-api">
                 {{ $replaced := (replaceRE "<table>([\\s\\S]*?)<\\/table>" "<div class='table-wrapper'><table>$1</table></div>" .Content) }}
