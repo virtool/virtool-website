@@ -6493,6 +6493,10 @@ p.card-header-title .icon + span {
 .level-item.contains-nav {
   justify-content: left; }
 
+.search-box {
+  border-width: 0.1rem;
+  margin-bottom: 2rem; }
+
 div.docs div.table-wrapper {
   overflow-x: auto; }
 div.docs h1.docs-header {
