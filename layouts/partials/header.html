@@ -24,26 +24,32 @@
             <div class="navbar-start"> 
                 {{ $currentPage := . }} 
                 {{ range sort .Site.Menus.main "Weight" }} 
-                    <a class="navbar-item{{ if $currentPage.IsMenuCurrent "main" . }} is-active{{ end }}" href="{{ .URL }}"> 
+                    <a class="navbar-item{{ if $currentPage.HasMenuCurrent "main" . }} is-active{{ end }}" href="{{ .URL }}"> 
                         {{ .Name }} 
                     </a> 
                 {{ end }} 
             </div> 
             <div class="navbar-end"> 
-                <a class="navbar-item" href="https://github.com/virtool/virtool" target="_blank"> 
+                <a class="navbar-item is-hidden-touch" href="https://github.com/virtool/virtool" target="_blank"> 
                     <span class="icon"> 
                         <i class="fab fa-github"></i> 
                     </span> 
                 </a> 
-                <div class="navbar-item"> 
+                <div class="navbar-item is-hidden-touch"> 
                     <div class="field is-grouped"> 
                         <p class="control"> 
                             <a class="button is-white" href="https://demo.virtool.ca"> 
-                                Demo 
+                                Demo
                             </a> 
                         </p> 
                     </div> 
-                </div> 
+                </div>
+                <a class="navbar-item is-hidden-desktop" href="https://github.com/virtool/virtool"> 
+                    GitHub 
+                </a>
+                <a class="navbar-item is-hidden-desktop" href="https://demo.virtool.ca"> 
+                    Demo 
+                </a>
             </div>
         </div>
     </div> 
