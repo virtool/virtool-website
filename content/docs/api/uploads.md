@@ -30,6 +30,12 @@ POST /upload/:file_type?name=filename
 | :------- | :------ | :------- | :------------------------------------- |
 | name     | string  | false    | the display name for the file          |
 
+## Example
+
+```
+POST /upload/reads?name=test.fq.gz
+```
+
 ## Response
 
 ```
@@ -38,22 +44,28 @@ Status: 201 Created
 
 ```json
 {
-    "id" : "iqdhxivo-viruses.json.gz",
-    "name" : "viruses.json.gz",
-    "type" : "viruses",
-    "user" : {
-        "id" : "igboyes"
-    },
-    "uploaded_at" : "2017-12-07T19:09:26.147Z",
-    "expires_at" : "2017-12-08T00:09:26.147Z",
-    "created" : true,
-    "reserved" : false,
-    "ready" : true,
-    "size" : 3709347
+	"name": "test.fq.gz",
+	"user": {
+		"id": "fred"
+	},
+	"uploaded_at": "2018-03-02T22:52:09.152000Z",
+	"type": "reads",
+	"ready": false,
+	"reserved": false,
+	"id": "juqleoir-test.fq.gz"
 }
 ```
 
-# Delete an Upload {#delete}
+## Errors
+
+| Status | Message                | Reason                                                          |
+| :----- | :--------------------- | :-------------------------------------------------------------- |
+| `401`  | Requires authorization | request is not associated with an authorized session or API key |
+| `403`  | Not permitted          | user doesn't have the `upload_file` permission                  |
+| `404`  | Not found              | `file_type` does not exist                                      |
+
+
+# Delete a File {#delete}
 
 Delete a previously uploaded file.
 
@@ -66,3 +78,10 @@ DELETE /api/files/:file_id
 ```
 Status: 204 No content
 ```
+
+## Errors
+
+| Status | Message                | Reason                                                          |
+| :----- | :--------------------- | :-------------------------------------------------------------- |
+| `401`  | Requires authorization | request is not associated with an authorized session or API key |
+| `404`  | Not found              | `file_id` does not exist                                        |
