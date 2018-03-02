@@ -55,6 +55,12 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+| Status | Message                | Reason                                                          |
+| :----- | :--------------------- | :-------------------------------------------------------------- |
+| `401`  | Requires authorization | request is not associated with an authorized session or API key |
+
 # Edit
 
 Change the email address associated with the account associated with the current session or API key.
@@ -120,6 +126,13 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+| Status | Message                | Reason                                                          |
+| :----- | :--------------------- | :-------------------------------------------------------------- |
+| `401`  | Requires authorization | request is not associated with an authorized session or API key |
+| `422`  | Invalid input          | email address is invalid                                        |
+
 
 # Get Settings
 
@@ -143,6 +156,13 @@ Status: 200 OK
 	"quick_analyze_algorithm": "pathoscope_bowtie"
 }
 ```
+
+## Errors
+
+| Status | Message                | Reason                                                          |
+| :----- | :--------------------- | :-------------------------------------------------------------- |
+| `401`  | Requires authorization | request is not associated with an authorized session or API key |
+
 
 # Edit Settings
 
@@ -188,6 +208,14 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+| Status | Message                | Reason                                                          |
+| :----- | :--------------------- | :-------------------------------------------------------------- |
+| `401`  | Requires authorization | request is not associated with an authorized session or API key |
+| `422`  | Invalid input          | invalid settings key or value                                   |
+
+
 # Change Password
 
 Change the password for the account associated with the current session or API key.
@@ -228,6 +256,14 @@ Status: 200 OK
     "last_password_change": "2017-02-17T13:58:25.792550Z"
 }
 ```
+
+## Errors
+
+| Status | Message                | Reason                                                          |
+| :----- | :--------------------- | :-------------------------------------------------------------- |
+| 400    | Invalid old password   | supplied old password is invalid                                |
+| 401    | Requires authorization | request is not associated with an authorized session or API key |
+| 422    | Invalid input          | missing or invalid password field                               |
 
 
 # Get API Keys
@@ -270,6 +306,10 @@ Status: 200 OK
 	}
 ]
 ```
+
+| Status | Message                | Reason                                                          |
+| :----- | :--------------------- | :-------------------------------------------------------------- |
+| `401`  | Requires authorization | request is not associated with an authorized session or API key |
 
 
 # Create API Key
@@ -334,6 +374,13 @@ Status: 201 Created
 }
 ```
 
+## Errors
+
+| Status | Message                | Reason                                                          |
+| :----- | :--------------------- | :-------------------------------------------------------------- |
+| `401`  | Requires authorization | request is not associated with an authorized session or API key |
+| `422`  | Invalid input          | missing or invalid name or permissions object                   |
+
 
 # Update API Key {#update_key}
 
@@ -345,9 +392,9 @@ PATCH /api/account/keys/:id
 
 ## Input
 
-| Name         | Type   | Optional | Description                                                                                                 |
-| :----------- | :----- | :------- | :---------------------------------------------------------------------------------------------------------- |
-| permissions  | object | true     | An object describing the permissions the new key will have. Any unset permissions will default to ``false`` |
+| Name        | Type   | Optional | Description                                                                                                 |
+| :---------- | :----- | :------- | :---------------------------------------------------------------------------------------------------------- |
+| permissions | object | false    | An object describing the permissions the new key will have. Any unset permissions will default to ``false`` |
 
 ## Example
 
@@ -395,6 +442,14 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+| Status | Message                | Reason                                                          |
+| :----- | :--------------------- | :-------------------------------------------------------------- |
+| `401`  | Requires authorization | request is not associated with an authorized session or API key |
+| `404`  | Not found              | API key identified by `:id` does not exist                      |
+| `422`  | Invalid input          | missing or invalid permissions object                           |
+
 
 # Delete API Key {#delete_key}
 
@@ -403,7 +458,6 @@ Delete an existing API key.
 ```
 DELETE /api/account/keys/:id
 ```
-
 
 ## Example
 
@@ -416,6 +470,13 @@ DELETE /api/account/keys/test_1
 ```
 Status: 204 No content
 ```
+
+## Errors
+
+| Status | Message                | Reason                                                          |
+| :----- | :--------------------- | :-------------------------------------------------------------- |
+| `401`  | Requires authorization | request is not associated with an authorized session or API key |
+| `404`  | Not found              | API key identified by `:id` does not exist                      |
 
 
 # Logout {#logout}
@@ -432,3 +493,7 @@ GET /api/account/logout
 ```
 Status: 204 No Content
 ```
+
+## Errors
+
+*None*
