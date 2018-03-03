@@ -21,7 +21,7 @@ GET /api/samples
 
 | Name     | Type    | Default | Description                            |
 | :---     | :------ | :------ | :------------------------------------- |
-| find     | string  | `null`  | sample name or username to filter by   |
+| find     | string  |         | sample name or username to filter by   |
 | page     | integer | 1       | page number of results to return       |
 | per_page | integer | 15      | number of documents to return per page |
 
@@ -62,6 +62,12 @@ Status: 200 OK
 	"page": 1
 }
 ```
+
+## Errors
+
+| Status | Message                | Reason                             |
+| :----- | :--------------------- | :--------------------------------- |
+| `422`  | Invalid query          | invalid URL query fields or values |
 
 
 # Get
@@ -133,6 +139,14 @@ Status: 200 OK
 	"id": "htosefxu"
 }
 ```
+
+## Errors
+
+| Status | Message                | Reason                                                          |
+| :----- | :--------------------- | :-------------------------------------------------------------- |
+| `401`  | Insufficient rights    | user does not have the required rights to read the sample       |
+| `404`  | Not found              | `sample_id` in URL does not exist                               |
+
 
 # Create {#create}
 
@@ -208,6 +222,16 @@ Status: 201 Created
 	"id": "oggjipxw"
 }
 ```
+
+## Errors
+
+| Status | Message                       | Reason                                                          |
+| :----- | :---------------------------- | :-------------------------------------------------------------- |
+| `401`  | Not permitted                 | user does not have the `create_sample` permission               |
+| `404`  | Group not found               | `group` in POST body does not exist                             |
+| `404`  | Subtraction not found         | `subtraction` in POST body  does not exist                      |
+| `409`  | Sample name is already in use | the provided `name` is already assigned to an existing sample   |
+
 
 # Edit {#edit}
 
