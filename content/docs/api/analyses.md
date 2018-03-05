@@ -53,9 +53,19 @@ Status: 200 OK
     "diagnosis": [...]
 ```
 
+## Errors
+
+| Status | Message             | Reason                                                                         |
+| :----- | :------------------ | :----------------------------------------------------------------------------- |
+| `403`  | Insufficient rights | user does not have the required sample rights to view the analysis             |
+| `404`  | Not found           | `sample_id` in URL does not exist                                              |
+
+
 # Remove
 
-Remove and existing analysis. This request will fail with ``409 Conflict`` if the analysis is still in progress. Cancel the associated job first.
+Remove and existing analysis.
+
+This request will fail if the analysis is still in progress. Cancel the associated job first.
 
 ```
 DELETE /api/analyses/:analysis_id
@@ -73,9 +83,20 @@ DELETE /api/analyses/:analysis_id
 Status: 204 No content
 ```
 
+## Errors
+
+| Status | Message                   | Reason                                                                         |
+| :----- | :------------------------ | :----------------------------------------------------------------------------- |
+| `403`  | Insufficient rights       | user does not have the required sample rights to remove the analysis           |
+| `404`  | Not found                 | `sample_id` in URL does not exist                                              |
+| `409`  | Analysis is still running | analysis job is still in progress                                              |
+
+
 # BLAST Contig
 
-BLAST a contig that was generated as part of a NuVs analysis. This request will fail with ``400 Bad Request`` for non-NuVs analyses.
+BLAST a contig that was generated as part of a NuVs analysis.
+
+Calling this endpoint for a sequence that has already been BLASTed will result in the old result being overwritten. This request will fail with ``400 Bad Request`` for non-NuVs analyses.
 
 ```
 PUT /api/analyses/:analysis_id/:sequence_index/blast
@@ -102,22 +123,13 @@ Status: 200 OK
 }
 ```
 
-# Remove BLAST
+## Errors
 
-Remove a BLAST record from a NuVs contig. This request will fail with ``400 Bad Request`` for non-NuVs analyses.
-
-```
-DELETE /api/analyses/:analysis_id/:sequence_index/blast
-```
-
-## Example
-
-```
-DELETE /api/analyses/:analysis_id/:sequence_index/blast
-```
-
-## Response
-
-```
-204 No content
-```
+| Status | Message                   | Reason                                                                         |
+| :----- | :------------------------ | :----------------------------------------------------------------------------- |
+| `400`  | Not a NuVs analysis       | analysis cannot be BLASTed because it is not a NuVs analysis                   |
+| `403`  | Insufficient rights       | user does not have the required sample rights to remove the analysis           |
+| `404`  | Not found                 | `sample_id` in URL does not exist                                              |
+| `404`  | Sample not found          | sample associated with analysis was not found                                  |
+| `409`  | Sequence not found        | `sequence_index` in URL does not exist                                         |
+| `409`  | Analysis is still running | analysis job is still in progress and cannot be BLASTed                        |
