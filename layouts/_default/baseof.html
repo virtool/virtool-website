@@ -6,11 +6,6 @@
     <title>{{ .Site.Title }}</title>
     <link rel="stylesheet" type="text/css" href="/style.css" />
     <link rel="icon" href="/favicon.ico?v=123213" type="image/x-icon"> 
-    <script defer src="/main.js"></script>
-    <script defer src="/algolia.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearchLite.min.js"></script>
-    <script defer src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   </head>
   <body>
     {{ partial "header.html" . }}
@@ -31,5 +26,12 @@
             </div>
         </div>
     </footer>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearchLite.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/algoliasearch.helper/2/algoliasearch.helper.min.js"></script>
+    <script defer src="/main.js"></script>
+    <script defer src="/algolia.js"></script>
   </body>
 </html>
