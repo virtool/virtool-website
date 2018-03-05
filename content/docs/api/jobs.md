@@ -67,6 +67,12 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+| Status | Message       | Reason                                    |
+| :----- | :------------ | :---------------------------------------- |
+| `422`  | Invalid query | validation error for URL query parameters |
+
 
 # Get {#get}
 
@@ -132,6 +138,13 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+| Status | Message   | Reason                         |
+| :----- | :-------- | :----------------------------- |
+| `404`  | Not found | `job_id` in URL does not exist |
+
+
 # Cancel {#cancel}
 
 Cancel a job safely and cleanly. Cancellation stops all processes and cleans up intermediate data.
@@ -140,6 +153,12 @@ Attempting to cancel a job more than once or cancel a finished job will result i
 
 ```
 PUT /api/jobs/:job_id/cancel
+```
+
+## Example
+
+```
+PUT /api/jobs/zzpugkyt/cancel
 ```
 
 ## Response
@@ -201,6 +220,15 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+| Status | Message         | Reason                                              |
+| :----- | :-------------- | :-------------------------------------------------- |
+| `400`  | Not cancellable | job is already finished                             |
+| `403`  | Not permitted   | client does not have the `create_sample` permission |
+| `404`  | Not found       | `job_id` in URL does not exist                      |
+
+
 # Remove {#remove}
 
 Remove a job that is complete, cancelled, or errored. If the requested job is running or waiting to run, ``409 Conflict`` will be returned.
@@ -220,6 +248,13 @@ DELETE /api/jobs/zzpugkyt
 ```
 Status: 204 No Content
 ```
+
+## Errors
+
+| Status | Message       | Reason                                              |
+| :----- | :------------ | :-------------------------------------------------- |
+| `403`  | Not permitted | client does not have the `remove_sample` permission |
+| `404`  | Not found     | `job_id` in URL does not exist                      |
 
 # Clear {#clear}
 
@@ -253,3 +288,7 @@ Status: 200 OK
     "removed": ["f41e8c", "kj78e3"]
 }
 ```
+
+## Errors
+
+_None_
