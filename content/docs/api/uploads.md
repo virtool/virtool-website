@@ -61,7 +61,7 @@ Status: 201 Created
 | Status | Message                | Reason                                                          |
 | :----- | :--------------------- | :-------------------------------------------------------------- |
 | `401`  | Requires authorization | request is not associated with an authorized session or API key |
-| `403`  | Not permitted          | user doesn't have the `upload_file` permission                  |
+| `403`  | Not permitted          | client doesn't have the `upload_file` permission                |
 | `404`  | Not found              | `file_type` does not exist                                      |
 
 
