@@ -142,10 +142,10 @@ Status: 200 OK
 
 ## Errors
 
-| Status | Message                | Reason                                                          |
-| :----- | :--------------------- | :-------------------------------------------------------------- |
-| `401`  | Insufficient rights    | user does not have the required rights to read the sample       |
-| `404`  | Not found              | `sample_id` in URL does not exist                               |
+| Status | Message                | Reason                                                    |
+| :----- | :--------------------- | :-------------------------------------------------------- |
+| `403`  | Insufficient rights    | user does not have the required rights to read the sample |
+| `404`  | Not found              | `sample_id` in URL does not exist                         |
 
 
 # Create {#create}
@@ -225,18 +225,17 @@ Status: 201 Created
 
 ## Errors
 
-| Status | Message                       | Reason                                                          |
-| :----- | :---------------------------- | :-------------------------------------------------------------- |
-| `401`  | Not permitted                 | user does not have the `create_sample` permission               |
-| `404`  | Group not found               | `group` in POST body does not exist                             |
-| `404`  | Subtraction not found         | `subtraction` in POST body  does not exist                      |
-| `409`  | Sample name is already in use | the provided `name` is already assigned to an existing sample   |
+| Status | Message                       | Reason                                                        |
+| :----- | :---------------------------- | :------------------------------------------------------------ |
+| `403`  | Not permitted                 | user does not have the `create_sample` permission             |
+| `404`  | Group not found               | `group` in POST body does not exist                           |
+| `404`  | Subtraction not found         | `subtraction` in POST body  does not exist                    |
+| `409`  | Sample name is already in use | the provided `name` is already assigned to an existing sample |
 
 
 # Edit {#edit}
 
 Update modifiable fields of a sample.
-
 
 ```
 PATCH /api/samples/:sample_id
@@ -244,12 +243,12 @@ PATCH /api/samples/:sample_id
 
 ## Input
 
-| Name        | Type   | Description                                              |
-| :---------- | :----- | :------------------------------------------------------- |
-| name        | string | the sample name                                          |
-| host        | string | the exact \(not subtraction\) host                       |
-| isolate     | string | the originating isolate                                  |
-| locale      | string | the location in which the sample was collected           |
+| Name        | Type   | Description                                    |
+| :---------- | :----- | :--------------------------------------------- |
+| name        | string | the sample name                                |
+| host        | string | the exact \(not subtraction\) host             |
+| isolate     | string | the originating isolate                        |
+| locale      | string | the location in which the sample was collected |
 
 ## Example
 
@@ -289,10 +288,20 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+| Status | Message                | Reason                                                    |
+| :----- | :--------------------- | :-------------------------------------------------------- |
+| `403`  | Insufficient rights    | user does not have the required rights to edit the sample |
+| `404`  | Not found              | `sample_id` in URL does not exist                         |
+| `422`  | Invalid input          | request body JSON failed validation                       |
+
 
 # Edit rights {#edit_rights}
 
 Edit the access rights for a sample.
+
+Only the sample owner or an administrator may use this endpoint.
 
 ```
 PATCH /api/samples/:sample_id/rights
@@ -338,6 +347,14 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+| Status | Message                               | Reason                                                |
+| :----- | :------------------------------------ | :---------------------------------------------------- |
+| `403`  | Must be administrator or sample owner | user is neither the sample owner nor an administrator |
+| `404`  | Not found                             | `sample_id` in URL does not exist                     |
+| `422`  | Invalid input                         | request body JSON failed validation                   |
+
 
 # Remove {#remove}
 
@@ -358,6 +375,13 @@ DELETE /api/samples/oggjipxw
 ```
 Status: 204 No Content
 ```
+
+## Errors
+
+| Status | Message                | Reason                                                      |
+| :----- | :--------------------- | :---------------------------------------------------------- |
+| `403`  | Insufficient rights    | user does not have the required rights to remove the sample |
+| `404`  | Not found              | `sample_id` in URL does not exist                           |
 
 
 # List analyses {#list_analyses}
@@ -430,6 +454,14 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+| Status | Message                | Reason                                                             |
+| :----- | :--------------------- | :----------------------------------------------------------------- |
+| `403`  | Insufficient rights    | user does not have the required rights to view the sample analyses |
+| `404`  | Not found              | `sample_id` in URL does not exist                                  |
+
+
 # Analyze {#analyze}
 
 Immediately create and placeholder analysis record for a sample and start an analysis job. When the job succeeds the analysis document will be populated.
@@ -440,8 +472,8 @@ POST /api/samples/:sample_id/analyses
 
 ## Input
 
-| Name      | Type   | Description                                   |
-| :-------- | :----- | :-------------------------------------------- |
+| Name      | Type   | Description                                     |
+| :-------- | :----- | :---------------------------------------------- |
 | algorithm | string | the algorithm name \(*eg*. pathoscope\_bowtie\) |
 
 ## Example
@@ -484,3 +516,11 @@ Location: /api/analyses/fbzypgva
 	"id": "fbzypgva"
 }
 ```
+
+## Errors
+
+| Status | Message             | Reason                                                                         |
+| :----- | :------------------ | :----------------------------------------------------------------------------- |
+| `403`  | Insufficient rights | user does not have the required rights to create a new analysis for the sample |
+| `404`  | Not found           | `sample_id` in URL does not exist                                              |
+| `422`  | Invalid input       | the JSON request body is invalid                                               |
