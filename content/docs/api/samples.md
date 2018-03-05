@@ -142,10 +142,10 @@ Status: 200 OK
 
 ## Errors
 
-| Status | Message                | Reason                                                      |
-| :----- | :--------------------- | :---------------------------------------------------------- |
-| `403`  | Insufficient rights    | client does not have the required rights to read the sample |
-| `404`  | Not found              | `sample_id` in URL does not exist                           |
+| Status | Message             | Reason                                                      |
+| :----- | :------------------ | :---------------------------------------------------------- |
+| `403`  | Insufficient rights | client does not have the required rights to read the sample |
+| `404`  | Not found           | `sample_id` in URL does not exist                           |
 
 
 # Create {#create}
@@ -243,12 +243,12 @@ PATCH /api/samples/:sample_id
 
 ## Input
 
-| Name        | Type   | Description                                    |
-| :---------- | :----- | :--------------------------------------------- |
-| name        | string | the sample name                                |
-| host        | string | the exact \(not subtraction\) host             |
-| isolate     | string | the originating isolate                        |
-| locale      | string | the location in which the sample was collected |
+| Name    | Type   | Description                                    |
+| :------ | :----- | :--------------------------------------------- |
+| name    | string | the sample name                                |
+| host    | string | the exact \(not subtraction\) host             |
+| isolate | string | the originating isolate                        |
+| locale  | string | the location in which the sample was collected |
 
 ## Example
 
@@ -290,11 +290,11 @@ Status: 200 OK
 
 ## Errors
 
-| Status | Message                | Reason                                                      |
-| :----- | :--------------------- | :---------------------------------------------------------- |
-| `403`  | Insufficient rights    | client does not have the required rights to edit the sample |
-| `404`  | Not found              | `sample_id` in URL does not exist                           |
-| `422`  | Invalid input          | request body JSON failed validation                         |
+| Status | Message             | Reason                                                      |
+| :----- | :------------------ | :---------------------------------------------------------- |
+| `403`  | Insufficient rights | client does not have the required rights to edit the sample |
+| `404`  | Not found           | `sample_id` in URL does not exist                           |
+| `422`  | Invalid input       | request body JSON failed validation                         |
 
 
 # Edit rights {#edit_rights}
@@ -378,10 +378,10 @@ Status: 204 No Content
 
 ## Errors
 
-| Status | Message                | Reason                                                        |
-| :----- | :--------------------- | :------------------------------------------------------------ |
-| `403`  | Insufficient rights    | client does not have the required rights to remove the sample |
-| `404`  | Not found              | `sample_id` in URL does not exist                             |
+| Status | Message             | Reason                                                        |
+| :----- | :------------------ | :------------------------------------------------------------ |
+| `403`  | Insufficient rights | client does not have the required rights to remove the sample |
+| `404`  | Not found           | `sample_id` in URL does not exist                             |
 
 
 # List analyses {#list_analyses}
@@ -456,10 +456,10 @@ Status: 200 OK
 
 ## Errors
 
-| Status | Message                | Reason                                                               |
-| :----- | :--------------------- | :------------------------------------------------------------------- |
-| `403`  | Insufficient rights    | client does not have the required rights to view the sample analyses |
-| `404`  | Not found              | `sample_id` in URL does not exist                                    |
+| Status | Message             | Reason                                                               |
+| :----- | :------------------ | :------------------------------------------------------------------- |
+| `403`  | Insufficient rights | client does not have the required rights to view the sample analyses |
+| `404`  | Not found           | `sample_id` in URL does not exist                                    |
 
 
 # Analyze {#analyze}
