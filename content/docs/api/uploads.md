@@ -70,8 +70,6 @@ Status: 201 Created
 
 {{% endpoint name="Delete File" %}}
 
-# Delete a File {#delete}
-
 Delete a previously uploaded file.
 
 ```

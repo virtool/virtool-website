@@ -7,4 +7,4 @@ menu:
         weight: 10
 ---
 
-Hello
+Placeholder for **Building**
