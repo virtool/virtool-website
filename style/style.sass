@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto')
 
 $primary: #3c8786
+$link: #387fa3
 $success: #60af98
+$info: #387fa3
+$warning: #dfb561
+$danger: #d44b40
 
 $family-sans-serif: "Roboto", BlinkMacSystemFont, -apple-system, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif
 
@@ -13,6 +17,50 @@ $family-sans-serif: "Roboto", BlinkMacSystemFont, -apple-system, "Segoe UI", "Ox
 
 img
     @extend .image
+
+#manualSearch
+    position: relative
+
+.hit-title
+    color: #3273dc
+
+.dropdown-custom
+    display: none
+    position: absolute
+    top: 2.85em
+    vertical-align: top
+    width: 100%
+
+
+    &.is-active 
+        display: block
+        width: 100%
+        z-index: 10
+
+.dropdown-custom
+    display: none
+    position: absolute
+    top: 2.85em
+    vertical-align: top
+    width: 100%
+
+.dropdown-custom-content
+    display: block
+    background-color: white
+    border-radius: 3px
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1)
+    padding-bottom: 0.5rem
+    padding-top: 0.5rem
+    width: inherit
+    
+.dropdown-item-custom
+    color: #4a4a4a
+    display: flex
+    font-size: 0.875rem
+    line-height: 1.5
+    padding: 0.375rem 1rem
+    position: relative
+    justify-content: space-between
 
 .logo-strip
     margin-top: 30px
