@@ -1,5 +1,5 @@
-
 $(document).ready(function () {
+    hideOnClickOutside($(".dropdown-custom").children());
 
     var client = algoliasearch('E63DIHARJ5', '8711dec9ef7500381bc6fc86aa1fe4ce');
     var index = client.initIndex('virtool-docs');
@@ -42,6 +42,26 @@ $(document).ready(function () {
                 `${hit.type}` + `</a>`;
             $("#search-results").append(searchResult);
         });
+    }
+
+    function hideOnClickOutside (selector) {
+        addClickListener();
+
+        function outClickListener (e) {
+            if ($(e.target).find(selector).length) {
+                $(selector).hide();
+            } else {
+                $(selector).show();
+            }
+        }
+
+        function removeClickListener () {
+            document.removeEventListener("click", outClickListener);
+        }
+
+        function addClickListener () {
+            document.addEventListener("click", outClickListener);
+        }
     }
     
 });
