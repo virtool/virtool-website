@@ -3513,6 +3513,12 @@ a.dropdown-item {
     background-color: #3273dc;
     color: #fff; }
 
+.hit-title {
+  display: inline-block;
+  width: 25%;
+  color: #3273dc;
+}
+
 .dropdown-divider {
   background-color: #dbdbdb;
   border: none;

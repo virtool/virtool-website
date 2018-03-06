@@ -37,7 +37,9 @@ $(document).ready(function () {
         $("#search-results").addClass("dropdown-custom-content");
 
         searchResults.forEach((hit) => {
-            var searchResult = `<a href="/${hit.uri}" class="dropdown-item">${hit.title}</a>`;
+            var searchResult = `<a href="/${hit.uri}" class="dropdown-item">` +
+                `<span class="hit-title"><strong>${hit.title}</strong></span>` +
+                `${hit.type}` + `</a>`;
             $("#search-results").append(searchResult);
         });
     }
