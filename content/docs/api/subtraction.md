@@ -119,7 +119,7 @@ Status: 200 OK
 {{% /endpoint %}}
 
 
-{{% endpoint name="Create" %}}
+{{% endpoint name="Create" permission="modify_subtraction" %}}
 
 Create a new subtraction from a file that has previously been uploaded into the file manager.
 
@@ -176,7 +176,7 @@ Status: 201 Created
 {{% /endpoint %}}
 
 
-{{% endpoint name="Remove" %}}
+{{% endpoint name="Remove" permission="modify_subtraction" %}}
 
 Remove an existing subtraction
 

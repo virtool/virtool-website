@@ -151,7 +151,7 @@ Status: 200 OK
 {{% /endpoint %}}
 
 
-{{% endpoint name="Create" %}}
+{{% endpoint name="Create" permission="create_sample" %}}
 
 Creates a sample record and starts a job that populates the record from a FASTQ file stored in the file manager.
 

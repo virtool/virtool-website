@@ -150,7 +150,7 @@ Status: 200 OK
 {{% /endpoint %}}
 
 
-{{% endpoint name="Cancel" %}}
+{{% endpoint name="Cancel" permission="cancel_job" %}}
 
 Cancel a job safely and cleanly. Cancellation stops all processes and cleans up intermediate data.
 
@@ -236,7 +236,7 @@ Status: 200 OK
 {{% /endpoint %}}
 
 
-{{% endpoint name="Remove" %}}
+{{% endpoint name="Remove" permission="remove_job" %}}
 
 Remove a job that is complete, cancelled, or errored. If the requested job is running or waiting to run, ``409 Conflict`` will be returned.
 
@@ -266,7 +266,7 @@ Status: 204 No Content
 {{% /endpoint %}}
 
 
-{{% endpoint name="Clear" %}}
+{{% endpoint name="Clear" permission="remove_job" %}}
 
 Clear completed, failed, or all finished jobs.
 

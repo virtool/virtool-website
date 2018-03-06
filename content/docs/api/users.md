@@ -8,9 +8,9 @@ menu:
         weight: 110
 ---
 
-{{% endpoint name="List" %}}
+{{% endpoint name="List" permission="manage_users" %}}
 
-Get a list of complete representations of all users. The requestor must have the ``modify_user`` permission.
+Get a list of complete representations of all users.
 
 ```
 GET /api/users
@@ -76,7 +76,7 @@ Status: 200 OK
 {{% /endpoint %}}
 
 
-{{% endpoint name="Get" %}}
+{{% endpoint name="Get" permission="manage_users" %}}
 
 Get the complete representation of a single user.
 
@@ -124,9 +124,9 @@ Status: 200 OK
 {{% /endpoint %}}
 
 
-{{% endpoint name="Create" %}}
+{{% endpoint name="Create" permission="manage_users" %}}
 
-Create a new user. The requestor must have the ``modify_user`` permission.
+Create a new user.
 
 ```
 POST /api/users
@@ -187,7 +187,7 @@ Status: 201 Created
 {{% /endpoint %}}
 
 
-{{% endpoint name="Edit" %}}
+{{% endpoint name="Edit" permission="manage_users" %}}
 
 Change the password, primary group, or force reset setting of an existing user.
 
@@ -250,7 +250,7 @@ Status: 200 OK
 {{% /endpoint %}}
 
 
-{{% endpoint name="Add To Group" %}}
+{{% endpoint name="Add To Group" permission="manage_users" %}}
 
 Add a user to a user group.
 
@@ -280,7 +280,7 @@ POST /api/users/fred/group
 ## Response
 
 ```
-Status: 200 Created
+Status: 201 Created
 ```
 
 ```json
@@ -313,7 +313,7 @@ Status: 200 Created
 {{% /endpoint %}}
 
 
-{{% endpoint name="Remove From Group" %}}
+{{% endpoint name="Remove From Group" permission="manage_users" %}}
 
 Remove a user from a user group.
 
@@ -342,9 +342,9 @@ Status: 200 OK
 {{% /endpoint %}}
 
 
-{{% endpoint name="Remove" %}}
+{{% endpoint name="Remove" permission="manage_users" %}}
 
-Remove a user account. The requestor must have the ``modify_user`` permission.
+Remove a user account.
 
 ```
 DELETE /api/users/:user_id

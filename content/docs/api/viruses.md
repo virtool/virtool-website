@@ -161,7 +161,7 @@ Status: 200 OK
 {{% /endpoint %}}
 
 
-{{% endpoint name="Create" %}}
+{{% endpoint name="Create" permission="create_virus" %}}
 
 Create a new virus given a name and abbreviation.
 
@@ -245,7 +245,7 @@ Status: 201 Created
 {{% /endpoint %}}
 
 
-{{% endpoint name="Edit" %}}
+{{% endpoint name="Edit" permission="modify_virus" %}}
 
 Edit an existing virus by changing its name, abbreviation, or schema.
 
@@ -328,7 +328,7 @@ Status: 200 OK
 {{% /endpoint %}}
 
 
-{{% endpoint name="Remove" %}}
+{{% endpoint name="Remove" permission="modify_virus" %}}
 
 Removes a virus, its isolates, and sequences.
 
@@ -466,7 +466,7 @@ Status: 200 OK
 {{% /endpoint %}}
 
 
-{{% endpoint name="Add Isolate" %}}
+{{% endpoint name="Add Isolate" permission="modify_virus" %}}
 
 Add a new isolate.
 
@@ -525,7 +525,7 @@ Status: 201 Created
 {{% /endpoint %}}
 
 
-{{% endpoint name="Edit Isolate" %}}
+{{% endpoint name="Edit Isolate" permission="modify_virus" %}}
 
 Edit an existing isolate.
 
@@ -580,7 +580,7 @@ Status: 200 OK
 {{% /endpoint %}}
 
 
-{{% endpoint name="Set Default Isolate" %}}
+{{% endpoint name="Set Default Isolate" permission="modify_virus" %}}
 
 Sets an isolate as default **and** unsets any existing default isolate. Take no input.
 
@@ -621,7 +621,7 @@ Status: 200 OK
 {{% /endpoint %}}
 
 
-{{% endpoint name="Remove Isolate" %}}
+{{% endpoint name="Remove Isolate" permission="modify_virus" %}}
 
 Removes an isolate and its sequences. If it is the default isolate, the first isolate in the list will be set as default.
 
@@ -653,7 +653,7 @@ Status: 204 No content
 {{% /endpoint %}}
 
 
-{{% endpoint name="Add Sequence" %}}
+{{% endpoint name="Add Sequence" permission="modify_virus" %}}
 
 Add a sequence to an isolate.
 
@@ -722,7 +722,7 @@ Status: 201 Created
 {{% /endpoint %}}
 
 
-{{% endpoint name="Edit Sequence" %}}
+{{% endpoint name="Edit Sequence" permission="modify_virus" %}}
 
 Edit an existing sequence.
 
@@ -776,7 +776,7 @@ Status: 200 OK
 {{% /endpoint %}}
 
 
-{{% endpoint name="Remove Sequence" %}}
+{{% endpoint name="Remove Sequence" permission="modify_virus" %}}
 
 Remove an existing sequence from an isolate.
 

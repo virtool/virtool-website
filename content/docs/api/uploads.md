@@ -17,7 +17,7 @@ Upload a Illumina read file                     | /upload/reads
 Upload a .hmm file for use with NuVs            | /upload/hmm            
 Upload a host FASTA file                        | /upload/host           
 
-{{% endpoint name="Upload File" %}}
+{{% endpoint name="Upload File" permission="upload_file" %}}
 
 Uploads a file into Virtool file manager. The file will given a unique ID composed of an 8-character random alphanumeric string and the supplied ``name`` query parameter separated by a dash.
 

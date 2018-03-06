@@ -107,7 +107,7 @@ Status: 200 OK
 {{% /endpoint %}}
 
 
-{{% endpoint name="Create" %}}
+{{% endpoint name="Create" permission="manage_users" %}}
 
 Create a new group. New groups have no permissions. Requestors must have the ``modify_users`` permission.
 
@@ -162,7 +162,7 @@ Status 201: Created
 {{% /endpoint %}}
 
 
-{{% endpoint name="Edit" %}}
+{{% endpoint name="Edit" permission="manage_users" %}}
 
 Update the permissions of an existing group. Requestors must have the ``modify_users`` permission.
 
@@ -232,7 +232,7 @@ Status: 200 OK
 {{% /endpoint %}}
 
 
-{{% endpoint name="Remove" %}}
+{{% endpoint name="Remove" permission="manage_users" %}}
 
 Remove an existing group. Requestors must have the ``modify_users`` permission. This request will fail with ``400 Bad Request`` for the built-in administrator group.
 

@@ -148,7 +148,7 @@ Status: 200 OK
 {{% /endpoint %}}
 
 
-{{% endpoint name="Revert" %}}
+{{% endpoint name="Revert" permission="modify_virus" %}}
 
 Revert a specific change and all changes that occurred after it. Changes that have been included in index builds cannot be reverted.
 

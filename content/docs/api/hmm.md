@@ -176,7 +176,7 @@ Status: 200 OK
 {{% /endpoint %}}
 
 
-{{% endpoint name="Install" %}}
+{{% endpoint name="Install" permission="modify_hmm" %}}
 
 Automatically install the official HMM profiles and annotations.
 

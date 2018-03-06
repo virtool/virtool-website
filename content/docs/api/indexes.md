@@ -156,7 +156,7 @@ Status: 200 OK
 {{% /endpoint %}}
 
 
-{{% endpoint name="Create" %}}
+{{% endpoint name="Create" permission="rebuild_index" %}}
 
 Create an index by starting a new index build job.
 
