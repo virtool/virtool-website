@@ -3467,11 +3467,9 @@ a.tag:hover {
 .dropdown {
   display: inline-flex;
   position: relative;
-  vertical-align: top;
-  width: 100%; }
+  vertical-align: top; }
   .dropdown.is-active .dropdown-menu, .dropdown.is-hoverable:hover .dropdown-menu {
-    display: block;
-    width: inherit }
+    display: block; }
   .dropdown.is-right .dropdown-menu {
     left: auto;
     right: 0; }
@@ -3495,8 +3493,7 @@ a.tag:hover {
   border-radius: 3px;
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
   padding-bottom: 0.5rem;
-  padding-top: 0.5rem;
-  width: inherit; }
+  padding-top: 0.5rem; }
 
 .dropdown-item {
   color: #4a4a4a;
@@ -3522,6 +3519,26 @@ a.dropdown-item {
   display: block;
   height: 1px;
   margin: 0.5rem 0; }
+
+.dropdown-custom {
+  display: none;
+  position: absolute;
+  top: 2.85em;
+  vertical-align: top;
+  width: 100%; }
+  .dropdown-custom.is-active {
+    display: block;
+    width: 100%;
+    z-index: 10 }
+
+.dropdown-custom-content {
+  display: block;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  width: inherit; }
 
 .level {
   align-items: center;
@@ -6499,6 +6516,10 @@ p.card-header-title .icon + span {
 .search-box {
   border-width: 0.1rem;
   margin-bottom: 2rem; }
+
+#manualSearch {
+  position: relative;
+}
 
 div.docs div.table-wrapper {
   overflow-x: auto; }

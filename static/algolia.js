@@ -1,46 +1,4 @@
 
-/*
-function handleInputChange (e, index) {
-    var searchTerm = e.target.value;
-
-    index.search(searchTerm, function(err, content) {
-        console.log(content.hits);
-
-        var searchResultList = "<div class='dropdown is-active'>" +
-            "<div class='dropdown-content' id='search-results'></div>" +
-            "</div>";
-
-        $("#manualSearch").parent().append(searchResultList);
-
-        content.hits.forEach((hit) => {
-            var searchResult = '<a href="#" class="dropdown-item">' + hit.title + '</a>';
-            $("#search-results").append(searchResult);
-        });
-    });
-
-}
-
-function clearResults () {
-    $("#search-results").remove();
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-
-    var client = algoliasearch('E63DIHARJ5', '8711dec9ef7500381bc6fc86aa1fe4ce');
-    var index = client.initIndex('virtool-docs');
-
-    var searchInput = document.getElementById("manualSearch");
-
-//    searchInput.addEventListener("change", (e) => {handleInputChange(e, index)});
-
-    $("#manualSearch").keyup((e) => {
-        clearResults();
-        handleInputChange(e, index);
-    });
-
-});
-*/
-
 $(document).ready(function () {
 
     var client = algoliasearch('E63DIHARJ5', '8711dec9ef7500381bc6fc86aa1fe4ce');
@@ -51,13 +9,37 @@ $(document).ready(function () {
     });
 
     function search(searchTerm) {
+        if (!searchTerm.length) {
+            clearResults();
+            return;
+        }
+
         return index.search(searchTerm, function (err, content) {
             renderResults(content.hits, searchTerm);
         });
     }
 
+    // Removes previous search and dropdown 
+    function clearResults () {
+        $("#search-results").removeClass("dropdown-custom-content");
+        $("#search-results").children().remove();
+    }
+
+    // Creates dropdown with search results
     function renderResults (searchResults, searchTerm) {
-        console.log(searchResults);
+        clearResults();
+
+        if (!searchResults.length) {
+            return;
+        }
+
+        //attach new search
+        $("#search-results").addClass("dropdown-custom-content");
+
+        searchResults.forEach((hit) => {
+            var searchResult = `<a href="/${hit.uri}" class="dropdown-item">${hit.title}</a>`;
+            $("#search-results").append(searchResult);
+        });
     }
     
 });
