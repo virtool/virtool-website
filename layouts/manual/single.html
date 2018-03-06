@@ -26,23 +26,7 @@
 
         <div class="columns">
             <div class="column is-3-desktop is-hidden-touch">
-                <aside class="menu">
-                    {{ range .Site.Menus.manual }}
-                        <p class="menu-label">
-                            {{ .Name }}
-                        </p>
-
-                        <ul class="menu-list">
-                            {{ range .Children }}
-                                <li>
-                                    <a class="{{ if $currentPage.IsMenuCurrent "manual" . }}is-active{{ end }}" href="{{ .URL }}">
-                                        {{ .Name }}
-                                    </a>
-                                </li>                                
-                            {{ end }}
-                        </ul>
-                    {{ end }}
-                </aside>
+                {{ partial "side.html" (dict "CurrentPage" . "MenuName" "manual") }}
             </div>
 
             <div class="column is-9-desktop is-12-touch docs docs-manual">

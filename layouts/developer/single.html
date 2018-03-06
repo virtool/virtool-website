@@ -21,22 +21,11 @@
             </div>
         </div>
         <div class="columns">
-            {{ partial "side.html" .Site.Menus.developer }}
+            {{ partial "side.html" (dict "CurrentPage" . "MenuName" "developer") }}
 
             <div class="column is-10 docs docs-api">
                 {{ $replaced := (replaceRE "<table>([\\s\\S]*?)<\\/table>" "<div class='table-wrapper'><table>$1</table></div>" .Content) }}
-                {{ $divided := (split $replaced "<h1") }}
-                {{ $length := sub (len $divided) 1 }}
-
-                {{ range first 1 $divided }}
-                    {{ safeHTML . }}
-                {{ end }}
-
-                {{ range last $length $divided }}
-                    <div class="box">
-                        {{ safeHTML (delimit (slice "<h1" .) "") }}
-                    </div>
-                {{ end }}
+                {{ safeHTML $replaced }}
             </div>   
         </div>
     </div>

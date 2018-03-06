@@ -21,7 +21,9 @@
             </div>
         </div>
         <div class="columns">
-            {{ partial "side.html" .Site.Menus.api }}
+            <div class="column is-2">
+                {{ partial "side.html" (dict "CurrentPage" . "MenuName" "api") }}
+            </div>
 
             <div class="column is-10 docs docs-api">
                 <p>
