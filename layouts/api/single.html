@@ -24,6 +24,9 @@
             {{ partial "side.html" .Site.Menus.api }}
 
             <div class="column is-10 docs docs-api">
+                <p>
+                    {{ .Page.Description }}
+                </p>
                 {{ $replaced := (replaceRE "<table>([\\s\\S]*?)<\\/table>" "<div class='table-wrapper'><table>$1</table></div>" .Content) }}
                 {{ safeHTML $replaced }}
             </div>   

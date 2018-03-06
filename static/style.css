@@ -6471,11 +6471,13 @@ label.panel-block {
 
 .card.is-docs-type {
   cursor: pointer;
-  margin: 1rem;
   transform: scale(1);
   transition: 150ms transform ease-in-out; }
   .card.is-docs-type:hover {
     transform: scale(1.05); }
+
+div.box.endpoint .level-item {
+  justify-content: flex-start; }
 
 .tile-menu {
   margin-top: -1rem;

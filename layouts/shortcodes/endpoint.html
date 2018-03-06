@@ -1,6 +1,6 @@
-<div class="box">
+<div class="box endpoint">
     <div class="level">
-        <div class="level-right">
+        <div class="level-left">
             <div class="level-item">
                 <h1 class="title is-5">
                     {{ .Get "name" }}
@@ -8,7 +8,7 @@
             </div>
         </div>
         {{ with .Get "permission" }}
-            <div class="level-left">
+            <div class="level-right">
                 <div class="level-item">
                     <div class="tags has-addons">
                         <span class="tag is-danger">Permission</span>
