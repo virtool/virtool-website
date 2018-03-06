@@ -7,7 +7,7 @@ menu:
         weight: 60
 ---
 
-# Find {#find}
+{{% endpoint "Find" %}}
 
 Find jobs by task name or the originating username.
 
@@ -73,6 +73,7 @@ Status: 200 OK
 | :----- | :------------ | :---------------------------------------- |
 | `422`  | Invalid query | validation error for URL query parameters |
 
+{{% /endpoint %}}
 
 # Get {#get}
 

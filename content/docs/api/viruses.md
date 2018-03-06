@@ -18,8 +18,8 @@ GET /api/viruses
 ## Parameters
 
 | Name     | Type    | Default   | Description                            |
-| :------- | :------ | :-------  | :------------------------------------- |
-| find     | string  | ``null``  | name or abbreviation to find   by      |
+| :------- | :------ | :-------- | :------------------------------------- |
+| find     | string  | ``null``  | name or abbreviation to find by        |
 | verified | boolean | ``false`` | only show verified viruses             |
 | page     | integer | 1         | page number of results to return       |
 | per_page | integer | 15        | number of documents to return per page |
@@ -76,6 +76,12 @@ Status: 200 OK
 	"modified_count": 2
 }
 ```
+
+## Errors
+
+| Status | Message       | Reason                                   |
+| :----- | :------------ | :--------------------------------------- |
+| `422`  | Invalid query | invalid key or value in URL query string |
 
 
 # Get
@@ -143,8 +149,16 @@ Status: 200 OK
 }
 ```
 
+## Errors
 
+| Status | Message   | Reason                    |
+| :----- | :-------- | :------------------------ |
+| `404`  | Not found | `virus_id` does not exist |
+
+
+{{% endpoint_header %}}
 # Create
+{{ % /endpoint_header %}}
 
 Create a new virus given a name and abbreviation.
 
@@ -215,6 +229,16 @@ Status: 201 Created
 }
 ```
 
+## Errors
+
+| Status | Message                             | Reason                                                       |
+| :----- | :---------------------------------- | :----------------------------------------------------------- |
+| `403`  | Not permitted                       | client does not have the `modify_virus` permission           |
+| `409`  | Name already exists                 | `name` in request body is already in use                     |
+| `409`  | Abbreviation already exists         | `abbreviation` in request body is already in use             |
+| `409`  | Name and abbreviation already exist | `name` and `abbreviation` in request body are already in use |
+| `422`  | Invalid query                       | invalid key or value in URL query string                     |
+
 
 # Edit
 
@@ -228,11 +252,11 @@ PATCH /api/viruses/:virus_id
 
 ## Input
 
-| Name         | Type   | Optional | Description                   |
-| :----------- | :----- | :------- | :---------------------------- |
-| name         | string | ture     | the virus name                |
-| abbreviation | string | true     | the virus abbreviation        |
-| schema       | array  | true     | a sequence schema             |
+| Name         | Type   | Optional | Description            |
+| :----------- | :----- | :------- | :--------------------- |
+| name         | string | true     | the virus name         |
+| abbreviation | string | true     | the virus abbreviation |
+| schema       | array  | true     | a sequence schema      |
 
 **Example**
 
@@ -285,6 +309,17 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+| Status | Message                             | Reason                                                       |
+| :----- | :---------------------------------- | :----------------------------------------------------------- |
+| `403`  | Not permitted                       | client does not have the `remove_virus` permission           |
+| `404`  | Not found                           | `virus_id` in URL does not exist                             |
+| `409`  | Name already exists                 | `name` in request body is already in use                     |
+| `409`  | Abbreviation already exists         | `abbreviation` in request body is already in use             |
+| `409`  | Name and abbreviation already exist | `name` and `abbreviation` in request body are already in use |
+| `422`  | Invalid input                       | JSON request body is invalid                                 |
+
 
 # Remove
 
@@ -305,6 +340,14 @@ DELETE /api/viruses/uxusjtcl
 ```
 Status: 204 No content
 ```
+
+## Errors
+
+| Status | Message       | Reason                                             |
+| :----- | :------------ | :------------------------------------------------- |
+| `403`  | Not permitted | client does not have the `remove_virus` permission |
+| `404`  | Not found     | `virus_id` in URL does not exist                   |
+
 
 # List Isolates {#list_isolates}
 
@@ -359,6 +402,12 @@ Status: 200 OK
 ]
 ```
 
+## Errors
+
+| Status | Message   | Reason                           |
+| :----- | :-------- | :------------------------------- |
+| `404`  | Not found | `virus_id` in URL does not exist |
+
 
 # Get Isolate {#get_isolate}
 
@@ -396,6 +445,12 @@ Status: 200 OK
 	]
 }
 ```
+
+## Errors
+
+| Status | Message   | Reason                                         |
+| :----- | :-------- | :--------------------------------------------- |
+| `404`  | Not found | `virus_id` or `isolate_id` in URL do not exist |
 
 
 # Add Isolate {#add_isolate}
@@ -446,6 +501,14 @@ Status: 201 Created
 }
 ```
 
+## Errors
+
+| Status | Message       | Reason                                             |
+| :----- | :------------ | :------------------------------------------------- |
+| `403`  | Not permitted | client does not have the `modify_virus` permission |
+| `404`  | Not found     | `virus_id` in URL does not exist                   |
+| `422`  | Invalid input | JSON request body is invalid                       |
+
 
 # Edit Isolate {#edit_isolate}
 
@@ -457,10 +520,10 @@ PATCH /api/viruses/:virus_id/isolates/:isolate_id
 
 ## Input
 
-| Name         | Type    | Optional | Description                          |
-| :----------- | :------ | :------- | :----------------------------------- |
-| source_type  | string  | True     | a source type (eg. isolate, variant) |
-| source_name  | string  | True     | a source name (eg. 8816-v2, Jal-01)  |
+| Name        | Type    | Optional | Description                          |
+| :---------- | :------ | :------- | :----------------------------------- |
+| source_type | string  | True     | a source type (eg. isolate, variant) |
+| source_name | string  | True     | a source name (eg. 8816-v2, Jal-01)  |
 
 ## Example
 
@@ -489,6 +552,16 @@ Status: 200 OK
 	"sequences": []
 }
 ```
+
+## Errors
+
+| Status | Message         | Reason                                             |
+| :----- | :-------------- | :------------------------------------------------- |
+| `403`  | Not permitted   | client does not have the `modify_virus` permission |
+| `404`  | Virus not found | `virus_id` in URL does not exist                   |
+| `404`  | Not found       | `isolate_id` in URL does not exist                 |
+| `422`  | Invalid input   | JSON request body is invalid                       |
+
 
 # Set Default Isolate {#set_default_isolate}
 
@@ -520,6 +593,15 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+| Status | Message         | Reason                                             |
+| :----- | :-------------- | :------------------------------------------------- |
+| `403`  | Not permitted   | client does not have the `modify_virus` permission |
+| `404`  | Virus not found | `virus_id` in URL does not exist                   |
+| `404`  | Not found       | `isolate_id` in URL does not exist                 |
+
+
 # Remove Isolate {#remove_isolate}
 
 Removes an isolate and its sequences. If it is the default isolate, the first isolate in the list will be set as default.
@@ -539,6 +621,14 @@ DELETE /api/viruses/a15f9837/isolates/utcvsgwz/default
 ```
 Status: 204 No content
 ```
+
+## Errors
+
+| Status | Message         | Reason                                             |
+| :----- | :-------------- | :------------------------------------------------- |
+| `403`  | Not permitted   | client does not have the `modify_virus` permission |
+| `404`  | Virus not found | `virus_id` in URL does not exist                   |
+| `404`  | Not found       | `isolate_id` in URL does not exist                 |
 
 
 # Add Sequence {#add_sequence}
@@ -596,6 +686,16 @@ Status: 201 Created
 	"id": "foobar"
 }
 ```
+
+## Errors
+
+| Status | Message         | Reason                                             |
+| :----- | :-------------- | :------------------------------------------------- |
+| `403`  | Not permitted   | client does not have the `modify_virus` permission |
+| `404`  | Virus not found | `virus_id` in URL does not exist                   |
+| `404`  | Not found       | `isolate_id` in URL does not exist                 |
+| `422`  | Invalid input   | JSON request body is invalid                       |
+
 
 # Edit Sequence {#edit_sequence}
 
