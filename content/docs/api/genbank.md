@@ -1,5 +1,6 @@
 ---
 title: "Genbank"
+description: "Interact with NCBI Genbank via the Virtool server."
 type: "api"
 menu:
     api:
@@ -7,9 +8,7 @@ menu:
         weight: 130
 ---
 
-Provides endpoints for interacting with NCBI Genbank via the Virtool server.
-
-# Get {#get}
+{{% endpoint name="Get" %}}
 
 Get a Virtool-style sequence document for the given accession.
 
@@ -39,3 +38,5 @@ Status: 200 OK
     "host": "Solanum lycopersicum"    
 }
 ```
+
+{{% /endpoint %}}

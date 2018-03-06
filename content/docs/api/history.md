@@ -1,5 +1,6 @@
 ---
 title: "History"
+description: "Read and revert virus history."
 type: "api"
 menu:
     api:
@@ -7,9 +8,7 @@ menu:
         weight: 80
 ---
 
-Read and modify virus history.
-
-# Find {#find}
+{{% endpoint name="Find" %}}
 
 List all virus changes with the most recent changes first. All parameters are optional.
 
@@ -84,8 +83,10 @@ Status: 200 OK
 }
 ```
 
+{{% /endpoint %}}
 
-# Get {#get}
+
+{{% endpoint name="Get" %}}
 
 Get the complete representation of a single virus change.
 
@@ -144,7 +145,10 @@ Status: 200 OK
 }
 ```
 
-# Revert {#revert}
+{{% /endpoint %}}
+
+
+{{% endpoint name="Revert" %}}
 
 Revert a specific change and all changes that occurred after it. Changes that have been included in index builds cannot be reverted.
 

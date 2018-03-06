@@ -1,5 +1,6 @@
 ---
 title: "Users"
+description: "Manage users and user groups."
 type: "api"
 menu:
     api:
@@ -7,9 +8,7 @@ menu:
         weight: 110
 ---
 
-Methods intended for administrative management of users.
-
-# List {#list}
+{{% endpoint name="List" %}}
 
 Get a list of complete representations of all users. The requestor must have the ``modify_user`` permission.
 
@@ -74,7 +73,10 @@ Status: 200 OK
 ]
 ```
 
-# Get {#get}
+{{% /endpoint %}}
+
+
+{{% endpoint name="Get" %}}
 
 Get the complete representation of a single user.
 
@@ -119,8 +121,10 @@ Status: 200 OK
 }
 ```
 
+{{% /endpoint %}}
 
-# Create {#create}
+
+{{% endpoint name="Create" %}}
 
 Create a new user. The requestor must have the ``modify_user`` permission.
 
@@ -180,8 +184,10 @@ Status: 201 Created
 }
 ```
 
+{{% /endpoint %}}
 
-# Edit {#edit}
+
+{{% endpoint name="Edit" %}}
 
 Change the password, primary group, or force reset setting of an existing user.
 
@@ -241,8 +247,10 @@ Status: 200 OK
 }
 ```
 
+{{% /endpoint %}}
 
-# Add To Group {#add_group}
+
+{{% endpoint name="Add To Group" %}}
 
 Add a user to a user group.
 
@@ -302,7 +310,10 @@ Status: 200 Created
 }
 ```
 
-# Remove From Group {#remove_group}
+{{% /endpoint %}}
+
+
+{{% endpoint name="Remove From Group" %}}
 
 Remove a user from a user group.
 
@@ -328,8 +339,10 @@ Status: 200 OK
 ]
 ```
 
+{{% /endpoint %}}
 
-# Remove {#remove}
+
+{{% endpoint name="Remove" %}}
 
 Remove a user account. The requestor must have the ``modify_user`` permission.
 
@@ -348,3 +361,5 @@ DELETE /api/users/bill
 ```
 Status: 204 No content
 ```
+
+{{% /endpoint %}}

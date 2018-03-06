@@ -1,5 +1,6 @@
 ---
 title: "Viruses"
+description: "Query, create, edit, and remove virus records."
 type: "api"
 menu:
     api:
@@ -7,7 +8,7 @@ menu:
         weight: 60
 ---
 
-# Find
+{{% endpoint name="Find" %}}
 
 Find viruses by their name or abbreviation
 
@@ -83,8 +84,10 @@ Status: 200 OK
 | :----- | :------------ | :--------------------------------------- |
 | `422`  | Invalid query | invalid key or value in URL query string |
 
+{{% /endpoint %}}
 
-# Get
+
+{{% endpoint name="Get" %}}
 
 Get a complete representation of a virus.
 
@@ -155,10 +158,10 @@ Status: 200 OK
 | :----- | :-------- | :------------------------ |
 | `404`  | Not found | `virus_id` does not exist |
 
+{{% /endpoint %}}
 
-{{% endpoint_header %}}
-# Create
-{{ % /endpoint_header %}}
+
+{{% endpoint name="Create" %}}
 
 Create a new virus given a name and abbreviation.
 
@@ -239,8 +242,10 @@ Status: 201 Created
 | `409`  | Name and abbreviation already exist | `name` and `abbreviation` in request body are already in use |
 | `422`  | Invalid query                       | invalid key or value in URL query string                     |
 
+{{% /endpoint %}}
 
-# Edit
+
+{{% endpoint name="Edit" %}}
 
 Edit an existing virus by changing its name, abbreviation, or schema.
 
@@ -320,8 +325,10 @@ Status: 200 OK
 | `409`  | Name and abbreviation already exist | `name` and `abbreviation` in request body are already in use |
 | `422`  | Invalid input                       | JSON request body is invalid                                 |
 
+{{% /endpoint %}}
 
-# Remove
+
+{{% endpoint name="Remove" %}}
 
 Removes a virus, its isolates, and sequences.
 
@@ -348,8 +355,10 @@ Status: 204 No content
 | `403`  | Not permitted | client does not have the `remove_virus` permission |
 | `404`  | Not found     | `virus_id` in URL does not exist                   |
 
+{{% /endpoint %}}
 
-# List Isolates {#list_isolates}
+
+{{% endpoint name="List Isolates" %}}
 
 List the isolates for a given virus.
 
@@ -408,8 +417,10 @@ Status: 200 OK
 | :----- | :-------- | :------------------------------- |
 | `404`  | Not found | `virus_id` in URL does not exist |
 
+{{% /endpoint %}}
 
-# Get Isolate {#get_isolate}
+
+{{% endpoint name="Get Isolate" %}}
 
 Get the complete representation of a single isolate.
 
@@ -452,8 +463,10 @@ Status: 200 OK
 | :----- | :-------- | :--------------------------------------------- |
 | `404`  | Not found | `virus_id` or `isolate_id` in URL do not exist |
 
+{{% /endpoint %}}
 
-# Add Isolate {#add_isolate}
+
+{{% endpoint name="Add Isolate" %}}
 
 Add a new isolate.
 
@@ -509,8 +522,10 @@ Status: 201 Created
 | `404`  | Not found     | `virus_id` in URL does not exist                   |
 | `422`  | Invalid input | JSON request body is invalid                       |
 
+{{% /endpoint %}}
 
-# Edit Isolate {#edit_isolate}
+
+{{% endpoint name="Edit Isolate" %}}
 
 Edit an existing isolate.
 
@@ -562,8 +577,10 @@ Status: 200 OK
 | `404`  | Not found       | `isolate_id` in URL does not exist                 |
 | `422`  | Invalid input   | JSON request body is invalid                       |
 
+{{% /endpoint %}}
 
-# Set Default Isolate {#set_default_isolate}
+
+{{% endpoint name="Set Default Isolate" %}}
 
 Sets an isolate as default **and** unsets any existing default isolate. Take no input.
 
@@ -601,8 +618,10 @@ Status: 200 OK
 | `404`  | Virus not found | `virus_id` in URL does not exist                   |
 | `404`  | Not found       | `isolate_id` in URL does not exist                 |
 
+{{% /endpoint %}}
 
-# Remove Isolate {#remove_isolate}
+
+{{% endpoint name="Remove Isolate" %}}
 
 Removes an isolate and its sequences. If it is the default isolate, the first isolate in the list will be set as default.
 
@@ -631,7 +650,10 @@ Status: 204 No content
 | `404`  | Not found       | `isolate_id` in URL does not exist                 |
 
 
-# Add Sequence {#add_sequence}
+{{% /endpoint %}}
+
+
+{{% endpoint name="Add Sequence" %}}
 
 Add a sequence to an isolate.
 
@@ -697,7 +719,10 @@ Status: 201 Created
 | `422`  | Invalid input   | JSON request body is invalid                       |
 
 
-# Edit Sequence {#edit_sequence}
+{{% /endpoint %}}
+
+
+{{% endpoint name="Edit Sequence" %}}
 
 Edit an existing sequence.
 
@@ -748,8 +773,10 @@ Status: 200 OK
 	"id": "foobar"
 }
 ```
+{{% /endpoint %}}
 
-# Remove Sequence {#remove_sequence}
+
+{{% endpoint name="Remove Sequence" %}}
 
 Remove an existing sequence from an isolate.
 
@@ -769,7 +796,10 @@ DELETE /api/viruses/a15f9837/isolates/utcvsgwz/sequences/foobar
 Status: 204 No Content
 ```
 
-# List History {#list_history}
+{{% /endpoint %}}
+
+
+{{% endpoint name="List History" %}}
 
 Retrieves a list of all changes made to the virus.
 

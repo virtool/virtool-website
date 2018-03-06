@@ -1,5 +1,6 @@
 ---
 title: "Errors"
+description: "Learn the errors the API can return."
 type: "api"
 menu:
     api:

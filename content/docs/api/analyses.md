@@ -1,5 +1,6 @@
 ---
 title: "Analyses"
+description: "Query and modify analyses."
 type: "api"
 menu:
     api:
@@ -9,7 +10,7 @@ menu:
 
 Analyses are the results of a given Virtool analytical pipelines on a single sample.
 
-# Get
+{{% endpoint name="Get" %}}
 
 Get a complete analysis document.
 
@@ -60,8 +61,10 @@ Status: 200 OK
 | `403`  | Insufficient rights | client does not have the required sample rights to view the analysis             |
 | `404`  | Not found           | `sample_id` in URL does not exist                                                |
 
+{{% /endpoint %}}
 
-# Remove
+
+{{% endpoint name="Remove" %}}
 
 Remove and existing analysis.
 
@@ -91,8 +94,10 @@ Status: 204 No content
 | `404`  | Not found                 | `sample_id` in URL does not exist                                                |
 | `409`  | Analysis is still running | analysis job is still in progress                                                |
 
+{{% /endpoint %}}
 
-# BLAST Contig
+
+{{% endpoint name="BLAST Contig" %}}
 
 BLAST a contig that was generated as part of a NuVs analysis.
 
@@ -133,3 +138,5 @@ Status: 200 OK
 | `404`  | Sample not found          | sample associated with analysis was not found                                    |
 | `409`  | Sequence not found        | `sequence_index` in URL does not exist                                           |
 | `409`  | Analysis is still running | analysis job is still in progress and cannot be BLASTed                          |
+
+{{% /endpoint %}}

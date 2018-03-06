@@ -1,5 +1,6 @@
 ---
 title: "Uploads"
+description: "Upload and manage bioinformatic data files."
 type: "api"
 menu:
     api:
@@ -16,7 +17,7 @@ Upload a Illumina read file                     | /upload/reads
 Upload a .hmm file for use with NuVs            | /upload/hmm            
 Upload a host FASTA file                        | /upload/host           
 
-# Upload a file {#upload}
+{{% endpoint name="Upload File" %}}
 
 Uploads a file into Virtool file manager. The file will given a unique ID composed of an 8-character random alphanumeric string and the supplied ``name`` query parameter separated by a dash.
 
@@ -64,6 +65,10 @@ Status: 201 Created
 | `403`  | Not permitted          | client doesn't have the `upload_file` permission                |
 | `404`  | Not found              | `file_type` does not exist                                      |
 
+{{% /endpoint %}}
+
+
+{{% endpoint name="Delete File" %}}
 
 # Delete a File {#delete}
 
@@ -85,3 +90,5 @@ Status: 204 No content
 | :----- | :--------------------- | :-------------------------------------------------------------- |
 | `401`  | Requires authorization | request is not associated with an authorized session or API key |
 | `404`  | Not found              | `file_id` does not exist                                        |
+
+{{% /endpoint %}}

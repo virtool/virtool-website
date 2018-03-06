@@ -1,5 +1,6 @@
 ---
 title: "Samples"
+description: "Query, create, edit, and analyze samples."
 type: "api"
 menu:
     api:
@@ -7,9 +8,7 @@ menu:
         weight: 40
 ---
 
-Samples represent Illumina sequencing libraries.
-
-# Find
+{{% endpoint name="Find" %}}
 
 Find samples based on the sample name or creator username.
 
@@ -69,8 +68,10 @@ Status: 200 OK
 | :----- | :--------------------- | :--------------------------------- |
 | `422`  | Invalid query          | invalid URL query fields or values |
 
+{{% /endpoint %}}
 
-# Get
+
+{{% endpoint name="Get" %}}
 
 Get the complete representation of a sample.
 
@@ -147,8 +148,10 @@ Status: 200 OK
 | `403`  | Insufficient rights | client does not have the required rights to read the sample |
 | `404`  | Not found           | `sample_id` in URL does not exist                           |
 
+{{% /endpoint %}}
 
-# Create {#create}
+
+{{% endpoint name="Create" %}}
 
 Creates a sample record and starts a job that populates the record from a FASTQ file stored in the file manager.
 
@@ -232,8 +235,10 @@ Status: 201 Created
 | `404`  | Subtraction not found         | `subtraction` in POST body  does not exist                    |
 | `409`  | Sample name is already in use | the provided `name` is already assigned to an existing sample |
 
+{{% /endpoint %}}
 
-# Edit {#edit}
+
+{{% endpoint name="Edit" %}}
 
 Update modifiable fields of a sample.
 
@@ -296,8 +301,10 @@ Status: 200 OK
 | `404`  | Not found           | `sample_id` in URL does not exist                           |
 | `422`  | Invalid input       | request body JSON failed validation                         |
 
+{{% /endpoint %}}
 
-# Edit rights {#edit_rights}
+
+{{% endpoint name="Edit Rights" %}}
 
 Edit the access rights for a sample.
 
@@ -355,8 +362,10 @@ Status: 200 OK
 | `404`  | Not found                             | `sample_id` in URL does not exist                     |
 | `422`  | Invalid input                         | request body JSON failed validation                   |
 
+{{% /endpoint %}}
 
-# Remove {#remove}
+
+{{% endpoint name="Remove" %}}
 
 Remove an existing sample record and its associated data files.
 
@@ -383,8 +392,10 @@ Status: 204 No Content
 | `403`  | Insufficient rights | client does not have the required rights to remove the sample |
 | `404`  | Not found           | `sample_id` in URL does not exist                             |
 
+{{% /endpoint %}}
 
-# List analyses {#list_analyses}
+
+{{% endpoint name="List Analyses" %}}
 
 Retrieve a summary list of analyses associated with a sample.
 
@@ -462,7 +473,10 @@ Status: 200 OK
 | `404`  | Not found           | `sample_id` in URL does not exist                                    |
 
 
-# Analyze {#analyze}
+{{% /endpoint %}}
+
+
+{{% endpoint name="Analyze" %}}
 
 Immediately create and placeholder analysis record for a sample and start an analysis job. When the job succeeds the analysis document will be populated.
 
@@ -524,3 +538,5 @@ Location: /api/analyses/fbzypgva
 | `403`  | Insufficient rights | client does not have the required rights to create a new analysis for the sample |
 | `404`  | Not found           | `sample_id` in URL does not exist                                                |
 | `422`  | Invalid input       | the JSON request body is invalid                                                 |
+
+{{% /endpoint %}}

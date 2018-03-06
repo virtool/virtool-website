@@ -1,5 +1,6 @@
 ---
 title: "Subtraction"
+description: "Query, create, edit, and remove subtractions."
 type: "api"
 menu:
     api:
@@ -7,19 +8,19 @@ menu:
         weight: 100
 ---
 
-# Find
+{{% endpoint name="Find" %}}
 
 Find profile subtractions by id (name) or nickname.
 
 ```
-GET /api/hmm
+GET /api/subtraction
 ```
 
 ## Parameters
 
 | Name     | Type    | Default | Description                            |
 | :---     | :------ | :------ | :------------------------------------- |
-| find     | string  | `null`  | sample name or username to filter by   |
+| find     | string  | `null`  | subtraction name to filter by          |
 | page     | integer | 1       | page number of results to return       |
 | per_page | integer | 15      | number of documents to return per page |
 
@@ -60,7 +61,10 @@ Status: 200 OK
 }
 ```
 
-# Get {#get}
+{{% /endpoint %}}
+
+
+{{% endpoint name="Get" %}}
 
 Get the complete representation of a given subtraction.
 
@@ -112,7 +116,10 @@ Status: 200 OK
 }
 ```
 
-# Create {#create}
+{{% /endpoint %}}
+
+
+{{% endpoint name="Create" %}}
 
 Create a new subtraction from a file that has previously been uploaded into the file manager.
 
@@ -166,7 +173,10 @@ Status: 201 Created
 }
 ```
 
-# Remove
+{{% /endpoint %}}
+
+
+{{% endpoint name="Remove" %}}
 
 Remove an existing subtraction
 
@@ -185,3 +195,5 @@ DELETE /api/subtraction/Test%201
 ```
 Status: 204 No content
 ```
+
+{{% /endpoint %}}
