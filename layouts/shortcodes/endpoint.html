@@ -1,0 +1,20 @@
+<div class="box">
+    <div class="level">
+        <div class="level-right">
+            <div class="level-item">
+            </div>
+        </div>
+        {{ with .Get "permission" }}
+            <div class="level-left">
+                <div class="level-item">
+                    <div class="tags has-addons">
+                        <span class="tag is-danger">Permission</span>
+                        <span class="tag">{{ . }}</span>
+                    </div>
+                </div>
+            </div>
+        {{ end }}
+    </div>
+
+    {{ .Inner }}
+</div>
