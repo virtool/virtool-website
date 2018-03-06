@@ -3514,8 +3514,6 @@ a.dropdown-item {
     color: #fff; }
 
 .hit-title {
-  display: inline-block;
-  width: 25%;
   color: #3273dc;
 }
 
@@ -3545,6 +3543,15 @@ a.dropdown-item {
   padding-bottom: 0.5rem;
   padding-top: 0.5rem;
   width: inherit; }
+
+.dropdown-item-custom {
+  color: #4a4a4a;
+  display: flex;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  padding: 0.375rem 1rem;
+  position: relative;
+  justify-content: space-between; }
 
 .level {
   align-items: center;
