@@ -1,5 +1,6 @@
 ---
 title: "Jobs"
+description: "Query, cancel, and remove jobs."
 type: "api"
 menu:
     api:
@@ -7,7 +8,7 @@ menu:
         weight: 60
 ---
 
-# Find {#find}
+{{% endpoint name="Find" %}}
 
 Find jobs by task name or the originating username.
 
@@ -67,8 +68,16 @@ Status: 200 OK
 }
 ```
 
+## Errors
 
-# Get {#get}
+| Status | Message       | Reason                                    |
+| :----- | :------------ | :---------------------------------------- |
+| `422`  | Invalid query | validation error for URL query parameters |
+
+{{% /endpoint %}}
+
+
+{{% endpoint name="Get" %}}
 
 ```
 GET /api/jobs/:job_id
@@ -132,7 +141,16 @@ Status: 200 OK
 }
 ```
 
-# Cancel {#cancel}
+## Errors
+
+| Status | Message   | Reason                         |
+| :----- | :-------- | :----------------------------- |
+| `404`  | Not found | `job_id` in URL does not exist |
+
+{{% /endpoint %}}
+
+
+{{% endpoint name="Cancel" %}}
 
 Cancel a job safely and cleanly. Cancellation stops all processes and cleans up intermediate data.
 
@@ -140,6 +158,12 @@ Attempting to cancel a job more than once or cancel a finished job will result i
 
 ```
 PUT /api/jobs/:job_id/cancel
+```
+
+## Example
+
+```
+PUT /api/jobs/zzpugkyt/cancel
 ```
 
 ## Response
@@ -201,7 +225,18 @@ Status: 200 OK
 }
 ```
 
-# Remove {#remove}
+## Errors
+
+| Status | Message         | Reason                                              |
+| :----- | :-------------- | :-------------------------------------------------- |
+| `400`  | Not cancellable | job is already finished                             |
+| `403`  | Not permitted   | client does not have the `create_sample` permission |
+| `404`  | Not found       | `job_id` in URL does not exist                      |
+
+{{% /endpoint %}}
+
+
+{{% endpoint name="Remove" %}}
 
 Remove a job that is complete, cancelled, or errored. If the requested job is running or waiting to run, ``409 Conflict`` will be returned.
 
@@ -221,7 +256,17 @@ DELETE /api/jobs/zzpugkyt
 Status: 204 No Content
 ```
 
-# Clear {#clear}
+## Errors
+
+| Status | Message       | Reason                                              |
+| :----- | :------------ | :-------------------------------------------------- |
+| `403`  | Not permitted | client does not have the `remove_sample` permission |
+| `404`  | Not found     | `job_id` in URL does not exist                      |
+
+{{% /endpoint %}}
+
+
+{{% endpoint name="Clear" %}}
 
 Clear completed, failed, or all finished jobs.
 
@@ -253,3 +298,9 @@ Status: 200 OK
     "removed": ["f41e8c", "kj78e3"]
 }
 ```
+
+## Errors
+
+_None_
+
+{{% /endpoint %}}

@@ -1,5 +1,6 @@
 ---
 title: "HMM"
+description: "Manage and query HMM annotations and files."
 type: "api"
 menu:
     api:
@@ -7,9 +8,7 @@ menu:
         weight: 90
 ---
 
-Manage and query HMM annotations and files.
-
-# Find {#find}
+{{% endpoint name="Find" %}}
 
 Find HMM annotations.
 
@@ -81,7 +80,10 @@ Status: 200 OK
 }
 ```
 
-# Get {#get}
+{{% /endpoint %}}
+
+
+{{% endpoint name="Get" %}}
 
 Get the complete representation of a single HMM annotation.
 
@@ -142,7 +144,10 @@ Status: 200 OK
 }
 ```
 
-# Get Install {#get_install}
+{{% /endpoint %}}
+
+
+{{% endpoint name="Get Install" %}}
 
 Get the status of the most recent or current install process.
 
@@ -168,8 +173,10 @@ Status: 200 OK
 }
 ```
 
+{{% /endpoint %}}
 
-# Install {#install}
+
+{{% endpoint name="Install" %}}
 
 Automatically install the official HMM profiles and annotations.
 

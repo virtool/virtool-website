@@ -1,5 +1,6 @@
 ---
 title: "Uploads"
+description: "Upload and manage bioinformatic data files."
 type: "api"
 menu:
     api:
@@ -16,7 +17,7 @@ Upload a Illumina read file                     | /upload/reads
 Upload a .hmm file for use with NuVs            | /upload/hmm            
 Upload a host FASTA file                        | /upload/host           
 
-# Upload a file {#upload}
+{{% endpoint name="Upload File" %}}
 
 Uploads a file into Virtool file manager. The file will given a unique ID composed of an 8-character random alphanumeric string and the supplied ``name`` query parameter separated by a dash.
 
@@ -30,6 +31,12 @@ POST /upload/:file_type?name=filename
 | :------- | :------ | :------- | :------------------------------------- |
 | name     | string  | false    | the display name for the file          |
 
+## Example
+
+```
+POST /upload/reads?name=test.fq.gz
+```
+
 ## Response
 
 ```
@@ -38,22 +45,32 @@ Status: 201 Created
 
 ```json
 {
-    "id" : "iqdhxivo-viruses.json.gz",
-    "name" : "viruses.json.gz",
-    "type" : "viruses",
-    "user" : {
-        "id" : "igboyes"
-    },
-    "uploaded_at" : "2017-12-07T19:09:26.147Z",
-    "expires_at" : "2017-12-08T00:09:26.147Z",
-    "created" : true,
-    "reserved" : false,
-    "ready" : true,
-    "size" : 3709347
+	"name": "test.fq.gz",
+	"user": {
+		"id": "fred"
+	},
+	"uploaded_at": "2018-03-02T22:52:09.152000Z",
+	"type": "reads",
+	"ready": false,
+	"reserved": false,
+	"id": "juqleoir-test.fq.gz"
 }
 ```
 
-# Delete an Upload {#delete}
+## Errors
+
+| Status | Message                | Reason                                                          |
+| :----- | :--------------------- | :-------------------------------------------------------------- |
+| `401`  | Requires authorization | request is not associated with an authorized session or API key |
+| `403`  | Not permitted          | client doesn't have the `upload_file` permission                |
+| `404`  | Not found              | `file_type` does not exist                                      |
+
+{{% /endpoint %}}
+
+
+{{% endpoint name="Delete File" %}}
+
+# Delete a File {#delete}
 
 Delete a previously uploaded file.
 
@@ -66,3 +83,12 @@ DELETE /api/files/:file_id
 ```
 Status: 204 No content
 ```
+
+## Errors
+
+| Status | Message                | Reason                                                          |
+| :----- | :--------------------- | :-------------------------------------------------------------- |
+| `401`  | Requires authorization | request is not associated with an authorized session or API key |
+| `404`  | Not found              | `file_id` does not exist                                        |
+
+{{% /endpoint %}}

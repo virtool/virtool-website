@@ -6504,11 +6504,13 @@ label.panel-block {
 
 .card.is-docs-type {
   cursor: pointer;
-  margin: 1rem;
   transform: scale(1);
   transition: 150ms transform ease-in-out; }
   .card.is-docs-type:hover {
     transform: scale(1.05); }
+
+div.box.endpoint .level-item {
+  justify-content: flex-start; }
 
 .tile-menu {
   margin-top: -1rem;
@@ -6566,7 +6568,7 @@ div.docs.docs-manual li img {
   margin-top: 0.6rem; }
 div.docs.docs-api div.box > pre:first-of-type {
   margin-bottom: 2rem;
-  background-color: #39807f;
+  background-color: #209cee;
   color: white; }
   div.docs.docs-api div.box > pre:first-of-type code {
     font-weight: bolder; }

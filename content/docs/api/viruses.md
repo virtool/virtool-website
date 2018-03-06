@@ -1,5 +1,6 @@
 ---
 title: "Viruses"
+description: "Query, create, edit, and remove virus records."
 type: "api"
 menu:
     api:
@@ -7,7 +8,7 @@ menu:
         weight: 60
 ---
 
-# Find
+{{% endpoint name="Find" %}}
 
 Find viruses by their name or abbreviation
 
@@ -18,8 +19,8 @@ GET /api/viruses
 ## Parameters
 
 | Name     | Type    | Default   | Description                            |
-| :------- | :------ | :-------  | :------------------------------------- |
-| find     | string  | ``null``  | name or abbreviation to find   by      |
+| :------- | :------ | :-------- | :------------------------------------- |
+| find     | string  | ``null``  | name or abbreviation to find by        |
 | verified | boolean | ``false`` | only show verified viruses             |
 | page     | integer | 1         | page number of results to return       |
 | per_page | integer | 15        | number of documents to return per page |
@@ -77,8 +78,16 @@ Status: 200 OK
 }
 ```
 
+## Errors
 
-# Get
+| Status | Message       | Reason                                   |
+| :----- | :------------ | :--------------------------------------- |
+| `422`  | Invalid query | invalid key or value in URL query string |
+
+{{% /endpoint %}}
+
+
+{{% endpoint name="Get" %}}
 
 Get a complete representation of a virus.
 
@@ -143,8 +152,16 @@ Status: 200 OK
 }
 ```
 
+## Errors
 
-# Create
+| Status | Message   | Reason                    |
+| :----- | :-------- | :------------------------ |
+| `404`  | Not found | `virus_id` does not exist |
+
+{{% /endpoint %}}
+
+
+{{% endpoint name="Create" %}}
 
 Create a new virus given a name and abbreviation.
 
@@ -215,8 +232,20 @@ Status: 201 Created
 }
 ```
 
+## Errors
 
-# Edit
+| Status | Message                             | Reason                                                       |
+| :----- | :---------------------------------- | :----------------------------------------------------------- |
+| `403`  | Not permitted                       | client does not have the `modify_virus` permission           |
+| `409`  | Name already exists                 | `name` in request body is already in use                     |
+| `409`  | Abbreviation already exists         | `abbreviation` in request body is already in use             |
+| `409`  | Name and abbreviation already exist | `name` and `abbreviation` in request body are already in use |
+| `422`  | Invalid query                       | invalid key or value in URL query string                     |
+
+{{% /endpoint %}}
+
+
+{{% endpoint name="Edit" %}}
 
 Edit an existing virus by changing its name, abbreviation, or schema.
 
@@ -228,11 +257,11 @@ PATCH /api/viruses/:virus_id
 
 ## Input
 
-| Name         | Type   | Optional | Description                   |
-| :----------- | :----- | :------- | :---------------------------- |
-| name         | string | ture     | the virus name                |
-| abbreviation | string | true     | the virus abbreviation        |
-| schema       | array  | true     | a sequence schema             |
+| Name         | Type   | Optional | Description            |
+| :----------- | :----- | :------- | :--------------------- |
+| name         | string | true     | the virus name         |
+| abbreviation | string | true     | the virus abbreviation |
+| schema       | array  | true     | a sequence schema      |
 
 **Example**
 
@@ -285,8 +314,21 @@ Status: 200 OK
 }
 ```
 
+## Errors
 
-# Remove
+| Status | Message                             | Reason                                                       |
+| :----- | :---------------------------------- | :----------------------------------------------------------- |
+| `403`  | Not permitted                       | client does not have the `remove_virus` permission           |
+| `404`  | Not found                           | `virus_id` in URL does not exist                             |
+| `409`  | Name already exists                 | `name` in request body is already in use                     |
+| `409`  | Abbreviation already exists         | `abbreviation` in request body is already in use             |
+| `409`  | Name and abbreviation already exist | `name` and `abbreviation` in request body are already in use |
+| `422`  | Invalid input                       | JSON request body is invalid                                 |
+
+{{% /endpoint %}}
+
+
+{{% endpoint name="Remove" %}}
 
 Removes a virus, its isolates, and sequences.
 
@@ -306,7 +348,17 @@ DELETE /api/viruses/uxusjtcl
 Status: 204 No content
 ```
 
-# List Isolates {#list_isolates}
+## Errors
+
+| Status | Message       | Reason                                             |
+| :----- | :------------ | :------------------------------------------------- |
+| `403`  | Not permitted | client does not have the `remove_virus` permission |
+| `404`  | Not found     | `virus_id` in URL does not exist                   |
+
+{{% /endpoint %}}
+
+
+{{% endpoint name="List Isolates" %}}
 
 List the isolates for a given virus.
 
@@ -359,8 +411,16 @@ Status: 200 OK
 ]
 ```
 
+## Errors
 
-# Get Isolate {#get_isolate}
+| Status | Message   | Reason                           |
+| :----- | :-------- | :------------------------------- |
+| `404`  | Not found | `virus_id` in URL does not exist |
+
+{{% /endpoint %}}
+
+
+{{% endpoint name="Get Isolate" %}}
 
 Get the complete representation of a single isolate.
 
@@ -397,8 +457,16 @@ Status: 200 OK
 }
 ```
 
+## Errors
 
-# Add Isolate {#add_isolate}
+| Status | Message   | Reason                                         |
+| :----- | :-------- | :--------------------------------------------- |
+| `404`  | Not found | `virus_id` or `isolate_id` in URL do not exist |
+
+{{% /endpoint %}}
+
+
+{{% endpoint name="Add Isolate" %}}
 
 Add a new isolate.
 
@@ -446,8 +514,18 @@ Status: 201 Created
 }
 ```
 
+## Errors
 
-# Edit Isolate {#edit_isolate}
+| Status | Message       | Reason                                             |
+| :----- | :------------ | :------------------------------------------------- |
+| `403`  | Not permitted | client does not have the `modify_virus` permission |
+| `404`  | Not found     | `virus_id` in URL does not exist                   |
+| `422`  | Invalid input | JSON request body is invalid                       |
+
+{{% /endpoint %}}
+
+
+{{% endpoint name="Edit Isolate" %}}
 
 Edit an existing isolate.
 
@@ -457,10 +535,10 @@ PATCH /api/viruses/:virus_id/isolates/:isolate_id
 
 ## Input
 
-| Name         | Type    | Optional | Description                          |
-| :----------- | :------ | :------- | :----------------------------------- |
-| source_type  | string  | True     | a source type (eg. isolate, variant) |
-| source_name  | string  | True     | a source name (eg. 8816-v2, Jal-01)  |
+| Name        | Type    | Optional | Description                          |
+| :---------- | :------ | :------- | :----------------------------------- |
+| source_type | string  | True     | a source type (eg. isolate, variant) |
+| source_name | string  | True     | a source name (eg. 8816-v2, Jal-01)  |
 
 ## Example
 
@@ -490,7 +568,19 @@ Status: 200 OK
 }
 ```
 
-# Set Default Isolate {#set_default_isolate}
+## Errors
+
+| Status | Message         | Reason                                             |
+| :----- | :-------------- | :------------------------------------------------- |
+| `403`  | Not permitted   | client does not have the `modify_virus` permission |
+| `404`  | Virus not found | `virus_id` in URL does not exist                   |
+| `404`  | Not found       | `isolate_id` in URL does not exist                 |
+| `422`  | Invalid input   | JSON request body is invalid                       |
+
+{{% /endpoint %}}
+
+
+{{% endpoint name="Set Default Isolate" %}}
 
 Sets an isolate as default **and** unsets any existing default isolate. Take no input.
 
@@ -520,7 +610,18 @@ Status: 200 OK
 }
 ```
 
-# Remove Isolate {#remove_isolate}
+## Errors
+
+| Status | Message         | Reason                                             |
+| :----- | :-------------- | :------------------------------------------------- |
+| `403`  | Not permitted   | client does not have the `modify_virus` permission |
+| `404`  | Virus not found | `virus_id` in URL does not exist                   |
+| `404`  | Not found       | `isolate_id` in URL does not exist                 |
+
+{{% /endpoint %}}
+
+
+{{% endpoint name="Remove Isolate" %}}
 
 Removes an isolate and its sequences. If it is the default isolate, the first isolate in the list will be set as default.
 
@@ -540,8 +641,19 @@ DELETE /api/viruses/a15f9837/isolates/utcvsgwz/default
 Status: 204 No content
 ```
 
+## Errors
 
-# Add Sequence {#add_sequence}
+| Status | Message         | Reason                                             |
+| :----- | :-------------- | :------------------------------------------------- |
+| `403`  | Not permitted   | client does not have the `modify_virus` permission |
+| `404`  | Virus not found | `virus_id` in URL does not exist                   |
+| `404`  | Not found       | `isolate_id` in URL does not exist                 |
+
+
+{{% /endpoint %}}
+
+
+{{% endpoint name="Add Sequence" %}}
 
 Add a sequence to an isolate.
 
@@ -597,7 +709,20 @@ Status: 201 Created
 }
 ```
 
-# Edit Sequence {#edit_sequence}
+## Errors
+
+| Status | Message         | Reason                                             |
+| :----- | :-------------- | :------------------------------------------------- |
+| `403`  | Not permitted   | client does not have the `modify_virus` permission |
+| `404`  | Virus not found | `virus_id` in URL does not exist                   |
+| `404`  | Not found       | `isolate_id` in URL does not exist                 |
+| `422`  | Invalid input   | JSON request body is invalid                       |
+
+
+{{% /endpoint %}}
+
+
+{{% endpoint name="Edit Sequence" %}}
 
 Edit an existing sequence.
 
@@ -648,8 +773,10 @@ Status: 200 OK
 	"id": "foobar"
 }
 ```
+{{% /endpoint %}}
 
-# Remove Sequence {#remove_sequence}
+
+{{% endpoint name="Remove Sequence" %}}
 
 Remove an existing sequence from an isolate.
 
@@ -669,7 +796,10 @@ DELETE /api/viruses/a15f9837/isolates/utcvsgwz/sequences/foobar
 Status: 204 No Content
 ```
 
-# List History {#list_history}
+{{% /endpoint %}}
+
+
+{{% endpoint name="List History" %}}
 
 Retrieves a list of all changes made to the virus.
 

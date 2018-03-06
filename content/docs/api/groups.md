@@ -1,5 +1,6 @@
 ---
 title: "Groups"
+description: "Manage user groups."
 type: "api"
 menu:
     api:
@@ -7,9 +8,7 @@ menu:
         weight: 120
 ---
 
-Manage user groups.
-
-# List {#list}
+{{% endpoint name="List" %}}
 
 List all existing user groups.
 
@@ -62,7 +61,10 @@ Status: 200 OK
 ]
 ```
 
-# Get {#get}
+{{% /endpoint %}}
+
+
+{{% endpoint name="Get" %}}
 
 Get the complete representation of a single user group.
 
@@ -102,8 +104,10 @@ Status: 200 OK
 }
 ```
 
+{{% /endpoint %}}
 
-# Create {#create}
+
+{{% endpoint name="Create" %}}
 
 Create a new group. New groups have no permissions. Requestors must have the ``modify_users`` permission.
 
@@ -155,8 +159,10 @@ Status 201: Created
 }
 ```
 
+{{% /endpoint %}}
 
-# Update Permissions {#set_permissions}
+
+{{% endpoint name="Edit" %}}
 
 Update the permissions of an existing group. Requestors must have the ``modify_users`` permission.
 
@@ -223,7 +229,10 @@ Status: 200 OK
 }
 ```
 
-# Remove {#remove}
+{{% /endpoint %}}
+
+
+{{% endpoint name="Remove" %}}
 
 Remove an existing group. Requestors must have the ``modify_users`` permission. This request will fail with ``400 Bad Request`` for the built-in administrator group.
 
@@ -242,3 +251,5 @@ DELETE /api/groups/foobar
 ```
 Status: 204 No Content
 ```
+
+{{% /endpoint %}}

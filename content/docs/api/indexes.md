@@ -1,5 +1,6 @@
 ---
 title: "Indexes"
+description: "Query and create virus indexes."
 type: "api"
 menu:
     api:
@@ -7,7 +8,7 @@ menu:
         weight: 70
 ---
 
-# List
+{{% endpoint name="List" %}}
 
 List all virus reference indexes. Takes no query or input.
 
@@ -49,8 +50,10 @@ Status: 200 OK
 }
 ```
 
+{{% /endpoint %}}
 
-# Get
+
+{{% endpoint name="Get" %}}
 
 Get indexes by their unique id or version number.
 
@@ -108,8 +111,10 @@ Status: 200 OK
 }
 ```
 
+{{% /endpoint %}}
 
-# Get Unbuilt
+
+{{% endpoint name="Get Unbuilt" %}}
 
 Return all history associated with unbuilt changes. This information would be included next time an index build is triggered.
 
@@ -148,7 +153,10 @@ Status: 200 OK
 }
 ```
 
-# Create
+{{% /endpoint %}}
+
+
+{{% endpoint name="Create" %}}
 
 Create an index by starting a new index build job.
 
@@ -183,7 +191,10 @@ Status: 201 Created
 }
 ```
 
-# Find History {#find_history}
+{{% /endpoint %}}
+
+
+{{% endpoint name="Find History" %}}
 
 Find the virus changes that are included in a given index build.
 
@@ -234,3 +245,5 @@ Status: 200 OK
 	"page": 1
 }
 ```
+
+{{% /endpoint %}}

@@ -1,12 +1,12 @@
 {{ range . }}
     <h2 class="title is-5">
-            {{ .Name }}
-        </h2>
+        {{ .Name }}
+    </h2>
 
     {{ $children := .Children }}
 
-    <div class="tile-menu">
-        <div class="tile is-ancestor is-vertical">
+    <div class="tile is-ancestor">
+        <div class="tile is-vertical">
         {{ range $index, $value := .Children }}
             {{ if or (eq $index 0) (modBool $index 3) }}
                 {{ if or (eq $index 0) (modBool $index 3) }}
@@ -14,27 +14,37 @@
                     {{ $first := eq $index 0 }}
                     {{ if $first }}
                         {{ range first 3 $children }}
-                        <a href="{{ .URL }}" class="tile is-child is-4">                    
-                            <div class="card is-fullwidth is-docs-type">                    
+                        <div class="tile is-parent is-4">
+                            <a href="{{ .URL }}" class="tile is-child card is-docs-type">           
                                 <header class="card-header">
                                     <p class="card-header-title">
                                         {{ .Name }}
-                                    </p>                      
+                                    </p>
                                 </header>
-                            </div>
-                        </a>
+                                {{ if .Page.Description }}
+                                <div class="card-content">
+                                    {{ .Page.Description }}
+                                </div>
+                                {{ end }}
+                            </a>
+                        </div>
                         {{ end }}
                     {{ else }}
                         {{ range first 3 (after $index $children) }}
-                        <a href="{{ .URL }}" class="tile is-child is-4">                    
-                            <div class="card is-fullwidth is-docs-type">                    
+                        <div class="tile is-parent is-4">
+                            <a href="{{ .URL }}" class="tile is-child card is-docs-type">           
                                 <header class="card-header">
                                     <p class="card-header-title">
                                         {{ .Name }}
-                                    </p>                      
-                                </header>
-                            </div>
-                        </a>
+                                    </p>
+                                </header>                                
+                                {{ if .Page.Description }}
+                                <div class="card-content">
+                                    {{ .Page.Description }}
+                                </div>
+                                {{ end }}
+                            </a>
+                        </div>
                         {{ end }}
                     {{ end }}
                 </div>
