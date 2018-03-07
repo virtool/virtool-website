@@ -36,9 +36,7 @@ $(document).ready(function () {
 
         //attach new search
         $("#search-results").addClass("dropdown-custom-content");
-
-        console.log(searchResults[0]);
-
+        
         searchResults.forEach((hit) => {
             var searchResult = `
                 <a href="/${hit.uri}" class="dropdown-item-custom">
