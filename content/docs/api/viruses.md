@@ -711,12 +711,13 @@ Status: 201 Created
 
 ## Errors
 
-| Status | Message         | Reason                                             |
-| :----- | :-------------- | :------------------------------------------------- |
-| `403`  | Not permitted   | client does not have the `modify_virus` permission |
-| `404`  | Virus not found | `virus_id` in URL does not exist                   |
-| `404`  | Not found       | `isolate_id` in URL does not exist                 |
-| `422`  | Invalid input   | JSON request body is invalid                       |
+| Status | Message                    | Reason                                             |
+| :----- | :------------------------- | :------------------------------------------------- |
+| `403`  | Not permitted              | client does not have the `modify_virus` permission |
+| `404`  | Not found                  | virus or isolate does not exist                    |
+| `404`  | Segment not found          | `segment` is not defined in virus schema           |
+| `409`  | Sequence id already exists | `id` is already assigned to an existing sequence   |
+| `422`  | Invalid input              | JSON request body is invalid                       |
 
 
 {{% /endpoint %}}
@@ -726,7 +727,7 @@ Status: 201 Created
 
 Edit an existing sequence.
 
-Providing a value for ``segment`` will have no effect unless the parents virus has a schema configured. If a schema is configured, the value provided for ``segment`` must be one of the segments names defined in the schema.
+Providing a value for ``segment`` will have no effect unless the parent virus has a schema configured. If a schema is configured, the value provided for ``segment`` must be one of the segment names defined in the schema.
 
 Values provided for ``sequence`` must be plain text, **not** FASTA formatted. Sequences are automatically stripped of whitespace.
 
@@ -773,6 +774,16 @@ Status: 200 OK
 	"id": "foobar"
 }
 ```
+
+## Errors
+
+| Status | Message                    | Reason                                             |
+| :----- | :------------------------- | :------------------------------------------------- |
+| `403`  | Not permitted              | client does not have the `modify_virus` permission |
+| `404`  | Not found                  | virus, isolate, or sequence does not exist         |
+| `404`  | Segment not found          | `segment` is not defined in virus schema           |
+| `422`  | Invalid input              | JSON request body is invalid                       |
+
 {{% /endpoint %}}
 
 
@@ -795,6 +806,13 @@ DELETE /api/viruses/a15f9837/isolates/utcvsgwz/sequences/foobar
 ```
 Status: 204 No Content
 ```
+
+## Errors
+
+| Status | Message                    | Reason                                             |
+| :----- | :------------------------- | :------------------------------------------------- |
+| `403`  | Not permitted              | client does not have the `modify_virus` permission |
+| `404`  | Not found                  | virus, isolate, or sequence does not exist         |
 
 {{% /endpoint %}}
 
@@ -1031,3 +1049,9 @@ Status: 200 OK
 	}
 ]
 ```
+
+## Errors
+
+| Status | Message   | Reason                                  |
+| :----- | :-------- | :-------------------------------------- |
+| `404`  | Not found | virus does not exist                    |
