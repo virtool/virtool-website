@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     hideOnClickOutside($(".dropdown-custom").children());
 
     var client = algoliasearch('E63DIHARJ5', '8711dec9ef7500381bc6fc86aa1fe4ce');
@@ -14,7 +15,7 @@ $(document).ready(function () {
             return;
         }
 
-        return index.search(searchTerm, function (err, content) {
+        return index.search({query: searchTerm, facetFilters: ["type:manual"]}, function (err, content) {
             renderResults(content.hits, searchTerm);
         });
     }
@@ -36,10 +37,17 @@ $(document).ready(function () {
         //attach new search
         $("#search-results").addClass("dropdown-custom-content");
 
+        console.log(searchResults[0]);
+
         searchResults.forEach((hit) => {
-            var searchResult = `<a href="/${hit.uri}" class="dropdown-item-custom">` +
-                `<span class="hit-title"><strong>${hit.title}</strong></span>` +
-                `${hit.type}` + `</a>`;
+            var searchResult = `
+                <a href="/${hit.uri}" class="dropdown-item-custom">
+                    <span class="hit-title">
+                        <strong>${hit.title}</strong>
+                    </span>
+                </a>
+            `;
+
             $("#search-results").append(searchResult);
         });
     }
