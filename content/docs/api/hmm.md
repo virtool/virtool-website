@@ -80,6 +80,12 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+| Status | Message       | Reason                                   |
+| :----- | :------------ | :--------------------------------------- |
+| `422`  | Invalid query | invalid key or value in URL query string |
+
 {{% /endpoint %}}
 
 
@@ -88,13 +94,13 @@ Status: 200 OK
 Get the complete representation of a single HMM annotation.
 
 ```
-GET /api/hmms/annotations/:hmm_id
+GET /api/hmms/:hmm_id
 ```
 
 ## Example
 
 ```
-GET /api/hmms/annotations/zltnktou
+GET /api/hmms/zltnktou
 ```
 
 ## Response
@@ -144,6 +150,12 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+| Status | Message   | Reason                        |
+| :----- | :-------- | :---------------------------- |
+| `404`  | Not found | HMM annotation does not exist |
+
 {{% /endpoint %}}
 
 
@@ -172,6 +184,10 @@ Status: 200 OK
 	"id": "hmm_install"
 }
 ```
+
+## Errors
+
+_None_
 
 {{% /endpoint %}}
 
@@ -203,3 +219,7 @@ Status: 200 OK
 	"id": "hmm_install"
 }
 ```
+
+## Errors
+
+_None_
