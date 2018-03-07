@@ -174,6 +174,7 @@ Status 201: Created
 | Status | Message       | Reason                                             |
 | :----- | :------------ | :------------------------------------------------- |
 | `403`  | Not permitted | client does not have the 'manage_users` permission |
+| `409`  | Conflict      | group already exists                               |
 | `422`  | Invalid input | JSON request body is invalid                       |
 
 {{% /endpoint %}}

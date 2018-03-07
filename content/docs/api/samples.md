@@ -155,7 +155,7 @@ Status: 200 OK
 
 Creates a sample record and starts a job that populates the record from a FASTQ file stored in the file manager.
 
-The array of files must contain only one or two items. Samples with arrays containing one item will be assumed to by derived from single-end libraries, while arrays with two items will correspond to paired-end libraries.
+The array of files must contain **only one or two items**. Samples with arrays containing one item will be assumed to by derived from single-end libraries, while arrays with two items will correspond to paired-end libraries.
 
 ```
 POST /api/samples
@@ -163,14 +163,14 @@ POST /api/samples
 
 ## Input
 
-| Name        | Type   | Description                                            |
-| :---------- | :----- | :----------------------------------------------------- |
-| name        | string | a **unique** name for the sample                       |
-| host        | string | the exact \(not subtraction\) host                     |
-| isolate     | string | the originating isolate                                |
-| locale      | string | the location in which the sample was collected         |
-| subtraction | string | the ``id`` of a previously imported subtraction genome |
-| files       | array  | ids of previously uploaded files                       |
+| Name        | Type   | Required | Description                                            |
+| :---------- | :----- | -------- | :----------------------------------------------------- |
+| name        | string | true     | a **unique** name for the sample                       |
+| host        | string | false    | the exact \(not subtraction\) host                     |
+| isolate     | string | false    | the originating isolate                                |
+| locale      | string | false    | the location in which the sample was collected         |
+| subtraction | string | true     | the ``id`` of a previously imported subtraction genome |
+| files       | array  | true     | ids of previously uploaded files                       |
 
 ## Example
 
@@ -234,6 +234,7 @@ Status: 201 Created
 | `404`  | Group not found               | `group` in POST body does not exist                           |
 | `404`  | Subtraction not found         | `subtraction` in POST body  does not exist                    |
 | `409`  | Sample name is already in use | the provided `name` is already assigned to an existing sample |
+| `422`  | Invalid input                 | JSON request body is invalid                                  |
 
 {{% /endpoint %}}
 

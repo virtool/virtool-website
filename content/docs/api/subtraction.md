@@ -217,9 +217,10 @@ Status: 204 No content
 
 ## Errors
 
-| Status | Message       | Reason                                                   |
-| :----- | :------------ | :------------------------------------------------------- |
-| `403`  | Not permitted | client does not have the 'modify_subtraction` permission |
-| `404`  | Not found     | subtraction does not exist                               |
+| Status | Message            | Reason                                                            |
+| :----- | :----------------- | :---------------------------------------------------------------- |
+| `403`  | Not permitted      | client does not have the 'modify_subtraction` permission          |
+| `404`  | Not found          | subtraction does not exist                                        |
+| `409`  | Has linked samples | subtraction is in use by one or more sample and cannot be removed |
 
 {{% /endpoint %}}

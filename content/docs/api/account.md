@@ -82,7 +82,7 @@ PATCH /api/account
 ## Example
 
 ```
-PATCH /api/account/settings
+PATCH /api/account
 ```
 
 ```json
@@ -274,7 +274,7 @@ Status: 200 OK
 | :----- | :--------------------- | :-------------------------------------------------------------- |
 | `400`  | Invalid old password   | supplied old password is invalid                                |
 | `401`  | Requires authorization | request is not associated with an authorized session or API key |
-| `422`  | Invalid input          | missing or invalid password field                               |
+| `422`  | Invalid input          | missing or invalid password fields                              |
 
 {{% /endpoint %}}
 

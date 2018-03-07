@@ -202,7 +202,7 @@ Status: 201 Created
 | Status | Message             | Reason                                             |
 | :----- | :------------------ | :------------------------------------------------- |
 | `403`  | Not permitted       | client does not have the `manage_users` permission |
-| `404`  | User already exists | `user_id` is already in use by an existing user    |
+| `409`  | User already exists | `user_id` is already in use by an existing user    |
 | `422`  | Invalid input       | JSON request body is invalid                       |
 
 {{% /endpoint %}}
