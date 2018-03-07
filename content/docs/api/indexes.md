@@ -50,6 +50,10 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+_None_
+
 {{% /endpoint %}}
 
 
@@ -111,6 +115,12 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+| Status | Message   | Reason                                                           |
+| :----- | :-------- | :--------------------------------------------------------------- |
+| `404`  | Not found | index identified by `index_id` or `index_version` does not exist |
+
 {{% /endpoint %}}
 
 
@@ -153,6 +163,10 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+_None_
+
 {{% /endpoint %}}
 
 
@@ -168,6 +182,7 @@ POST /api/indexes
 
 ```
 Status: 201 Created
+Location: /api/indexes/bznqwjsa
 ```
 
 ```json
@@ -192,6 +207,16 @@ Status: 201 Created
 ```
 
 {{% /endpoint %}}
+
+## Errors
+
+| Status | Message                         | Reason                                              |
+| :----- | :------------------------------ | :-------------------------------------------------- |
+| `400`  | There are unverified viruses    | some viruses included in the rebuild have issues    |
+| `400`  | The are no unbuilt changes      | there are no changes to include in an index rebuild |
+| `403`  | Not permitted                   | client does not have the `rebuild_index` permission |
+| `409`  | Index build already in progress | only one index build at a time may be in progress   |
+
 
 
 {{% endpoint name="Find History" %}}
@@ -245,5 +270,11 @@ Status: 200 OK
 	"page": 1
 }
 ```
+
+## Errors
+
+| Status | Message   | Reason                                                           |
+| :----- | :-------- | :--------------------------------------------------------------- |
+| `404`  | Not found | index identified by `index_id` or `index_version` does not exist |
 
 {{% /endpoint %}}

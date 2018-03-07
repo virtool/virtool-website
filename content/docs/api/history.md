@@ -83,6 +83,12 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+| Status | Message       | Reason                                   |
+| :----- | :------------ | :--------------------------------------- |
+| `422`  | Invalid query | invalid key or value in URL query string |
+
 {{% /endpoint %}}
 
 
@@ -145,6 +151,12 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+| Status | Message   | Reason                |
+| :----- | :-------- | :-------------------- |
+| `404`  | Not found | change does not exist |
+
 {{% /endpoint %}}
 
 
@@ -167,3 +179,10 @@ DELETE /api/history/c93ec9a9.1
 ```
 Status: 204 No Content
 ```
+
+## Errors
+
+| Status | Message     | Reason                                                            |
+| :----- | :---------- | :---------------------------------------------------------------- |
+| `404`  | Not found   | change does not exist                                             |
+| `409`  | Not unbuilt | change has been included in an index build and cannot be reverted |
