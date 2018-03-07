@@ -272,9 +272,9 @@ Status: 200 OK
 
 | Status | Message                | Reason                                                          |
 | :----- | :--------------------- | :-------------------------------------------------------------- |
-| 400    | Invalid old password   | supplied old password is invalid                                |
-| 401    | Requires authorization | request is not associated with an authorized session or API key |
-| 422    | Invalid input          | missing or invalid password field                               |
+| `400`  | Invalid old password   | supplied old password is invalid                                |
+| `401`  | Requires authorization | request is not associated with an authorized session or API key |
+| `422`  | Invalid input          | missing or invalid password field                               |
 
 {{% /endpoint %}}
 
