@@ -61,6 +61,10 @@ Status: 200 OK
 ]
 ```
 
+## Errors
+
+_None_
+
 {{% /endpoint %}}
 
 
@@ -103,6 +107,12 @@ Status: 200 OK
 	"id": "administrator"
 }
 ```
+
+## Errors
+
+| Status | Message   | Reason               |
+| :----- | :-------- | :------------------- |
+| `404`  | Not found | group does not exist |
 
 {{% /endpoint %}}
 
@@ -158,6 +168,13 @@ Status 201: Created
 	"id": "foobar"
 }
 ```
+
+## Errors
+
+| Status | Message       | Reason                                             |
+| :----- | :------------ | :------------------------------------------------- |
+| `403`  | Not permitted | client does not have the 'manage_users` permission |
+| `422`  | Invalid input | JSON request body is invalid                       |
 
 {{% /endpoint %}}
 
@@ -229,6 +246,14 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+| Status | Message       | Reason                                             |
+| :----- | :------------ | :------------------------------------------------- |
+| `403`  | Not permitted | client does not have the 'manage_users` permission |
+| `404`  | Not found     | group does not exist                               |
+| `422`  | Invalid input | JSON request body is invalid                       |
+
 {{% /endpoint %}}
 
 
@@ -251,5 +276,12 @@ DELETE /api/groups/foobar
 ```
 Status: 204 No Content
 ```
+
+## Errors
+
+| Status | Message       | Reason                                             |
+| :----- | :------------ | :------------------------------------------------- |
+| `403`  | Not permitted | client does not have the 'manage_users` permission |
+| `404`  | Not found     | group does not exist                               |
 
 {{% /endpoint %}}

@@ -61,6 +61,10 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+_None_
+
 {{% /endpoint %}}
 
 
@@ -116,6 +120,12 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+| Status | Message             | Reason                                                      |
+| :----- | :------------------ | :---------------------------------------------------------- |
+| `404`  | Not found           | `sample_id` in URL does not exist                           |
+
 {{% /endpoint %}}
 
 
@@ -129,11 +139,11 @@ POST /api/subtraction
 
 ## Input
 
-| Name           | Type   | Description                                            |
-| :------------- | :----- | :----------------------------------------------------- |
-| subtraction_id | string | a unique name for the host (eg. Arabidopsis)           |
-| nickname       | string | a nickname for the host                                |
-| file_id        | string | the unique id of the host FASTA file                   |
+| Name           | Type   | Required | Description                                            |
+| :------------- | :----- | -------- | :----------------------------------------------------- |
+| subtraction_id | string | true     | a unique name for the host (eg. Arabidopsis)           |
+| nickname       | string | false    | a nickname for the host                                |
+| file_id        | string | true     | the unique id of the host FASTA file                   |
 
 ## Example
 
@@ -173,6 +183,15 @@ Status: 201 Created
 }
 ```
 
+## Errors
+
+| Status | Message                       | Reason                                                   |
+| :----- | :---------------------------- | :------------------------------------------------------- |
+| `403`  | Not permitted                 | client does not have the 'modify_subtraction` permission |
+| `404`  | File not found                | file identified by `file_id` does not exist              |
+| `409`  | Subtraction id already exists | `id` is already in use by an existing subtraction        |
+| `422`  | Invalid input                 | JSON request body is invalid                             |
+
 {{% /endpoint %}}
 
 
@@ -195,5 +214,12 @@ DELETE /api/subtraction/Test%201
 ```
 Status: 204 No content
 ```
+
+## Errors
+
+| Status | Message       | Reason                                                   |
+| :----- | :------------ | :------------------------------------------------------- |
+| `403`  | Not permitted | client does not have the 'modify_subtraction` permission |
+| `404`  | Not found     | subtraction does not exist                               |
 
 {{% /endpoint %}}

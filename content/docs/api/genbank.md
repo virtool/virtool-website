@@ -39,4 +39,10 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+| Status | Message       | Reason                                             |
+| :----- | :------------ | :------------------------------------------------- |
+| `404`  | Not found     | accession does not exist on Genbank                |
+
 {{% /endpoint %}}

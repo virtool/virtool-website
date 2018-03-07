@@ -73,6 +73,12 @@ Status: 200 OK
 ]
 ```
 
+## Errors
+
+| Status | Message       | Reason                                             |
+| :----- | :------------ | :------------------------------------------------- |
+| `403`  | Not permitted | client does not have the 'manage_users` permission |
+
 {{% /endpoint %}}
 
 
@@ -121,6 +127,13 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+| Status | Message       | Reason                                             |
+| :----- | :------------ | :------------------------------------------------- |
+| `403`  | Not permitted | client does not have the 'manage_users` permission |
+| `404`  | Not found     | user does not exist                                |
+
 {{% /endpoint %}}
 
 
@@ -132,7 +145,7 @@ Create a new user.
 POST /api/users
 ```
 
-**Input**
+## Input
 
 | Name        | Type   | Required | Description                                      |
 | :---------- | :----- | :------- | :----------------------------------------------- |
@@ -184,6 +197,14 @@ Status: 201 Created
 }
 ```
 
+## Errors
+
+| Status | Message             | Reason                                             |
+| :----- | :------------------ | :------------------------------------------------- |
+| `403`  | Not permitted       | client does not have the `manage_users` permission |
+| `404`  | User already exists | `user_id` is already in use by an existing user    |
+| `422`  | Invalid input       | JSON request body is invalid                       |
+
 {{% /endpoint %}}
 
 
@@ -197,11 +218,11 @@ PATCH /api/users/:user_id
 
 ## Input
 
-| Name        | Type     | Description                                       |
-| :---------- | :------- | :------------------------------------------------ |
-| force_reset | boolean  | force a password reset next time the user logs in |
-| password    | string   | the new password                                  |
-| primary_group | string | the users primary group used for sample rights    |          
+| Name          | Type     | Description                                       |
+| :------------ | :------- | :------------------------------------------------ |
+| force_reset   | boolean  | force a password reset next time the user logs in |
+| password      | string   | the new password                                  |
+| primary_group | string   | the users primary group used for sample rights    |          
 
 ## Example
 
@@ -246,6 +267,14 @@ Status: 200 OK
 	"id": "fred"
 }
 ```
+
+## Errors
+
+| Status | Message             | Reason                                             |
+| :----- | :------------------ | :------------------------------------------------- |
+| `403`  | Not permitted       | client does not have the `manage_users` permission |
+| `404`  | Not found           | user does not exist                                |
+| `422`  | Invalid input       | JSON request body is invalid                       |
 
 {{% /endpoint %}}
 
@@ -310,6 +339,16 @@ Status: 201 Created
 }
 ```
 
+## Errors
+
+| Status | Message                                                              | Reason                                             |
+| :----- | :------------------------------------------------------------------- | :------------------------------------------------- |
+| `400`  | Administrators cannot remove themselves from the administrator group | at least administrator must remain on the server   |
+| `403`  | Not permitted                                                        | client does not have the `manage_users` permission |
+| `404`  | Not found                                                            | user does not exist                                |
+| `404`  | Group not found                                                      | `group` does not exist                             |
+| `422`  | Invalid input                                                        | JSON request body is invalid                       |
+
 {{% /endpoint %}}
 
 
@@ -339,6 +378,13 @@ Status: 200 OK
 ]
 ```
 
+## Errors
+
+| Status | Message             | Reason                                             |
+| :----- | :------------------ | :------------------------------------------------- |
+| `403`  | Not permitted       | client does not have the `manage_users` permission |
+| `404`  | Not found           | user does not exist                                |
+
 {{% /endpoint %}}
 
 
@@ -361,5 +407,12 @@ DELETE /api/users/bill
 ```
 Status: 204 No content
 ```
+
+## Errors
+
+| Status | Message             | Reason                                             |
+| :----- | :------------------ | :------------------------------------------------- |
+| `403`  | Not permitted       | client does not have the `manage_users` permission |
+| `404`  | Not found           | user does not exist                                |
 
 {{% /endpoint %}}
