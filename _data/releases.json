@@ -1,18 +1,6 @@
 {
     "software": [
         {
-            "html_url": "https://github.com/virtool/virtool/releases/tag/v2.1.1",
-            "published_at": "2018-03-10T00:12:08Z",
-            "download_url": "https://github.com/virtool/virtool/releases/download/v2.1.1/virtool.tar.gz",
-            "name": "v2.1.1",
-            "prerelease": false,
-            "body": "#### Fixed\r\n- fixed recurrent unhandled `Object of type 'Response' is not JSON serializable` exception (#449, #397)",
-            "size": 19718383,
-            "content_type": "application/gzip",
-            "filename": "virtool.tar.gz",
-            "asset_error": false
-        },
-        {
             "html_url": "https://github.com/virtool/virtool/releases/tag/v2.1.0",
             "published_at": "2018-03-08T21:21:32Z",
             "download_url": "https://github.com/virtool/virtool/releases/download/v2.1.0/virtool.tar.gz",
