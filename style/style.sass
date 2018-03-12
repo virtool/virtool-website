@@ -1,24 +1,66 @@
----
----
-
 @import url('https://fonts.googleapis.com/css?family=Roboto')
 
 $primary: #3c8786
+$link: #387fa3
 $success: #60af98
+$info: #387fa3
+$warning: #dfb561
+$danger: #d44b40
 
 $family-sans-serif: "Roboto", BlinkMacSystemFont, -apple-system, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif
 
-body
-    display: flex
-    min-height: 100vh
-    flex-direction: column
-
-#wrapper
-    flex: 1
+@import "bulma/bulma.sass"
 
 .image
     padding: 5px
-    border: 1px solid #ddd
+    border: 0.1rem solid #ddd
+
+img
+    @extend .image
+
+#manualSearch
+    position: relative
+
+.hit-title
+    color: #3273dc
+
+.dropdown-custom
+    display: none
+    position: absolute
+    top: 2.85em
+    vertical-align: top
+    width: 100%
+
+
+    &.is-active 
+        display: block
+        width: 100%
+        z-index: 10
+
+.dropdown-custom
+    display: none
+    position: absolute
+    top: 2.85em
+    vertical-align: top
+    width: 100%
+
+.dropdown-custom-content
+    display: block
+    background-color: white
+    border-radius: 3px
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1)
+    padding-bottom: 0.5rem
+    padding-top: 0.5rem
+    width: inherit
+    
+.dropdown-item-custom
+    color: #4a4a4a
+    display: flex
+    font-size: 0.875rem
+    line-height: 1.5
+    padding: 0.375rem 1rem
+    position: relative
+    justify-content: space-between
 
 .logo-strip
     margin-top: 30px
@@ -29,4 +71,113 @@ body
 .vtlogo-svg
     fill: white
 
-@import "bulma/bulma.sass"
+.card.is-docs-type
+    cursor: pointer
+    transform: scale(1)
+    transition: 150ms transform ease-in-out
+
+    &:hover
+        transform: scale(1.05)
+
+div.box.endpoint
+    .level-item
+        justify-content: flex-start
+
+.tile-menu
+    margin-top: -1rem
+    padding-top: 1.2rem
+    border-top: 0.1rem solid black
+
+    &:not(:last-of-type)
+        margin-bottom: 3.6rem
+
+p.card-header-title
+    .icon
+        + span
+            padding-left: 0.5rem
+
+.level-item.tags
+    justify-content: left
+
+.level-item.contains-nav
+    justify-content: left
+
+.search-box
+    border-width: 0.1rem
+    margin-bottom: 2rem 
+
+.is-monospace
+    font-family: monospace
+
+div.docs
+
+    div.table-wrapper
+        overflow-x: auto
+
+    table
+        @extend .table
+        @extend .is-fullwidth
+        @extend .is-striped
+
+    h1
+        @extend .title
+        @extend .is-5
+
+        &.docs-header            
+            border-bottom: 0.1rem solid black
+            padding-bottom: 1rem
+
+    h2
+        @extend .title
+        @extend .is-6
+
+    p
+        margin-top: 0.5rem
+        margin-bottom: 1rem
+
+    &.docs-manual
+
+        img
+            max-width: 100%
+            min-width: auto
+            padding: 5px
+            border: 0.1rem solid #ddd
+
+        h1:not(:first-child)
+            padding-top: 1.2rem
+
+        h2
+            margin: 1.8rem 0 0.8rem 0
+
+        ul
+            padding-left: 1rem
+            padding-bottom: 0.8rem
+            list-style-type: disc
+            list-style-position: inside
+
+        ol
+            padding-left: 1.3rem
+
+        article.message
+            margin-top: 2.2rem
+
+            &.is-flowing
+                margin-top: 0.6rem
+
+        li
+            img
+                margin-top: 0.6rem
+
+    &.docs-api
+
+        div.box
+            > pre:first-of-type
+                margin-bottom: 2rem
+                background-color: $info
+                color: white
+
+                code
+                    font-weight: bolder
+
+        h2
+            margin-top: 1.2rem

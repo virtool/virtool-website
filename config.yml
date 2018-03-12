@@ -1,0 +1,25 @@
+baseURL: "http://example.org/"
+languageCode: "en-us"
+title: "Virtool"
+theme: "virtool"
+staticDir: ["static"]
+
+enableGitInfo: true
+pygmentsCodeFences: true
+
+menu:
+    api:
+        - Name: "Overview"
+          Weight: 10
+        - Name: "Endpoints"
+          Weight: 20
+    manual:
+        - Name: "Getting Started"
+          Weight: 10
+        - Name: "Tutorials"
+          Weight: 20
+        - Name: "Reference"
+          Weight: 30
+    developer:
+        - Name: "Guide"
+          Weight: 10

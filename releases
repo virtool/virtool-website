@@ -1,4 +1,0 @@
----
----
-
-{{ site.data.releases | jsonify }}

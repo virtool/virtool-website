@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div class="section">
+    <div class="container">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+            <ul>
+                <li><a class="title is-4" href="/docs">Docs</a></li>
+                <li><a class="title is-5" href="/docs/manual">Manual</a></li>
+            </ul>
+        </nav>
+
+        <div class="field">
+            <div class="control has-icons-left">
+                <input id="manualSearch" class="input search-box is-info is-medium" type="text" placeholder="Search">
+                <span class="icon is-medium is-left">
+                    <i class="fas fa-search"></i>
+                </span>
+                <div class="dropdown-custom is-active">
+                    <div id="search-results"></div>
+                </div>
+            </div>
+        </div>
+
+        {{ partial "tiles.html" .Site.Menus.manual }}
+    </div>
+</div>
+
+{{ end }}

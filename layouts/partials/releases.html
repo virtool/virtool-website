@@ -1,0 +1,29 @@
+<table class="table is-fullwidth"> 
+    <thead> 
+        <tr> 
+            <th>Version</th> 
+            <th>Date</th> 
+            <th></th> 
+            <th></th> 
+        </tr>         
+    </thead> 
+ 
+    <tbody> 
+        {{ range first 5 (where . "prerelease" false) }} 
+        <tr> 
+            <td>{{ .name }}</td> 
+            <td>{{ dateFormat "2006-01-02" .published_at }}</td> 
+            <td>
+                <a class="is-hidden-touch" href="{{ .download_url }}">Download</a></td> 
+            <td> 
+                <a class="button is-small is-pulled-right" href="{{ .html_url }}" target="_blank"> 
+                    <span class="icon is-small"> 
+                        <i class="fab fa-github"></i> 
+                    </span> 
+                    <span>GitHub</span> 
+                </a> 
+            </td> 
+        </tr> 
+        {{ end }} 
+    </tbody> 
+</table>

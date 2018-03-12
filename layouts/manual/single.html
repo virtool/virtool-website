@@ -1,0 +1,42 @@
+{{ define "main" }}
+
+{{ $currentPage := . }}
+<div class="section">
+    <div class="container">
+        <div class="level">
+            <div class="level-left">
+                <div class="level-item contains-nav">
+                    <nav class="breadcrumb " aria-label="breadcrumbs">
+                        <ul>
+                            <li><a class="title is-4" href="/docs">Docs</a></li>
+                            <li><a class="title is-5" href="/docs/manual">Manual</a></li>
+                            <li><a href="#">{{ .Title }}</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            
+            <div class="level-right">
+                <div class="level-item tags has-addons">
+                    <span class="tag is-dark">Updated</span>
+                    <span class="tag is-info">{{ .GitInfo.AuthorDate.Format "January 2, 2006" }}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="columns">
+            <div class="column is-3-desktop is-hidden-touch">
+                {{ partial "side.html" (dict "CurrentPage" . "MenuName" "manual") }}
+            </div>
+
+            <div class="column is-9-desktop is-12-touch docs docs-manual">
+                <h1 class="title is-4 docs-header">
+                    {{ .Name }}
+                </h1>
+                {{ .Content }}
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ end }}

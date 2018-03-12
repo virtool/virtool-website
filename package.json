@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "hugo-algolia": "^1.2.13"
+  }
+}
