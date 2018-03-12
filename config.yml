@@ -1,4 +1,4 @@
-baseURL: "http://example.org/"
+baseURL: "https://www.virtool.ca"
 languageCode: "en-us"
 title: "Virtool"
 theme: "virtool"
@@ -6,6 +6,9 @@ staticDir: ["static"]
 
 enableGitInfo: true
 pygmentsCodeFences: true
+
+sitemap:
+  - filename: "sitemap.xml"
 
 menu:
     api:
