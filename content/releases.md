@@ -1,4 +1,7 @@
 ---
 title: "Releases"
-type: "releases"
+type: "json"
+url: "/releases"
+outputs:
+    - "json"
 ---

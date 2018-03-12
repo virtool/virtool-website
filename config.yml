@@ -7,11 +7,13 @@ staticDir: ["static"]
 enableGitInfo: true
 pygmentsCodeFences: true
 
-outputs:
-  home: ["HTML", "JSON"]
-
 sitemap:
   - filename: "sitemap.xml"
+
+outputs:
+  page:
+    - "HTML"
+    - "JSON"
 
 menu:
     api:
