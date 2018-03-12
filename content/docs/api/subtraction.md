@@ -179,6 +179,7 @@ Status: 201 Created
 	"job": {
 		"id": "rjbszwmm"
 	},
+	"nickname": "Foobar",
 	"id": "Test 1"
 }
 ```
@@ -191,6 +192,70 @@ Status: 201 Created
 | `404`  | File not found                | file identified by `file_id` does not exist              |
 | `409`  | Subtraction id already exists | `id` is already in use by an existing subtraction        |
 | `422`  | Invalid input                 | JSON request body is invalid                             |
+
+{{% /endpoint %}}
+
+
+{{% endpoint name="Edit" permission="modify_subtraction" %}}
+
+Change the nickname of an existing subtraction.
+
+## Input
+
+| Name     | Type   | Required | Description             |
+| :--------| :----- | -------- | :---------------------- |
+| nickname | string | false    | a nickname for the host |
+
+## Example
+```
+PATCH /api/subtraction/Arabdidopsis
+```
+
+```json
+{
+	"nickname": "Thale cress"
+}
+```
+
+## Response
+```
+Status: 200 OK
+```
+
+```json
+{
+	"ready": true,
+	"is_host": true,
+	"file": {
+		"id": "vlekszor-ATgenomeTAIR9.171",
+		"name": "ATgenomeTAIR9.171"
+	},
+	"user": {
+		"id": "igboyes"
+	},
+	"job": {
+		"id": "ritpnbst"
+	},
+	"count": 7,
+	"gc": {
+		"a": 0.319,
+		"t": 0.319,
+		"g": 0.18,
+		"c": 0.18,
+		"n": 0.002
+	},
+	"nickname": "Thale cress",
+	"id": "Arabidopsis"
+}
+```
+
+## Errors
+
+| Status | Message       | Reason                                                   |
+| :----- | :------------ | :------------------------------------------------------- |
+| `403`  | Not permitted | client does not have the 'modify_subtraction` permission |
+| `404`  | Not found     | subtraction does not exist                               |
+| `422`  | Invalid input | JSON request body is invalid                             |
 
 {{% /endpoint %}}
 

@@ -7,5 +7,8 @@ menu:
         weight: 60
 ---
 
-All changes made to virus records are stored as history.
-
+<article class="message is-warning">
+  <div class="message-body">
+    Under construction.
+  </div>
+</article>

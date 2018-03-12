@@ -7,7 +7,11 @@ menu:
         weight: 40
 ---
 
-Samples are generated from single Illumina samples.
+<article class="message is-warning">
+  <div class="message-body">
+    Under construction.
+  </div>
+</article>
 
 ## Uploading FASTQ
 

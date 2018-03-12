@@ -7,4 +7,8 @@ menu:
         weight: 10
 ---
 
-Placeholder for **Building**
+<article class="message is-warning">
+  <div class="message-body">
+    Under construction.
+  </div>
+</article>

@@ -7,6 +7,12 @@ menu:
         weight: 30
 ---
 
+<article class="message is-warning">
+  <div class="message-body">
+    Under construction.
+  </div>
+</article>
+
 # Overview
 
 Selecting _Samples_ on the top menu brings up the main sample managment view. Here, samples can be created, viewed, edited, analyzed, and removed.
