@@ -5,9 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ .Site.Title }}</title>
     <link rel="stylesheet" type="text/css" href="/style.css" />
-    <link rel="icon" href="/favicon.ico?v=123213" type="image/x-icon"> 
+    <link rel="icon" href="/favicon.ico?v=123213" type="image/x-icon">
   </head>
   <body>
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "url": "http://www.virtool.ca",
+            "logo": "http://www.virtool.ca/logo.png"
+        }
+    </script>
+
     {{ partial "header.html" . }}
 
     {{ block "main" . }}
