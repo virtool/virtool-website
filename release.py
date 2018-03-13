@@ -128,7 +128,7 @@ if __name__ == "__main__":
 
     parser.add_argument(
         dest="github_token",
-        help="perosnal auth token for querying API"
+        help="personal auth token for querying API"
     )
 
     args = parser.parse_args()
@@ -143,6 +143,9 @@ if __name__ == "__main__":
             "latest": get_latest(releases),
             "releases": releases
         }
+
+    with open("static/releases", "w") as f:
+        json.dump(data, f)
 
     with open("data/releases.json", "w") as f:
         json.dump(data, f, indent=4)
