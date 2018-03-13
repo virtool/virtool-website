@@ -144,11 +144,11 @@ if __name__ == "__main__":
             "releases": releases
         }
 
-    with open("static/releases", "w") as f:
-        json.dump(data, f)
-
     with open("data/releases.json", "w") as f:
         json.dump(data, f, indent=4)
+
+    with open("static/releases", "w") as f:
+        json.dump({key: data[key]["releases"] for key in data}, f)
 
     latest_database_url = data["database"]["latest"]["download_url"]
     
