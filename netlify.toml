@@ -12,7 +12,8 @@
 # Branch Deploy context: All deploys that are not in
 # an active Deploy Preview will inherit these settings.
 [context.redirect]
-  publish = "."
+  command = "./build.sh"
+  publish = "site"
 
 # Specific branch context: Deploys from this branch
 # will take these settings and override their
