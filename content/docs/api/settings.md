@@ -101,53 +101,52 @@ PATCH /api/groups
 
 ## Input
 
-| Name                    | Type   | Default                          | Allowed Values |
-| ----------------------- | ------ | ---------------------------------| -------------- |
-| allowed_source_types    | array  | `["isolate", "strain"]`          |                |
-| create_sample_inst      | int    | 3                                |                |
-| create_sample_mem       | int    | 4                                |                |
-| create_sample_proc      | int    | 4                                |                |
-| create_subtraction_inst | int    | 2                                |                |
-| create_subtraction_mem  | int    | 4                                |                |
-| create_subtraction_proc | int    | 2                                |                |
-| data_path               | string | data                             |                |
-| db_host                 | string | localhost                        |                |
-| db_name                 | string | virtool                          |                |
-| db_port                 | int    | 27107                            |                |
-| enable_api              | bool   | false                            |                |
-| github_token            | bool   |                                  |                |
-| github_username         | bool   |                                  |                |
-| internal_control_id     | bool   |                                  |                |
-| mem                     | bool   | _maximum system memory_          |                |
-| minimum_password_length | bool   | 8                                |                |
-| nuvs_inst               | bool   | 6                                |                |
-| nuvs_mem                | bool   | 16                               |                |
-| nuvs_proc               | bool   | 6                                |                |
-| pathoscope_bowtie_inst  | int    | 6                                |                |
-| pathoscope_bowtie_mem   | int    | 16                               |                |
-| pathoscope_bowtie_proc  | int    | 6                                |                |
-| proc                    | int    | _maxmium system processor count_ |                |
-| proxy_address           | string |                                  |                |
-| proxy_enable            | bool   | false                            |                |
-| proxy_password          | string |                                  |                |
-| proxy_trust             | bool   | false                            |                |
-| proxy_username          | string |                                  |                |
-| rebuild_index_inst      | int    | 1                                |                |
-| rebuild_index_mem       | int    | 4                                |                |
-| rebuild_index_proc      | int    | 2                                |                |
-| restrict_source_types   | int    | true                             |                |
-| sample_all_read         | bool   | true                             |                |
-| sample_all_write        | bool   | false                            |                |
-| sample_group            | string | none                             |                |
-| sample_group_read       | bool   | true                             |                |
-| sample_group_write      | bool   | false                            |                |
-| sample_unique_names     | bool   | true                             |                |
-| server_host             | string | localhost                        |                |
-| server_port             | int    | 9950                             |                |
-| software_channel        | string | stable                           |                |
-| use_internal_control    | bool   | false                            |                |
-| use_ssl                 | bool   | false                            |                |
-| watch_path              | string | watch                            |                |
+| Name                    | Type   | Default                          |
+| ----------------------- | ------ | ---------------------------------|
+| allowed_source_types    | array  | `["isolate", "strain"]`          |
+| create_sample_inst      | int    | `3`                              |
+| create_sample_mem       | int    | `4`                              |
+| create_sample_proc      | int    | `4`                              |
+| create_subtraction_inst | int    | `2`                              |
+| create_subtraction_mem  | int    | `4`                              |
+| create_subtraction_proc | int    | `2`                              |
+| data_path               | string | `data`                           |
+| db_host                 | string | `localhost`                      |
+| db_name                 | string | `virtool`                        |
+| db_port                 | int    | `27107`                          |
+| enable_api              | bool   | `false`                          |
+| github_token            | bool   | `""`                             |
+| github_username         | bool   | `""`                             |
+| internal_control_id     | bool   | `""`                             |
+| mem                     | bool   | _maximum system memory_          |
+| minimum_password_length | bool   | `8`                              |
+| nuvs_inst               | bool   | `6`                              |
+| nuvs_mem                | bool   | `16`                             |
+| nuvs_proc               | bool   | `6`                              |
+| pathoscope_bowtie_inst  | int    | `6`                              |
+| pathoscope_bowtie_mem   | int    | `16`                             |
+| pathoscope_bowtie_proc  | int    | `6`                              |
+| proc                    | int    | _maxmium system processor count_ |
+| proxy_address           | string | `""`                             |
+| proxy_enable            | bool   | `false`                          |
+| proxy_password          | string | `""`                             |
+| proxy_trust             | bool   | `false`                          |
+| proxy_username          | string | `""`                             |
+| rebuild_index_inst      | int    | `1`                              |
+| rebuild_index_mem       | int    | `4`                              |
+| rebuild_index_proc      | int    | `2`                              |
+| restrict_source_types   | int    | `true`                           |
+| sample_all_read         | bool   | `true`                           |
+| sample_all_write        | bool   | `false`                          |
+| sample_group            | string | `none`                           |
+| sample_group_read       | bool   | `true`                           |
+| sample_group_write      | bool   | `false`                          |
+| sample_unique_names     | bool   | `true`                           |
+| server_host             | string | `localhost`                      |
+| server_port             | int    | `9950`                           |
+| software_channel        | string | `stable`                         |
+| use_internal_control    | bool   | `false`                          |
+| watch_path              | string | `watch`                          |
 
 ## Example
 
