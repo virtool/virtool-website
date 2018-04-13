@@ -15,7 +15,7 @@ menu:
 2. If you haven't already uploaded a FASTA file, you must do so. Click <i class="fa fa-folder-open"></i> to go to the read file uploader and upload as FASTQ file.
     !["Upload read file"](/docs_images/upload_read_file.gif)  
 
-3. In the _Samples_ view, click <i class="far fa-edit text-primary"></i> to open the sample creator. The file you uploaded should now be available in file list.
+3. In the _Samples_ view, click <i class="fa fa-edit"></i> to open the sample creator. The file you uploaded should now be available in file list.
     !["Sample creator"](/docs_images/sample_creator.png)
 
 # Creating a Sample
