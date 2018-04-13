@@ -5676,6 +5676,9 @@ p.card-header-title .icon + span {
 .is-monospace {
   font-family: monospace; }
 
+.side-menu {
+  padding-right: 1.6rem; }
+
 div.docs div.table-wrapper {
   overflow-x: auto; }
 div.docs h1.docs-header {

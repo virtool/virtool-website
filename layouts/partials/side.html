@@ -1,19 +1,21 @@
-<aside class="menu">
-    {{ $currentPage := .CurrentPage }}
-    {{ $menuName := .MenuName }}
-    {{ range (index .CurrentPage.Site.Menus $menuName) }}
-        <p class="menu-label">
-            {{ .Name }}
-        </p>
-
-        <ul class="menu-list">
-            {{ range .Children }}
-                <li>
-                    <a class="{{ if $currentPage.IsMenuCurrent $menuName . }}is-active{{ end }}" href="{{ .URL }}">
-                        {{ .Name }}
-                    </a>
-                </li>                                
-            {{ end }}
-        </ul>
-    {{ end }}
-</aside>
+<div class="side-menu">
+    <aside class="menu">
+        {{ $currentPage := .CurrentPage }}
+        {{ $menuName := .MenuName }}
+        {{ range (index .CurrentPage.Site.Menus $menuName) }}
+            <p class="menu-label">
+                {{ .Name }}
+            </p>
+    
+            <ul class="menu-list">
+                {{ range .Children }}
+                    <li>
+                        <a class="{{ if $currentPage.IsMenuCurrent $menuName . }}is-active{{ end }}" href="{{ .URL }}">
+                            {{ .Name }}
+                        </a>
+                    </li>                                
+                {{ end }}
+            </ul>
+        {{ end }}
+    </aside>    
+</div>

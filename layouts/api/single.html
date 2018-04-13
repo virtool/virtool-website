@@ -21,11 +21,11 @@
             </div>
         </div>
         <div class="columns">
-            <div class="column is-2">
+            <div class="column is-narrow is-hidden-touch">
                 {{ partial "side.html" (dict "CurrentPage" . "MenuName" "api") }}
             </div>
 
-            <div class="column is-10 docs docs-api">
+            <div class="column docs docs-api">
                 <p>
                     {{ .Page.Description }}
                 </p>
