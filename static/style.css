@@ -574,7 +574,7 @@ a.has-text-danger:hover, a.has-text-danger:focus {
 .has-text-weight-normal {
   font-weight: 400 !important; }
 
-.has-text-weight-semibold {
+.has-text-weight-semibold, div.docs h3 {
   font-weight: 600 !important; }
 
 .has-text-weight-bold {
@@ -3055,11 +3055,11 @@ a.tag:hover {
     font-size: 2.5rem; }
   .title.is-3, div.docs h1.is-3, div.docs h2.is-3 {
     font-size: 2rem; }
-  .title.is-4, div.docs h1.is-4, div.docs h2.is-4 {
+  .title.is-4, div.docs h1, div.docs h2.is-4 {
     font-size: 1.5rem; }
-  .title.is-5, div.docs h1, div.docs h2.is-5 {
+  .title.is-5, div.docs h1.is-5, div.docs h2 {
     font-size: 1.25rem; }
-  .title.is-6, div.docs h1.is-6, div.docs h2 {
+  .title.is-6, div.docs h1.is-6, div.docs h2.is-6, div.docs h3.title {
     font-size: 1rem; }
   .title.is-7, div.docs h1.is-7, div.docs h2.is-7 {
     font-size: 0.75rem; }
@@ -3080,11 +3080,11 @@ a.tag:hover {
     font-size: 2.5rem; }
   .subtitle.is-3 {
     font-size: 2rem; }
-  .subtitle.is-4 {
+  .subtitle.is-4, div.docs h1.subtitle {
     font-size: 1.5rem; }
-  .subtitle.is-5, div.docs h1.subtitle {
+  .subtitle.is-5, div.docs h2.subtitle {
     font-size: 1.25rem; }
-  .subtitle.is-6, div.docs h2.subtitle {
+  .subtitle.is-6, div.docs h3.subtitle {
     font-size: 1rem; }
   .subtitle.is-7 {
     font-size: 0.75rem; }
@@ -4225,17 +4225,17 @@ a.navbar-link.is-active {
     width: 25%; }
   .columns.is-mobile > .column.is-offset-3 {
     margin-left: 25%; }
-  .columns.is-mobile > .column.is-4 {
+  .columns.is-mobile > .column.is-4, div.docs .columns.is-mobile > h1.column {
     flex: none;
     width: 33.33333%; }
   .columns.is-mobile > .column.is-offset-4 {
     margin-left: 33.33333%; }
-  .columns.is-mobile > .column.is-5, div.docs .columns.is-mobile > h1.column {
+  .columns.is-mobile > .column.is-5, div.docs .columns.is-mobile > h2.column {
     flex: none;
     width: 41.66667%; }
   .columns.is-mobile > .column.is-offset-5 {
     margin-left: 41.66667%; }
-  .columns.is-mobile > .column.is-6, div.docs .columns.is-mobile > h2.column {
+  .columns.is-mobile > .column.is-6, div.docs .columns.is-mobile > h3.column {
     flex: none;
     width: 50%; }
   .columns.is-mobile > .column.is-offset-6 {
@@ -4447,17 +4447,17 @@ a.navbar-link.is-active {
       width: 25%; }
     .column.is-offset-3, .column.is-offset-3-tablet {
       margin-left: 25%; }
-    .column.is-4, .column.is-4-tablet {
+    .column.is-4, div.docs h1.column, .column.is-4-tablet {
       flex: none;
       width: 33.33333%; }
     .column.is-offset-4, .column.is-offset-4-tablet {
       margin-left: 33.33333%; }
-    .column.is-5, div.docs h1.column, .column.is-5-tablet {
+    .column.is-5, div.docs h2.column, .column.is-5-tablet {
       flex: none;
       width: 41.66667%; }
     .column.is-offset-5, .column.is-offset-5-tablet {
       margin-left: 41.66667%; }
-    .column.is-6, div.docs h2.column, .column.is-6-tablet {
+    .column.is-6, div.docs h3.column, .column.is-6-tablet {
       flex: none;
       width: 50%; }
     .column.is-offset-6, .column.is-offset-6-tablet {
@@ -4986,11 +4986,11 @@ a.navbar-link.is-active {
     --columnGap: 0.5rem; }
   .columns.is-variable.is-3 {
     --columnGap: 0.75rem; }
-  .columns.is-variable.is-4 {
+  .columns.is-variable.is-4, div.docs h1.columns.is-variable {
     --columnGap: 1rem; }
-  .columns.is-variable.is-5, div.docs h1.columns.is-variable {
+  .columns.is-variable.is-5, div.docs h2.columns.is-variable {
     --columnGap: 1.25rem; }
-  .columns.is-variable.is-6, div.docs h2.columns.is-variable {
+  .columns.is-variable.is-6, div.docs h3.columns.is-variable {
     --columnGap: 1.5rem; }
   .columns.is-variable.is-7 {
     --columnGap: 1.75rem; }
@@ -5032,13 +5032,13 @@ a.navbar-link.is-active {
     .tile.is-3 {
       flex: none;
       width: 25%; }
-    .tile.is-4 {
+    .tile.is-4, div.docs h1.tile {
       flex: none;
       width: 33.33333%; }
-    .tile.is-5, div.docs h1.tile {
+    .tile.is-5, div.docs h2.tile {
       flex: none;
       width: 41.66667%; }
-    .tile.is-6, div.docs h2.tile {
+    .tile.is-6, div.docs h3.tile {
       flex: none;
       width: 50%; }
     .tile.is-7 {
@@ -5684,6 +5684,8 @@ div.docs div.table-wrapper {
 div.docs h1.docs-header {
   border-bottom: 0.1rem solid black;
   padding-bottom: 1rem; }
+div.docs h3:not(:first-child) {
+  margin-top: 2.2rem; }
 div.docs p {
   margin-top: 0.5rem;
   margin-bottom: 1rem; }

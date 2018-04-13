@@ -126,7 +126,7 @@ div.docs
 
     h1
         @extend .title
-        @extend .is-5
+        @extend .is-4
 
         &.docs-header            
             border-bottom: 0.1rem solid black
@@ -134,7 +134,15 @@ div.docs
 
     h2
         @extend .title
+        @extend .is-5
+
+    h3
+        @extend .has-text-weight-semibold
         @extend .is-6
+
+        &:not(:first-child)
+            margin-top: 2.2rem
+
 
     p
         margin-top: 0.5rem
