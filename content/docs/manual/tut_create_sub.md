@@ -7,11 +7,9 @@ menu:
         weight: 30
 ---
 
-# 2. Creang a Subtraction
-
 Subtractions are whole genome references used for eliminating reads from the analysis that are likely to have originated from the host genome or non-pathogenic organisms associated with the host such as insects or fungi.
 
-## 2.1 Finding source FASTA {#finding}
+## 1. Finding source FASTA {#finding}
 
 We will use the _Arabidopsis thaliana_ genome for this example.
 
@@ -23,7 +21,7 @@ We will use the _Arabidopsis thaliana_ genome for this example.
 3. Decompress the downloaded file.
    
 
-## 2.2 Uploading FASTA {#uploading}
+## 2. Uploading FASTA {#uploading}
 
 1. Go to the _Subtraction_ view via the main navigation bar.
    ![](/docs_images/subtraction_empty.png)
@@ -34,7 +32,7 @@ We will use the _Arabidopsis thaliana_ genome for this example.
    ![](/docs_images/subtraction_upload.gif)
 
 
-## 2.3 Creating Subtraction {#creating}
+## 3. Creating Subtraction {#creating}
 
 1. Go back to the _Subtraction_ view via the main navigation bar.
 

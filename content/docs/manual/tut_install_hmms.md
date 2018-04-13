@@ -9,7 +9,7 @@ menu:
 
 In order to use the NuVs algorithm, you must first install HMM profiles and annotations. Together these data allow NuVs to identify and annotate sequences assembled from your sample that might comprise part of a novel viral genome.
 
-## 2.1 Official Data {#official}
+# 1. Install Official Data {#official}
 
 1. Navigate to the _HMMs_ view in the main navigation bar. You should see this if no HMM data have already been installed
    ![](/docs_images/hmm_no_data_found.png)
