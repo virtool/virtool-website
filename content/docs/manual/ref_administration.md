@@ -83,7 +83,7 @@ This settings determines how members of the owner group can interact with the sa
 
 ### Group Rights
 
-This setting determines how members of the owner group can interact with the sample. If the owner group is _None_, this setting has no effect.
+This setting determines how members of the owner group can interact with the sample. If the owner group is _None_, this setting has no effect. Rights can be changes by sample owners and administrators at any time.
 
 !["Group rights"](/docs_images/admin_group_rights.png)
 
@@ -95,4 +95,4 @@ This setting determines how members of the owner group can interact with the sam
 
 ### All Users' Rights
 
-This settings determines how any Virtool user can interact with the sample. Rights for all users behave exactly as they do in **Group Rights**.
+This settings determines how any Virtool user can interact with the sample. Rights for all users behave exactly as they do in **Group Rights**. Rights can be changes by sample owners and administrators at any time.
