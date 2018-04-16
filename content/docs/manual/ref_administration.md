@@ -128,5 +128,45 @@ It is possible to opt out of sending error reports by unchecking the <i class="f
 !["Sentry"](/docs_images/admin_sentry.png)
 
 
+# Data Settings
 
+These settings determines how Virtool stores data in database and on disk.
 
+<article class="message is-danger">
+  <div class="message-body">
+    Changing these settings after initial setup can make Virtool non-functional.
+  </div>
+</article>
+
+## Database
+
+Allows administrators to change how Virtool connects to a MongoDB database. There are two situations when it would be safe and necessary to change these settings:
+
+- the database had to be renamed and the name setting needs to be updated
+- the database has moved to a different host and the host and port settings must be updated
+
+These changes can be made here and require a server reload to take effect.
+
+!["MongoDB Settings"](/docs_images/admin_mongo.png)
+
+## Paths
+
+Allows administrators to change where Virtool stores application data and where it automatically retrieves sequence data from.
+
+### Virtool Data
+
+The is the location Virtool where saves data for samples, analyses, virus indexes, subtractions, and uploaded files. Changing this location after inital setup is only safe and necessary in one situtation:
+
+- the data path has moved to a different location and its contents are unchanged
+
+These changes can be made here and require as server reload to take effect.
+
+!["Virtool Data Path"](/docs_images/admin_paths.png)
+
+### Watch
+
+This is the location Virtool automatically retrieves FASTQ files from.
+
+The files are copied into the Virtool file manager and made available for sample creation. Files are deleted from the watch path once they are pulled into the file manager.
+
+It is safe to change this path at any time.
