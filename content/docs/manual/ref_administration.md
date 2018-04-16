@@ -61,11 +61,11 @@ By default sample names must be unique to the sample manager. This prevents conf
 
 ## Default Sample Rights
 
-These settings determine how rights are assigned to newly created samples.
+These settings determine how rights are assigned to newly created samples. Sample rights in Virtool are reminiscent of UNIX permissions.
 
 ### Sample Group
 
-This determines what owner group is applied to the sample:
+This determines how an owner group is applied to the sample when it is created.
 
 !["Sample group options"](/docs_images/admin_sample_group.png)
 
@@ -74,3 +74,25 @@ This determines what owner group is applied to the sample:
 | _None_          | No group owner is assigned. Group rights do not apply                           |
 | _Force Choice_  | The sample creator is forced to choose the owner group from their member groups |
 | _Primary Group_ | The sample is automatically assigned the creators primary group                 |
+
+### Group Rights
+
+This settings determines how members of the owner group can interact with the sample. If the owner group is _None_, this setting has no effect.
+
+!["Group rights"](/docs_images/admin_group_rights.png)
+
+### Group Rights
+
+This setting determines how members of the owner group can interact with the sample. If the owner group is _None_, this setting has no effect.
+
+!["Group rights"](/docs_images/admin_group_rights.png)
+
+|                |                                                                                                                     |
+| -------------- | ------------------------------------------------------------------------------------------------------------------- |
+| _None_         | Sample is not returned in searches and is not accessible by URL.                                                    |
+| _Read_         | Sample is returned in searches and is viewable. All editing interfaces are disabled and analyses cannot be started. |
+| _Read & Write_ | In addition to _Read_ rights, editing interfaces are enabled and analyses can be run.                               |
+
+### All Users' Rights
+
+This settings determines how any Virtool user can interact with the sample. Rights for all users behave exactly as they do in **Group Rights**.
