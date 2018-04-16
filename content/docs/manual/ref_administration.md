@@ -96,3 +96,37 @@ This setting determines how members of the owner group can interact with the sam
 ### All Users' Rights
 
 This settings determines how any Virtool user can interact with the sample. Rights for all users behave exactly as they do in **Group Rights**. Rights can be changes by sample owners and administrators at any time.
+
+
+# Server Settings
+
+Manage technical settings for the Virtool server.
+
+## HTTP Server
+
+### Changing the HTTP Address
+
+The address for the HTTP server can be changed by modifying the host and port number the server listens on.
+
+Virtool must be restarted for these settings to take effect. Make sure the user running the Virtool server has the permissions required to bind the selected port. If you want to listen on port 80, we suggest setting up a [reverse proxy server](/docs/manual/gs_reverse_proxy) rather than running Virtool as a superuser.
+
+!["HTTP address"](/docs_images/admin_http.png)
+
+### Enabling the API
+
+To allow other applications to make use of Virtool's HTTP API, it must first be enabled. This can be done by checking <i class="far fa-square"></i> **Enable API**.
+
+!["Enable API"](/docs_images/admin_enable_api.png)
+
+
+## Sentry
+
+Sentry is a service Virtool developers use for tracking errors in instances of Virtool server and client software. This information is invaluable for fixing bugs and improving the user experience. Sample data is not sent as part of error reporting.
+
+It is possible to opt out of sending error reports by unchecking the <i class="far fa-check-square"></i> **Enable** button. This change requires a reload to take effect.
+
+!["Sentry"](/docs_images/admin_sentry.png)
+
+
+
+
