@@ -170,3 +170,27 @@ This is the location Virtool automatically retrieves FASTQ files from.
 The files are copied into the Virtool file manager and made available for sample creation. Files are deleted from the watch path once they are pulled into the file manager.
 
 It is safe to change this path at any time.
+
+# Jobs
+
+Configure the resource usage of jobs on a Virtool instance.
+
+## Resource Limits
+
+These setting define what resources the Virtool server instance is allowed to access on the host computer.
+
+The values for these settings cannot exceed the available resources. They cannot be set lower than any corresponding task-specific limits. Task-specific limits have to be reduced first before their corresponing resource limits.
+
+!["Virtool Resources"](/docs_images/admin_resources.png)
+
+## Task-Specific Limits
+
+These settings define the resource limits for each task.
+
+Jobs that exceed _CPU_ and _Memory_ task-specific limits will in most cases fail with an error.
+
+The number of instances of each job type can be arbitrarily. Queued jobs in excess of the instance limit will be forced to wait until another instance completes. The setting prevents slowdowns due to heavy disk usage.
+
+!["Virtool Resources"](/docs_images/admin_task_specific.png)
+
+Certain fields are locked due to inherent resource requirements by those job types or limited benefit to increased resource allocation.
