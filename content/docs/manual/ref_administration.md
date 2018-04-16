@@ -23,7 +23,7 @@ Source type restrictions do not affect viruses that are imported into the databa
 
 ### Adding Source Types
 
-Source types can be added by entering a new source type in the text box and clicking <i class="fa fa-plus-square"></i>. Once source types are added to the list, the can be 
+Source types can be added by entering a new source type in the text box and clicking <i class="fa fa-plus-square"></i>. Once source types are added to the list, the can be accessed in isolate editing forms.
 
 !["Source types add"](/docs_images/admin_source_types_add.gif)
 
