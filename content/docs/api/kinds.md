@@ -1,6 +1,6 @@
 ---
-title: "Viruses"
-description: "Query, create, edit, and remove virus records."
+title: "Kinds"
+description: "Query, create, edit, and remove kinds."
 type: "api"
 menu:
     api:
@@ -10,10 +10,10 @@ menu:
 
 {{% endpoint name="Find" %}}
 
-Find viruses by their name or abbreviation
+Find kinds by their name or abbreviation
 
 ```
-GET /api/viruses
+GET /api/refs/:ref_id/kinds
 ```
 
 ## Parameters
