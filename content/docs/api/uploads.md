@@ -5,7 +5,6 @@ type: "api"
 menu:
     api:
         parent: Endpoints
-        weight: 20
 ---
 
 When uploads are required in Virtool, they should be targeted at ``/upload``. The available endpoints are:

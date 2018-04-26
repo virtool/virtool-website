@@ -5,7 +5,6 @@ type: "api"
 menu:
     api:
         parent: Endpoints
-        weight: 10
 ---
 
 Unauthorized clients will receive ``401 Unauthorized`` for calls to all account endpoints.

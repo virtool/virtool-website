@@ -5,7 +5,6 @@ type: "api"
 menu:
     api:
         parent: Overview
-        weight: 10
 ---
 
 # Explanation

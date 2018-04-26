@@ -5,7 +5,6 @@ type: "api"
 menu:
     api:
         parent: Endpoints
-        weight: 90
 ---
 
 {{% endpoint name="Find" %}}

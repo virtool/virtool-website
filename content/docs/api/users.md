@@ -5,7 +5,6 @@ type: "api"
 menu:
     api:
         parent: Endpoints
-        weight: 120
 ---
 
 {{% endpoint name="List" permission="manage_users" %}}

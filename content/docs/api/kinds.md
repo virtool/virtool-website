@@ -5,7 +5,6 @@ type: "api"
 menu:
     api:
         parent: Endpoints
-        weight: 60
 ---
 
 {{% endpoint name="Find" %}}
@@ -92,13 +91,13 @@ Status: 200 OK
 Get a complete representation of a virus.
 
 ```
-GET /api/viruses/:virus_id
+GET /api/kinds/:virus_id
 ```
 
 ## Example
 
 ```
-GET /api/viruses/a15f9837
+GET /api/kinds/a15f9837
 ```
 
 ## Response
@@ -170,7 +169,7 @@ Virus names and abbreviations must be unique within the database. Requesting a n
 Isolates and sequence data must be added in separate requests.
 
 ```
-POST /api/viruses
+POST /api/refs/:ref_id
 ```
 
 ## Input
@@ -183,7 +182,7 @@ POST /api/viruses
 ## Example
 
 ```
-POST /api/viruses
+POST /api/kinds
 ```
 
 ```json
@@ -252,7 +251,7 @@ Edit an existing virus by changing its name, abbreviation, or schema.
 Virus names and abbreviations must be unique within the database. Requesting a name or abbreviation that is already in use will result in a ``409 Conflict``. Uniqueness tests for virus names are **case-insensitive**.
 
 ```
-PATCH /api/viruses/:virus_id
+PATCH /api/kinds/:kind_id
 ```
 
 ## Input
