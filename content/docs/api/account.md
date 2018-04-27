@@ -74,9 +74,11 @@ PATCH /api/account
 
 ## Input
 
-| Name  | Type    | Description                                     |
-| :---- | :------ | :---------------------------------------------- |
-| email | string  | an email address                                |
+| Name         | Type    | Required |Description                        |
+| :----------- | :------ | :------------------------------------------- |
+| email        | string  | false    | an email address                  |
+| old_password | string  | false    | the old password for verification |
+| new_password | string  | false    | the new password                  |
 
 ## Example
 
@@ -86,7 +88,7 @@ PATCH /api/account
 
 ```json
 {
-    "email": "dev@virtool.ca"
+    "email": "dev@virtool.ca"	
 }
 ```
 
@@ -131,10 +133,12 @@ Status: 200 OK
 
 ## Errors
 
-| Status | Message                | Reason                                                          |
-| :----- | :--------------------- | :-------------------------------------------------------------- |
-| `401`  | Requires authorization | request is not associated with an authorized session or API key |
-| `422`  | Invalid input          | email address is invalid                                        |
+| Status | Message                | Reason                                                             |
+| :----- | :--------------------- | :----------------------------------------------------------------- |
+| `400`  | Invalid old password   | supplied old password is invalid                                   |
+| `401`  | Requires authorization | request is not associated with an authorized session or API key    |
+| `422`  | Invalid input          | email address is invalid or password fields are missing or invalid |
+| `401`  | Requires authorization | request is not associated with an authorized session or API key    |
 
 {{% /endpoint %}}
 
@@ -222,58 +226,6 @@ Status: 200 OK
 | :----- | :--------------------- | :-------------------------------------------------------------- |
 | `401`  | Requires authorization | request is not associated with an authorized session or API key |
 | `422`  | Invalid input          | invalid settings key or value                                   |
-
-{{% /endpoint %}}
-
-
-{{% endpoint name="Change Password" %}}
-
-Change the password for the account associated with the current session or API key.
-
-```
-PUT /api/account/password
-```
-
-## Input
-
-| Name         | Type   | Optional | Description                       |
-| :----------- | :----- | :------- | :-------------------------------- |
-| old_password | string | false    | the old password for verification |
-| new_password | string | false    | the new password                  |
-
-## Example
-
-```
-PUT /api/account/password
-```
-
-```json
-{
-    "old_password": "foobar",
-    "new_password": "hello_world
-}
-```
-
-## Response
-
-```
-Status: 200 OK
-```
-
-```json
-
-{
-    "last_password_change": "2017-02-17T13:58:25.792550Z"
-}
-```
-
-## Errors
-
-| Status | Message                | Reason                                                          |
-| :----- | :--------------------- | :-------------------------------------------------------------- |
-| `400`  | Invalid old password   | supplied old password is invalid                                |
-| `401`  | Requires authorization | request is not associated with an authorized session or API key |
-| `422`  | Invalid input          | missing or invalid password fields                              |
 
 {{% /endpoint %}}
 

@@ -30,15 +30,11 @@ Status: 200 OK
 		"permissions": {
 			"cancel_job": true,
 			"create_sample": true,
-			"manage_users": true,
 			"modify_hmm": true,
-			"modify_settings": true,
 			"modify_subtraction": true,
-			"modify_virus": true,
 			"rebuild_index": true,
 			"remove_file": true,
 			"remove_job": true,
-			"remove_virus": true,
 			"upload_file": true
 		},
 		"primary_group": "",
@@ -221,7 +217,8 @@ PATCH /api/users/:user_id
 | :------------ | :------- | :------------------------------------------------ |
 | force_reset   | boolean  | force a password reset next time the user logs in |
 | password      | string   | the new password                                  |
-| primary_group | string   | the users primary group used for sample rights    |          
+| primary_group | string   | the users primary group used for sample rights    |
+| groups        | array    | the ids of the groups the user belongs to         |      
 
 ## Example
 
@@ -269,123 +266,13 @@ Status: 200 OK
 
 ## Errors
 
-| Status | Message             | Reason                                             |
-| :----- | :------------------ | :------------------------------------------------- |
-| `403`  | Not permitted       | client does not have the `manage_users` permission |
-| `404`  | Not found           | user does not exist                                |
-| `422`  | Invalid input       | JSON request body is invalid                       |
+| Status | Message             | Reason                                        |
+| :----- | :------------------ | :-------------------------------------------- |
+| `403`  | Not permitted       | client does not have administrative privilege |
+| `404`  | Not found           | user does not exist                           |
+| `422`  | Invalid input       | JSON request body is invalid                  |
 
 {{% /endpoint %}}
-
-
-{{% endpoint name="Add To Group" permission="manage_users" %}}
-
-Add a user to a user group.
-
-
-```
-POST /api/users/:user_id/group
-```
-
-## Input
-
-| Name     | Type   | Description                                       |
-| :------- | :----- | :------------------------------------------------ |
-| group_id | string | force a password reset next time the user logs in |
-
-## Example
-
-```
-POST /api/users/fred/group
-```
-
-```json
-{
-	"group_id": "foobar"
-}
-```
-
-## Response
-
-```
-Status: 201 Created
-```
-
-```json
-{
-	"groups": [
-		"foobar"
-	],
-	"identicon": "d0cfc2e5319b82cdc71a33873e826c93d7ee11363f8ac91c4fa3a2cfcd2286e5",
-	"permissions": {
-		"cancel_job": true,
-		"create_sample": true,
-		"manage_users": true,
-		"modify_hmm": true,
-		"modify_settings": true,
-		"modify_subtraction": false,
-		"modify_virus": false,
-		"rebuild_index": false,
-		"remove_file": false,
-		"remove_job": false,
-		"remove_virus": false,
-		"upload_file": false
-	},
-	"primary_group": "none",
-	"force_reset": true,
-	"last_password_change": "2018-02-07T18:22:14.219000Z",
-	"id": "fred"
-}
-```
-
-## Errors
-
-| Status | Message                                                              | Reason                                             |
-| :----- | :------------------------------------------------------------------- | :------------------------------------------------- |
-| `400`  | Administrators cannot remove themselves from the administrator group | at least administrator must remain on the server   |
-| `403`  | Not permitted                                                        | client does not have the `manage_users` permission |
-| `404`  | Not found                                                            | user does not exist                                |
-| `404`  | Group not found                                                      | `group` does not exist                             |
-| `422`  | Invalid input                                                        | JSON request body is invalid                       |
-
-{{% /endpoint %}}
-
-
-{{% endpoint name="Remove From Group" permission="manage_users" %}}
-
-Remove a user from a user group.
-
-```
-DELETE /api/users/:user_id/groups/:group_id
-```
-
-## Example
-
-```
-DELETE /api/users/fred/groups/foobar
-```
-
-## Response
-
-```
-Status: 200 OK
-```
-
-```json
-[
-	"administrator"
-]
-```
-
-## Errors
-
-| Status | Message             | Reason                                             |
-| :----- | :------------------ | :------------------------------------------------- |
-| `403`  | Not permitted       | client does not have the `manage_users` permission |
-| `404`  | Not found           | user does not exist                                |
-
-{{% /endpoint %}}
-
 
 {{% endpoint name="Remove" permission="manage_users" %}}
 
@@ -409,9 +296,9 @@ Status: 204 No content
 
 ## Errors
 
-| Status | Message             | Reason                                             |
-| :----- | :------------------ | :------------------------------------------------- |
-| `403`  | Not permitted       | client does not have the `manage_users` permission |
-| `404`  | Not found           | user does not exist                                |
+| Status | Message             | Reason                                        |
+| :----- | :------------------ | :-------------------------------------------- |
+| `403`  | Not permitted       | client does not have administrative privilege |
+| `404`  | Not found           | user does not exist                           |
 
 {{% /endpoint %}}
