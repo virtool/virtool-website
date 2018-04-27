@@ -486,9 +486,10 @@ POST /api/samples/:sample_id/analyses
 
 ## Input
 
-| Name      | Type   | Description                                     |
-| :-------- | :----- | :---------------------------------------------- |
-| algorithm | string | the algorithm name \(*eg*. pathoscope\_bowtie\) |
+| Name      | Type   | Required | Description                                     |
+| :-------- | :----- | -------- | :---------------------------------------------- |
+| algorithm | string | True     | the algorithm name \(*eg*. pathoscope\_bowtie\) |
+| ref_id    | string | True     | the reference to run the analysis against       |
 
 ## Example
 
@@ -499,6 +500,7 @@ POST /api/samples/htosefxu/analyses
 ```json
 {
 	"algorithm": "pathoscope_bowtie"
+	"ref_id": 
 }
 ```
 
