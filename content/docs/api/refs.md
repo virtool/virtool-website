@@ -225,7 +225,7 @@ POST /api/refs
     "name": "Imported",
     "organism": "viruses",
     "data_type": "genome",
-	"import_from": "ctrtptqj-reference.json.gz"
+	"import_from": "5d8gpaam-reference.json.gz"
 }
 ```
 
@@ -237,7 +237,7 @@ Status: 201 Created
 
 ```json
 {
-	"created_at": "2018-04-26T23:10:20.615000Z",
+	"created_at": "2018-04-30T20:05:06.607000Z",
 	"data_type": null,
 	"description": "",
 	"name": "Imported",
@@ -260,15 +260,75 @@ Status: 201 Created
 		"user": {
 			"id": "igboyes"
 		},
-		"id": "ctrtptqj-reference.json.gz"
+		"id": "5d8gpaam-reference.json.gz"
 	},
 	"process": {
-		"id": "j6n9q1ds"
+		"id": "m4ovmukq"
 	},
 	"contributors": [],
 	"internal_control": null,
 	"latest_build": null,
-	"id": "u1js3lms"
+	"id": "9fhr3cey"
+}
+```
+
+{{% /endpoint %}}
+
+
+{{% endpoint name="Find Indexes" %}}
+
+Find indexes for a specific reference.
+
+```
+GET /api/refs/:ref_id/indexes
+```
+
+## Parameters
+
+| Name     | Type    | Default   | Description                            |
+| :------- | :------ | :-------  | :------------------------------------- |
+| page     | integer | 1         | page number of results to return       |
+| per_page | integer | 15        | number of documents to return per page |
+
+## Example
+
+```
+GET /api/refs/9fhr3cey/indexes
+```
+
+## Response
+
+```
+Status: 200 OK
+```
+
+```json
+{
+	"documents": [
+		{
+			"version": 0,
+			"created_at": "2018-04-30T20:14:30.242000Z",
+			"ready": true,
+			"has_files": true,
+			"job": {
+				"id": "egox4ch6"
+			},
+			"ref": {
+				"id": "9fhr3cey"
+			},
+			"user": {
+				"id": "igboyes"
+			},
+			"id": "v2fuqat2",
+			"change_count": 1419,
+			"modified_kind_count": 1419
+		}
+	],
+	"total_count": 1,
+	"found_count": 1,
+	"page_count": 1,
+	"per_page": 15,
+	"page": 1
 }
 ```
 
