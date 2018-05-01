@@ -25,9 +25,9 @@ Status: 200 OK
 
 ```json
 {
-	"groups": [
-		"administrator"
-	],
+	"administrator": true,
+	"groups": [],
+	"identicon": "6be6d0a72a16cb633144ec03cdaef77804c6f94770184f83e0899fe6bdcb77ee",
 	"settings": {
 		"skip_quick_analyze_dialog": true,
 		"show_ids": false,
@@ -36,22 +36,18 @@ Status: 200 OK
 	},
 	"permissions": {
 		"cancel_job": true,
+		"create_ref": true,
 		"create_sample": true,
-		"manage_users": true,
 		"modify_hmm": true,
-		"modify_settings": true,
 		"modify_subtraction": true,
-		"modify_virus": true,
-		"rebuild_index": true,
 		"remove_file": true,
 		"remove_job": true,
-		"remove_virus": true,
 		"upload_file": true
 	},
 	"primary_group": "",
-	"last_password_change": "2018-02-01T00:27:09.348000Z",
-	"identicon": "6be6d0a72a16cb633144ec03cdaef77804c6f94770184f83e0899fe6bdcb77ee",
-	"id": "baz"
+	"last_password_change": "2018-04-27T22:49:11.654000Z",
+	"email": "igboyes@virtool.ca",
+	"id": "igboyes"
 }
 ```
 
@@ -100,9 +96,9 @@ Status: 200 OK
 
 ```json
 {
-	"groups": [
-		"administrator"
-	],
+	"administrator": true,
+	"groups": [],
+	"identicon": "6be6d0a72a16cb633144ec03cdaef77804c6f94770184f83e0899fe6bdcb77ee",
 	"settings": {
 		"skip_quick_analyze_dialog": true,
 		"show_ids": false,
@@ -111,23 +107,18 @@ Status: 200 OK
 	},
 	"permissions": {
 		"cancel_job": true,
+		"create_ref": true,
 		"create_sample": true,
-		"manage_users": true,
 		"modify_hmm": true,
-		"modify_settings": true,
 		"modify_subtraction": true,
-		"modify_virus": true,
-		"rebuild_index": true,
 		"remove_file": true,
 		"remove_job": true,
-		"remove_virus": true,
 		"upload_file": true
 	},
 	"primary_group": "",
-	"last_password_change": "2018-02-01T00:27:09.348000Z",
-	"identicon": "6be6d0a72a16cb633144ec03cdaef77804c6f94770184f83e0899fe6bdcb77ee",
+	"last_password_change": "2018-04-27T22:49:11.654000Z",
 	"email": "dev@virtool.ca",
-	"id": "baz"
+	"id": "igboyes"
 }
 ```
 
@@ -247,26 +238,21 @@ Status: 200 OK
 ```json
 [
 	{
-		"id": "test 1_0",
-		"name": "Test 1",
-		"groups": [
-			"administrator"
-		],
+		"id": "test_0",
+		"name": "Test",
+		"administrator": true,
+		"groups": [],
 		"permissions": {
 			"cancel_job": true,
+			"create_ref": true,
 			"create_sample": true,
-			"manage_users": true,
 			"modify_hmm": true,
-			"modify_settings": true,
 			"modify_subtraction": true,
-			"modify_virus": true,
-			"rebuild_index": true,
 			"remove_file": true,
 			"remove_job": true,
-			"remove_virus": true,
 			"upload_file": true
 		},
-		"created_at": "2018-02-05T23:23:21.766000Z"
+		"created_at": "2018-05-01T19:47:03.334000Z"
 	}
 ]
 ```
@@ -288,10 +274,11 @@ POST /api/account/keys
 
 ## Input
 
-| Name         | Type   | Optional | Description                                                                                                 |
-| :----------- | :----- | :------- | :---------------------------------------------------------------------------------------------------------- |
-| name         | string | false    | a non-unique name for the API key                                                                           |
-| permissions  | object | true     | An object describing the permissions the new key will have. Any unset permissions will default to ``false`` |
+| Name          | Type    | Required | Description                                                                                                 |
+| :------------ | :------ | :------- | :---------------------------------------------------------------------------------------------------------- |
+| name          | string  | true     | a non-unique name for the API key                                                                           |
+| administrator | boolean | false    | sets administrative rights on the API key (default=`false`)                                                 |
+| permissions   | object  | false    | an object describing the permissions the new key will have. Any unset permissions will default to ``false`` |
 
 ## Example
 
@@ -303,7 +290,7 @@ POST /api/account/keys
 {
 	"name": "Test 2",
 	"permissions": {
-		"modify_virus": true
+		"create_sample": true
 	}
 }
 ```
@@ -318,25 +305,20 @@ Status: 201 Created
 {
 	"id": "test 2_0",
 	"name": "Test 2",
-	"groups": [
-		"administrator"
-	],
+	"administrator": false,
+	"groups": [],
 	"permissions": {
 		"cancel_job": false,
-		"create_sample": false,
-		"manage_users": false,
+		"create_ref": false,
+		"create_sample": true,
 		"modify_hmm": false,
-		"modify_settings": false,
 		"modify_subtraction": false,
-		"modify_virus": true,
-		"rebuild_index": false,
 		"remove_file": false,
 		"remove_job": false,
-		"remove_virus": false,
 		"upload_file": false
 	},
-	"created_at": "2018-02-06T17:36:18.955000Z",
-	"key": "69480f859c66455a84b334a60e7aa540"
+	"created_at": "2018-05-01T21:34:21.271000Z",
+	"key": "3f80126f767e48099bdd5a3704bf8453"
 }
 ```
 
@@ -345,7 +327,7 @@ Status: 201 Created
 | Status | Message                | Reason                                                          |
 | :----- | :--------------------- | :-------------------------------------------------------------- |
 | `401`  | Requires authorization | request is not associated with an authorized session or API key |
-| `422`  | Invalid input          | missing or invalid name or permissions object                   |
+| `422`  | Invalid input          | missing or invalid value or permissions object                  |
 
 {{% /endpoint %}}
 
@@ -360,9 +342,10 @@ PATCH /api/account/keys/:id
 
 ## Input
 
-| Name        | Type   | Optional | Description                                                                                                 |
-| :---------- | :----- | :------- | :---------------------------------------------------------------------------------------------------------- |
-| permissions | object | false    | An object describing the permissions the new key will have. Any unset permissions will default to ``false`` |
+| Name          | Type    | Required | Description                                                                                                 |
+| :------------ | :------ | :------- | :---------------------------------------------------------------------------------------------------------- |
+| administrator | boolean | false    | sets administrative rights on the API key                                                                   |
+| permissions   | object  | false    | an object describing updates to the key's permissions                                                       |
 
 ## Example
 
@@ -372,9 +355,9 @@ PATCH /api/account/keys/test%202_0
 
 ```json
 {
-	"name": "Key Test",
+	"administrator": true,
 	"permissions": {
-		"rebuild_index": true
+		"modify_subtraction": true
 	}
 }
 ```
@@ -389,24 +372,19 @@ Status: 200 OK
 {
 	"id": "test 2_0",
 	"name": "Test 2",
-	"groups": [
-		"administrator"
-	],
+	"administrator": true,
+	"groups": [],
 	"permissions": {
 		"cancel_job": false,
-		"create_sample": false,
-		"manage_users": false,
+		"create_ref": false,
+		"create_sample": true,
 		"modify_hmm": false,
-		"modify_settings": false,
-		"modify_subtraction": false,
-		"modify_virus": true,
-		"rebuild_index": true,
+		"modify_subtraction": true,
 		"remove_file": false,
 		"remove_job": false,
-		"remove_virus": false,
 		"upload_file": false
 	},
-	"created_at": "2018-02-06T17:36:18.955000Z"
+	"created_at": "2018-05-01T21:34:21.271000Z"
 }
 ```
 
