@@ -186,22 +186,26 @@ Location: /api/indexes/bznqwjsa
 
 ```json
 {
-	"version": 1,
-	"created_at": "2018-02-06T22:03:00.186000Z",
-	"virus_count": null,
+	"version": 0,
+	"created_at": "2018-04-30T20:14:30.242000Z",
 	"manifest": {
-		"c93ec9a9": 1,
-        ...
+		"j6sk7lnh": 0,
+		"ayyhflbx": 0,
+		"5hzmr0h9": 0,
+		...
 	},
 	"ready": false,
 	"has_files": true,
+	"job": {
+		"id": "egox4ch6"
+	},
+	"ref": {
+		"id": "9fhr3cey"
+	},
 	"user": {
 		"id": "igboyes"
 	},
-	"job": {
-		"id": "plfttrug"
-	},
-	"id": "bznqwjsa"
+	"id": "v2fuqat2"
 }
 ```
 
