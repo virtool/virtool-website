@@ -275,6 +275,45 @@ Status: 201 Created
 {{% /endpoint %}}
 
 
+{{% endpoint name="Remove Reference" %}}
+
+Remove a reference and its associated kinds, sequences, and indexes. Analyses using the deleted reference can still be queried after deletion of the reference. In-progress analyses using the deleted reference will still finish successfully.
+
+Reference metadata is immediately removed and a response is returned. A separate process is spawned to safely delete the kind information associated with the reference. For large references, this can take some time.
+
+Information about the deletion process is returned in the HTTP response. The `Content-Location` header points to a resource defining the process.
+
+```
+DELETE /api/refs/:ref_id
+```
+
+## Example
+
+```
+DELETE /api/refs/qymrndgk
+```
+
+## Response
+
+```
+Status: 202 Accepted
+Content-Location: /api/processes/yn5ncv8t
+```
+
+```json
+{
+	"created_at": "2018-05-02T21:54:48.756000Z",
+	"progress": 0,
+	"step": "delete_indexes",
+	"step_count": 2,
+	"type": "delete_reference",
+	"id": "yn5ncv8t"
+}
+```
+
+{{% /endpoint %}}
+
+
 {{% endpoint name="Find Indexes" %}}
 
 Find indexes for a specific reference.
