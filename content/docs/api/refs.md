@@ -275,7 +275,79 @@ Status: 201 Created
 {{% /endpoint %}}
 
 
-{{% endpoint name="Remove Reference" %}}
+{{% endpoint name="Edit" %}}
+
+Update an existing reference.
+
+Currently, only _genome_ is accepted as a value for `data_type`.
+
+```
+POST /api/refs/:ref_id
+```
+
+## Input
+
+| Name             | Type    | Required | Description                                                                          |
+| :--------------- | :------ | :------- | :----------------------------------------------------------------------------------- |
+| name             | string  | False    | the virus name                                                                       |
+| description      | string  | False    | a longer description for the reference                                               |
+| data_type        | string  | False    | the sequence data type (only _genome_ is currently supported)                        |
+| organism         | string  | False    | the sequence data type (only _genome_ is currently supported)                        |
+| public           | boolean | False    | make the reference viewable and usable by all users (default=`False`)                |
+| internal_control | string  | False    | set the kind identified by the passed `id` as the internal control for the reference |
+
+## Example
+
+```
+PATCH /api/refs/o7ed3yfd
+```
+
+```json
+{
+	"name": "Regulated Pests",
+	"organism": "phytoplasma",
+	"internal_control": "ah4m5jqz"
+}
+```
+
+## Response
+
+```
+Status: 200 OK
+```
+
+```json
+{
+	"created_at": "2018-05-02T23:11:38.489000Z",
+	"data_type": "genome",
+	"name": "Regulated Pests",
+	"organism": "phytoplasma",
+	"public": false,
+	"user": {
+		"id": "igboyes"
+	},
+	"imported_from": {
+		"name": "reference.json.gz",
+		"user": {
+			"id": "igboyes"
+		},
+		"id": "5d8gpaam-reference.json.gz"
+	},
+	"process": {
+		"id": "d9tn5khk"
+	},
+	"internal_control": {
+		"id": "ah4m5jqz",
+		"name": "Thingy"
+	},
+	"id": "o7ed3yfd"
+}
+```
+
+{{% /endpoint %}}
+
+
+{{% endpoint name="Remove" %}}
 
 Remove a reference and its associated kinds, sequences, and indexes. Analyses using the deleted reference can still be queried after deletion of the reference. In-progress analyses using the deleted reference will still finish successfully.
 
