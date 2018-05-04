@@ -152,4 +152,4 @@ if __name__ == "__main__":
 
     latest_database_url = data["database"]["latest"]["download_url"]
     
-    download_database_release(latest_database_url, "./viruses.json.gz")
+    download_database_release(latest_database_url, "./reference.json.gz")

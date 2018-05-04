@@ -108,7 +108,7 @@ Status: 200 OK
 			"id": "igboyes",
 			"build": true,
 			"modify": true,
-			"modify_kind": true,
+			"modify_otu": true,
 			"remove": true
 		}
 	],
@@ -148,7 +148,7 @@ References can be created in a number of ways depending on what parameters are p
 
 If none of the fields `clone_from`, `import_from`, or `remote_from` are assigned, an empty reference will be created.
 
-Assigning one of these specials fields will populate the new reference with kinds on creation. Cloning copies kinds from an existing reference identifieid by its `kind_id`. Importing validates and creates kinds based on an uploaded Virtool reference file. Remoting links the reference to a valid Virtool reference repository on GitHub and downloads kinds automatically.
+Assigning one of these specials fields will populate the new reference with OTUs on creation. Cloning copies OTUs from an existing reference identifieid by its `otu_id`. Importing validates and creates OTUs based on an uploaded Virtool reference file. Remoting links the reference to a valid Virtool reference repository on GitHub and downloads OTUs automatically.
 
 ```
 POST /api/refs
@@ -200,7 +200,7 @@ Status: 201 Created
 			"id": "igboyes",
 			"build": true,
 			"modify": true,
-			"modify_kind": true,
+			"modify_otu": true,
 			"remove": true
 		}
 	],
@@ -248,7 +248,7 @@ Status: 201 Created
 			"id": "igboyes",
 			"build": true,
 			"modify": true,
-			"modify_kind": true,
+			"modify_otu": true,
 			"remove": true
 		}
 	],
@@ -277,7 +277,7 @@ Status: 201 Created
 
 {{% endpoint name="Edit" %}}
 
-Update an existing reference.
+Edit an existing reference.
 
 Currently, only _genome_ is accepted as a value for `data_type`.
 
@@ -287,14 +287,14 @@ POST /api/refs/:ref_id
 
 ## Input
 
-| Name             | Type    | Required | Description                                                                          |
-| :--------------- | :------ | :------- | :----------------------------------------------------------------------------------- |
-| name             | string  | False    | the virus name                                                                       |
-| description      | string  | False    | a longer description for the reference                                               |
-| data_type        | string  | False    | the sequence data type (only _genome_ is currently supported)                        |
-| organism         | string  | False    | the sequence data type (only _genome_ is currently supported)                        |
-| public           | boolean | False    | make the reference viewable and usable by all users (default=`False`)                |
-| internal_control | string  | False    | set the kind identified by the passed `id` as the internal control for the reference |
+| Name             | Type    | Required | Description                                                                         |
+| :--------------- | :------ | :------- | :---------------------------------------------------------------------------------- |
+| name             | string  | False    | the virus name                                                                      |
+| description      | string  | False    | a longer description for the reference                                              |
+| data_type        | string  | False    | the sequence data type (only _genome_ is currently supported)                       |
+| organism         | string  | False    | the sequence data type (only _genome_ is currently supported)                       |
+| public           | boolean | False    | make the reference viewable and usable by all users (default=`False`)               |
+| internal_control | string  | False    | set the OTU identified by the passed `id` as the internal control for the reference |
 
 ## Example
 
@@ -349,9 +349,9 @@ Status: 200 OK
 
 {{% endpoint name="Remove" %}}
 
-Remove a reference and its associated kinds, sequences, and indexes. Analyses using the deleted reference can still be queried after deletion of the reference. In-progress analyses using the deleted reference will still finish successfully.
+Remove a reference and its associated OTUs, sequences, and indexes. Analyses using the deleted reference can still be queried after deletion of the reference. In-progress analyses using the deleted reference will still finish successfully.
 
-Reference metadata is immediately removed and a response is returned. A separate process is spawned to safely delete the kind information associated with the reference. For large references, this can take some time.
+Reference metadata is immediately removed and a response is returned. A separate process is spawned to safely delete the OTU information associated with the reference. For large references, this can take some time.
 
 Information about the deletion process is returned in the HTTP response. The `Content-Location` header points to a resource defining the process.
 
@@ -432,7 +432,7 @@ Status: 200 OK
 			},
 			"id": "v2fuqat2",
 			"change_count": 1419,
-			"modified_kind_count": 1419
+			"modified_otu_count": 1419
 		}
 	],
 	"total_count": 1,

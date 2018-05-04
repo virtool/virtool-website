@@ -1,6 +1,6 @@
 ---
-title: "Kinds"
-description: "Query, create, edit, and remove kinds."
+title: "OTUs"
+description: "Query, create, edit, and remove OTUs."
 type: "api"
 menu:
     api:
@@ -9,10 +9,10 @@ menu:
 
 {{% endpoint name="Find" %}}
 
-Find kinds by their name or abbreviation
+Find OTUs by their name or abbreviation
 
 ```
-GET /api/refs/:ref_id/kinds
+GET /api/refs/:ref_id/otus
 ```
 
 ## Parameters
@@ -91,13 +91,13 @@ Status: 200 OK
 Get a complete representation of a virus.
 
 ```
-GET /api/kinds/:virus_id
+GET /api/otus/:otu_id
 ```
 
 ## Example
 
 ```
-GET /api/kinds/a15f9837
+GET /api/otus/a15f9837
 ```
 
 ## Response
@@ -182,7 +182,7 @@ POST /api/refs/:ref_id
 ## Example
 
 ```
-POST /api/kinds
+POST /api/otus
 ```
 
 ```json
@@ -251,7 +251,7 @@ Edit an existing virus by changing its name, abbreviation, or schema.
 Virus names and abbreviations must be unique within the database. Requesting a name or abbreviation that is already in use will result in a ``409 Conflict``. Uniqueness tests for virus names are **case-insensitive**.
 
 ```
-PATCH /api/kinds/:kind_id
+PATCH /api/otus/:otu_id
 ```
 
 ## Input

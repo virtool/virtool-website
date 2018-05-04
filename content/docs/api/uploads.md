@@ -9,12 +9,12 @@ menu:
 
 When uploads are required in Virtool, they should be targeted at ``/upload``. The available endpoints are:
 
-Situation                                        | Endpoint               
------------------------------------------------- |---------------
-Upload a Virtool kinds reference file for import | /upload/kinds        
-Upload a Illumina read file                      | /upload/reads          
-Upload a .hmm file for use with NuVs             | /upload/hmm            
-Upload a host FASTA file                         | /upload/host           
+| Situation                                  | Endpoint      |     
+| ------------------------------------------ |-------------- |
+| Upload a Virtool reference file for import | /upload/ref   |     
+| Upload a Illumina read file                | /upload/reads |     
+| Upload a .hmm file for use with NuVs       | /upload/hmm   |     
+| Upload a host FASTA file                   | /upload/host  |     
 
 {{% endpoint name="Upload File" permission="upload_file" %}}
 
