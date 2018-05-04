@@ -3014,35 +3014,36 @@ a.box:active {
 a.tag:hover {
   text-decoration: underline; }
 
-.title, div.docs h1, div.docs h2,
+.title, div.docs h1, div.docs h2, div.docs.docs-api h2,
 .subtitle {
   word-break: break-word; }
   .title:not(:last-child), div.docs h1:not(:last-child), div.docs h2:not(:last-child),
   .subtitle:not(:last-child) {
     margin-bottom: 1.5rem; }
-  .title em, div.docs h1 em, div.docs h2 em,
+  .title em, div.docs h1 em, div.docs h2 em, div.docs.docs-api h2 em,
   .title span,
   div.docs h1 span,
   div.docs h2 span,
+  div.docs.docs-api h2 span,
   .subtitle em,
   .subtitle span {
     font-weight: inherit; }
-  .title sub, div.docs h1 sub, div.docs h2 sub,
+  .title sub, div.docs h1 sub, div.docs h2 sub, div.docs.docs-api h2 sub,
   .subtitle sub {
     font-size: 0.75em; }
-  .title sup, div.docs h1 sup, div.docs h2 sup,
+  .title sup, div.docs h1 sup, div.docs h2 sup, div.docs.docs-api h2 sup,
   .subtitle sup {
     font-size: 0.75em; }
   .title .tag, div.docs h1 .tag, div.docs h2 .tag,
   .subtitle .tag {
     vertical-align: middle; }
 
-.title, div.docs h1, div.docs h2 {
+.title, div.docs h1, div.docs h2, div.docs.docs-api h2 {
   color: #363636;
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.125; }
-  .title strong, div.docs h1 strong, div.docs h2 strong {
+  .title strong, div.docs h1 strong, div.docs h2 strong, div.docs.docs-api h2 strong {
     color: inherit;
     font-weight: inherit; }
   .title + .highlight, div.docs h1 + .highlight, div.docs h2 + .highlight {
@@ -3057,9 +3058,9 @@ a.tag:hover {
     font-size: 2rem; }
   .title.is-4, div.docs h1, div.docs h2.is-4 {
     font-size: 1.5rem; }
-  .title.is-5, div.docs h1.is-5, div.docs h2 {
+  .title.is-5, div.docs h1.is-5, div.docs h2, div.docs.docs-api h2 {
     font-size: 1.25rem; }
-  .title.is-6, div.docs h1.is-6, div.docs h2.is-6, div.docs h3.title {
+  .title.is-6, div.docs h1.is-6, div.docs h2.is-6, div.docs.docs-api h2, div.docs h3.title {
     font-size: 1rem; }
   .title.is-7, div.docs h1.is-7, div.docs h2.is-7 {
     font-size: 0.75rem; }
@@ -3084,7 +3085,7 @@ a.tag:hover {
     font-size: 1.5rem; }
   .subtitle.is-5, div.docs h2.subtitle {
     font-size: 1.25rem; }
-  .subtitle.is-6, div.docs h3.subtitle {
+  .subtitle.is-6, div.docs h3.subtitle, div.docs.docs-api h2.subtitle {
     font-size: 1rem; }
   .subtitle.is-7 {
     font-size: 0.75rem; }
@@ -4235,7 +4236,7 @@ a.navbar-link.is-active {
     width: 41.66667%; }
   .columns.is-mobile > .column.is-offset-5 {
     margin-left: 41.66667%; }
-  .columns.is-mobile > .column.is-6, div.docs .columns.is-mobile > h3.column {
+  .columns.is-mobile > .column.is-6, div.docs .columns.is-mobile > h3.column, div.docs.docs-api .columns.is-mobile > h2.column {
     flex: none;
     width: 50%; }
   .columns.is-mobile > .column.is-offset-6 {
@@ -4457,7 +4458,7 @@ a.navbar-link.is-active {
       width: 41.66667%; }
     .column.is-offset-5, .column.is-offset-5-tablet {
       margin-left: 41.66667%; }
-    .column.is-6, div.docs h3.column, .column.is-6-tablet {
+    .column.is-6, div.docs h3.column, div.docs.docs-api h2.column, .column.is-6-tablet {
       flex: none;
       width: 50%; }
     .column.is-offset-6, .column.is-offset-6-tablet {
@@ -4990,7 +4991,7 @@ a.navbar-link.is-active {
     --columnGap: 1rem; }
   .columns.is-variable.is-5, div.docs h2.columns.is-variable {
     --columnGap: 1.25rem; }
-  .columns.is-variable.is-6, div.docs h3.columns.is-variable {
+  .columns.is-variable.is-6, div.docs h3.columns.is-variable, div.docs.docs-api h2.columns.is-variable {
     --columnGap: 1.5rem; }
   .columns.is-variable.is-7 {
     --columnGap: 1.75rem; }
@@ -5038,7 +5039,7 @@ a.navbar-link.is-active {
     .tile.is-5, div.docs h2.tile {
       flex: none;
       width: 41.66667%; }
-    .tile.is-6, div.docs h3.tile {
+    .tile.is-6, div.docs h3.tile, div.docs.docs-api h2.tile {
       flex: none;
       width: 50%; }
     .tile.is-7 {

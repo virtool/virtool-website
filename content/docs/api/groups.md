@@ -160,7 +160,7 @@ Unset permissions will retain their previous setting.
 PATCH /api/groups/:id
 ```
 
-**Input**
+## Input
 
 | Name        | Type    | Description                                                                       |
 | ----------- | ------- | --------------------------------------------------------------------------------- |
