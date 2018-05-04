@@ -23,40 +23,19 @@ Status: 200 OK
 
 ```json
 [
-    {
-        "id": "administrator",
+	{
 		"permissions": {
 			"cancel_job": true,
+			"create_ref": false,
 			"create_sample": true,
-			"manage_users": true,
-			"modify_hmm": true,
-			"modify_settings": true,
-			"modify_subtraction": true,
-			"modify_virus": true,
-			"rebuild_index": true,
-			"remove_file": true,
-			"remove_job": true,
-			"remove_virus": true,
-			"upload_file": true
-		}
-	},
-    {
-        "id" : "technician",
-        "permissions": {
-			"cancel_job": false,
-			"create_sample": false,
-			"manage_users": false,
 			"modify_hmm": false,
-			"modify_settings": false,
 			"modify_subtraction": false,
-			"modify_virus": false,
-			"rebuild_index": false,
 			"remove_file": false,
-			"remove_job": false,
-			"remove_virus": false,
-			"upload_file": false
-		}
-    }
+			"remove_job": true,
+			"upload_file": true
+		},
+		"id": "technicians"
+	}
 ]
 ```
 
@@ -78,7 +57,7 @@ GET /api/groups/:group_id
 ## Example
 
 ```
-GET /api/groups/administrator
+GET /api/groups/technicians
 ```
 
 ## Response
@@ -91,19 +70,15 @@ Status: 200 OK
 {
 	"permissions": {
 		"cancel_job": true,
+		"create_ref": false,
 		"create_sample": true,
-		"manage_users": true,
-		"modify_hmm": true,
-		"modify_settings": true,
-		"modify_subtraction": true,
-		"modify_virus": true,
-		"rebuild_index": true,
-		"remove_file": true,
+		"modify_hmm": false,
+		"modify_subtraction": false,
+		"remove_file": false,
 		"remove_job": true,
-		"remove_virus": true,
 		"upload_file": true
 	},
-	"id": "administrator"
+	"id": "technicians"
 }
 ```
 
@@ -116,9 +91,9 @@ Status: 200 OK
 {{% /endpoint %}}
 
 
-{{% endpoint name="Create" permission="manage_users" %}}
+{{% endpoint name="Create" %}}
 
-Create a new group. New groups have no permissions. Requestors must have the ``modify_users`` permission.
+Create a new group. New groups have no permissions. Requestors must be administrators.
 
 ```
 POST /api/groups
@@ -138,7 +113,7 @@ POST /api/groups
 
 ```json
 {
-    "group_id": "foobar"
+    "group_id": "research"
 }
 ```
 
@@ -152,36 +127,32 @@ Status 201: Created
 {
 	"permissions": {
 		"cancel_job": false,
+		"create_ref": false,
 		"create_sample": false,
-		"manage_users": false,
 		"modify_hmm": false,
-		"modify_settings": false,
 		"modify_subtraction": false,
-		"modify_virus": false,
-		"rebuild_index": false,
 		"remove_file": false,
 		"remove_job": false,
-		"remove_virus": false,
 		"upload_file": false
 	},
-	"id": "foobar"
+	"id": "research"
 }
 ```
 
 ## Errors
 
-| Status | Message       | Reason                                             |
-| :----- | :------------ | :------------------------------------------------- |
-| `403`  | Not permitted | client does not have the 'manage_users` permission |
-| `409`  | Conflict      | group already exists                               |
-| `422`  | Invalid input | JSON request body is invalid                       |
+| Status | Message       | Reason                         |
+| :----- | :------------ | :----------------------------- |
+| `403`  | Not permitted | client is not an administrator |
+| `409`  | Conflict      | group already exists           |
+| `422`  | Invalid input | JSON request body is invalid   |
 
 {{% /endpoint %}}
 
 
-{{% endpoint name="Edit" permission="manage_users" %}}
+{{% endpoint name="Edit" %}}
 
-Update the permissions of an existing group. Requestors must have the ``modify_users`` permission.
+Update the permissions of an existing group. Requestors must be administrators.
 
 Unset permissions will retain their previous setting.
 
@@ -191,31 +162,20 @@ PATCH /api/groups/:id
 
 **Input**
 
-| Name            | Type    | Description                                               |
-| :-------------- | :------ | :-------------------------------------------------------- |
-| add_sample      | boolean | members can add samples                                   |
-| modify_sample   | boolean | members can modify samples if they have sufficient rights |
-| cancel_job      | boolean | members can cancel any job                                |
-| remove_job      | boolean | members can remove job documents                          |
-| modify_virus    | boolean | members can add and modify virus documents                |
-| remove_virus    | boolean | members can remove virus documents                        |
-| rebuild_index   | boolean | members can rebuild virus indexes                         |
-| modify_hmm      | boolean | members can add and modify hmm annotations and files      |
-| modify_host     | boolean | members can add and modify host documents and files       |
-| remove_host     | boolean | members can remove host documents and files               |
-| modify_options  | boolean | members can modify global options                         |
+| Name        | Type    | Description                                                                       |
+| ----------- | ------- | --------------------------------------------------------------------------------- |
+| permissions | boolean | a permission update comprising an object keyed by permissions with boolean values |
 
 ## Example
 
 ```
-PATCH /api/groups/foobar
+PATCH /api/groups/research
 ```
 
 ```json
 {
 	"permissions": {
-		"modify_virus": true,
-		"remove_job": true
+		"create_ref": true
 	}
 }
 ```
@@ -230,36 +190,32 @@ Status: 200 OK
 {
 	"permissions": {
 		"cancel_job": false,
+		"create_ref": true,
 		"create_sample": false,
-		"manage_users": false,
 		"modify_hmm": false,
-		"modify_settings": false,
 		"modify_subtraction": false,
-		"modify_virus": true,
-		"rebuild_index": false,
 		"remove_file": false,
-		"remove_job": true,
-		"remove_virus": false,
+		"remove_job": false,
 		"upload_file": false
 	},
-	"id": "foobar"
+	"id": "research"
 }
 ```
 
 ## Errors
 
-| Status | Message       | Reason                                             |
-| :----- | :------------ | :------------------------------------------------- |
-| `403`  | Not permitted | client does not have the 'manage_users` permission |
-| `404`  | Not found     | group does not exist                               |
-| `422`  | Invalid input | JSON request body is invalid                       |
+| Status | Message       | Reason                         |
+| :----- | :------------ | :----------------------------- |
+| `403`  | Not permitted | client is not an administrator |
+| `404`  | Not found     | group does not exist           |
+| `422`  | Invalid input | JSON request body is invalid   |
 
 {{% /endpoint %}}
 
 
-{{% endpoint name="Remove" permission="manage_users" %}}
+{{% endpoint name="Remove" %}}
 
-Remove an existing group. Requestors must have the ``modify_users`` permission. This request will fail with ``400 Bad Request`` for the built-in administrator group.
+Remove an existing group. Requestors must be administrators.
 
 ```
 DELETE /api/groups/:group_id
@@ -279,9 +235,9 @@ Status: 204 No Content
 
 ## Errors
 
-| Status | Message       | Reason                                             |
-| :----- | :------------ | :------------------------------------------------- |
-| `403`  | Not permitted | client does not have the 'manage_users` permission |
-| `404`  | Not found     | group does not exist                               |
+| Status | Message       | Reason                         |
+| :----- | :------------ | :----------------------------- |
+| `403`  | Not permitted | client is not an administrator |
+| `404`  | Not found     | group does not exist           |
 
 {{% /endpoint %}}
