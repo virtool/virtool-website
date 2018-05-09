@@ -7,6 +7,52 @@ menu:
         weight: 20
 ---
 
+# Python
+
+Tests are implemented using the [pytest](https://docs.pytest.org/en/latest/) framework.
+
+Tests can be quickly run by installing all dependencies and executing:
+
+```bash
+pytest
+```
+
+## Guidelines
+
+### API Tests
+
+As much logic as possible should happen outside of API handler functions. Functions called in API handlers can be mocked. A server instance is created for each test so writing a lot of API tests or creating large test matrices for API handlers can greatly increase testing time. 
+
+### Order of funcargs
+
+For easy readability the order of funcargs passed to test functions follows the order:
+
+Values passed in from parametrization.
+Fixtures from `pytest` itself and plugin libraries.
+The `spawn_client` fixture if necessary.
+All Virtool fixtures in alphabetical order.
+
+**_Good_**
+
+```python
+@pytest.mark.parametrize("not_found", [False, True])
+async def test_get(not_found, mocker, spawn_client, resp_is, static_time):
+    client = await spawn_client(authorize=True)
+
+```
+
+**_Bad_**
+
+```python
+@pytest.mark.parametrize("not_found", [False, True])
+async def test_get(resp_is, not_found, static_time, spawn_client, mocker):
+    client = await spawn_client(authorize=True)
+    
+```
+
+# Javascript
+
+Blah
 {{% endpoint name="Client Side Testing" %}}
 
 Testing for the client side of Virtool involves writing tests for [React](https://reactjs.org/) components, modules that use [Redux](https://redux.js.org/) and [Redux-Saga](https://redux-saga.js.org/), and the [Virtool API](/docs/api). 

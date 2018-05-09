@@ -5722,5 +5722,7 @@ div.docs.docs-api div.box > pre:first-of-type {
     font-weight: bolder; }
 div.docs.docs-api h2 {
   margin-top: 1.2rem; }
+div.docs.docs-code div.highlight {
+  margin-bottom: 2rem; }
 
 /*# sourceMappingURL=style.css.map */
