@@ -32,13 +32,17 @@ All tests can be run as follows:
 cd virtool/client
 yarn test
 ```
+\
 To run a specific or a subset of tests (for example, all tests that contain the string 'actions.test.js'):
 ```term
 yarn test actions.test.js
 ```
+\
 The output should resemble the following:
-<img src="/docs_images/jest_test_pass.png" width="500">
-
+<p align="center">
+  <img src="/docs_images/testing_jest_test_pass.png" width="500" title="Jest Test Pass">
+</p>
+\
 Jest can automatically find test files to run if they are kept in a dedicated **\_\_tests\_\_** directory, or anywhere else if the files include a **.test.js** or **.spec.js** extension. 
 <article class="message is-info">
   <div class="message-header">
@@ -68,7 +72,8 @@ describe("Errors Action Creators", () => {
 ```
 The **describe( )** block denotes a test suite for a particular unit under test, which can contain multiple individual tests contained in **it( )** blocks that exercise particular aspects of the corresponding code. 
 
-This test corresponds and resides next to the implementation file **virtool/client/src/js/errors/actions.js**
+This test corresponds and resides next to the implementation file:
+**virtool/client/src/js/errors/actions.js**
 ```javascript
 import { CLEAR_ERROR } from "../actionTypes";
 
@@ -81,7 +86,9 @@ export const clearError = (error) => ({
 
 Jest also comes with a feature called [Snapshot Testing](https://facebook.github.io/jest/docs/en/snapshot-testing.html). Snapshot testing lends itself well to testing React components since it can be used to capture rendered outputs for comparison across code changes. This simplifies output testing and regression testing as any changes across snapshots will result in test failure and a diff report to the command line.
 
-(pic of snapshot failure diff)
+<p align="center">
+  <img src="/docs_images/testing_snapshot_failure.png" width="500" title="Snapshot Failed">
+</p>
 
 A dedicated directory called **\_\_shapshots\_\_** is generated within the parent directory that houses tests that execute snapshot matching. There can be multiple **\_\_shapshots\_\_** directories within the different project folders, each corresponding to test files inside that specific directory.
 
@@ -90,13 +97,35 @@ Updating snapshots can be done by specifying the `-u` argument to the test comma
 ```term
 yarn test Sample.test.js -u
 ```
-
+\
 Virtool uses Enzyme to render components, and the `enzyme-to-json` library to parse snapshots into an easily readable file.
 
-| Snapshot file        | component render     |
-| -------------------- | -------------------- |
-| (pic of snapshot)    | (pic of render)      |
+**Sample.test.js.snap**
+```markdown
+// Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Example confirmation <Button />`] = `
+<Button
+  bsStyle="danger"
+  icon="checkmark"
+  pullRight={false}
+  tipPlacement="top"
+>
+  Confirm
+</Button>
+`;
+```
+which corresponds to the implementation's **render( )** output of **Sample.js**.
+```jsx
+  render () {
+    return (
+      <Button bsStyle="danger" icon="checkmark" onClick={onConfirm}>
+          Confirm
+      </Button>
+    );
+  }
+```
+\
 <article class="message is-info">
   <div class="message-header">
     Note
@@ -116,9 +145,20 @@ yarn test:coverage
 ```
 Which runs all tests and displays a summary of code coverage metrics on the command line, similar to the following:
 
-(code coverage pic)
+<p align="center">
+  <img src="/docs_images/testing_code_coverage.png" width="700" title="Code Coverage">
+</p>
 
 Coverage details for each file is stored in a dedicated directory that is generated after the first `yarn test:coverage` command, and can be found under **virtool/client/coverage**. This directory will have subdirectories that reflect the directory tree of the codebase under test, with each file's coverage report saved with an **.html** extension and viewable in the browser. 
+
+<article class="message is-info">
+  <div class="message-header">
+    Note
+  </div>
+  <div class="message-body">
+    The <strong>coverage</strong> directory and coverage files are <strong>not</strong> committed to repositories. 
+  </div>
+</article>
 
 ## Enzyme
 
@@ -126,12 +166,37 @@ Coverage details for each file is stored in a dedicated directory that is genera
 
 Enzyme is already installed and configured to work, with [shallow rendering](http://airbnb.io/enzyme/docs/api/shallow.html), [full DOM rendering](http://airbnb.io/enzyme/docs/api/mount.html), and [static rendering](http://airbnb.io/enzyme/docs/api/render.html) functions declared as globals in the **setupTest.js** file.
 
-```javascript
+Enzyme is primarily used to render React components and simulate events. 
+
+```jsx
+it("Enzyme example", () => {
+  const props = { color: "blue", size: "30px" };
+  const wrapper = shallow(<Sample {...props} />);
+
+  expect(wrapper.contains(<div color="blue" width="30px">Sample</div>)).toBe(true);
+});
+
 ```
 
 ## Sinon
 
-More information regarding [Sinon](http://sinonjs.org).
+[Sinon](http://sinonjs.org) is another JavaScript testing utility that specializes in providing test spies, stubs, and mocks. Its [API](http://sinonjs.org/releases/v5.0.7/) provides a larger selection for testing spies than what Jest provides out of the box.
+
+```jsx
+it("Sinon, Enzyme, Jest example", () => {
+  const spy = sinon.spy(actions, "update");
+
+  const props = { email: "test@virtool.com" };
+  const wrapper = shallow(<Sample {...props} />);
+
+  expect(spy.called).toBe(false);
+  wrapper.find('form').simulate('submit', { preventDefault: jest.fn() });
+
+  expect(spy.calledOnceWith({ email: "test@virtool.com" })).toBe(true);
+
+  spy.restore();
+});
+```
 
 {{% /endpoint %}}
 
