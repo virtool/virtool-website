@@ -589,3 +589,256 @@ Status: 200 OK
 }
 ```
 {{% /endpoint %}}
+
+
+{{% endpoint name="Add User" %}}
+
+Allow a user to view, use, and modify a reference.
+
+Allow the added user to view a non-public reference. Control their modification rights.
+
+```
+POST /api/refs/:ref_id/users
+```
+
+## Input
+
+| Name       | Type    | Required | Default | Description                                                  |
+| :--------- | :------ | :------- | ------- | :----------------------------------------------------------- |
+| user_id    | string  | True     |         | the id of the user to add                                    |
+| build      | boolean | False    | `false` | allow the user to build new indexes for the reference        |
+| modify     | boolean | False    | `false` | allow the user to modify the reference metadata and settings |
+| modify_otu | boolean | False    | `false` | allow the user to modify the reference's member OTUs         |
+| remove     | boolean | False    | `false` | allow the user to remove the reference                       |
+
+## Example
+
+```
+POST /api/refs/pe6vunzl/users
+```
+
+```json
+{
+	"user_id": "baz",
+	"modify_otu": true
+}
+```
+
+## Response
+
+```
+Status: 201 OK
+Location: /api/refs/pe6vunzl/users/baz
+```
+
+```json
+{
+	"id": "baz",
+	"created_at": "2018-05-23T19:14:04.285000Z",
+	"build": false,
+	"modify": false,
+	"modify_otu": true,
+	"remove": false
+}
+```
+
+{{% /endpoint %}}
+
+
+{{% endpoint name="Edit User" %}}
+
+Change the modification rights for an existing reference user.
+
+```
+PATCH /api/refs/:ref_id/users/:user_id
+```
+
+## Input
+
+| Name       | Type    | Required | Description                                                  |
+| :--------- | :------ | :------- | :----------------------------------------------------------- |
+| build      | boolean | False    | allow the user to build new indexes for the reference        |
+| modify     | boolean | False    | allow the user to modify the reference metadata and settings |
+| modify_otu | boolean | False    | allow the user to modify the reference's member OTUs         |
+| remove     | boolean | False    | allow the user to remove the reference                       |
+
+## Example
+
+```
+PATCH /api/refs/pe6vunzl/users/baz
+```
+
+```json
+{
+	"build": true,
+	"modify": true
+}
+```
+
+## Response
+
+```
+Status: 200 OK
+```
+
+```json
+{
+	"id": "baz",
+	"created_at": "2018-05-23T19:14:04.285000Z",
+	"build": true,
+	"modify": true,
+	"modify_otu": false,
+	"remove": false
+}
+```
+
+{{% /endpoint %}}
+
+{{% endpoint name="Remove User" %}}
+
+Remove a user from a reference.
+
+```
+DELETE /api/refs/:ref_id/users/:user_id
+```
+
+## Example
+
+```
+DELETE /api/refs/pe6vunzl/users/baz
+```
+
+## Response
+
+```
+Status: 204 No content
+```
+
+{{% /endpoint %}}
+
+
+{{% endpoint name="Add Group" %}}
+
+Allow a user group to view, use, and modify a reference.
+
+Allow the added group to view a non-public reference. Control its modification rights.
+
+```
+POST /api/refs/:ref_id/groups
+```
+
+## Input
+
+| Name       | Type    | Required | Default | Description                                                       |
+| :--------- | :------ | :------- | ------- | :---------------------------------------------------------------- |
+| group_id   | string  | True     |         | the id of the group to add                                        |
+| build      | boolean | False    | `false` | allow group members to build new indexes for the reference        |
+| modify     | boolean | False    | `false` | allow group members to modify the reference metadata and settings |
+| modify_otu | boolean | False    | `false` | allow group members to modify the reference's member OTUs         |
+| remove     | boolean | False    | `false` | allow group members to remove the reference                       |
+
+## Example
+
+```
+POST /api/refs/pe6vunzl/groups
+```
+
+```json
+{
+	"gorup_id": "baz",
+	"modify_otu": true
+}
+```
+
+## Response
+
+```
+Status: 201 OK
+Location: /api/refs/pe6vunzl/groups/baz
+```
+
+```json
+{
+	"id": "baz",
+	"created_at": "2018-05-23T19:14:04.285000Z",
+	"build": false,
+	"modify": false,
+	"modify_otu": true,
+	"remove": false
+}
+```
+
+{{% /endpoint %}}
+
+
+{{% endpoint name="Edit Group" %}}
+
+Change the modification rights for an existing reference user group.
+
+```
+PATCH /api/refs/:ref_id/groups/:group_id
+```
+
+## Input
+
+| Name       | Type    | Required | Default | Description                                                       |
+| :--------- | :------ | :------- | ------- | :---------------------------------------------------------------- |
+| build      | boolean | False    | `false` | allow group members to build new indexes for the reference        |
+| modify     | boolean | False    | `false` | allow group members to modify the reference metadata and settings |
+| modify_otu | boolean | False    | `false` | allow group members to modify the reference's member OTUs         |
+| remove     | boolean | False    | `false` | allow group members to remove the reference                       |
+
+## Example
+
+```
+PATCH /api/refs/pe6vunzl/groups/baz
+```
+
+```json
+{
+	"build": true,
+	"modify": true
+}
+```
+
+## Response
+
+```
+Status: 200 OK
+```
+
+```json
+{
+	"id": "baz",
+	"created_at": "2018-05-23T19:14:04.285000Z",
+	"build": true,
+	"modify": true,
+	"modify_otu": false,
+	"remove": false
+}
+```
+
+{{% /endpoint %}}
+
+
+{{% endpoint name="Remove Group" %}}
+
+Remove a user group from a reference.
+
+```
+DELETE /api/refs/:ref_id/groups/:group_id
+```
+
+## Example
+
+```
+DELETE /api/refs/pe6vunzl/groups/baz
+```
+
+## Response
+
+```
+Status: 204 No content
+```
+
+{{% /endpoint %}}
