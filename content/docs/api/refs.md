@@ -7,13 +7,20 @@ menu:
         parent: Endpoints
 ---
 
-{{% endpoint name="List" %}}
+{{% endpoint name="Find" %}}
 
-List all references.
+Find references.
 
 ```
 GET /api/refs
 ```
+
+## Parameters
+
+| Name     | Type    | Default   | Description                            |
+| :------- | :------ | :-------- | :------------------------------------- |
+| page     | integer | 1         | page number of results to return       |
+| per_page | integer | 15        | number of documents to return per page |
 
 ## Example
 
@@ -29,47 +36,33 @@ Status: 200 OK
 
 ```json
 {
-	"documents": [
+	"created_at": "2018-05-17T19:02:23.949000Z",
+	"data_type": "genome",
+	"description": "",
+	"name": "Viruses",
+	"organism": "viruses",
+	"public": false,
+	"restrict_source_types": false,
+	"source_types": [
+		"isolate",
+		"strain"
+	],
+	"users": [
 		{
-			"created_at": "2018-04-26T19:54:20.960000Z",
-			"data_type": "genome",
-			"name": "Imported Viruses",
-			"organism": "virus",
-			"public": false,
-			"user": {
-				"id": "igboyes"
-			},
-			"imported_from": {
-				"name": "reference.json.gz",
-				"user": {
-					"id": "igboyes"
-				},
-				"id": "ctrtptqj-reference.json.gz"
-			},
-			"process": {
-				"id": "bqunkpiu"
-			},
-			"id": "wvymfspm",
-			"latest_build": null
-		},
-		{
-			"created_at": "2018-04-26T23:03:02.937000Z",
-			"data_type": "genome",
-			"name": "Plant Viruses",
-			"organism": "viruses",
-			"public": false,
-			"user": {
-				"id": "igboyes"
-			},
-			"id": "f0emv7kz",
-			"latest_build": null
+			"id": "igboyes",
+			"build": true,
+			"modify": true,
+			"modify_otu": true,
+			"remove": true
 		}
 	],
-	"total_count": 2,
-	"found_count": 2,
-	"page_count": 1,
-	"per_page": 15,
-	"page": 1
+	"user": {
+		"id": "igboyes"
+	},
+	"contributors": [],
+	"internal_control": null,
+	"latest_build": null,
+	"id": "cngzpufk"
 }
 ```
 
@@ -214,6 +207,67 @@ Status: 201 Created
 }
 ```
 
+## Clone Example
+
+```
+POST /api/refs
+```
+
+```json
+{
+    "name": "Test 1",
+    "organism": "viruses",
+    "data_type": "genome",
+	"clone_from": "pe6vunzl"
+}
+```
+
+## Clone Response
+
+```
+Status: 201 Created
+```
+
+```json
+{
+	"created_at": "2018-05-23T18:53:16.516000Z",
+	"data_type": "genome",
+	"description": "",
+	"name": "Test 1",
+	"organism": "virus",
+	"public": false,
+	"internal_control": null,
+	"restrict_source_types": false,
+	"source_types": [
+		"isolate",
+		"strain"
+	],
+	"groups": [],
+	"users": [
+		{
+			"id": "igboyes",
+			"build": true,
+			"modify": true,
+			"modify_otu": true,
+			"remove": true
+		}
+	],
+	"user": {
+		"id": "igboyes"
+	},
+	"cloned_from": {
+		"id": "pe6vunzl",
+		"name": "Test 1"
+	},
+	"process": {
+		"id": "434xa87m"
+	},
+	"contributors": [],
+	"latest_build": null,
+	"id": "3m4glv8c"
+}
+```
+
 ## Import Example
 
 ```
@@ -222,10 +276,10 @@ POST /api/refs
 
 ```json
 {
-    "name": "Imported",
+    "name": "Test 1",
     "organism": "viruses",
     "data_type": "genome",
-	"import_from": "5d8gpaam-reference.json.gz"
+	"import_from": "dembqmby-reference.json.gz"
 }
 ```
 
@@ -237,12 +291,19 @@ Status: 201 Created
 
 ```json
 {
-	"created_at": "2018-04-30T20:05:06.607000Z",
+	"created_at": "2018-05-23T18:49:33.493000Z",
 	"data_type": null,
 	"description": "",
-	"name": "Imported",
+	"name": "Test 1",
 	"organism": null,
 	"public": false,
+	"internal_control": null,
+	"restrict_source_types": false,
+	"source_types": [
+		"isolate",
+		"strain"
+	],
+	"groups": [],
 	"users": [
 		{
 			"id": "igboyes",
@@ -260,15 +321,14 @@ Status: 201 Created
 		"user": {
 			"id": "igboyes"
 		},
-		"id": "5d8gpaam-reference.json.gz"
+		"id": "dembqmby-reference.json.gz"
 	},
 	"process": {
-		"id": "m4ovmukq"
+		"id": "40cswp4m"
 	},
 	"contributors": [],
-	"internal_control": null,
 	"latest_build": null,
-	"id": "9fhr3cey"
+	"id": "pe6vunzl"
 }
 ```
 
@@ -385,6 +445,92 @@ Content-Location: /api/processes/yn5ncv8t
 
 {{% /endpoint %}}
 
+{{% endpoint name="Find History" %}}
+
+Find history for a specific reference.
+
+History can be limited to unbuilt or built changes only using the `unbuilt` query parameter.
+
+```
+GET /api/refs/:ref_id/history
+```
+
+## Parameters
+
+| Name     | Type    | Default   | Description                            |
+| :------- | :------ | :-------  | :------------------------------------- |
+| page     | integer | 1         | page number of results to return       |
+| per_page | integer | 15        | number of documents to return per page |
+| unbuilt  | boolean | _None_    | return only unbuilt or built changes   |
+
+## Example
+
+```
+GET /api/refs/35s1gev9/history?per_page=2
+```
+
+## Response
+
+```
+Status: 200 OK
+```
+
+```json
+{
+	"documents": [
+		{
+			"method_name": "import",
+			"description": "Imported Sweet potato feathery mottle virus",
+			"created_at": "2018-05-17T18:49:48.977000Z",
+			"otu": {
+				"id": "fz99k1n0",
+				"name": "Sweet potato feathery mottle virus",
+				"version": 0
+			},
+			"reference": {
+				"id": "35s1gev9"
+			},
+			"index": {
+				"id": "unbuilt",
+				"version": "unbuilt"
+			},
+			"user": {
+				"id": "igboyes"
+			},
+			"id": "fz99k1n0.0"
+		},
+		{
+			"method_name": "import",
+			"description": "Imported Sweet potato chlorotic stunt virus",
+			"created_at": "2018-05-17T18:49:48.939000Z",
+			"otu": {
+				"id": "5oqgwy8j",
+				"name": "Sweet potato chlorotic stunt virus",
+				"version": 0
+			},
+			"reference": {
+				"id": "35s1gev9"
+			},
+			"index": {
+				"id": "unbuilt",
+				"version": "unbuilt"
+			},
+			"user": {
+				"id": "igboyes"
+			},
+			"id": "5oqgwy8j.0"
+		}
+	],
+	"total_count": 1419,
+	"found_count": 1419,
+	"page_count": 710,
+	"per_page": 2,
+	"page": 1
+}
+```
+
+{{% /endpoint %}}
+
 
 {{% endpoint name="Find Indexes" %}}
 
@@ -442,5 +588,4 @@ Status: 200 OK
 	"page": 1
 }
 ```
-
 {{% /endpoint %}}
