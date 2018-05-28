@@ -553,7 +553,7 @@ a.has-text-danger:hover, a.has-text-danger:focus {
 .has-text-grey-dark {
   color: #4a4a4a !important; }
 
-.has-text-grey {
+.has-text-grey, div.docs dt {
   color: #7a7a7a !important; }
 
 .has-text-grey-light {
@@ -5690,6 +5690,10 @@ div.docs h3:not(:first-child) {
 div.docs p {
   margin-top: 0.5rem;
   margin-bottom: 1rem; }
+div.docs dt {
+  font-weight: bold; }
+div.docs dd {
+  padding-left: 0.6rem; }
 div.docs.docs-manual h1:not(:first-child) {
   padding-top: 1.2rem; }
 div.docs.docs-manual h2 {
@@ -5722,6 +5726,11 @@ div.docs.docs-api div.box > pre:first-of-type {
     font-weight: bolder; }
 div.docs.docs-api h2 {
   margin-top: 1.2rem; }
+div.docs.docs-api ul {
+  padding-left: 1rem;
+  padding-bottom: 0.8rem;
+  list-style-type: disc;
+  list-style-position: inside; }
 div.docs.docs-code div.highlight {
   margin-bottom: 2rem; }
 

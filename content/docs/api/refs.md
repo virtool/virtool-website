@@ -132,16 +132,23 @@ Status: 200 OK
 
 {{% /endpoint %}}
 
-
 {{% endpoint name="Create" %}}
 
-Create a new reference.
+Create a new, empty reference.
 
-References can be created in a number of ways depending on what parameters are passed as input.
+References can be created in a number of ways depending on what parameters are passed as input. The special fields `clone_from`, `import_from`, and `remote_from` are used to determine how a reference will be created.
 
-If none of the fields `clone_from`, `import_from`, or `remote_from` are assigned, an empty reference will be created.
+If none of the fields `clone_from`, `import_from`, or `remote_from` are assigned, an empty reference will be created. OTUs can be added to the reference after it has been created using the OTU endpoints or the OTU editor interface.
 
-Assigning one of these specials fields will populate the new reference with OTUs on creation. Cloning copies OTUs from an existing reference identifieid by its `otu_id`. Importing validates and creates OTUs based on an uploaded Virtool reference file. Remoting links the reference to a valid Virtool reference repository on GitHub and downloads OTUs automatically.
+To direct Virtool to **clone an existing reference**, use the `clone_from` field to specifcy the `id` of a source reference. The `data_type` and `organism` fields are ignored as they will be inferred from the source reference. All OTUs are copied and a new history track is created.
+
+To direct Virtool to **create a reference from a compatible reference file**, use the `import_from` field to direct Virtool to a previously uploaded reference file reference file.
+
+To direct Virtool to **link a remote reference and create a new reference from it**, use the `remote_from` field to specify a source GitHub repository slug. Remote reference is automatically linked to its orginating GitHub repository and can check and update the [release](https://help.github.com/categories/releases/) for the source repository.
+
+{{% warning %}}
+For now, only the [official reference](https://github.com/virtool/virtool-database) is supported as a remote reference. Use the slug `virtool/virtool-database` as value for `clone_from`.
+{{% /warning %}}
 
 ```
 POST /api/refs
@@ -329,6 +336,72 @@ Status: 201 Created
 	"contributors": [],
 	"latest_build": null,
 	"id": "pe6vunzl"
+}
+```
+
+## Remote Example
+
+```
+POST /api/refs
+```
+
+```json
+{
+    "name": "Test Remote",
+    "organism": "viruses",
+    "data_type": "genome",
+	"remote_from": "virtool/virtool-database"
+}
+```
+
+## Remote Response
+
+```
+Status: 201 Created
+Location: /api/refs/95p5qnk2
+```
+
+```json
+{
+	"created_at": "2018-05-28T22:35:36.443000Z",
+	"data_type": null,
+	"description": "",
+	"name": "Test Remote",
+	"organism": null,
+	"public": false,
+	"internal_control": null,
+	"restrict_source_types": false,
+	"source_types": [
+		"isolate",
+		"strain"
+	],
+	"groups": [],
+	"users": [
+		{
+			"id": "igboyes",
+			"build": true,
+			"modify": true,
+			"modify_otu": true,
+			"remove": true
+		}
+	],
+	"user": {
+		"id": "igboyes"
+	},
+	"remotes_from": {
+		"slug": "virtool/virtool-database",
+		"update": null,
+		"last_checked": "2018-05-28T22:35:36.443000Z",
+		"last_updated": "2018-05-28T22:35:36.443000Z"
+	},
+	"process": {
+		"id": "iq3h8ru8"
+	},
+	"contributors": [],
+	"latest_build": null,
+	"otu_count": 0,
+	"unbuilt_change_count": 0,
+	"id": "95p5qnk2"
 }
 ```
 
