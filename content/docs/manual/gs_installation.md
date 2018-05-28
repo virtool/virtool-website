@@ -41,14 +41,9 @@ Before you can start using Virtool, it must be installed on your system.
    nohup ./run &
    ```
 
-<article class="message is-info">
-  <div class="message-header">
-    Note
-  </div>
-  <div class="message-body">
-    We suggest running Virtool as a dedicated user.
-  </div>
-</article>
+{{% note %}}
+We suggest running Virtool as a dedicated user.
+{{% /note %}}
 
 # MongoDB {#mongodb}
 

@@ -65,11 +65,6 @@ API keys are account-specific and are generated under the *API* tab in the *Acco
    
 6. Use the key to access the API with the help of the [API documentation](/web-api/authorization.html).
 
-<article class="message is-warning">
-  <div class="message-header">
-    Warning
-  </div>
-  <div class="message-body">
-    If permissions are removed from your account after the key is created, they will also be removed from the key.
-  </div>
-</article>
+{{% warning %}}
+If permissions are removed from your account after the key is created, they will also be removed from the key.
+{{% /warning %}}

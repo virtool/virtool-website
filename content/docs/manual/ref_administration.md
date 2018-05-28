@@ -128,11 +128,9 @@ It is possible to opt out of sending error reports by unchecking the <i class="f
 
 These settings determines how Virtool stores data in database and on disk.
 
-<article class="message is-danger">
-  <div class="message-body">
-    Changing these settings after initial setup can make Virtool non-functional.
-  </div>
-</article>
+{{% important %}}
+Changing these settings after initial setup can make Virtool non-functional.
+{{% /important %}}
 
 ## Database
 

@@ -5690,11 +5690,6 @@ div.docs h3:not(:first-child) {
 div.docs p {
   margin-top: 0.5rem;
   margin-bottom: 1rem; }
-div.docs.docs-manual img {
-  max-width: 100%;
-  min-width: auto;
-  padding: 5px;
-  border: 0.1rem solid #ddd; }
 div.docs.docs-manual h1:not(:first-child) {
   padding-top: 1.2rem; }
 div.docs.docs-manual h2 {
@@ -5708,10 +5703,15 @@ div.docs.docs-manual ol {
   padding-left: 1.3rem; }
   div.docs.docs-manual ol li {
     margin-bottom: 2.3rem; }
-div.docs.docs-manual article.message {
+div.docs.docs-manual img {
+  max-width: 100%;
+  min-width: auto;
+  padding: 5px;
+  border: 0.1rem solid #ddd; }
+div.docs.docs-manual .article.message {
+  margin-top: 0.6rem; }
+div.docs.docs-manual h1 + .article.message {
   margin-top: 2.2rem; }
-  div.docs.docs-manual article.message.is-flowing {
-    margin-top: 0.6rem; }
 div.docs.docs-manual li img {
   margin-top: 0.6rem; }
 div.docs.docs-api div.box > pre:first-of-type {

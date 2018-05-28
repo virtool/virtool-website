@@ -148,13 +148,7 @@ div.docs
         margin-top: 0.5rem
         margin-bottom: 1rem
 
-    &.docs-manual
-
-        img
-            max-width: 100%
-            min-width: auto
-            padding: 5px
-            border: 0.1rem solid #ddd
+    &.docs-manual                
 
         h1:not(:first-child)
             padding-top: 1.2rem
@@ -175,10 +169,19 @@ div.docs
                 margin-bottom: 2.3rem
 
         article.message
-            margin-top: 2.2rem
+                            
 
-            &.is-flowing
-                margin-top: 0.6rem
+        img
+            max-width: 100%
+            min-width: auto
+            padding: 5px
+            border: 0.1rem solid #ddd
+
+        .article.message
+            margin-top: 0.6rem
+
+        h1 + .article.message
+            margin-top: 2.2rem
 
         li
             img

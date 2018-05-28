@@ -32,14 +32,9 @@ Error messages will appear if the connection fails or the provided database name
 
 !["Setup MongoDB connection](/docs_images/setup_connect_mongodb.png)
 
-<article class="message is-info is-flowing">
-  <div class="message-header">
-    Note
-  </div>
-  <div class="message-body">
-    More advanced MongoDB configurations, including improved security features, will be available in future releases.
-  </div>
-</article>
+{{% note %}}
+More advanced MongoDB configurations, including improved security features, will be available in future releases.
+{{% /note %}}
 
 # Add First User {#first_user}
 
@@ -47,15 +42,9 @@ An administrative user account must be created during setup. After setup, this a
 
 ![](/docs_images/setup_first_user.png)
 
-<article class="message is-danger is-flowing">
-  <div class="message-header">
-    Important
-  </div>
-  <div class="message-body">
-    We strongly recommend <strong>not</strong> making this account a generic adminstrative account. Doing so defeats Virtool's built-in auditing, which is designed in accordance with <a href="https://www.iso.org/standard/39883.html">ISO 17025:2005</a>. Each account should correspond to an individual user.
-  </div>
-</article>
-
+{{% important %}}
+We strongly recommend **not** making this account a generic adminstrative account. Doing so defeats Virtool's built-in auditing, which is designed in accordance with [ISO 17025:2005](https://www.iso.org/standard/39883.html)". Each account should correspond to an individual user.
+{{% /important %}}
 
 # Set Data Path {#data_path}
 
@@ -81,14 +70,9 @@ It is also possible to set a path accessible to the server that will be watched 
 
 ![](/docs_images/setup_path_watch.png)
 
-<article class="message is-warning is-flowing">
-  <div class="message-header">
-    Warning
-  </div>
-  <div class="message-body">
-    Files dropped in the watch directory will be removed once they have been pulled into Virtool. Do not place your only copy of a sample FASTQ file in the watch path.
-  </div>
-</article>
+{{% warning %}}
+Files dropped in the watch directory will be removed once they have been pulled into Virtool. Do not place your only copy of a sample FASTQ file in the watch path.
+{{% /warning %}}
 
 # Save and Restart
 

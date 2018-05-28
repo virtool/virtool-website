@@ -15,14 +15,9 @@ The viral database in a fresh install of Virtool is completely empty. At least o
 
 Instead of starting a virus database from scratch, you can do a one-time of import someone else's database or [our offical one](https://www.virtool.ca/downloads).
 
-<article class="message is-info is-flowing">
-  <div class="message-header">
-    Note
-  </div>
-  <div class="message-body">
-    A virus database file can only be imported into an empty instance of Virtool. You cannot import viruses into an already populated database.
-  </div>
-</article>
+{{% note %}}
+A virus database file can only be imported into an empty instance of Virtool. You cannot import viruses into an already populated database.
+{{% /note %}}
 
 We will use the offical database for this tutorial.
 
