@@ -58,11 +58,10 @@ _None_
 
 {{% endpoint name="Get" %}}
 
-Get indexes by their unique id or version number.
+Get the complete representation of an index.
 
 ```
 GET /api/indexes/:index_id
-GET /api/indexes/:index_version
 ```
 
 ## Example
@@ -116,9 +115,9 @@ Status: 200 OK
 
 ## Errors
 
-| Status | Message   | Reason                                                           |
-| :----- | :-------- | :--------------------------------------------------------------- |
-| `404`  | Not found | index identified by `index_id` or `index_version` does not exist |
+| Status | Message   | Reason                                        |
+| :----- | :-------- | :-------------------------------------------- |
+| `404`  | Not found | index identified by `index_id` does not exist |
 
 {{% /endpoint %}}
 
@@ -228,7 +227,6 @@ Find the virus changes that are included in a given index build.
 
 ```
 GET /api/indexes/:index_id/history
-GET /api/indexes/:index_version/history
 ```
 
 ## Example
@@ -276,8 +274,8 @@ Status: 200 OK
 
 ## Errors
 
-| Status | Message   | Reason                                                           |
-| :----- | :-------- | :--------------------------------------------------------------- |
-| `404`  | Not found | index identified by `index_id` or `index_version` does not exist |
+| Status | Message   | Reason                                        |
+| :----- | :-------- | :-------------------------------------------- |
+| `404`  | Not found | index identified by `index_id` does not exist |
 
 {{% /endpoint %}}
