@@ -156,16 +156,16 @@ POST /api/refs
 
 ## Input
 
-| Name        | Type    | Optional | Description                                                                                        |
-| :---------- | :------ | :------- | :------------------------------------------------------------------------------------------------- |
-| name        | string  | False    | the virus name                                                                                     |
-| description | string  | True     | a longer description for the reference                                                             |
-| data_type   | string  | False    | the sequence data type (only _genome_ is currently supported)                                      |
-| organism    | string  | True     | the sequence data type (only _genome_ is currently supported)                                      |
-| public      | boolean | True     | make the reference viewable and usable by all users (default=`False`)                              |
-| clone_from  | string  | True     | a valid `ref_id` that the new reference should be cloned from                                      |
-| import_from | string  | True     | a valid `file_id` that the new reference should be imported from                                   |
-| remote_from | string  | True     | a valid GitHub slug to download and update the new reference from (eg. _virtool/virtool-database_) |
+| Name        | Type    | Description                                                                                        |
+| :---------- | :------ | :------------------------------------------------------------------------------------------------- |
+| name        | string  | the virus name                                                                                     |
+| description | string  | a longer description for the reference                                                             |
+| data_type   | string  | the sequence data type (only _genome_ is currently supported)                                      |
+| organism    | string  | the sequence data type (only _genome_ is currently supported)                                      |
+| public      | boolean | make the reference viewable and usable by all users (default=`False`)                              |
+| clone_from  | string  | a valid `ref_id` that the new reference should be cloned from                                      |
+| import_from | string  | a valid `file_id` that the new reference should be imported from                                   |
+| remote_from | string  | a valid GitHub slug to download and update the new reference from (eg. _virtool/virtool-database_) |
 
 ## Basic Example
 
