@@ -480,6 +480,41 @@ Status: 200 OK
 {{% /endpoint %}}
 
 
+{{% endpoint name="Export" %}}
+
+Download a reference as a compressed JSON file.
+
+The downloaded file can be imported into any other instance of Virtool.
+
+The OTU data included in the exported file can be controlled using the `scope` query parameter. Exports scoped `built` contain only the latest **built** state of all OTUs. Exports scoped `unbuilt` contain all OTUs at their last verified (no unbuildable issues) version. Exports scoped `unverified` contain all OTUs in their current states regardless of whether they have issues or not.
+
+The default scope is `built` if no `scope` parameter is provided.
+
+```
+GET /download/refs/:ref_id
+```
+
+## Parameters
+
+| Name  | Type   | Default | Description                                           |
+| :---- | :----- | :------ | :---------------------------------------------------- |
+| scope | string | built   | controls the state of the OTUs included in the export |
+
+## Example
+
+```
+GET /download/refs/848280hu?scope=unbuilt
+```
+
+## Response
+
+```
+Status: 200 OK
+Content-Type: application/gzip
+```
+
+{{% /endpoint %}}
+
 {{% endpoint name="Remove" %}}
 
 Remove a reference and its associated OTUs, sequences, and indexes. Analyses using the deleted reference can still be queried after deletion of the reference. In-progress analyses using the deleted reference will still finish successfully.
