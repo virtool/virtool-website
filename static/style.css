@@ -5732,4 +5732,7 @@ div.docs.docs-api ul {
 div.docs.docs-code div.highlight {
   margin-bottom: 2rem; }
 
+nav#TableOfContents ul li ul {
+  display: none; }
+
 /*# sourceMappingURL=style.css.map */

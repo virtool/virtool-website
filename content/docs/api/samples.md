@@ -304,7 +304,7 @@ Status: 200 OK
 
 # Edit Rights
 
-{{< administrator_or_owner >}}
+{{< administrator_owner >}}
 
 Edit the access rights for a sample.
 
@@ -363,7 +363,7 @@ Status: 200 OK
 
 # Remove
 
-{{< administrator_or_owner >}}
+{{< administrator_owner >}}
 
 Remove an existing sample record and its associated data files.
 
@@ -471,10 +471,9 @@ Status: 200 OK
 | `404`  | Not found           | `sample_id` in URL does not exist                                    |
 
 
-{{% /endpoint %}}
+# Analyze
 
-
-{{% endpoint name="Analyze" %}}
+{{< right write >}}
 
 Immediately create and placeholder analysis record for a sample and start an analysis job. When the job succeeds the analysis document will be populated.
 
@@ -538,5 +537,3 @@ Location: /api/analyses/fbzypgva
 | `403`  | Insufficient rights | client does not have the required rights to create a new analysis for the sample |
 | `404`  | Not found           | `sample_id` in URL does not exist                                                |
 | `422`  | Invalid input       | the JSON request body is invalid                                                 |
-
-{{% /endpoint %}}

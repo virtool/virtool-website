@@ -25,10 +25,13 @@
                 {{ partial "side.html" (dict "CurrentPage" . "MenuName" "api") }}
             </div>
 
-            <div class="column docs docs-api">
+            <div class="column docs docs-api">                
                 <p>
                     {{ .Page.Description }}
                 </p>
+
+                {{ .TableOfContents }}
+
                 {{ $replaced := (replaceRE "<table>([\\s\\S]*?)<\\/table>" "<div class='table-wrapper'><table>$1</table></div>" .Content) }}
                 {{ safeHTML $replaced }}
             </div>   
