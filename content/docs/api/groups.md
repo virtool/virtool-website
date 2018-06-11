@@ -7,7 +7,7 @@ menu:
         parent: Endpoints
 ---
 
-{{% endpoint name="List" %}}
+# List
 
 List all existing user groups.
 
@@ -43,10 +43,8 @@ Status: 200 OK
 
 _None_
 
-{{% /endpoint %}}
 
-
-{{% endpoint name="Get" %}}
+# Get
 
 Get the complete representation of a single user group.
 
@@ -88,10 +86,10 @@ Status: 200 OK
 | :----- | :-------- | :------------------- |
 | `404`  | Not found | group does not exist |
 
-{{% /endpoint %}}
 
+# Create
 
-{{% endpoint name="Create" %}}
+{{< administrator >}}
 
 Create a new group. New groups have no permissions. Requestors must be administrators.
 
@@ -147,14 +145,12 @@ Status 201: Created
 | `409`  | Conflict      | group already exists           |
 | `422`  | Invalid input | JSON request body is invalid   |
 
-{{% /endpoint %}}
 
+# Edit
 
-{{% endpoint name="Edit" %}}
+{{< administrator >}}
 
-Update the permissions of an existing group. Requestors must be administrators.
-
-Unset permissions will retain their previous setting.
+Update the permissions of an existing group. Unset permissions will retain their previous setting.
 
 ```
 PATCH /api/groups/:id
@@ -210,12 +206,12 @@ Status: 200 OK
 | `404`  | Not found     | group does not exist           |
 | `422`  | Invalid input | JSON request body is invalid   |
 
-{{% /endpoint %}}
 
+# Remove
 
-{{% endpoint name="Remove" %}}
+{{< administrator >}}
 
-Remove an existing group. Requestors must be administrators.
+Remove an existing group.
 
 ```
 DELETE /api/groups/:group_id
@@ -239,5 +235,3 @@ Status: 204 No Content
 | :----- | :------------ | :----------------------------- |
 | `403`  | Not permitted | client is not an administrator |
 | `404`  | Not found     | group does not exist           |
-
-{{% /endpoint %}}

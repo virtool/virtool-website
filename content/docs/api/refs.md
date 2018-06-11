@@ -7,7 +7,7 @@ menu:
         parent: Endpoints
 ---
 
-{{% endpoint name="Find" %}}
+# Find
 
 Find references.
 
@@ -66,9 +66,10 @@ Status: 200 OK
 }
 ```
 
-{{% /endpoint %}}
 
-{{% endpoint name="Get" %}}
+# Get
+
+{{< right read >}}
 
 Get the complete representation of a single reference.
 
@@ -130,9 +131,9 @@ Status: 200 OK
 }
 ```
 
-{{% /endpoint %}}
+# Create
 
-{{% endpoint name="Create" %}}
+{{< permission create_ref >}}
 
 Create a new, empty reference.
 
@@ -405,10 +406,10 @@ Location: /api/refs/95p5qnk2
 }
 ```
 
-{{% /endpoint %}}
 
+# Edit
 
-{{% endpoint name="Edit" %}}
+{{< right modify >}}
 
 Edit an existing reference.
 
@@ -477,10 +478,10 @@ Status: 200 OK
 }
 ```
 
-{{% /endpoint %}}
 
+# Export
 
-{{% endpoint name="Export" %}}
+{{< right read >}}
 
 Download a reference as a compressed JSON file.
 
@@ -513,9 +514,10 @@ Status: 200 OK
 Content-Type: application/gzip
 ```
 
-{{% /endpoint %}}
 
-{{% endpoint name="Remove" %}}
+# Remove
+
+{{< right remove >}}
 
 Remove a reference and its associated OTUs, sequences, and indexes. Analyses using the deleted reference can still be queried after deletion of the reference. In-progress analyses using the deleted reference will still finish successfully.
 
@@ -551,9 +553,10 @@ Content-Location: /api/processes/yn5ncv8t
 }
 ```
 
-{{% /endpoint %}}
 
-{{% endpoint name="Find History" %}}
+# Find History
+
+{{< right read >}}
 
 Find history for a specific reference.
 
@@ -637,10 +640,10 @@ Status: 200 OK
 }
 ```
 
-{{% /endpoint %}}
 
+# Find Indexes
 
-{{% endpoint name="Find Indexes" %}}
+{{< right read >}}
 
 Find indexes for a specific reference.
 
@@ -696,10 +699,11 @@ Status: 200 OK
 	"page": 1
 }
 ```
-{{% /endpoint %}}
 
 
-{{% endpoint name="Add User" %}}
+# Add User
+
+{{< right modify >}}
 
 Allow a user to view, use, and modify a reference.
 
@@ -750,10 +754,10 @@ Location: /api/refs/pe6vunzl/users/baz
 }
 ```
 
-{{% /endpoint %}}
 
+# Edit User
 
-{{% endpoint name="Edit User" %}}
+{{< right modify >}}
 
 Change the modification rights for an existing reference user.
 
@@ -800,9 +804,10 @@ Status: 200 OK
 }
 ```
 
-{{% /endpoint %}}
 
-{{% endpoint name="Remove User" %}}
+# Remove User
+
+{{< right modify >}}
 
 Remove a user from a reference.
 
@@ -822,10 +827,10 @@ DELETE /api/refs/pe6vunzl/users/baz
 Status: 204 No content
 ```
 
-{{% /endpoint %}}
 
+# Add Group
 
-{{% endpoint name="Add Group" %}}
+{{< right modify >}}
 
 Allow a user group to view, use, and modify a reference.
 
@@ -876,10 +881,10 @@ Location: /api/refs/pe6vunzl/groups/baz
 }
 ```
 
-{{% /endpoint %}}
 
+# Edit Group
 
-{{% endpoint name="Edit Group" %}}
+{{< right modify >}}
 
 Change the modification rights for an existing reference user group.
 
@@ -926,10 +931,10 @@ Status: 200 OK
 }
 ```
 
-{{% /endpoint %}}
 
+# Remove Group
 
-{{% endpoint name="Remove Group" %}}
+{{< right modify >}}
 
 Remove a user group from a reference.
 
@@ -948,5 +953,3 @@ DELETE /api/refs/pe6vunzl/groups/baz
 ```
 Status: 204 No content
 ```
-
-{{% /endpoint %}}

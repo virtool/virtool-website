@@ -7,7 +7,7 @@ menu:
         parent: Endpoints
 ---
 
-{{% endpoint name="Find" %}}
+# Find
 
 Find profile subtractions by id (name) or nickname.
 
@@ -64,10 +64,8 @@ Status: 200 OK
 
 _None_
 
-{{% /endpoint %}}
 
-
-{{% endpoint name="Get" %}}
+# Get
 
 Get the complete representation of a given subtraction.
 
@@ -125,10 +123,10 @@ Status: 200 OK
 | :----- | :------------------ | :---------------------------------------------------------- |
 | `404`  | Not found           | `sample_id` in URL does not exist                           |
 
-{{% /endpoint %}}
 
+# Create
 
-{{% endpoint name="Create" permission="modify_subtraction" %}}
+{{< permission modify_subtraction >}}
 
 Create a new subtraction from a file that has previously been uploaded into the file manager.
 
@@ -192,10 +190,10 @@ Status: 201 Created
 | `409`  | Subtraction id already exists | `id` is already in use by an existing subtraction        |
 | `422`  | Invalid input                 | JSON request body is invalid                             |
 
-{{% /endpoint %}}
 
+# Edit
 
-{{% endpoint name="Edit" permission="modify_subtraction" %}}
+{{< permission modify_subtraction >}}
 
 Change the nickname of an existing subtraction.
 
@@ -256,10 +254,10 @@ Status: 200 OK
 | `404`  | Not found     | subtraction does not exist                               |
 | `422`  | Invalid input | JSON request body is invalid                             |
 
-{{% /endpoint %}}
 
+# Remove
 
-{{% endpoint name="Remove" permission="modify_subtraction" %}}
+{{< permission modify_subtraction >}}
 
 Remove an existing subtraction
 
@@ -286,5 +284,3 @@ Status: 204 No content
 | `403`  | Not permitted      | client does not have the 'modify_subtraction` permission          |
 | `404`  | Not found          | subtraction does not exist                                        |
 | `409`  | Has linked samples | subtraction is in use by one or more sample and cannot be removed |
-
-{{% /endpoint %}}

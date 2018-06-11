@@ -7,7 +7,7 @@ menu:
         parent: Endpoints
 ---
 
-{{% endpoint name="List" %}}
+# List
 
 All all existing processes.
 
@@ -48,10 +48,7 @@ Status: 200 OK
 ]
 ```
 
-{{% /endpoint %}}
-
-
-{{% endpoint name="Get" %}}
+# Get
 
 Get a single process.
 
@@ -81,5 +78,3 @@ Status: 200 OK
 	"id": "pqbed16v"
 }
 ```
-
-{{% /endpoint %}}

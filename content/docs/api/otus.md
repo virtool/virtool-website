@@ -7,13 +7,15 @@ menu:
         parent: Endpoints
 ---
 
-{{% endpoint name="Find" %}}
+# Find
 
-Find OTUs by their name or abbreviation
+{{< right read >}}
 
 ```
 GET /api/refs/:ref_id/otus
 ```
+
+Find OTUs by their name or abbreviation
 
 ## Parameters
 
@@ -83,16 +85,16 @@ Status: 200 OK
 | :----- | :------------ | :--------------------------------------- |
 | `422`  | Invalid query | invalid key or value in URL query string |
 
-{{% /endpoint %}}
 
+# Get
 
-{{% endpoint name="Get" %}}
-
-Get a complete representation of a virus.
+{{< right read >}}
 
 ```
 GET /api/otus/:otu_id
 ```
+
+Get a complete representation of a virus.
 
 ## Example
 
@@ -157,10 +159,10 @@ Status: 200 OK
 | :----- | :-------- | :------------------------ |
 | `404`  | Not found | `virus_id` does not exist |
 
-{{% /endpoint %}}
 
+# Create
 
-{{% endpoint name="Create" permission="create_virus" %}}
+{{< right modify_otu >}}
 
 Create a new virus given a name and abbreviation.
 
@@ -241,10 +243,10 @@ Status: 201 Created
 | `409`  | Name and abbreviation already exist | `name` and `abbreviation` in request body are already in use |
 | `422`  | Invalid query                       | invalid key or value in URL query string                     |
 
-{{% /endpoint %}}
 
+# Edit
 
-{{% endpoint name="Edit" permission="modify_virus" %}}
+{{< right modify_otu >}}
 
 Edit an existing virus by changing its name, abbreviation, or schema.
 
@@ -324,10 +326,10 @@ Status: 200 OK
 | `409`  | Name and abbreviation already exist | `name` and `abbreviation` in request body are already in use |
 | `422`  | Invalid input                       | JSON request body is invalid                                 |
 
-{{% /endpoint %}}
 
+# Remove
 
-{{% endpoint name="Remove" permission="modify_virus" %}}
+{{< right modify_otu >}}
 
 Removes a virus, its isolates, and sequences.
 
@@ -354,10 +356,10 @@ Status: 204 No content
 | `403`  | Not permitted | client does not have the `remove_virus` permission |
 | `404`  | Not found     | `virus_id` in URL does not exist                   |
 
-{{% /endpoint %}}
 
+# List Isolates
 
-{{% endpoint name="List Isolates" %}}
+{{< right read >}}
 
 List the isolates for a given virus.
 
@@ -416,10 +418,10 @@ Status: 200 OK
 | :----- | :-------- | :------------------------------- |
 | `404`  | Not found | `virus_id` in URL does not exist |
 
-{{% /endpoint %}}
 
+# Get Isolate
 
-{{% endpoint name="Get Isolate" %}}
+{{< right read >}}
 
 Get the complete representation of a single isolate.
 
@@ -462,10 +464,10 @@ Status: 200 OK
 | :----- | :-------- | :--------------------------------------------- |
 | `404`  | Not found | `virus_id` or `isolate_id` in URL do not exist |
 
-{{% /endpoint %}}
 
+# Add Isolate
 
-{{% endpoint name="Add Isolate" permission="modify_virus" %}}
+{{< right modify_otu >}}
 
 Add a new isolate.
 
@@ -521,10 +523,10 @@ Status: 201 Created
 | `404`  | Not found     | `virus_id` in URL does not exist                   |
 | `422`  | Invalid input | JSON request body is invalid                       |
 
-{{% /endpoint %}}
 
+# Edit Isolate
 
-{{% endpoint name="Edit Isolate" permission="modify_virus" %}}
+{{< right modify_otu >}}
 
 Edit an existing isolate.
 
@@ -576,10 +578,10 @@ Status: 200 OK
 | `404`  | Not found       | `isolate_id` in URL does not exist                 |
 | `422`  | Invalid input   | JSON request body is invalid                       |
 
-{{% /endpoint %}}
 
+# Set Default Isolate
 
-{{% endpoint name="Set Default Isolate" permission="modify_virus" %}}
+{{< right modify_otu >}}
 
 Sets an isolate as default **and** unsets any existing default isolate. Take no input.
 
@@ -617,10 +619,10 @@ Status: 200 OK
 | `404`  | Virus not found | `virus_id` in URL does not exist                   |
 | `404`  | Not found       | `isolate_id` in URL does not exist                 |
 
-{{% /endpoint %}}
 
+# Remove Isolate
 
-{{% endpoint name="Remove Isolate" permission="modify_virus" %}}
+{{< right modify_otu >}}
 
 Removes an isolate and its sequences. If it is the default isolate, the first isolate in the list will be set as default.
 
@@ -649,10 +651,9 @@ Status: 204 No content
 | `404`  | Not found       | `isolate_id` in URL does not exist                 |
 
 
-{{% /endpoint %}}
+# Add Sequence
 
-
-{{% endpoint name="Add Sequence" permission="modify_virus" %}}
+{{< right modify_otu >}}
 
 Add a sequence to an isolate.
 
@@ -719,10 +720,9 @@ Status: 201 Created
 | `422`  | Invalid input              | JSON request body is invalid                       |
 
 
-{{% /endpoint %}}
+# Edit Sequence
 
-
-{{% endpoint name="Edit Sequence" permission="modify_virus" %}}
+{{< right modify_otu >}}
 
 Edit an existing sequence.
 
@@ -783,10 +783,10 @@ Status: 200 OK
 | `404`  | Segment not found          | `segment` is not defined in virus schema           |
 | `422`  | Invalid input              | JSON request body is invalid                       |
 
-{{% /endpoint %}}
 
+# Remove Sequence
 
-{{% endpoint name="Remove Sequence" permission="modify_virus" %}}
+{{< right modify_otu >}}
 
 Remove an existing sequence from an isolate.
 
@@ -813,10 +813,10 @@ Status: 204 No Content
 | `403`  | Not permitted              | client does not have the `modify_virus` permission |
 | `404`  | Not found                  | virus, isolate, or sequence does not exist         |
 
-{{% /endpoint %}}
 
+# List History
 
-{{% endpoint name="List History" %}}
+{{< right read >}}
 
 Retrieves a list of all changes made to the virus.
 

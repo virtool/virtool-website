@@ -7,7 +7,7 @@ menu:
         parent: Endpoints
 ---
 
-{{% endpoint name="Find" %}}
+# Find
 
 Find jobs by task name or the originating username.
 
@@ -73,10 +73,10 @@ Status: 200 OK
 | :----- | :------------ | :---------------------------------------- |
 | `422`  | Invalid query | validation error for URL query parameters |
 
-{{% /endpoint %}}
 
+# Get
 
-{{% endpoint name="Get" %}}
+Get the complete representation for a single job.
 
 ```
 GET /api/jobs/:job_id
@@ -146,10 +146,10 @@ Status: 200 OK
 | :----- | :-------- | :----------------------------- |
 | `404`  | Not found | `job_id` in URL does not exist |
 
-{{% /endpoint %}}
 
+# Cancel
 
-{{% endpoint name="Cancel" permission="cancel_job" %}}
+{{< permission "cancel_job" >}}
 
 Cancel a job safely and cleanly. Cancellation stops all processes and cleans up intermediate data.
 
@@ -232,10 +232,10 @@ Status: 200 OK
 | `403`  | Not permitted   | client does not have the `create_sample` permission |
 | `404`  | Not found       | `job_id` in URL does not exist                      |
 
-{{% /endpoint %}}
 
+# Remove
 
-{{% endpoint name="Remove" permission="remove_job" %}}
+{{< permission "remove_job" >}}
 
 Remove a job that is complete, cancelled, or errored. If the requested job is running or waiting to run, ``409 Conflict`` will be returned.
 
@@ -262,10 +262,9 @@ Status: 204 No Content
 | `403`  | Not permitted | client does not have the `remove_sample` permission |
 | `404`  | Not found     | `job_id` in URL does not exist                      |
 
-{{% /endpoint %}}
 
-
-{{% endpoint name="Clear" permission="remove_job" %}}
+# Clear
+{{< permission "remove_job" >}}
 
 Clear completed, failed, or all finished jobs.
 
@@ -301,5 +300,3 @@ Status: 200 OK
 ## Errors
 
 _None_
-
-{{% /endpoint %}}

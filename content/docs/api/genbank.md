@@ -7,7 +7,7 @@ menu:
         parent: Endpoints
 ---
 
-{{% endpoint name="Get" %}}
+# Get
 
 Get a Virtool-style sequence document for the given accession.
 
@@ -43,5 +43,3 @@ Status: 200 OK
 | Status | Message       | Reason                                             |
 | :----- | :------------ | :------------------------------------------------- |
 | `404`  | Not found     | accession does not exist on Genbank                |
-
-{{% /endpoint %}}

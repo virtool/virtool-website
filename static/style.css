@@ -5651,18 +5651,12 @@ a.navbar-link.is-active {
   .card.is-docs-type:hover {
     transform: scale(1.05); }
 
-div.box.endpoint .level-item {
-  justify-content: flex-start; }
-
 .tile-menu {
   margin-top: -1rem;
   padding-top: 1.2rem;
   border-top: 0.1rem solid black; }
   .tile-menu:not(:last-of-type) {
     margin-bottom: 3.6rem; }
-
-p.card-header-title .icon + span {
-  padding-left: 0.5rem; }
 
 .level-item.tags {
   justify-content: left; }
@@ -5718,11 +5712,15 @@ div.docs.docs-manual h1 + .article.message {
   margin-top: 2.2rem; }
 div.docs.docs-manual li img {
   margin-top: 0.6rem; }
-div.docs.docs-api div.box > pre:first-of-type {
+div.docs.docs-api h1 {
+  border-top: 3px solid #0a0a0a;
+  margin-top: 3rem;
+  padding-top: 2rem; }
+div.docs.docs-api h1 ~ pre:first-of-type {
   margin-bottom: 2rem;
   background-color: #387fa3;
   color: white; }
-  div.docs.docs-api div.box > pre:first-of-type code {
+  div.docs.docs-api h1 ~ pre:first-of-type code {
     font-weight: bolder; }
 div.docs.docs-api h2 {
   margin-top: 1.2rem; }

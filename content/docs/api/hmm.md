@@ -7,7 +7,7 @@ menu:
         parent: Endpoints
 ---
 
-{{% endpoint name="Find" %}}
+# Find
 
 Find HMM annotations.
 
@@ -85,10 +85,8 @@ Status: 200 OK
 | :----- | :------------ | :--------------------------------------- |
 | `422`  | Invalid query | invalid key or value in URL query string |
 
-{{% /endpoint %}}
 
-
-{{% endpoint name="Get" %}}
+# Get
 
 Get the complete representation of a single HMM annotation.
 
@@ -155,10 +153,8 @@ Status: 200 OK
 | :----- | :-------- | :---------------------------- |
 | `404`  | Not found | HMM annotation does not exist |
 
-{{% /endpoint %}}
 
-
-{{% endpoint name="Get Install" %}}
+# Get Install
 
 Get the status of the most recent or current install process.
 
@@ -188,10 +184,9 @@ Status: 200 OK
 
 _None_
 
-{{% /endpoint %}}
+# Install
 
-
-{{% endpoint name="Install" permission="modify_hmm" %}}
+{{< permission "modify_hmm" >}}
 
 Automatically install the official HMM profiles and annotations.
 

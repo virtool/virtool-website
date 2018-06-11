@@ -7,13 +7,13 @@ menu:
         parent: Endpoints
 ---
 
-{{% endpoint name="Find" %}}
-
-Find samples based on the sample name or creator username.
+# Find
 
 ```
 GET /api/samples
 ```
+
+Find samples based on the sample name or creator username.
 
 ## Parameters
 
@@ -67,10 +67,10 @@ Status: 200 OK
 | :----- | :--------------------- | :--------------------------------- |
 | `422`  | Invalid query          | invalid URL query fields or values |
 
-{{% /endpoint %}}
 
+# Get
 
-{{% endpoint name="Get" %}}
+{{< right read >}}
 
 Get the complete representation of a sample.
 
@@ -147,10 +147,10 @@ Status: 200 OK
 | `403`  | Insufficient rights | client does not have the required rights to read the sample |
 | `404`  | Not found           | `sample_id` in URL does not exist                           |
 
-{{% /endpoint %}}
 
+# Create
 
-{{% endpoint name="Create" permission="create_sample" %}}
+{{< permission "create_sample" >}}
 
 Creates a sample record and starts a job that populates the record from a FASTQ file stored in the file manager.
 
@@ -235,10 +235,10 @@ Status: 201 Created
 | `409`  | Sample name is already in use | the provided `name` is already assigned to an existing sample |
 | `422`  | Invalid input                 | JSON request body is invalid                                  |
 
-{{% /endpoint %}}
 
+# Edit
 
-{{% endpoint name="Edit" %}}
+{{< right write >}}
 
 Update modifiable fields of a sample.
 
@@ -301,14 +301,12 @@ Status: 200 OK
 | `404`  | Not found           | `sample_id` in URL does not exist                           |
 | `422`  | Invalid input       | request body JSON failed validation                         |
 
-{{% /endpoint %}}
 
+# Edit Rights
 
-{{% endpoint name="Edit Rights" %}}
+{{< administrator_or_owner >}}
 
 Edit the access rights for a sample.
-
-Only the sample owner or an administrator may use this endpoint.
 
 ```
 PATCH /api/samples/:sample_id/rights
@@ -362,10 +360,10 @@ Status: 200 OK
 | `404`  | Not found                             | `sample_id` in URL does not exist                     |
 | `422`  | Invalid input                         | request body JSON failed validation                   |
 
-{{% /endpoint %}}
 
+# Remove
 
-{{% endpoint name="Remove" %}}
+{{< administrator_or_owner >}}
 
 Remove an existing sample record and its associated data files.
 
@@ -392,10 +390,10 @@ Status: 204 No Content
 | `403`  | Insufficient rights | client does not have the required rights to remove the sample |
 | `404`  | Not found           | `sample_id` in URL does not exist                             |
 
-{{% /endpoint %}}
 
+# List Analyses
 
-{{% endpoint name="List Analyses" %}}
+{{< right read >}}
 
 Retrieve a summary list of analyses associated with a sample.
 

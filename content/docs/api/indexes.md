@@ -7,7 +7,9 @@ menu:
         parent: Endpoints
 ---
 
-{{% endpoint name="List" %}}
+# List
+
+{{< right read >}}
 
 List all virus reference indexes. Takes no query or input.
 
@@ -53,10 +55,10 @@ Status: 200 OK
 
 _None_
 
-{{% /endpoint %}}
 
+# Get
 
-{{% endpoint name="Get" %}}
+{{< right read >}}
 
 Get the complete representation of an index.
 
@@ -119,56 +121,10 @@ Status: 200 OK
 | :----- | :-------- | :-------------------------------------------- |
 | `404`  | Not found | index identified by `index_id` does not exist |
 
-{{% /endpoint %}}
 
+# Create
 
-{{% endpoint name="Get Unbuilt" %}}
-
-Return all history associated with unbuilt changes. This information would be included next time an index build is triggered.
-
-```
-GET /api/indexes/unbuilt
-```
-
-## Response
-
-```
-Status: 200 OK
-```
-
-```json
-{
-	"history": [
-		{
-			"method_name": "remove_isolate",
-			"description": "Removed Isolate DRC 6",
-			"created_at": "2018-02-06T22:14:34.267000Z",
-			"virus": {
-				"id": "53a851f3",
-				"name": "African cassava mosaic virus",
-				"version": 1
-			},
-			"index": {
-				"id": "unbuilt",
-				"version": "unbuilt"
-			},
-			"user": {
-				"id": "igboyes"
-			},
-			"id": "53a851f3.1"
-		}
-	]
-}
-```
-
-## Errors
-
-_None_
-
-{{% /endpoint %}}
-
-
-{{% endpoint name="Create" permission="rebuild_index" %}}
+{{< right build >}}
 
 Create an index by starting a new index build job.
 
@@ -208,7 +164,6 @@ Location: /api/indexes/bznqwjsa
 }
 ```
 
-{{% /endpoint %}}
 
 ## Errors
 
@@ -220,8 +175,9 @@ Location: /api/indexes/bznqwjsa
 | `409`  | Index build already in progress | only one index build at a time may be in progress   |
 
 
+# Find History
 
-{{% endpoint name="Find History" %}}
+{{< right read >}}
 
 Find the virus changes that are included in a given index build.
 
@@ -277,5 +233,3 @@ Status: 200 OK
 | Status | Message   | Reason                                        |
 | :----- | :-------- | :-------------------------------------------- |
 | `404`  | Not found | index identified by `index_id` does not exist |
-
-{{% /endpoint %}}

@@ -7,7 +7,7 @@ menu:
         parent: Endpoints
 ---
 
-{{% endpoint name="Get" %}}
+# Get
 
 Get a complete representation of the administrative settings.
 
@@ -88,9 +88,9 @@ Status: 200 OK
 }
 ```
 
-{{% /endpoint %}}
+# Update
 
-{{% endpoint name="Update" permission="modify_settings" %}}
+{{< administrator >}}
 
 Create a new group. New groups have no permissions. Requestors must have the ``modify_users`` permission.
 
@@ -150,7 +150,7 @@ PATCH /api/groups
 ## Example
 
 ```
-POST /api/groups
+POST /api/settings
 ```
 
 ```json
@@ -237,5 +237,3 @@ Status: 200 OK
 | `409`  | Less than a task-specific mem limit  | provided `mem` is less than a task-specific mempry limit setting        |
 | `409`  | Exceeds proc resource limit          | a provided task-specific limit is greater than the `proc` limit setting |
 | `409`  | Exceeds mem resource limit           | a provided task-specific limit is greater than the `mem` limit setting  |
-
-{{% /endpoint %}}

@@ -9,7 +9,7 @@ menu:
 
 Unauthorized clients will receive ``401 Unauthorized`` for calls to all account endpoints.
 
-{{% endpoint name="Get" %}}
+# Get
 
 Get the complete respresentation for the account associated with the current session or API key.
 
@@ -57,10 +57,8 @@ Status: 200 OK
 | :----- | :--------------------- | :-------------------------------------------------------------- |
 | `401`  | Requires authorization | request is not associated with an authorized session or API key |
 
-{{% /endpoint %}}
 
-
-{{% endpoint name="Edit" %}}
+# Edit
 
 Change the email address associated with the account associated with the current session or API key.
 
@@ -131,10 +129,8 @@ Status: 200 OK
 | `422`  | Invalid input          | email address is invalid or password fields are missing or invalid |
 | `401`  | Requires authorization | request is not associated with an authorized session or API key    |
 
-{{% /endpoint %}}
 
-
-{{% endpoint name="Get Settings" %}}
+# Get Settings
 
 Get the settings for the account associated with the current session or API key.
 
@@ -164,10 +160,7 @@ Status: 200 OK
 | `401`  | Requires authorization | request is not associated with an authorized session or API key |
 
 
-{{% /endpoint %}}
-
-
-{{% endpoint name="Edit Settings" %}}
+# Edit Settings
 
 Update the settings for the account associated with the current session or API key. All fields are optional.
 
@@ -218,10 +211,8 @@ Status: 200 OK
 | `401`  | Requires authorization | request is not associated with an authorized session or API key |
 | `422`  | Invalid input          | invalid settings key or value                                   |
 
-{{% /endpoint %}}
 
-
-{{% endpoint name="Get API Keys" %}}
+# Get API Keys
 
 List all API keys for the active account. The keys themselves are not returned.
 
@@ -261,10 +252,8 @@ Status: 200 OK
 | :----- | :--------------------- | :-------------------------------------------------------------- |
 | `401`  | Requires authorization | request is not associated with an authorized session or API key |
 
-{{% /endpoint %}}
 
-
-{{% endpoint name="Create API Key" %}}
+# Create API Key
 
 Create a new API key with the provided permissions. The response to this request is the only time the key string will be returned by the API.
 
@@ -329,10 +318,8 @@ Status: 201 Created
 | `401`  | Requires authorization | request is not associated with an authorized session or API key |
 | `422`  | Invalid input          | missing or invalid value or permissions object                  |
 
-{{% /endpoint %}}
 
-
-{{% endpoint name="Update API Key" %}}
+# Edit API Key
 
 Change the permissions of an existing API key.
 
@@ -396,10 +383,8 @@ Status: 200 OK
 | `404`  | Not found              | API key identified by `:id` does not exist                      |
 | `422`  | Invalid input          | missing or invalid permissions object                           |
 
-{{% /endpoint %}}
 
-
-{{% endpoint name="Delete API Key" %}}
+# Delete API Key
 
 Delete an existing API key.
 
@@ -426,13 +411,10 @@ Status: 204 No content
 | `401`  | Requires authorization | request is not associated with an authorized session or API key |
 | `404`  | Not found              | API key identified by `:id` does not exist                      |
 
-{{% /endpoint %}}
 
-
-{{% endpoint name="Logout" %}}
+# Logout
 
 Logout by invalidating the current session. It will have no effect for connections authenticated with an API key.
-
 
 ```
 GET /api/account/logout

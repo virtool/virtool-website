@@ -7,7 +7,7 @@ menu:
         parent: Endpoints
 ---
 
-{{% endpoint name="Find" %}}
+# Find
 
 List all virus changes with the most recent changes first. All parameters are optional.
 
@@ -88,10 +88,8 @@ Status: 200 OK
 | :----- | :------------ | :--------------------------------------- |
 | `422`  | Invalid query | invalid key or value in URL query string |
 
-{{% /endpoint %}}
 
-
-{{% endpoint name="Get" %}}
+# Get
 
 Get the complete representation of a single virus change.
 
@@ -156,10 +154,10 @@ Status: 200 OK
 | :----- | :-------- | :-------------------- |
 | `404`  | Not found | change does not exist |
 
-{{% /endpoint %}}
 
+# Revert
 
-{{% endpoint name="Revert" permission="modify_virus" %}}
+{{< right "modify_otu" >}}
 
 Revert a specific change and all changes that occurred after it. Changes that have been included in index builds cannot be reverted.
 

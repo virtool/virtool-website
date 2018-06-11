@@ -7,7 +7,9 @@ menu:
         parent: Endpoints
 ---
 
-{{% endpoint name="List" permission="manage_users" %}}
+# List
+
+{{< permission manage_users >}}
 
 Get a list of complete representations of all users.
 
@@ -74,10 +76,10 @@ Status: 200 OK
 | :----- | :------------ | :------------------------------------------------- |
 | `403`  | Not permitted | client does not have the 'manage_users` permission |
 
-{{% /endpoint %}}
 
+# Get
 
-{{% endpoint name="Get" permission="manage_users" %}}
+{{< permission manage_users >}}
 
 Get the complete representation of a single user.
 
@@ -129,10 +131,10 @@ Status: 200 OK
 | `403`  | Not permitted | client does not have the 'manage_users` permission |
 | `404`  | Not found     | user does not exist                                |
 
-{{% /endpoint %}}
 
+# Create
 
-{{% endpoint name="Create" permission="manage_users" %}}
+{{< permission manage_users >}}
 
 Create a new user.
 
@@ -200,10 +202,10 @@ Status: 201 Created
 | `409`  | User already exists | `user_id` is already in use by an existing user    |
 | `422`  | Invalid input       | JSON request body is invalid                       |
 
-{{% /endpoint %}}
 
+# Edit
 
-{{% endpoint name="Edit" permission="manage_users" %}}
+{{< permission manage_users >}}
 
 Change the password, primary group, or force reset setting of an existing user.
 
@@ -272,9 +274,10 @@ Status: 200 OK
 | `404`  | Not found           | user does not exist                           |
 | `422`  | Invalid input       | JSON request body is invalid                  |
 
-{{% /endpoint %}}
 
-{{% endpoint name="Remove" permission="manage_users" %}}
+# Remove
+
+{{< permission manage_users >}}
 
 Remove a user account.
 
@@ -300,5 +303,3 @@ Status: 204 No content
 | :----- | :------------------ | :-------------------------------------------- |
 | `403`  | Not permitted       | client does not have administrative privilege |
 | `404`  | Not found           | user does not exist                           |
-
-{{% /endpoint %}}
