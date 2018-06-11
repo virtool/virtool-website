@@ -22,15 +22,13 @@ When uploads are required in Virtool, they should be targeted at ``/upload``. Th
 
 Uploads a file into Virtool file manager. The file will given a unique ID composed of an 8-character random alphanumeric string and the supplied ``name`` query parameter separated by a dash.
 
-```
-POST /upload/:file_type?name=filename
-```
+{{< endpoint "POST" "/upload/:file_type" >}}
 
 ## Parameters
 
-| Name     | Type    | Optional | Description                            |
-| :------- | :------ | :------- | :------------------------------------- |
-| name     | string  | false    | the display name for the file          |
+| Name | Type   | Required | Description                   |
+| :--- | :----- | :------- | :---------------------------- |
+| name | string | true     | the display name for the file |
 
 ## Example
 
@@ -73,9 +71,7 @@ Status: 201 Created
 
 Delete a previously uploaded file.
 
-```
-DELETE /api/files/:file_id
-```
+{{< endpoint "DELETE" "/api/files/:id" >}}
 
 ## Response
 

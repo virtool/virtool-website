@@ -11,9 +11,7 @@ menu:
 
 List all existing user groups.
 
-```
-GET /api/groups
-```
+{{< endpoint "GET" "/api/groups" >}}
 
 ## Response
 
@@ -48,9 +46,7 @@ _None_
 
 Get the complete representation of a single user group.
 
-```
-GET /api/groups/:group_id
-```
+{{< endpoint "GET" "/api/groups/:id" >}}
 
 ## Example
 
@@ -93,9 +89,7 @@ Status: 200 OK
 
 Create a new group. New groups have no permissions. Requestors must be administrators.
 
-```
-POST /api/groups
-```
+{{< endpoint "POST" "/api/groups" >}}
 
 ## Input
 
@@ -152,9 +146,7 @@ Status 201: Created
 
 Update the permissions of an existing group. Unset permissions will retain their previous setting.
 
-```
-PATCH /api/groups/:id
-```
+{{< endpoint "PATCH" "/api/groups/:id" >}}
 
 ## Input
 
@@ -213,9 +205,7 @@ Status: 200 OK
 
 Remove an existing group.
 
-```
-DELETE /api/groups/:group_id
-```
+{{< endpoint "DELETE" "/api/groups/:id" >}}
 
 ## Example
 

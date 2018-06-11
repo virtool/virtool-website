@@ -13,9 +13,7 @@ Unauthorized clients will receive ``401 Unauthorized`` for calls to all account 
 
 Get the complete respresentation for the account associated with the current session or API key.
 
-```
-GET /api/account
-```
+{{< endpoint "GET" "/api/account" >}}
 
 ## Response
 
@@ -62,9 +60,7 @@ Status: 200 OK
 
 Change the email address associated with the account associated with the current session or API key.
 
-```
-PATCH /api/account
-```
+{{< endpoint "PATCH" "/api/account" >}}
 
 ## Input
 
@@ -134,9 +130,7 @@ Status: 200 OK
 
 Get the settings for the account associated with the current session or API key.
 
-```
-GET /api/account/settings
-```
+{{< endpoint "GET" "/api/account/settings" >}}
 
 ## Response
 
@@ -164,9 +158,7 @@ Status: 200 OK
 
 Update the settings for the account associated with the current session or API key. All fields are optional.
 
-```
-PATCH /api/account/settings
-```
+{{< endpoint "PATCH" "/api/account/settings" >}}
 
 ## Input
 
@@ -216,9 +208,7 @@ Status: 200 OK
 
 List all API keys for the active account. The keys themselves are not returned.
 
-```
-GET /api/account/keys
-```
+{{< endpoint "GET" "/api/account/keys" >}}
 
 ## Response
 
@@ -257,9 +247,7 @@ Status: 200 OK
 
 Create a new API key with the provided permissions. The response to this request is the only time the key string will be returned by the API.
 
-```
-POST /api/account/keys
-```
+{{< endpoint "POST" "/api/account/keys" >}}
 
 ## Input
 
@@ -323,9 +311,7 @@ Status: 201 Created
 
 Change the permissions of an existing API key.
 
-```
-PATCH /api/account/keys/:id
-```
+{{< endpoint "PATCH" "/api/account/keys/:id" >}}
 
 ## Input
 
@@ -388,9 +374,7 @@ Status: 200 OK
 
 Delete an existing API key.
 
-```
-DELETE /api/account/keys/:id
-```
+{{< endpoint "DELETE" "/api/account/keys/:id" >}}
 
 ## Example
 
@@ -416,9 +400,7 @@ Status: 204 No content
 
 Logout by invalidating the current session. It will have no effect for connections authenticated with an API key.
 
-```
-GET /api/account/logout
-```
+{{< endpoint "GET" "/api/account/logout" >}}
 
 ## Response
 

@@ -11,9 +11,7 @@ menu:
 
 Get a complete representation of the administrative settings.
 
-```
-GET /api/settings
-```
+{{< endpoint "GET" "/api/settings" >}}
 
 ## Example
 
@@ -94,9 +92,7 @@ Status: 200 OK
 
 Create a new group. New groups have no permissions. Requestors must have the ``modify_users`` permission.
 
-```
-PATCH /api/groups
-```
+{{< endpoint "PATCH" "/api/settings" >}}
 
 ## Input
 

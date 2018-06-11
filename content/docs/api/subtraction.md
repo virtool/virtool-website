@@ -11,9 +11,7 @@ menu:
 
 Find profile subtractions by id (name) or nickname.
 
-```
-GET /api/subtraction
-```
+{{< endpoint "GET" "/api/subtraction" >}}
 
 ## Parameters
 
@@ -69,9 +67,7 @@ _None_
 
 Get the complete representation of a given subtraction.
 
-```
-GET /api/subtraction/:subtraction_id
-```
+{{< endpoint "GET" "/api/subtraction/:id" >}}
 
 ## Example
 
@@ -130,9 +126,7 @@ Status: 200 OK
 
 Create a new subtraction from a file that has previously been uploaded into the file manager.
 
-```
-POST /api/subtraction
-```
+{{< endpoint "POST" "/api/subtraction" >}}
 
 ## Input
 
@@ -196,6 +190,8 @@ Status: 201 Created
 {{< permission modify_subtraction >}}
 
 Change the nickname of an existing subtraction.
+
+{{< endpoint "PATCH" "/api/subtraction/:id" >}}
 
 ## Input
 
@@ -261,9 +257,7 @@ Status: 200 OK
 
 Remove an existing subtraction
 
-```
-DELETE /api/subtraction/:subtraction_id
-```
+{{< endpoint "DELETE" "/api/subtraction/:id" >}}
 
 ## Example
 

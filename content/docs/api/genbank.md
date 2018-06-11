@@ -13,9 +13,7 @@ Get a Virtool-style sequence document for the given accession.
 
 The data is retrieved from GenBank and converted into a palatable format.
 
-```
-GET /api/genbank/:accession
-```
+{{< endpoint "GET" "/api/genbank/:accession" >}}
 
 ## Example
 

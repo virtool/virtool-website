@@ -11,9 +11,7 @@ menu:
 
 Find references.
 
-```
-GET /api/refs
-```
+{{< endpoint "GET" "/api/refs" >}}
 
 ## Parameters
 
@@ -73,9 +71,7 @@ Status: 200 OK
 
 Get the complete representation of a single reference.
 
-```
-GET /api/refs/:ref_id
-```
+{{< endpoint "GET" "/api/refs/:id" >}}
 
 ## Example
 
@@ -151,9 +147,7 @@ To direct Virtool to **link a remote reference and create a new reference from i
 For now, only the [official reference](https://github.com/virtool/virtool-database) is supported as a remote reference. Use the slug `virtool/virtool-database` as value for `clone_from`.
 {{% /warning %}}
 
-```
-POST /api/refs
-```
+{{< endpoint "POST" "/api/refs" >}}
 
 ## Input
 
@@ -415,9 +409,7 @@ Edit an existing reference.
 
 Currently, only _genome_ is accepted as a value for `data_type`.
 
-```
-POST /api/refs/:ref_id
-```
+{{< endpoint "PATCH" "/api/refs/:id" >}}
 
 ## Input
 
@@ -491,9 +483,7 @@ The OTU data included in the exported file can be controlled using the `scope` q
 
 The default scope is `built` if no `scope` parameter is provided.
 
-```
-GET /download/refs/:ref_id
-```
+{{< endpoint "GET" "/download/refs/:id" >}}
 
 ## Parameters
 
@@ -525,9 +515,7 @@ Reference metadata is immediately removed and a response is returned. A separate
 
 Information about the deletion process is returned in the HTTP response. The `Content-Location` header points to a resource defining the process.
 
-```
-DELETE /api/refs/:ref_id
-```
+{{< endpoint "DELETE" "/api/refs/:id" >}}
 
 ## Example
 
@@ -562,9 +550,7 @@ Find history for a specific reference.
 
 History can be limited to unbuilt or built changes only using the `unbuilt` query parameter.
 
-```
-GET /api/refs/:ref_id/history
-```
+{{< endpoint "GET" "/api/refs/:id/history" >}}
 
 ## Parameters
 
@@ -647,9 +633,7 @@ Status: 200 OK
 
 Find indexes for a specific reference.
 
-```
-GET /api/refs/:ref_id/indexes
-```
+{{< endpoint "GET" "/api/refs/:id/indexes" >}}
 
 ## Parameters
 
@@ -709,9 +693,7 @@ Allow a user to view, use, and modify a reference.
 
 Allow the added user to view a non-public reference. Control their modification rights.
 
-```
-POST /api/refs/:ref_id/users
-```
+{{< endpoint "POST" "/api/refs/:id/users" >}}
 
 ## Input
 
@@ -761,9 +743,7 @@ Location: /api/refs/pe6vunzl/users/baz
 
 Change the modification rights for an existing reference user.
 
-```
-PATCH /api/refs/:ref_id/users/:user_id
-```
+{{< endpoint "PATCH" "/api/refs/:id/users/:user_id" >}}
 
 ## Input
 
@@ -811,9 +791,7 @@ Status: 200 OK
 
 Remove a user from a reference.
 
-```
-DELETE /api/refs/:ref_id/users/:user_id
-```
+{{< endpoint "DELETE" "/api/refs/:id/users/:user_id" >}}
 
 ## Example
 
@@ -836,9 +814,7 @@ Allow a user group to view, use, and modify a reference.
 
 Allow the added group to view a non-public reference. Control its modification rights.
 
-```
-POST /api/refs/:ref_id/groups
-```
+{{< endpoint "POST" "/api/refs/:id/groups" >}}
 
 ## Input
 
@@ -858,7 +834,7 @@ POST /api/refs/pe6vunzl/groups
 
 ```json
 {
-	"gorup_id": "baz",
+	"group_id": "baz",
 	"modify_otu": true
 }
 ```
@@ -888,9 +864,7 @@ Location: /api/refs/pe6vunzl/groups/baz
 
 Change the modification rights for an existing reference user group.
 
-```
-PATCH /api/refs/:ref_id/groups/:group_id
-```
+{{< endpoint "PATCH" "/api/refs/:id/groups/:group_id" >}}
 
 ## Input
 
@@ -938,9 +912,7 @@ Status: 200 OK
 
 Remove a user group from a reference.
 
-```
-DELETE /api/refs/:ref_id/groups/:group_id
-```
+{{< endpoint "DELETE" "/api/refs/:id/groups/:group_id" >}}
 
 ## Example
 

@@ -9,11 +9,9 @@ menu:
 
 # Find
 
-```
-GET /api/samples
-```
-
 Find samples based on the sample name or creator username.
+
+{{< endpoint "GET" "/api/samples" >}}
 
 ## Parameters
 
@@ -74,9 +72,7 @@ Status: 200 OK
 
 Get the complete representation of a sample.
 
-```
-GET /api/samples/:sample_id
-```
+{{< endpoint "GET" "/api/samples/:id" >}}
 
 ## Example
 
@@ -156,9 +152,7 @@ Creates a sample record and starts a job that populates the record from a FASTQ 
 
 The array of files must contain **only one or two items**. Samples with arrays containing one item will be assumed to by derived from single-end libraries, while arrays with two items will correspond to paired-end libraries.
 
-```
-POST /api/samples
-```
+{{< endpoint "POST" "/api/samples" >}}
 
 ## Input
 
@@ -242,9 +236,7 @@ Status: 201 Created
 
 Update modifiable fields of a sample.
 
-```
-PATCH /api/samples/:sample_id
-```
+{{< endpoint "PATCH" "/api/samples/:id" >}}
 
 ## Input
 
@@ -308,9 +300,7 @@ Status: 200 OK
 
 Edit the access rights for a sample.
 
-```
-PATCH /api/samples/:sample_id/rights
-```
+{{< endpoint "PATCH" "/api/samples/:id/rights" >}}
 
 ## Input
 
@@ -367,9 +357,7 @@ Status: 200 OK
 
 Remove an existing sample record and its associated data files.
 
-```
-DELETE /api/samples/:sample_id
-```
+{{< endpoint "DELETE" "/api/samples/:id" >}}
 
 ## Example
 
@@ -399,9 +387,7 @@ Retrieve a summary list of analyses associated with a sample.
 
 Returned documents do not include diagnostic data. Use the [analyses](/docs/api/analyses) endpoints for more extensive modification and querying of analysis data.
 
-```
-GET /api/samples/:sample_id/analyses
-```
+{{< endpoint "GET" "/api/samples/:id/analyses" >}}
 
 ## Example
 
@@ -477,9 +463,7 @@ Status: 200 OK
 
 Immediately create and placeholder analysis record for a sample and start an analysis job. When the job succeeds the analysis document will be populated.
 
-```
-POST /api/samples/:sample_id/analyses
-```
+{{< endpoint "POST" "/api/samples/:id/analyses" >}}
 
 ## Input
 

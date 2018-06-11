@@ -191,14 +191,6 @@ div.docs
             margin-top: 3rem
             padding-top: 2rem
 
-        h1 ~ pre:first-of-type
-            margin-bottom: 2rem
-            background-color: $info
-            color: white
-
-            code
-                font-weight: bolder
-
         h2
             margin-top: 1.2rem
             @extend .title
@@ -215,6 +207,25 @@ div.docs
         div.highlight
             margin-bottom: 2rem
 
+// Endpoint
+.endpoint
+    align-items: center
+    border: 1px solid $primary
+    border-radius: $radius-small
+    display: flex
+    font-weight: bold
+
+    .method
+        background-color: $primary
+        color: $white
+        flex: 0 0 auto     
+        padding: 0.8rem
+
+    .path
+        flex: 1 0 auto
+        font-color: $grey
+        padding: 0.8rem
+
 // Table of Contents
 nav#TableOfContents
     
@@ -222,3 +233,5 @@ nav#TableOfContents
         li
             ul
                 display: none
+
+            

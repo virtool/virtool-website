@@ -11,9 +11,7 @@ menu:
 
 All all existing processes.
 
-```
-GET /api/processes
-```
+{{< endpoint "GET" "/api/processes" >}}
 
 ## Example
 
@@ -52,9 +50,7 @@ Status: 200 OK
 
 Get a single process.
 
-```
-GET /api/processes/:process_id
-```
+{{< endpoint "GET" "/api/processes/:id" >}}
 
 ## Example
 

@@ -13,9 +13,7 @@ menu:
 
 List all virus reference indexes. Takes no query or input.
 
-```
-GET /api/indexes
-```
+{{< endpoint "GET" "/api/indexes" >}}
 
 ## Response
 
@@ -62,15 +60,12 @@ _None_
 
 Get the complete representation of an index.
 
-```
-GET /api/indexes/:index_id
-```
+{{< endpoint "GET" "/api/indexes/:id" >}}
 
 ## Example
 
 ```
 GET /api/indexes/jiwncaqr
-GET /api/indexes/0
 ```
 
 ## Response
@@ -128,9 +123,7 @@ Status: 200 OK
 
 Create an index by starting a new index build job.
 
-```
-POST /api/indexes
-```
+{{< endpoint "POST" "/api/indexes" >}}
 
 ## Response
 
@@ -181,15 +174,12 @@ Location: /api/indexes/bznqwjsa
 
 Find the virus changes that are included in a given index build.
 
-```
-GET /api/indexes/:index_id/history
-```
+{{< endpoint "GET" "/api/indexes/:id/history" >}}
 
 ## Example
 
 ```
 GET /api/indexes/bznqwjsa/history
-GET /api/indexes/1/history
 ```
 
 ## Response

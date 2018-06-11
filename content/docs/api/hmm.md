@@ -11,9 +11,7 @@ menu:
 
 Find HMM annotations.
 
-```
-GET /api/hmms?find=rep&per_page=2
-```
+{{< endpoint "GET" "/api/hmms" >}}
 
 ## Parameters
 
@@ -90,9 +88,7 @@ Status: 200 OK
 
 Get the complete representation of a single HMM annotation.
 
-```
-GET /api/hmms/:hmm_id
-```
+{{< endpoint "GET" "/api/hmms/:id" >}}
 
 ## Example
 
@@ -152,68 +148,3 @@ Status: 200 OK
 | Status | Message   | Reason                        |
 | :----- | :-------- | :---------------------------- |
 | `404`  | Not found | HMM annotation does not exist |
-
-
-# Get Install
-
-Get the status of the most recent or current install process.
-
-```
-GET /api/hmms/install
-```
-
-## Response
-
-```
-Status: 200 OK
-```
-
-```json
-{
-	"process": {
-		"progress": 1.0,
-		"step": "import_annotations"
-	},
-	"ready": true,
-	"download_size": 85904451,
-	"id": "hmm_install"
-}
-```
-
-## Errors
-
-_None_
-
-# Install
-
-{{< permission "modify_hmm" >}}
-
-Automatically install the official HMM profiles and annotations.
-
-If data have already been installed, this operation will safely remove the profiles and any unused annotations and reinstall the offical profiles and annotations.
-
-```
-PATCH /api/hmms/install
-```
-
-## Response
-
-```
-Status: 200 OK
-```
-
-```json
-{
-	"process": {
-		"progress": 0,
-		"step": "check_github"
-	},
-	"ready": false,
-	"download_size": null,
-	"id": "hmm_install"
-}
-```
-
-## Errors
-
-_None_

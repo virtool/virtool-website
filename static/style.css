@@ -5716,12 +5716,6 @@ div.docs.docs-api h1 {
   border-top: 3px solid #0a0a0a;
   margin-top: 3rem;
   padding-top: 2rem; }
-div.docs.docs-api h1 ~ pre:first-of-type {
-  margin-bottom: 2rem;
-  background-color: #387fa3;
-  color: white; }
-  div.docs.docs-api h1 ~ pre:first-of-type code {
-    font-weight: bolder; }
 div.docs.docs-api h2 {
   margin-top: 1.2rem; }
 div.docs.docs-api ul {
@@ -5731,6 +5725,22 @@ div.docs.docs-api ul {
   list-style-position: inside; }
 div.docs.docs-code div.highlight {
   margin-bottom: 2rem; }
+
+.endpoint {
+  align-items: center;
+  border: 1px solid #3c8786;
+  border-radius: 2px;
+  display: flex;
+  font-weight: bold; }
+  .endpoint .method {
+    background-color: #3c8786;
+    color: white;
+    flex: 0 0 auto;
+    padding: 0.8rem; }
+  .endpoint .path {
+    flex: 1 0 auto;
+    font-color: #7a7a7a;
+    padding: 0.8rem; }
 
 nav#TableOfContents ul li ul {
   display: none; }

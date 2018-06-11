@@ -11,11 +11,9 @@ menu:
 
 {{< right read >}}
 
-```
-GET /api/refs/:ref_id/otus
-```
-
 Find OTUs by their name or abbreviation
+
+{{< endpoint "GET" "/api/refs/:id/otus" >}}
 
 ## Parameters
 
@@ -90,11 +88,9 @@ Status: 200 OK
 
 {{< right read >}}
 
-```
-GET /api/otus/:otu_id
-```
-
 Get a complete representation of a virus.
+
+{{< endpoint "GET" "/api/otus/:id" >}}
 
 ## Example
 
@@ -170,9 +166,7 @@ Virus names and abbreviations must be unique within the database. Requesting a n
 
 Isolates and sequence data must be added in separate requests.
 
-```
-POST /api/refs/:ref_id
-```
+{{< endpoint "POST" "/api/refs/otus/:id" >}}
 
 ## Input
 
@@ -184,7 +178,7 @@ POST /api/refs/:ref_id
 ## Example
 
 ```
-POST /api/otus
+POST /api/refs/test/otus
 ```
 
 ```json
@@ -252,9 +246,7 @@ Edit an existing virus by changing its name, abbreviation, or schema.
 
 Virus names and abbreviations must be unique within the database. Requesting a name or abbreviation that is already in use will result in a ``409 Conflict``. Uniqueness tests for virus names are **case-insensitive**.
 
-```
-PATCH /api/otus/:otu_id
-```
+{{< endpoint "PATCH" "/api/otus/:id" >}}
 
 ## Input
 
@@ -333,9 +325,7 @@ Status: 200 OK
 
 Removes a virus, its isolates, and sequences.
 
-```
-DELETE /api/viruses/:virus_id
-```
+{{< endpoint "DELETE" "/api/otus/:id" >}}
 
 ## Example
 
@@ -363,9 +353,7 @@ Status: 204 No content
 
 List the isolates for a given virus.
 
-```
-GET /api/viruses/:virus_id/isolates
-```
+{{< endpoint "GET" "/api/otus/:id/isolates" >}}
 
 ## Example
 
@@ -425,9 +413,7 @@ Status: 200 OK
 
 Get the complete representation of a single isolate.
 
-```
-GET /api/viruses/:virus_id/isolates/:isolate_id
-```
+{{< endpoint "GET" "/api/otus/:id/isolates/:isolate_id" >}}
 
 ## Example
 
@@ -473,9 +459,7 @@ Add a new isolate.
 
 Setting the isolate to default will steal default status from any existing default isolate. The first added isolate will be set to default regardless of input.
 
-```
-POST /api/viruses/:virus_id/isolates
-```
+{{< endpoint "POST" "/api/otus/:id/isolates" >}}
 
 ## Input
 
@@ -530,9 +514,7 @@ Status: 201 Created
 
 Edit an existing isolate.
 
-```
-PATCH /api/viruses/:virus_id/isolates/:isolate_id
-```
+{{< endpoint "PATCH" "/api/otus/:id/isolates/:isolate_id" >}}
 
 ## Input
 
@@ -585,9 +567,7 @@ Status: 200 OK
 
 Sets an isolate as default **and** unsets any existing default isolate. Take no input.
 
-```
-PUT /api/viruses/:virus_id/isolates/:isolate_id/default
-```
+{{< endpoint "PUT" "/api/otus/:id/isolates/:isolate_id/default" >}}
 
 ## Example
 
@@ -626,9 +606,7 @@ Status: 200 OK
 
 Removes an isolate and its sequences. If it is the default isolate, the first isolate in the list will be set as default.
 
-```
-DELETE /api/viruses/:virus_id/isolates/:isolate_id
-```
+{{< endpoint "DELETE" "/api/otus/:id/isolates/:isolate_id" >}}
 
 ## Example
 
@@ -663,9 +641,7 @@ Providing a value for ``segment`` will have no effect unless the parents virus h
 
 Values provided for ``sequence`` must be plain text, **not** FASTA formatted. Sequences are automatically stripped of whitespace.
 
-```
-POST /api/viruses/:virus_id/isolates/:isolate_id/sequences
-```
+{{< endpoint "POST" "/api/otus/:id/isolates/:isolate_id/sequences" >}}
 
 ## Input
 
@@ -730,9 +706,7 @@ Providing a value for ``segment`` will have no effect unless the parent virus ha
 
 Values provided for ``sequence`` must be plain text, **not** FASTA formatted. Sequences are automatically stripped of whitespace.
 
-```
-PATCH /api/viruses/:virus_id/isolates/:isolate_id/sequences/:sequence_id
-```
+{{< endpoint "PATCH" "/api/otus/:id/isolates/:isolate_id/sequences/:sequence_id" >}}
 
 ## Input
 
@@ -790,9 +764,7 @@ Status: 200 OK
 
 Remove an existing sequence from an isolate.
 
-```
-DELETE /api/viruses/:virus_id/isolates/:isolate_id/sequences/:sequence_id
-```
+{{< endpoint "DELETE" "/api/otus/:id/isolates/:isolate_id/sequences/:sequence_id" >}}
 
 ## Example
 
@@ -822,9 +794,7 @@ Retrieves a list of all changes made to the virus.
 
 See [history endpoints](/docs/api/history/) for more advanced querying and modification of history data.
 
-```
-GET /api/viruses/:virus_id/history
-```
+{{< endpoint "GET" "/api/otus/:id/history" >}}
 
 ## Example
 

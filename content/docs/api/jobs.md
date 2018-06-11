@@ -11,9 +11,7 @@ menu:
 
 Find jobs by task name or the originating username.
 
-```
-GET /api/jobs?find=nuvs
-```
+{{< endpoint "GET" "/api/jobs" >}}
 
 ## Parameters
 
@@ -22,6 +20,12 @@ GET /api/jobs?find=nuvs
 | find     | string  | null    | task name or username to filter by     |
 | page     | integer | 1       | page number of results to return       |
 | per_page | integer | 15      | number of documents to return per page |
+
+## Example
+
+```
+GET /api/jobs?find=nuvs
+```
 
 ## Response
 
@@ -78,9 +82,7 @@ Status: 200 OK
 
 Get the complete representation for a single job.
 
-```
-GET /api/jobs/:job_id
-```
+{{< endpoint "GET" "/api/jobs/:id" >}}
 
 ## Example
 
@@ -155,9 +157,7 @@ Cancel a job safely and cleanly. Cancellation stops all processes and cleans up 
 
 Attempting to cancel a job more than once or cancel a finished job will result in no change, but will still return a ``200 OK`` response.
 
-```
-PUT /api/jobs/:job_id/cancel
-```
+{{< endpoint "PUT" "/api/jobs/:id/cancel" >}}
 
 ## Example
 
@@ -239,9 +239,7 @@ Status: 200 OK
 
 Remove a job that is complete, cancelled, or errored. If the requested job is running or waiting to run, ``409 Conflict`` will be returned.
 
-```
-DELETE /api/jobs/:job_id
-```
+{{< endpoint "DELETE" "/api/jobs/:id" >}}
 
 ## Example
 
@@ -264,13 +262,12 @@ Status: 204 No Content
 
 
 # Clear
+
 {{< permission "remove_job" >}}
 
 Clear completed, failed, or all finished jobs.
 
-```
-DELETE /api/jobs/:job_state
-```
+{{< endpoint "DELETE" "/api/jobs/:job_state" >}}
 
 ## Values for ``job_state``
 

@@ -13,9 +13,7 @@ menu:
 
 Get a list of complete representations of all users.
 
-```
-GET /api/users
-```
+{{< endpoint "GET" "/api/users" >}}
 
 ## Response
 
@@ -79,13 +77,11 @@ Status: 200 OK
 
 # Get
 
-{{< permission manage_users >}}
+{{< administrator >}}
 
 Get the complete representation of a single user.
 
-```
-GET /api/users/:user_id
-```
+{{< endpoint "GET" "/api/users/:id" >}}
 
 ## Example
 
@@ -134,13 +130,11 @@ Status: 200 OK
 
 # Create
 
-{{< permission manage_users >}}
+{{< administrator >}}
 
 Create a new user.
 
-```
-POST /api/users
-```
+{{< endpoint "POST" "/api/users" >}}
 
 ## Input
 
@@ -205,13 +199,11 @@ Status: 201 Created
 
 # Edit
 
-{{< permission manage_users >}}
+{{< administrator >}}
 
 Change the password, primary group, or force reset setting of an existing user.
 
-```
-PATCH /api/users/:user_id
-```
+{{< endpoint "PATCH" "/api/users/:id" >}}
 
 ## Input
 
@@ -277,13 +269,11 @@ Status: 200 OK
 
 # Remove
 
-{{< permission manage_users >}}
+{{< administrator >}}
 
 Remove a user account.
 
-```
-DELETE /api/users/:user_id
-```
+{{< endpoint "DELETE" "/api/users/:id" >}}
 
 ## Example
 

@@ -15,9 +15,7 @@ Analyses are the results of a given Virtool analytical pipelines on a single sam
 
 Get a complete analysis document.
 
-```
-GET /api/analyses/:analysis_id
-```
+{{< endpoint "GET" "/api/analyses/:id" >}}
 
 ## Example
 
@@ -71,9 +69,7 @@ Remove and existing analysis.
 
 This request will fail if the analysis is still in progress. Cancel the associated job first.
 
-```
-DELETE /api/analyses/:analysis_id
-```
+{{< endpoint "DELETE" "/api/analyses/:id" >}}
 
 ## Example
 
@@ -104,9 +100,7 @@ BLAST a contig that was generated as part of a NuVs analysis.
 
 Calling this endpoint for a sequence that has already been BLASTed will result in the old result being overwritten. This request will fail with ``400 Bad Request`` for non-NuVs analyses.
 
-```
-PUT /api/analyses/:analysis_id/:sequence_index/blast
-```
+{{< endpoint "PUT" "/api/analyses/:id/:sequence_index/blast" >}}
 
 ## Example
 

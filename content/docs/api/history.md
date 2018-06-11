@@ -11,9 +11,7 @@ menu:
 
 List all virus changes with the most recent changes first. All parameters are optional.
 
-```
-GET /api/history
-```
+{{< endpoint "GET" "/api/history" >}}
 
 ## Parameters
 
@@ -93,9 +91,7 @@ Status: 200 OK
 
 Get the complete representation of a single virus change.
 
-```
-GET /api/history/:change_id
-```
+{{< endpoint "GET" "/api/history/:id" >}}
 
 ## Example
 
@@ -161,9 +157,7 @@ Status: 200 OK
 
 Revert a specific change and all changes that occurred after it. Changes that have been included in index builds cannot be reverted.
 
-```
-DELETE /api/history/:change_id
-```
+{{< endpoint "DELETE" "/api/history/:id" >}}
 
 ## Example
 
