@@ -925,3 +925,40 @@ DELETE /api/refs/pe6vunzl/groups/baz
 ```
 Status: 204 No content
 ```
+
+
+# Check Remote
+
+{{< right modify >}}
+
+Check the remote reference for updates.
+
+{{< endpoint "GET" "/api/refs/:id/update" >}}
+
+## Example
+
+```
+GET /api/refs/4n4ezl0t/update
+```
+
+## Response
+
+```
+Status: 200 OK
+```
+
+```json
+{
+	"id": 10742520,
+	"name": "v0.3.0",
+	"body": "The release consists of a gzipped JSON file containing:\r\n\r\n- a `data_type` field with value _genome_\r\n- an `organism` field with value _virus_\r\n- the `version` name (eg. *v0.2.0*)\r\n- a timestamp with the key `created_at`\r\n- virus data compatible for import into Virtool v2.0.0+\r\n\r\nScripts have been updated to follow upcoming convention changes in Virtool v3.0.0.",
+	"etag": "W/\"ef123d746a33f88ee44203d3ca6bc2f7\"",
+	"filename": "reference.json.gz",
+	"size": 3709091,
+	"browser_url": "https://api.github.com/repos/virtool/virtool-database/releases/10742520",
+	"download_url": "https://github.com/virtool/virtool-database/releases/download/v0.3.0/reference.json.gz",
+	"published_at": "2018-04-26T19:35:33Z",
+	"content_type": "application/gzip"
+}
+```
+
