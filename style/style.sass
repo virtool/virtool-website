@@ -109,10 +109,8 @@ div.docs
     div.table-wrapper
         overflow-x: auto
 
-    table
-        @extend .table
-        @extend .is-fullwidth
-        @extend .is-striped
+    table        
+        @extend .table, .is-bordered, .is-striped, .is-fullwidth
 
     h1
         @extend .title
@@ -132,7 +130,6 @@ div.docs
 
         &:not(:first-child)
             margin-top: 2.2rem
-
 
     p
         margin-top: 0.5rem
@@ -165,19 +162,16 @@ div.docs
             li
                 margin-bottom: 2.3rem
 
-        article.message
-                            
-
         img
             max-width: 100%
             min-width: auto
             padding: 5px
             border: 0.1rem solid #ddd
 
-        .article.message
+        article.message
             margin-top: 0.6rem
 
-        h1 + .article.message
+        h1 + article.message
             margin-top: 2.2rem
 
         li
@@ -192,7 +186,7 @@ div.docs
             padding-top: 2rem
 
         h2
-            margin-top: 1.2rem
+            margin: 2rem 0 0.8rem 0
             @extend .title
             @extend .is-6
 
@@ -201,6 +195,11 @@ div.docs
             padding-bottom: 0.8rem
             list-style-type: disc
             list-style-position: inside
+
+        div.highlight
+            display: table
+            table-layout: fixed
+            width: 100%
 
     &.docs-code
 
@@ -227,11 +226,8 @@ div.docs
         padding: 0.8rem
 
 // Table of Contents
-nav#TableOfContents
-    
+nav#TableOfContents    
     ul
         li
             ul
-                display: none
-
-            
+                display: none            
