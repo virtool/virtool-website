@@ -148,3 +148,24 @@ Status: 200 OK
 | Status | Message   | Reason                        |
 | :----- | :-------- | :---------------------------- |
 | `404`  | Not found | HMM annotation does not exist |
+
+
+# Purge
+
+Permanently remove all HMMs that are not referenced by NuVs analysis records.
+
+HMMs that are referenced in NuVs analysis records will be soft-deleted. They will not be returned in search results, but the data is still available for constructing annotated NuVs results.
+
+{{< endpoint "DELETE" "/api/hmms" >}}
+
+## Example
+
+```
+DELETE /api/hmms
+```
+
+## Response
+
+```
+Status: 204 No content
+```
