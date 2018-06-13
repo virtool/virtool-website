@@ -7,7 +7,7 @@ menu:
         parent: Endpoints
 ---
 
-# List
+# Find
 
 {{< right read >}}
 
@@ -53,6 +53,47 @@ Status: 200 OK
 
 _None_
 
+
+# List Latest Indexes
+
+{{< right read >}}
+
+List the latest, ready index builds for all references.
+
+{{< endpoint "GET" "/api/indexes?ready=true" >}}
+
+## Example
+
+```
+GET /api/indexes?ready=true
+```
+
+## Response
+
+```
+Status: 200 OK
+```
+
+```json
+[
+	{
+		"id": "0egezq4w",
+		"version": 0,
+		"reference": {
+			"id": "nleoiawn",
+			"name": "Plant Viruses"
+		}
+	},
+	{
+		"id": "nz6j0wwk",
+		"version": 1,
+		"reference": {
+			"id": "mifz0ya0",
+			"name": "Clone of Plant Viruses"
+		}
+	}
+]
+```
 
 # Get
 
