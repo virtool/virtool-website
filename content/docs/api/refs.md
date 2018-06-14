@@ -87,12 +87,19 @@ Status: 200 OK
 
 ```json
 {
-	"created_at": "2018-04-26T19:54:20.960000Z",
-	"data_type": "genome",
-	"description": "",
-	"name": "Imported Viruses",
-	"organism": "virus",
-	"public": false,
+	"created_at": "2018-06-14T18:37:54.242000Z",
+	"data_type": null,
+	"description": "The official plant virus reference from the Virtool developers",
+	"name": "Plant Viruses",
+	"organism": null,
+	"public": true,
+	"internal_control": null,
+	"restrict_source_types": false,
+	"source_types": [
+		"isolate",
+		"strain"
+	],
+	"groups": [],
 	"users": [
 		{
 			"id": "igboyes",
@@ -105,15 +112,27 @@ Status: 200 OK
 	"user": {
 		"id": "igboyes"
 	},
-	"imported_from": {
-		"name": "reference.json.gz",
-		"user": {
-			"id": "igboyes"
-		},
-		"id": "ctrtptqj-reference.json.gz"
+	"remotes_from": {
+		"errors": null,
+		"last_checked": "2018-06-14T18:56:34.629000Z",
+		"slug": "virtool/ref-plant-viruses"
+	},
+	"release": {
+		"id": 11449913,
+		"name": "v0.1.2",
+		"body": "#### Changed\r\n- add new isolates to Cucurbit chlorotic yellows virus",
+		"etag": "W/\"c11dcc718202e58b6ca65c92e3a0bd47\"",
+		"filename": "reference.json.gz",
+		"size": 3699729,
+		"html_url": "https://github.com/virtool/ref-plant-viruses/releases/tag/v0.1.2",
+		"download_url": "https://github.com/virtool/ref-plant-viruses/releases/download/v0.1.2/reference.json.gz",
+		"published_at": "2018-06-12T21:52:33Z",
+		"content_type": "application/gzip",
+		"retrieved_at": "2018-06-14T19:58:23.839000Z",
+		"newer": true
 	},
 	"process": {
-		"id": "bqunkpiu"
+		"id": "he1nxm2c"
 	},
 	"contributors": [
 		{
@@ -121,9 +140,24 @@ Status: 200 OK
 			"count": 1419
 		}
 	],
-	"internal_control": null,
 	"latest_build": null,
-	"id": "wvymfspm"
+	"otu_count": 1419,
+	"unbuilt_change_count": 1419,
+	"installed": {
+		"id": 11447367,
+		"name": "v0.1.1",
+		"body": "#### Fixed\r\n- fixed uploading to GitHub releases in `.travis.yml`",
+		"filename": "reference.json.gz",
+		"size": 3695872,
+		"html_url": "https://github.com/virtool/ref-plant-viruses/releases/tag/v0.1.1",
+		"published_at": "2018-06-12T19:20:57Z",
+		"created_at": "2018-06-14T18:37:54.242000Z",
+		"user": {
+			"id": "igboyes"
+		},
+		"ready": true
+	},
+	"id": "du5m5f51"
 }
 ```
 
@@ -927,18 +961,20 @@ Status: 204 No content
 ```
 
 
-# Check Remote
+# Get Release
 
 {{< right modify >}}
 
-Check the remote reference for updates.
+Check the remote reference for a newer release.
 
-{{< endpoint "GET" "/api/refs/:id/update" >}}
+This also updates the `release` field in the [complete reference representation](#get). If the `newer` field is `true`, the release is newer than the installed release.
+
+{{< endpoint "GET" "/api/refs/:id/release" >}}
 
 ## Example
 
 ```
-GET /api/refs/4n4ezl0t/update
+GET /api/refs/4n4ezl0t/release
 ```
 
 ## Response
@@ -949,18 +985,63 @@ Status: 200 OK
 
 ```json
 {
-	"id": 10742520,
-	"name": "v0.3.0",
-	"body": "The release consists of a gzipped JSON file containing:\r\n\r\n- a `data_type` field with value _genome_\r\n- an `organism` field with value _virus_\r\n- the `version` name (eg. *v0.2.0*)\r\n- a timestamp with the key `created_at`\r\n- virus data compatible for import into Virtool v2.0.0+\r\n\r\nScripts have been updated to follow upcoming convention changes in Virtool v3.0.0.",
-	"etag": "W/\"ef123d746a33f88ee44203d3ca6bc2f7\"",
+	"id": 11449913,
+	"name": "v0.1.2",
+	"body": "#### Changed\r\n- add new isolates to Cucurbit chlorotic yellows virus",
+	"etag": "W/\"b7e8a7fb0fbe0cade0d6a86c9e0d4549\"",
 	"filename": "reference.json.gz",
-	"size": 3709091,
-	"browser_url": "https://api.github.com/repos/virtool/virtool-database/releases/10742520",
-	"download_url": "https://github.com/virtool/virtool-database/releases/download/v0.3.0/reference.json.gz",
-	"published_at": "2018-04-26T19:35:33Z",
-	"content_type": "application/gzip"
+	"size": 3699729,
+	"html_url": "https://github.com/virtool/ref-plant-viruses/releases/tag/v0.1.2",
+	"download_url": "https://github.com/virtool/ref-plant-viruses/releases/download/v0.1.2/reference.json.gz",
+	"published_at": "2018-06-12T21:52:33Z",
+	"content_type": "application/gzip",
+	"retrieved_at": "2018-06-14T19:52:17.465000Z",
+	"newer": true
 }
 ```
+
+# List Updates
+
+{{< right read >}}
+
+Return an array of all updates applied to the reference.
+
+The most recently applied updates are first in the list.
+
+{{< endpoint "GET" "/api/refs/:id/updates" >}}
+
+## Example
+
+```
+GET /api/refs/du5m5f51/updates
+```
+
+## Response
+
+```
+Status: 200 OK
+```
+
+```json
+[
+	{
+		"id": 11447367,
+		"name": "v0.1.1",
+		"body": "#### Fixed\r\n- fixed uploading to GitHub releases in `.travis.yml`",
+		"filename": "reference.json.gz",
+		"size": 3695872,
+		"html_url": "https://github.com/virtool/ref-plant-viruses/releases/tag/v0.1.1",
+		"published_at": "2018-06-12T19:20:57Z",
+		"created_at": "2018-06-14T18:37:54.242000Z",
+		"user": {
+			"id": "igboyes"
+		},
+		"ready": true
+	}
+]
+```
+
+
 
 
 # Update Remote
@@ -969,16 +1050,16 @@ Status: 200 OK
 
 Update the reference using the linked remote reference.
 
-The reference can be updated to the latest release or updated to a specific release by passing a release `id`.
+The reference can be updated to a specific release by passing a release `id`. If not `id` is provided the reference will be updated to the [remote release attached to the reference document](#get-release).
 
 
 {{< endpoint "POST" "/api/refs/:id/updates" >}}
 
 ## Input
 
-| Name | Type   | Required | Default  | Description                                                |
-| :--- | :----- | :------- | -------- | :--------------------------------------------------------- |
-| id   | string | False    | `latest` | allow group members to build new indexes for the reference |
+| Name         | Type   | Required | Description                             |
+| :----------- | :----- | :------- | :-------------------------------------- |
+| release_id   | string | False    | the id of the GitHub release to install |
 
 ## Example
 
