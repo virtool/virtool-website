@@ -77,12 +77,6 @@ Status: 200 OK
 }
 ```
 
-## Errors
-
-| Status | Message       | Reason                                   |
-| :----- | :------------ | :--------------------------------------- |
-| `422`  | Invalid query | invalid key or value in URL query string |
-
 
 # Get
 
@@ -160,11 +154,9 @@ Status: 200 OK
 
 {{< right modify_otu >}}
 
-Create a new virus given a name and abbreviation.
+Create a new OTU given a name and abbreviation.
 
-Virus names and abbreviations must be unique within the database. Requesting a name or abbreviation that is already in use will result in a ``409 Conflict``. Uniqueness tests for virus names are **case-insensitive**.
-
-Isolates and sequence data must be added in separate requests.
+OTU names and abbreviations must be unique within the database. Uniqueness tests for virus names are **case-insensitive**. Isolates and sequence data must be added in separate requests.
 
 {{< endpoint "POST" "/api/refs/otus/:id" >}}
 
@@ -231,12 +223,12 @@ Status: 201 Created
 
 | Status | Message                             | Reason                                                       |
 | :----- | :---------------------------------- | :----------------------------------------------------------- |
-| `403`  | Not permitted                       | client does not have the `modify_virus` permission           |
-| `409`  | Name already exists                 | `name` in request body is already in use                     |
-| `409`  | Abbreviation already exists         | `abbreviation` in request body is already in use             |
-| `409`  | Name and abbreviation already exist | `name` and `abbreviation` in request body are already in use |
-| `422`  | Invalid query                       | invalid key or value in URL query string                     |
-
+| `400`  | Name already exists                 | `name` in request body is already in use                     |
+| `400`  | Abbreviation already exists         | `abbreviation` in request body is already in use             |
+| `400`  | Name and abbreviation already exist | `name` and `abbreviation` in request body are already in use |
+| `403`  | Insufficient rights                 | client does not have the `modify_otu` reference right        |
+| `404`  | Not found                           | reference does not exist                                     |
+| `422`  | Invalid input                       | JSON input is invalid                                        |
 
 # Edit
 
@@ -309,14 +301,14 @@ Status: 200 OK
 
 ## Errors
 
-| Status | Message                             | Reason                                                       |
-| :----- | :---------------------------------- | :----------------------------------------------------------- |
-| `403`  | Not permitted                       | client does not have the `remove_virus` permission           |
-| `404`  | Not found                           | `virus_id` in URL does not exist                             |
-| `409`  | Name already exists                 | `name` in request body is already in use                     |
-| `409`  | Abbreviation already exists         | `abbreviation` in request body is already in use             |
-| `409`  | Name and abbreviation already exist | `name` and `abbreviation` in request body are already in use |
-| `422`  | Invalid input                       | JSON request body is invalid                                 |
+| Status | Message                             | Reason                                                |
+| :----- | :---------------------------------- | :---------------------------------------------------- |
+| `400`  | Name already exists                 | `name` is already in use                              |
+| `400`  | Abbreviation already exists         | `abbreviation` is already in use                      |
+| `400`  | Name and abbreviation already exist | `name` and `abbreviation` are already in use          |
+| `403`  | Insufficient rights                 | client does not have the `modify_otu` reference right |
+| `404`  | Not found                           | OTU does not exist                                    |
+| `422`  | Invalid input                       | JSON request body is invalid                          |
 
 
 # Remove
@@ -341,10 +333,10 @@ Status: 204 No content
 
 ## Errors
 
-| Status | Message       | Reason                                             |
-| :----- | :------------ | :------------------------------------------------- |
-| `403`  | Not permitted | client does not have the `remove_virus` permission |
-| `404`  | Not found     | `virus_id` in URL does not exist                   |
+| Status | Message       | Reason                                                       |
+| :----- | :------------ | :----------------------------------------------------------- |
+| `403`  | Insufficient rights | client does not have the `modify_otu` reference right  |
+| `404`  | Not found     | `virus_id` in URL does not exist                             |
 
 
 # List Isolates
@@ -501,11 +493,12 @@ Status: 201 Created
 
 ## Errors
 
-| Status | Message       | Reason                                             |
-| :----- | :------------ | :------------------------------------------------- |
-| `403`  | Not permitted | client does not have the `modify_virus` permission |
-| `404`  | Not found     | `virus_id` in URL does not exist                   |
-| `422`  | Invalid input | JSON request body is invalid                       |
+| Status | Message                    | Reason                                                |
+| :----- | :------------------------- | :---------------------------------------------------- |
+| `400`  | Source type is not allowed | change the reference settings first                   |
+| `403`  | Insufficient rights        | client does not have the `modify_otu` reference right |
+| `404`  | Not found                  | OTU does not exist                                    |
+| `422`  | Invalid input              | JSON request body is invalid                          |
 
 
 # Edit Isolate
@@ -553,19 +546,21 @@ Status: 200 OK
 
 ## Errors
 
-| Status | Message         | Reason                                             |
-| :----- | :-------------- | :------------------------------------------------- |
-| `403`  | Not permitted   | client does not have the `modify_virus` permission |
-| `404`  | Virus not found | `virus_id` in URL does not exist                   |
-| `404`  | Not found       | `isolate_id` in URL does not exist                 |
-| `422`  | Invalid input   | JSON request body is invalid                       |
+| Status | Message                    | Reason                                                |
+| :----- | :------------------------- | :---------------------------------------------------- |
+| `400`  | Source type is not allowed | change the reference settings first                   |
+| `403`  | Insufficient rights        | client does not have the `modify_otu` reference right |
+| `404`  | Not found                  | OTU or isolate does not exist                         |
+| `422`  | Invalid input              | JSON request body is invalid                          |
 
 
 # Set Default Isolate
 
 {{< right modify_otu >}}
 
-Sets an isolate as default **and** unsets any existing default isolate. Take no input.
+Sets an isolate as default **and** unsets any existing default isolate.
+
+Takes no input.
 
 {{< endpoint "PUT" "/api/otus/:id/isolates/:isolate_id/default" >}}
 
@@ -593,11 +588,10 @@ Status: 200 OK
 
 ## Errors
 
-| Status | Message         | Reason                                             |
-| :----- | :-------------- | :------------------------------------------------- |
-| `403`  | Not permitted   | client does not have the `modify_virus` permission |
-| `404`  | Virus not found | `virus_id` in URL does not exist                   |
-| `404`  | Not found       | `isolate_id` in URL does not exist                 |
+| Status | Message             | Reason                                                |
+| :----- | :------------------ | :---------------------------------------------------- |
+| `403`  | Insufficient rights | client does not have the `modify_otu` reference right |
+| `404`  | Not found           | OTU or isolate does not exist                         |
 
 
 # Remove Isolate
@@ -622,11 +616,10 @@ Status: 204 No content
 
 ## Errors
 
-| Status | Message         | Reason                                             |
-| :----- | :-------------- | :------------------------------------------------- |
-| `403`  | Not permitted   | client does not have the `modify_virus` permission |
-| `404`  | Virus not found | `virus_id` in URL does not exist                   |
-| `404`  | Not found       | `isolate_id` in URL does not exist                 |
+| Status | Message             | Reason                                                |
+| :----- | :-----------------  | :---------------------------------------------------- |
+| `403`  | Insufficient rights | client does not have the `modify_otu` reference right |
+| `404`  | Not found           | OTU or isolate does not exist                         |
 
 
 # Add Sequence
@@ -645,13 +638,13 @@ Values provided for ``sequence`` must be plain text, **not** FASTA formatted. Se
 
 ## Input
 
-| Name         | Type   | Optional | Description                                  |
-| :----------- | :----- | :------- | :------------------------------------------- |
-| id           | string | false    | an id for the sequence                       |
-| definition   | string | false    | a descriptive definition                     |
-| host         | string | true     | the host of origin                           |
-| segment      | string | true     | the schema segment associated with the virus |
-| sequence     | string | false    | an abbreviation for the virus                |
+| Name       | Type   | Required | Description                                  |
+| :--------- | :----- | :------- | :------------------------------------------- |
+| id         | string | true     | an id for the sequence                       |
+| definition | string | true     | a descriptive definition                     |
+| host       | string | false    | the host of origin                           |
+| segment    | string | false    | the schema segment associated with the virus |
+| sequence   | string | true     | an abbreviation for the virus                |
 
 ## Example
 
@@ -687,13 +680,13 @@ Status: 201 Created
 
 ## Errors
 
-| Status | Message                    | Reason                                             |
-| :----- | :------------------------- | :------------------------------------------------- |
-| `403`  | Not permitted              | client does not have the `modify_virus` permission |
-| `404`  | Not found                  | virus or isolate does not exist                    |
-| `404`  | Segment not found          | `segment` is not defined in virus schema           |
-| `409`  | Sequence id already exists | `id` is already assigned to an existing sequence   |
-| `422`  | Invalid input              | JSON request body is invalid                       |
+| Status | Message                    | Reason                                                 |
+| :----- | :------------------------- | :----------------------------------------------------- |
+| `400`  | Segment does not exist     | `segment` is not defined in the OTU schema             |
+| `400`  | Sequence id already exists | `id` is already assigned to an existing sequence       |
+| `403`  | Insufficient rights        | client does not have the `modify_otu` reference right  |
+| `404`  | Not found                  | OTU or isolate does not exist                          |
+| `422`  | Invalid input              | JSON request body is invalid                           |
 
 
 # Edit Sequence
@@ -710,12 +703,12 @@ Values provided for ``sequence`` must be plain text, **not** FASTA formatted. Se
 
 ## Input
 
-| Name         | Type   | Optional | Description                                  |
+| Name         | Type   | Required | Description                                  |
 | :----------- | :----- | :------- | :------------------------------------------- |
-| definition   | string | false    | a descriptive definition                     |
-| host         | string | true     | the host of origin                           |
-| segment      | string | true     | the schema segment for the sequence          |
-| sequence     | string | false    | the sequence                                 |
+| definition   | string | true     | a descriptive definition                     |
+| host         | string | false    | the host of origin                           |
+| segment      | string | false    | the schema segment for the sequence          |
+| sequence     | string | true     | the sequence                                 |
 
 ## Example
 
@@ -750,12 +743,12 @@ Status: 200 OK
 
 ## Errors
 
-| Status | Message                    | Reason                                             |
-| :----- | :------------------------- | :------------------------------------------------- |
-| `403`  | Not permitted              | client does not have the `modify_virus` permission |
-| `404`  | Not found                  | virus, isolate, or sequence does not exist         |
-| `404`  | Segment not found          | `segment` is not defined in virus schema           |
-| `422`  | Invalid input              | JSON request body is invalid                       |
+| Status | Message                | Reason                                                |
+| :----- | :--------------------- | :---------------------------------------------------- |
+| `400`  | Segment does not exist | `segment` is not defined in virus schema              |
+| `403`  | Insufficient rights    | client does not have the `modify_otu` reference right |
+| `404`  | Not found              | OTU, isolate, or sequence does not exist              |
+| `422`  | Invalid input          | JSON request body is invalid                          |
 
 
 # Remove Sequence
@@ -780,10 +773,10 @@ Status: 204 No Content
 
 ## Errors
 
-| Status | Message                    | Reason                                             |
-| :----- | :------------------------- | :------------------------------------------------- |
-| `403`  | Not permitted              | client does not have the `modify_virus` permission |
-| `404`  | Not found                  | virus, isolate, or sequence does not exist         |
+| Status | Message             | Reason                                                |
+| :----- | :------------------ | :---------------------------------------------------- |
+| `403`  | Insufficient rights | client does not have the `modify_otu` reference right |
+| `404`  | Not found           | OTU, isolate, or sequence does not exist              |
 
 
 # List History

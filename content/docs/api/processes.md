@@ -74,3 +74,9 @@ Status: 200 OK
 	"id": "pqbed16v"
 }
 ```
+
+## Errors
+
+| Status | Message   | Reason                                  |
+| :----- | :-------- | :-------------------------------------- |
+| `404`  | Not found | process does not exist                  |

@@ -133,11 +133,11 @@ Status 201: Created
 
 ## Errors
 
-| Status | Message       | Reason                         |
-| :----- | :------------ | :----------------------------- |
-| `403`  | Not permitted | client is not an administrator |
-| `409`  | Conflict      | group already exists           |
-| `422`  | Invalid input | JSON request body is invalid   |
+| Status | Message              | Reason                                 |
+| :----- | :------------------- | :------------------------------------- |
+| `400`  | Group already exists | the provided `group_id` already exists |
+| `403`  | Not permitted        | client is not an administrator         |
+| `422`  | Invalid input        | JSON request body is invalid           |
 
 
 # Edit

@@ -179,9 +179,9 @@ Status: 201 Created
 
 | Status | Message                       | Reason                                                   |
 | :----- | :---------------------------- | :------------------------------------------------------- |
+| `400`  | File does not exist           | file identified by `file_id` does not exist              |
+| `400`  | Subtraction id already exists | `id` is already in use by an existing subtraction        |
 | `403`  | Not permitted                 | client does not have the 'modify_subtraction` permission |
-| `404`  | File not found                | file identified by `file_id` does not exist              |
-| `409`  | Subtraction id already exists | `id` is already in use by an existing subtraction        |
 | `422`  | Invalid input                 | JSON request body is invalid                             |
 
 

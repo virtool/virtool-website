@@ -122,10 +122,10 @@ Status: 200 OK
 
 ## Errors
 
-| Status | Message       | Reason                                             |
-| :----- | :------------ | :------------------------------------------------- |
-| `403`  | Not permitted | client does not have the 'manage_users` permission |
-| `404`  | Not found     | user does not exist                                |
+| Status | Message       | Reason                         |
+| :----- | :------------ | :----------------------------- |
+| `403`  | Not permitted | client is not an administrator |
+| `404`  | Not found     | user does not exist            |
 
 
 # Create
@@ -190,11 +190,12 @@ Status: 201 Created
 
 ## Errors
 
-| Status | Message             | Reason                                             |
-| :----- | :------------------ | :------------------------------------------------- |
-| `403`  | Not permitted       | client does not have the `manage_users` permission |
-| `409`  | User already exists | `user_id` is already in use by an existing user    |
-| `422`  | Invalid input       | JSON request body is invalid                       |
+| Status | Message                                   | Reason                                               |
+| :----- | :---------------------------------------- | :--------------------------------------------------- |
+| `400`  | Password does not meet length requirement | password must meet `minimum_password_length` setting |
+| `400`  | User already exists                       | `user_id` is already in use                          |
+| `403`  | Not permitted                             | client is not an administrator                       |
+| `422`  | Invalid input                             | JSON request body is invalid                         |
 
 
 # Edit
@@ -207,12 +208,13 @@ Change the password, primary group, or force reset setting of an existing user.
 
 ## Input
 
-| Name          | Type     | Description                                       |
-| :------------ | :------- | :------------------------------------------------ |
-| force_reset   | boolean  | force a password reset next time the user logs in |
-| password      | string   | the new password                                  |
-| primary_group | string   | the users primary group used for sample rights    |
-| groups        | array    | the ids of the groups the user belongs to         |      
+| Name          | Type    | Description                                       |
+| :------------ | :------ | :------------------------------------------------ |
+| administrator | boolean | set the user's adminstrator status                |
+| force_reset   | boolean | force a password reset next time the user logs in |
+| password      | string  | the new password                                  |
+| primary_group | string  | the users primary group used for sample rights    |
+| groups        | array   | the ids of the groups the user belongs to         |      
 
 ## Example
 
@@ -260,11 +262,15 @@ Status: 200 OK
 
 ## Errors
 
-| Status | Message             | Reason                                        |
-| :----- | :------------------ | :-------------------------------------------- |
-| `403`  | Not permitted       | client does not have administrative privilege |
-| `404`  | Not found           | user does not exist                           |
-| `422`  | Invalid input       | JSON request body is invalid                  |
+| Status | Message                                   | Reason                                               |
+| :----- | :---------------------------------------- | :--------------------------------------------------- |
+| `400`  | Groups do not exist: <groups>             | one or more passed `groups` do not exist             |
+| `400`  | Primary group does not exist              | passed `primary_group` does not exist                |
+| `400`  | Password does not meet length requirement | password must meet `minimum_password_length` setting |
+| `403`  | Not permitted                             | client is not an administrator                       |
+| `404`  | Not found                                 | user does not exist                                  |
+| `409`  | User is not member of group               | user is not a member of the passed `primary_group`   |
+| `422`  | Invalid input                             | JSON request body is invalid                         |
 
 
 # Remove
@@ -289,7 +295,8 @@ Status: 204 No content
 
 ## Errors
 
-| Status | Message             | Reason                                        |
-| :----- | :------------------ | :-------------------------------------------- |
-| `403`  | Not permitted       | client does not have administrative privilege |
-| `404`  | Not found           | user does not exist                           |
+| Status | Message                   | Reason                                        |
+| :----- | :------------------------ | :-------------------------------------------- |
+| `400`  | Cannot remove own account | users cannot remove their own accounts        |
+| `403`  | Not permitted             | client is not an administrator                |
+| `404`  | Not found                 | user does not exist                           |

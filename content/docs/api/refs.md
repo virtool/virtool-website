@@ -161,6 +161,12 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+| Status | Message   | Reason                   |
+| :----- | :-------- | :----------------------- |
+| `404`  | Not found | reference does not exist |
+
 # Create
 
 {{< permission create_ref >}}
@@ -434,6 +440,12 @@ Location: /api/refs/95p5qnk2
 }
 ```
 
+## Errors
+
+| Status | Message       | Reason                                           |
+| :----- | :------------ | :----------------------------------------------- |
+| `403`  | Not permitted | client does not have the `create_ref` permission |
+
 
 # Edit
 
@@ -504,6 +516,13 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+| Status | Message             | Reason                                            |
+| :----- | :------------------ | :------------------------------------------------ |
+| `403`  | Insufficient rights | client does not have the `modify` reference right |
+| `404`  | Not found           | reference does not exist                          |
+
 
 # Export
 
@@ -537,6 +556,12 @@ GET /download/refs/848280hu?scope=unbuilt
 Status: 200 OK
 Content-Type: application/gzip
 ```
+
+## Errors
+
+| Status | Message   | Reason                   |
+| :----- | :-------- | :----------------------- |
+| `404`  | Not found | reference does not exist |
 
 
 # Remove
@@ -574,6 +599,13 @@ Content-Location: /api/processes/yn5ncv8t
 	"id": "yn5ncv8t"
 }
 ```
+
+## Errors
+
+| Status | Message             | Reason                                            |
+| :----- | :------------------ | :------------------------------------------------ |
+| `403`  | Insufficient rights | client does not have the `remove` reference right |
+| `404`  | Not found           | reference does not exist                          |
 
 
 # Find History
@@ -719,6 +751,42 @@ Status: 200 OK
 ```
 
 
+# Get User
+
+Get a specific reference user.
+
+{{< endpoint "GET" "/api/refs/:id/user/:id" >}}
+
+## Example
+
+```
+GET /api/refs/pe6vunzl/users/baz
+```
+
+## Response
+
+```
+Status: 200 OK
+```
+
+```json
+{
+	"id": "baz",
+	"created_at": "2018-05-23T19:14:04.285000Z",
+	"build": true,
+	"modify": true,
+	"modify_otu": false,
+	"remove": false
+}
+```
+
+## Errors
+
+| Status | Message   | Reason                           |
+| :----- | :-------- | :------------------------------- |
+| `404`  | Not found | reference or user does not exist |
+
+
 # Add User
 
 {{< right modify >}}
@@ -770,6 +838,15 @@ Location: /api/refs/pe6vunzl/users/baz
 }
 ```
 
+## Errors
+
+| Status | Message             | Reason                                            |
+| :----- | :------------------ | :------------------------------------------------ |
+| `400`  | User already exists | user is already assigned to reference             |
+| `400`  | User does not exist | user does not exist on instance                   |
+| `403`  | Insufficient rights | client does not have the `modify` reference right |
+| `404`  | Not found           | reference does not exist                          |
+
 
 # Edit User
 
@@ -818,6 +895,13 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+| Status | Message              | Reason                                            |
+| :----- | :------------------- | :------------------------------------------------ |
+| `403`  | Insufficient rights  | client does not have the `modify` reference right |
+| `404`  | Not found            | reference or user does not exist                  |
+
 
 # Remove User
 
@@ -838,6 +922,49 @@ DELETE /api/refs/pe6vunzl/users/baz
 ```
 Status: 204 No content
 ```
+
+## Errors
+
+| Status | Message              | Reason                                            |
+| :----- | :------------------- | :------------------------------------------------ |
+| `403`  | Insufficient rights  | client does not have the `modify` reference right |
+| `404`  | Not found            | reference or user does not exist                  |
+
+
+# Get Group
+
+Get a specific reference user group.
+
+{{< endpoint "GET" "/api/refs/:id/groups/:group_id" >}}
+
+## Example
+
+```
+GET /api/refs/pe6vunzl/groups/baz
+```
+
+## Response
+
+```
+Status: 200 OK
+```
+
+```json
+{
+	"id": "baz",
+	"created_at": "2018-05-23T19:14:04.285000Z",
+	"build": true,
+	"modify": true,
+	"modify_otu": false,
+	"remove": false
+}
+```
+
+## Errors
+
+| Status | Message   | Reason                            |
+| :----- | :-------- | :-------------------------------- |
+| `404`  | Not found | reference or group does not exist |
 
 
 # Add Group
@@ -891,6 +1018,15 @@ Location: /api/refs/pe6vunzl/groups/baz
 }
 ```
 
+## Errors
+
+| Status | Message              | Reason                                            |
+| :----- | :------------------- | :------------------------------------------------ |
+| `400`  | Group already exists | group is already assigned to reference            |
+| `400`  | Group does not exist | user group does not exist on instance             |
+| `403`  | Insufficient rights  | client does not have the `modify` reference right |
+| `404`  | Not found            | reference does not exist                          |
+
 
 # Edit Group
 
@@ -939,6 +1075,13 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+| Status | Message              | Reason                                            |
+| :----- | :------------------- | :------------------------------------------------ |
+| `403`  | Insufficient rights  | client does not have the `modify` reference right |
+| `404`  | Not found            | reference or group does not exist                 |
+
 
 # Remove Group
 
@@ -959,6 +1102,13 @@ DELETE /api/refs/pe6vunzl/groups/baz
 ```
 Status: 204 No content
 ```
+
+## Errors
+
+| Status | Message              | Reason                                            |
+| :----- | :------------------- | :------------------------------------------------ |
+| `403`  | Insufficient rights  | client does not have the `modify` reference right |
+| `404`  | Not found            | reference or group does not exist                 |
 
 
 # Get Release
@@ -1087,3 +1237,10 @@ Status: 200 OK
 	"content_type": "application/gzip"
 }
 ```
+
+## Errors
+
+| Status | Message             | Reason                                            |
+| :----- | :------------------ | :------------------------------------------------ |
+| `403`  | Insufficient rights | client does not have the `modify` reference right |
+| `404`  | Not found           | reference does not exist                          |

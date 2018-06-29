@@ -55,10 +55,11 @@ Status: 200 OK
 
 ## Errors
 
-| Status | Message             | Reason                                                                           |
-| :----- | :------------------ | :------------------------------------------------------------------------------- |
-| `403`  | Insufficient rights | client does not have the required sample rights to view the analysis             |
-| `404`  | Not found           | `sample_id` in URL does not exist                                                |
+| Status | Message                      | Reason                                                               |
+| :----- | :--------------------------- | :------------------------------------------------------------------- |
+| `400`  | Parent sample does not exist | the parent sample for the analysis could not be found                |
+| `403`  | Insufficient rights          | client does not have the required sample rights to view the analysis |
+| `404`  | Not found                    | `analysis_id` in URL does not exist                                  |
 
 
 # Remove
@@ -85,11 +86,12 @@ Status: 204 No content
 
 ## Errors
 
-| Status | Message                   | Reason                                                                           |
-| :----- | :------------------------ | :------------------------------------------------------------------------------- |
-| `403`  | Insufficient rights       | client does not have the required sample rights to remove the analysis           |
-| `404`  | Not found                 | `sample_id` in URL does not exist                                                |
-| `409`  | Analysis is still running | analysis job is still in progress                                                |
+| Status | Message                      | Reason                                                                 |
+| :----- | :--------------------------- | :--------------------------------------------------------------------- |
+| `400`  | Parent sample does not exist | the parent sample for the analysis could not be found                  |
+| `403`  | Insufficient rights          | client does not have the required sample rights to remove the analysis |
+| `404`  | Not found                    | analysis does not exist                                                |
+| `409`  | Analysis is still running    | analysis job is still in progress                                      |
 
 
 # BLAST Contig
@@ -125,11 +127,11 @@ Status: 200 OK
 
 ## Errors
 
-| Status | Message                   | Reason                                                                           |
-| :----- | :------------------------ | :------------------------------------------------------------------------------- |
-| `400`  | Not a NuVs analysis       | analysis cannot be BLASTed because it is not a NuVs analysis                     |
-| `403`  | Insufficient rights       | client does not have the required sample rights to remove the analysis           |
-| `404`  | Not found                 | `sample_id` in URL does not exist                                                |
-| `404`  | Sample not found          | sample associated with analysis was not found                                    |
-| `409`  | Sequence not found        | `sequence_index` in URL does not exist                                           |
-| `409`  | Analysis is still running | analysis job is still in progress and cannot be BLASTed                          |
+| Status | Message                      | Reason                                                                 |
+| :----- | :--------------------------- | :--------------------------------------------------------------------- |
+| `400`  | Parent sample does not exist | sample associated with analysis was not found                          |
+| `403`  | Insufficient rights          | client does not have the sample rights required to change the analysis |
+| `404`  | Analysis not found           | analysis does not exist                                                |
+| `404`  | Sequence not found           | sequence does not exist                                                |
+| `409`  | Not a NuVs analysis          | analysis cannot be BLASTed because it is not a NuVs analysis           |
+| `409`  | Analysis is still running    | analysis job is still in progress and cannot be BLASTed                |

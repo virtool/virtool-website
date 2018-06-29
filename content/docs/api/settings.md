@@ -226,9 +226,9 @@ Status: 200 OK
 
 | Status | Message                              | Reason                                                                  |
 | :----- | :----------------------------------- | :---------------------------------------------------------------------- |
+| `400`  | Exceeds system processor count       | provided `proc` value is greater than the system processor count        |
+| `400`  | Exceeds system memory                | provided `mem` value is greater than the available system memory        |
 | `403`  | Not permitted                        | client does not have the 'modify_settings` permission                   |
-| `409`  | Exceeds system processor count       | provided `proc` value is greater than the system processor count        |
-| `409`  | Exceeds system memory                | provided `mem` value is greater than the available system memory        |
 | `409`  | Less than a task-specific proc limit | provided `proc` is less than a task-specific processor limit setting    |
 | `409`  | Less than a task-specific mem limit  | provided `mem` is less than a task-specific mempry limit setting        |
 | `409`  | Exceeds proc resource limit          | a provided task-specific limit is greater than the `proc` limit setting |

@@ -108,12 +108,6 @@ Status: 200 OK
 }
 ```
 
-## Errors
-
-| Status | Message       | Reason                                   |
-| :----- | :------------ | :--------------------------------------- |
-| `422`  | Invalid query | invalid key or value in URL query string |
-
 
 # Get
 
@@ -366,6 +360,13 @@ Status: 201 Created
 }
 ```
 
+## Errors
+
+| Status | Message       | Reason                                     |
+| :----- | :------------ | :----------------------------------------- |
+| `403`  | Not permitted | user does not have `modify_hmm` permission |
+
+
 # Purge
 
 Permanently remove all HMMs that are not referenced by NuVs analysis records.
@@ -385,3 +386,9 @@ DELETE /api/hmms
 ```
 Status: 204 No content
 ```
+
+## Errors
+
+| Status | Message       | Reason                                     |
+| :----- | :------------ | :----------------------------------------- |
+| `403`  | Not permitted | user does not have `modify_hmm` permission |

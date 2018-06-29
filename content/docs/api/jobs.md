@@ -228,9 +228,9 @@ Status: 200 OK
 
 | Status | Message         | Reason                                              |
 | :----- | :-------------- | :-------------------------------------------------- |
-| `400`  | Not cancellable | job is already finished                             |
-| `403`  | Not permitted   | client does not have the `create_sample` permission |
+| `403`  | Not permitted   | client does not have the `cancel_job` permission    |
 | `404`  | Not found       | `job_id` in URL does not exist                      |
+| `409`  | Not cancellable | job is already finished                             |
 
 
 # Remove
@@ -255,10 +255,11 @@ Status: 204 No Content
 
 ## Errors
 
-| Status | Message       | Reason                                              |
-| :----- | :------------ | :-------------------------------------------------- |
-| `403`  | Not permitted | client does not have the `remove_sample` permission |
-| `404`  | Not found     | `job_id` in URL does not exist                      |
+| Status | Message                                         | Reason                                              |
+| :----- | :---------------------------------------------- | :-------------------------------------------------- |
+| `403`  | Not permitted                                   | client does not have the `remove_sample` permission |
+| `409`  | Job is running or waiting and cannot be removed | job must finish before it can be removed            |
+| `404`  | Not found                                       | `job_id` in URL does not exist                      |
 
 
 # Clear

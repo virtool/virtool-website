@@ -84,4 +84,5 @@ Status: 204 No content
 | Status | Message                | Reason                                                          |
 | :----- | :--------------------- | :-------------------------------------------------------------- |
 | `401`  | Requires authorization | request is not associated with an authorized session or API key |
-| `404`  | Not found              | `file_id` does not exist                                        |
+| `403`  | Not permitted          | user does not have `remove_file` permission                     |
+| `404`  | Not found              | file does not exist                                             |

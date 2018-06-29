@@ -221,13 +221,15 @@ Status: 201 Created
 
 ## Errors
 
-| Status | Message                       | Reason                                                        |
-| :----- | :---------------------------- | :------------------------------------------------------------ |
-| `403`  | Not permitted                 | client does not have the `create_sample` permission           |
-| `404`  | Group not found               | `group` in POST body does not exist                           |
-| `404`  | Subtraction not found         | `subtraction` in POST body  does not exist                    |
-| `409`  | Sample name is already in use | the provided `name` is already assigned to an existing sample |
-| `422`  | Invalid input                 | JSON request body is invalid                                  |
+| Status | Message                                  | Reason                                                                       |
+| :----- | :--------------------------------------- | :--------------------------------------------------------------------------- |
+| `400`  | File does not exist                      | the provided `file_id` does not exist                                        |
+| `400`  | Group does not exist                     | `group` in POST body does not exist                                          |
+| `400`  | Group value required for sample creation | the server is configured to required group assignment of samples on creation |
+| `400`  | Sample name is already in use            | the provided `name` is already assigned to an existing sample                |
+| `400`  | Subtraction does not exist               | `subtraction` in POST body  does not exist                                   |
+| `403`  | Not permitted                            | client does not have the `create_sample` permission                          |
+| `422`  | Invalid input                            | JSON request body is invalid                                                 |
 
 
 # Edit
@@ -287,11 +289,12 @@ Status: 200 OK
 
 ## Errors
 
-| Status | Message             | Reason                                                      |
-| :----- | :------------------ | :---------------------------------------------------------- |
-| `403`  | Insufficient rights | client does not have the required rights to edit the sample |
-| `404`  | Not found           | `sample_id` in URL does not exist                           |
-| `422`  | Invalid input       | request body JSON failed validation                         |
+| Status | Message                       | Reason                                                        |
+| :----- | :---------------------------- | :------------------------------------------------------------ |
+| `400`  | Sample name is already in use | the provided `name` is already assigned to an existing sample |
+| `403`  | Insufficient rights           | client does not have the required rights to edit the sample   |
+| `404`  | Not found                     | `sample_id` in URL does not exist                             |
+| `422`  | Invalid input                 | request body JSON failed validation                           |
 
 
 # Edit Rights
@@ -346,6 +349,7 @@ Status: 200 OK
 
 | Status | Message                               | Reason                                                |
 | :----- | :------------------------------------ | :---------------------------------------------------- |
+| `400`  | Group does not exist                  | user group does not exist in instance                 |
 | `403`  | Must be administrator or sample owner | user is neither the sample owner nor an administrator |
 | `404`  | Not found                             | `sample_id` in URL does not exist                     |
 | `422`  | Invalid input                         | request body JSON failed validation                   |
@@ -480,8 +484,8 @@ POST /api/samples/htosefxu/analyses
 
 ```json
 {
-	"algorithm": "pathoscope_bowtie"
-	"ref_id": 
+	"algorithm": "pathoscope_bowtie",
+	"ref_id": "foo"
 }
 ```
 
@@ -516,8 +520,10 @@ Location: /api/analyses/fbzypgva
 
 ## Errors
 
-| Status | Message             | Reason                                                                           |
-| :----- | :------------------ | :------------------------------------------------------------------------------- |
-| `403`  | Insufficient rights | client does not have the required rights to create a new analysis for the sample |
-| `404`  | Not found           | `sample_id` in URL does not exist                                                |
-| `422`  | Invalid input       | the JSON request body is invalid                                                 |
+| Status | Message                             | Reason                                                                           |
+| :----- | :---------------------------------- | :------------------------------------------------------------------------------- |
+| `400`  | Reference does not exist            | specified `ref_id` not found                                                     |
+| `400`  | No index is ready for the reference | the reference doesn't have a built index ready for analysis                      |
+| `403`  | Insufficient rights                 | client does not have the required rights to create a new analysis for the sample |
+| `404`  | Not found                           | `sample_id` in URL does not exist                                                |
+| `422`  | Invalid input                       | the JSON request body is invalid                                                 |

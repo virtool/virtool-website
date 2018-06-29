@@ -201,12 +201,12 @@ Location: /api/indexes/bznqwjsa
 
 ## Errors
 
-| Status | Message                         | Reason                                              |
-| :----- | :------------------------------ | :-------------------------------------------------- |
-| `400`  | There are unverified viruses    | some viruses included in the rebuild have issues    |
-| `400`  | The are no unbuilt changes      | there are no changes to include in an index rebuild |
-| `403`  | Not permitted                   | client does not have the `rebuild_index` permission |
-| `409`  | Index build already in progress | only one index build at a time may be in progress   |
+| Status | Message                         | Reason                                                                  |
+| :----- | :------------------------------ | :---------------------------------------------------------------------- |
+| `400`  | There are unverified OTUs       | some OTUs included in the rebuild have issues                           |
+| `400`  | The are no unbuilt changes      | there are no changes to include in an index rebuild                     |
+| `403`  | Insufficient rights             | client does not have the required reference rights                      |
+| `409`  | Index build already in progress | only one index build at a time may be in progress for a given reference |
 
 
 # Find History

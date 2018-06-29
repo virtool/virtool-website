@@ -38,6 +38,7 @@ Status: 200 OK
 
 ## Errors
 
-| Status | Message       | Reason                                             |
-| :----- | :------------ | :------------------------------------------------- |
-| `404`  | Not found     | accession does not exist on Genbank                |
+| Status | Message                 | Reason                                       |
+| :----- | :---------------------- | :------------------------------------------- |
+| `404`  | Not found               | accession does not exist on Genbank          |
+| `502`  | Could not reach Genbank | the Virtool server could not connect to NCBI |
