@@ -204,6 +204,8 @@ Status: 201 Created
 
 Change the password, primary group, or force reset setting of an existing user.
 
+Adminstrators cannot modify their own administrative status.
+
 {{< endpoint "PATCH" "/api/users/:id" >}}
 
 ## Input
@@ -262,15 +264,16 @@ Status: 200 OK
 
 ## Errors
 
-| Status | Message                                   | Reason                                               |
-| :----- | :---------------------------------------- | :--------------------------------------------------- |
-| `400`  | Groups do not exist: <groups>             | one or more passed `groups` do not exist             |
-| `400`  | Primary group does not exist              | passed `primary_group` does not exist                |
-| `400`  | Password does not meet length requirement | password must meet `minimum_password_length` setting |
-| `403`  | Not permitted                             | client is not an administrator                       |
-| `404`  | Not found                                 | user does not exist                                  |
-| `409`  | User is not member of group               | user is not a member of the passed `primary_group`   |
-| `422`  | Invalid input                             | JSON request body is invalid                         |
+| Status | Message                                             | Reason                                               |
+| :----- | :-------------------------------------------------- | :--------------------------------------------------- |
+| `400`  | Groups do not exist: <groups>                       | one or more passed `groups` do not exist             |
+| `400`  | Primary group does not exist                        | passed `primary_group` does not exist                |
+| `400`  | Password does not meet length requirement           | password must meet `minimum_password_length` setting |
+| `400`  | Users cannot modify their own administrative status | another administrator should perform the action      |
+| `403`  | Not permitted                                       | client is not an administrator                       |
+| `404`  | Not found                                           | user does not exist                                  |
+| `409`  | User is not member of group                         | user is not a member of the passed `primary_group`   |
+| `422`  | Invalid input                                       | JSON request body is invalid                         |
 
 
 # Remove
