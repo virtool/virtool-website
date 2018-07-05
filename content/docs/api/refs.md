@@ -442,9 +442,12 @@ Location: /api/refs/95p5qnk2
 
 ## Errors
 
-| Status | Message       | Reason                                           |
-| :----- | :------------ | :----------------------------------------------- |
-| `403`  | Not permitted | client does not have the `create_ref` permission |
+| Status | Message                                  | Reason                                                             |
+| :----- | :--------------------------------------- | :----------------------------------------------------------------- |
+| `400`  | Source reference does not exist          | the `clone_from` id does not refer to an exisingt reference        |
+| `403`  | Not permitted                            | client does not have the `create_ref` permission                   |
+| `502`  | Could not retrieve latest GitHub release | either the repository does not exist or there is no latest release |
+| `502`  | Could not reach GitHub                   | the server was unable to connect to GitHub                         |
 
 
 # Edit
