@@ -274,6 +274,15 @@ Status: 200 OK
 }
 ```
 
+## Errors
+
+## Errors
+
+| Status | Message                   | Reason                                                             |
+| :----- | :------------------------ | :----------------------------------------------------------------- |
+| `502`  | Repository does not exist | the GitHub repository set in the `hmm_slug` setting does not exist |
+| `502`  | Could not reach GitHub    | the server could not connect to GitHub                             |
+
 
 # List Updates
 
@@ -317,19 +326,11 @@ Status: 200 OK
 
 {{< permission modify_hmm >}}
 
-Install a specific release of the official virus HMM reference.
+Install the [locally cached release](#get-release) as the official virus HMM reference.
 
 Installing when a previous release has already been installed will remove all HMMs not referenced in existing analyses and install the new release.
 
-When no `release_id` is specified the [locally stored release](#get-release) will be used. If there is no locally stored release, the latest release will be installed.
-
 {{< endpoint "POST" "/api/hmms/status/updates" >}}
-
-## Input
-
-| Name       | Type   | Required | Description                             |
-| :--------- | :----- | :------- | :-------------------------------------- |
-| release_id | string | False    | the id of the GitHub release to install |
 
 ## Example
 
@@ -362,9 +363,10 @@ Status: 201 Created
 
 ## Errors
 
-| Status | Message       | Reason                                     |
-| :----- | :------------ | :----------------------------------------- |
-| `403`  | Not permitted | user does not have `modify_hmm` permission |
+| Status | Message                       | Reason                                                         |
+| :----- | :---------------------------- | :------------------------------------------------------------- |
+| `400`  | Target release does not exist | no release information has been fetched and cached from GitHub |
+| `403`  | Not permitted                 | user does not have `modify_hmm` permission                     |
 
 
 # Purge
