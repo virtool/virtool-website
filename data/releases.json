@@ -94,14 +94,26 @@
         },
         "releases": [
             {
+                "name": "v3.0.0-beta.3",
+                "body": "#### Added\r\n- added more client software tests\r\n\r\n#### Changed\r\n- fix rendering of detail for cancelled jobs (#1123)\r\n- log `spades.py` output for NuVs jobs (this will help diagnose recurring SPAdes errors)\r\n- updated some client dependencies\r\n- use separate `virtool.pathoscope` package for those analyses\r\n\r\n#### Removed\r\n- removed a lot of dead code and test files related to NuVs and Pathoscope jobs\r\n",
+                "prerelease": true,
+                "published_at": "2018-08-31T18:28:23Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.0.0-beta.3",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 46224073,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.0.0-beta.3/virtool.tar.gz",
+                "asset_error": false
+            },
+            {
                 "name": "v3.0.0-beta.2",
                 "body": "#### Added\r\n- add many more client software tests\r\n- support searching and paging at find analyses API endpoint\r\n\r\n\r\n#### Changed\r\n- make extend area around sample selection checkbox sensitive to click (not just checkbox) (#1034)\r\n- make job code more robust and consistent using new `virtool.job` package\r\n- update multiple packages\r\n\r\n#### Fixed\r\n- fix app shutdown on job cancel (#1116)\r\n- fix non-functional job cancel when job is waiting\r\n- fix ugly rendering for job item progress bar when one is removed (#1115)\r\n- fixed bug when selection samples from bottom-up (#1034)\r\n\r\n",
                 "prerelease": true,
-                "published_at": "2018-08-29T17:34:06Z",
+                "published_at": "2018-08-30T20:14:55Z",
                 "html_url": "https://github.com/virtool/virtool/releases/tag/v3.0.0-beta.2",
                 "filename": "virtool.tar.gz",
                 "content_type": "application/gzip",
-                "size": 41956216,
+                "size": 46212488,
                 "download_url": "https://github.com/virtool/virtool/releases/download/v3.0.0-beta.2/virtool.tar.gz",
                 "asset_error": false
             },
