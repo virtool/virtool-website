@@ -94,6 +94,18 @@
         },
         "releases": [
             {
+                "name": "v3.0.0-beta.4",
+                "body": "#### Added\r\n- added more web client tests\r\n\r\n#### Changed\r\n- upgrade to `virtool.nuvs==0.1.4`\r\n\r\n#### Fixed\r\n- recurring errors for NuVs jobs on sRNA samples (`virtool.nuvs`)",
+                "prerelease": true,
+                "published_at": "2018-09-05T21:16:32Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.0.0-beta.4",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 46216043,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.0.0-beta.4/virtool.tar.gz",
+                "asset_error": false
+            },
+            {
                 "name": "v3.0.0-beta.3",
                 "body": "#### Added\r\n- added more client software tests\r\n\r\n#### Changed\r\n- fix rendering of detail for cancelled jobs (#1123)\r\n- log `spades.py` output for NuVs jobs (this will help diagnose recurring SPAdes errors)\r\n- updated some client dependencies\r\n- use separate `virtool.pathoscope` package for those analyses\r\n\r\n#### Removed\r\n- removed a lot of dead code and test files related to NuVs and Pathoscope jobs\r\n",
                 "prerelease": true,
