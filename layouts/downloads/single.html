@@ -9,27 +9,8 @@
                 <i class="fab fa-github"></i>&nbsp;See all releases
             </a>
         </h1>
+        
         {{ partial "releases.html" .Site.Data.releases.software.releases }}
-
-        <h1 class="title is-4 level">
-            <span class="level-left">
-                Virus Database
-            </span>
-            <a class="is-size-7 level-right" href="https://github.com/virtool/virtool-database/releases" target="_blank">
-                <i class="fab fa-github"></i>&nbsp;See all releases
-            </a>
-        </h1>
-        {{ partial "releases.html" .Site.Data.releases.database.releases }}
-
-        <h1 class="title is-4 level">
-            <span class="level-left">
-                HMMs
-            </span>
-            <a class="is-size-7 level-right" href="https://github.com/virtool/virtool-hmm/releases" target="_blank">
-                <i class="fab fa-github"></i>&nbsp;See all releases
-            </a>
-        </h1>
-        {{ partial "releases.html" .Site.Data.releases.hmm.releases }}
     </div>
 </div>
 {{ end }}
