@@ -11,11 +11,16 @@ In order to use the NuVs algorithm, you must first install HMM profiles and anno
 
 # 1. Install Official Data {#official}
 
-1. Navigate to the _HMMs_ view in the main navigation bar. You should see this if no HMM data have already been installed
-   ![](no_data.png)
+1. Navigate to the _HMMs_ view in the main navigation bar. You should see something like this if no HMM data have already been installed:
+   !["No HMM data found"](no_data.png)
 
-2. Click the <i class="vtfont i-download"></i> **Download** button to begin downloading the data. This could take some time.
-   ![](installing.png)
+2. Click the **Install Official** button to begin downloading the data. This could take some time. The page should look something like this:
+   !["Installing Official HMM Data"](installing.png)
 
-3. When the installation is complete, the HMM data will reload and you will see a list of profiles that can be found during a NuVs run.
-   ![](top.png)
+3. When the installation is complete, the HMM data will load and you will see a list of annotations.
+   !["Installed Official HMM Data](top.png)
+
+4. Clicking on an HMM item will show the detailed information for that HMM profile and its biological annotation.
+   !["HMM Detail"](detail.png)
+
+5. This is all that is required to run NuVs using HMM profiles.
