@@ -1,7 +1,7 @@
 ---
-title: "Downloads"
-type: "downloads"
+title: "Download"
+type: "download"
 menu:
-    main:
-        weight: 0
+  main:
+    weight: 1
 ---
