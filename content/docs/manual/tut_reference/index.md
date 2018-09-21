@@ -1,5 +1,5 @@
 ---
-title: "Use Official Reference"
+title: "Install Reference"
 type: "manual"
 menu:
   manual:
@@ -7,112 +7,64 @@ menu:
     weight: 10
 ---
 
-Virtool is built for detecting viruses. The collection of viral sequences used for this purpose is key to Virtool's mission.
+Virtool is built for detecting viruses and is capable of detecting other pathogens. Managing collections of pathogen sequences used for this purpose is a key feature of Virtool.
 
-When Virtool is first installed no virus reference data is included. You can get started quickly by using our official "remote" reference. In the future, there will be more remote references to choose from. Remote references automatically check for updates and you can apply them to your local copy of the remote at any time.
+**Significant improvements were made this functionality for the [3.0.0](https://github.com/virtool/virtool/releases) release:**
 
-At least one valid virus must be added to the database in order to start analyzing samples.
+- individual pathogen species are referred to as organizational taxonomic units (OTUs) to leave the door open for non-virus pathogens
+- collections of OTUs are referred to as **_references_**
+- multiple references can be maintained and analyzed against on a single Virtool instance
+- the official Virtool plant virus reference can be automatically installed and updated from [GitHub](https://github.com/virtool/ref-plant-viruses)
 
-# 1. Importing a Virus Database {#importing}
+At least one non-empty reference must be created in order to start analyzing samples. One quick way to accomplish this is to install the [official plant virus reference](https://github.com/virtool/ref-plant-viruses).
 
-Instead of starting a virus database from scratch, you can do a one-time of import someone else's database or [our offical one](https://www.virtool.ca/downloads).
+# 1. Install the Official Reference {#installing}
 
-{{% note %}}
-A virus database file can only be imported into an empty instance of Virtool. You cannot import viruses into an already populated database.
-{{% /note %}}
+Instead of starting a virus database from scratch, you can use our [official plant virus reference](https://www.virtool.ca/downloads). Doing this will setup up **_remote_** connection to the reference on GitHub.
 
-We will use the offical database for this tutorial.
+1. Go to the _References_ view. If you have not yet installed the official reference, you should see this:
+   !["Official Reference Placeholder"](install_placeholder.png)
 
-1. Go to the [Virtool downloads page](https://www.virtool.ca/downloads) and download the latest database release.
-   !["Virus database download"](download.png)
+2. Click the **Install** button to begin the installation process. A new card should appear representing the official reference on your system.
+   !["Official Reference Installing"](installing.png)
 
-2. Click the download link to get a `viruses.json.gz` file.
+3. One the installation process is complete, the reference card should look something like this:
+   !["Reference Installation Complete"](install_complete.png)
 
-3. In Virtool, go to the main _Viruses_ view. You should see the following:
-   !["Virus view with import link visible"](import_link.png)
+4. Clicking on the reference card will bring you to a detail page for the reference.
+   !["Installed Official Reference Detail Page"](installed_detail.png)
 
-4. Click the **Import** link to bring up the following dialog:
-   !["Virus import dialog"](dialog_initial.png)
+# 2. Browse OTUs {#browsing}
 
-5. Drag or select the downloaded `viruses.json.gz` file. Information about the contents of the file will be shown.
-   !["Virus import dialog with file info"](dialog_info.png)
+Once the installation of the official reference is complete, you can browse the OTUs that are included in the reference.
 
-6. Click the <i class="i-checkmark"></i> **Import** button to start the import process. A progress bar will appear.
+1. Look for the **OTUs** tab in the reference detail view.
+   !["Official Reference Detail Page"](installed_detail.png)
 
-7. Refresh the browser if the imported data doesn't appear when the progress bar finishes.
+2. Click on the OTUs tab and you should see something like the following:
+   !["The OTUs tab"](otus.png)
 
-# 2. Browsing Viruses {#browsing}
+3. You can search OTUs by their names or abbreviations.
+   !["Search OTUs"](search.png)
 
-1. Go to **Viruses** in the main navigation menu
+4. Note the _There are unbuilt changes_ message. This means you have to **_build_** a new index for the reference before you can use it in analyses.
 
-2. Since no viruses have been created, you should see something like this:
-   !["Viruses view when empty"](browse_empty.png)
-
-# 3. Creating a Virus {#creating}
-
-Creating the first virus requires only a name. You can optionally provide an abbreviation.
-
-1. Click <i class="vtfont i-new-entry"></i> to bring up a dialog for creating viruses.
-   !["Virus creation dialog](create.png)
-
-2. Enter a name and abbreviation for the new virus.
-
-3. Save the new virus.
-
-4. The virus should now appear in the virus manager.
-   !["Virus view with modified virus"](browse_tmv.png)
-
-# 4. Adding an Isolate {#adding_an_isolate}
-
-Isolates are how sequence data are organized within the virus record. To maintain continuity with virus sequence records in Genbank, isolates in Virtool are identified by a **source type** and **source name**. These two fields are concatenated to form the isolate's name.
-
-Examples of source types are: _isolate_, _genotype_, and _culture_.
-
-Examples of source names are: _A_, _Canada_, _8801-VLH_, or anything really.
-
-1. Click on the virus entry.
-   !["Virus detail empty"](tmv_empty.png)
-
-2. Take note of the red notification at the top of the page. This indicates that the virus cannot be used in analyses until the listed issues are corrected.
-
-3. Click <i class="vtfont i-new-entry"></i> near the **Isolates** heading to bring up a dialog for creating isolates.
-   !["Isolate creation dialog"](create_isolate.png)
-
-4. Notice that the **Isolate Name** field changes with the other two fields. This will be the display name for the isolate.
-
-5. Save the changes. The new isolate appear in the isolate editor.
-   !["Virus detail with one empty isolate"](empty_isolate.png)
-6. You can edit or remove the isolate by clicking <i class="vtfont i-pencil"></i> and <i class="vtfont i-remove"></i>.
-
-# 5. Adding a Sequence {#adding_a_sequence}
-
-Sequences are members of isolates. Many isolates will only have one sequence. If the virus in question is multipartite, more than one sequence would be assigned to each isolate.
-
-1. Click <i class="vtfont i-new-entry"></i> near the **Sequences** heading to bring up a dialog for creating sequences.
-   !["Sequence addition dialog"](create_sequence.png)
-
-2. Fill out the form fields. The **Host** field is optional. You can pull sequence records from GenBank by entering a valid GenBank accession in the **Accession** field and clicking <i class="vtfont i-wand"></i>.
-   !["Populate sequence addition dialog"](create_sequence_2.png)
-
-3. Save the new virus. It will appear in the isolate editor.
-   !["Populated virus detail view"](isolate.png)
-4. Click on the sequence entry to expand it and view all the data associated with the sequence record.
-
-# 6. Building the Index {#building_an_index}
+# 3. Build an Index {#building_an_index}
 
 Before the imported data can be used in analyses, an optimized index must be built. Think of this as a publication or commit step.
 
-1. The _Viruses_ view should look something the following. The yellow alert has shown up because changes have been made to the database.
-   ![](changed.png)
+1. Look for the **Indexes** tab in the reference detail view.
+   ![](indexes_tab.png)
 
-2. Click the **Rebuild the index** link to go to the indexes view.
-   !["Rebuild Index Alert"](index_alert.png)
+2. Click the **Rebuild** button to prepare an index build.
+   !["Empty Indexes List"](indexes.png)
 
-3. Click the <i class="vtfont i-hammer"></i> **Rebuild** button to prepare an index build. A dialog describing the changes to be built will appear.
-   !["Index Changes Dialog"](index_changes.png)
+3. A index creation dialog describing the changes to be built will appear.
+   !["Index Creation Dialog Top"](create_index_1.png)
+   !["Index Creation Dialog Bottom"](create_index_2.png)
 
-4. Click the <i class="vtfont i-hammer"></i> **Start** button at the bottom of the dialog to start an index build job. A new index entry will appear.
-   ![](build_running.png)
+4. Click the **Start** button at the bottom of the dialog to start an index build job. A new index entry will appear with the **Building** label:
+   ![](index_building.png)
 
-5. The index is ready to use when it has the <i class="vtfont i-checkmark"></i> **Active** label.
+5. The index will look something like this is when it is ready to use. It will have the **Active** label.
    ![](index_ready.png)
