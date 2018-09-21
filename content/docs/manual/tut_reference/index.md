@@ -106,13 +106,13 @@ Before the imported data can be used in analyses, an optimized index must be bui
    ![](changed.png)
 
 2. Click the **Rebuild the index** link to go to the indexes view.
-   ![](/docs_images/indexes_alert.png)
+   !["Rebuild Index Alert"](index_alert.png)
 
 3. Click the <i class="vtfont i-hammer"></i> **Rebuild** button to prepare an index build. A dialog describing the changes to be built will appear.
-   ![](/docs_images/index_build_changes.png)
+   !["Index Changes Dialog"](index_changes.png)
 
 4. Click the <i class="vtfont i-hammer"></i> **Start** button at the bottom of the dialog to start an index build job. A new index entry will appear.
-   ![](/docs_images/index_build_running.png)
+   ![](build_running.png)
 
 5. The index is ready to use when it has the <i class="vtfont i-checkmark"></i> **Active** label.
-   ![](/docs_images/index_build_active.png)
+   ![](index_ready.png)

@@ -2,27 +2,27 @@
 title: "Viruses"
 type: "manual"
 menu:
-    manual:
-        parent: "Reference"
-        weight: 50
+  manual:
+    parent: "Reference"
+    weight: 50
 ---
-
-{{< construction >}}
 
 # Overview
 
-The Virtool virus reference is a fully editable and tracked collection of viruses, viral  isolates, and their genome sequences. The data in the virus reference is used to identify potential viral infections in Illumina libraries derived from your samples.
+The Virtool virus reference is a fully editable and tracked collection of viruses, viral isolates, and their genome sequences. The data in the virus reference is used to identify potential viral infections in Illumina libraries derived from your samples.
 
 ## Record Structure
 
 Here is the structure of a single virus record containing one isolate and its sequences.
 
 > - **Virus** - Apple Mosaic Virus
+
     - **Isolate** - Isolate 1
         - **Sequence 1** - [NC_003464.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_003464.1)
         - **Sequence 2** - [NC_003465.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_003465.1)
         - **Sequence 3** - [NC_003480.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_003480.1)
-        
+
+
 Virtool is capable of storing large numbers of isolates for each virus. It can use this data to identify which known isolates a virus in your sample is most closely related to.
 
 ## Editing
@@ -51,10 +51,10 @@ Open the dialog for adding an isolate by clicking the <i class="vtfont i-new-ent
 
 ![Isolates Header](/docs_images/viruses_isolates_header.png)
 
-Fill the _Source Type_ and _Source Name_ fields. These fields are combined to create an isolate name. They are 
+Fill the _Source Type_ and _Source Name_ fields. These fields are combined to create an isolate name. They are
 
 ![Add Isolate Dialog](/docs_images/viruses_add_isolate.png)
 
-- both fields are optional and the isolate named will be **Unamed** if they are both   empty
+- both fields are optional and the isolate named will be **Unamed** if they are both empty
 - in a single virus, multiple isolates can have the same name
-- administrators can add new source types to the 
+- administrators can add new source types to the

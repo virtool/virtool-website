@@ -2,30 +2,30 @@
 title: "Account"
 type: "manual"
 menu:
-    manual:
-        parent: "Reference"
-        weight: 10
+  manual:
+    parent: "Reference"
+    weight: 10
 ---
 
-You can view your account details by navigating to *Username* > Account in the main navigation bar.
+You can view your account details by navigating to _Username_ > Account in the main navigation bar.
 
-![](/docs_images/account_nav.png)
+![](nav.png)
 
 You will land on this page, where you can make changes to your account. Here, you can see your username and user groups to which you belong.
 
-![](/docs_images/account_general.png)
+![](general.png)
 
 # Change Password {#password}
 
-You can change your password under the *General* tab. By default, new passwords must be a minimum of 8 characters. This setting could be changed by your administrator.
+You can change your password under the _General_ tab. By default, new passwords must be a minimum of 8 characters. This setting could be changed by your administrator.
 
-![](/docs_images/account_password.png)
+![](password.png)
 
 # Settings {#settings}
 
-Some settings are account-specific. These can be modified under the *Settings* tab.
+Some settings are account-specific. These can be modified under the _Settings_ tab.
 
-![](/docs_images/account_settings.png)
+![](settings.png)
 
 ## Show Unique ID Fields
 
@@ -39,20 +39,20 @@ Virtool can be configured to allow you to quickly start analyses from the sample
 
 By default, triggering quick analysis results in an algorithm selection dialog being shown before the job is started.
 
-Setting *Skip Dialog* prevents the dialog from appearing and starts every quick analysis job with the selected algorithm.
+Setting _Skip Dialog_ prevents the dialog from appearing and starts every quick analysis job with the selected algorithm.
 
 # API Keys {#api_keys}
 
-Virtool exposes a complete [web API](/web-api.html). Access to the API is managed using [API keys](/web-api/authorization.html). 
+Virtool exposes a complete [web API](/web-api.html). Access to the API is managed using [API keys](/web-api/authorization.html).
 
-API keys are account-specific and are generated under the *API* tab in the *Account* view.
+API keys are account-specific and are generated under the _API_ tab in the _Account_ view.
 
-![](/docs_images/account_api.png)
+!["API Key List](api.png)
 
 ## Creating an API Key
 
 1. Click **<i class="fa fa-key"></i> Create** to show the API key creation form.
-   ![](/docs_images/account_api_create.png)
+   !["Create API Key"](create_api_key.png)
 
 2. Name the API key. Names do not have to be unique.
 
@@ -61,8 +61,8 @@ API keys are account-specific and are generated under the *API* tab in the *Acco
 4. Click <i class="vtfont i-floppy"></i> to create the key.
 
 5. The key will be shown only once. Make sure you keep it somewhere safe.
-   ![](/docs_images/account_api_key.png)
-   
+   ![](created_api_key.png)
+
 6. Use the key to access the API with the help of the [API documentation](/web-api/authorization.html).
 
 {{% warning %}}

@@ -2,12 +2,10 @@
 title: "Administration"
 type: "manual"
 menu:
-    manual:
-        parent: "Reference"
-        weight: 100
+  manual:
+    parent: "Reference"
+    weight: 100
 ---
-
-{{< construction >}}
 
 # General Settings
 
@@ -21,7 +19,7 @@ Source type restrictions do not affect viruses that are imported into the databa
 
 Source types can be added by entering a new source type in the text box and clicking <i class="fa fa-plus-square"></i>. Once source types are added to the list, the can be accessed in isolate editing forms.
 
-!["Source types add"](/docs_images/admin_source_types_add.gif)
+!["Add Source Types"](add_source_types.gif)
 
 ### Removing Source Types
 
@@ -31,7 +29,7 @@ Source types can be removed by clicking <i class="fa fa-trash"></i>. Source type
 
 The source types feature can be disabled to allow users to enter whatever text they want as a source type. This can be done by clicking off the checkbox in the header of the _Source Types_ setting section.
 
-!["Source types disabled"](/docs_images/admin_source_types_disabled.png)
+!["Source Types Feature Disabled"](source_types_disabled.png)
 
 ## Internal Control
 
@@ -41,19 +39,19 @@ If you are using an internal control during your lab procedures, the control vir
 
 The internal control can be selected from the virus database by selecting the virus name in the dropdown text box.
 
-!["Internal control"](/docs_images/admin_internal_control.gif)
+!["Internal Control"](internal_control.gif)
 
 ### Disabling Internal Control
 
 This can be done by clicking off the checkbox in the header of the _Internal Control_ setting section. This has no effect for now.
 
-!["Internal control disabled"](/docs_images/admin_internal_control_disabled.png)
+!["Internal Control Disabled"](internal_control_disabled.png)
 
 ## Unique Sample Names
 
 By default sample names must be unique to the sample manager. This prevents confusion with duplicately named samples. It is possible to disable this feature by clicking <i class="far fa-check-square"></i> **Enable**.
 
-!["Disabled unique sample names"](/docs_images/admin_unique_sample_names.png)
+!["Unique Sample Names Disabled"](unique_sample_names.png)
 
 ## Default Sample Rights
 
@@ -63,7 +61,7 @@ These settings determine how rights are assigned to newly created samples. Sampl
 
 This determines how an owner group is applied to the sample when it is created.
 
-!["Sample group options"](/docs_images/admin_sample_group.png)
+!["Sample Group Options"](sample_group.png)
 
 |                 |                                                                                 |
 | --------------- | ------------------------------------------------------------------------------- |
@@ -75,13 +73,11 @@ This determines how an owner group is applied to the sample when it is created.
 
 This settings determines how members of the owner group can interact with the sample. If the owner group is _None_, this setting has no effect.
 
-!["Group rights"](/docs_images/admin_group_rights.png)
-
 ### Group Rights
 
 This setting determines how members of the owner group can interact with the sample. If the owner group is _None_, this setting has no effect. Rights can be changes by sample owners and administrators at any time.
 
-!["Group rights"](/docs_images/admin_group_rights.png)
+!["Group Rights"](group_rights.png)
 
 |                |                                                                                                                     |
 | -------------- | ------------------------------------------------------------------------------------------------------------------- |
@@ -92,7 +88,6 @@ This setting determines how members of the owner group can interact with the sam
 ### All Users' Rights
 
 This settings determines how any Virtool user can interact with the sample. Rights for all users behave exactly as they do in **Group Rights**. Rights can be changes by sample owners and administrators at any time.
-
 
 # Server Settings
 
@@ -106,14 +101,13 @@ The address for the HTTP server can be changed by modifying the host and port nu
 
 Virtool must be restarted for these settings to take effect. Make sure the user running the Virtool server has the permissions required to bind the selected port. If you want to listen on port 80, we suggest setting up a [reverse proxy server](/docs/manual/gs_reverse_proxy) rather than running Virtool as a superuser.
 
-!["HTTP address"](/docs_images/admin_http.png)
+!["HTTP address"](http.png)
 
 ### Enabling the API
 
 To allow other applications to make use of Virtool's HTTP API, it must first be enabled. This can be done by checking <i class="far fa-square"></i> **Enable API**.
 
-!["Enable API"](/docs_images/admin_enable_api.png)
-
+!["Enable API"](enable_api.png)
 
 ## Sentry
 
@@ -121,8 +115,7 @@ Sentry is a service Virtool developers use for tracking errors in instances of V
 
 It is possible to opt out of sending error reports by unchecking the <i class="far fa-check-square"></i> **Enable** button. This change requires a reload to take effect.
 
-!["Sentry"](/docs_images/admin_sentry.png)
-
+!["Sentry"](sentry.png)
 
 # Data Settings
 
@@ -141,7 +134,7 @@ Allows administrators to change how Virtool connects to a MongoDB database. Ther
 
 These changes can be made here and require a server reload to take effect.
 
-!["MongoDB Settings"](/docs_images/admin_mongo.png)
+!["MongoDB Settings"](mongo.png)
 
 ## Paths
 
@@ -155,7 +148,7 @@ The is the location Virtool where saves data for samples, analyses, virus indexe
 
 These changes can be made here and require as server reload to take effect.
 
-!["Virtool Data Path"](/docs_images/admin_paths.png)
+!["Virtool Data Path"](paths.png)
 
 ### Watch
 
@@ -175,7 +168,7 @@ These setting define what resources the Virtool server instance is allowed to ac
 
 The values for these settings cannot exceed the available resources. They cannot be set lower than any corresponding task-specific limits. Task-specific limits have to be reduced first before their corresponing resource limits.
 
-!["Virtool Resources"](/docs_images/admin_resources.png)
+!["Virtool Instance Resources"](resources.png)
 
 ## Task-Specific Limits
 
@@ -185,6 +178,6 @@ Jobs that exceed _CPU_ and _Memory_ task-specific limits will in most cases fail
 
 The number of instances of each job type can be arbitrarily. Queued jobs in excess of the instance limit will be forced to wait until another instance completes. The setting prevents slowdowns due to heavy disk usage.
 
-!["Virtool Resources"](/docs_images/admin_task_specific.png)
+!["Task-Specific Limits"](task_specific_limits.png)
 
 Certain fields are locked due to inherent resource requirements by those job types or limited benefit to increased resource allocation.
