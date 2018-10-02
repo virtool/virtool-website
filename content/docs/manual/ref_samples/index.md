@@ -6,8 +6,6 @@ menu:
     parent: "Reference"
 ---
 
-{{< construction >}}
-
 # Overview
 
 Selecting _Samples_ on the top menu brings up the main sample managment view. Here, samples can be created, viewed, edited, analyzed, and removed.
@@ -94,3 +92,47 @@ Samples have their initial access rights configured when they are first created.
 
 1. Go to the _Settings_ > _General_ view as an administrator.
    ![](/docs_images/settings_general.png)
+
+# Settings
+
+## Unique Sample Names
+
+By default sample names must be unique to the sample manager. This prevents confusion with duplicately named samples. It is possible to disable this feature by clicking <i class="far fa-check-square"></i> **Enable**.
+
+!["Unique Sample Names Disabled"](unique_sample_names.png)
+
+## Default Sample Rights
+
+These settings determine how rights are assigned to newly created samples. Sample rights in Virtool are reminiscent of UNIX permissions.
+
+### Sample Group
+
+This determines how an owner group is applied to the sample when it is created.
+
+!["Sample Group Options"](sample_group.png)
+
+|                 |                                                                                 |
+| --------------- | ------------------------------------------------------------------------------- |
+| _None_          | No group owner is assigned. Group rights do not apply                           |
+| _Force Choice_  | The sample creator is forced to choose the owner group from their member groups |
+| _Primary Group_ | The sample is automatically assigned the creators primary group                 |
+
+### Group Rights
+
+This settings determines how members of the owner group can interact with the sample. If the owner group is _None_, this setting has no effect.
+
+### Group Rights
+
+This setting determines how members of the owner group can interact with the sample. If the owner group is _None_, this setting has no effect. Rights can be changes by sample owners and administrators at any time.
+
+!["Group Rights"](group_rights.png)
+
+|                |                                                                                                                     |
+| -------------- | ------------------------------------------------------------------------------------------------------------------- |
+| _None_         | Sample is not returned in searches and is not accessible by URL.                                                    |
+| _Read_         | Sample is returned in searches and is viewable. All editing interfaces are disabled and analyses cannot be started. |
+| _Read & Write_ | In addition to _Read_ rights, editing interfaces are enabled and analyses can be run.                               |
+
+### All Users' Rights
+
+This settings determines how any Virtool user can interact with the sample. Rights for all users behave exactly as they do in **Group Rights**. Rights can be changes by sample owners and administrators at any time.
