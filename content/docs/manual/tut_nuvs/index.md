@@ -9,7 +9,7 @@ menu:
 
 This tutorial assumes you have already [created a sample](/docs/manual/tut_sample/), [created and built a reference](/docs/manual/tut_reference/), [created a subtraction](/docs/manual/tut_subtraction/), and [installed HMM profiles and annotations](/docs/manual/tut_hmms/). You will use these data sources to run a bioinformatic pipeline for discovering potential novel virus sequences in a sample.
 
-# Starting an Analysis Job
+# 1. Starting an Analysis Job
 
 1. Navigate to the _Samples_ view.
    ![Samples List View](samples.png)
@@ -32,7 +32,7 @@ This tutorial assumes you have already [created a sample](/docs/manual/tut_sampl
 7. In the _Samples_ view, you will notice the sample entry is tagged to show that a NuVs analysis has been completed.
    !["NuVs Sample Tag"](tag.png)
 
-# Viewing NuVs Results
+# 2. Viewing NuVs Results
 
 1. Carrying on from the previous section, click on your recently created analysis. The list shows sequence fragments (contigs) that may be part of a novel virus.
    ![Filtered](filtered.png)
