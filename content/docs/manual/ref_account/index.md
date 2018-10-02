@@ -4,7 +4,6 @@ type: "manual"
 menu:
   manual:
     parent: "Reference"
-    weight: 10
 ---
 
 You can view your account details by navigating to _Username_ > Account in the main navigation bar.
