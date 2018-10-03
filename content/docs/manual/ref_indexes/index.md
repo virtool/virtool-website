@@ -3,7 +3,7 @@ title: "Indexes"
 type: "manual"
 menu:
   manual:
-    parent: "Reference"
+    parent: "User Guide"
 ---
 
 {{< construction >}}

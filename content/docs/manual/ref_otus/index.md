@@ -3,7 +3,7 @@ title: "OTUs"
 type: "manual"
 menu:
   manual:
-    parent: "Reference"
+    parent: "User Guide"
 ---
 
 # Overview

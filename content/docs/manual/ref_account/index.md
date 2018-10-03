@@ -3,7 +3,7 @@ title: "Account"
 type: "manual"
 menu:
   manual:
-    parent: "Reference"
+    parent: "User Guide"
 ---
 
 You can view your account details by navigating to _Username_ > Account in the main navigation bar.

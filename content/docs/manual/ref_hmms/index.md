@@ -3,7 +3,7 @@ title: "HMMs"
 type: "manual"
 menu:
   manual:
-    parent: "Reference"
+    parent: "User Guide"
 ---
 
 # Introduction {#introduction}

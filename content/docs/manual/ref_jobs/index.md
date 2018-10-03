@@ -2,8 +2,8 @@
 title: "Jobs"
 type: "manual"
 menu:
-    manual:
-        parent: "Reference"
+  manual:
+    parent: "User Guide"
 ---
 
 {{< construction >}}

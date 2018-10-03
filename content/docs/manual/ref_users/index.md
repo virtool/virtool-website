@@ -3,7 +3,7 @@ title: "Users"
 type: "manual"
 menu:
   manual:
-    parent: "Reference"
+    parent: "User Guide"
 ---
 
 | create_ref | boolean | can create references |
