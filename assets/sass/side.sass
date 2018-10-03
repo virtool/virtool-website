@@ -1,0 +1,27 @@
+#side
+    min-width: 10rem
+
+li.side-sub
+    border-left: 0.1rem solid $grey-light
+    padding-left: 0.8rem
+
+    & > a
+        font-size: 0.9rem
+        font-weight: bold
+        margin-bottom: 0.3rem
+        text-transform: uppercase
+
+    & > ul
+        display: none
+        font-size: 0.85rem
+        padding-left: 0.6rem
+        padding-bottom: 0.3rem           
+
+        & > li
+            padding-bottom: 0.2rem
+
+    &.is-active
+        border-left-color: $primary
+
+        ul
+            display: block

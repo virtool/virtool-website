@@ -1,66 +1,47 @@
+@charset "utf-8"
+
+// Google Fonts
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans|IBM+Plex+Mono');
 
-$primary: #3c8786
-$link: #387fa3
-$success: #60af98
-$info: #387fa3
-$warning: #dfb561
-$danger: #d44b40
+// Customization Variables
+@import "sass/variables"
 
-$family-sans-serif: "IBM Plex Sans", BlinkMacSystemFont, -apple-system, "Segoe UI", "Ubuntu", "Cantarell", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-$family-monospace: "IBM Plex Mono", monospace;
+// Bulma Source
+@import "bulma/sass/utilities/_all"
+@import "bulma/sass/base/_all"
+@import "bulma/sass/elements/box"
+@import "bulma/sass/elements/button"
+@import "bulma/sass/elements/container"
+@import "bulma/sass/elements/content"
+@import "bulma/sass/elements/form"
+@import "bulma/sass/elements/icon"
+@import "bulma/sass/elements/image"
+@import "bulma/sass/elements/notification"
+@import "bulma/sass/elements/other"
+@import "bulma/sass/elements/table"
+@import "bulma/sass/elements/tag"
+@import "bulma/sass/elements/title"
+@import "bulma/sass/components/breadcrumb"
+@import "bulma/sass/components/card"
+@import "bulma/sass/components/level"
+@import "bulma/sass/components/media"
+@import "bulma/sass/components/message"
+@import "bulma/sass/components/navbar"
+@import "bulma/sass/grid/_all"
+@import "bulma/sass/layout/_all"
 
-@import "bulma/bulma.sass"
+// Custom SASS
+@import "sass/search"
+@import "sass/side"
+@import "sass/toc"
 
-.image
-    padding: 5px
+
+.image    
     border: 0.1rem solid #ddd
+    padding: 5px
 
 img
     @extend .image
-
-#manualSearch
-    position: relative
-
-.hit-title
-    color: #3273dc
-
-.dropdown-custom
-    display: none
-    position: absolute
-    top: 2.85em
-    vertical-align: top
-    width: 100%
-
-    &.is-active 
-        display: block
-        width: 100%
-        z-index: 10
-
-.dropdown-custom
-    display: none
-    position: absolute
-    top: 2.85em
-    vertical-align: top
-    width: 100%
-
-.dropdown-custom-content
-    display: block
-    background-color: white
-    border-radius: 3px
-    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1)
-    padding-bottom: 0.5rem
-    padding-top: 0.5rem
-    width: inherit
-    
-.dropdown-item-custom
-    color: #4a4a4a
-    display: flex
-    font-size: 0.875rem
-    line-height: 1.5
-    padding: 0.375rem 1rem
-    position: relative
-    justify-content: space-between
 
 .logo-strip
     margin-top: 30px
@@ -98,15 +79,18 @@ img
 .level-item.contains-nav
     justify-content: left
 
-.search-box
-    border-width: 0.1rem
-    margin-bottom: 2rem 
-
 .is-monospace
     font-family: monospace
 
-.side-menu
+.side-menu    
     padding-right: 1.6rem
+
+    p.menu-label
+        margin-bottom: 0.4rem                
+        border-left: 1px solid grey
+
+    .menu-list
+        font-size: 0.8rem
 
 div.docs
 
@@ -210,28 +194,6 @@ div.docs
         div.highlight
             margin-bottom: 2rem
 
-// Endpoint
-.endpoint
-    align-items: center
-    border: 1px solid $primary
-    border-radius: $radius-small
-    display: flex
-    font-weight: bold
 
-    .method
-        background-color: $primary
-        color: $white
-        flex: 0 0 auto     
-        padding: 0.8rem
 
-    .path
-        flex: 1 0 auto
-        font-color: $grey
-        padding: 0.8rem
-
-// Table of Contents
-nav#TableOfContents    
-    ul
-        li
-            ul
-                display: none            
+        
