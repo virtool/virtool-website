@@ -15,13 +15,6 @@
                     </nav>
                 </div>
             </div>
-
-            <div class="level-right">
-                <div class="level-item tags has-addons">
-                    <span class="tag is-dark">Updated</span>
-                    <span class="tag is-info">{{ .GitInfo.AuthorDate.Format "January 2, 2006" }}</span>
-                </div>
-            </div>
         </div>
 
         <div class="columns">
@@ -30,14 +23,38 @@
             </div>
 
             <div class="column is-12-touch docs docs-manual">
-                <h1 class="title is-4 docs-header">
-                    {{ .Name }}
-                </h1>
+                <div class="level docs-header">
+                    <div class="level-left">
+                        <div class="level-item">
+                            <h1 class="title is-4 ">{{ .Name }}</h1>
+                        </div>
+                    </div>
+
+                    <div class="level-right">
+                        <div class="level-item tags has-addons">
+                            <span class="tag is-dark">Updated</span>
+                            <span class="tag is-info">{{ .GitInfo.AuthorDate.Format "January 2, 2006" }}</span>
+                        </div>
+                    </div>
+                </div>
                 <p>
                     {{ .Page.Description }}
                 </p>
-                {{ .TableOfContents }}
+
+                <div class="is-hidden-desktop">
+                    {{ .TableOfContents }}
+                </div>
+
                 {{ .Content }}
+            </div>
+
+            <div class="column is-narrow is-hidden-touch">
+                <div class="contents">
+                    <h5>PAGE CONTENTS</h5>
+                    <div>
+                        {{ .TableOfContents }}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
