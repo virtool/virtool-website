@@ -3,6 +3,7 @@ h1:target:before
     display: block
     margin-top: 50px
     height: 50px
+    
 div.docs
 
     .docs-header            
@@ -13,7 +14,7 @@ div.docs
         overflow-x: auto
 
     table        
-        @extend .table, .is-bordered, .is-striped, .is-fullwidth
+        @extend .table, .is-striped, .is-fullwidth, .is-bordered
 
     h1
         @extend .title
@@ -48,6 +49,9 @@ div.docs
 
         h2
             margin: 1.8rem 0 0.8rem 0
+
+        h4
+            font-weight: bold
 
         ul
             padding-left: 1rem
