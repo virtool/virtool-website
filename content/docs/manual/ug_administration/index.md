@@ -6,6 +6,8 @@ menu:
     parent: "User Guide"
 ---
 
+The administration views can be accessed by clicking on the user dropdown at the far right of the main navigation bar.
+
 # Server Settings {#server}
 
 Manage technical settings for the Virtool server.

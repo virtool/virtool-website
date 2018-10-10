@@ -9,7 +9,7 @@ menu:
 
 Subtractions are whole genome references used for eliminating reads from the analysis that are likely to have originated from the host genome or non-pathogenic organisms associated with the host such as insects or fungi.
 
-# 1. Find source FASTA {#finding}
+# Find source FASTA {#finding}
 
 We will use the _Arabidopsis thaliana_ genome for this example.
 
@@ -18,7 +18,7 @@ We will use the _Arabidopsis thaliana_ genome for this example.
 
 2. Decompress the downloaded file. Virtool does not currently accept GZIP-compressed subtraction FASTA data.
 
-# 2. Upload FASTA {#uploading}
+# Upload FASTA {#uploading}
 
 1. Go to the _Subtraction_ view via the main navigation bar. You should
    !["Main Subtraction View"](empty.png)
@@ -29,7 +29,7 @@ We will use the _Arabidopsis thaliana_ genome for this example.
 3. Upload the FASTA file obtained during step **1.2**.
    !["Upload Subtraction File"](upload.gif)
 
-# 3. Create Subtraction {#creating}
+# Create Subtraction {#creating}
 
 1. Go to the _Subtraction_ view via the main navigation bar.
    ![Subtraction Listing](subtraction.png)

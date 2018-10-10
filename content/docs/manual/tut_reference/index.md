@@ -18,7 +18,7 @@ Virtool is built for detecting viruses and is capable of detecting other pathoge
 
 At least one non-empty reference must be created in order to start analyzing samples. One quick way to accomplish this is to install the [official plant virus reference](https://github.com/virtool/ref-plant-viruses).
 
-# 1. Install the Official Reference {#installing}
+# Install the Official Reference {#installing}
 
 Instead of starting a virus database from scratch, you can use our [official plant virus reference](https://www.virtool.ca/downloads). Doing this will setup up **_remote_** connection to the reference on GitHub.
 
@@ -34,7 +34,7 @@ Instead of starting a virus database from scratch, you can use our [official pla
 4. Clicking on the reference card will bring you to a detail page for the reference.
    !["Installed Official Reference Detail Page"](installed_detail.png)
 
-# 2. Browse OTUs {#browsing}
+# Browse OTUs {#browsing}
 
 Once the installation of the official reference is complete, you can browse the OTUs that are included in the reference.
 
@@ -49,7 +49,7 @@ Once the installation of the official reference is complete, you can browse the 
 
 4. Note the _There are unbuilt changes_ message. This means you have to **_build_** a new index for the reference before you can use it in analyses.
 
-# 3. Build an Index {#building_an_index}
+# Build an Index {#building_an_index}
 
 Before the imported data can be used in analyses, an optimized index must be built. Think of this as a publication or commit step.
 

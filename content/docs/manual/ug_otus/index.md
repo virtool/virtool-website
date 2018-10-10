@@ -8,11 +8,11 @@ menu:
 
 # Overview
 
-The Virtool virus reference is a fully editable and tracked collection of viruses, viral isolates, and their genome sequences. The data in the virus reference is used to identify potential viral infections in Illumina libraries derived from your samples.
+The Virtool OTU reference is a fully editable and tracked collection of viruses, viral isolates, and their genome sequences. The data in the virus reference is used to identify potential viral infections in Illumina libraries derived from your samples.
 
 ## Record Structure
 
-Here is the structure of a single virus record containing one isolate and its sequences.
+Here is the structure of a single OTU record containing one isolate and its sequences.
 
 > - **Virus** - Apple Mosaic Virus
 

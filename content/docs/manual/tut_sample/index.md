@@ -7,7 +7,7 @@ menu:
     weight: 40
 ---
 
-# 1. Uploading a FASTQ File
+# Uploading a FASTQ File
 
 1. Go the _Samples_ view via the main navigation bar.
    ![Empty Sample Manager](empty.png)
@@ -21,7 +21,7 @@ menu:
 4. In the _Samples_ view, click <i class="fa fa-plus-square"></i> to open the sample creator. The file you uploaded should now be available in file list.
    ![Sample Creator](create.png)
 
-# 2. Creating a Sample
+# Creating a Sample
 
 1. Fill out the fields in the sample creator. Only the sample name, subtraction host, and one or two read files are required.
    ![Sample Creator Filled](filled.png)
