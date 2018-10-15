@@ -2,9 +2,9 @@
 title: "Installation"
 type: "manual"
 menu:
-    manual:
-        parent: "Getting Started"
-        weight: 10
+  manual:
+    parent: "Getting Started"
+    weight: 10
 ---
 
 # System Requirements {#system_requirements}
@@ -47,14 +47,14 @@ We suggest running Virtool as a dedicated user.
 
 # MongoDB {#mongodb}
 
-Virtool uses MongoDB v3.4.0+ as a database service. You will have to get MongoDB running before starting Virtool. We highly recommend installing and updating MongoDB through your Linux package manager.
+Virtool uses MongoDB v3.6.0+ as a database service. You will have to get MongoDB running before starting Virtool. We highly recommend installing and updating MongoDB through your Linux package manager.
 
 The MongoDB documentation provides step-by-step instructions for installing MongoDB on common Linux distributions:
 
-* [Install on Ubuntu](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/>)
-* [Install on Debian](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-debian/>)
-* [Install on SUSE](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-suse/>)
-* [Install on Red Hat](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat/>)
+- [Install on Ubuntu](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/>)
+- [Install on Debian](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-debian/>)
+- [Install on SUSE](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-suse/>)
+- [Install on Red Hat](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat/>)
 
 Once you have installed MongoDB, ensure it is running by issuing the following command:
 
@@ -80,10 +80,10 @@ You will receive output similar to the following if MongoDB is running:
 
 Virtool relies on a number of common bioinformatics programs. These should be available in your `PATH` so Virtool can find them. You will encounter errors if these programs are not available.
 
-| Name | Version | Purpose |
-| :--- | :--- | :--- |
-| [Skewer](https://github.com/relipmoc/skewer) | 0.2.2 | Read trimming and quality control |
+| Name                                                               | Version | Purpose                                          |
+| :----------------------------------------------------------------- | :------ | :----------------------------------------------- |
+| [Skewer](https://github.com/relipmoc/skewer)                       | 0.2.2   | Read trimming and quality control                |
 | [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc) | v0.11.5 | Calculating quality metrics for sample libraries |
-| [Bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml) | 2.3.2 | High-throughput read alignment |
-| [SPAdes](http://bioinf.spbau.ru/spades) | v3.8.1 | De novo assembly |
-| [HMMER](http://hmmer.org/) | 3.1b2 | Motif detection |
+| [Bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)   | 2.3.2   | High-throughput read alignment                   |
+| [SPAdes](http://bioinf.spbau.ru/spades)                            | v3.8.1  | De novo assembly                                 |
+| [HMMER](http://hmmer.org/)                                         | 3.1b2   | Motif detection                                  |
