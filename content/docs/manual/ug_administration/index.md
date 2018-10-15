@@ -8,6 +8,8 @@ menu:
 
 The administration views can be accessed by clicking on the user dropdown at the far right of the main navigation bar.
 
+User management (accessed under the _Users_ tab) is not covered in this page. See [Users](/docs/manual/ug_users).
+
 # Server Settings {#server}
 
 Manage technical settings for the Virtool server.
