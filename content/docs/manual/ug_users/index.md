@@ -6,6 +6,10 @@ menu:
     parent: "User Guide"
 ---
 
+Virtool allows the creation of user accounts.
+
+User accounts are used to control access to Virtool. They allow fine control of what actions users are allowed to perform and what resources they are allowed to access.
+
 # Concepts {#users}
 
 ## Ownership
@@ -46,7 +50,7 @@ Administrators automatically pass all permission and right checks. They can also
 
 # Create a User {#creating}
 
-# Change a Users' Passowrd {#modifying}
+# Change a User's Password {#modifying}
 
 Administrators can forcefully change a users's password.
 
@@ -58,5 +62,27 @@ This is useful when a user forgets their password or an old user account must be
 2. Enter the new password.
 
 # Change a User's Group Membership
+
+Users' group membership can be changed easily.
+
+This may affect what rights the user has one certain samples and references. It can also affect their application permissions.
+
+1. Locate the _Groups_ panel in the _Users_ tab.
+   ![Groups Panel](groups.png)
+
+2. Click one of the group items to toggle membership in it.
+   ![Toggle Group Membership](toggle_group.png)
+
+3. Notice that the user's permissions are changed when group membership is toggled.
+   <video autoplay muted loop><source src="toggle_group.mp4" type="video/mp4" /></video>
+
+# Change a User's Primary Group
+
+Samples a user creates can automatically be assigned to the creating user's primary user group.
+
+How samples are assigned their initial user group is [configurable](/docs/manual/ug_samples/#settings). Depending on this application-level setting, users' primary group settings may be completely unused.
+
+1. Location the _Primary Group_ panel under the _Users_ tab.
+   ![Primary Group Panel](
 
 # Creating Groups {#create_group}

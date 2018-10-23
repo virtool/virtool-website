@@ -93,7 +93,7 @@ Samples have their initial access rights configured when they are first created.
 1. Go to the _Settings_ > _General_ view as an administrator.
    ![](/docs_images/settings_general.png)
 
-# Settings
+# Settings {#settings}
 
 ## Unique Sample Names
 
