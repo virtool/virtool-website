@@ -1,4 +1,4 @@
-baseURL: "http://beta-vt-docs.surge.sh"
+baseURL: "https://www.virtool.ca"
 languageCode: "en-us"
 title: "Virtool"
 theme: "virtool"
