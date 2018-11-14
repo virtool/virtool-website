@@ -94,6 +94,18 @@
         },
         "releases": [
             {
+                "name": "v3.0.0-beta.8",
+                "body": "#### Fixed\r\n- fixed client crash when viewing reference as non-admin (#1173)\r\n- fixed client crash in users admin tab (#1174)\r\n- fixed exception when restarting server after software update\r\n- fixed FastQC parsing error (#1176)\r\n- fixed poor sorting of list items\r\n- fix sample selection and multiple analysis UI (#1172)\r\n- fix various client crashes (#1170, #1171)\r\n",
+                "prerelease": true,
+                "published_at": "2018-11-14T22:39:48Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.0.0-beta.8",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 45621654,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.0.0-beta.8/virtool.tar.gz",
+                "asset_error": false
+            },
+            {
                 "name": "v3.0.0-beta.7",
                 "body": "#### Changed\r\n- improve functionality of auto-scrolling lists\r\n- remove some unwanted server console messages\r\n\r\n#### Fixed\r\n- fix bug where sample rights can't be changed in certain auth scenarios (#1154)\r\n- fix references user and group UI (#1156)\r\n- fix search bugs in auto-scrolling lists\r\n- fix slow analysis requests for `PathoscopeBowtie` (#894)\r\n",
                 "prerelease": true,
