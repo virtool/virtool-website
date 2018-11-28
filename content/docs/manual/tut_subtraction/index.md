@@ -27,7 +27,9 @@ We will use the _Arabidopsis thaliana_ genome for this example.
    !["Subtraction File Manager](upload_manager.png)
 
 3. Upload the FASTA file obtained during step **1.2**.
-   !["Upload Subtraction File"](upload.gif)
+   <video autoplay muted loop>
+     <source src="upload.mp4" type="video/mp4" />
+   </video>
 
 # Create Subtraction {#creating}
 
