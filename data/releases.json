@@ -94,6 +94,18 @@
         },
         "releases": [
             {
+                "name": "v3.0.0-beta.9",
+                "body": "#### Changed\r\n- improved appearance of some fonts\r\n\r\n#### Fixed\r\n- fix client crash when editing or viewing references (#1191)\r\n- fix client crash when viewing changes for a specific index (#1192)\r\n- fix exporting remote references\r\n- fix files not being removed when user removes analysis (#1188)\r\n- fix lingering **In Progress** analyses and incorrect sample algorithm tags (#1195)\r\n- fix problems with analysis clean-up after error or cancellation (#1195, #1188)\r\n- fix ugly rendering when no references installed (#1185)\r\n- prevent error when reference is loaded after member user has been removed from the system (#1199)",
+                "prerelease": true,
+                "published_at": "2018-11-28T20:02:43Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.0.0-beta.9",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 45852443,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.0.0-beta.9/virtool.tar.gz",
+                "asset_error": false
+            },
+            {
                 "name": "v3.0.0-beta.8",
                 "body": "#### Fixed\r\n- fixed client crash when viewing reference as non-admin (#1173)\r\n- fixed client crash in users admin tab (#1174)\r\n- fixed exception when restarting server after software update\r\n- fixed FastQC parsing error (#1176)\r\n- fixed poor sorting of list items\r\n- fix sample selection and multiple analysis UI (#1172)\r\n- fix various client crashes (#1170, #1171)\r\n",
                 "prerelease": true,
