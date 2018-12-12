@@ -2,6 +2,6 @@
 title: "Downloads"
 type: "downloads"
 menu:
-    main:
-        weight: 0
+  main:
+    weight: 1
 ---

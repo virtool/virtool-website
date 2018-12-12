@@ -5,16 +5,15 @@ type: "api"
 menu:
     api:
         parent: Endpoints
-        weight: 120
 ---
 
-{{% endpoint name="List" permission="manage_users" %}}
+# List
+
+{{< permission manage_users >}}
 
 Get a list of complete representations of all users.
 
-```
-GET /api/users
-```
+{{< endpoint "GET" "/api/users" >}}
 
 ## Response
 
@@ -31,15 +30,11 @@ Status: 200 OK
 		"permissions": {
 			"cancel_job": true,
 			"create_sample": true,
-			"manage_users": true,
 			"modify_hmm": true,
-			"modify_settings": true,
 			"modify_subtraction": true,
-			"modify_virus": true,
 			"rebuild_index": true,
 			"remove_file": true,
 			"remove_job": true,
-			"remove_virus": true,
 			"upload_file": true
 		},
 		"primary_group": "",
@@ -79,16 +74,14 @@ Status: 200 OK
 | :----- | :------------ | :------------------------------------------------- |
 | `403`  | Not permitted | client does not have the 'manage_users` permission |
 
-{{% /endpoint %}}
 
+# Get
 
-{{% endpoint name="Get" permission="manage_users" %}}
+{{< administrator >}}
 
 Get the complete representation of a single user.
 
-```
-GET /api/users/:user_id
-```
+{{< endpoint "GET" "/api/users/:id" >}}
 
 ## Example
 
@@ -129,21 +122,19 @@ Status: 200 OK
 
 ## Errors
 
-| Status | Message       | Reason                                             |
-| :----- | :------------ | :------------------------------------------------- |
-| `403`  | Not permitted | client does not have the 'manage_users` permission |
-| `404`  | Not found     | user does not exist                                |
-
-{{% /endpoint %}}
+| Status | Message       | Reason                         |
+| :----- | :------------ | :----------------------------- |
+| `403`  | Not permitted | client is not an administrator |
+| `404`  | Not found     | user does not exist            |
 
 
-{{% endpoint name="Create" permission="manage_users" %}}
+# Create
+
+{{< administrator >}}
 
 Create a new user.
 
-```
-POST /api/users
-```
+{{< endpoint "POST" "/api/users" >}}
 
 ## Input
 
@@ -199,30 +190,33 @@ Status: 201 Created
 
 ## Errors
 
-| Status | Message             | Reason                                             |
-| :----- | :------------------ | :------------------------------------------------- |
-| `403`  | Not permitted       | client does not have the `manage_users` permission |
-| `409`  | User already exists | `user_id` is already in use by an existing user    |
-| `422`  | Invalid input       | JSON request body is invalid                       |
+| Status | Message                                   | Reason                                               |
+| :----- | :---------------------------------------- | :--------------------------------------------------- |
+| `400`  | Password does not meet length requirement | password must meet `minimum_password_length` setting |
+| `400`  | User already exists                       | `user_id` is already in use                          |
+| `403`  | Not permitted                             | client is not an administrator                       |
+| `422`  | Invalid input                             | JSON request body is invalid                         |
 
-{{% /endpoint %}}
 
+# Edit
 
-{{% endpoint name="Edit" permission="manage_users" %}}
+{{< administrator >}}
 
 Change the password, primary group, or force reset setting of an existing user.
 
-```
-PATCH /api/users/:user_id
-```
+Adminstrators cannot modify their own administrative status.
+
+{{< endpoint "PATCH" "/api/users/:id" >}}
 
 ## Input
 
-| Name          | Type     | Description                                       |
-| :------------ | :------- | :------------------------------------------------ |
-| force_reset   | boolean  | force a password reset next time the user logs in |
-| password      | string   | the new password                                  |
-| primary_group | string   | the users primary group used for sample rights    |          
+| Name          | Type    | Description                                       |
+| :------------ | :------ | :------------------------------------------------ |
+| administrator | boolean | set the user's adminstrator status                |
+| force_reset   | boolean | force a password reset next time the user logs in |
+| password      | string  | the new password                                  |
+| primary_group | string  | the users primary group used for sample rights    |
+| groups        | array   | the ids of the groups the user belongs to         |      
 
 ## Example
 
@@ -270,131 +264,25 @@ Status: 200 OK
 
 ## Errors
 
-| Status | Message             | Reason                                             |
-| :----- | :------------------ | :------------------------------------------------- |
-| `403`  | Not permitted       | client does not have the `manage_users` permission |
-| `404`  | Not found           | user does not exist                                |
-| `422`  | Invalid input       | JSON request body is invalid                       |
-
-{{% /endpoint %}}
-
-
-{{% endpoint name="Add To Group" permission="manage_users" %}}
-
-Add a user to a user group.
+| Status | Message                                             | Reason                                               |
+| :----- | :-------------------------------------------------- | :--------------------------------------------------- |
+| `400`  | Groups do not exist: <groups>                       | one or more passed `groups` do not exist             |
+| `400`  | Primary group does not exist                        | passed `primary_group` does not exist                |
+| `400`  | Password does not meet length requirement           | password must meet `minimum_password_length` setting |
+| `400`  | Users cannot modify their own administrative status | another administrator should perform the action      |
+| `403`  | Not permitted                                       | client is not an administrator                       |
+| `404`  | Not found                                           | user does not exist                                  |
+| `409`  | User is not member of group                         | user is not a member of the passed `primary_group`   |
+| `422`  | Invalid input                                       | JSON request body is invalid                         |
 
 
-```
-POST /api/users/:user_id/group
-```
+# Remove
 
-## Input
-
-| Name     | Type   | Description                                       |
-| :------- | :----- | :------------------------------------------------ |
-| group_id | string | force a password reset next time the user logs in |
-
-## Example
-
-```
-POST /api/users/fred/group
-```
-
-```json
-{
-	"group_id": "foobar"
-}
-```
-
-## Response
-
-```
-Status: 201 Created
-```
-
-```json
-{
-	"groups": [
-		"foobar"
-	],
-	"identicon": "d0cfc2e5319b82cdc71a33873e826c93d7ee11363f8ac91c4fa3a2cfcd2286e5",
-	"permissions": {
-		"cancel_job": true,
-		"create_sample": true,
-		"manage_users": true,
-		"modify_hmm": true,
-		"modify_settings": true,
-		"modify_subtraction": false,
-		"modify_virus": false,
-		"rebuild_index": false,
-		"remove_file": false,
-		"remove_job": false,
-		"remove_virus": false,
-		"upload_file": false
-	},
-	"primary_group": "none",
-	"force_reset": true,
-	"last_password_change": "2018-02-07T18:22:14.219000Z",
-	"id": "fred"
-}
-```
-
-## Errors
-
-| Status | Message                                                              | Reason                                             |
-| :----- | :------------------------------------------------------------------- | :------------------------------------------------- |
-| `400`  | Administrators cannot remove themselves from the administrator group | at least administrator must remain on the server   |
-| `403`  | Not permitted                                                        | client does not have the `manage_users` permission |
-| `404`  | Not found                                                            | user does not exist                                |
-| `404`  | Group not found                                                      | `group` does not exist                             |
-| `422`  | Invalid input                                                        | JSON request body is invalid                       |
-
-{{% /endpoint %}}
-
-
-{{% endpoint name="Remove From Group" permission="manage_users" %}}
-
-Remove a user from a user group.
-
-```
-DELETE /api/users/:user_id/groups/:group_id
-```
-
-## Example
-
-```
-DELETE /api/users/fred/groups/foobar
-```
-
-## Response
-
-```
-Status: 200 OK
-```
-
-```json
-[
-	"administrator"
-]
-```
-
-## Errors
-
-| Status | Message             | Reason                                             |
-| :----- | :------------------ | :------------------------------------------------- |
-| `403`  | Not permitted       | client does not have the `manage_users` permission |
-| `404`  | Not found           | user does not exist                                |
-
-{{% /endpoint %}}
-
-
-{{% endpoint name="Remove" permission="manage_users" %}}
+{{< administrator >}}
 
 Remove a user account.
 
-```
-DELETE /api/users/:user_id
-```
+{{< endpoint "DELETE" "/api/users/:id" >}}
 
 ## Example
 
@@ -410,9 +298,8 @@ Status: 204 No content
 
 ## Errors
 
-| Status | Message             | Reason                                             |
-| :----- | :------------------ | :------------------------------------------------- |
-| `403`  | Not permitted       | client does not have the `manage_users` permission |
-| `404`  | Not found           | user does not exist                                |
-
-{{% /endpoint %}}
+| Status | Message                   | Reason                                        |
+| :----- | :------------------------ | :-------------------------------------------- |
+| `400`  | Cannot remove own account | users cannot remove their own accounts        |
+| `403`  | Not permitted             | client is not an administrator                |
+| `404`  | Not found                 | user does not exist                           |

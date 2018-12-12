@@ -2,29 +2,24 @@
 title: "Reverse Proxy"
 type: "manual"
 menu:
-    manual:
-        parent: "Getting Started"
-        weight: 50
+  manual:
+    parent: "Getting Started"
+    weight: 50
 ---
 
 If you are using HTTPS or running Virtool on a public server, we suggest running it behind a reverse proxy server such as [NGINX](https://www.nginx.com/).
 
-
 # NGINX
-<article class="message is-warning is-flowing">
-  <div class="message-header">
-    Warning
-  </div>
-  <div class="message-body">
-    It is not currently possible to load balance more than one Virtool instance using NGINX or any other load balancer or reverse proxy server.
-  </div>
-</article>
+
+{{% warning %}}
+It is not currently possible to load balance more than one Virtool instance using NGINX or any other load balancer or reverse proxy server.
+{{% /warning %}}
 
 Because Virtool makes use of Websockets, some advanced configuration of NGINX is required. First, make sure you are running at least version 1.3.13 of NGINX.
 
 We have used the following `nginx.conf` to serve Virtool behind NGINX using Websockets and HTTPS.
 
-```term
+```
 user www-data;
 worker_processes 1;
 
@@ -75,7 +70,7 @@ http {
       return 301 https://<FQDN>
    }
 
-   # This entry is for serving HTTPS traffic. 
+   # This entry is for serving HTTPS traffic.
    server {
       # Listen at default HTTPS port.
       listen 443 ssl;
@@ -99,7 +94,7 @@ http {
          proxy_set_header X-Real-IP $remote_addr;
          proxy_set_header X-Scheme $scheme;
          proxy_pass http://frontends;
-      }     
+      }
 
       # Forward Websocket traffic.
       location /ws {
@@ -107,18 +102,14 @@ http {
          proxy_http_version 1.1;
          proxy_set_header Upgrade $http_upgrade;
          proxy_set_header Connection "upgrade";
-      }                 
+      }
    }
 }
 ```
 
 This configuration assumes that:
 
-* you are running the Virtool instance on the same host as NGINX
-* the Virtool instance is listening on the default `9950` port
-* you are using HTTPS
-* you have a fully-qualified domain name
-
-Ensure that SSL is not configured in Virtool. The SSL settings section should look like this:
-
-![](/assets/ssl_settings.png)
+- you are running the Virtool instance on the same host as NGINX
+- the Virtool instance is listening on the default `9950` port
+- you are using HTTPS
+- you have a fully-qualified domain name

@@ -1,8 +1,6 @@
 ---
 title: "Docs"
 menu:
-    main:
-        weight: 20
+  main:
+    weight: 20
 ---
-
-

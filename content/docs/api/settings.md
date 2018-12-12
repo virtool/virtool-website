@@ -5,16 +5,13 @@ type: "api"
 menu:
     api:
         parent: Endpoints
-        weight: 110
 ---
 
-{{% endpoint name="Get" %}}
+# Get
 
 Get a complete representation of the administrative settings.
 
-```
-GET /api/settings
-```
+{{< endpoint "GET" "/api/settings" >}}
 
 ## Example
 
@@ -89,15 +86,13 @@ Status: 200 OK
 }
 ```
 
-{{% /endpoint %}}
+# Update
 
-{{% endpoint name="Update" permission="modify_settings" %}}
+{{< administrator >}}
 
 Create a new group. New groups have no permissions. Requestors must have the ``modify_users`` permission.
 
-```
-PATCH /api/groups
-```
+{{< endpoint "PATCH" "/api/settings" >}}
 
 ## Input
 
@@ -151,7 +146,7 @@ PATCH /api/groups
 ## Example
 
 ```
-POST /api/groups
+POST /api/settings
 ```
 
 ```json
@@ -231,12 +226,10 @@ Status: 200 OK
 
 | Status | Message                              | Reason                                                                  |
 | :----- | :----------------------------------- | :---------------------------------------------------------------------- |
+| `400`  | Exceeds system processor count       | provided `proc` value is greater than the system processor count        |
+| `400`  | Exceeds system memory                | provided `mem` value is greater than the available system memory        |
 | `403`  | Not permitted                        | client does not have the 'modify_settings` permission                   |
-| `409`  | Exceeds system processor count       | provided `proc` value is greater than the system processor count        |
-| `409`  | Exceeds system memory                | provided `mem` value is greater than the available system memory        |
 | `409`  | Less than a task-specific proc limit | provided `proc` is less than a task-specific processor limit setting    |
 | `409`  | Less than a task-specific mem limit  | provided `mem` is less than a task-specific mempry limit setting        |
 | `409`  | Exceeds proc resource limit          | a provided task-specific limit is greater than the `proc` limit setting |
 | `409`  | Exceeds mem resource limit           | a provided task-specific limit is greater than the `mem` limit setting  |
-
-{{% /endpoint %}}

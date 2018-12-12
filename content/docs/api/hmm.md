@@ -5,16 +5,15 @@ type: "api"
 menu:
     api:
         parent: Endpoints
-        weight: 90
 ---
 
-{{% endpoint name="Find" %}}
+# Find
 
 Find HMM annotations.
 
-```
-GET /api/hmms?find=rep&per_page=2
-```
+The response data also includes information about the installation state of the HMM collection. The `installed` field describes the installed HMM release. The `release` field describes the latest available release from the linked GitHub repository.
+
+{{< endpoint "GET" "/api/hmms" >}}
 
 ## Parameters
 
@@ -27,7 +26,7 @@ GET /api/hmms?find=rep&per_page=2
 ## Example
 
 ```
-GET /api/hmms/page=1&per_page=2
+GET /api/hmms?per_page=2
 ```
 
 ## Response
@@ -36,66 +35,85 @@ GET /api/hmms/page=1&per_page=2
 Status: 200 OK
 ```
 
-
-
 ```json
 {
 	"documents": [
 		{
+			"names": [
+				"P3 protein",
+				"coat protein",
+				"P1 protein"
+			],
 			"families": {
-				"None": 2,
-				"Geminiviridae": 235
+				"Asfarviridae": 1,
+				"Potyviridae": 179
 			},
-			"cluster": 2,
-			"count": 253,
+			"cluster": 1,
+			"count": 185,
+			"id": "7sisu7e2"
+		},
+		{
 			"names": [
 				"replication-associated protein",
 				"replication associated protein",
 				"Rep"
 			],
-			"id": "ulryufil"
-		},
-		{
 			"families": {
-				"None": 1,
-				"Poxviridae": 1,
-				"Geminiviridae": 196
+				"Geminiviridae": 235,
+				"None": 2
 			},
-			"cluster": 5,
-			"count": 208,
-			"names": [
-				"replication enhancer protein",
-				"AC3 protein",
-				"C3 protein"
-			],
-			"id": "impzkkno"
+			"cluster": 2,
+			"count": 253,
+			"id": "ladu789k"
 		}
 	],
-	"total_count": 4717,
-	"found_count": 79,
-	"page_count": 40,
+	"total_count": 5585,
+	"found_count": 5585,
+	"page_count": 2793,
 	"per_page": 2,
 	"page": 1,
-	"file_exists": true
+	"status": {
+		"installed": {
+			"id": 8460302,
+			"name": "v0.2.0",
+			"body": "- the first release using TravisCI for building and testing\r\n- merge annotations and profiles into one archive",
+			"filename": "vthmm.tar.gz",
+			"size": 86059385,
+			"html_url": "https://github.com/virtool/virtool-hmm/releases/tag/v0.2.0",
+			"published_at": "2017-11-10T00:27:20Z",
+			"ready": true,
+			"user": {
+				"id": "igboyes"
+			}
+		},
+		"process": {
+			"id": "bzfk2t76"
+		},
+		"release": {
+			"id": 8472569,
+			"name": "v0.2.1",
+			"body": "- remove some annotations that didn't have corresponding profiles",
+			"etag": "W/\"81fc9c9b3e02ff03c8cc1163e8031ee3\"",
+			"filename": "vthmm.tar.gz",
+			"size": 85904451,
+			"html_url": "https://github.com/virtool/virtool-hmm/releases/tag/v0.2.1",
+			"download_url": "https://github.com/virtool/virtool-hmm/releases/download/v0.2.1/vthmm.tar.gz",
+			"published_at": "2017-11-10T19:12:43Z",
+			"content_type": "application/gzip",
+			"newer": true
+		},
+		"id": "hmm",
+		"updating": false
+	}
 }
 ```
 
-## Errors
 
-| Status | Message       | Reason                                   |
-| :----- | :------------ | :--------------------------------------- |
-| `422`  | Invalid query | invalid key or value in URL query string |
-
-{{% /endpoint %}}
-
-
-{{% endpoint name="Get" %}}
+# Get
 
 Get the complete representation of a single HMM annotation.
 
-```
-GET /api/hmms/:hmm_id
-```
+{{< endpoint "GET" "/api/hmms/:id" >}}
 
 ## Example
 
@@ -156,15 +174,25 @@ Status: 200 OK
 | :----- | :-------- | :---------------------------- |
 | `404`  | Not found | HMM annotation does not exist |
 
-{{% /endpoint %}}
 
+# Get Status
 
-{{% endpoint name="Get Install" %}}
+Get the status information for the HMM collection.
 
-Get the status of the most recent or current install process.
+The HMM status describes the latest available release of the Virtool HMM data and the currently installed release.
+
+When the `release.newer` is `true` the release can be used to [update the HMM install installation](#install).
+
+When `updating` is `true` there is already an update proces in progress.
+
+The `process.id` describes the [process document](/docs/api/processes) that describes the HMM installation process.
+
+{{< endpoint "GET" "/api/hmms/status" >}}
+
+## Example
 
 ```
-GET /api/hmms/install
+GET /api/hmms/status
 ```
 
 ## Response
@@ -175,31 +203,99 @@ Status: 200 OK
 
 ```json
 {
-	"process": {
-		"progress": 1.0,
-		"step": "import_annotations"
+	"installed": {
+		"id": 8460302,
+		"name": "v0.2.0",
+		"body": "- the first release using TravisCI for building and testing\r\n- merge annotations and profiles into one archive",
+		"filename": "vthmm.tar.gz",
+		"size": 86059385,
+		"html_url": "https://github.com/virtool/virtool-hmm/releases/tag/v0.2.0",
+		"published_at": "2017-11-10T00:27:20Z",
+		"ready": true,
+		"user": {
+			"id": "igboyes"
+		}
 	},
-	"ready": true,
-	"download_size": 85904451,
-	"id": "hmm_install"
+	"process": {
+		"id": "bzfk2t76"
+	},
+	"release": {
+		"id": 8472569,
+		"name": "v0.2.1",
+		"body": "- remove some annotations that didn't have corresponding profiles",
+		"etag": "W/\"81fc9c9b3e02ff03c8cc1163e8031ee3\"",
+		"filename": "vthmm.tar.gz",
+		"size": 85904451,
+		"html_url": "https://github.com/virtool/virtool-hmm/releases/tag/v0.2.1",
+		"download_url": "https://github.com/virtool/virtool-hmm/releases/download/v0.2.1/vthmm.tar.gz",
+		"published_at": "2017-11-10T19:12:43Z",
+		"content_type": "application/gzip",
+		"newer": true
+	},
+	"id": "hmm",
+	"updating": false
+}
+```
+
+
+# Get Release
+
+Check GitHub for the latest release of the Virtool HMM data set.
+
+The is the only method for updating the available release information. When the `newer` is `true` the release can be used to [update the HMM install installation](#install).
+
+{{< endpoint "GET" "/api/hmms/status/release" >}}
+
+## Example
+
+```
+GET /api/hmms/status/release
+```
+
+## Response
+
+```
+Status: 200 OK
+```
+
+```json
+{
+	"id": 8472569,
+	"name": "v0.2.1",
+	"body": "- remove some annotations that didn't have corresponding profiles",
+	"etag": "W/\"81fc9c9b3e02ff03c8cc1163e8031ee3\"",
+	"filename": "vthmm.tar.gz",
+	"size": 85904451,
+	"html_url": "https://github.com/virtool/virtool-hmm/releases/tag/v0.2.1",
+	"download_url": "https://github.com/virtool/virtool-hmm/releases/download/v0.2.1/vthmm.tar.gz",
+	"published_at": "2017-11-10T19:12:43Z",
+	"content_type": "application/gzip",
+	"newer": true
 }
 ```
 
 ## Errors
 
-_None_
+## Errors
 
-{{% /endpoint %}}
+| Status | Message                   | Reason                                                             |
+| :----- | :------------------------ | :----------------------------------------------------------------- |
+| `502`  | Repository does not exist | the GitHub repository set in the `hmm_slug` setting does not exist |
+| `502`  | Could not reach GitHub    | the server could not connect to GitHub                             |
 
 
-{{% endpoint name="Install" permission="modify_hmm" %}}
+# List Updates
 
-Automatically install the official HMM profiles and annotations.
+List the update history for the.
 
-If data have already been installed, this operation will safely remove the profiles and any unused annotations and reinstall the offical profiles and annotations.
+Most recently applied updates are first in returned the array. Updates that are in the process of being installed are included in the response. The `ready` field is `true` when the update has been successfully installed.
+
+{{< endpoint "GET" "/api/hmms/status/updates" >}}
+
+## Example
 
 ```
-PATCH /api/hmms/install
+GET /api/hmms/status/updates
 ```
 
 ## Response
@@ -209,17 +305,92 @@ Status: 200 OK
 ```
 
 ```json
+[
+	{
+		"id": 8460302,
+		"name": "v0.2.0",
+		"body": "- the first release using TravisCI for building and testing\r\n- merge annotations and profiles into one archive",
+		"filename": "vthmm.tar.gz",
+		"size": 86059385,
+		"html_url": "https://github.com/virtool/virtool-hmm/releases/tag/v0.2.0",
+		"published_at": "2017-11-10T00:27:20Z",
+		"ready": true,
+		"user": {
+			"id": "igboyes"
+		}
+	}
+]
+```
+
+# Install
+
+{{< permission modify_hmm >}}
+
+Install the [locally cached release](#get-release) as the official virus HMM reference.
+
+Installing when a previous release has already been installed will remove all HMMs not referenced in existing analyses and install the new release.
+
+{{< endpoint "POST" "/api/hmms/status/updates" >}}
+
+## Example
+
+```
+POST /api/hmms/updates
+```
+
+## Response
+
+```
+Status: 201 Created
+```
+
+```json
 {
-	"process": {
-		"progress": 0,
-		"step": "check_github"
-	},
+	"id": 8460302,
+	"name": "v0.2.0",
+	"body": "- the first release using TravisCI for building and testing\r\n- merge annotations and profiles into one archive",
+	"filename": "vthmm.tar.gz",
+	"size": 86059385,
+	"html_url": "https://github.com/virtool/virtool-hmm/releases/tag/v0.2.0",
+	"published_at": "2017-11-10T00:27:20Z",
+	"created_at": "2018-06-15T18:26:30.787000Z",
 	"ready": false,
-	"download_size": null,
-	"id": "hmm_install"
+	"user": {
+		"id": "igboyes"
+	}
 }
 ```
 
 ## Errors
 
-_None_
+| Status | Message                       | Reason                                                         |
+| :----- | :---------------------------- | :------------------------------------------------------------- |
+| `400`  | Target release does not exist | no release information has been fetched and cached from GitHub |
+| `403`  | Not permitted                 | user does not have `modify_hmm` permission                     |
+
+
+# Purge
+
+Permanently remove all HMMs that are not referenced by NuVs analysis records.
+
+HMMs that are referenced in NuVs analysis records will be soft-deleted. They will not be returned in search results, but the data is still available for constructing annotated NuVs results.
+
+{{< endpoint "DELETE" "/api/hmms" >}}
+
+## Example
+
+```
+DELETE /api/hmms
+```
+
+## Response
+
+```
+Status: 204 No content
+```
+
+## Errors
+
+| Status | Message       | Reason                                     |
+| :----- | :------------ | :----------------------------------------- |
+| `403`  | Not permitted | user does not have `modify_hmm` permission |

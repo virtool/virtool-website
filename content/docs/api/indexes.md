@@ -5,16 +5,15 @@ type: "api"
 menu:
     api:
         parent: Endpoints
-        weight: 70
 ---
 
-{{% endpoint name="List" %}}
+# Find
+
+{{< right read >}}
 
 List all virus reference indexes. Takes no query or input.
 
-```
-GET /api/indexes
-```
+{{< endpoint "GET" "/api/indexes" >}}
 
 ## Response
 
@@ -54,23 +53,60 @@ Status: 200 OK
 
 _None_
 
-{{% /endpoint %}}
 
+# List Latest Indexes
 
-{{% endpoint name="Get" %}}
+{{< right read >}}
 
-Get indexes by their unique id or version number.
+List the latest, ready index builds for all references.
+
+{{< endpoint "GET" "/api/indexes?ready=true" >}}
+
+## Example
 
 ```
-GET /api/indexes/:index_id
-GET /api/indexes/:index_version
+GET /api/indexes?ready=true
 ```
+
+## Response
+
+```
+Status: 200 OK
+```
+
+```json
+[
+	{
+		"id": "0egezq4w",
+		"version": 0,
+		"reference": {
+			"id": "nleoiawn",
+			"name": "Plant Viruses"
+		}
+	},
+	{
+		"id": "nz6j0wwk",
+		"version": 1,
+		"reference": {
+			"id": "mifz0ya0",
+			"name": "Clone of Plant Viruses"
+		}
+	}
+]
+```
+
+# Get
+
+{{< right read >}}
+
+Get the complete representation of an index.
+
+{{< endpoint "GET" "/api/indexes/:id" >}}
 
 ## Example
 
 ```
 GET /api/indexes/jiwncaqr
-GET /api/indexes/0
 ```
 
 ## Response
@@ -117,66 +153,18 @@ Status: 200 OK
 
 ## Errors
 
-| Status | Message   | Reason                                                           |
-| :----- | :-------- | :--------------------------------------------------------------- |
-| `404`  | Not found | index identified by `index_id` or `index_version` does not exist |
-
-{{% /endpoint %}}
+| Status | Message   | Reason                                        |
+| :----- | :-------- | :-------------------------------------------- |
+| `404`  | Not found | index identified by `index_id` does not exist |
 
 
-{{% endpoint name="Get Unbuilt" %}}
+# Create
 
-Return all history associated with unbuilt changes. This information would be included next time an index build is triggered.
-
-```
-GET /api/indexes/unbuilt
-```
-
-## Response
-
-```
-Status: 200 OK
-```
-
-```json
-{
-	"history": [
-		{
-			"method_name": "remove_isolate",
-			"description": "Removed Isolate DRC 6",
-			"created_at": "2018-02-06T22:14:34.267000Z",
-			"virus": {
-				"id": "53a851f3",
-				"name": "African cassava mosaic virus",
-				"version": 1
-			},
-			"index": {
-				"id": "unbuilt",
-				"version": "unbuilt"
-			},
-			"user": {
-				"id": "igboyes"
-			},
-			"id": "53a851f3.1"
-		}
-	]
-}
-```
-
-## Errors
-
-_None_
-
-{{% /endpoint %}}
-
-
-{{% endpoint name="Create" permission="rebuild_index" %}}
+{{< right build >}}
 
 Create an index by starting a new index build job.
 
-```
-POST /api/indexes
-```
+{{< endpoint "POST" "/api/indexes" >}}
 
 ## Response
 
@@ -187,52 +175,52 @@ Location: /api/indexes/bznqwjsa
 
 ```json
 {
-	"version": 1,
-	"created_at": "2018-02-06T22:03:00.186000Z",
-	"virus_count": null,
+	"version": 0,
+	"created_at": "2018-04-30T20:14:30.242000Z",
 	"manifest": {
-		"c93ec9a9": 1,
-        ...
+		"j6sk7lnh": 0,
+		"ayyhflbx": 0,
+		"5hzmr0h9": 0,
+		...
 	},
 	"ready": false,
 	"has_files": true,
+	"job": {
+		"id": "egox4ch6"
+	},
+	"ref": {
+		"id": "9fhr3cey"
+	},
 	"user": {
 		"id": "igboyes"
 	},
-	"job": {
-		"id": "plfttrug"
-	},
-	"id": "bznqwjsa"
+	"id": "v2fuqat2"
 }
 ```
 
-{{% /endpoint %}}
 
 ## Errors
 
-| Status | Message                         | Reason                                              |
-| :----- | :------------------------------ | :-------------------------------------------------- |
-| `400`  | There are unverified viruses    | some viruses included in the rebuild have issues    |
-| `400`  | The are no unbuilt changes      | there are no changes to include in an index rebuild |
-| `403`  | Not permitted                   | client does not have the `rebuild_index` permission |
-| `409`  | Index build already in progress | only one index build at a time may be in progress   |
+| Status | Message                         | Reason                                                                  |
+| :----- | :------------------------------ | :---------------------------------------------------------------------- |
+| `400`  | There are unverified OTUs       | some OTUs included in the rebuild have issues                           |
+| `400`  | The are no unbuilt changes      | there are no changes to include in an index rebuild                     |
+| `403`  | Insufficient rights             | client does not have the required reference rights                      |
+| `409`  | Index build already in progress | only one index build at a time may be in progress for a given reference |
 
 
+# Find History
 
-{{% endpoint name="Find History" %}}
+{{< right read >}}
 
 Find the virus changes that are included in a given index build.
 
-```
-GET /api/indexes/:index_id/history
-GET /api/indexes/:index_version/history
-```
+{{< endpoint "GET" "/api/indexes/:id/history" >}}
 
 ## Example
 
 ```
 GET /api/indexes/bznqwjsa/history
-GET /api/indexes/1/history
 ```
 
 ## Response
@@ -273,8 +261,6 @@ Status: 200 OK
 
 ## Errors
 
-| Status | Message   | Reason                                                           |
-| :----- | :-------- | :--------------------------------------------------------------- |
-| `404`  | Not found | index identified by `index_id` or `index_version` does not exist |
-
-{{% /endpoint %}}
+| Status | Message   | Reason                                        |
+| :----- | :-------- | :-------------------------------------------- |
+| `404`  | Not found | index identified by `index_id` does not exist |

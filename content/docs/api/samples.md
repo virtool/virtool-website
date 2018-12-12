@@ -5,16 +5,13 @@ type: "api"
 menu:
     api:
         parent: Endpoints
-        weight: 40
 ---
 
-{{% endpoint name="Find" %}}
+# Find
 
 Find samples based on the sample name or creator username.
 
-```
-GET /api/samples
-```
+{{< endpoint "GET" "/api/samples" >}}
 
 ## Parameters
 
@@ -68,16 +65,14 @@ Status: 200 OK
 | :----- | :--------------------- | :--------------------------------- |
 | `422`  | Invalid query          | invalid URL query fields or values |
 
-{{% /endpoint %}}
 
+# Get
 
-{{% endpoint name="Get" %}}
+{{< right read >}}
 
 Get the complete representation of a sample.
 
-```
-GET /api/samples/:sample_id
-```
+{{< endpoint "GET" "/api/samples/:id" >}}
 
 ## Example
 
@@ -148,18 +143,16 @@ Status: 200 OK
 | `403`  | Insufficient rights | client does not have the required rights to read the sample |
 | `404`  | Not found           | `sample_id` in URL does not exist                           |
 
-{{% /endpoint %}}
 
+# Create
 
-{{% endpoint name="Create" permission="create_sample" %}}
+{{< permission "create_sample" >}}
 
 Creates a sample record and starts a job that populates the record from a FASTQ file stored in the file manager.
 
 The array of files must contain **only one or two items**. Samples with arrays containing one item will be assumed to by derived from single-end libraries, while arrays with two items will correspond to paired-end libraries.
 
-```
-POST /api/samples
-```
+{{< endpoint "POST" "/api/samples" >}}
 
 ## Input
 
@@ -228,24 +221,24 @@ Status: 201 Created
 
 ## Errors
 
-| Status | Message                       | Reason                                                        |
-| :----- | :---------------------------- | :------------------------------------------------------------ |
-| `403`  | Not permitted                 | client does not have the `create_sample` permission           |
-| `404`  | Group not found               | `group` in POST body does not exist                           |
-| `404`  | Subtraction not found         | `subtraction` in POST body  does not exist                    |
-| `409`  | Sample name is already in use | the provided `name` is already assigned to an existing sample |
-| `422`  | Invalid input                 | JSON request body is invalid                                  |
+| Status | Message                                  | Reason                                                                       |
+| :----- | :--------------------------------------- | :--------------------------------------------------------------------------- |
+| `400`  | File does not exist                      | the provided `file_id` does not exist                                        |
+| `400`  | Group does not exist                     | `group` in POST body does not exist                                          |
+| `400`  | Group value required for sample creation | the server is configured to required group assignment of samples on creation |
+| `400`  | Sample name is already in use            | the provided `name` is already assigned to an existing sample                |
+| `400`  | Subtraction does not exist               | `subtraction` in POST body  does not exist                                   |
+| `403`  | Not permitted                            | client does not have the `create_sample` permission                          |
+| `422`  | Invalid input                            | JSON request body is invalid                                                 |
 
-{{% /endpoint %}}
 
+# Edit
 
-{{% endpoint name="Edit" %}}
+{{< right write >}}
 
 Update modifiable fields of a sample.
 
-```
-PATCH /api/samples/:sample_id
-```
+{{< endpoint "PATCH" "/api/samples/:id" >}}
 
 ## Input
 
@@ -296,24 +289,21 @@ Status: 200 OK
 
 ## Errors
 
-| Status | Message             | Reason                                                      |
-| :----- | :------------------ | :---------------------------------------------------------- |
-| `403`  | Insufficient rights | client does not have the required rights to edit the sample |
-| `404`  | Not found           | `sample_id` in URL does not exist                           |
-| `422`  | Invalid input       | request body JSON failed validation                         |
+| Status | Message                       | Reason                                                        |
+| :----- | :---------------------------- | :------------------------------------------------------------ |
+| `400`  | Sample name is already in use | the provided `name` is already assigned to an existing sample |
+| `403`  | Insufficient rights           | client does not have the required rights to edit the sample   |
+| `404`  | Not found                     | `sample_id` in URL does not exist                             |
+| `422`  | Invalid input                 | request body JSON failed validation                           |
 
-{{% /endpoint %}}
 
+# Edit Rights
 
-{{% endpoint name="Edit Rights" %}}
+{{< administrator_owner >}}
 
 Edit the access rights for a sample.
 
-Only the sample owner or an administrator may use this endpoint.
-
-```
-PATCH /api/samples/:sample_id/rights
-```
+{{< endpoint "PATCH" "/api/samples/:id/rights" >}}
 
 ## Input
 
@@ -359,20 +349,19 @@ Status: 200 OK
 
 | Status | Message                               | Reason                                                |
 | :----- | :------------------------------------ | :---------------------------------------------------- |
+| `400`  | Group does not exist                  | user group does not exist in instance                 |
 | `403`  | Must be administrator or sample owner | user is neither the sample owner nor an administrator |
 | `404`  | Not found                             | `sample_id` in URL does not exist                     |
 | `422`  | Invalid input                         | request body JSON failed validation                   |
 
-{{% /endpoint %}}
 
+# Remove
 
-{{% endpoint name="Remove" %}}
+{{< administrator_owner >}}
 
 Remove an existing sample record and its associated data files.
 
-```
-DELETE /api/samples/:sample_id
-```
+{{< endpoint "DELETE" "/api/samples/:id" >}}
 
 ## Example
 
@@ -393,18 +382,16 @@ Status: 204 No Content
 | `403`  | Insufficient rights | client does not have the required rights to remove the sample |
 | `404`  | Not found           | `sample_id` in URL does not exist                             |
 
-{{% /endpoint %}}
 
+# List Analyses
 
-{{% endpoint name="List Analyses" %}}
+{{< right read >}}
 
 Retrieve a summary list of analyses associated with a sample.
 
 Returned documents do not include diagnostic data. Use the [analyses](/docs/api/analyses) endpoints for more extensive modification and querying of analysis data.
 
-```
-GET /api/samples/:sample_id/analyses
-```
+{{< endpoint "GET" "/api/samples/:id/analyses" >}}
 
 ## Example
 
@@ -474,22 +461,20 @@ Status: 200 OK
 | `404`  | Not found           | `sample_id` in URL does not exist                                    |
 
 
-{{% /endpoint %}}
+# Analyze
 
-
-{{% endpoint name="Analyze" %}}
+{{< right write >}}
 
 Immediately create and placeholder analysis record for a sample and start an analysis job. When the job succeeds the analysis document will be populated.
 
-```
-POST /api/samples/:sample_id/analyses
-```
+{{< endpoint "POST" "/api/samples/:id/analyses" >}}
 
 ## Input
 
-| Name      | Type   | Description                                     |
-| :-------- | :----- | :---------------------------------------------- |
-| algorithm | string | the algorithm name \(*eg*. pathoscope\_bowtie\) |
+| Name      | Type   | Required | Description                                     |
+| :-------- | :----- | -------- | :---------------------------------------------- |
+| algorithm | string | True     | the algorithm name \(*eg*. pathoscope\_bowtie\) |
+| ref_id    | string | True     | the reference to run the analysis against       |
 
 ## Example
 
@@ -499,7 +484,8 @@ POST /api/samples/htosefxu/analyses
 
 ```json
 {
-	"algorithm": "pathoscope_bowtie"
+	"algorithm": "pathoscope_bowtie",
+	"ref_id": "foo"
 }
 ```
 
@@ -534,10 +520,10 @@ Location: /api/analyses/fbzypgva
 
 ## Errors
 
-| Status | Message             | Reason                                                                           |
-| :----- | :------------------ | :------------------------------------------------------------------------------- |
-| `403`  | Insufficient rights | client does not have the required rights to create a new analysis for the sample |
-| `404`  | Not found           | `sample_id` in URL does not exist                                                |
-| `422`  | Invalid input       | the JSON request body is invalid                                                 |
-
-{{% /endpoint %}}
+| Status | Message                             | Reason                                                                           |
+| :----- | :---------------------------------- | :------------------------------------------------------------------------------- |
+| `400`  | Reference does not exist            | specified `ref_id` not found                                                     |
+| `400`  | No index is ready for the reference | the reference doesn't have a built index ready for analysis                      |
+| `403`  | Insufficient rights                 | client does not have the required rights to create a new analysis for the sample |
+| `404`  | Not found                           | `sample_id` in URL does not exist                                                |
+| `422`  | Invalid input                       | the JSON request body is invalid                                                 |

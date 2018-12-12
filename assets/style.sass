@@ -1,0 +1,104 @@
+@charset "utf-8"
+
+// Google Fonts
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans|IBM+Plex+Mono');
+
+// Customization Variables
+@import "sass/variables"
+
+// Bulma Source
+@import "bulma/sass/utilities/_all"
+@import "bulma/sass/base/_all"
+@import "bulma/sass/elements/box"
+@import "bulma/sass/elements/button"
+@import "bulma/sass/elements/container"
+@import "bulma/sass/elements/content"
+@import "bulma/sass/elements/form"
+@import "bulma/sass/elements/icon"
+@import "bulma/sass/elements/image"
+@import "bulma/sass/elements/notification"
+@import "bulma/sass/elements/other"
+@import "bulma/sass/elements/table"
+@import "bulma/sass/elements/tag"
+@import "bulma/sass/elements/title"
+@import "bulma/sass/components/breadcrumb"
+@import "bulma/sass/components/card"
+@import "bulma/sass/components/level"
+@import "bulma/sass/components/media"
+@import "bulma/sass/components/message"
+@import "bulma/sass/components/navbar"
+@import "bulma/sass/grid/_all"
+@import "bulma/sass/layout/_all"
+
+// Custom SASS
+@import "sass/docs"
+@import "sass/search"
+@import "sass/side"
+@import "sass/toc"
+
+body
+    display: flex
+    min-height: calc(100vh - 52px)
+    flex-direction: column;
+
+#footer-buffer
+    flex: 1;
+
+.footer
+    padding: 24px
+
+.image    
+    border: 0.1rem solid #ddd
+    padding: 5px
+
+img,video
+    @extend .image
+
+.logo-strip
+    margin-top: 30px
+    margin-bottom: 60px
+    a
+        padding: 5px
+
+.vtlogo-svg
+    fill: white
+
+.card.is-docs-type
+    cursor: pointer
+    transform: scale(1)
+    transition: 150ms transform ease-in-out
+
+    width: 100%
+
+    &:hover
+        transform: scale(1.05)
+
+    .icon
+        margin-right: 0.50rem
+
+.tile-menu
+    margin-top: -1rem
+    padding-top: 1.2rem
+    border-top: 0.1rem solid black
+
+    &:not(:last-of-type)
+        margin-bottom: 3.6rem
+
+.level-item.tags
+    justify-content: left
+
+.level-item.contains-nav
+    justify-content: left
+
+.is-monospace
+    font-family: monospace
+
+.side-menu    
+    padding-right: 1.6rem
+
+    p.menu-label
+        margin-bottom: 0.4rem                
+        border-left: 1px solid grey
+
+    .menu-list
+        font-size: 0.8rem  

@@ -5,16 +5,13 @@ type: "api"
 menu:
     api:
         parent: Endpoints
-        weight: 100
 ---
 
-{{% endpoint name="Find" %}}
+# Find
 
 Find profile subtractions by id (name) or nickname.
 
-```
-GET /api/subtraction
-```
+{{< endpoint "GET" "/api/subtraction" >}}
 
 ## Parameters
 
@@ -65,16 +62,12 @@ Status: 200 OK
 
 _None_
 
-{{% /endpoint %}}
 
-
-{{% endpoint name="Get" %}}
+# Get
 
 Get the complete representation of a given subtraction.
 
-```
-GET /api/subtraction/:subtraction_id
-```
+{{< endpoint "GET" "/api/subtraction/:id" >}}
 
 ## Example
 
@@ -126,16 +119,14 @@ Status: 200 OK
 | :----- | :------------------ | :---------------------------------------------------------- |
 | `404`  | Not found           | `sample_id` in URL does not exist                           |
 
-{{% /endpoint %}}
 
+# Create
 
-{{% endpoint name="Create" permission="modify_subtraction" %}}
+{{< permission modify_subtraction >}}
 
 Create a new subtraction from a file that has previously been uploaded into the file manager.
 
-```
-POST /api/subtraction
-```
+{{< endpoint "POST" "/api/subtraction" >}}
 
 ## Input
 
@@ -188,17 +179,19 @@ Status: 201 Created
 
 | Status | Message                       | Reason                                                   |
 | :----- | :---------------------------- | :------------------------------------------------------- |
+| `400`  | File does not exist           | file identified by `file_id` does not exist              |
+| `400`  | Subtraction id already exists | `id` is already in use by an existing subtraction        |
 | `403`  | Not permitted                 | client does not have the 'modify_subtraction` permission |
-| `404`  | File not found                | file identified by `file_id` does not exist              |
-| `409`  | Subtraction id already exists | `id` is already in use by an existing subtraction        |
 | `422`  | Invalid input                 | JSON request body is invalid                             |
 
-{{% /endpoint %}}
 
+# Edit
 
-{{% endpoint name="Edit" permission="modify_subtraction" %}}
+{{< permission modify_subtraction >}}
 
 Change the nickname of an existing subtraction.
+
+{{< endpoint "PATCH" "/api/subtraction/:id" >}}
 
 ## Input
 
@@ -257,16 +250,14 @@ Status: 200 OK
 | `404`  | Not found     | subtraction does not exist                               |
 | `422`  | Invalid input | JSON request body is invalid                             |
 
-{{% /endpoint %}}
 
+# Remove
 
-{{% endpoint name="Remove" permission="modify_subtraction" %}}
+{{< permission modify_subtraction >}}
 
 Remove an existing subtraction
 
-```
-DELETE /api/subtraction/:subtraction_id
-```
+{{< endpoint "DELETE" "/api/subtraction/:id" >}}
 
 ## Example
 
@@ -287,5 +278,3 @@ Status: 204 No content
 | `403`  | Not permitted      | client does not have the 'modify_subtraction` permission          |
 | `404`  | Not found          | subtraction does not exist                                        |
 | `409`  | Has linked samples | subtraction is in use by one or more sample and cannot be removed |
-
-{{% /endpoint %}}

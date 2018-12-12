@@ -23,7 +23,7 @@
         <div class="columns">
             {{ partial "side.html" (dict "CurrentPage" . "MenuName" "developer") }}
 
-            <div class="column is-10 docs docs-api">
+            <div class="column is-10 docs docs-code">
                 {{ $replaced := (replaceRE "<table>([\\s\\S]*?)<\\/table>" "<div class='table-wrapper'><table>$1</table></div>" .Content) }}
                 {{ safeHTML $replaced }}
             </div>   

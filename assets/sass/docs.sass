@@ -1,0 +1,115 @@
+h1:target:before
+    content: ""
+    display: block
+    margin-top: 50px
+    height: 50px
+    
+div.docs
+
+    .docs-header            
+        border-bottom: 0.1rem solid black
+        padding-bottom: 1rem
+
+    div.table-wrapper
+        overflow-x: auto
+
+    table        
+        @extend .table, .is-striped, .is-fullwidth, .is-bordered
+
+    h1
+        @extend .title
+        @extend .is-4    
+
+    h2
+        @extend .title
+        @extend .is-5
+
+    h3
+        @extend .has-text-weight-semibold
+        @extend .is-6
+
+        &:not(:first-child)
+            margin-top: 2.2rem
+
+    p
+        margin-top: 0.5rem
+        margin-bottom: 1rem
+
+    dt
+        @extend .has-text-grey
+        font-weight: bold
+
+    dd
+        padding-left: 0.6rem
+
+    &.docs-manual                
+
+        h1:not(:first-child)
+            margin-top: 4rem
+
+            &:first-of-type
+                margin-top: 2.3rem
+
+        h2
+            margin: 1.8rem 0 0.8rem 0
+
+        h4
+            font-weight: bold
+
+        ul
+            padding-left: 1rem
+            padding-bottom: 0.8rem
+            list-style-type: disc
+            list-style-position: inside
+
+        ol
+            padding-left: 1.3rem
+
+            li
+                margin-bottom: 2.3rem
+
+        img
+            max-width: 100%
+            min-width: auto
+            padding: 5px
+            border: 0.1rem solid #ddd
+
+        article.message
+            margin-top: 0.6rem
+
+        h1 + article.message
+            margin-top: 2.2rem
+
+        li
+            img
+                margin-top: 0.6rem
+
+        
+
+    &.docs-api
+
+        h1 
+            border-top: 3px solid $black
+            margin-top: 3rem
+            padding-top: 2rem
+
+        h2
+            margin: 2rem 0 0.8rem 0
+            @extend .title
+            @extend .is-6
+
+        ul
+            padding-left: 1rem
+            padding-bottom: 0.8rem
+            list-style-type: disc
+            list-style-position: inside
+
+        div.highlight
+            display: table
+            table-layout: fixed
+            width: 100%
+
+    &.docs-code
+
+        div.highlight
+            margin-bottom: 2rem

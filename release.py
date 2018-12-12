@@ -54,13 +54,14 @@ def format_release(release):
 def get_release_data(username, token):
     release_data = dict()
 
-    for repo, key in [("virtool", "software"), ("virtool-database", "database"), ("virtool-hmm", "hmm")]:
+    for repo, key in [("virtool", "software"), ("ref-plant-viruses", "ref_plant_viruses"), ("virtool-hmm", "hmm")]:
         release_data[key] = list()
 
         releases = list()
 
         for i in range(1, 5):
-            url = "https://api.github.com/repos/virtool/{}/releases?per_page=100&page={}".format(repo, i)
+            url = "https://api.github.com/repos/virtool/{}/releases?per_page=100&page={}".format(
+                repo, i)
             body = requests.get(url, auth=(username, token)).json()
 
             if not body:
@@ -78,44 +79,6 @@ def get_release_data(username, token):
         release_data[key] = releases
 
     return release_data
-
-
-def update_website_json(data, username, token):
-    url = "https://api.github.com/repos/virtool/virtool-website/contents/_data/releases.json"
-
-    body = requests.get(url, auth=(username, token)).json()
-
-    import pprint
-    pprint.pprint(body)
-
-    sha = body["sha"]
-
-    encoded = base64.standard_b64encode(json.dumps(data).encode()).decode("ascii")
-
-    requests.put(url, auth=(username, token), json={
-        "message": "Update releases.json",
-        "committer": {
-            "name": "Travis Build",
-            "email": "dev@virtool.ca"
-        },
-        "content": encoded,
-        "sha": sha
-    })
-
-
-def download_database_release(url, path):
-    resp = requests.get(url, stream=True)
-
-    raw = resp.raw
-
-    with open(path, "wb") as f:
-        while True:
-            chunk = raw.read(1024, decode_content=True)
-
-            if not chunk:
-                break
-
-            f.write(chunk)
 
 
 if __name__ == "__main__":
@@ -137,7 +100,7 @@ if __name__ == "__main__":
 
     data = dict()
 
-    for key in ["database", "hmm", "software"]:
+    for key in ["ref_plant_viruses", "hmm", "software"]:
         releases = downloaded[key]
         data[key] = {
             "latest": get_latest(releases),
@@ -149,7 +112,3 @@ if __name__ == "__main__":
 
     with open("static/releases", "w") as f:
         json.dump({key: data[key]["releases"] for key in data}, f)
-
-    latest_database_url = data["database"]["latest"]["download_url"]
-    
-    download_database_release(latest_database_url, "./viruses.json.gz")

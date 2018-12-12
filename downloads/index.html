@@ -36,62 +36,6 @@
         </div>
     </section>
 
-    <section class="section">        
-        <div class="container">
-            <h1 class="title is-4 level">
-                <span class="level-left">
-                    Virus Database
-                </span>
-                <a class="is-size-7 level-right" href="https://github.com/virtool/virtool-database/releases" target="_blank">
-                    <i class="fa fa-github"></i>&nbsp;See all releases
-                </a>
-            </h1>
-
-            <div class="notification is-warning">
-                The database is currently in revision.
-            </div>
-
-            <table class="table is-fullwidth">
-                <thead>
-                    <tr>
-                        <th>Version</th>
-                        <th>Date</th>
-                        <th>Download</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                
-                {% include releases.html releases=site.data.releases.database %}
-            </table>
-        </div>
-    </section>
-
-    <section class="section">        
-            <div class="container">
-                <h1 class="title is-4 level">
-                    <span class="level-left">
-                        HMM Data
-                    </span>
-                    <a class="is-size-7 level-right" href="https://github.com/virtool/virtool-hmm/releases" target="_blank">
-                        <i class="fa fa-github"></i>&nbsp;See all releases
-                    </a>
-                </h1>
-    
-                <table class="table is-fullwidth">
-                    <thead>
-                        <tr>
-                            <th>Version</th>
-                            <th>Date</th>
-                            <th>Download</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    
-                    {% include releases.html releases=site.data.releases.hmm %}
-                </table>
-            </div>
-        </section>
-
     <div id="wrapper"></div>
 
     {% include footer.html %}

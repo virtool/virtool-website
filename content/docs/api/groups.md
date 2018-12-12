@@ -5,16 +5,13 @@ type: "api"
 menu:
     api:
         parent: Endpoints
-        weight: 130
 ---
 
-{{% endpoint name="List" %}}
+# List
 
 List all existing user groups.
 
-```
-GET /api/groups
-```
+{{< endpoint "GET" "/api/groups" >}}
 
 ## Response
 
@@ -24,40 +21,19 @@ Status: 200 OK
 
 ```json
 [
-    {
-        "id": "administrator",
+	{
 		"permissions": {
 			"cancel_job": true,
+			"create_ref": false,
 			"create_sample": true,
-			"manage_users": true,
-			"modify_hmm": true,
-			"modify_settings": true,
-			"modify_subtraction": true,
-			"modify_virus": true,
-			"rebuild_index": true,
-			"remove_file": true,
-			"remove_job": true,
-			"remove_virus": true,
-			"upload_file": true
-		}
-	},
-    {
-        "id" : "technician",
-        "permissions": {
-			"cancel_job": false,
-			"create_sample": false,
-			"manage_users": false,
 			"modify_hmm": false,
-			"modify_settings": false,
 			"modify_subtraction": false,
-			"modify_virus": false,
-			"rebuild_index": false,
 			"remove_file": false,
-			"remove_job": false,
-			"remove_virus": false,
-			"upload_file": false
-		}
-    }
+			"remove_job": true,
+			"upload_file": true
+		},
+		"id": "technicians"
+	}
 ]
 ```
 
@@ -65,21 +41,17 @@ Status: 200 OK
 
 _None_
 
-{{% /endpoint %}}
 
-
-{{% endpoint name="Get" %}}
+# Get
 
 Get the complete representation of a single user group.
 
-```
-GET /api/groups/:group_id
-```
+{{< endpoint "GET" "/api/groups/:id" >}}
 
 ## Example
 
 ```
-GET /api/groups/administrator
+GET /api/groups/technicians
 ```
 
 ## Response
@@ -92,19 +64,15 @@ Status: 200 OK
 {
 	"permissions": {
 		"cancel_job": true,
+		"create_ref": false,
 		"create_sample": true,
-		"manage_users": true,
-		"modify_hmm": true,
-		"modify_settings": true,
-		"modify_subtraction": true,
-		"modify_virus": true,
-		"rebuild_index": true,
-		"remove_file": true,
+		"modify_hmm": false,
+		"modify_subtraction": false,
+		"remove_file": false,
 		"remove_job": true,
-		"remove_virus": true,
 		"upload_file": true
 	},
-	"id": "administrator"
+	"id": "technicians"
 }
 ```
 
@@ -114,16 +82,14 @@ Status: 200 OK
 | :----- | :-------- | :------------------- |
 | `404`  | Not found | group does not exist |
 
-{{% /endpoint %}}
 
+# Create
 
-{{% endpoint name="Create" permission="manage_users" %}}
+{{< administrator >}}
 
-Create a new group. New groups have no permissions. Requestors must have the ``modify_users`` permission.
+Create a new group. New groups have no permissions. Requestors must be administrators.
 
-```
-POST /api/groups
-```
+{{< endpoint "POST" "/api/groups" >}}
 
 ## Input
 
@@ -139,7 +105,7 @@ POST /api/groups
 
 ```json
 {
-    "group_id": "foobar"
+    "group_id": "research"
 }
 ```
 
@@ -153,70 +119,51 @@ Status 201: Created
 {
 	"permissions": {
 		"cancel_job": false,
+		"create_ref": false,
 		"create_sample": false,
-		"manage_users": false,
 		"modify_hmm": false,
-		"modify_settings": false,
 		"modify_subtraction": false,
-		"modify_virus": false,
-		"rebuild_index": false,
 		"remove_file": false,
 		"remove_job": false,
-		"remove_virus": false,
 		"upload_file": false
 	},
-	"id": "foobar"
+	"id": "research"
 }
 ```
 
 ## Errors
 
-| Status | Message       | Reason                                             |
-| :----- | :------------ | :------------------------------------------------- |
-| `403`  | Not permitted | client does not have the 'manage_users` permission |
-| `409`  | Conflict      | group already exists                               |
-| `422`  | Invalid input | JSON request body is invalid                       |
-
-{{% /endpoint %}}
+| Status | Message              | Reason                                 |
+| :----- | :------------------- | :------------------------------------- |
+| `400`  | Group already exists | the provided `group_id` already exists |
+| `403`  | Not permitted        | client is not an administrator         |
+| `422`  | Invalid input        | JSON request body is invalid           |
 
 
-{{% endpoint name="Edit" permission="manage_users" %}}
+# Edit
 
-Update the permissions of an existing group. Requestors must have the ``modify_users`` permission.
+{{< administrator >}}
 
-Unset permissions will retain their previous setting.
+Update the permissions of an existing group. Unset permissions will retain their previous setting.
 
-```
-PATCH /api/groups/:id
-```
+{{< endpoint "PATCH" "/api/groups/:id" >}}
 
-**Input**
+## Input
 
-| Name            | Type    | Description                                               |
-| :-------------- | :------ | :-------------------------------------------------------- |
-| add_sample      | boolean | members can add samples                                   |
-| modify_sample   | boolean | members can modify samples if they have sufficient rights |
-| cancel_job      | boolean | members can cancel any job                                |
-| remove_job      | boolean | members can remove job documents                          |
-| modify_virus    | boolean | members can add and modify virus documents                |
-| remove_virus    | boolean | members can remove virus documents                        |
-| rebuild_index   | boolean | members can rebuild virus indexes                         |
-| modify_hmm      | boolean | members can add and modify hmm annotations and files      |
-| modify_host     | boolean | members can add and modify host documents and files       |
-| remove_host     | boolean | members can remove host documents and files               |
-| modify_options  | boolean | members can modify global options                         |
+| Name        | Type    | Description                                                                       |
+| ----------- | ------- | --------------------------------------------------------------------------------- |
+| permissions | boolean | a permission update comprising an object keyed by permissions with boolean values |
 
 ## Example
 
 ```
-PATCH /api/groups/foobar
+PATCH /api/groups/research
 ```
 
 ```json
 {
 	"permissions": {
-		"modify_virus": true,
-		"remove_job": true
+		"create_ref": true
 	}
 }
 ```
@@ -231,40 +178,34 @@ Status: 200 OK
 {
 	"permissions": {
 		"cancel_job": false,
+		"create_ref": true,
 		"create_sample": false,
-		"manage_users": false,
 		"modify_hmm": false,
-		"modify_settings": false,
 		"modify_subtraction": false,
-		"modify_virus": true,
-		"rebuild_index": false,
 		"remove_file": false,
-		"remove_job": true,
-		"remove_virus": false,
+		"remove_job": false,
 		"upload_file": false
 	},
-	"id": "foobar"
+	"id": "research"
 }
 ```
 
 ## Errors
 
-| Status | Message       | Reason                                             |
-| :----- | :------------ | :------------------------------------------------- |
-| `403`  | Not permitted | client does not have the 'manage_users` permission |
-| `404`  | Not found     | group does not exist                               |
-| `422`  | Invalid input | JSON request body is invalid                       |
-
-{{% /endpoint %}}
+| Status | Message       | Reason                         |
+| :----- | :------------ | :----------------------------- |
+| `403`  | Not permitted | client is not an administrator |
+| `404`  | Not found     | group does not exist           |
+| `422`  | Invalid input | JSON request body is invalid   |
 
 
-{{% endpoint name="Remove" permission="manage_users" %}}
+# Remove
 
-Remove an existing group. Requestors must have the ``modify_users`` permission. This request will fail with ``400 Bad Request`` for the built-in administrator group.
+{{< administrator >}}
 
-```
-DELETE /api/groups/:group_id
-```
+Remove an existing group.
+
+{{< endpoint "DELETE" "/api/groups/:id" >}}
 
 ## Example
 
@@ -280,9 +221,7 @@ Status: 204 No Content
 
 ## Errors
 
-| Status | Message       | Reason                                             |
-| :----- | :------------ | :------------------------------------------------- |
-| `403`  | Not permitted | client does not have the 'manage_users` permission |
-| `404`  | Not found     | group does not exist                               |
-
-{{% /endpoint %}}
+| Status | Message       | Reason                         |
+| :----- | :------------ | :----------------------------- |
+| `403`  | Not permitted | client is not an administrator |
+| `404`  | Not found     | group does not exist           |

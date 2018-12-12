@@ -5,18 +5,15 @@ type: "api"
 menu:
     api:
         parent: Endpoints
-        weight: 10
 ---
 
 Unauthorized clients will receive ``401 Unauthorized`` for calls to all account endpoints.
 
-{{% endpoint name="Get" %}}
+# Get
 
 Get the complete respresentation for the account associated with the current session or API key.
 
-```
-GET /api/account
-```
+{{< endpoint "GET" "/api/account" >}}
 
 ## Response
 
@@ -26,9 +23,9 @@ Status: 200 OK
 
 ```json
 {
-	"groups": [
-		"administrator"
-	],
+	"administrator": true,
+	"groups": [],
+	"identicon": "6be6d0a72a16cb633144ec03cdaef77804c6f94770184f83e0899fe6bdcb77ee",
 	"settings": {
 		"skip_quick_analyze_dialog": true,
 		"show_ids": false,
@@ -37,22 +34,18 @@ Status: 200 OK
 	},
 	"permissions": {
 		"cancel_job": true,
+		"create_ref": true,
 		"create_sample": true,
-		"manage_users": true,
 		"modify_hmm": true,
-		"modify_settings": true,
 		"modify_subtraction": true,
-		"modify_virus": true,
-		"rebuild_index": true,
 		"remove_file": true,
 		"remove_job": true,
-		"remove_virus": true,
 		"upload_file": true
 	},
 	"primary_group": "",
-	"last_password_change": "2018-02-01T00:27:09.348000Z",
-	"identicon": "6be6d0a72a16cb633144ec03cdaef77804c6f94770184f83e0899fe6bdcb77ee",
-	"id": "baz"
+	"last_password_change": "2018-04-27T22:49:11.654000Z",
+	"email": "igboyes@virtool.ca",
+	"id": "igboyes"
 }
 ```
 
@@ -62,22 +55,20 @@ Status: 200 OK
 | :----- | :--------------------- | :-------------------------------------------------------------- |
 | `401`  | Requires authorization | request is not associated with an authorized session or API key |
 
-{{% /endpoint %}}
 
-
-{{% endpoint name="Edit" %}}
+# Edit
 
 Change the email address associated with the account associated with the current session or API key.
 
-```
-PATCH /api/account
-```
+{{< endpoint "PATCH" "/api/account" >}}
 
 ## Input
 
-| Name  | Type    | Description                                     |
-| :---- | :------ | :---------------------------------------------- |
-| email | string  | an email address                                |
+| Name         | Type    | Required |Description                        |
+| :----------- | :------ | :------------------------------------------- |
+| email        | string  | false    | an email address                  |
+| old_password | string  | false    | the old password for verification |
+| new_password | string  | false    | the new password                  |
 
 ## Example
 
@@ -87,7 +78,7 @@ PATCH /api/account
 
 ```json
 {
-    "email": "dev@virtool.ca"
+    "email": "dev@virtool.ca"	
 }
 ```
 
@@ -99,9 +90,9 @@ Status: 200 OK
 
 ```json
 {
-	"groups": [
-		"administrator"
-	],
+	"administrator": true,
+	"groups": [],
+	"identicon": "6be6d0a72a16cb633144ec03cdaef77804c6f94770184f83e0899fe6bdcb77ee",
 	"settings": {
 		"skip_quick_analyze_dialog": true,
 		"show_ids": false,
@@ -110,43 +101,36 @@ Status: 200 OK
 	},
 	"permissions": {
 		"cancel_job": true,
+		"create_ref": true,
 		"create_sample": true,
-		"manage_users": true,
 		"modify_hmm": true,
-		"modify_settings": true,
 		"modify_subtraction": true,
-		"modify_virus": true,
-		"rebuild_index": true,
 		"remove_file": true,
 		"remove_job": true,
-		"remove_virus": true,
 		"upload_file": true
 	},
 	"primary_group": "",
-	"last_password_change": "2018-02-01T00:27:09.348000Z",
-	"identicon": "6be6d0a72a16cb633144ec03cdaef77804c6f94770184f83e0899fe6bdcb77ee",
+	"last_password_change": "2018-04-27T22:49:11.654000Z",
 	"email": "dev@virtool.ca",
-	"id": "baz"
+	"id": "igboyes"
 }
 ```
 
 ## Errors
 
-| Status | Message                | Reason                                                          |
-| :----- | :--------------------- | :-------------------------------------------------------------- |
-| `401`  | Requires authorization | request is not associated with an authorized session or API key |
-| `422`  | Invalid input          | email address is invalid                                        |
+| Status | Message                | Reason                                                             |
+| :----- | :--------------------- | :----------------------------------------------------------------- |
+| `400`  | Invalid old password   | supplied old password is invalid                                   |
+| `401`  | Requires authorization | request is not associated with an authorized session or API key    |
+| `422`  | Invalid input          | email address is invalid or password fields are missing or invalid |
+| `401`  | Requires authorization | request is not associated with an authorized session or API key    |
 
-{{% /endpoint %}}
 
-
-{{% endpoint name="Get Settings" %}}
+# Get Settings
 
 Get the settings for the account associated with the current session or API key.
 
-```
-GET /api/account/settings
-```
+{{< endpoint "GET" "/api/account/settings" >}}
 
 ## Response
 
@@ -170,16 +154,11 @@ Status: 200 OK
 | `401`  | Requires authorization | request is not associated with an authorized session or API key |
 
 
-{{% /endpoint %}}
-
-
-{{% endpoint name="Edit Settings" %}}
+# Edit Settings
 
 Update the settings for the account associated with the current session or API key. All fields are optional.
 
-```
-PATCH /api/account/settings
-```
+{{< endpoint "PATCH" "/api/account/settings" >}}
 
 ## Input
 
@@ -224,68 +203,12 @@ Status: 200 OK
 | `401`  | Requires authorization | request is not associated with an authorized session or API key |
 | `422`  | Invalid input          | invalid settings key or value                                   |
 
-{{% /endpoint %}}
 
-
-{{% endpoint name="Change Password" %}}
-
-Change the password for the account associated with the current session or API key.
-
-```
-PUT /api/account/password
-```
-
-## Input
-
-| Name         | Type   | Optional | Description                       |
-| :----------- | :----- | :------- | :-------------------------------- |
-| old_password | string | false    | the old password for verification |
-| new_password | string | false    | the new password                  |
-
-## Example
-
-```
-PUT /api/account/password
-```
-
-```json
-{
-    "old_password": "foobar",
-    "new_password": "hello_world
-}
-```
-
-## Response
-
-```
-Status: 200 OK
-```
-
-```json
-
-{
-    "last_password_change": "2017-02-17T13:58:25.792550Z"
-}
-```
-
-## Errors
-
-| Status | Message                | Reason                                                          |
-| :----- | :--------------------- | :-------------------------------------------------------------- |
-| `400`  | Invalid old password   | supplied old password is invalid                                |
-| `401`  | Requires authorization | request is not associated with an authorized session or API key |
-| `422`  | Invalid input          | missing or invalid password fields                              |
-
-{{% /endpoint %}}
-
-
-{{% endpoint name="Get API Keys" %}}
+# Get API Keys
 
 List all API keys for the active account. The keys themselves are not returned.
 
-```
-GET /api/account/keys
-```
+{{< endpoint "GET" "/api/account/keys" >}}
 
 ## Response
 
@@ -296,26 +219,21 @@ Status: 200 OK
 ```json
 [
 	{
-		"id": "test 1_0",
-		"name": "Test 1",
-		"groups": [
-			"administrator"
-		],
+		"id": "test_0",
+		"name": "Test",
+		"administrator": true,
+		"groups": [],
 		"permissions": {
 			"cancel_job": true,
+			"create_ref": true,
 			"create_sample": true,
-			"manage_users": true,
 			"modify_hmm": true,
-			"modify_settings": true,
 			"modify_subtraction": true,
-			"modify_virus": true,
-			"rebuild_index": true,
 			"remove_file": true,
 			"remove_job": true,
-			"remove_virus": true,
 			"upload_file": true
 		},
-		"created_at": "2018-02-05T23:23:21.766000Z"
+		"created_at": "2018-05-01T19:47:03.334000Z"
 	}
 ]
 ```
@@ -324,23 +242,20 @@ Status: 200 OK
 | :----- | :--------------------- | :-------------------------------------------------------------- |
 | `401`  | Requires authorization | request is not associated with an authorized session or API key |
 
-{{% /endpoint %}}
 
-
-{{% endpoint name="Create API Key" %}}
+# Create API Key
 
 Create a new API key with the provided permissions. The response to this request is the only time the key string will be returned by the API.
 
-```
-POST /api/account/keys
-```
+{{< endpoint "POST" "/api/account/keys" >}}
 
 ## Input
 
-| Name         | Type   | Optional | Description                                                                                                 |
-| :----------- | :----- | :------- | :---------------------------------------------------------------------------------------------------------- |
-| name         | string | false    | a non-unique name for the API key                                                                           |
-| permissions  | object | true     | An object describing the permissions the new key will have. Any unset permissions will default to ``false`` |
+| Name          | Type    | Required | Description                                                                                                 |
+| :------------ | :------ | :------- | :---------------------------------------------------------------------------------------------------------- |
+| name          | string  | true     | a non-unique name for the API key                                                                           |
+| administrator | boolean | false    | sets administrative rights on the API key (default=`false`)                                                 |
+| permissions   | object  | false    | an object describing the permissions the new key will have. Any unset permissions will default to ``false`` |
 
 ## Example
 
@@ -352,7 +267,7 @@ POST /api/account/keys
 {
 	"name": "Test 2",
 	"permissions": {
-		"modify_virus": true
+		"create_sample": true
 	}
 }
 ```
@@ -367,25 +282,20 @@ Status: 201 Created
 {
 	"id": "test 2_0",
 	"name": "Test 2",
-	"groups": [
-		"administrator"
-	],
+	"administrator": false,
+	"groups": [],
 	"permissions": {
 		"cancel_job": false,
-		"create_sample": false,
-		"manage_users": false,
+		"create_ref": false,
+		"create_sample": true,
 		"modify_hmm": false,
-		"modify_settings": false,
 		"modify_subtraction": false,
-		"modify_virus": true,
-		"rebuild_index": false,
 		"remove_file": false,
 		"remove_job": false,
-		"remove_virus": false,
 		"upload_file": false
 	},
-	"created_at": "2018-02-06T17:36:18.955000Z",
-	"key": "69480f859c66455a84b334a60e7aa540"
+	"created_at": "2018-05-01T21:34:21.271000Z",
+	"key": "3f80126f767e48099bdd5a3704bf8453"
 }
 ```
 
@@ -394,24 +304,21 @@ Status: 201 Created
 | Status | Message                | Reason                                                          |
 | :----- | :--------------------- | :-------------------------------------------------------------- |
 | `401`  | Requires authorization | request is not associated with an authorized session or API key |
-| `422`  | Invalid input          | missing or invalid name or permissions object                   |
-
-{{% /endpoint %}}
+| `422`  | Invalid input          | missing or invalid value or permissions object                  |
 
 
-{{% endpoint name="Update API Key" %}}
+# Edit API Key
 
 Change the permissions of an existing API key.
 
-```
-PATCH /api/account/keys/:id
-```
+{{< endpoint "PATCH" "/api/account/keys/:id" >}}
 
 ## Input
 
-| Name        | Type   | Optional | Description                                                                                                 |
-| :---------- | :----- | :------- | :---------------------------------------------------------------------------------------------------------- |
-| permissions | object | false    | An object describing the permissions the new key will have. Any unset permissions will default to ``false`` |
+| Name          | Type    | Required | Description                                                                                                 |
+| :------------ | :------ | :------- | :---------------------------------------------------------------------------------------------------------- |
+| administrator | boolean | false    | sets administrative rights on the API key                                                                   |
+| permissions   | object  | false    | an object describing updates to the key's permissions                                                       |
 
 ## Example
 
@@ -421,9 +328,9 @@ PATCH /api/account/keys/test%202_0
 
 ```json
 {
-	"name": "Key Test",
+	"administrator": true,
 	"permissions": {
-		"rebuild_index": true
+		"modify_subtraction": true
 	}
 }
 ```
@@ -438,24 +345,19 @@ Status: 200 OK
 {
 	"id": "test 2_0",
 	"name": "Test 2",
-	"groups": [
-		"administrator"
-	],
+	"administrator": true,
+	"groups": [],
 	"permissions": {
 		"cancel_job": false,
-		"create_sample": false,
-		"manage_users": false,
+		"create_ref": false,
+		"create_sample": true,
 		"modify_hmm": false,
-		"modify_settings": false,
-		"modify_subtraction": false,
-		"modify_virus": true,
-		"rebuild_index": true,
+		"modify_subtraction": true,
 		"remove_file": false,
 		"remove_job": false,
-		"remove_virus": false,
 		"upload_file": false
 	},
-	"created_at": "2018-02-06T17:36:18.955000Z"
+	"created_at": "2018-05-01T21:34:21.271000Z"
 }
 ```
 
@@ -467,16 +369,12 @@ Status: 200 OK
 | `404`  | Not found              | API key identified by `:id` does not exist                      |
 | `422`  | Invalid input          | missing or invalid permissions object                           |
 
-{{% /endpoint %}}
 
-
-{{% endpoint name="Delete API Key" %}}
+# Delete API Key
 
 Delete an existing API key.
 
-```
-DELETE /api/account/keys/:id
-```
+{{< endpoint "DELETE" "/api/account/keys/:id" >}}
 
 ## Example
 
@@ -497,17 +395,12 @@ Status: 204 No content
 | `401`  | Requires authorization | request is not associated with an authorized session or API key |
 | `404`  | Not found              | API key identified by `:id` does not exist                      |
 
-{{% /endpoint %}}
 
-
-{{% endpoint name="Logout" %}}
+# Logout
 
 Logout by invalidating the current session. It will have no effect for connections authenticated with an API key.
 
-
-```
-GET /api/account/logout
-```
+{{< endpoint "GET" "/api/account/logout" >}}
 
 ## Response
 

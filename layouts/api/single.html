@@ -1,39 +1,44 @@
 {{ define "main" }}
-<div class="section">
-    <div class="container">
-        <div class="level">
-            <div class="level-left">
-                <div class="level-item contains-nav">
-                    <nav class="breadcrumb " aria-label="breadcrumbs">
-                        <ul>
-                            <li><a class="title is-4" href="/docs">Docs</a></li>
-                            <li><a class="title is-5" href="/docs/api">API</a></li>
-                            <li><a href="#">{{ .Title }}</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>            
-            <div class="level-right">
-                <div class="level-item tags has-addons">
-                    <span class="tag is-dark">Updated</span>
-                    <span class="tag is-info">{{ .GitInfo.AuthorDate.Format "January 2, 2006" }}</span>
+    <div class="section">
+        <div class="container">
+            <div class="level">
+                <div class="level-left">
+                    <div class="level-item contains-nav">
+                        <nav class="breadcrumb " aria-label="breadcrumbs">
+                            <ul>
+                                <li><a class="title is-4" href="/docs">Docs</a></li>
+                                <li><a class="title is-5" href="/docs/api">API</a></li>
+                                <li><a href="#">{{ .Title }}</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>            
+                <div class="level-right">
+                    <div class="level-item tags has-addons">
+                        <span class="tag is-dark">Updated</span>
+                        <span class="tag is-info">{{ .GitInfo.AuthorDate.Format "January 2, 2006" }}</span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="columns">
-            <div class="column is-narrow is-hidden-touch">
-                {{ partial "side.html" (dict "CurrentPage" . "MenuName" "api") }}
-            </div>
+            <div class="columns">
+                <div class="column is-narrow is-hidden-touch">
+                    {{ partial "side.html" (dict "CurrentPage" . "MenuName" "api") }}
+                </div>
 
-            <div class="column docs docs-api">
-                <p>
-                    {{ .Page.Description }}
-                </p>
-                {{ $replaced := (replaceRE "<table>([\\s\\S]*?)<\\/table>" "<div class='table-wrapper'><table>$1</table></div>" .Content) }}
-                {{ safeHTML $replaced }}
-            </div>   
+                <div class="column docs docs-api">
+                    <div style="width: 100%">
+                        <p>
+                            {{ .Page.Description }}
+                        </p>
+    
+                        {{ .TableOfContents }}
+    
+                        {{ $replaced := (replace .Content "<table>" "<table class='table is-bordered is-striped is-fullwidth'>") }}
+                        {{ safeHTML $replaced }}
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
 {{ end }}

@@ -5,16 +5,13 @@ type: "api"
 menu:
     api:
         parent: Endpoints
-        weight: 60
 ---
 
-{{% endpoint name="Find" %}}
+# Find
 
 Find jobs by task name or the originating username.
 
-```
-GET /api/jobs?find=nuvs
-```
+{{< endpoint "GET" "/api/jobs" >}}
 
 ## Parameters
 
@@ -23,6 +20,12 @@ GET /api/jobs?find=nuvs
 | find     | string  | null    | task name or username to filter by     |
 | page     | integer | 1       | page number of results to return       |
 | per_page | integer | 15      | number of documents to return per page |
+
+## Example
+
+```
+GET /api/jobs?find=nuvs
+```
 
 ## Response
 
@@ -74,14 +77,12 @@ Status: 200 OK
 | :----- | :------------ | :---------------------------------------- |
 | `422`  | Invalid query | validation error for URL query parameters |
 
-{{% /endpoint %}}
 
+# Get
 
-{{% endpoint name="Get" %}}
+Get the complete representation for a single job.
 
-```
-GET /api/jobs/:job_id
-```
+{{< endpoint "GET" "/api/jobs/:id" >}}
 
 ## Example
 
@@ -147,18 +148,16 @@ Status: 200 OK
 | :----- | :-------- | :----------------------------- |
 | `404`  | Not found | `job_id` in URL does not exist |
 
-{{% /endpoint %}}
 
+# Cancel
 
-{{% endpoint name="Cancel" permission="cancel_job" %}}
+{{< permission "cancel_job" >}}
 
 Cancel a job safely and cleanly. Cancellation stops all processes and cleans up intermediate data.
 
 Attempting to cancel a job more than once or cancel a finished job will result in no change, but will still return a ``200 OK`` response.
 
-```
-PUT /api/jobs/:job_id/cancel
-```
+{{< endpoint "PUT" "/api/jobs/:id/cancel" >}}
 
 ## Example
 
@@ -229,20 +228,18 @@ Status: 200 OK
 
 | Status | Message         | Reason                                              |
 | :----- | :-------------- | :-------------------------------------------------- |
-| `400`  | Not cancellable | job is already finished                             |
-| `403`  | Not permitted   | client does not have the `create_sample` permission |
+| `403`  | Not permitted   | client does not have the `cancel_job` permission    |
 | `404`  | Not found       | `job_id` in URL does not exist                      |
+| `409`  | Not cancellable | job is already finished                             |
 
-{{% /endpoint %}}
 
+# Remove
 
-{{% endpoint name="Remove" permission="remove_job" %}}
+{{< permission "remove_job" >}}
 
 Remove a job that is complete, cancelled, or errored. If the requested job is running or waiting to run, ``409 Conflict`` will be returned.
 
-```
-DELETE /api/jobs/:job_id
-```
+{{< endpoint "DELETE" "/api/jobs/:id" >}}
 
 ## Example
 
@@ -258,21 +255,20 @@ Status: 204 No Content
 
 ## Errors
 
-| Status | Message       | Reason                                              |
-| :----- | :------------ | :-------------------------------------------------- |
-| `403`  | Not permitted | client does not have the `remove_sample` permission |
-| `404`  | Not found     | `job_id` in URL does not exist                      |
+| Status | Message                                         | Reason                                              |
+| :----- | :---------------------------------------------- | :-------------------------------------------------- |
+| `403`  | Not permitted                                   | client does not have the `remove_sample` permission |
+| `409`  | Job is running or waiting and cannot be removed | job must finish before it can be removed            |
+| `404`  | Not found                                       | `job_id` in URL does not exist                      |
 
-{{% /endpoint %}}
 
+# Clear
 
-{{% endpoint name="Clear" permission="remove_job" %}}
+{{< permission "remove_job" >}}
 
 Clear completed, failed, or all finished jobs.
 
-```
-DELETE /api/jobs/:job_state
-```
+{{< endpoint "DELETE" "/api/jobs/:job_state" >}}
 
 ## Values for ``job_state``
 
@@ -302,5 +298,3 @@ Status: 200 OK
 ## Errors
 
 _None_
-
-{{% /endpoint %}}

@@ -5,18 +5,17 @@ type: "api"
 menu:
     api:
         parent: Endpoints
-        weight: 50
 ---
 
 Analyses are the results of a given Virtool analytical pipelines on a single sample.
 
-{{% endpoint name="Get" %}}
+# Get
+
+{{< right read >}}
 
 Get a complete analysis document.
 
-```
-GET /api/analyses/:analysis_id
-```
+{{< endpoint "GET" "/api/analyses/:id" >}}
 
 ## Example
 
@@ -56,23 +55,22 @@ Status: 200 OK
 
 ## Errors
 
-| Status | Message             | Reason                                                                           |
-| :----- | :------------------ | :------------------------------------------------------------------------------- |
-| `403`  | Insufficient rights | client does not have the required sample rights to view the analysis             |
-| `404`  | Not found           | `sample_id` in URL does not exist                                                |
+| Status | Message                      | Reason                                                               |
+| :----- | :--------------------------- | :------------------------------------------------------------------- |
+| `400`  | Parent sample does not exist | the parent sample for the analysis could not be found                |
+| `403`  | Insufficient rights          | client does not have the required sample rights to view the analysis |
+| `404`  | Not found                    | `analysis_id` in URL does not exist                                  |
 
-{{% /endpoint %}}
 
+# Remove
 
-{{% endpoint name="Remove" %}}
+{{< right write >}}
 
 Remove and existing analysis.
 
 This request will fail if the analysis is still in progress. Cancel the associated job first.
 
-```
-DELETE /api/analyses/:analysis_id
-```
+{{< endpoint "DELETE" "/api/analyses/:id" >}}
 
 ## Example
 
@@ -88,24 +86,23 @@ Status: 204 No content
 
 ## Errors
 
-| Status | Message                   | Reason                                                                           |
-| :----- | :------------------------ | :------------------------------------------------------------------------------- |
-| `403`  | Insufficient rights       | client does not have the required sample rights to remove the analysis           |
-| `404`  | Not found                 | `sample_id` in URL does not exist                                                |
-| `409`  | Analysis is still running | analysis job is still in progress                                                |
+| Status | Message                      | Reason                                                                 |
+| :----- | :--------------------------- | :--------------------------------------------------------------------- |
+| `400`  | Parent sample does not exist | the parent sample for the analysis could not be found                  |
+| `403`  | Insufficient rights          | client does not have the required sample rights to remove the analysis |
+| `404`  | Not found                    | analysis does not exist                                                |
+| `409`  | Analysis is still running    | analysis job is still in progress                                      |
 
-{{% /endpoint %}}
 
+# BLAST Contig
 
-{{% endpoint name="BLAST Contig" %}}
+{{< right write >}}
 
 BLAST a contig that was generated as part of a NuVs analysis.
 
 Calling this endpoint for a sequence that has already been BLASTed will result in the old result being overwritten. This request will fail with ``400 Bad Request`` for non-NuVs analyses.
 
-```
-PUT /api/analyses/:analysis_id/:sequence_index/blast
-```
+{{< endpoint "PUT" "/api/analyses/:id/:sequence_index/blast" >}}
 
 ## Example
 
@@ -130,13 +127,11 @@ Status: 200 OK
 
 ## Errors
 
-| Status | Message                   | Reason                                                                           |
-| :----- | :------------------------ | :------------------------------------------------------------------------------- |
-| `400`  | Not a NuVs analysis       | analysis cannot be BLASTed because it is not a NuVs analysis                     |
-| `403`  | Insufficient rights       | client does not have the required sample rights to remove the analysis           |
-| `404`  | Not found                 | `sample_id` in URL does not exist                                                |
-| `404`  | Sample not found          | sample associated with analysis was not found                                    |
-| `409`  | Sequence not found        | `sequence_index` in URL does not exist                                           |
-| `409`  | Analysis is still running | analysis job is still in progress and cannot be BLASTed                          |
-
-{{% /endpoint %}}
+| Status | Message                      | Reason                                                                 |
+| :----- | :--------------------------- | :--------------------------------------------------------------------- |
+| `400`  | Parent sample does not exist | sample associated with analysis was not found                          |
+| `403`  | Insufficient rights          | client does not have the sample rights required to change the analysis |
+| `404`  | Analysis not found           | analysis does not exist                                                |
+| `404`  | Sequence not found           | sequence does not exist                                                |
+| `409`  | Not a NuVs analysis          | analysis cannot be BLASTed because it is not a NuVs analysis           |
+| `409`  | Analysis is still running    | analysis job is still in progress and cannot be BLASTed                |
