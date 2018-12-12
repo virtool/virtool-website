@@ -2,8 +2,9 @@
 
 Bulma is a **modern CSS framework** based on [Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes).
 
-[![npm](https://img.shields.io/npm/v/bulma.svg)](https://www.npmjs.com/package/bulma)
-[![npm](https://img.shields.io/npm/dm/bulma.svg)](https://www.npmjs.com/package/bulma)
+[![npm](https://img.shields.io/npm/v/bulma.svg)][npm-link]
+[![npm](https://img.shields.io/npm/dm/bulma.svg)][npm-link]
+[![Awesome][awesome-badge]][awesome-link]
 [![Join the chat at https://gitter.im/jgthms/bulma](https://badges.gitter.im/jgthms/bulma.svg)](https://gitter.im/jgthms/bulma)
 [![Build Status](https://travis-ci.org/jgthms/bulma.svg?branch=master)](https://travis-ci.org/jgthms/bulma)
 
@@ -83,11 +84,11 @@ Browse the [online documentation here.](https://bulma.io/documentation/overview/
 | [Goldfish](https://github.com/Caiyeon/goldfish)                                    | Vault UI with Bulma, Golang, and Vue Admin                         |
 | [ember-bulma](https://github.com/open-tux/ember-bulma)                             | Ember addon providing a collection of UI components for Bulma      |
 | [Bloomer](https://bloomer.js.org)                                                  | A set of React components for Bulma                                |
-| [Re-bulma](https://github.com/bokuweb/re-bulma)                                    | Bulma components build with React                                  |
 | [React-bulma](https://github.com/kulakowka/react-bulma)                            | React.js components for Bulma                                      |
 | [Buefy](https://buefy.github.io)                                                   | Lightweight UI components for Vue.js based on Bulma                |
 | [vue-bulma-components](https://github.com/vouill/vue-bulma-components)             | Bulma components for Vue.js with straightforward syntax            |
 | [BulmaJS](https://github.com/VizuaaLOG/BulmaJS)                                    | Javascript integration for Bulma. Written in ES6 with a data-* API |
+| [Bulma-modal-fx](https://github.com/postare/bulma-modal-fx)                                  | A set of modal window effects with CSS transitions and animations for Bulma                                    |
 | [Bulma.styl](https://github.com/log1x/bulma.styl)                                  | 1:1 Stylus translation of Bulma                                    |
 | [elm-bulma](https://github.com/surprisetalk/elm-bulma)                             | Bulma + Elm                                                        |
 | [elm-bulma-classes](https://github.com/ahstro/elm-bulma-classes)                   | Bulma classes prepared for usage with Elm                          |
@@ -100,7 +101,12 @@ Browse the [online documentation here.](https://bulma.io/documentation/overview/
 | [purescript-bulma](https://github.com/sectore/purescript-bulma)                    | PureScript bindings for Bulma                                      |
 | [Vue Datatable](https://github.com/laravel-enso/vuedatatable)                      | Bulma themed datatable based on Vue, Laravel & JSON templates      |
 | [bulma-fluent](https://mubaidr.github.io/bulma-fluent/)                            | Fluent Design Theme for Bulma inspired by Microsoft’s Fluent Design System      |
+| [csskrt-csskrt](https://github.com/4d11/csskrt-csskrt)                            | Automatically add Bulma classes to HTML files                       |
 
 ## Copyright and license
 
 Code copyright 2018 Jeremy Thomas. Code released under [the MIT license](https://github.com/jgthms/bulma/blob/master/LICENSE).
+
+[npm-link]: https://www.npmjs.com/package/bulma
+[awesome-link]:  https://github.com/awesome-css-group/awesome-css
+[awesome-badge]: https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg
