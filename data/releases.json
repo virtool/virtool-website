@@ -117,30 +117,18 @@
     },
     "software": {
         "latest": {
-            "name": "v3.0.0",
-            "body": "#### Changed\r\n- allow export of built reference content only\r\n- allow export of referencees using the original remote OTU ids\r\n\r\n#### Fixed\r\n- fix a lot of miscellanous user interface bugs\r\n- fix broken OTU filter button (#1212)\r\n- fix bugs in job clear dropdown (#1211)\r\n- fix remote reference not getting data type and organism from source (#1224)\r\n- fix problem where user member groups are not options in primary group dropdown (#1221)\r\n\r\n",
+            "name": "v2.3.2",
+            "body": "#### Fixed\r\n- fixes unhandled `RuntimeError` during real-time communication that may be causing job instability (#769)",
             "prerelease": false,
-            "published_at": "2018-12-12T22:09:56Z",
-            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.0.0",
+            "published_at": "2018-06-04T17:35:41Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v2.3.2",
             "filename": "virtool.tar.gz",
             "content_type": "application/gzip",
-            "size": 45390272,
-            "download_url": "https://github.com/virtool/virtool/releases/download/v3.0.0/virtool.tar.gz",
+            "size": 20639970,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v2.3.2/virtool.tar.gz",
             "asset_error": false
         },
         "releases": [
-            {
-                "name": "v3.0.0",
-                "body": "#### Changed\r\n- allow export of built reference content only\r\n- allow export of referencees using the original remote OTU ids\r\n\r\n#### Fixed\r\n- fix a lot of miscellanous user interface bugs\r\n- fix broken OTU filter button (#1212)\r\n- fix bugs in job clear dropdown (#1211)\r\n- fix remote reference not getting data type and organism from source (#1224)\r\n- fix problem where user member groups are not options in primary group dropdown (#1221)\r\n\r\n",
-                "prerelease": false,
-                "published_at": "2018-12-12T22:09:56Z",
-                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.0.0",
-                "filename": "virtool.tar.gz",
-                "content_type": "application/gzip",
-                "size": 45390272,
-                "download_url": "https://github.com/virtool/virtool/releases/download/v3.0.0/virtool.tar.gz",
-                "asset_error": false
-            },
             {
                 "name": "v3.0.0-beta.9",
                 "body": "#### Changed\r\n- improved appearance of some fonts\r\n\r\n#### Fixed\r\n- fix client crash when editing or viewing references (#1191)\r\n- fix client crash when viewing changes for a specific index (#1192)\r\n- fix exporting remote references\r\n- fix files not being removed when user removes analysis (#1188)\r\n- fix lingering **In Progress** analyses and incorrect sample algorithm tags (#1195)\r\n- fix problems with analysis clean-up after error or cancellation (#1195, #1188)\r\n- fix ugly rendering when no references installed (#1185)\r\n- prevent error when reference is loaded after member user has been removed from the system (#1199)",
