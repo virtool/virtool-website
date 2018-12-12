@@ -13,7 +13,6 @@ sitemap:
 outputs:
   page:
     - "HTML"
-    - "JSON"
 
 menu:
   api:
