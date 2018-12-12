@@ -36,6 +36,16 @@
 @import "sass/side"
 @import "sass/toc"
 
+body
+    display: flex
+    min-height: calc(100vh - 52px)
+    flex-direction: column;
+
+#footer-buffer
+    flex: 1;
+
+.footer
+    padding: 24px
 
 .image    
     border: 0.1rem solid #ddd
@@ -91,4 +101,4 @@ img,video
         border-left: 1px solid grey
 
     .menu-list
-        font-size: 0.8rem    
+        font-size: 0.8rem  
