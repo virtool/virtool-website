@@ -1,40 +1,76 @@
 {
-    "database": {
+    "ref_plant_viruses": {
         "latest": {
-            "name": "v0.3.0",
-            "body": "The release consists of a gzipped JSON file containing:\r\n\r\n- a `data_type` field with value _genome_\r\n- an `organism` field with value _virus_\r\n- the `version` name (eg. *v0.2.0*)\r\n- a timestamp with the key `created_at`\r\n- virus data compatible for import into Virtool v2.0.0+\r\n\r\nScripts have been updated to follow upcoming convention changes in Virtool v3.0.0.",
+            "name": "v1.0.2",
+            "body": "- add 1 isolate for Tobacco mosaic virus",
             "prerelease": false,
-            "published_at": "2018-04-26T19:35:33Z",
-            "html_url": "https://github.com/virtool/virtool-database/releases/tag/v0.3.0",
+            "published_at": "2018-11-29T22:57:49Z",
+            "html_url": "https://github.com/virtool/ref-plant-viruses/releases/tag/v1.0.2",
             "filename": "reference.json.gz",
             "content_type": "application/gzip",
-            "size": 3709091,
-            "download_url": "https://github.com/virtool/virtool-database/releases/download/v0.3.0/reference.json.gz",
+            "size": 3448888,
+            "download_url": "https://github.com/virtool/ref-plant-viruses/releases/download/v1.0.2/reference.json.gz",
             "asset_error": false
         },
         "releases": [
             {
-                "name": "v0.3.0",
-                "body": "The release consists of a gzipped JSON file containing:\r\n\r\n- a `data_type` field with value _genome_\r\n- an `organism` field with value _virus_\r\n- the `version` name (eg. *v0.2.0*)\r\n- a timestamp with the key `created_at`\r\n- virus data compatible for import into Virtool v2.0.0+\r\n\r\nScripts have been updated to follow upcoming convention changes in Virtool v3.0.0.",
+                "name": "v1.0.2",
+                "body": "- add 1 isolate for Tobacco mosaic virus",
                 "prerelease": false,
-                "published_at": "2018-04-26T19:35:33Z",
-                "html_url": "https://github.com/virtool/virtool-database/releases/tag/v0.3.0",
+                "published_at": "2018-11-29T22:57:49Z",
+                "html_url": "https://github.com/virtool/ref-plant-viruses/releases/tag/v1.0.2",
                 "filename": "reference.json.gz",
                 "content_type": "application/gzip",
-                "size": 3709091,
-                "download_url": "https://github.com/virtool/virtool-database/releases/download/v0.3.0/reference.json.gz",
+                "size": 3448888,
+                "download_url": "https://github.com/virtool/ref-plant-viruses/releases/download/v1.0.2/reference.json.gz",
                 "asset_error": false
             },
             {
-                "name": "v0.2.0",
-                "body": "The first release of the database using the new format.\r\n\r\nThe release consists of a gzipped JSON file containing:\r\n\r\n- the version name (eg. *v0.2.0*)\r\n- a timestamp with the key ``created_at``\r\n- the virus data compatible for import into Virtool v2.0.0+",
+                "name": "v1.0.1",
+                "body": "#### Changed\r\n- Added Apple rubbery wood virus 1\r\n- Added Apple rubbery wood virus 2\r\n- Added Grapevine virus H\r\n- Added 23 isolates for Grapevine virus T\r\n- Added 4 isolates for Grapevine leafroll-associated virus 1\r\n- Added 5 isolates for Grapevine leafroll-associated virus 2\r\n- Added 13 isolates for Grapevine leafroll-associated virus 3\r\n- Added 12 isolates for Grapevine pinot gris virus\r\n- Added 1 isolate for Grapevine syrah virus\r\n- Added 1 isolate for Raspberry bushy dwarf virus\r\n- Added more Tomato ringspot virus isolates\r\n- Removed 1 Apricot latent virus isolate",
                 "prerelease": false,
-                "published_at": "2017-09-27T21:31:41Z",
-                "html_url": "https://github.com/virtool/virtool-database/releases/tag/v0.2.0",
-                "filename": "viruses.json.gz",
+                "published_at": "2018-11-29T20:15:42Z",
+                "html_url": "https://github.com/virtool/ref-plant-viruses/releases/tag/v1.0.1",
+                "filename": "reference.json.gz",
                 "content_type": "application/gzip",
-                "size": 3709347,
-                "download_url": "https://github.com/virtool/virtool-database/releases/download/v0.2.0/viruses.json.gz",
+                "size": 3542077,
+                "download_url": "https://github.com/virtool/ref-plant-viruses/releases/download/v1.0.1/reference.json.gz",
+                "asset_error": false
+            },
+            {
+                "name": "v1.0.0",
+                "body": "- added all Genbank isolates for ASPV\r\n- fixed isolate names from some poorly named isolates\r\n- removed viruses and isolates used by the developers that haven't yet been published to Genbank\r\n- separated Apple stem pitting (ASPV) and Apricot latent viruses (ApLV)\r\n",
+                "prerelease": false,
+                "published_at": "2018-11-26T23:50:46Z",
+                "html_url": "https://github.com/virtool/ref-plant-viruses/releases/tag/v1.0.0",
+                "filename": "reference.json.gz",
+                "content_type": "application/gzip",
+                "size": 3330865,
+                "download_url": "https://github.com/virtool/ref-plant-viruses/releases/download/v1.0.0/reference.json.gz",
+                "asset_error": false
+            },
+            {
+                "name": "v0.1.2",
+                "body": "#### Changed\r\n- add new isolates to Cucurbit chlorotic yellows virus",
+                "prerelease": false,
+                "published_at": "2018-06-12T21:52:33Z",
+                "html_url": "https://github.com/virtool/ref-plant-viruses/releases/tag/v0.1.2",
+                "filename": "reference.json.gz",
+                "content_type": "application/gzip",
+                "size": 3699729,
+                "download_url": "https://github.com/virtool/ref-plant-viruses/releases/download/v0.1.2/reference.json.gz",
+                "asset_error": false
+            },
+            {
+                "name": "v0.1.1",
+                "body": "#### Fixed\r\n- fixed uploading to GitHub releases in `.travis.yml`",
+                "prerelease": false,
+                "published_at": "2018-06-12T19:20:57Z",
+                "html_url": "https://github.com/virtool/ref-plant-viruses/releases/tag/v0.1.1",
+                "filename": "reference.json.gz",
+                "content_type": "application/gzip",
+                "size": 3695872,
+                "download_url": "https://github.com/virtool/ref-plant-viruses/releases/download/v0.1.1/reference.json.gz",
                 "asset_error": false
             }
         ]
@@ -93,6 +129,54 @@
             "asset_error": false
         },
         "releases": [
+            {
+                "name": "v3.0.0-beta.9",
+                "body": "#### Changed\r\n- improved appearance of some fonts\r\n\r\n#### Fixed\r\n- fix client crash when editing or viewing references (#1191)\r\n- fix client crash when viewing changes for a specific index (#1192)\r\n- fix exporting remote references\r\n- fix files not being removed when user removes analysis (#1188)\r\n- fix lingering **In Progress** analyses and incorrect sample algorithm tags (#1195)\r\n- fix problems with analysis clean-up after error or cancellation (#1195, #1188)\r\n- fix ugly rendering when no references installed (#1185)\r\n- prevent error when reference is loaded after member user has been removed from the system (#1199)",
+                "prerelease": true,
+                "published_at": "2018-11-28T20:02:43Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.0.0-beta.9",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 45852443,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.0.0-beta.9/virtool.tar.gz",
+                "asset_error": false
+            },
+            {
+                "name": "v3.0.0-beta.8",
+                "body": "#### Fixed\r\n- fixed client crash when viewing reference as non-admin (#1173)\r\n- fixed client crash in users admin tab (#1174)\r\n- fixed exception when restarting server after software update\r\n- fixed FastQC parsing error (#1176)\r\n- fixed poor sorting of list items\r\n- fix sample selection and multiple analysis UI (#1172)\r\n- fix various client crashes (#1170, #1171)\r\n",
+                "prerelease": true,
+                "published_at": "2018-11-14T22:39:48Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.0.0-beta.8",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 45621654,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.0.0-beta.8/virtool.tar.gz",
+                "asset_error": false
+            },
+            {
+                "name": "v3.0.0-beta.7",
+                "body": "#### Changed\r\n- improve functionality of auto-scrolling lists\r\n- remove some unwanted server console messages\r\n\r\n#### Fixed\r\n- fix bug where sample rights can't be changed in certain auth scenarios (#1154)\r\n- fix references user and group UI (#1156)\r\n- fix search bugs in auto-scrolling lists\r\n- fix slow analysis requests for `PathoscopeBowtie` (#894)\r\n",
+                "prerelease": true,
+                "published_at": "2018-11-08T00:16:35Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.0.0-beta.7",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 45618923,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.0.0-beta.7/virtool.tar.gz",
+                "asset_error": false
+            },
+            {
+                "name": "v3.0.0-beta.6",
+                "body": "#### Changed\r\n- don't spam update message to clients for large reference operations (#1143)\r\n\r\n#### Fixed\r\n- fix incorrect data in isolate edit forms (#1143)\r\n- fix memory limit error when sorting analysis results using `motor` (#1157)\r\n- fix missing update for sample algorithm tags (#1142)\r\n",
+                "prerelease": true,
+                "published_at": "2018-10-31T18:54:21Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.0.0-beta.6",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 45619437,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.0.0-beta.6/virtool.tar.gz",
+                "asset_error": false
+            },
             {
                 "name": "v3.0.0-beta.5",
                 "body": "#### Changed\r\n- back-end job management improvements\r\n\r\n#### Fixed\r\n- fix missing default sequences in reference index builds\r\n- fix lingering build issues\r\n- fix fatal error when trying to upload reference import file\r\n- fix non-functional administrative change password inputs",
