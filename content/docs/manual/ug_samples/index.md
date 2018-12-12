@@ -6,6 +6,8 @@ menu:
     parent: "User Guide"
 ---
 
+{{< construction >}}
+
 # Overview
 
 Selecting _Samples_ on the top menu brings up the main sample managment view. Here, samples can be created, viewed, edited, analyzed, and removed.

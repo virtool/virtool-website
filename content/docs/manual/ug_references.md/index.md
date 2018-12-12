@@ -6,6 +6,8 @@ menu:
     parent: "User Guide"
 ---
 
+{{< construction >}}
+
 # Settings
 
 ## Source Types

@@ -6,4 +6,4 @@ menu:
     parent: "User Guide"
 ---
 
-Subtractions are used
+{{< construction >}}
