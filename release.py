@@ -81,45 +81,6 @@ def get_release_data(username, token):
     return release_data
 
 
-def update_website_json(data, username, token):
-    url = "https://api.github.com/repos/virtool/virtool-website/contents/_data/releases.json"
-
-    body = requests.get(url, auth=(username, token)).json()
-
-    import pprint
-    pprint.pprint(body)
-
-    sha = body["sha"]
-
-    encoded = base64.standard_b64encode(
-        json.dumps(data).encode()).decode("ascii")
-
-    requests.put(url, auth=(username, token), json={
-        "message": "Update releases.json",
-        "committer": {
-            "name": "Travis Build",
-            "email": "dev@virtool.ca"
-        },
-        "content": encoded,
-        "sha": sha
-    })
-
-
-def download_reference_release(url, path):
-    resp = requests.get(url, stream=True)
-
-    raw = resp.raw
-
-    with open(path, "wb") as f:
-        while True:
-            chunk = raw.read(1024, decode_content=True)
-
-            if not chunk:
-                break
-
-            f.write(chunk)
-
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
@@ -151,6 +112,3 @@ if __name__ == "__main__":
 
     with open("static/releases", "w") as f:
         json.dump({key: data[key]["releases"] for key in data}, f)
-
-    download_reference_release(
-        data["ref_plant_viruses"]["latest"]["download_url"], "./reference.json.gz")
