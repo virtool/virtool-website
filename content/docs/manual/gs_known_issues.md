@@ -11,7 +11,7 @@ menu:
 
 ## Problem
 
-You see an fatal error message similar to the following when starting Virtool.
+You see an fatal error message similar to the following when starting Virtool:
 
 ```
 inotify.calls.InotifyError: Call failed (should not be -1): (-1) ERRNO=(0)
@@ -26,13 +26,12 @@ This error indicates that the system inotify watch limit is too low. You can inc
 1. Open `/etc/sysctl.conf`
 
 2. Add or update the following configuration line:
-
    ```
    fs.inotify.max_user_watches = 524288
    ```
 
 3. Save the changes using the following command
-   ```
+   ```term
    sudo sysctl -p --system
    ```
 
@@ -51,8 +50,8 @@ object file: No such file or directory
 
 Install the missing package. If you are using our recommended operating system Debian, issue the following command in the terminal.
 
-```
-apt-get install libtbb-dev
+```term
+apt install libtbb-dev
 ```
 
 If you are using a different operating system consult its documentation for information on installing packages.

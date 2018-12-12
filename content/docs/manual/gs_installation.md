@@ -58,7 +58,7 @@ The MongoDB documentation provides step-by-step instructions for installing Mong
 
 Once you have installed MongoDB, ensure it is running by issuing the following command:
 
-```bash
+```term
 sudo service mongod status
 ```
 
