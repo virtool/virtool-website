@@ -54,13 +54,14 @@ def format_release(release):
 def get_release_data(username, token):
     release_data = dict()
 
-    for repo, key in [("virtool", "software"), ("virtool-database", "database"), ("virtool-hmm", "hmm")]:
+    for repo, key in [("virtool", "software"), ("ref-plant-viruses", "ref_plant_viruses"), ("virtool-hmm", "hmm")]:
         release_data[key] = list()
 
         releases = list()
 
         for i in range(1, 5):
-            url = "https://api.github.com/repos/virtool/{}/releases?per_page=100&page={}".format(repo, i)
+            url = "https://api.github.com/repos/virtool/{}/releases?per_page=100&page={}".format(
+                repo, i)
             body = requests.get(url, auth=(username, token)).json()
 
             if not body:
@@ -90,7 +91,8 @@ def update_website_json(data, username, token):
 
     sha = body["sha"]
 
-    encoded = base64.standard_b64encode(json.dumps(data).encode()).decode("ascii")
+    encoded = base64.standard_b64encode(
+        json.dumps(data).encode()).decode("ascii")
 
     requests.put(url, auth=(username, token), json={
         "message": "Update releases.json",
@@ -103,7 +105,7 @@ def update_website_json(data, username, token):
     })
 
 
-def download_database_release(url, path):
+def download_reference_release(url, path):
     resp = requests.get(url, stream=True)
 
     raw = resp.raw
@@ -137,7 +139,7 @@ if __name__ == "__main__":
 
     data = dict()
 
-    for key in ["database", "hmm", "software"]:
+    for key in ["ref_plant_viruses", "hmm", "software"]:
         releases = downloaded[key]
         data[key] = {
             "latest": get_latest(releases),
@@ -150,6 +152,5 @@ if __name__ == "__main__":
     with open("static/releases", "w") as f:
         json.dump({key: data[key]["releases"] for key in data}, f)
 
-    latest_database_url = data["database"]["latest"]["download_url"]
-    
-    download_database_release(latest_database_url, "./reference.json.gz")
+    download_reference_release(
+        data["ref_plant_viruses"]["latest"]["download_url"], "./reference.json.gz")
