@@ -1,16 +1,36 @@
 {{ define "main" }}
 <div class="section">
-    <div class="container">        
-        <h1 class="title is-4 level">
-            <span class="level-left">
-                Software
-            </span>
-            <a class="is-size-7 level-right" href="https://github.com/virtool/virtool/releases" target="_blank">
-                <i class="fab fa-github"></i>&nbsp;See all releases
-            </a>
-        </h1>
-        
-        {{ partial "releases.html" .Site.Data.releases.software.releases }}
-    </div>
+  <div class="container">
+    <h1 class="title is-4 level">Software</h1>
+    {{ partial "release.html" (dict "latest" .Site.Data.releases.software.latest "label" "Virtool" "slug" "virtool/virtool") }}
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <h1 class="title is-4 level">Official References</h1>
+    <h2 class="subtitle is-6">
+      An Official plant virus reference for detecting known viruses using
+      Pathoscope.
+      <a href="/docs/manual/tut_reference/"
+        >This can be automatically installed and tracked from within Virtool</a
+      >.
+    </h2>
+    {{ partial "release.html" (dict "latest" .Site.Data.releases.ref_plant_viruses.latest "label" "Plant Viruses" "slug" "virtool/ref-plant-viruses") }}
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <h1 class="title is-4 level">Official HMMs</h1>
+    <h2 class="subtitle is-6">
+      Official HMM profiles and annotations for detecting novel viruses using
+      NuVs.
+      <a href="http://localhost:1313/docs/manual/tut_hmms/"
+        >These can be automatically installed from within Virtool</a
+      >.
+    </h2>
+    {{ partial "release.html" (dict "latest" .Site.Data.releases.hmm.latest "label" "Viruses" "slug" "virtool/virtool-hmm") }}
+  </div>
 </div>
 {{ end }}
