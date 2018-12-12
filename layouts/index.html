@@ -1,27 +1,32 @@
 {{ define "main" }}
 <section class="hero is-primary is-medium">
-    <div class="hero-body">
-        <div class="container">
-            <div class="has-text-centered" style="margin-bottom: 35px">
-                <h1 class="title" style="margin-bottom: 32px">
-                    Virtool
-                </h1>
+  <div class="hero-body">
+    <div class="container">
+      <div class="has-text-centered" style="margin-bottom: 45px">
+        <h1 class="title" style="margin-bottom: 32px">Virtool</h1>
 
-                <h2 class="subtitle">
-                    Viral infection diagnostics using next-generation sequencing.
-                </h2>
-            </div>
+        <h2 class="subtitle">
+          Viral infection diagnostics using next-generation sequencing.
+        </h2>
+      </div>
 
-            <p class="field has-text-centered is-hidden-touch">
-                <a class="button is-medium" href="{{ .Site.Data.releases.software.latest.download_url }}">
-                    <span class="icon">
-                        <i class="fab fa-linux"></i>
-                    </span>
-                    <span> Download Virtool {{ .Site.Data.releases.software.latest.name }}</span>
-                </a>
-            </p>
-        </div>
+      <span class=" has-text-centered is-hidden-touch">
+        <p class="field">
+          <a
+            class="button is-medium"
+            href="{{ .Site.Data.releases.software.latest.download_url }}"
+          >
+            <span>Download for Linux (64-bit)</span>
+          </a>
+        </p>
+        <p>
+          <small>
+            Latest Version: {{ .Site.Data.releases.software.latest.name }}
+          </small>
+        </p>
+      </span>
     </div>
+  </div>
 </section>
 
 {{ end }}
