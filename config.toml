@@ -11,7 +11,7 @@ pygmentsCodeFences = true
   filename = "sitemap.xml"
 
 [outputs]
-  home = ["Algolia"]
+  home = ["HTML","Algolia"]
   page = ["HTML"]
 
 [outputFormats.Algolia]
