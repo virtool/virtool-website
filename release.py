@@ -1,12 +1,20 @@
 import argparse
 import base64
 import json
+import os
 import requests
+import semver
+
+
+MIN_VERSIONS = [
+    ("virtool", "3.0.0"),
+    ("ref-plant-viruses", "1.0.0"),
+    ("virtool-hmm", "0.2.0")
+]
 
 RELEASE_KEYS = [
     "name",
     "body",
-    "draft",
     "prerelease",
     "published_at",
     "html_url"
@@ -54,27 +62,24 @@ def format_release(release):
 def get_release_data(username, token):
     release_data = dict()
 
-    for repo, key in [("virtool", "software"), ("ref-plant-viruses", "ref_plant_viruses"), ("virtool-hmm", "hmm")]:
-        release_data[key] = list()
+    for repo, min_version in MIN_VERSIONS:
+        key = repo.replace("-", "_")
 
         releases = list()
 
-        for i in range(1, 5):
-            url = "https://api.github.com/repos/virtool/{}/releases?per_page=100&page={}".format(
-                repo, i)
+        for page in range(1, 5):
+            url = f"https://api.github.com/repos/virtool/{repo}/releases?per_page=100&page={page}"
+
             body = requests.get(url, auth=(username, token)).json()
 
             if not body:
                 break
 
-            releases += body
+            for release in body:
+                if semver.compare(release["name"].replace("v", ""), min_version) > -1:                  
+                    releases.append(release)
 
-        releases = [format_release(r) for r in releases if r["assets"]]
-
-        releases = [r for r in releases if not r["draft"]]
-
-        for release in releases:
-            release.pop("draft")
+        releases = [format_release(r) for r in releases if r["assets"] and not r["draft"]]
 
         release_data[key] = releases
 
@@ -85,13 +90,17 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
+        "-u",
         dest="github_username",
-        help="username for accessing github API"
+        help="username for accessing github API",
+        default=os.environ["GITHUB_USERNAME"]
     )
 
     parser.add_argument(
+        "-t",
         dest="github_token",
-        help="personal auth token for querying API"
+        help="personal auth token for querying API",
+        default=os.environ["GITHUB_TOKEN"]
     )
 
     args = parser.parse_args()
@@ -100,15 +109,15 @@ if __name__ == "__main__":
 
     data = dict()
 
-    for key in ["ref_plant_viruses", "hmm", "software"]:
+    for key in ["ref_plant_viruses", "virtool_hmm", "virtool"]:
         releases = downloaded[key]
         data[key] = {
             "latest": get_latest(releases),
             "releases": releases
         }
 
-    with open("data/releases.json", "w") as f:
+    with open("data/releases3.json", "w") as f:
         json.dump(data, f, indent=4)
 
-    with open("static/releases", "w") as f:
+    with open("static/releases3", "w") as f:
         json.dump({key: data[key]["releases"] for key in data}, f)
