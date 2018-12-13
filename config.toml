@@ -1,0 +1,53 @@
+baseURL = "https://www.virtool.ca"
+languageCode = "en-us"
+title = "Virtool"
+theme = "virtool"
+staticDir = ["static"]
+
+enableGitInfo = true
+pygmentsCodeFences = true
+
+[sitemap]
+  filename = "sitemap.xml"
+
+[outputs]
+  home = ["Algolia"]
+  page = ["HTML"]
+
+[outputFormats.Algolia]
+  baseName = "algolia"
+  isPlainText = true
+  mediaType = "application/json"
+  notAlternative = true
+
+[params.algolia]
+  vars = ["title", "summary", "date", "publishdate", "expirydate", "permalink"]
+  params = ["categories", "tags"]
+
+[menu]
+  [[menu.api]]
+    name = "Overview"
+    weight = 10
+
+  [[menu.api]]
+    name = "Endpoints"
+    weight = 20
+
+  [[menu.manual]]
+    name = "Getting Started"
+    weight = 10
+  [[menu.manual]]
+    name = "Tutorials"
+    weight = 20
+
+  [[menu.manual]]
+    name = "User Guide"
+    weight = 30
+
+  [[menu.manual]]
+    name = "Science"
+    weight = 40
+      
+  [[developer.guide]]
+    name = "Guide"
+    weight = 10

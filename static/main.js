@@ -25,7 +25,7 @@ function renderResults(searchResults, searchTerm) {
 
   searchResults.forEach(hit => {
     var $result = document.createElement("a");
-    $result.href = `/${hit.uri}`;
+    $result.href = hit.permalink;
     $result.classList.add("dropdown-item-custom");
     $result.innerHTML = `
       <span class="hit-title">
