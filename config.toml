@@ -1,4 +1,4 @@
-baseURL = "https://www.virtool.ca"
+baseURL = "/"
 languageCode = "en-us"
 title = "Virtool"
 theme = "virtool"
