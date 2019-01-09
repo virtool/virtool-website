@@ -16,7 +16,7 @@
         >This can be automatically installed and tracked from within Virtool</a
       >.
     </h2>
-    {{ partial "release.html" (dict "latest" .Site.Data.releases.ref_plant_viruses.latest "label" "Plant Viruses" "slug" "virtool/ref-plant-viruses") }}
+    {{ partial "release.html" (dict "latest" .Site.Data.releases3.ref_plant_viruses.latest "label" "Plant Viruses" "slug" "virtool/ref-plant-viruses") }}
   </div>
 </div>
 
@@ -30,7 +30,7 @@
         >These can be automatically installed from within Virtool</a
       >.
     </h2>
-    {{ partial "release.html" (dict "latest" .Site.Data.releases.hmm.latest "label" "Viruses" "slug" "virtool/virtool-hmm") }}
+    {{ partial "release.html" (dict "latest" .Site.Data.releases3.virtool_hmm.latest "label" "Viruses" "slug" "virtool/virtool-hmm") }}
   </div>
 </div>
 {{ end }}
