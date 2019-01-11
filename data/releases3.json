@@ -105,18 +105,30 @@
     },
     "virtool": {
         "latest": {
-            "name": "v3.2.1",
-            "body": "#### Changed\r\n- don't show unready or in-use files in file lists\r\n- limit visible reference cards to those the user can access\r\n- redirect to login page if session expires (#1258)\r\n- redirect to OTU list if the complete history for an OTU is removed (#1223)\r\n\r\n#### Fixed\r\n- fix early expiration of _remembered_ sessions (#1263)\r\n- fix error when viewing HMM list (#1260)\r\n- fix freeze in when all history for OTU is removed (#1223)\r\n- fix unhandled error when analysis directory cannot be found during cleanup\r\n- fix unhandled error when server version can't be determined (#1259)\r\n- fix unhandled error on server start when `watch` directory cannot be found (#901)\r\n\r\n",
+            "name": "v3.2.2",
+            "body": "#### Fixed\r\n- fix unhandled exception on start related to watch path",
             "prerelease": false,
-            "published_at": "2019-01-11T02:08:12Z",
-            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.2.1",
+            "published_at": "2019-01-11T16:55:14Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.2.2",
             "filename": "virtool.tar.gz",
             "content_type": "application/gzip",
-            "size": 44805252,
-            "download_url": "https://github.com/virtool/virtool/releases/download/v3.2.1/virtool.tar.gz",
+            "size": 44805806,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v3.2.2/virtool.tar.gz",
             "asset_error": false
         },
         "releases": [
+            {
+                "name": "v3.2.2",
+                "body": "#### Fixed\r\n- fix unhandled exception on start related to watch path",
+                "prerelease": false,
+                "published_at": "2019-01-11T16:55:14Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.2.2",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 44805806,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.2.2/virtool.tar.gz",
+                "asset_error": false
+            },
             {
                 "name": "v3.2.1",
                 "body": "#### Changed\r\n- don't show unready or in-use files in file lists\r\n- limit visible reference cards to those the user can access\r\n- redirect to login page if session expires (#1258)\r\n- redirect to OTU list if the complete history for an OTU is removed (#1223)\r\n\r\n#### Fixed\r\n- fix early expiration of _remembered_ sessions (#1263)\r\n- fix error when viewing HMM list (#1260)\r\n- fix freeze in when all history for OTU is removed (#1223)\r\n- fix unhandled error when analysis directory cannot be found during cleanup\r\n- fix unhandled error when server version can't be determined (#1259)\r\n- fix unhandled error on server start when `watch` directory cannot be found (#901)\r\n\r\n",
