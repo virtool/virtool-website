@@ -1,0 +1,30 @@
+{{ with .Get 0 }}
+<h2 id="{ . }" class="is-family-monospace" style="padding-bottom: 0.4rem;">
+  {{ . }}
+</h2>
+<div
+  class="field is-grouped is-grouped-multiline"
+  style="margin-bottom: 0.7rem;"
+>
+  <div class="control">
+    <div class="tags is-medium has-addons">
+      <span class="tag is-info">CLI</span>
+      <span class="tag is-family-monospace">--{{ replace . "_" "-" }}</span>
+    </div>
+  </div>
+
+  <div class="control">
+    <div class="tags is-medium has-addons">
+      <span class="tag is-info">JSON</span>
+      <span class="tag is-family-monospace">{{ . }}</span>
+    </div>
+  </div>
+
+  <div class="control">
+    <div class="tags is-medium has-addons">
+      <span class="tag is-info">ENV</span>
+      <span class="tag is-family-monospace is-uppercase">VT_{{ . }}</span>
+    </div>
+  </div>
+</div>
+{{ end }}
