@@ -1,0 +1,85 @@
+{{ define "main" }}
+<div class="section">
+  <div class="container">
+    <div class="level">
+      <div class="level-left">
+        <div class="level-item contains-nav">
+          <nav class="breadcrumb " aria-label="breadcrumbs">
+            <ul>
+              <li><a class="title is-4" href="/docs">Docs</a></li>
+              {{ if eq .Title "Manual" }}
+              <li><a class="title is-5" href="/docs/manual">Manual</a></li>
+              {{ end }}
+              {{ if eq .Title "Developer" }}
+              <li><a class="title is-5" href="/docs/developer">Developer</a></li>
+              {{ end }}
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    {{ if eq .Title "Docs" }}
+    <div class="tile is-ancestor">
+      <div class="tile is-parent is-6">
+        <a href="/docs/manual" class="tile is-child card is-docs-type">
+          <header class="card-header">
+            <p class="card-header-title">
+              <span class="icon is-small"> <i class="fas fa-book"></i> </span>
+              <span> Manual </span>
+            </p>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              For Virtool users. Learn how to use and administer Virtool.
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="tile is-parent is-6">
+        <a href="/docs/developer" class="tile is-child card is-docs-type">
+          <header class="card-header">
+            <p class="card-header-title">
+              <span class="icon is-small"> <i class="fas fa-code"></i> </span>
+              <span> Developer </span>
+            </p>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              Learn how to build and contribute to Virtool.
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    {{ end }}
+
+    {{ if eq .Title "Manual" }}
+    <div class="field">
+      <div class="control has-icons-left">
+        <input
+          id="manualSearch"
+          class="input search-box is-info is-medium"
+          type="text"
+          placeholder="Search"
+        />
+        <span class="icon is-medium is-left">
+          <i class="fas fa-search"></i>
+        </span>
+        <div class="dropdown-custom is-active">
+          <div id="search-results"></div>
+        </div>
+      </div>
+    </div>
+    {{ partial "tiles.html" .Site.Menus.manual }}
+    
+    {{ end }}
+
+    {{ if eq .Title "Developer Guide"}}
+
+    {{ partial "tiles.html" .Site.Menus.developer }}
+
+    {{ end }}
+  </div>
+</div>
+{{ end }}

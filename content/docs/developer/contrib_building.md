@@ -2,9 +2,9 @@
 title: "Building"
 type: "developer"
 menu:
-    developer:
-        parent: "Guide"
-        weight: 10
+  developer:
+    parent: "Contributing"
+    weight: 20
 ---
 
 {{< construction >}}

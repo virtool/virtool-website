@@ -1,10 +1,9 @@
 ---
 title: "Testing"
-type: "developer"
 menu:
   developer:
-    parent: "Guide"
-    weight: 20
+    parent: "Contributing"
+    weight: 40
 ---
 
 # Python
