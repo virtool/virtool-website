@@ -1,13 +1,13 @@
 ---
 title: "Installation"
-type: "manual"
+description: "Download and install Virtool."
 menu:
   manual:
     parent: "Getting Started"
     weight: 10
 ---
 
-# System Requirements {#system_requirements}
+# System Requirements
 
 We recommend the following minimum specifications for running a Virtool server:
 
@@ -18,34 +18,35 @@ We recommend the following minimum specifications for running a Virtool server:
 
 Higher CPU clock speeds and core counts will allow more operations to be run in parallel.
 
-# Browsers {#browsers}
+# Browsers
 
-Virtool works best in modern evergreen browsers including Chrome, Firefox, Safari, and Edge. **Internet Explorer is not supported**.
+Virtool works best in modern browsers including Chrome, Firefox, Safari, and Edge. **Internet Explorer is not supported**.
 
-# Installing the Server {#installing_the_server}
+# Installing the Server
 
-Before you can start using Virtool, it must be installed on your system.
+Download the latest Virtool release from the [Virtool website](http://www.virtool.ca "Virtool Website") and unpack the downloaded archive.
 
-1. Download the latest Virtool release from the [Virtool website](http://www.virtool.ca "Virtool Website").
+```term
+tar -xvf virtool.tar.gz
+```
 
-2. Unpack the downloaded archive.
-   ```term
-   tar -xvf virtool.tar.gz
-   ```
-3. Move the unpacked directory to your installation location:
-   ```term
-   mv virtool /opt
-   ```
-4. Run in the background using `nohup`.
-   ```term
-   nohup ./run &
-   ```
+Move the unpacked directory to your installation location:
+
+```term
+mv virtool /opt
+```
+
+Run in the background using `nohup`.
+
+```term
+nohup ./run &
+```
 
 {{% note %}}
 We suggest running Virtool as a dedicated user.
 {{% /note %}}
 
-# MongoDB {#mongodb}
+# MongoDB
 
 Virtool uses MongoDB v3.6.0+ as a database service. You will have to get MongoDB running before starting Virtool. We highly recommend installing and updating MongoDB through your Linux package manager.
 
@@ -76,7 +77,7 @@ You will receive output similar to the following if MongoDB is running:
            └─11844 /usr/bin/mongod --quiet --config /etc/mongod.conf
 ```
 
-# External Software {#external_software}
+# External Software
 
 Virtool relies on a number of common bioinformatics programs. These should be available in your `PATH` so Virtool can find them. You will encounter errors if these programs are not available.
 

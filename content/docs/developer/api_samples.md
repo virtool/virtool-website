@@ -3,8 +3,8 @@ title: "Samples"
 description: "Query, create, edit, and analyze samples."
 type: "api"
 menu:
-    api:
-        parent: Endpoints
+    developer:
+        parent: API
 ---
 
 # Find

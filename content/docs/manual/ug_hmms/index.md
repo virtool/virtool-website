@@ -1,6 +1,6 @@
 ---
 title: "HMMs"
-type: "manual"
+description: "Install, manage, and understand HMM data in Virtool."
 menu:
   manual:
     parent: "User Guide"

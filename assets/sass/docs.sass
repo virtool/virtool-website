@@ -3,113 +3,113 @@ h1:target:before
     display: block
     margin-top: 50px
     height: 50px
-    
+
 div.docs
+    width: 100% 
 
-    .docs-header            
-        border-bottom: 0.1rem solid black
-        padding-bottom: 1rem
+    div.spread
+        display: flex        
+        max-width: 100%
+        width: 100%
 
-    div.table-wrapper
-        overflow-x: auto
+        div.sidenav
+            display: none
+            flex: 0 0 0
+            max-width: 12rem
+            min-width: 12rem            
 
-    table        
-        @extend .table, .is-striped, .is-fullwidth, .is-bordered
+            +landscape
+                display: block
 
+            ul
+                list-style: none
+                padding: 0
+                position: sticky
+                text-decoration: none
+                top: 5rem
+
+                a
+                    color: $info
+                    cursor: pointer
+                    text-decoration: none
+
+                li.side-sub
+                    border-left: 0.1rem solid $grey-light
+                    padding-left: 0.8rem
+
+                    & > a
+                        font-size: 0.9rem
+                        font-weight: bold
+                        margin-bottom: 0.3rem
+                        text-transform: uppercase
+
+                    & > ul
+                        display: none
+                        font-size: 0.85rem
+                        padding: 0.3rem 0.6rem 0.3rem 0.3rem                      
+
+                        & > li
+                            padding-bottom: 0.3rem
+                            .is-active
+                                font-weight: bold
+
+                    &.is-active
+                        border-left-color: $primary
+
+                        ul
+                            display: block
+
+.docs-reader
+    flex: 1 1 0
+    max-width: 100%
+    overflow: hidden
+
+.docs-header
+    align-items: center
+    border-bottom: 0.1rem solid black
+    display: flex
+    margin-bottom: 1rem
+    padding: 1rem 0
+
+.docs-title
+    font-weight: bold
+    font-size: $size-3
+    flex: 1 1 auto
+
+.docs-updated
+    flex: 0 1 auto
+    font-size: $size-6
+
+.docs-content
+                    
     h1
-        @extend .title
-        @extend .is-4    
+        font-size: $size-4
+        margin-top: 3rem
 
     h2
-        @extend .title
-        @extend .is-5
+        font-size: $size-5
 
     h3
-        @extend .has-text-weight-semibold
-        @extend .is-6
+        font-size: $size-6
+    
+    ul
+        padding-left: 1rem
+        padding-bottom: 0.8rem
+        list-style-type: disc
+        list-style-position: inside
 
-        &:not(:first-child)
-            margin-top: 2.2rem
-
-    p
-        margin-top: 0.5rem
-        margin-bottom: 1rem
-
-    dt
-        @extend .has-text-grey
-        font-weight: bold
-
-    dd
-        padding-left: 0.6rem
-
-    &.docs-manual                
-
-        h1:not(:first-child)
-            margin-top: 4rem
-
-            &:first-of-type
-                margin-top: 2.3rem
-
-        h2
-            margin: 1.8rem 0 0.8rem 0
-
-        h4
-            font-weight: bold
-
-        ul
-            padding-left: 1rem
-            padding-bottom: 0.8rem
-            list-style-type: disc
-            list-style-position: inside
-
-        ol
-            padding-left: 1.3rem
-
-            li
-                margin-bottom: 2.3rem
-
-        img
-            max-width: 100%
-            min-width: auto
-            padding: 5px
-            border: 0.1rem solid #ddd
-
-        article.message
-            margin-top: 0.6rem
-
-        h1 + article.message
-            margin-top: 2.2rem
+    ol
+        padding-left: 1.3rem
 
         li
-            img
-                margin-top: 0.6rem
+            margin-bottom: 2.3rem
 
-        
+    article.message
+        margin-top: 0.6rem
 
-    &.docs-api
+    h1 + article.message
+        margin-top: 2.2rem
 
-        h1 
-            border-top: 3px solid $black
-            margin-top: 3rem
-            padding-top: 2rem
-
-        h2
-            margin: 2rem 0 0.8rem 0
-            @extend .title
-            @extend .is-6
-
-        ul
-            padding-left: 1rem
-            padding-bottom: 0.8rem
-            list-style-type: disc
-            list-style-position: inside
-
-        div.highlight
-            display: table
-            table-layout: fixed
-            width: 100%
-
-    &.docs-code
-
-        div.highlight
-            margin-bottom: 2rem
+    li
+        img
+            margin-top: 0.6rem

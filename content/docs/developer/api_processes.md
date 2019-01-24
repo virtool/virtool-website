@@ -3,8 +3,8 @@ title: "Processes"
 description: "View and remove processes."
 type: "api"
 menu:
-    api:
-        parent: Endpoints
+    developer:
+        parent: API
 ---
 
 # List

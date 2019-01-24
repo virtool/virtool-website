@@ -1,0 +1,33 @@
+.releases
+    h2
+        border-bottom: 2px solid $black
+        font-size: $size-4
+        padding-bottom: 1rem
+    
+.release
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 4rem
+
+.release-label
+    font-weight: bold    
+    min-width: 200px
+
+.release-links
+    a
+        margin-left: 0.3rem
+        text-decoration: none
+
+        +landscape
+            margin-left: 1rem
+
+        &:hover
+            color: $link-hover
+
+        span
+            display: none
+
+            +landscape
+                display: inline
+                

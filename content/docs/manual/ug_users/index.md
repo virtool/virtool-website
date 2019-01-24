@@ -1,6 +1,6 @@
 ---
 title: "Users"
-type: "manual"
+description: "Administer users and user groups."
 menu:
   manual:
     parent: "User Guide"

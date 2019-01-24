@@ -1,6 +1,6 @@
 ---
 title: "Administration"
-type: "manual"
+description: "Manage users, groups, and instance settings."
 menu:
   manual:
     parent: "User Guide"

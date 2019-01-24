@@ -1,35 +1,18 @@
-<div class="box">
-  <div class="columns">
-    <div class="column">
-      <strong>{{ .label}}</strong>
-      <span class="tag"
-        ><strong>{{.latest.name }}</strong></span
-      >
-    </div>
-    <div class="column">
-      <div class="tags has-addons">
-        <span class="tag">Last Updated</span>
-        <span
-          class="tag is-info"
-          >{{ dateFormat "2006-01-02" .latest.published_at }}</span
-        >
-      </div>
-    </div>
-    <div class="column">
-      <small class="is-pulled-right">
-        <a href="{{ .latest.html_url }}" target="_blank">
-          <span class="icon is-small"><i class="fab fa-github"></i></span>
-          <span>View on GitHub</span>
-        </a>
-      </small>
-    </div>
-    <div class="column has-text-right">
-      <a class="is-hidden-touch" href="{{ .latest.download_url }}">
-        <span class="icon is-small">
-          <i class="fas fa-cloud-download-alt"></i>
-        </span>
-        <span style="padding-left: 2px;"> Download</span>
-      </a>
-    </div>
+<div class="box release">
+  <div class="release-label">
+    {{ .label}} {{.latest.name }}
+  </div>
+  <div class="release-date">
+    {{ dateFormat "2006-01-02" .latest.published_at }}
+  </div>
+  <div class="release-links">
+    <a href="{{ .latest.html_url }}" target="_blank">
+      <i class="fab fa-github"></i>
+      <span>View on GitHub</span>
+    </a>
+    <a class="is-hidden-touch" href="{{ .latest.download_url }}">
+      <i class="fas fa-cloud-download-alt"></i>
+      <span style="padding-left: 2px;"> Download</span>
+    </a>
   </div>
 </div>

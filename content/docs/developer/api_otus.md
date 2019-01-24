@@ -3,8 +3,8 @@ title: "OTUs"
 description: "Query, create, edit, and remove OTUs."
 type: "api"
 menu:
-    api:
-        parent: Endpoints
+    developer:
+        parent: API
 ---
 
 # Find

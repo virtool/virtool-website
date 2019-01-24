@@ -3,8 +3,8 @@ title: "Analyses"
 description: "Query and modify analyses."
 type: "api"
 menu:
-    api:
-        parent: Endpoints
+    developer:
+        parent: API
 ---
 
 Analyses are the results of a given Virtool analytical pipelines on a single sample.

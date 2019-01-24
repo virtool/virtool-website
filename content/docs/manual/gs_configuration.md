@@ -7,8 +7,6 @@ menu:
     weight: 50
 ---
 
-# Configuration
-
 A Virtool process can be configured using command line arguments, a configuration file, or environmental variables.
 
 The order of precendence for resolving option values is:

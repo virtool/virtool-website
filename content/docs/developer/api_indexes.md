@@ -3,8 +3,8 @@ title: "Indexes"
 description: "Query and create virus indexes."
 type: "api"
 menu:
-    api:
-        parent: Endpoints
+    developer:
+        parent: API
 ---
 
 # Find

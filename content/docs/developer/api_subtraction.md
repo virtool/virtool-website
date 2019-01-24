@@ -3,8 +3,8 @@ title: "Subtraction"
 description: "Query, create, edit, and remove subtractions."
 type: "api"
 menu:
-    api:
-        parent: Endpoints
+    developer:
+        parent: API
 ---
 
 # Find

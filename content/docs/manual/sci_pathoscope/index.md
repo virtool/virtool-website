@@ -1,6 +1,5 @@
 ---
 title: "Pathoscope"
-type: "manual"
 menu:
   manual:
     parent: "Science"

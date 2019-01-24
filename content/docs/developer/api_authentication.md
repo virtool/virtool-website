@@ -3,8 +3,8 @@ title: "Authentication"
 description: "Authenticate clients using API keys."
 type: "api"
 menu:
-    api:
-        parent: Overview
+    developer:
+        parent: API
 ---
 
 # Explanation

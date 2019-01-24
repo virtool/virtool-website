@@ -3,8 +3,8 @@ title: "References"
 description: "Browse, create, and manage references."
 type: "api"
 menu:
-    api:
-        parent: Endpoints
+    developer:
+        parent: API
 ---
 
 # Find

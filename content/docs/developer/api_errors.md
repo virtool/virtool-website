@@ -3,8 +3,8 @@ title: "Errors"
 description: "Learn the errors the API can return."
 type: "api"
 menu:
-    api:
-        parent: Overview
+    developer:
+        parent: API
 ---
 
 # JSON Errors

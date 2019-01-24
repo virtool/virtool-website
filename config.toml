@@ -40,10 +40,10 @@ pygmentsCodeFences = true
     name = "Science"
     weight = 40
 
-  [[menu.developer]]
-    name = "Contributing"
+    [[menu.developer]]
+    name = "API"
     weight = 10
 
   [[menu.developer]]
-    name = "API"
+    name = "Contributing"
     weight = 20

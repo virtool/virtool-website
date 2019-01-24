@@ -1,0 +1,16 @@
+.tiles
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
+    grid-gap: 2rem 2rem
+
+    &.tiles-2
+        grid-template-columns: 1fr 1fr
+
+        +mobile
+            grid-template-columns: 1fr
+
+    +mobile
+        grid-template-columns: 1fr
+
+    .title
+        justify-self: stretch

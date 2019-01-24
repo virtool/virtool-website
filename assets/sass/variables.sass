@@ -1,9 +1,145 @@
+// Colors
+$black:        hsl(0, 0%, 4%)
+$black-bis:    hsl(0, 0%, 7%)
+$black-ter:    hsl(0, 0%, 14%)
+
+$grey-darker:  hsl(0, 0%, 21%)
+$grey-dark:    hsl(0, 0%, 29%)
+$grey:         hsl(0, 0%, 48%)
+$grey-light:   hsl(0, 0%, 71%)
+$grey-lighter: hsl(0, 0%, 86%)
+
+$white-ter:    hsl(0, 0%, 96%)
+$white-bis:    hsl(0, 0%, 98%)
+$white:        hsl(0, 0%, 100%)
+
+$orange:       hsl(14,  100%, 53%)
+$yellow:       hsl(48,  100%, 67%)
+$green:        hsl(141, 71%,  48%)
+$turquoise:    hsl(171, 100%, 41%)
+$cyan:         hsl(204, 86%,  53%)
+$blue:         hsl(217, 71%,  53%)
+$purple:       hsl(271, 100%, 71%)
+$red:          hsl(348, 100%, 61%)
+
+// $primary: $turquoise
 $primary: #3c8786
-$link: #387fa3
+
+// $info: $cyan
+$info: hsl(200, 49%, 43%)
+
+// $success: $green
 $success: #60af98
-$info: #387fa3
+
+// $warning: $yellow
 $warning: #dfb561
+
+// $danger: $red
 $danger: #d44b40
 
+$light: $white-ter
+$dark: $grey-darker
+
+// General colors
+$background: $white-ter
+$border: $grey-lighter
+$border-hover: $grey-light
+
+// Text colors
+$text: $grey-dark
+$text-light: $grey
+$text-strong: $grey-darker
+
+// Code colors
+$code: $red
+$code-background: $background
+
+$pre: $text
+$pre-background: $background
+
+// Link colors
+// $link: $blue
+$link: #387fa3
+$link-visited: $purple
+
+$link-hover: $grey-darker
+$link-hover-border: $grey-light
+
+$link-focus: $grey-darker
+$link-focus-border: $blue
+
+$link-active: $grey-darker
+$link-active-border: $grey-dark
+
+// Typography
 $family-sans-serif: "IBM Plex Sans", BlinkMacSystemFont, -apple-system, "Segoe UI", "Ubuntu", "Cantarell", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif
 $family-monospace: "IBM Plex Mono", monospace;
+$render-mode: optimizeLegibility
+
+$family-primary: $family-sans-serif
+$family-code: $family-monospace
+
+$size-1: 3rem
+$size-2: 2.5rem
+$size-3: 2rem
+$size-4: 1.5rem
+$size-5: 1.25rem
+$size-6: 1rem
+$size-7: 0.75rem
+
+$size-small: $size-7
+$size-normal: $size-6
+$size-medium: $size-5
+$size-large: $size-4
+
+// Lists and maps
+$custom-colors: null
+$custom-shades: null
+
+$colors: mergeColorMaps(("white": ($white, $black), "black": ($black, $white), "light": ($light, $light), "dark": ($dark, $dark), "primary": ($primary, $white), "link": ($link, $white), "info": ($info, $white), "success": ($success, $white), "warning": ($warning, $white), "danger": ($danger, $white)), $custom-colors)
+$shades: mergeColorMaps(("black-bis": $black-bis, "black-ter": $black-ter, "grey-darker": $grey-darker, "grey-dark": $grey-dark, "grey": $grey, "grey-light": $grey-light, "grey-lighter": $grey-lighter, "white-ter": $white-ter, "white-bis": $white-bis), $custom-shades)
+
+$sizes: $size-1 $size-2 $size-3 $size-4 $size-5 $size-6 $size-7
+
+$weight-light: 300
+$weight-normal: 400
+$weight-medium: 500
+$weight-semibold: 600
+$weight-bold: 700
+
+// Responsiveness
+
+// The container horizontal gap, which acts as the offset for breakpoints
+$gap: 64px
+// 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
+$tablet: 769px
+// 960px container + 4rem
+$desktop: 960px + (2 * $gap)
+// 1152px container + 4rem
+$widescreen: 1152px + (2 * $gap)
+$widescreen-enabled: true
+// 1344px container + 4rem
+$fullhd: 1344px + (2 * $gap)
+$fullhd-enabled: true
+
+// Miscellaneous
+$easing: ease-out
+$radius-small: 2px
+$radius: 4px
+$radius-large: 6px
+$radius-rounded: 290486px
+$speed: 86ms
+
+// Flags
+$variable-columns: true
+
+$control-radius: $radius
+$control-radius-small: $radius-small
+
+$control-border-width: 1px
+
+$control-height: 2.25em
+$control-line-height: 1.5
+
+$control-padding-vertical: calc(0.375em - #{$control-border-width})
+$control-padding-horizontal: calc(0.625em - #{$control-border-width})

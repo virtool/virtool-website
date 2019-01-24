@@ -3,8 +3,8 @@ title: "Genbank"
 description: "Interact with NCBI Genbank via the Virtool server."
 type: "api"
 menu:
-    api:
-        parent: Endpoints
+    developer:
+        parent: API
 ---
 
 # Get

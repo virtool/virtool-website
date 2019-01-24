@@ -1,6 +1,6 @@
 ---
 title: "Setup"
-type: "manual"
+description: "Setup a Virtool installation using the web interface"
 menu:
   manual:
     parent: "Getting Started"

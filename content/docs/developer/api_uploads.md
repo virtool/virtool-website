@@ -3,8 +3,8 @@ title: "Uploads"
 description: "Upload and manage bioinformatic data files."
 type: "api"
 menu:
-    api:
-        parent: Endpoints
+    developer:
+        parent: API
 ---
 
 When uploads are required in Virtool, they should be targeted at ``/upload``. The available endpoints are:

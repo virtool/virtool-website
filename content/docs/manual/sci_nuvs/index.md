@@ -1,6 +1,5 @@
 ---
 title: "NuVs"
-type: "manual"
 menu:
   manual:
     parent: "Science"

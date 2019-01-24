@@ -3,8 +3,8 @@ title: "History"
 description: "Read and revert virus history."
 type: "api"
 menu:
-    api:
-        parent: Endpoints
+    developer:
+        parent: API
 ---
 
 # Find

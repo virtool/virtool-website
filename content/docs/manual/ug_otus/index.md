@@ -1,6 +1,6 @@
 ---
 title: "OTUs"
-type: "manual"
+description: "Create, edit, and view the fundamental components of Virtool references."
 menu:
   manual:
     parent: "User Guide"

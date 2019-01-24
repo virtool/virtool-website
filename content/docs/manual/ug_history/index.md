@@ -1,6 +1,6 @@
 ---
 title: "History"
-type: "manual"
+description: "Understand and revert reference history."
 menu:
   manual:
     parent: "User Guide"

@@ -1,21 +1,48 @@
-nav#TableOfContents    
+nav#TableOfContents
+    background-color: $white
+    color: $black
+    position: relative
     ul
         li
+            display: list-item
             ul
                 display: none
 
-div.contents
+.toc-inline
+    display: block
     
+    +landscape
+        display: none
+
+.toc-side
+    align-self: flex-start
+    display: none
+    flex: 0 0 auto
     width: 8rem
-    padding-top: 4rem
+    padding: 4rem 0 0 2.6rem
     position: sticky
-    top: 1rem 
+    top: 1rem
+
+    +landscape
+        display: block
+        
+    h5  
+        font-size: $size-7
+        font-weight: bold
+        margin: 0
+
+    a   
+        color: $info
+        cursor: pointer       
+        text-decoration: none
+
+        &:hover
+            color: $link-hover
+    
+    ul
+        list-style: none
+        padding-left: 0
 
     li
         font-size: 12px
-        padding-bottom: 0.5rem
-    
-    h5  
-        font-size: 14px
-        font-weight: bold
         padding-bottom: 0.5rem

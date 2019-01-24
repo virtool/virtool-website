@@ -3,8 +3,8 @@ title: "Jobs"
 description: "Query, cancel, and remove jobs."
 type: "api"
 menu:
-    api:
-        parent: Endpoints
+    developer:
+        parent: API
 ---
 
 # Find

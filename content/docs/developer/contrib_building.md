@@ -1,6 +1,5 @@
 ---
 title: "Building"
-type: "developer"
 menu:
   developer:
     parent: "Contributing"

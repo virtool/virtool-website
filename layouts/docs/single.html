@@ -1,62 +1,41 @@
 {{ define "main" }}
+<div class="container">
+  <div class="docs">
+    <nav class="breadcrumbs" aria-label="breadcrumbs">
+      <ul>
+        <li><a class="title is-4" href="/docs">Docs</a></li>
+        <li><a class="title is-5" href="/docs/manual">Manual</a></li>
+        <li>
+          <a href="#">{{ .Title }}</a>
+        </li>
+      </ul>
+    </nav>
 
-{{ $currentPage := . }}
-<div class="section">
-  <div class="container">
-    <div class="level">
-      <div class="level-left">
-        <div class="level-item contains-nav">
-          <nav class="breadcrumb " aria-label="breadcrumbs">
-            <ul>
-              <li><a class="title is-4" href="/docs">Docs</a></li>
-              <li><a class="title is-5" href="/docs/manual">Manual</a></li>
-              <li>
-                <a href="#">{{ .Title }}</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-
-    <div class="columns">
-      <div class="column is-narrow is-hidden-touch">
+    <div class="spread">
+      <div class="sidenav">
         {{ partial "side.html" (dict "CurrentPage" . "MenuName" "manual") }}
       </div>
 
-      <div class="column is-12-touch docs docs-manual">
-        <div class="level docs-header">
-          <div class="level-left">
-            <div class="level-item">
-              <h1 class="title is-4 ">{{ .Name }}</h1>
-            </div>
-          </div>
-
-          <div class="level-right">
-            <div class="level-item tags has-addons">
-              <span class="tag is-dark">Updated</span>
-              <span
-                class="tag is-info"
-                >{{ .GitInfo.AuthorDate.Format "January 2, 2006" }}</span
-              >
-            </div>
-          </div>
+      <div class="docs-reader">
+        <div class="docs-header">
+          <span class="docs-title">{{ .Name }}</span>
+          <span class="docs-updated">Updated {{ .GitInfo.AuthorDate.Format "January 2, 2006" }}</span>
         </div>
-        <p>{{ .Page.Description }}</p>
 
-        <div class="is-hidden-desktop">{{ .TableOfContents }}</div>
+        <div class="toc-inline">
+          {{ .TableOfContents }}
+        </div>
 
-        {{ .Content }}
+        <div class="docs-content">
+          {{ .Content }}
+        </div>
       </div>
 
-      <div class="column is-narrow is-hidden-touch">
-        <div class="contents">
-          <h5>PAGE CONTENTS</h5>
-          <div>{{ .TableOfContents }}</div>
-        </div>
+      <div class="toc-side">
+        <h5>PAGE CONTENTS</h5>
+        <div>{{ .TableOfContents }}</div>
       </div>
     </div>
   </div>
 </div>
-
 {{ end }}

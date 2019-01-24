@@ -3,8 +3,8 @@ title: "Groups"
 description: "Manage user groups."
 type: "api"
 menu:
-    api:
-        parent: Endpoints
+    developer:
+        parent: API
 ---
 
 # List

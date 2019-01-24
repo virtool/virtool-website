@@ -1,6 +1,6 @@
 ---
 title: "Jobs"
-type: "manual"
+description: "Manage long-running bioinformatic tasks in Virtool."
 menu:
   manual:
     parent: "User Guide"

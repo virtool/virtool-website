@@ -3,8 +3,8 @@ title: "Account"
 description: "Query and modify the client user."
 type: "api"
 menu:
-    api:
-        parent: Endpoints
+    developer:
+        parent: API
 ---
 
 Unauthorized clients will receive ``401 Unauthorized`` for calls to all account endpoints.

@@ -1,35 +1,28 @@
 {{ define "main" }}
-<div class="section">
-  <div class="container">
-    <h1 class="title is-4 level">Software</h1>
-    {{ partial "release.html" (dict "latest" .Site.Data.releases3.virtool.latest "label" "Virtool" "slug" "virtool/virtool") }}
-  </div>
-</div>
+<div class="container">
+  <h1 class="title">Downloads</h1>
 
-<div class="section">
-  <div class="container">
-    <h1 class="title is-4 level">Official References</h1>
-    <h2 class="subtitle is-6">
+  <div class="releases">
+    <h2>Software</h2>
+    <p class="subtitle">
+      Download and run the latest release of the Virtool software.
+    </p>
+    {{ partial "release.html" (dict "latest" .Site.Data.releases3.virtool.latest "label" "Virtool" "slug" "virtool/virtool") }}
+
+    <h2>Official References</h2>
+    <p class="subtitle">
       An Official plant virus reference for detecting known viruses using
       Pathoscope.
-      <a href="/docs/manual/tut_reference/"
-        >This can be automatically installed and tracked from within Virtool</a
-      >.
-    </h2>
+      <a href="/docs/manual/tut_reference/">This can be automatically installed and tracked from within Virtool</a>.
+    </p>
     {{ partial "release.html" (dict "latest" .Site.Data.releases3.ref_plant_viruses.latest "label" "Plant Viruses" "slug" "virtool/ref-plant-viruses") }}
-  </div>
-</div>
 
-<div class="section">
-  <div class="container">
-    <h1 class="title is-4 level">Official HMMs</h1>
-    <h2 class="subtitle is-6">
+    <h2>Official HMMs</h2>
+    <p class="subtitle">
       Official HMM profiles and annotations for detecting novel viruses using
       NuVs.
-      <a href="http://localhost:1313/docs/manual/tut_hmms/"
-        >These can be automatically installed from within Virtool</a
-      >.
-    </h2>
+      <a href="http://localhost:1313/docs/manual/tut_hmms/">These can be automatically installed from within Virtool</a>.
+    </p>
     {{ partial "release.html" (dict "latest" .Site.Data.releases3.virtool_hmm.latest "label" "Viruses" "slug" "virtool/virtool-hmm") }}
   </div>
 </div>
