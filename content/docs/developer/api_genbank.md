@@ -3,8 +3,8 @@ title: "Genbank"
 description: "Interact with NCBI Genbank via the Virtool server."
 type: "api"
 menu:
-    developer:
-        parent: API
+  developer:
+    parent: API
 ---
 
 # Get
@@ -17,24 +17,22 @@ The data is retrieved from GenBank and converted into a palatable format.
 
 ## Example
 
-```
-GET /api/genbank/KJ406323
-```
+{{< request "GET" "/api/genbank/KJ406323" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
+{{% response "Status: 200 OK" %}}
 
 ```json
 {
-    "id": "KJ406323",
-    "definition": "Tobacco mosaic virus isolate TMV-tNK coat protein",
-    "sequence": "ATGTCTTACAGTATCACTACTCCATCTCAGTTCGTGTTCTTGTCATCAGCGZ...",
-    "host": "Solanum lycopersicum"    
+  "id": "KJ406323",
+  "definition": "Tobacco mosaic virus isolate TMV-tNK coat protein",
+  "sequence": "ATGTCTTACAGTATCACTACTCCATCTCAGTTCGTGTTCTTGTCATCAGCGZ...",
+  "host": "Solanum lycopersicum"
 }
 ```
+
+{{% /response %}}
 
 ## Errors
 

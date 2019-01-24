@@ -3,8 +3,8 @@ title: "Groups"
 description: "Manage user groups."
 type: "api"
 menu:
-    developer:
-        parent: API
+  developer:
+    parent: API
 ---
 
 # List
@@ -13,34 +13,37 @@ List all existing user groups.
 
 {{< endpoint "GET" "/api/groups" >}}
 
+## Example
+
+{{< request "GET" "/api/groups" />}}
+
 ## Response
 
-```
-Status: 200 OK
-```
+{{% response "Status: 200 OK" %}}
 
 ```json
 [
-	{
-		"permissions": {
-			"cancel_job": true,
-			"create_ref": false,
-			"create_sample": true,
-			"modify_hmm": false,
-			"modify_subtraction": false,
-			"remove_file": false,
-			"remove_job": true,
-			"upload_file": true
-		},
-		"id": "technicians"
-	}
+  {
+    "permissions": {
+      "cancel_job": true,
+      "create_ref": false,
+      "create_sample": true,
+      "modify_hmm": false,
+      "modify_subtraction": false,
+      "remove_file": false,
+      "remove_job": true,
+      "upload_file": true
+    },
+    "id": "technicians"
+  }
 ]
 ```
+
+{{% /response %}}
 
 ## Errors
 
 _None_
-
 
 # Get
 
@@ -50,38 +53,35 @@ Get the complete representation of a single user group.
 
 ## Example
 
-```
-GET /api/groups/technicians
-```
+{{< request "GET" "/api/groups/technicians" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
+{{% response "Status: 200 OK" %}}
 
 ```json
 {
-	"permissions": {
-		"cancel_job": true,
-		"create_ref": false,
-		"create_sample": true,
-		"modify_hmm": false,
-		"modify_subtraction": false,
-		"remove_file": false,
-		"remove_job": true,
-		"upload_file": true
-	},
-	"id": "technicians"
+  "permissions": {
+    "cancel_job": true,
+    "create_ref": false,
+    "create_sample": true,
+    "modify_hmm": false,
+    "modify_subtraction": false,
+    "remove_file": false,
+    "remove_job": true,
+    "upload_file": true
+  },
+  "id": "technicians"
 }
 ```
+
+{{% /response %}}
 
 ## Errors
 
 | Status | Message   | Reason               |
 | :----- | :-------- | :------------------- |
 | `404`  | Not found | group does not exist |
-
 
 # Create
 
@@ -93,43 +93,43 @@ Create a new group. New groups have no permissions. Requestors must be administr
 
 ## Input
 
-| Name     | Type   | Description                                 |
-| :------- | :----- | :------------------------------------------ |
-| group_id | string | a unique id and display name for the group  |
+| Name     | Type   | Description                                |
+| :------- | :----- | :----------------------------------------- |
+| group_id | string | a unique id and display name for the group |
 
 ## Example
 
-```
-POST /api/groups
-```
+{{% request "POST" "/api/groups" %}}
 
 ```json
 {
-    "group_id": "research"
+  "group_id": "research"
 }
 ```
+
+{{% /request %}}
 
 ## Response
 
-```
-Status 201: Created
-```
+{{% response "Status 201: Created" %}}
 
 ```json
 {
-	"permissions": {
-		"cancel_job": false,
-		"create_ref": false,
-		"create_sample": false,
-		"modify_hmm": false,
-		"modify_subtraction": false,
-		"remove_file": false,
-		"remove_job": false,
-		"upload_file": false
-	},
-	"id": "research"
+  "permissions": {
+    "cancel_job": false,
+    "create_ref": false,
+    "create_sample": false,
+    "modify_hmm": false,
+    "modify_subtraction": false,
+    "remove_file": false,
+    "remove_job": false,
+    "upload_file": false
+  },
+  "id": "research"
 }
 ```
+
+{{% /response %}}
 
 ## Errors
 
@@ -138,7 +138,6 @@ Status 201: Created
 | `400`  | Group already exists | the provided `group_id` already exists |
 | `403`  | Not permitted        | client is not an administrator         |
 | `422`  | Invalid input        | JSON request body is invalid           |
-
 
 # Edit
 
@@ -156,39 +155,39 @@ Update the permissions of an existing group. Unset permissions will retain their
 
 ## Example
 
-```
-PATCH /api/groups/research
-```
+{{% request "PATCH" "/api/groups/research" %}}
 
 ```json
 {
-	"permissions": {
-		"create_ref": true
-	}
+  "permissions": {
+    "create_ref": true
+  }
 }
 ```
+
+{{% /request %}}
 
 ## Response
 
-```
-Status: 200 OK
-```
+{{% response "Status: 200 OK" %}}
 
 ```json
 {
-	"permissions": {
-		"cancel_job": false,
-		"create_ref": true,
-		"create_sample": false,
-		"modify_hmm": false,
-		"modify_subtraction": false,
-		"remove_file": false,
-		"remove_job": false,
-		"upload_file": false
-	},
-	"id": "research"
+  "permissions": {
+    "cancel_job": false,
+    "create_ref": true,
+    "create_sample": false,
+    "modify_hmm": false,
+    "modify_subtraction": false,
+    "remove_file": false,
+    "remove_job": false,
+    "upload_file": false
+  },
+  "id": "research"
 }
 ```
+
+{{% /response %}}
 
 ## Errors
 
@@ -197,7 +196,6 @@ Status: 200 OK
 | `403`  | Not permitted | client is not an administrator |
 | `404`  | Not found     | group does not exist           |
 | `422`  | Invalid input | JSON request body is invalid   |
-
 
 # Remove
 
@@ -209,15 +207,11 @@ Remove an existing group.
 
 ## Example
 
-```
-DELETE /api/groups/foobar
-```
+{{< request "DELETE" "/api/groups/foobar" />}}
 
 ## Response
 
-```
-Status: 204 No Content
-```
+{{< response "Status: 204 No Content" />}}
 
 ## Errors
 

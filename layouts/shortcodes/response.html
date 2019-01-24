@@ -1,0 +1,10 @@
+<div class="response">
+    <div class="response-headers">
+        {{ range .Params }}
+        <div>
+            {{ . }}
+        </div>
+        {{ end }}
+    </div>
+    {{ .Inner }}
+</div>

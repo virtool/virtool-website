@@ -3,8 +3,8 @@ title: "Analyses"
 description: "Query and modify analyses."
 type: "api"
 menu:
-    developer:
-        parent: API
+  developer:
+    parent: API
 ---
 
 Analyses are the results of a given Virtool analytical pipelines on a single sample.
@@ -19,15 +19,11 @@ Get a complete analysis document.
 
 ## Example
 
-```
-GET /api/analyses/uskrqsxm
-```
+{{< request "GET" "/api/analyses/uskrqsxm" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
+{{% response "Status: 200 OK" %}}
 
 ```json
 {
@@ -53,6 +49,8 @@ Status: 200 OK
     "diagnosis": [...]
 ```
 
+{{% /response %}}
+
 ## Errors
 
 | Status | Message                      | Reason                                                               |
@@ -60,7 +58,6 @@ Status: 200 OK
 | `400`  | Parent sample does not exist | the parent sample for the analysis could not be found                |
 | `403`  | Insufficient rights          | client does not have the required sample rights to view the analysis |
 | `404`  | Not found                    | `analysis_id` in URL does not exist                                  |
-
 
 # Remove
 
@@ -74,15 +71,11 @@ This request will fail if the analysis is still in progress. Cancel the associat
 
 ## Example
 
-```
-DELETE /api/analyses/:analysis_id
-```
+{{< request "DELETE" "/api/analyses/:analysis_id" />}}
 
 ## Response
 
-```
-Status: 204 No content
-```
+{{< response "Status: 204 No content" />}}
 
 ## Errors
 
@@ -93,37 +86,40 @@ Status: 204 No content
 | `404`  | Not found                    | analysis does not exist                                                |
 | `409`  | Analysis is still running    | analysis job is still in progress                                      |
 
-
 # BLAST Contig
 
 {{< right write >}}
 
 BLAST a contig that was generated as part of a NuVs analysis.
 
-Calling this endpoint for a sequence that has already been BLASTed will result in the old result being overwritten. This request will fail with ``400 Bad Request`` for non-NuVs analyses.
+Calling this endpoint for a sequence that has already been BLASTed will result in the old result being overwritten. This request will fail with `400 Bad Request` for non-NuVs analyses.
 
 {{< endpoint "PUT" "/api/analyses/:id/:sequence_index/blast" >}}
 
 ## Example
 
+{{% request "PUT" "/api/analyses/yzgqgbld/5/blast" %}}
+
+```json
+{}
 ```
-PUT /api/analyses/yzgqgbld/5/blast
-```
+
+{{% /request %}}
 
 ## Response
 
-```
-Status: 200 OK
-```
+{{% response "Status: 200 OK" %}}
 
 ```json
 {
-	"rid": "7M1MFYJ5014",
-	"ready": false,
-	"last_checked_at": "2018-02-06T19:48:33.500000Z",
-	"interval": 3
+  "rid": "7M1MFYJ5014",
+  "ready": false,
+  "last_checked_at": "2018-02-06T19:48:33.500000Z",
+  "interval": 3
 }
 ```
+
+{{% /response %}}
 
 ## Errors
 
