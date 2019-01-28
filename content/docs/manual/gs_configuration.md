@@ -44,6 +44,10 @@ The order of precendence for resolving option values is:
 
 # HTTP
 
+The address for the HTTP server can be changed by modifying the host and port number the server listens on.
+
+Virtool must be restarted for these settings to take effect. Make sure the user running the Virtool server has the permissions required to bind the selected port. If you want to listen on port 80, we suggest setting up a [reverse proxy server](/docs/manual/gs_reverse_proxy) rather than running Virtool as a superuser.
+
 {{< option host >}}
 
 The host Virtool should listen on.
@@ -99,11 +103,11 @@ export VT_PROXY="http://virtool:foobar@192.168.20.2:3128"
 
 {{< option data_path >}}
 
-Virtool stores application data here. This includes sample reads and analyses, reference indexes, log files, and other data.
+Virtool stores application data here. This includes samples and analyses, reference indexes, subtractions, log files, and uploaded files.
 
 {{< option watch_path >}}
 
-Virtool will autmatically retrieve files dropped here and make them available for sample creation.
+Virtool will autmatically retrieve files dropped here and make them available for sample creation. Files are deleted from the watch path once they are pulled into the file manager.
 
 ## Examples
 
