@@ -1,18 +1,42 @@
 {
     "ref_plant_viruses": {
         "latest": {
-            "name": "v1.1.0",
-            "body": "- Add Aeonium ringspot virus\r\n- Add Alfalfa enamovirus 1\r\n- Add Arachis pintoi virus\r\n- Add Areca palm necrotic spindle-spot virus\r\n- Add Cacao mild mosaic virus\r\n- Add Apple hammerhead viroid-like circular RNA\r\n- Add Cacao yellow vein-banding virus\r\n- Add Citrus chlorotic spot virus\r\n- Add Citrus concave gum-associated virus\r\n- Add Coffee ringspot virus\r\n- Add Dioscorea nummularia-associated virus\r\n- Add Elderberry carlavirus\r\n- Add Grapevine fabavirus\r\n- Add Grapevine virus G\r\n- Add Grapevine virus K\r\n- Add Hobart betaflexivirus 1\r\n- Add Maize striate mosaic virus\r\n- Add Opium poppy mosaic virus\r\n- Add Palo verde broom virus\r\n- Add Paris mosaic necrosis virus\r\n- Add Passiflora edulis symptomless virus\r\n- Add Rice virus A\r\n- Add Senna mosaic virus\r\n- Add Tea plant line pattern virus\r\n- Add Watermelon crinkle leaf-associated virus 2\r\n- Add Tobacco mosqueado virus",
+            "name": "v1.3.0",
+            "body": "- add Actinidia chlorotic ringspot associated virus\r\n- add Actinidia virus 1\r\n- add Agave tequilana leaf virus\r\n- add Alfalfa leaf curl virus\r\n- add Alfalfa virus S\r\n- add Alstroemeria yellow spot virus\r\n- add Apple necrotic mosaic virus\r\n- add Arracacha virus 1\r\n- add Atractylodes mottle virus\r\n- add Babaco mosaic virus\r\n- add Beet ringspot virus\r\n- add Bellflower veinal mottle virus\r\n- add Bermuda grass latent virus\r\n- add Blackberry virus A\r\n- add Blackcurrant-associated closterovirus 1\r\n- add Bottle gourd mottle virus\r\n- add Broad-leafed dock virus A\r\n- add Calla lily chlorotic spot virus\r\n- add Camellia chlorotic dwarf-associated virus\r\n- add Cardamom mosaic virus\r\n- add Cassava virus X\r\n- add Cherry associated luteovirus\r\n- add Cherry virus trakiya\r\n- add Chrysanthemum virus R\r\n- add Clerodendrum chlorotic spot virus\r\n- add Cnidium vein yellowing virus 1\r\n- add Cnidium vein yellowing virus 2\r\n- add Colombian potato soil-borne virus\r\n- add Corn salad necrosis virus\r\n- add Cowpea polerovirus 1\r\n- add Cowpea polerovirus 2\r\n- add Curcurbit vein banding virus\r\n- add Currant virus A\r\n- add Cymbidium chlorotic mosaic virus\r\n- add Emilia yellow vein virus-[fz1]\r\n- add Ethiopia maize-associated virus\r\n- add Euphorbia caput-medusae latent virus\r\n- add Gomphocarpus mosaic virus\r\n- add Grapevine associated Tymo-like virus\r\n- add Grapevine enamovirus-1\r\n- add Grapevine leafroll-associated virus 13\r\n- add Grapevine virus J\r\n- add Grapevine virus I\r\n- add Helenium virus S\r\n- add Hibiscus-infecting cilevirus\r\n- add Hop yellow virus\r\n- add Hoya chlorotic spot virus\r\n- add Ixeridium yellow mottle virus 2\r\n- add Jasmine mosaic-associated virus 2\r\n- add Jasmine mosaic-associated virus 1\r\n- add Jasmine virus C\r\n- add Jasmine virus H\r\n- add Jasmine virus T\r\n- add Ligustrum virus A\r\n- add Lychnis mottle virus\r\n- add Melon chlorotic spot virus\r\n- add Melon severe mosaic tospovirus\r\n- add Mulberry mosaic leaf roll-associated virus\r\n- add Mume virus A\r\n- add Naranjilla mild mosaic virus\r\n- add Narcissus virus 1\r\n- add Olive latent ringspot virus\r\n- add Papaya cytorhabdovirus\r\n- add Peach associated luteovirus\r\n- add Peach chlorotic leaf spot virus\r\n- add Peach leaf pitting-associated virus\r\n- add Peanut virus C\r\n- add Pecan mosaic-associated virus\r\n- add Pepper chlorotic spot virus\r\n- add Pleione flower breaking virus\r\n- add Potato necrosis virus\r\n- add Potato virus U\r\n- add Privet leaf blotch-associated virus\r\n- add Red clover associated virus 1\r\n- add Redbud yellow ringspot-associated virus\r\n- add Ribes americanum virus A\r\n- add Rice stripe mosaic virus\r\n- add Salvia divinorum RNA virus 1\r\n- add Sambucus virus S\r\n- add Sugarcane chlorotic streak virus\r\n- add Tea plant necrotic ring blotch virus\r\n- add Temperate fruit decay-associated virus\r\n- add Tetterwort vein chlorosis virus\r\n- add Tomato apical leaf curl virus\r\n- add Tomato mottle leaf curl virus\r\n- add Turtle grass virus X\r\n- add Vanilla latent virus\r\n- add White clover mottle virus\r\n- add Wild melon vein banding virus\r\n- add Wild onion symptomless virus\r\n- add Yacon virus A\r\n- add Yam chlorotic necrotic mosaic virus\r\n- add Blackcurrant leafroll-associated virus 1",
             "prerelease": false,
-            "published_at": "2018-12-14T21:12:43Z",
-            "html_url": "https://github.com/virtool/ref-plant-viruses/releases/tag/v1.1.0",
+            "published_at": "2019-02-01T21:17:34Z",
+            "html_url": "https://github.com/virtool/ref-plant-viruses/releases/tag/v1.3.0",
             "filename": "reference.json.gz",
             "content_type": "application/gzip",
-            "size": 3530937,
-            "download_url": "https://github.com/virtool/ref-plant-viruses/releases/download/v1.1.0/reference.json.gz",
+            "size": 3933199,
+            "download_url": "https://github.com/virtool/ref-plant-viruses/releases/download/v1.3.0/reference.json.gz",
             "asset_error": false
         },
         "releases": [
+            {
+                "name": "v1.3.0",
+                "body": "- add Actinidia chlorotic ringspot associated virus\r\n- add Actinidia virus 1\r\n- add Agave tequilana leaf virus\r\n- add Alfalfa leaf curl virus\r\n- add Alfalfa virus S\r\n- add Alstroemeria yellow spot virus\r\n- add Apple necrotic mosaic virus\r\n- add Arracacha virus 1\r\n- add Atractylodes mottle virus\r\n- add Babaco mosaic virus\r\n- add Beet ringspot virus\r\n- add Bellflower veinal mottle virus\r\n- add Bermuda grass latent virus\r\n- add Blackberry virus A\r\n- add Blackcurrant-associated closterovirus 1\r\n- add Bottle gourd mottle virus\r\n- add Broad-leafed dock virus A\r\n- add Calla lily chlorotic spot virus\r\n- add Camellia chlorotic dwarf-associated virus\r\n- add Cardamom mosaic virus\r\n- add Cassava virus X\r\n- add Cherry associated luteovirus\r\n- add Cherry virus trakiya\r\n- add Chrysanthemum virus R\r\n- add Clerodendrum chlorotic spot virus\r\n- add Cnidium vein yellowing virus 1\r\n- add Cnidium vein yellowing virus 2\r\n- add Colombian potato soil-borne virus\r\n- add Corn salad necrosis virus\r\n- add Cowpea polerovirus 1\r\n- add Cowpea polerovirus 2\r\n- add Curcurbit vein banding virus\r\n- add Currant virus A\r\n- add Cymbidium chlorotic mosaic virus\r\n- add Emilia yellow vein virus-[fz1]\r\n- add Ethiopia maize-associated virus\r\n- add Euphorbia caput-medusae latent virus\r\n- add Gomphocarpus mosaic virus\r\n- add Grapevine associated Tymo-like virus\r\n- add Grapevine enamovirus-1\r\n- add Grapevine leafroll-associated virus 13\r\n- add Grapevine virus J\r\n- add Grapevine virus I\r\n- add Helenium virus S\r\n- add Hibiscus-infecting cilevirus\r\n- add Hop yellow virus\r\n- add Hoya chlorotic spot virus\r\n- add Ixeridium yellow mottle virus 2\r\n- add Jasmine mosaic-associated virus 2\r\n- add Jasmine mosaic-associated virus 1\r\n- add Jasmine virus C\r\n- add Jasmine virus H\r\n- add Jasmine virus T\r\n- add Ligustrum virus A\r\n- add Lychnis mottle virus\r\n- add Melon chlorotic spot virus\r\n- add Melon severe mosaic tospovirus\r\n- add Mulberry mosaic leaf roll-associated virus\r\n- add Mume virus A\r\n- add Naranjilla mild mosaic virus\r\n- add Narcissus virus 1\r\n- add Olive latent ringspot virus\r\n- add Papaya cytorhabdovirus\r\n- add Peach associated luteovirus\r\n- add Peach chlorotic leaf spot virus\r\n- add Peach leaf pitting-associated virus\r\n- add Peanut virus C\r\n- add Pecan mosaic-associated virus\r\n- add Pepper chlorotic spot virus\r\n- add Pleione flower breaking virus\r\n- add Potato necrosis virus\r\n- add Potato virus U\r\n- add Privet leaf blotch-associated virus\r\n- add Red clover associated virus 1\r\n- add Redbud yellow ringspot-associated virus\r\n- add Ribes americanum virus A\r\n- add Rice stripe mosaic virus\r\n- add Salvia divinorum RNA virus 1\r\n- add Sambucus virus S\r\n- add Sugarcane chlorotic streak virus\r\n- add Tea plant necrotic ring blotch virus\r\n- add Temperate fruit decay-associated virus\r\n- add Tetterwort vein chlorosis virus\r\n- add Tomato apical leaf curl virus\r\n- add Tomato mottle leaf curl virus\r\n- add Turtle grass virus X\r\n- add Vanilla latent virus\r\n- add White clover mottle virus\r\n- add Wild melon vein banding virus\r\n- add Wild onion symptomless virus\r\n- add Yacon virus A\r\n- add Yam chlorotic necrotic mosaic virus\r\n- add Blackcurrant leafroll-associated virus 1",
+                "prerelease": false,
+                "published_at": "2019-02-01T21:17:34Z",
+                "html_url": "https://github.com/virtool/ref-plant-viruses/releases/tag/v1.3.0",
+                "filename": "reference.json.gz",
+                "content_type": "application/gzip",
+                "size": 3933199,
+                "download_url": "https://github.com/virtool/ref-plant-viruses/releases/download/v1.3.0/reference.json.gz",
+                "asset_error": false
+            },
+            {
+                "name": "v1.2.0",
+                "body": "- add Alfalfa virus F\r\n- add Apple-associated luteovirus\r\n- add Arracacha virus V\r\n- add Arracacha virus Y\r\n- add Barley virus G\r\n- add Black currant leaf chlorosis-associated virus\r\n- add Blackberry virus F\r\n- add Blueberry latent sperical virus\r\n- add Caucasus prunus virus\r\n- add Cherry virus B\r\n- add Cherry virus F\r\n- add Citrus mosaic sadwavirus\r\n- add Daphne virus Y\r\n- add Elderberry carlavirus A\r\n- add Elderberry carlavirus B\r\n- add Elderberry carlavirus D\r\n- add Elderberry carlavirus E\r\n- add Grapevine badnavirus 1\r\n- add Grapevine fanleaf virus satellite RNA\r\n- add Grapevine roditis leaf discoloration-associated virus\r\n- add Ixeridium yellow mottle virus 1\r\n- add Panicum distortion mosaic virus\r\n- add Passion fruit chlorotic mottle virus\r\n- add Peach virus D\r\n- add Pepper enamovirus\r\n- add Pepper virus A\r\n- add Petunia chlorotic mottle virus\r\n- add Platycodon mild mottle virus\r\n- add Salvia hispanica RNA virus 1\r\n- add Soybean latent spherical virus\r\n- add Squash chlorotic leaf spot virus\r\n- add Tomato mild mottle virus\r\n- add Tomato necrotic streak virus\r\n- add Vanilla virus X\r\n- add Watermelon bud necrosis virus\r\n- add Watermelon crinkle leaf associated virus 1\r\n- add Watermelon virus A\r\n- add Wild Vitis virus 1\r\n- remove trailing spaces from some OTU names",
+                "prerelease": false,
+                "published_at": "2019-01-30T19:37:05Z",
+                "html_url": "https://github.com/virtool/ref-plant-viruses/releases/tag/v1.2.0",
+                "filename": "reference.json.gz",
+                "content_type": "application/gzip",
+                "size": 3626596,
+                "download_url": "https://github.com/virtool/ref-plant-viruses/releases/download/v1.2.0/reference.json.gz",
+                "asset_error": false
+            },
             {
                 "name": "v1.1.0",
                 "body": "- Add Aeonium ringspot virus\r\n- Add Alfalfa enamovirus 1\r\n- Add Arachis pintoi virus\r\n- Add Areca palm necrotic spindle-spot virus\r\n- Add Cacao mild mosaic virus\r\n- Add Apple hammerhead viroid-like circular RNA\r\n- Add Cacao yellow vein-banding virus\r\n- Add Citrus chlorotic spot virus\r\n- Add Citrus concave gum-associated virus\r\n- Add Coffee ringspot virus\r\n- Add Dioscorea nummularia-associated virus\r\n- Add Elderberry carlavirus\r\n- Add Grapevine fabavirus\r\n- Add Grapevine virus G\r\n- Add Grapevine virus K\r\n- Add Hobart betaflexivirus 1\r\n- Add Maize striate mosaic virus\r\n- Add Opium poppy mosaic virus\r\n- Add Palo verde broom virus\r\n- Add Paris mosaic necrosis virus\r\n- Add Passiflora edulis symptomless virus\r\n- Add Rice virus A\r\n- Add Senna mosaic virus\r\n- Add Tea plant line pattern virus\r\n- Add Watermelon crinkle leaf-associated virus 2\r\n- Add Tobacco mosqueado virus",
@@ -105,18 +129,30 @@
     },
     "virtool": {
         "latest": {
-            "name": "v3.2.2",
-            "body": "#### Fixed\r\n- fix unhandled exception on start related to watch path",
+            "name": "v3.2.3",
+            "body": "#### Fixed\r\n- fix broken file upload and watch features",
             "prerelease": false,
-            "published_at": "2019-01-11T16:55:14Z",
-            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.2.2",
+            "published_at": "2019-02-05T18:54:00Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.2.3",
             "filename": "virtool.tar.gz",
             "content_type": "application/gzip",
-            "size": 44805806,
-            "download_url": "https://github.com/virtool/virtool/releases/download/v3.2.2/virtool.tar.gz",
+            "size": 44813432,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v3.2.3/virtool.tar.gz",
             "asset_error": false
         },
         "releases": [
+            {
+                "name": "v3.2.3",
+                "body": "#### Fixed\r\n- fix broken file upload and watch features",
+                "prerelease": false,
+                "published_at": "2019-02-05T18:54:00Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.2.3",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 44813432,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.2.3/virtool.tar.gz",
+                "asset_error": false
+            },
             {
                 "name": "v3.2.2",
                 "body": "#### Fixed\r\n- fix unhandled exception on start related to watch path",
