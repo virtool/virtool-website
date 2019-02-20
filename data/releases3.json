@@ -141,18 +141,30 @@
     },
     "virtool": {
         "latest": {
-            "name": "v3.2.3",
-            "body": "#### Fixed\r\n- fix broken file upload and watch features",
+            "name": "v3.3.0",
+            "body": "#### Fixed\r\n- fix migration of HTTP server configuration from `settings.json`",
             "prerelease": false,
-            "published_at": "2019-02-05T18:54:00Z",
-            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.2.3",
+            "published_at": "2019-02-20T19:14:32Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.3.0",
             "filename": "virtool.tar.gz",
             "content_type": "application/gzip",
-            "size": 44813432,
-            "download_url": "https://github.com/virtool/virtool/releases/download/v3.2.3/virtool.tar.gz",
+            "size": 44808066,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v3.3.0/virtool.tar.gz",
             "asset_error": false
         },
         "releases": [
+            {
+                "name": "v3.3.0",
+                "body": "#### Fixed\r\n- fix migration of HTTP server configuration from `settings.json`",
+                "prerelease": false,
+                "published_at": "2019-02-20T19:14:32Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.3.0",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 44808066,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.3.0/virtool.tar.gz",
+                "asset_error": false
+            },
             {
                 "name": "v3.3.0-beta.1",
                 "body": "#### Added\r\n- automatically migrate old `settings.json` configuration to new model\r\n- expose more application configuration options\r\n- segment value field for sequences in OTU detail view (#1291)\r\n- sequence length indicator in OTU detail view (#1291)\r\n- take all config values from `config.json`, environmental variable, and command line arguments\r\n- validate instance and job resource limits on server start (#1285)\r\n\r\n#### Changed\r\n- automatically strip OTU names when created or edited (#1291)\r\n- overhaul initial setup interface\r\n- use `config.json` as config file and only load on server start\r\n- use MongoDB connection strings instead of individual parameters\r\n- use single proxy address as connection parameter instead of individual parts\r\n- store some settings in database instead of file\r\n\r\n#### Removed\r\n- remove settings user interface components for settings derived from `config.json`\r\n\r\n#### Fixed\r\n- fix broken add analysis button (#1285)\r\n- fix buggy active state on OTU tab in OTU detail view\r\n- fix real time update bugs in sample analysis lists\r\n- fix crash when adding group and (#1287)\r\n- fix incorrect _In Progress_ label for some analyses (#1292)\r\n- fix members missing from detail view (#1277)\r\n- fix missing schema and sequence segment assignments in imported and remoted references\r\n- fix monospace styling on sequence `textarea` field\r\n- fix problem adding unnamed isolates (#1291)\r\n- fix source type checking\r\n- fix `z-index` visual bug in reference settings view (#1273)\r\n\r\n",
