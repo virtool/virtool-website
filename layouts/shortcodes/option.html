@@ -1,0 +1,21 @@
+{{ with .Get 0 }}
+<div class="config-header" title="{{ . }}">
+  <h2 id="{{ . }}" style="padding-bottom: 0.4rem;">
+    {{ . }}
+  </h2>
+  <div class="config-options">
+    <div class="config-option">
+      <span class="config-option-label">CLI</span>
+      <span class="config-option-value">--{{ replace . "_" "-" }}</span>
+    </div>
+    <div class="config-option">
+      <span class="config-option-label">JSON</span>
+      <span class="config-option-value">{{ . }}</span>
+    </div>
+    <div class="config-option">
+      <span class="config-option-label">ENV</span>
+      <span class="config-option-value uppercase">VT_{{ . }}</span>
+    </div>
+  </div>
+</div>
+{{ end }}

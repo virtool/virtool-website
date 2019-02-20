@@ -25,14 +25,6 @@ pygmentsCodeFences = true
   params = ["categories", "tags"]
 
 [menu]
-  [[menu.api]]
-    name = "Overview"
-    weight = 10
-
-  [[menu.api]]
-    name = "Endpoints"
-    weight = 20
-
   [[menu.manual]]
     name = "Getting Started"
     weight = 10
@@ -47,7 +39,11 @@ pygmentsCodeFences = true
   [[menu.manual]]
     name = "Science"
     weight = 40
-      
-  [[developer.guide]]
-    name = "Guide"
+
+    [[menu.developer]]
+    name = "API"
     weight = 10
+
+  [[menu.developer]]
+    name = "Contributing"
+    weight = 20

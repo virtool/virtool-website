@@ -1,6 +1,6 @@
 ---
 title: "Account"
-type: "manual"
+description: "Manage your user account."
 menu:
   manual:
     parent: "User Guide"

@@ -1,41 +1,38 @@
 {{ define "main" }}
-    <div class="section">
-        <div class="container">
-            <div class="level">
-                <div class="level-left">
-                    <div class="level-item contains-nav">
-                        <nav class="breadcrumb " aria-label="breadcrumbs">
-                            <ul>
-                                <li><a class="title is-4" href="/docs">Docs</a></li>
-                                <li><a class="title is-5" href="/docs/api">API</a></li>
-                                <li><a href="#">{{ .Title }}</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>            
-                <div class="level-right">
-                    <div class="level-item tags has-addons">
-                        <span class="tag is-dark">Updated</span>
-                        <span class="tag is-info">{{ .GitInfo.AuthorDate.Format "January 2, 2006" }}</span>
-                    </div>
-                </div>
+<div class="container">
+    <div class="docs docs-api">
+        <nav class="breadcrumbs" aria-label="breadcrumbs">
+            <ul>
+                <li><a href="/docs">Docs</a></li>
+                <li><a href="/docs/developer">Developer</a></li>
+                <li><a href="/docs/developer/api_account">API</a></li>
+                <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+            </ul>
+        </nav>
+
+        <div class="spread">
+            <div class="sidenav">
+                {{ partial "side.html" (dict "CurrentPage" . "MenuName" "developer") }}
             </div>
-            <div class="columns">
-                <div class="column is-narrow is-hidden-touch">
-                    {{ partial "side.html" (dict "CurrentPage" . "MenuName" "api") }}
+
+            <div class="docs-reader">
+                <div class="docs-header">
+                    <span class="docs-title">{{ .Name }}</span>
+                    <span class="docs-update">Updated {{ .GitInfo.AuthorDate.Format "January 2, 2006" }}</span>
                 </div>
 
-                <div class="column docs docs-api">
-                    <div style="width: 100%">
-                        <p>
-                            {{ .Page.Description }}
-                        </p>
-    
+                <div class="docs-content">
+                    <div class="toc-inline">
                         {{ .TableOfContents }}
-    
-                        {{ $replaced := (replace .Content "<table>" "<table class='table is-bordered is-striped is-fullwidth'>") }}
-                        {{ safeHTML $replaced }}
                     </div>
+                    {{ .Content }}
+                </div>
+            </div>
+
+            <div class="toc-side">
+                <h5>PAGE CONTENTS</h5>
+                <div>
+                    {{ .TableOfContents }}
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 ---
 title: "Indexes"
-type: "manual"
+description: "Create, manage, and understand reference indexes."
 menu:
   manual:
     parent: "User Guide"

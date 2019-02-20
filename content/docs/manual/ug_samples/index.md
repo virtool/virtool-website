@@ -1,12 +1,10 @@
 ---
 title: "Samples"
-type: "manual"
+description: "Create, assess, and manage samples."
 menu:
   manual:
     parent: "User Guide"
 ---
-
-{{< construction >}}
 
 # Overview
 

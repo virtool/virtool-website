@@ -1,56 +1,28 @@
 {{ range . }}
-    <h2 class="title is-5">
-        {{ .Name }}
-    </h2>
-
-    {{ $children := .Children }}
-
-    <div class="tile is-ancestor">
-        <div class="tile is-vertical">
-        {{ range $index, $value := .Children }}
-            {{ if or (eq $index 0) (modBool $index 3) }}
-                {{ if or (eq $index 0) (modBool $index 3) }}
-                <div class="tile">
-                    {{ $first := eq $index 0 }}
-                    {{ if $first }}
-                        {{ range first 3 $children }}
-                        <div class="tile is-parent is-4">
-                            <a href="{{ .URL }}" class="tile is-child card is-docs-type">           
-                                <header class="card-header">
-                                    <p class="card-header-title">
-                                        {{ .Name }}
-                                    </p>
-                                </header>
-                                {{ if .Page.Description }}
-                                <div class="card-content">
-                                    {{ .Page.Description }}
-                                </div>
-                                {{ end }}
-                            </a>
-                        </div>
-                        {{ end }}
-                    {{ else }}
-                        {{ range first 3 (after $index $children) }}
-                        <div class="tile is-parent is-4">
-                            <a href="{{ .URL }}" class="tile is-child card is-docs-type">           
-                                <header class="card-header">
-                                    <p class="card-header-title">
-                                        {{ .Name }}
-                                    </p>
-                                </header>                                
-                                {{ if .Page.Description }}
-                                <div class="card-content">
-                                    {{ .Page.Description }}
-                                </div>
-                                {{ end }}
-                            </a>
-                        </div>
-                        {{ end }}
-                    {{ end }}
-                </div>
-                {{ end }}
+<h2 class="title">
+    {{ .Name }}
+</h2>
+<div class="tiles">
+    {{ range .Children }}
+    <div class="box tile">
+        <div class="box-header">
+            <a class="title" href="{{ .URL }}">
+                {{ .Name }}</a>
+            </p>
+            {{ if .Page.Description }}
+            <p class="subtitle">
+                {{ .Page.Description }}
+            </p>
             {{ end }}
-        {{ end }}
+        </div>
+        <div class="box-content">
+            <ul>
+                {{ range .Children }}
+                <li>{{ .Name }}</li>
+                {{ end }}
+            </ul>
         </div>
     </div>
+    {{ end }}
+</div>
 {{ end }}

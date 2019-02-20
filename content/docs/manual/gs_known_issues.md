@@ -1,6 +1,6 @@
 ---
 title: "Known Issues"
-type: "manual"
+description: "Fix issues encountered by other users and developers."
 menu:
   manual:
     parent: "Getting Started"
@@ -13,7 +13,7 @@ menu:
 
 You see an fatal error message similar to the following when starting Virtool:
 
-```
+```term
 inotify.calls.InotifyError: Call failed (should not be -1): (-1) ERRNO=(0)
 ```
 
@@ -23,17 +23,17 @@ Virtool uses inotify to keep track of changes to files in its data and watch pat
 
 This error indicates that the system inotify watch limit is too low. You can increase it.
 
-1. Open `/etc/sysctl.conf`
+Open `/etc/sysctl.conf` and add or update the following configuration line:
 
-2. Add or update the following configuration line:
-   ```
-   fs.inotify.max_user_watches = 524288
-   ```
+```term
+fs.inotify.max_user_watches = 524288
+```
 
-3. Save the changes using the following command
-   ```term
-   sudo sysctl -p --system
-   ```
+Save the changes using the following command
+
+```term
+sudo sysctl -p --system
+```
 
 # Missing `libtbb.so.2`
 
@@ -41,7 +41,7 @@ This error indicates that the system inotify watch limit is too low. You can inc
 
 You see an error similar to the following:
 
-```
+```term
 bowtie-inspect: error while loading shared libraries: libtbb.so.2: cannot open shared
 object file: No such file or directory
 ```
@@ -51,7 +51,7 @@ object file: No such file or directory
 Install the missing package. If you are using our recommended operating system Debian, issue the following command in the terminal.
 
 ```term
-apt install libtbb-dev
+sudo apt-get install libtbb-dev
 ```
 
 If you are using a different operating system consult its documentation for information on installing packages.

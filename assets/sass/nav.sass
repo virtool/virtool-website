@@ -1,0 +1,99 @@
+$navbar-background-color: $primary
+$navbar-box-shadow-size: 0 2px 0 0
+$navbar-box-shadow-color: $background
+$navbar-height: 3.25rem
+$navbar-padding-vertical: 1rem
+$navbar-padding-horizontal: 2rem
+$navbar-z: 30
+
+$navbar-item-color: $white
+$navbar-item-hover-color: $link
+$navbar-item-hover-background-color: $white-bis
+$navbar-item-active-color: $black
+$navbar-item-active-background-color: transparent
+$navbar-item-img-max-height: 1.75rem
+
+$navbar-burger-color: $navbar-item-color
+
+$navbar-tab-hover-background-color: transparent
+$navbar-tab-hover-border-bottom-color: $link
+$navbar-tab-active-color: $link
+$navbar-tab-active-background-color: transparent
+$navbar-tab-active-border-bottom-color: $link
+$navbar-tab-active-border-bottom-style: solid
+$navbar-tab-active-border-bottom-width: 3px
+
+$navbar-divider-background-color: $background
+$navbar-divider-height: 2px
+
+$navbar-bottom-box-shadow-size: 0 -2px 0 0
+
+$navbar-breakpoint: $desktop
+
+body
+    padding-top: $navbar-height
+
+nav.nav
+    align-items: center
+    background-color: $primary
+    display: flex    
+    min-height: $navbar-height    
+    position: fixed
+    top: 0
+    right: 0
+    left: 0
+    z-index: 30
+
+    a
+        color: $white
+        margin-right: 1rem
+
+    &::after
+        content: ""
+        position: absolute
+        box-shadow: 0 5px 15px rgba(0,0,0,0.07) 
+        height: 100%
+        width: 100%
+        opacity: 0
+        z-index: -1
+        transition: opacity 90ms ease-in
+        
+
+    &.nav-shadow::after
+        opacity: 1        
+        transition: opacity 140ms ease-out
+
+.brand
+    align-items: center
+    display: flex
+    margin: 0
+    svg
+        height: 30px
+        width: 30px
+
+.nav-menu
+    align-items: center
+    display: flex
+
+    margin: auto
+    width: 1400px
+
+    +mobile
+        max-width: 599px
+
+    +tablet
+        max-width: 600px
+        width: 600px
+
+    +landscape
+        max-width: 900px
+        width: 900px
+
+    +desktop
+        max-width: 1200px
+        width: 1200px
+
+.nav-right
+    flex: 1 0 auto
+    text-align: right
+

@@ -1,0 +1,44 @@
+$endpoint-border: 1px solid $blue
+$example-border: 1px solid $black
+
+.docs-api
+    h1
+        font-size: $size-4
+
+    h2
+        font-size: $size-5
+        margin-top: 2rem
+    
+.endpoint
+    align-items: center
+    display: flex
+    margin: 1rem 0
+    padding: 0
+    white-space: nowrap
+
+.endpoint-method
+    background-color: $blue    
+    border: $endpoint-border
+    color: $white
+    flex: 0 0 auto
+    font-weight: bold
+    padding: 0.5rem 1rem
+
+.endpoint-path
+    background-color: $white
+    border: $endpoint-border
+    border-left: none
+    flex: 1 0 auto
+    font-family: $family-monospace
+    padding: 0.5rem 1rem
+
+.request-url
+    background-color: $white
+    border: $example-border
+    padding: 0.6rem 1rem
+
+.response-headers
+    background-color: $white
+    border: $example-border
+    font-family: $family-monospace
+    padding: 0.6rem 1rem

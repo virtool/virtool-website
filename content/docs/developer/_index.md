@@ -1,4 +1,3 @@
 ---
-title: "Developer"
-type: "developer"
+title: "Developer Guide"
 ---

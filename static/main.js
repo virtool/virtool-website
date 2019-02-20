@@ -5,15 +5,22 @@ var algoliaClient = algoliasearch(
 
 var algoliaIndex = algoliaClient.initIndex("virtool-docs");
 
+var lastScrollPos = 0;
+
 // Removes previous search and dropdown
 function clearResults() {
   var $el = document.getElementById("search-results");
-  $el.classList.remove("is-active");
-  $el.innerHtml = "";
+
+  if ($el) {
+    $el.classList.remove("is-active");
+    $el.innerHtml = "";
+  }
 }
 
 // Creates dropdown with search results
 function renderResults(searchResults, searchTerm) {
+  console.log(searchResults);
+
   clearResults();
 
   if (!searchResults.length) {
@@ -21,19 +28,22 @@ function renderResults(searchResults, searchTerm) {
   }
 
   var $el = document.getElementById("search-results");
-  $el.classList.add("dropdown-custom-content");
 
-  searchResults.forEach(hit => {
-    var $result = document.createElement("a");
-    $result.href = hit.permalink;
-    $result.classList.add("dropdown-item-custom");
-    $result.innerHTML = `
-      <span class="hit-title">
-          <strong>${hit.title}</strong>
-      </span>
-    `;
-    $el.append($result);
-  });
+  if ($el) {
+    $el.classList.add("dropdown-custom-content");
+
+    searchResults.forEach(hit => {
+      var $result = document.createElement("a");
+      $result.href = hit.permalink;
+      $result.classList.add("dropdown-item-custom");
+      $result.innerHTML = `
+        <span class="hit-title">
+            <strong>${hit.title}</strong>
+        </span>
+      `;
+      $el.append($result);
+    });
+  }
 }
 
 function hideOnClickOutside(selector) {
@@ -43,6 +53,26 @@ function hideOnClickOutside(selector) {
     } else {
       $(selector).show();
     }
+  });
+}
+
+function navShadow() {
+  var $nav = document.getElementById("nav");
+
+  window.addEventListener("scroll", function(e) {
+    var pos = window.scrollY;
+
+    if (lastScrollPos < 5 && pos >= 5) {
+      window.requestAnimationFrame(function() {
+        $nav.classList.add("nav-shadow");
+      });
+    } else if (lastScrollPos >= 5 && pos < 5) {
+      window.requestAnimationFrame(function() {
+        $nav.classList.remove("nav-shadow");
+      });
+    }
+
+    lastScrollPos = pos;
   });
 }
 
@@ -67,20 +97,17 @@ function sideMenu() {
     $el.firstElementChild.addEventListener("click", function(e) {
       e.preventDefault();
 
-      console.log("Click");
-
       menuLists.forEach(function($li) {
         $li.classList.remove("is-active");
       });
 
       $el.classList.add("is-active");
-
-      console.log("DONE");
     });
   });
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+  navShadow();
   sideMenu();
 
   // Get all "navbar-burger" elements
@@ -89,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function() {
     0
   );
 
-  var $search = document.getElementById("manualSearch");
+  var $search = document.getElementById("search");
 
   if ($search) {
     $search.addEventListener("keyup", function(e) {

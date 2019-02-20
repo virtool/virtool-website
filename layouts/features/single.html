@@ -1,291 +1,222 @@
 {{ define "main" }}
-<section class="section">
-  <div class="container">
-    <h1 class="title is-3">Sample Management</h1>
-    <div class="columns">
-      <div class="column is-half">
-        <img src="/images/sample-manager.png" class="image square" />
-      </div>
-      <div class="column is-half">
-        <h1 class="title is-4">Management</h1>
-        <ul>
-          <li>Track samples from creation to analysis.</li>
-          <li>Quickly and easily search and filter sample records.</li>
-        </ul>
-      </div>
+<div class="container">
+  <h1>Features</h1>
+
+  <div class="feature">
+    <h1 class="title">Sample Management</h1>
+
+    <h2 class="title">Management</h2>
+    <div class="feature-item">
+      <ul>
+        <li>Track samples from creation to analysis.</li>
+        <li>Quickly and easily search and filter sample records.</li>
+      </ul>
+      <img src="/images/sample-manager.png" />
     </div>
-    <div class="columns">
-      <div class="column is-half">
-        <img src="/images/sample-creation.png" class="image square" />
-      </div>
-      <div class="column is-half">
-        <h1 class="title is-4">Creation</h1>
-        <ul>
-          <li>Create sample records from paired and unpaired FASTQ files</li>
-          <li>
-            Error correction, trimming, and quality assessment is performed
-            automatically.
-          </li>
-        </ul>
-      </div>
+
+    <h2 class="title is-4">Creation</h2>
+    <div class="feature-item">
+      <ul>
+        <li>Create sample records from paired and unpaired FASTQ files</li>
+        <li>
+          Error correction, trimming, and quality assessment is performed
+          automatically.
+        </li>
+      </ul>
+      <img src="/images/sample-creation.png" />
     </div>
-    <div class="columns">
-      <div class="column is-half">
-        <img src="/images/sample-quality.png" class="image square" />
-      </div>
-      <div class="column is-half">
-        <h1 class="title is-4">QA</h1>
-        <ul>
-          <li>
-            View sample quality metrics generated during import in clean,
-            readable graphics
-          </li>
-          <li>
-            Analysis and graphics based on
-            <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/"
-              >FastQC</a
-            >, the most commonly used next-gen QC tool.
-          </li>
-          <li>Export quality graphics to PDF.</li>
-        </ul>
-      </div>
+
+    <h2 class="title">QA</h2>
+    <div class="feature-item">
+      <ul>
+        <li>
+          View sample quality metrics generated during import in clean,
+          readable graphics
+        </li>
+        <li>
+          Analysis and graphics based on
+          <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a>, the most commonly used
+          next-gen QC tool.
+        </li>
+        <li>Export quality graphics to PDF.</li>
+      </ul>
+      <img src="/images/sample-quality.png" />
     </div>
   </div>
-</section>
 
-<section class="section">
-  <div class="container">
-    <h1 class="title is-3">Analysis</h1>
-    <div class="columns">
-      <div class="column is-half">
-        <img src="/images/pathoscope-viewer.png" class="image square" />
-      </div>
-      <div class="column is-half">
-        <h1 class="title is-4">Detect Known Viruses</h1>
-        <ul>
-          <li>
-            Quickly assess sample libraries for the presence of viruses in
-            Virtool's reference database.
-          </li>
-          <li>
-            Based on tools such as
-            <a href="http://bowtie-bio.sourceforge.net/bowtie2/index.shtml"
-              >Bowtie2</a
-            >
-            and
-            <a href="https://sourceforge.net/projects/pathoscope/files/"
-              >Pathoscope</a
-            >.
-          </li>
-        </ul>
-      </div>
+  <div class="feature">
+    <h1 class="title">Analysis</h1>
+    <div class="feature-item">
+      <h2 class="title">Detect Known Viruses</h2>
+      <ul>
+        <li>
+          Quickly assess sample libraries for the presence of viruses in
+          Virtool's reference database.
+        </li>
+        <li>
+          Based on tools such as
+          <a href="http://bowtie-bio.sourceforge.net/bowtie2/index.shtml">Bowtie2</a>
+          and
+          <a href="https://sourceforge.net/projects/pathoscope/files/">Pathoscope</a>.
+        </li>
+      </ul>
+      <img src="/images/pathoscope-viewer.png" />
     </div>
-
-    <div class="columns">
-      <div class="column is-half">
-        <img src="/images/nuvs.png" class="image square" />
-      </div>
-      <div class="column is-half">
-        <h1 class="title is-4">Discover Novel Viruses</h1>
-        <ul>
-          <li>
-            Use our novel analytical pipeline,
-            <a href="https://github.com/virtool/nuvs">NuVs</a>, to find
-            previously unknown viruses.
-          </li>
-          <li>
-            Uses <a href="http://cab.spbu.ru/software/spades/">SPAdes</a> and
-            <a href="http://hmmer.org/">HMMER</a>.
-          </li>
-          <li>
-            Inspired by
-            <a href="http://derisilab.ucsf.edu/software/vFam/">vFAM</a>.
-          </li>
-        </ul>
-      </div>
+    <div class="feature-item">
+      <h2 class="title">Discover Novel Viruses</h2>
+      <ul>
+        <li>
+          Use our novel analytical pipeline,
+          <a href="https://github.com/virtool/nuvs">NuVs</a>, to find
+          previously unknown viruses.
+        </li>
+        <li>
+          Uses <a href="http://cab.spbu.ru/software/spades/">SPAdes</a> and
+          <a href="http://hmmer.org/">HMMER</a>.
+        </li>
+        <li>
+          Inspired by
+          <a href="http://derisilab.ucsf.edu/software/vFam/">vFAM</a>.
+        </li>
+      </ul>
+      <img src="/images/nuvs.png" />
     </div>
   </div>
-</section>
 
-<section class="section">
-  <div class="container">
-    <h1 class="title is-3">References</h1>
+  <div class="feature">
+    <h1>References</h1>
 
-    <div class="columns">
-      <div class="column is-half">
-        <img src="/images/refs-cards.png" class="image square" />
-      </div>
-      <div class="column is-half">
-        <h1 class="title is-4">Multiple References</h1>
-        <ul></ul>
-        <h2 class="subtitle is-6">
-          Maintain multiple reference sets for different classes of pathogens or
+    <h2>Multiple References</h2>
+    <div class="feature-item">
+      <ul>
+        <li>Maintain multiple reference sets for different classes of pathogens or
           pests.
-        </h2>
-      </div>
+        </li>
+      </ul>
+      <img src="/images/refs-cards.png" />
     </div>
 
-    <div class="columns">
-      <div class="column is-half">
-        <img src="/images/refs-otu-list.png" class="image square" />
-      </div>
-      <div class="column is-half">
-        <h1 class="title is-4">Manage OTUs</h1>
-        <ul></ul>
-        <h2 class="subtitle is-6">
+    <h2>Manage OTUs</h2>
+    <div class="feature-item">
+      <ul>
+        <li>
           Easily browse and edit the organizational taxonomic units (OTUs) in a
           reference.
-        </h2>
-      </div>
-    </div>
-    <div class="columns">
-      <div class="column is-half">
-        <img src="/images/refs-otu-detail.png" class="image square" />
-      </div>
-      <div class="column is-half">
-        <h1 class="title is-4">Structured OTUs</h1>
-        <ul>
-          <li>Easily create and edit OTUs without editing files</li>
-          <li>Track and detect multiple isolates or strains of an OTU</li>
-          <li>
-            Enter multiple sequence segments and automatically retrieve data
-            based on Genbank accessions
-          </li>
-        </ul>
-      </div>
+        </li>
+      </ul>
+      <img src="/images/refs-otu-list.png" />
     </div>
 
-    <div class="columns">
-      <div class="column is-half">
-        <img src="/images/refs-otu-history.png" class="image square" />
-      </div>
-      <div class="column is-half">
-        <h1 class="title is-4">History</h1>
-        <ul>
-          <li>Track every change ever made to an OTU</li>
-          <li>Easily revert uncommitted changes</li>
-        </ul>
-      </div>
+    <h2>Structured OTUs</h2>
+    <div class="feature-item">
+      <ul>
+        <li>Easily create and edit OTUs without editing files</li>
+        <li>Track and detect multiple isolates or strains of an OTU</li>
+        <li>
+          Enter multiple sequence segments and automatically retrieve data
+          based on Genbank accessions
+        </li>
+      </ul>
+      <img src="/images/refs-otu-detail.png" />
     </div>
 
-    <div class="columns">
-      <div class="column is-half">
-        <img src="/images/refs-indexes.png" class="image square" />
-      </div>
-      <div class="column is-half">
-        <h1 class="title is-4">Versioning</h1>
-        <ul>
-          <li>
-            Follow a natural versioning lifecycle by building optimized mapping
-            indexes when valid changes have been made to the reference
-          </li>
-        </ul>
-      </div>
+    <h2>History</h2>
+    <div class="feature-item">
+      <ul>
+        <li>Track every change ever made to an OTU</li>
+        <li>Easily revert uncommitted changes</li>
+      </ul>
+      <img src="/images/refs-otu-history.png" />
+    </div>
+
+    <h2>Versioning</h2>
+    <div class="feature-item">
+      <ul>
+        <li>
+          Follow a natural versioning lifecycle by building optimized mapping
+          indexes when valid changes have been made to the reference
+        </li>
+      </ul>
+      <img src="/images/refs-indexes.png" />
     </div>
   </div>
-</section>
 
-<section class="section">
-  <div class="container">
-    <h1 class="title is-3">Subtractions</h1>
-    <div class="columns">
-      <div class="column is-half">
-        <img src="/images/subtractions-list.png" class="image square" />
-      </div>
-      <div class="column is-half">
-        <h1 class="title is-4">Create</h1>
-        <ul>
-          <li>
-            Create subtraction indexes for removing unwanted sequencing data
-            from analyses
-          </li>
-        </ul>
-      </div>
+  <div class="feature">
+    <h1>Subtractions</h1>
+
+    <h2>Create Subtractions</h2>
+    <div class="feature-item">
+      <ul>
+        <li>
+          Create subtraction indexes for removing unwanted sequencing data
+          from analyses
+        </li>
+      </ul>
+      <img src="/images/subtractions-list.png" />
+
     </div>
   </div>
-</section>
 
-<section class="section">
-  <div class="container">
-    <h1 class="title is-3">Job Management</h1>
-    <div class="columns">
-      <div class="column is-half">
-        <img src="/images/jobs-list.png" class="image square" />
-      </div>
-      <div class="column is-half">
-        <h1 class="title is-4">Tracking</h1>
-        <ul>
-          <li>
-            Manage and track resource-intensive tasks such as analyses or sample
-            creation.
-          </li>
-        </ul>
-      </div>
+  <div class="feature">
+    <h1>Job Management</h1>
+
+    <h2>Tracking</h2>
+    <div class="feature-item">
+      <ul>
+        <li>
+          Manage and track resource-intensive tasks such as analyses or sample
+          creation.
+        </li>
+      </ul>
+      <img src="/images/jobs-list.png" />
     </div>
-    <div class="columns">
-      <div class="column is-half">
-        <img src="/images/jobs-detail.png" class="image square" />
-      </div>
-      <div class="column is-half">
-        <h1 class="title is-4">Staging</h1>
-        <ul>
-          <li>Find out where indiviual jobs are in there lifecycles</li>
-        </ul>
-      </div>
+
+    <h2>Staging</h2>
+    <div class="feature-item">
+      <ul>
+        <li>Find out where indiviual jobs are in there lifecycles</li>
+      </ul>
+      <img src="/images/jobs-detail.png" />
     </div>
   </div>
-</section>
 
-<section class="section">
-  <div class="container">
-    <h1 class="title is-3">User Management</h1>
-    <div class="columns">
-      <div class="column is-half">
-        <img src="/images/users-list.png" class="image square" />
-      </div>
-      <div class="column is-half">
-        <h1 class="title is-4">Manage Users</h1>
-        <ul>
-          <li>
-            Manage resource-intensive tasks such as analyses or sample creation.
-          </li>
-        </ul>
-      </div>
+  <div class="feature">
+    <h1>User Management</h1>
+
+    <h2>Manage Users</h2>
+    <div class="feature-item">
+      <ul>
+        <li>
+          Add or remove users and control their access and permissions.
+        </li>
+      </ul>
+      <img src="/images/users-list.png" />
     </div>
-    <div class="columns">
-      <div class="column is-half">
-        <img src="/images/users-groups.png" class="image square" />
-      </div>
-      <div class="column is-half">
-        <h1 class="title is-4">Control Activity Using Groups</h1>
-        <ul>
-          <li>Assign group ownership and rights to samples</li>
-          <li>
-            Control reference access and modification rights by user and group
-          </li>
-          <li>Restrict activity using group permissions</li>
-        </ul>
-      </div>
+
+    <h2>Control Activity Using Groups</h2>
+    <div class="feature-item">
+      <ul>
+        <li>Assign group ownership and rights to samples</li>
+        <li>
+          Control reference access and modification rights by user and group
+        </li>
+        <li>Restrict activity using group permissions</li>
+      </ul>
+      <img src="/images/users-groups.png" />
     </div>
   </div>
-</section>
 
-<section class="section">
-  <div class="container">
-    <h1 class="title is-3">Software Updates</h1>
-    <div class="columns">
-      <div class="column is-half">
-        <img src="/images/software-updates.png" class="image square" />
-      </div>
-      <div class="column is-half">
-        <h1 class="title is-4">Easily Track and Install Software Updates</h1>
-        <ul>
-          <li>Automatically track software updates for Virtool</li>
-          <li>Install updates from within the web interface</li>
-        </ul>
-      </div>
+  <div class="feature">
+    <h1>Software Updates</h1>
+
+    <h2>Easily Track and Install Software Updates</h2>
+    <div class="feature-item">
+      <ul>
+        <li>Automatically track software updates for Virtool</li>
+        <li>Install updates from within the web interface</li>
+      </ul>
+      <img src="/images/software-updates.png" />
     </div>
   </div>
-</section>
-
+</div>
 {{ end }}

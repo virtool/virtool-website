@@ -1,4 +1,5 @@
 ---
-title: "User Manual"
-type: "manual"
+title: "Manual"
 ---
+
+

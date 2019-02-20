@@ -1,6 +1,6 @@
 ---
 title: "Subtraction"
-type: "manual"
+description: "Create and view subtractions."
 menu:
   manual:
     parent: "User Guide"

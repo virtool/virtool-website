@@ -1,71 +1,49 @@
 {{ $style := resources.Get "style.sass" | toCSS | minify | fingerprint }}
 
 <!DOCTYPE html>
-<html class="has-navbar-fixed-top">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="msvalidate.01" content="8A11FC5596AF88B6FF7D4F592A9EA2EA" />
-    <title>{{ .Site.Title }}</title>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ $style.Permalink }}"
-      media="screen"
-    />
-    <link rel="icon" href="/favicon.ico?v=123213" type="image/x-icon" />
-  </head>
+<html>
 
-  <body>
-    <script type="application/ld+json">
-      {
-          "@context": "http://schema.org",
-          "@type": "Organization",
-          "url": "http://www.virtool.ca",
-          "logo": "http://www.virtool.ca/logo.png"
-      }
-    </script>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="msvalidate.01" content="8A11FC5596AF88B6FF7D4F592A9EA2EA" />
+  <title>{{ .Site.Title }}</title>
+  <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}" media="screen" />
+  <link rel="icon" href="/favicon.ico?v=123213" type="image/x-icon" />
+</head>
 
-    <div id="footer-buffer">
-      {{ partial "header.html" . }}
+<body>
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "http://www.virtool.ca",
+        "logo": "http://www.virtool.ca/logo.png"
+    }
+  </script>
 
-      {{ block "main" . }}
-      <!-- The part of the page that begins to differ between templates -->
-      {{ end }}
+  <div class="buffer">
+    {{ partial "header.html" . }}
+
+    {{ block "main" . }}
+
+    {{ end }}
+  </div>
+
+  <footer class="footer">
+    <div class="copyright">
+      © Copyright 2018 Government of Canada
     </div>
+    <div class="license">
+      Licensed under <a href="https://github.com/virtool/virtool/blob/master/LICENSE">MIT License</a>
+    </div>
+  </footer>
 
-    <footer class="footer is-size-7">
-      <div class="container">
-        <div class="level">
-          <div class="level-left">
-            <div class="level-item">© Copyright 2018 Government of Canada</div>
-          </div>
-          <div class="level-right">
-            <div class="level-item">
-              Licensed under&nbsp;<a
-                href="https://github.com/virtool/virtool/blob/master/LICENSE"
-                >MIT License</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearchLite.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/algoliasearch.helper/2/algoliasearch.helper.min.js"></script>
+  <script defer src="/main.js"></script>
+</body>
 
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
-      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
-      crossorigin="anonymous"
-    />
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearchLite.min.js"
-    ></script>
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/algoliasearch.helper/2/algoliasearch.helper.min.js"
-    ></script>
-    <script defer src="/main.js"></script>
-  </body>
 </html>

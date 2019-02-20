@@ -1,12 +1,8 @@
 <div class="endpoint">
-    <span class="method">
-        {{ with .Get 0 }}
-            {{.}}
-        {{ end }}
+    <span class="endpoint-method">
+        {{ .Get 0 }}
     </span>
-    <span class="path">
-        {{ with .Get 1 }}
-            {{ . }}
-        {{ end }}
+    <span class="endpoint-path">
+        {{ .Get 1 }}
     </span>
 </div>

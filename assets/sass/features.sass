@@ -1,0 +1,25 @@
+.feature
+    display: flex
+    flex-direction: column
+
+    h1
+        border-bottom: 2px solid $black
+        font-size: $size-4
+        padding-bottom: 1rem
+        padding-top: 2rem
+
+    h2
+        display: block
+        font-size: $size-5
+
+.feature-item
+    display: grid
+    grid-template-columns: 1fr
+
+    +landscape
+        grid-template-columns: 2fr 3fr
+
+    img
+        padding-left: 1rem
+
+
