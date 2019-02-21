@@ -19,7 +19,9 @@ Click **Files** in the left sidebar to go to the sample read file manager.
 
 Upload a FASTQ read file.
 
-![Upload Read File](upload.gif)
+<video autoplay muted loop>
+  <source src="upload.mp4" type="video/mp4" />
+</video>
 
 In the _Samples_ view, click <i class="fa fa-plus-square"></i> to open the sample creator. The file you uploaded should now be available in file list.
 
