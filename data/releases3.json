@@ -141,18 +141,30 @@
     },
     "virtool": {
         "latest": {
-            "name": "v3.3.0",
-            "body": "#### Fixed\r\n- fix migration of HTTP server configuration from `settings.json`",
+            "name": "v3.3.1",
+            "body": "#### Changed\r\n- improved testing\r\n- miscellaneous code maintenance\r\n\r\n#### Fixed\r\n- fix error when headers missing in GitHub API response (#1272)\r\n- fix `InvalidStateError` on server when fetching reference detail (#1311)\r\n- fix remote reference version not changing when update completes (#1278)\r\n- fix index build required alert shown in OTUs list even when no build is required (#1280)\r\n",
             "prerelease": false,
-            "published_at": "2019-02-20T19:14:32Z",
-            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.3.0",
+            "published_at": "2019-02-25T23:45:36Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.3.1",
             "filename": "virtool.tar.gz",
             "content_type": "application/gzip",
-            "size": 44808066,
-            "download_url": "https://github.com/virtool/virtool/releases/download/v3.3.0/virtool.tar.gz",
+            "size": 44821859,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v3.3.1/virtool.tar.gz",
             "asset_error": false
         },
         "releases": [
+            {
+                "name": "v3.3.1",
+                "body": "#### Changed\r\n- improved testing\r\n- miscellaneous code maintenance\r\n\r\n#### Fixed\r\n- fix error when headers missing in GitHub API response (#1272)\r\n- fix `InvalidStateError` on server when fetching reference detail (#1311)\r\n- fix remote reference version not changing when update completes (#1278)\r\n- fix index build required alert shown in OTUs list even when no build is required (#1280)\r\n",
+                "prerelease": false,
+                "published_at": "2019-02-25T23:45:36Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.3.1",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 44821859,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.3.1/virtool.tar.gz",
+                "asset_error": false
+            },
             {
                 "name": "v3.3.0",
                 "body": "#### Fixed\r\n- fix migration of HTTP server configuration from `settings.json`",
