@@ -122,7 +122,7 @@ sudo cp -rv bowtie2-2.3.2-legacy /opt/bowtie2
 Make symbolic links for all binaries in a directory in `PATH` \(eg. `/usr/local/bin`\).
 
 ```term
-for FILE in /opt/bowtie2/bowtie*; do sudo ln -s $FILE /usr/local/bin/$FILE; done
+sudo ln -s /opt/bowtie2/bowtie* /usr/local/bin
 ```
 
 Verify that bowtie2 is callable.
@@ -222,7 +222,7 @@ sudo cp -rv hmmer-3.1b2-linux-intel-x86_64 /opt/hmmer
 Make symbolic links to all binaries in a directory in `PATH` \(eg. `/usr/local/bin`\).
 
 ```term
-for FILE in /opt/hmmer/binaries/*; do sudo ln -s /usr/local/bin/$FILE; done
+sudo ln -s /opt/hmmer/binaries/* /usr/local/bin
 ```
 
 Verify that required HMMER binaries are in `PATH`.
