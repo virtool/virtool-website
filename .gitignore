@@ -4,3 +4,4 @@ node_modules/
 public/
 .env
 .vscode
+resources
