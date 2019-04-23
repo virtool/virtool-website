@@ -1,0 +1,7 @@
+{{ define "main" }}
+<div class="container">
+    {{ range .Pages }}
+    {{ partial "update" . }}
+    {{ end }}
+</div>
+{{ end }}

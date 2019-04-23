@@ -1,0 +1,14 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+<div class="box update">
+    <h1>Changes in {{.Title}}</h1>
+
+    <div class="update-link-list">        
+        <span>Released {{.Date.Format "January 2, 2006"}}</span>
+        <span>|</span>
+        <a href="https://github.com/virtool/virtool/releases/tag/v{{.Title}}"><i class="fab fa-github"></i> View on GitHub</a>
+    </div>
+
+    <div class="update-content">
+        {{.Content}}
+    </div>
+</div>
