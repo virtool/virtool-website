@@ -13,13 +13,37 @@
         font-size: $size-5
 
 .feature-item
+    border: 1px solid $grey-lighter
+    border-radius: 3px
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+    
+    margin: 15px 0
+    padding: 0
+
+    img
+        padding-left: 1rem
+
+.feature-header
+    background-color: $grey-lighter
+    font-size: 20px
+    font-weight: bold
+    padding: 10px 15px
+
+.feature-body
     display: grid
     grid-template-columns: 1fr
+
+    ul
+        padding-top: 12px
+
+    li
+        padding-bottom: 8px
+
+    img
+        margin: 5px
 
     +landscape
         grid-template-columns: 2fr 3fr
 
-    img
-        padding-left: 1rem
 
 
