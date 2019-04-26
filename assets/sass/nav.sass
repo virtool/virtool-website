@@ -6,22 +6,13 @@ $navbar-padding-vertical: 1rem
 $navbar-padding-horizontal: 2rem
 $navbar-z: 30
 
-$navbar-item-color: $white
 $navbar-item-hover-color: $link
 $navbar-item-hover-background-color: $white-bis
 $navbar-item-active-color: $black
 $navbar-item-active-background-color: transparent
 $navbar-item-img-max-height: 1.75rem
 
-$navbar-burger-color: $navbar-item-color
-
-$navbar-tab-hover-background-color: transparent
-$navbar-tab-hover-border-bottom-color: $link
-$navbar-tab-active-color: $link
-$navbar-tab-active-background-color: transparent
-$navbar-tab-active-border-bottom-color: $link
-$navbar-tab-active-border-bottom-style: solid
-$navbar-tab-active-border-bottom-width: 3px
+$navbar-burger-color: $white
 
 $navbar-divider-background-color: $background
 $navbar-divider-height: 2px
@@ -46,7 +37,14 @@ nav.nav
 
     a
         color: $white
-        margin-right: 1rem
+        margin-right: 20px
+        text-decoration: none
+
+        &:hover
+            color: $grey-dark
+        
+        &.active
+            color: $grey-darker
 
     &::after
         content: ""
@@ -67,9 +65,12 @@ nav.nav
     align-items: center
     display: flex
     margin: 0
+    text-decoration: none
+
     svg
         height: 30px
         width: 30px
+
 
 .nav-menu
     align-items: center
@@ -96,4 +97,7 @@ nav.nav
 .nav-right
     flex: 1 0 auto
     text-align: right
+
+.navbar-item
+    color: $white
 
