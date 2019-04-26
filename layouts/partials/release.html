@@ -6,12 +6,12 @@
     {{ dateFormat "2006-01-02" .latest.published_at }}
   </div>
   <div class="release-links">
-    <a href="{{ .latest.html_url }}" target="_blank">
+    <a href="{{ .latest.html_url }}">
       <i class="fab fa-github"></i>
-      <span>View on GitHub</span>
+      <span> GitHub</span>
     </a>
     <a class="is-hidden-touch" href="{{ .latest.download_url }}">
-      <i class="fas fa-cloud-download-alt"></i>
+      <i class="fas fa-download"></i>
       <span style="padding-left: 2px;"> Download</span>
     </a>
   </div>
