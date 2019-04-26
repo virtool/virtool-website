@@ -6,6 +6,7 @@
     
 .release
     display: flex
+    flex-flow: row wrap
     align-items: center
     justify-content: space-between
     margin-bottom: 4rem
@@ -13,8 +14,28 @@
 .release-label
     font-weight: bold    
     min-width: 200px
+    order: 1
+
+.release-date
+    color: $grey
+    font-size: 14px
+    min-width: 100%
+    order: 3
+    padding-top: 3px
+
+    +landscape
+        color: $black
+        font-size: 16px
+        min-width: 0
+        order: 2
+        padding: 0
 
 .release-links
+    order: 2
+
+    +landscape
+        order: 3
+
     a
         margin-left: 0.3rem
         text-decoration: none
