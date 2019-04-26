@@ -1,8 +1,38 @@
-h1:target:before
-    content: ""
-    display: block
-    margin-top: 50px
-    height: 50px
+.docs-landing
+    display: grid
+    grid-gap: 25px
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr))
+
+.docs-landing-card
+    border: 1px solid $grey-lighter
+    border-radius: 5px
+    box-shadow: $box-shadow-sm
+
+.docs-landing-header  
+    font-weight: bold
+    margin: 0
+    padding: 15px 20px 
+
+    a
+        font-size: 20px
+        text-decoration: none
+
+    p
+        color: $grey
+        font-size: 14px
+        margin: 7px 0 0
+
+.docs-overview-item
+    border-top: 1px solid $grey-lighter
+    padding: 20px 20px 5px 20px
+
+    a
+        font-weight: bold
+        text-decoration: none
+
+    p
+        color: $grey-dark
+        margin: 10px 0 20px 0
 
 div.docs
     width: 100% 

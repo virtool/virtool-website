@@ -1,8 +1,10 @@
 ---
 title: "NuVs"
+description: "Learn how NuVs predicts novel viral sequences in your sample."
 menu:
   manual:
     parent: "Science"
+    weight: 20
 ---
 
 NuVs is a novel workflow used for discovering potential novel viral sequences in a sample library.

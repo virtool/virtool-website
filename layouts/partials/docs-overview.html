@@ -1,0 +1,24 @@
+<div class="docs-overview">
+{{ range . }}
+<div class="docs-overview-card">
+    {{ $firstItem := index (.Children) 0 }}
+
+    <a class="docs-overview-header" href="{{ $firstItem.URL }}">
+        {{ .Name }}
+    </a>
+    {{ range .Children }}
+    <div class="docs-overview-item">
+        <a href="{{ .URL }}">
+            {{ .Name }}
+        </a>
+
+        {{ if .Page.Description }}
+        <p>
+            {{ .Page.Description }}
+        </p>
+        {{ end }}
+    </div>
+    {{ end }}
+</div>
+{{ end }}
+</div>

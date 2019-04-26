@@ -7,6 +7,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="msvalidate.01" content="8A11FC5596AF88B6FF7D4F592A9EA2EA" />
+
+  {{ if eq .URL "/docs/manual/" }}
+  <meta http-equiv="refresh" content="0; URL='/docs/manual/gs_installation'" />
+  {{ end }}
+
+  {{ if eq .URL "/docs/developer/" }}
+  <meta http-equiv="refresh" content="0; URL='/docs/developer/api_account'" />
+  {{ end }}
+  
   <title>{{ .Site.Title }}</title>
   <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}" media="screen" />
   <link rel="icon" href="/favicon.ico?v=123213" type="image/x-icon" />

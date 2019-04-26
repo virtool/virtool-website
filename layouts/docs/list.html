@@ -12,69 +12,43 @@
     </ul>
   </nav>
 
-  {{ if eq .Title "Docs" }}
-  <div class="tiles tiles-2 tiles-docs">
-    <div class="box tile">
-      <div class="box-header">
-        <h3>
-          <a href="/docs/manual">
-            <i class="fas fa-book"></i> Manual
-          </a>
-        </h3>
+  {{ if eq .URL "/docs/" }}
+  <div class="docs-landing">
+    <div class="docs-landing-card">
+      <div class="docs-landing-header">
+        <a href="/docs/manual">
+          <i class="fas fa-book"></i> Manual
+        </a>
+        <p>
+          A manual for Virtool users.
+        </p>
       </div>
-
-      <p>
-        A manual for Virtool users.
-      </p>
 
       {{ range .Site.Menus.manual }}
-      {{ $name := .Name}}
-      {{ range first 1 .Children }}
-      <h4>
-        <a href={{ .URL }}>{{ $name }}</a>
-      </h4>
-      {{ end }}
+      {{ $firstItem := (index .Children 0)}}
+      <div class="docs-overview-item">
+        <a href={{ $firstItem.URL }}>{{ .Name }}</a>
+      </div>
       {{ end }}
     </div>
-    <div class="box tile">
-      <div class="box-header">
-        <h3>
-          <a href="/docs/developer">
-            <i class="fas fa-code"></i> Developer
-          </a>
-        </h3>
+    <div class="docs-landing-card">
+      <div class="docs-landing-header">
+        <a href="/docs/developer">
+          <i class="fas fa-code"></i> Developer
+        </a>
+        <p>
+          Documentation for users of the Virtool API and Virtool contributors.
+        </p>
       </div>
-      <p>
-        Documentation for users of the Virtool API and Virtool contributors.
-      </p>
 
       {{ range .Site.Menus.developer }}
-      {{ $name := .Name}}
-      {{ range first 1 .Children }}
-      <h4>
-        <a href={{ .URL }}>{{ $name }}</a>
-      </h4>
-      {{ end }}
+      {{ $firstItem := (index .Children 0)}}
+      <div class="docs-overview-item">
+        <a href={{ $firstItem.URL }}>{{ .Name }}</a>
+      </div>
       {{ end }}
     </div>
   </div>
-</div>
-{{ end }}
-
-{{ if eq .Title "Manual" }}
-<div class="search">
-  <input id="search" class="search-input" type="text" placeholder="Search" />
-  <div class="search-results"></div>
-</div>
-
-{{ partial "tiles.html" .Site.Menus.manual }}
-
-{{ end }}
-
-{{ if eq .Title "Developer Guide"}}
-
-{{ partial "tiles.html" .Site.Menus.developer }}
-
-{{ end }}
+  {{ end }}
 </div>
 {{ end }}

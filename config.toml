@@ -27,23 +27,29 @@ pygmentsCodeFences = true
 [menu]
   [[menu.manual]]
     name = "Getting Started"
+    description = "Installing and setting up Virtool for the first time."
     weight = 10
   [[menu.manual]]
     name = "Tutorials"
+    description = "Recipes for doing core activities in Virtool."
     weight = 20
 
   [[menu.manual]]
     name = "User Guide"
+    description = "Detailed documentation of all parts of Virtool comprehensive how-tos."
     weight = 30
 
   [[menu.manual]]
     name = "Science"
+    description = "Explanations of the scientific and bioinformatic ideas behind Virtool."
     weight = 40
 
-    [[menu.developer]]
+  [[menu.developer]]
     name = "API"
+    description = "Documentation of the Virtool JSON API."
     weight = 10
 
   [[menu.developer]]
     name = "Contributing"
+    description = "Resources for contributing to the Virtool project."
     weight = 20

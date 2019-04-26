@@ -1,8 +1,10 @@
 ---
 title: "Pathoscope"
+description: "Learn how Pathoscope detects known viruses in your sample and deals with ambiguous read mappings."
 menu:
   manual:
     parent: "Science"
+    weight: 10
 ---
 
 The Pathoscope workflow is used for detecting known reference OTUs in an Illumina sample library.
