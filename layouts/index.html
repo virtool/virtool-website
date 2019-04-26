@@ -1,25 +1,46 @@
 {{ define "main" }}
-<div class="hero">
-  <div class="hero-content">
-    <h1>Virtool</h1>
+<div>
+  <div class="landing">
+    <div class="container">
+      <h1>Virtool</h1>
+      <h2>Viral infection diagnostics using next-generation sequencing.</h2>
 
-    <h2>
-      Viral infection diagnostics using next-generation sequencing.
-    </h2>
+      <div class="landing-download">
+        <a href="{{ .Site.Data.releases3.virtool.latest.download_url }}">
+          Download for Linux (64-bit)
+        </a>
+        <p>
+          <small>
+            Latest Version: {{ .Site.Data.releases3.virtool.latest.name }}
+          </small>
+        </p>
+      </div>
+    </div>
+  </div>
 
-    <div>
-      <a href="{{ .Site.Data.releases3.virtool.latest.download_url }}">
-        <span>Download for Linux (64-bit)</span>
-      </a>
+  <div class="container">
+    <div class="blurb">
+      <div>
+        <p>Skip the command line for data pre-processing, complex analytical workflows, and sample managment.</p>
+        <p>Easily manage multiple, large sets of pathogen reference sequences without folders or FASTA files.</p>
+        <p>Control access to data and keep track of your users.</p>
+      </div>
+      <div class="blurb-image">
+        <img src="/images/splash.png" />
+      </div>
     </div>
 
-    <small>
-      Latest Version: {{ .Site.Data.releases3.virtool.latest.name }}
-    </small>
+    <div class="latest-update">
+      <div class="latest-update-header">
+
+      </div>
+      <div class="latest-update-body">
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="splash">
-  <img class="splash" src="/images/splash.png" />
-</div>
+
+
+
 {{ end }}
