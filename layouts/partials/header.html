@@ -6,33 +6,35 @@
 </svg>
 
 <nav id="nav" class="nav" role="navigation" aria-label="main navigation">
-    <div class="nav-menu">
-        <a href="/" class="brand">
-            <svg class="icon" style="fill: white; margin-right: 5px">
-                <use xlink:href="#icon-vtlogo"></use>
-            </svg>
-            Virtool
-        </a>
-
-        {{ $currentPage := . }}
-        {{ range sort .Site.Menus.main "Weight" }}
-        <a class="navbar-item{{ if $currentPage.HasMenuCurrent "main" . }} is-active{{ end }}" href="{{ .URL }}">
-            {{ .Name }}
-        </a>
-        {{ end }}
-
-        <div class="nav-right">
-            <a class="github" href="https://github.com/virtool/virtool">
-                <span class="icon">
-                    <i class="fab fa-github"></i>
-                </span>
+    <div class="container">
+        <div class="nav-menu">
+            <a href="/" class="brand">
+                <svg class="icon" style="fill: white; margin-right: 5px">
+                    <use xlink:href="#icon-vtlogo"></use>
+                </svg>
+                Virtool
             </a>
-        </div>
-    </div>
 
-    <div class="burger" data-target="navMenu">
-        <span></span>
-        <span></span>
-        <span></span>
+            {{ $currentPage := . }}
+            {{ range sort .Site.Menus.main "Weight" }}
+            <a class="navbar-item{{ if $currentPage.HasMenuCurrent "main" . }} is-active{{ end }}" href="{{ .URL }}">
+                {{ .Name }}
+            </a>
+            {{ end }}
+
+            <div class="nav-right">
+                <a class="github" href="https://github.com/virtool/virtool">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="burger" data-target="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </div>
 </nav>
