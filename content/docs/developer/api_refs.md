@@ -176,9 +176,9 @@ To direct Virtool to **create a reference from a compatible reference file**, us
 
 To direct Virtool to **link a remote reference and create a new reference from it**, use the `remote_from` field to specify a source GitHub repository slug. Remote reference is automatically linked to its orginating GitHub repository and can check and update the [release](https://help.github.com/categories/releases/) for the source repository.
 
-{{% warning %}}
+{{< warning >}}
 For now, only the [official reference](https://github.com/virtool/virtool-database) is supported as a remote reference. Use the slug `virtool/virtool-database` as value for `clone_from`.
-{{% /warning %}}
+{{< /warning >}}
 
 {{< endpoint "POST" "/api/refs" >}}
 
@@ -744,7 +744,7 @@ Create an index by starting a new index build job.
 
 ## Response
 
-{{% response "Status: 201 Created" "Location: /api/indexes/bznqwjsa" %}}
+{{< response "Status: 201 Created" "Location: /api/indexes/bznqwjsa" >}}
 
 ```json
 {
@@ -771,7 +771,7 @@ Create an index by starting a new index build job.
 }
 ```
 
-{{% /response %}}
+{{< /response >}}
 
 ## Errors
 

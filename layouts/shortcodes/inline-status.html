@@ -1,0 +1,6 @@
+{{ $status := .Get 0 }}
+<span class="inline-status inline-status-{{ (substr $status 0 1) }}">    
+    {{ if eq $status "200" }}200 OK{{ end }}
+    {{ if eq $status "400" }}400 Bad Request{{ end }}
+    {{ if eq $status "409" }}409 Conflict{{ end }}
+</span>

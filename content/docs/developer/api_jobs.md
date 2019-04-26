@@ -23,16 +23,11 @@ Find jobs by task name or the originating username.
 
 ## Example
 
-```
-GET /api/jobs?find=nuvs
-```
+{{< request "GET" "/api/jobs?find=nuvs" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
 	"documents": [
@@ -70,6 +65,7 @@ Status: 200 OK
 	"page": 1
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -86,16 +82,11 @@ Get the complete representation for a single job.
 
 ## Example
 
-```
-GET /api/jobs/zzpugkyt
-```
+{{< request "GET" "/api/jobs/zzpugkyt" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
 	"task": "create_subtraction",
@@ -141,6 +132,7 @@ Status: 200 OK
 	"id": "zzpugkyt"
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -155,22 +147,20 @@ Status: 200 OK
 
 Cancel a job safely and cleanly. Cancellation stops all processes and cleans up intermediate data.
 
-Attempting to cancel a job more than once or cancel a finished job will result in no change, but will still return a ``200 OK`` response.
+Attempting to cancel a job more than once or cancel a finished job will result in no change, but will still return a {{< inline-status 200 >}} response.
 
 {{< endpoint "PUT" "/api/jobs/:id/cancel" >}}
 
 ## Example
 
+{{< request "PUT" "/api/jobs/zzpugkyt/cancel" >}}
+```json
+{}
 ```
-PUT /api/jobs/zzpugkyt/cancel
-```
+{{< /request >}}
 
 ## Response
-
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
 	"task": "create_subtraction",
@@ -223,6 +213,7 @@ Status: 200 OK
 	"id": "zzpugkyt"
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -237,21 +228,17 @@ Status: 200 OK
 
 {{< permission "remove_job" >}}
 
-Remove a job that is complete, cancelled, or errored. If the requested job is running or waiting to run, ``409 Conflict`` will be returned.
+Remove a job that is complete, cancelled, or errored. If the requested job is running or waiting to run, {{< inline-status 409 >}} will be returned.
 
 {{< endpoint "DELETE" "/api/jobs/:id" >}}
 
 ## Example
 
-```
-DELETE /api/jobs/zzpugkyt
-```
+{{< request "DELETE" "/api/jobs/zzpugkyt" />}}
 
 ## Response
 
-```
-Status: 204 No Content
-```
+{{< response "Status: 204 No Content" />}}
 
 ## Errors
 
@@ -279,21 +266,17 @@ Clear completed, failed, or all finished jobs.
 
 ## Example
 
-```
-DELETE /api/jobs/finished
-```
+{{< request "DELETE" "/api/jobs/finished" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
     "removed": ["f41e8c", "kj78e3"]
 }
 ```
+{{< /response >}}
 
 ## Errors
 

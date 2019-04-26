@@ -21,8 +21,7 @@ Get the complete respresentation for the account associated with the current ses
 
 ## Response
 
-{{% response "Status: 200 OK" %}}
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
   "administrator": true,
@@ -50,8 +49,7 @@ Get the complete respresentation for the account associated with the current ses
   "id": "igboyes"
 }
 ```
-
-{{% /response %}}
+{{< /response >}}
 
 ## Errors
 
@@ -75,20 +73,17 @@ Change the email address associated with the account associated with the current
 
 ## Example
 
-{{% request "PATCH" "/api/account" %}}
-
+{{< request "PATCH" "/api/account" >}}
 ```json
 {
   "email": "dev@virtool.ca"
 }
 ```
-
-{{% /request %}}
+{{< /request >}}
 
 ## Response
 
-{{% response "Status: 200 OK" %}}
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
   "administrator": true,
@@ -116,8 +111,7 @@ Change the email address associated with the account associated with the current
   "id": "igboyes"
 }
 ```
-
-{{% /response %}}
+{{< /response >}}
 
 ## Errors
 
@@ -140,7 +134,7 @@ Get the settings for the account associated with the current session or API key.
 
 ## Response
 
-{{% response "Status: 200 OK" %}}
+{{< response "Status: 200 OK" >}}
 
 ```json
 {
@@ -151,7 +145,7 @@ Get the settings for the account associated with the current session or API key.
 }
 ```
 
-{{% /response %}}
+{{< /response >}}
 
 ## Errors
 
@@ -176,20 +170,17 @@ Update the settings for the account associated with the current session or API k
 
 ## Example
 
-{{% request "PATCH" "/api/account/settings" %}}
-
+{{< request "PATCH" "/api/account/settings" >}}
 ```json
 {
   "show_ids": true
 }
 ```
-
-{{% /request %}}
+{{< /request >}}
 
 ## Response
 
-{{% response "Status: 200 OK" %}}
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
   "skip_quick_analyze_dialog": true,
@@ -198,8 +189,7 @@ Update the settings for the account associated with the current session or API k
   "quick_analyze_algorithm": "pathoscope_bowtie"
 }
 ```
-
-{{% /response %}}
+{{< /response >}}
 
 ## Errors
 
@@ -220,8 +210,7 @@ List all API keys for the active account. The keys themselves are not returned.
 
 ## Response
 
-{{% response "Status: 200 OK" %}}
-
+{{< response "Status: 200 OK" >}}
 ```json
 [
   {
@@ -243,8 +232,7 @@ List all API keys for the active account. The keys themselves are not returned.
   }
 ]
 ```
-
-{{% /response %}}
+{{< /response >}}
 
 ## Errors
 
@@ -268,7 +256,7 @@ Create a new API key with the provided permissions. The response to this request
 
 ## Example
 
-{{% request "POST" "/api/account/keys" %}}
+{{< request "POST" "/api/account/keys" >}}
 
 ```json
 {
@@ -279,11 +267,11 @@ Create a new API key with the provided permissions. The response to this request
 }
 ```
 
-{{% /request %}}
+{{< /request >}}
 
 ## Response
 
-{{% response "Status: 201 Created" %}}
+{{< response "Status: 201 Created" >}}
 
 ```json
 {
@@ -306,7 +294,7 @@ Create a new API key with the provided permissions. The response to this request
 }
 ```
 
-{{% /response %}}
+{{< /response >}}
 
 ## Errors
 
@@ -330,7 +318,7 @@ Change the permissions of an existing API key.
 
 ## Example
 
-{{% request "PATCH" "/api/account/keys/test%202_0" %}}
+{{< request "PATCH" "/api/account/keys/test%202_0" >}}
 
 ```json
 {
@@ -341,11 +329,11 @@ Change the permissions of an existing API key.
 }
 ```
 
-{{% /request %}}
+{{< /request >}}
 
 ## Response
 
-{{% response "Status: 200 OK" %}}
+{{< response "Status: 200 OK" >}}
 
 ```json
 {
@@ -367,7 +355,7 @@ Change the permissions of an existing API key.
 }
 ```
 
-{{% /response %}}
+{{< /response >}}
 
 ## Errors
 

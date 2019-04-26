@@ -26,7 +26,7 @@
 
       {{ range .Site.Menus.manual }}
       {{ $firstItem := (index .Children 0)}}
-      <div class="docs-overview-item">
+      <div class="docs-landing-item">
         <a href={{ $firstItem.URL }}>{{ .Name }}</a>
       </div>
       {{ end }}
@@ -43,7 +43,7 @@
 
       {{ range .Site.Menus.developer }}
       {{ $firstItem := (index .Children 0)}}
-      <div class="docs-overview-item">
+      <div class="docs-landing-item">
         <a href={{ $firstItem.URL }}>{{ .Name }}</a>
       </div>
       {{ end }}

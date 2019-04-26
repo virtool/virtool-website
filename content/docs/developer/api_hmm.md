@@ -29,7 +29,7 @@ The response data also includes information about the installation state of the 
 
 ## Response
 
-{{% response "Status: 200 OK" %}}
+{{< response "Status: 200 OK" >}}
 
 ```json
 {
@@ -100,7 +100,7 @@ The response data also includes information about the installation state of the 
 }
 ```
 
-{{% /response %}}
+{{< /response >}}
 
 # Get {#get}
 
@@ -114,7 +114,7 @@ Get the complete representation of a single HMM annotation.
 
 ## Response
 
-{{% response "Status: 200 OK" %}}
+{{< response "Status: 200 OK" >}}
 
 ```json
 {
@@ -153,7 +153,7 @@ Get the complete representation of a single HMM annotation.
 }
 ```
 
-{{% /response %}}
+{{< /response >}}
 
 ## Errors
 
@@ -181,7 +181,7 @@ The `process.id` describes the [process document](/docs/api/processes) that desc
 
 ## Response
 
-{{% response "Status: 200 OK" %}}
+{{< response "Status: 200 OK" >}}
 
 ```json
 {
@@ -219,7 +219,7 @@ The `process.id` describes the [process document](/docs/api/processes) that desc
 }
 ```
 
-{{% /response %}}
+{{< /response >}}
 
 # Get Release
 
@@ -235,7 +235,7 @@ The is the only method for updating the available release information. When the 
 
 ## Response
 
-{{% response "Status: 200 OK" %}}
+{{< response "Status: 200 OK" >}}
 
 ```json
 {
@@ -253,7 +253,7 @@ The is the only method for updating the available release information. When the 
 }
 ```
 
-{{% /response %}}
+{{< /response >}}
 
 ## Errors
 
@@ -276,7 +276,7 @@ Most recently applied updates are first in returned the array. Updates that are 
 
 ## Response
 
-{{% response "Status: 200 OK" %}}
+{{< response "Status: 200 OK" >}}
 
 ```json
 [
@@ -296,7 +296,7 @@ Most recently applied updates are first in returned the array. Updates that are 
 ]
 ```
 
-{{% /response %}}
+{{< /response >}}
 
 # Install
 
@@ -314,7 +314,7 @@ Installing when a previous release has already been installed will remove all HM
 
 ## Response
 
-{{% response "Status: 201 Created" %}}
+{{< response "Status: 201 Created" >}}
 
 ```json
 {
@@ -333,7 +333,7 @@ Installing when a previous release has already been installed will remove all HM
 }
 ```
 
-{{% /response %}}
+{{< /response >}}
 
 ## Errors
 

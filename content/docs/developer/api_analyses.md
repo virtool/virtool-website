@@ -23,8 +23,7 @@ Get a complete analysis document.
 
 ## Response
 
-{{% response "Status: 200 OK" %}}
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
     "id": "uskrqsxm",
@@ -48,8 +47,7 @@ Get a complete analysis document.
     "read_count": 23953,
     "diagnosis": [...]
 ```
-
-{{% /response %}}
+{{< /response >}}
 
 ## Errors
 
@@ -98,17 +96,17 @@ Calling this endpoint for a sequence that has already been BLASTed will result i
 
 ## Example
 
-{{% request "PUT" "/api/analyses/yzgqgbld/5/blast" %}}
+{{< request "PUT" "/api/analyses/yzgqgbld/5/blast" >}}
 
 ```json
 {}
 ```
 
-{{% /request %}}
+{{< /request >}}
 
 ## Response
 
-{{% response "Status: 200 OK" %}}
+{{< response "Status: 200 OK" >}}
 
 ```json
 {
@@ -119,7 +117,7 @@ Calling this endpoint for a sequence that has already been BLASTed will result i
 }
 ```
 
-{{% /response %}}
+{{< /response >}}
 
 ## Errors
 

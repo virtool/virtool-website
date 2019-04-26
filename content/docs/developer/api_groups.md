@@ -19,8 +19,7 @@ List all existing user groups.
 
 ## Response
 
-{{% response "Status: 200 OK" %}}
-
+{{< response "Status: 200 OK" >}}
 ```json
 [
   {
@@ -38,8 +37,7 @@ List all existing user groups.
   }
 ]
 ```
-
-{{% /response %}}
+{{< /response >}}
 
 ## Errors
 
@@ -57,7 +55,7 @@ Get the complete representation of a single user group.
 
 ## Response
 
-{{% response "Status: 200 OK" %}}
+{{< response "Status: 200 OK" >}}
 
 ```json
 {
@@ -75,7 +73,7 @@ Get the complete representation of a single user group.
 }
 ```
 
-{{% /response %}}
+{{< /response >}}
 
 ## Errors
 
@@ -99,7 +97,7 @@ Create a new group. New groups have no permissions. Requestors must be administr
 
 ## Example
 
-{{% request "POST" "/api/groups" %}}
+{{< request "POST" "/api/groups" >}}
 
 ```json
 {
@@ -107,11 +105,11 @@ Create a new group. New groups have no permissions. Requestors must be administr
 }
 ```
 
-{{% /request %}}
+{{< /request >}}
 
 ## Response
 
-{{% response "Status 201: Created" %}}
+{{< response "Status 201: Created" >}}
 
 ```json
 {
@@ -129,7 +127,7 @@ Create a new group. New groups have no permissions. Requestors must be administr
 }
 ```
 
-{{% /response %}}
+{{< /response >}}
 
 ## Errors
 
@@ -155,7 +153,7 @@ Update the permissions of an existing group. Unset permissions will retain their
 
 ## Example
 
-{{% request "PATCH" "/api/groups/research" %}}
+{{< request "PATCH" "/api/groups/research" >}}
 
 ```json
 {
@@ -165,11 +163,11 @@ Update the permissions of an existing group. Unset permissions will retain their
 }
 ```
 
-{{% /request %}}
+{{< /request >}}
 
 ## Response
 
-{{% response "Status: 200 OK" %}}
+{{< response "Status: 200 OK" >}}
 
 ```json
 {
@@ -187,7 +185,7 @@ Update the permissions of an existing group. Unset permissions will retain their
 }
 ```
 
-{{% /response %}}
+{{< /response >}}
 
 ## Errors
 

@@ -21,7 +21,7 @@ List all virus reference indexes. Takes no query or input.
 
 ## Response
 
-{{% response "Status: 200 OK" %}}
+{{< response "Status: 200 OK" >}}
 
 ```json
 {
@@ -51,7 +51,7 @@ List all virus reference indexes. Takes no query or input.
 }
 ```
 
-{{% /response %}}
+{{< /response >}}
 
 ## Errors
 
@@ -71,7 +71,7 @@ List the latest, ready index builds for all references.
 
 ## Response
 
-{{% response "Status: 200 OK" %}}
+{{< response "Status: 200 OK" >}}
 
 ```json
 [
@@ -94,7 +94,7 @@ List the latest, ready index builds for all references.
 ]
 ```
 
-{{% /response %}}
+{{< /response >}}
 
 # Get
 
@@ -110,7 +110,7 @@ Get the complete representation of an index.
 
 ## Response
 
-{{% response "Status: 200 OK" %}}
+{{< response "Status: 200 OK" >}}
 
 ```json
 {
@@ -148,7 +148,7 @@ Get the complete representation of an index.
 }
 ```
 
-{{% /response %}}
+{{< /response >}}
 
 ## Errors
 

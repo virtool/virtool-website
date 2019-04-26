@@ -1,3 +1,4 @@
+$api-padding: 10px 15px
 $endpoint-border: 1px solid $blue
 $example-border: 1px solid $black
 
@@ -22,7 +23,7 @@ $example-border: 1px solid $black
     color: $white
     flex: 0 0 auto
     font-weight: bold
-    padding: 0.5rem 1rem
+    padding: $api-padding
 
 .endpoint-path
     background-color: $white
@@ -30,15 +31,62 @@ $example-border: 1px solid $black
     border-left: none
     flex: 1 0 auto
     font-family: $family-monospace
-    padding: 0.5rem 1rem
+    padding: $api-padding
+
+.request
+    border: $example-border
 
 .request-url
     background-color: $white
-    border: $example-border
-    padding: 0.6rem 1rem
+    font-family: $family-monospace
+    padding: $api-padding
+
+.response
+    border-radius: 5px
 
 .response-headers
     background-color: $white
     border: $example-border
     font-family: $family-monospace
-    padding: 0.6rem 1rem
+    padding: $api-padding
+
+.inline-status
+    border: 1px solid $grey
+    border-radius: 3px
+    display: inline-block
+    font-family: $family-monospace
+    font-size: 12px
+    padding: 0 4px
+    vertical-align: middle
+
+.inline-status-2
+    background-color: lighten($green, 25%)
+    border-color: $green
+
+.inline-status-4
+    background-color: lighten($red, 25%)
+    border-color: $red
+
+.permission
+  align-items: center
+  display: inline-flex
+  font-size: 12px
+  height: 14px
+  justify-content: center
+  white-space: nowrap
+
+.permission-label
+    background-color: $red
+    border: 1px solid $red
+    border-radius: $border-radius-sm 0 0 $border-radius-sm
+    color: $white    
+    padding: 3px 6px
+
+.permission-name
+    background-color: $background
+    border: 1px solid $background
+    border-left: none
+    border-radius: 0 $border-radius-sm $border-radius-sm 0
+    color: $black
+    font-family: $family-monospace
+    padding: 3px 6px

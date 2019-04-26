@@ -21,7 +21,7 @@ The data is retrieved from GenBank and converted into a palatable format.
 
 ## Response
 
-{{% response "Status: 200 OK" %}}
+{{< response "Status: 200 OK" >}}
 
 ```json
 {
@@ -32,7 +32,7 @@ The data is retrieved from GenBank and converted into a palatable format.
 }
 ```
 
-{{% /response %}}
+{{< /response >}}
 
 ## Errors
 

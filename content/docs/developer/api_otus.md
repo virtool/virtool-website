@@ -26,16 +26,11 @@ Find OTUs by their name or abbreviation
 
 ## Example
 
-```
-GET /api/viruses?find=tobacco&per_page=4
-```
+{{< request "GET" "/api/viruses?find=tobacco&per_page=4" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
 	"documents": [
@@ -76,28 +71,24 @@ Status: 200 OK
 	"modified_count": 2
 }
 ```
+{{< /response >}}
 
 
 # Get
 
 {{< right read >}}
 
-Get a complete representation of a virus.
+Get the complete representation of a virus.
 
 {{< endpoint "GET" "/api/otus/:id" >}}
 
 ## Example
 
-```
-GET /api/otus/a15f9837
-```
+{{< request "GET" "/api/otus/a15f9837" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
 	"abbreviation": "ALV",
@@ -142,6 +133,7 @@ Status: 200 OK
 	"issues": null
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -169,23 +161,18 @@ OTU names and abbreviations must be unique within the database. Uniqueness tests
 
 ## Example
 
-```
-POST /api/refs/test/otus
-```
-
+{{< request "POST" "/api/refs/test/otus" >}}
 ```json
 {
 	"name": "Foobar",
 	"abbreviation": "FBR"
 }
 ```
+{{< /request >}}
 
 ## Response
 
-```
-Status: 201 Created
-```
-
+{{< response "Status: 201 Created" >}}
 ```json
 {
 	"name": "Foobar",
@@ -218,6 +205,7 @@ Status: 201 Created
 	}
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -248,24 +236,19 @@ Virus names and abbreviations must be unique within the database. Requesting a n
 | abbreviation | string | true     | the virus abbreviation |
 | schema       | array  | true     | a sequence schema      |
 
-**Example**
+## Example
 
-```
-PATCH /api/viruses/uxusjtcl
-```
-
+{{< request "PATCH" "/api/viruses/uxusjtcl" >}}
 ```json
 {
 	"abbreviation": "FB"
 }
 ```
+{{< /request >}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
 	"name": "Foobar",
@@ -298,6 +281,7 @@ Status: 200 OK
 	}
 }
 ```
+{{< /response >}}
 
 ## Errors
 

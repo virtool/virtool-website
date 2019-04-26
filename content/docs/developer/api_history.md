@@ -26,7 +26,7 @@ List all virus changes with the most recent changes first. All parameters are op
 
 ## Response
 
-{{% response "Status: 200 OK" %}}
+{{< response "Status: 200 OK" >}}
 
 ```json
 {
@@ -76,7 +76,7 @@ List all virus changes with the most recent changes first. All parameters are op
 }
 ```
 
-{{% /request %}}
+{{< /request >}}
 
 ## Errors
 
@@ -96,7 +96,7 @@ Get the complete representation of a single virus change.
 
 ## Response
 
-{{% response "Status: 200 OK" %}}
+{{< response "Status: 200 OK" >}}
 
 ```json
 {
@@ -123,7 +123,7 @@ Get the complete representation of a single virus change.
 }
 ```
 
-{{% /response %}}
+{{< /response >}}
 
 ## Errors
 

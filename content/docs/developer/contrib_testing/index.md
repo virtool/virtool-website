@@ -85,9 +85,9 @@ The output should resemble the following:
 
 Jest can automatically find test files to run if they are kept in a dedicated **\_\_tests\_\_** directory, or anywhere else if the files include a **.test.js** or **.spec.js** extension.
 
-{{% note %}}
+{{< note >}}
 Virtool currently prefers to name test files with the **.test.js** extension, and to keep them adjacent to their corresponding implementation code files rather than in a single directory for better organization.
-{{% /note %}}
+{{< /note >}}
 
 Jest is also a testing platform with a diverse API to allow you to write tests without the need for external plugins. Tests generally take the form of the following:
 
@@ -170,9 +170,9 @@ which corresponds to the implementation's `render()` output of **Sample.js**.
   }
 ```
 
-{{% note %}}
+{{< note >}}
 Since snapshot files are used alongside testing, they should be committed with test files to Virtool's github repository.
-{{% /note %}}
+{{< /note >}}
 
 ### 3. Coverage Report
 
@@ -190,9 +190,9 @@ Which runs all tests and displays a summary of code coverage metrics on the comm
 
 Coverage details for each file is stored in a dedicated directory that is generated after the first `yarn test:coverage` command, and can be found under **virtool/client/coverage**. This directory will have subdirectories that reflect the directory tree of the codebase under test, with each file's coverage report saved with an **.html** extension and viewable in the browser.
 
-{{% note %}}
+{{< note >}}
 The coverage directory and coverage files are **not** committed to repositories.
-{{% /note %}}
+{{< /note >}}
 
 ## Enzyme
 
