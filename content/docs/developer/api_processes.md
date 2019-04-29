@@ -15,16 +15,11 @@ All all existing processes.
 
 ## Example
 
-```
-GET /api/processes
-```
+{{< request "GET" "/api/processes" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 [
 	{
@@ -45,6 +40,7 @@ Status: 200 OK
 	}
 ]
 ```
+{{< /response >}}
 
 # Get
 
@@ -54,16 +50,11 @@ Get a single process.
 
 ## Example
 
-```
-GET /api/processes/pqbed16v
-```
+{{< request "GET" "/api/processes/pqbed16v" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
 	"created_at": "2018-05-02T23:04:15.376000Z",
@@ -74,6 +65,7 @@ Status: 200 OK
 	"id": "pqbed16v"
 }
 ```
+{{< /response >}}
 
 ## Errors
 

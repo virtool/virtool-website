@@ -224,7 +224,7 @@ OTU names and abbreviations must be unique within the database. Uniqueness tests
 
 Edit an existing virus by changing its name, abbreviation, or schema.
 
-Virus names and abbreviations must be unique within the database. Requesting a name or abbreviation that is already in use will result in a ``409 Conflict``. Uniqueness tests for virus names are **case-insensitive**.
+Virus names and abbreviations must be unique within the database. Requesting a name or abbreviation that is already in use will result in a {{< inline-status 409 >}}. Uniqueness tests for virus names are **case-insensitive**.
 
 {{< endpoint "PATCH" "/api/otus/:id" >}}
 
@@ -305,15 +305,11 @@ Removes a virus, its isolates, and sequences.
 
 ## Example
 
-```
-DELETE /api/viruses/uxusjtcl
-```
+{{< request "DELETE" "/api/viruses/uxusjtcl" />}}
 
 ## Response
 
-```
-Status: 204 No content
-```
+{{< response "Status: 204 No content" />}}
 
 ## Errors
 
@@ -333,16 +329,11 @@ List the isolates for a given virus.
 
 ## Example
 
-```
-GET /api/viruses/a15f9837/isolates
-```
+{{< request "GET" "/api/viruses/a15f9837/isolates" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 [
 	{
@@ -375,6 +366,7 @@ Status: 200 OK
 	}
 ]
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -393,16 +385,11 @@ Get the complete representation of a single isolate.
 
 ## Example
 
-```
-GET /api/viruses/a15f9837/isolates/0jrrxdxh
-```
+{{< request "GET" "/api/viruses/a15f9837/isolates/0jrrxdxh" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
 	"source_type": "isolate",
@@ -419,6 +406,7 @@ Status: 200 OK
 	]
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -448,23 +436,18 @@ Setting the isolate to default will steal default status from any existing defau
 
 ## Example
 
-```
-POST /api/viruses/a15f9837/isolates
-```
-
+{{< request "POST" "/api/viruses/a15f9837/isolates" >}}
 ```json
 {
 	"source_type": "isolate",
 	"source_name": "a"
 }
 ```
+{{< /request >}}
 
 ## Response
 
-```
-Status: 201 Created
-```
-
+{{< response "Status: 201 Created" >}}
 ```json
 {
 	"source_type": "isolate",
@@ -474,6 +457,7 @@ Status: 201 Created
 	"sequences": []
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -502,22 +486,17 @@ Edit an existing isolate.
 
 ## Example
 
-```
-PATCH /api/viruses/a15f9837/isolates/utcvsgwz
-```
-
+{{< request "PATCH" "/api/viruses/a15f9837/isolates/utcvsgwz" >}}
 ```json
 {
 	"source_name": "b"
 }
 ```
+{{< /request >}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
 	"source_type": "isolate",
@@ -527,6 +506,7 @@ Status: 200 OK
 	"sequences": []
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -550,16 +530,12 @@ Takes no input.
 
 ## Example
 
-```
-PUT /api/viruses/a15f9837/isolates/utcvsgwz/default
-```
+{{< request "PUT" "/api/viruses/a15f9837/isolates/utcvsgwz/default" />}}
+
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
 	"source_type": "isolate",
@@ -569,6 +545,7 @@ Status: 200 OK
 	"sequences": []
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -588,15 +565,11 @@ Removes an isolate and its sequences. If it is the default isolate, the first is
 
 ## Example
 
-```
-DELETE /api/viruses/a15f9837/isolates/utcvsgwz/default
-```
+{{< request "DELETE" "/api/viruses/a15f9837/isolates/utcvsgwz/default" />}}
 
 ## Response
 
-```
-Status: 204 No content
-```
+{{< response "Status: 204 No content" />}}
 
 ## Errors
 
@@ -632,10 +605,7 @@ Values provided for ``sequence`` must be plain text, **not** FASTA formatted. Se
 
 ## Example
 
-```
-POST /api/viruses/a15f9837/isolates/utcvsgwz/sequences
-```
-
+{{< request "POST" "/api/viruses/a15f9837/isolates/utcvsgwz/sequences" >}}
 ```json
 {
 	"id": "foobar",
@@ -643,13 +613,11 @@ POST /api/viruses/a15f9837/isolates/utcvsgwz/sequences
 	"sequence": "ATGACTAGCGGACTTACA"
 }
 ```
+{{< /request >}}
 
 ## Response
 
-```
-Status: 201 Created
-```
-
+{{< response "Status: 201 Created" >}}
 ```json
 {
 	"definition": "A sequence for demo purposes",
@@ -661,6 +629,7 @@ Status: 201 Created
 	"id": "foobar"
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -696,23 +665,18 @@ Values provided for ``sequence`` must be plain text, **not** FASTA formatted. Se
 
 ## Example
 
-```
-PATCH /api/viruses/a15f9837/isolates/utcvsgwz/sequences/foobar
-```
-
+{{< request "PATCH" "/api/viruses/a15f9837/isolates/utcvsgwz/sequences/foobar" >}}
 ```json
 {
 	"host": "Plant",
 	"sequence": "TACGTGTCGATCGATCGTAGTCGTACG"
 }
 ```
+{{< /request >}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
 	"definition": "A sequence for demo purposes",
@@ -724,6 +688,7 @@ Status: 200 OK
 	"id": "foobar"
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -745,15 +710,11 @@ Remove an existing sequence from an isolate.
 
 ## Example
 
-```
-DELETE /api/viruses/a15f9837/isolates/utcvsgwz/sequences/foobar
-```
+{{< request "DELETE" "/api/viruses/a15f9837/isolates/utcvsgwz/sequences/foobar" />}}
 
 ## Response
 
-```
-Status: 204 No Content
-```
+{{< response "Status: 204 No Content" />}}
 
 ## Errors
 
@@ -775,16 +736,11 @@ See [history endpoints](/docs/api/history/) for more advanced querying and modif
 
 ## Example
 
-```
-GET /api/viruses/a15f9837/history
-```
+{{< request "GET" "/api/viruses/a15f9837/history" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 [
 	{
@@ -995,6 +951,7 @@ Status: 200 OK
 	}
 ]
 ```
+{{< /response >}}
 
 ## Errors
 

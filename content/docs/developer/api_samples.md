@@ -23,16 +23,11 @@ Find samples based on the sample name or creator username.
 
 ## Example
 
-```
-GET /api/samples?find=test&page=1
-```
+{{< request "GET" "/api/samples?find=test&page=1" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
 	"documents": [
@@ -58,6 +53,7 @@ Status: 200 OK
 	"page": 1
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -76,16 +72,11 @@ Get the complete representation of a sample.
 
 ## Example
 
-```
-GET /api/samples/htosefxu
-```
+{{< request "GET" "/api/samples/htosefxu" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
 	"name": "Test 1",
@@ -135,6 +126,7 @@ Status: 200 OK
 	"id": "htosefxu"
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -167,6 +159,7 @@ The array of files must contain **only one or two items**. Samples with arrays c
 
 ## Example
 
+{{< request "POST" "/api/samples" >}}
 ```json
 {
 	"name": "Test A",
@@ -179,13 +172,11 @@ The array of files must contain **only one or two items**. Samples with arrays c
 	]
 }
 ```
+{{< /request >}}
 
 ## Response
 
-```
-Status: 201 Created
-```
-
+{{< response "Status: 201 Created" "Location: /api/samples/oggjipxw" >}}
 ```json
 {
 	"name": "Test A",
@@ -218,6 +209,7 @@ Status: 201 Created
 	"id": "oggjipxw"
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -251,10 +243,7 @@ Update modifiable fields of a sample.
 
 ## Example
 
-```
-PATCH /api/samples/oggjipxw
-```
-
+{{< request "PATCH" "/api/samples/oggjipxw" >}}
 ```json
 {
 	"name": "Test A",
@@ -263,13 +252,11 @@ PATCH /api/samples/oggjipxw
 	"locale": ""
 }
 ```
+{{< /request >}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
 	"name": "Test A",
@@ -286,6 +273,7 @@ Status: 200 OK
 	"id": "oggjipxw"
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -317,10 +305,7 @@ Edit the access rights for a sample.
 
 ## Example
 
-```
-PATCH /api/samples/oggjipxw/rights
-```
-
+{{< request "PATCH" "/api/samples/oggjipxw/rights" >}}
 ```json
 {
 	"group": "administrator",
@@ -328,13 +313,11 @@ PATCH /api/samples/oggjipxw/rights
 	"group_write": true
 }
 ```
+{{< /request >}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
 	"group": "administrator",
@@ -344,6 +327,7 @@ Status: 200 OK
 	"all_write": false
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -365,15 +349,11 @@ Remove an existing sample record and its associated data files.
 
 ## Example
 
-```
-DELETE /api/samples/oggjipxw
-```
+{{< request "DELETE" "/api/samples/oggjipxw" />}}
 
 ## Response
 
-```
-Status: 204 No Content
-```
+{{< response "Status: 204 No Content" />}}
 
 ## Errors
 
@@ -395,16 +375,11 @@ Returned documents do not include diagnostic data. Use the [analyses](/docs/api/
 
 ## Example
 
-```
-GET /api/samples/htosefxu/analyses
-```
+{{< request "GET" "/api/samples/htosefxu/analyses" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
 	"total_count": 2,
@@ -452,6 +427,7 @@ Status: 200 OK
 	]
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -478,24 +454,18 @@ Immediately create and placeholder analysis record for a sample and start an ana
 
 ## Example
 
-```
-POST /api/samples/htosefxu/analyses
-```
-
+{{< request "POST" "/api/samples/htosefxu/analyses" >}}
 ```json
 {
 	"algorithm": "pathoscope_bowtie",
 	"ref_id": "foo"
 }
 ```
+{{< /request >}}
 
 ## Response
 
-```
-Status: 201 Created
-Location: /api/analyses/fbzypgva
-```
-
+{{< response "Status: 201 Created" "Location: /api/analyses/fbzypgva" >}}
 ```json
 {
 	"ready": false,
@@ -517,6 +487,7 @@ Location: /api/analyses/fbzypgva
 	"id": "fbzypgva"
 }
 ```
+{{< /response >}}
 
 ## Errors
 

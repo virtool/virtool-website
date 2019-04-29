@@ -15,16 +15,11 @@ Get a complete representation of the administrative settings.
 
 ## Example
 
-```
-GET /api/settings
-```
+{{< request "GET" "/api/settings" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
     "allowed_source_types": [
@@ -85,6 +80,7 @@ Status: 200 OK
     "watch_path": "watch"
 }
 ```
+{{< /response >}}
 
 # Update
 
@@ -145,22 +141,17 @@ Create a new group. New groups have no permissions. Requestors must have the ``m
 
 ## Example
 
-```
-POST /api/settings
-```
-
+{{< request "POST" "/api/settings" >}}
 ```json
 {
     "nuvs_mem": 18
 }
 ```
+{{< /request >}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
     "allowed_source_types": [
@@ -221,6 +212,7 @@ Status: 200 OK
     "watch_path": "watch"
 }
 ```
+{{< /response >}}
 
 ## Errors
 

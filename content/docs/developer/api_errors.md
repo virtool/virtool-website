@@ -9,7 +9,7 @@ menu:
 
 # JSON Errors
 
-JSON input that cannot be parsed, results in a ``400 Bad Request`` response. No more information is provided with the
+JSON input that cannot be parsed, results in a {{< inline-status 400 >}} response. No more information is provided with the
 response, so make sure your JSON is formatted properly!
 
 ```json
@@ -38,7 +38,7 @@ error:
 
 JSON input data for POST and PUT endpoints and URL queries are validated using Cerberus.
 
-Validation errors will result in a ``422 Unprocessable Entity`` response. The response data includes the default
+Validation errors will result in a {{< inline-status 422 >}} response. The response data includes the default
 Cerberus error report. Refer to the [Cerberus documentation](http://docs.python-cerberus.org/en/stable/usage.html).
 
 ```json

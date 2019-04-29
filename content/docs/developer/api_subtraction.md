@@ -23,16 +23,11 @@ Find profile subtractions by id (name) or nickname.
 
 ## Example
 
-```
-GET /api/hmms?find=Arab&per_page=1
-```
+{{< request "GET" "/api/hmms?find=Arab&per_page=1" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
 	"documents": [
@@ -57,6 +52,7 @@ Status: 200 OK
 	"ready_host_count": 1
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -71,16 +67,11 @@ Get the complete representation of a given subtraction.
 
 ## Example
 
-```
-GET /api/subtraction/Arabidopsis
-```
+{{< request "GET" "/api/subtraction/Arabidopsis" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
 	"ready": true,
@@ -112,6 +103,7 @@ Status: 200 OK
 	"id": "Arabidopsis"
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -138,10 +130,7 @@ Create a new subtraction from a file that has previously been uploaded into the 
 
 ## Example
 
-```
-POST /api/subtraction
-```
-
+{{< request "POST" "/api/subtraction" >}}
 ```json
 {
 	"subtraction_id": "Test 1",
@@ -149,13 +138,11 @@ POST /api/subtraction
 	"file_id": "djbxvhmy-ATgenomeTAIR9.171"
 }
 ```
+{{< /request >}}
 
 ## Response
 
-```
-Status: 201 Created
-```
-
+{{< response "Status: 201 Created" >}}
 ```json
 {
 	"ready": false,
@@ -174,6 +161,7 @@ Status: 201 Created
 	"id": "Test 1"
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -200,21 +188,18 @@ Change the nickname of an existing subtraction.
 | nickname | string | false    | a nickname for the host |
 
 ## Example
-```
-PATCH /api/subtraction/Arabdidopsis
-```
 
+{{< request "PATCH" "/api/subtraction/Arabdidopsis" >}}
 ```json
 {
 	"nickname": "Thale cress"
 }
 ```
+{{< /request >}}
 
 ## Response
-```
-Status: 200 OK
-```
 
+{{< response "Status: 200 OK" >}}
 ```json
 {
 	"ready": true,
@@ -241,6 +226,7 @@ Status: 200 OK
 	"id": "Arabidopsis"
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -261,15 +247,11 @@ Remove an existing subtraction
 
 ## Example
 
-```
-DELETE /api/subtraction/Test%201
-```
+{{< request "DELETE" "/api/subtraction/Test%201" />}}
 
 ## Response
 
-```
-Status: 204 No content
-```
+{{< response "Status: 204 No content" />}}
 
 ## Errors
 

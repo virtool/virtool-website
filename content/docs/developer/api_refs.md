@@ -22,16 +22,11 @@ Find references.
 
 ## Example
 
-```
-GET /api/refs
-```
+{{< request "GET" "/api/refs" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
   "created_at": "2018-05-17T19:02:23.949000Z",
@@ -60,6 +55,7 @@ Status: 200 OK
   "id": "cngzpufk"
 }
 ```
+{{< /response >}}
 
 # Get
 
@@ -71,16 +67,11 @@ Get the complete representation of a single reference.
 
 ## Example
 
-```
-GET /api/refs/foo
-```
+{{< request "GET" "/api/refs/foo" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
   "created_at": "2018-06-14T18:37:54.242000Z",
@@ -153,6 +144,7 @@ Status: 200 OK
   "id": "du5m5f51"
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -197,10 +189,7 @@ For now, only the [official reference](https://github.com/virtool/virtool-databa
 
 ## Basic Example
 
-```
-POST /api/refs
-```
-
+{{< request "POST" "/api/refs" >}}
 ```json
 {
   "name": "Plant Viruses",
@@ -208,13 +197,11 @@ POST /api/refs
   "data_type": "genome"
 }
 ```
+{{< /request >}}
 
 ## Basic Response
 
-```
-Status: 201 Created
-```
-
+{{< response "Status: 201 Created" "Location: /api/refs/f0emv7kz" >}}
 ```json
 {
   "created_at": "2018-04-26T23:03:02.937000Z",
@@ -241,13 +228,11 @@ Status: 201 Created
   "id": "f0emv7kz"
 }
 ```
+{{< /response >}}
 
 ## Clone Example
 
-```
-POST /api/refs
-```
-
+{{< request "POST" "/api/refs" >}}
 ```json
 {
   "name": "Test 1",
@@ -256,13 +241,11 @@ POST /api/refs
   "clone_from": "pe6vunzl"
 }
 ```
+{{< /request >}}
 
 ## Clone Response
 
-```
-Status: 201 Created
-```
-
+{{< response "Status: 201 Created" "Location: /api/refs/3m4glv8c" >}}
 ```json
 {
   "created_at": "2018-05-23T18:53:16.516000Z",
@@ -299,13 +282,11 @@ Status: 201 Created
   "id": "3m4glv8c"
 }
 ```
+{{< /response >}}
 
 ## Import Example
 
-```
-POST /api/refs
-```
-
+{{< request "POST" "/api/refs" >}}
 ```json
 {
   "name": "Test 1",
@@ -314,13 +295,11 @@ POST /api/refs
   "import_from": "dembqmby-reference.json.gz"
 }
 ```
+{{< /request >}}
 
 ## Import Response
 
-```
-Status: 201 Created
-```
-
+{{< response "Status: 201 Created" "Location: /api/refs/pe6vunzl" >}}
 ```json
 {
   "created_at": "2018-05-23T18:49:33.493000Z",
@@ -360,13 +339,11 @@ Status: 201 Created
   "id": "pe6vunzl"
 }
 ```
+{{< /response >}}
 
 ## Remote Example
 
-```
-POST /api/refs
-```
-
+{{< request "POST" "/api/refs" >}}
 ```json
 {
   "name": "Test Remote",
@@ -375,14 +352,11 @@ POST /api/refs
   "remote_from": "virtool/virtool-database"
 }
 ```
+{{< /request >}}
 
 ## Remote Response
 
-```
-Status: 201 Created
-Location: /api/refs/95p5qnk2
-```
-
+{{< response "Status: 201 Created" "Location: /api/refs/95p5qnk2" >}}
 ```json
 {
   "created_at": "2018-05-28T22:35:36.443000Z",
@@ -423,6 +397,7 @@ Location: /api/refs/95p5qnk2
   "id": "95p5qnk2"
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -456,10 +431,7 @@ Currently, only _genome_ is accepted as a value for `data_type`.
 
 ## Example
 
-```
-PATCH /api/refs/o7ed3yfd
-```
-
+{{< request "PATCH" "/api/refs/o7ed3yfd" >}}
 ```json
 {
   "name": "Regulated Pests",
@@ -467,13 +439,11 @@ PATCH /api/refs/o7ed3yfd
   "internal_control": "ah4m5jqz"
 }
 ```
+{{< /request >}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
   "created_at": "2018-05-02T23:11:38.489000Z",
@@ -501,6 +471,7 @@ Status: 200 OK
   "id": "o7ed3yfd"
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -531,16 +502,11 @@ The default scope is `built` if no `scope` parameter is provided.
 
 ## Example
 
-```
-GET /download/refs/848280hu?scope=unbuilt
-```
+{{< request "GET" "/download/refs/848280hu?scope=unbuilt" />}}
 
 ## Response
 
-```
-Status: 200 OK
-Content-Type: application/gzip
-```
+{{< response "Status: 200 OK" "Content-Type: application/gzip" />}}
 
 ## Errors
 
@@ -562,17 +528,11 @@ Information about the deletion process is returned in the HTTP response. The `Co
 
 ## Example
 
-```
-DELETE /api/refs/qymrndgk
-```
+{{< request "DELETE" "/api/refs/qymrndgk" />}}
 
 ## Response
 
-```
-Status: 202 Accepted
-Content-Location: /api/processes/yn5ncv8t
-```
-
+{{< response "Status: 202 Accepted" "Content-Location: /api/processes/yn5ncv8t" >}}
 ```json
 {
   "created_at": "2018-05-02T21:54:48.756000Z",
@@ -583,6 +543,7 @@ Content-Location: /api/processes/yn5ncv8t
   "id": "yn5ncv8t"
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -611,16 +572,11 @@ History can be limited to unbuilt or built changes only using the `unbuilt` quer
 
 ## Example
 
-```
-GET /api/refs/35s1gev9/history?per_page=2
-```
+{{< request "GET" "/api/refs/35s1gev9/history?per_page=2" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
   "documents": [
@@ -674,6 +630,7 @@ Status: 200 OK
   "page": 1
 }
 ```
+{{< /response >}}
 
 # Find Indexes
 
@@ -692,16 +649,11 @@ Find indexes for a specific reference.
 
 ## Example
 
-```
-GET /api/refs/9fhr3cey/indexes
-```
+{{< request "GET" "/api/refs/9fhr3cey/indexes" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
   "documents": [
@@ -731,6 +683,7 @@ Status: 200 OK
   "page": 1
 }
 ```
+{{< /response >}}
 
 # Create Index
 
@@ -738,9 +691,13 @@ Status: 200 OK
 
 Create an index by starting a new index build job.
 
+This endpoint takes no input.
+
 {{< endpoint "POST" "/api/refs/:id/indexes" >}}
 
 ## Example
+
+{{< request "POST" "/api/refs/9fhr3cey/indexes" />}}
 
 ## Response
 
@@ -790,16 +747,11 @@ Get a specific reference user.
 
 ## Example
 
-```
-GET /api/refs/pe6vunzl/users/baz
-```
+{{< request "GET" "/api/refs/pe6vunzl/users/baz" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
   "id": "baz",
@@ -810,6 +762,7 @@ Status: 200 OK
   "remove": false
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -839,24 +792,18 @@ Allow the added user to view a non-public reference. Control their modification 
 
 ## Example
 
-```
-POST /api/refs/pe6vunzl/users
-```
-
+{{< request "POST" "/api/refs/pe6vunzl/users" >}}
 ```json
 {
   "user_id": "baz",
   "modify_otu": true
 }
 ```
+{{< /request >}}
 
 ## Response
 
-```
-Status: 201 OK
-Location: /api/refs/pe6vunzl/users/baz
-```
-
+{{< response "Status: 201 OK" "Location: /api/refs/pe6vunzl/users/baz" >}}
 ```json
 {
   "id": "baz",
@@ -867,6 +814,7 @@ Location: /api/refs/pe6vunzl/users/baz
   "remove": false
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -896,23 +844,18 @@ Change the modification rights for an existing reference user.
 
 ## Example
 
-```
-PATCH /api/refs/pe6vunzl/users/baz
-```
-
+{{< request "PATCH" "/api/refs/pe6vunzl/users/baz" >}}
 ```json
 {
   "build": true,
   "modify": true
 }
 ```
+{{< /request >}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
   "id": "baz",
@@ -923,6 +866,7 @@ Status: 200 OK
   "remove": false
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -941,15 +885,11 @@ Remove a user from a reference.
 
 ## Example
 
-```
-DELETE /api/refs/pe6vunzl/users/baz
-```
+{{< request "DELETE" "/api/refs/pe6vunzl/users/baz" />}}
 
 ## Response
 
-```
-Status: 204 No content
-```
+{{< response "Status: 204 No content" />}}
 
 ## Errors
 
@@ -966,16 +906,11 @@ Get a specific reference user group.
 
 ## Example
 
-```
-GET /api/refs/pe6vunzl/groups/baz
-```
+{{< request "GET" "/api/refs/pe6vunzl/groups/baz" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
   "id": "baz",
@@ -986,6 +921,7 @@ Status: 200 OK
   "remove": false
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -1015,24 +951,18 @@ Allow the added group to view a non-public reference. Control its modification r
 
 ## Example
 
-```
-POST /api/refs/pe6vunzl/groups
-```
-
+{{< request "POST" "/api/refs/pe6vunzl/groups" >}}
 ```json
 {
   "group_id": "baz",
   "modify_otu": true
 }
 ```
+{{< /request >}}
 
 ## Response
 
-```
-Status: 201 OK
-Location: /api/refs/pe6vunzl/groups/baz
-```
-
+{{< response "Status: 201 OK" "Location: /api/refs/pe6vunzl/groups/baz" >}}
 ```json
 {
   "id": "baz",
@@ -1043,6 +973,7 @@ Location: /api/refs/pe6vunzl/groups/baz
   "remove": false
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -1072,23 +1003,18 @@ Change the modification rights for an existing reference user group.
 
 ## Example
 
-```
-PATCH /api/refs/pe6vunzl/groups/baz
-```
-
+{{< request "PATCH" "/api/refs/pe6vunzl/groups/baz" >}}
 ```json
 {
   "build": true,
   "modify": true
 }
 ```
+{{< /request >}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
   "id": "baz",
@@ -1099,6 +1025,7 @@ Status: 200 OK
   "remove": false
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -1117,15 +1044,11 @@ Remove a user group from a reference.
 
 ## Example
 
-```
-DELETE /api/refs/pe6vunzl/groups/baz
-```
+{{< request "DELETE" "/api/refs/pe6vunzl/groups/baz" />}}
 
 ## Response
 
-```
-Status: 204 No content
-```
+{{< response "Status: 204 No content" />}}
 
 ## Errors
 
@@ -1146,16 +1069,11 @@ This also updates the `release` field in the [complete reference representation]
 
 ## Example
 
-```
-GET /api/refs/4n4ezl0t/release
-```
+{{< request "GET" "/api/refs/4n4ezl0t/release" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
   "id": 11449913,
@@ -1172,6 +1090,7 @@ Status: 200 OK
   "newer": true
 }
 ```
+{{< /response >}}
 
 # List Updates
 
@@ -1185,16 +1104,11 @@ The most recently applied updates are first in the list.
 
 ## Example
 
-```
-GET /api/refs/du5m5f51/updates
-```
+{{< request "GET" "/api/refs/du5m5f51/updates" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 [
   {
@@ -1213,6 +1127,7 @@ Status: 200 OK
   }
 ]
 ```
+{{< /response >}}
 
 # Update Remote
 
@@ -1221,6 +1136,8 @@ Status: 200 OK
 Update the reference using the linked remote reference.
 
 The reference can be updated to a specific release by passing a release `id`. If not `id` is provided the reference will be updated to the [remote release attached to the reference document](#get-release).
+
+This endpoint takes not input.
 
 {{< endpoint "POST" "/api/refs/:id/updates" >}}
 
@@ -1232,16 +1149,11 @@ The reference can be updated to a specific release by passing a release `id`. If
 
 ## Example
 
-```
-POST /api/refs/4n4ezl0t/updates
-```
+{{< request "POST" "/api/refs/4n4ezl0t/updates" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
   "id": 10742520,
@@ -1256,6 +1168,7 @@ Status: 200 OK
   "content_type": "application/gzip"
 }
 ```
+{{< /response >}}
 
 ## Errors
 

@@ -15,12 +15,13 @@ Get a list of complete representations of all users.
 
 {{< endpoint "GET" "/api/users" >}}
 
+## Example
+
+{{< request "GET" "/api/users" />}}
+
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 [
 	{
@@ -67,6 +68,7 @@ Status: 200 OK
 	}
 ]
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -85,16 +87,11 @@ Get the complete representation of a single user.
 
 ## Example
 
-```
-GET /api/users/fred
-```
+{{< request "GET" "/api/users/fred" />}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
 	"groups": [],
@@ -119,6 +116,7 @@ Status: 200 OK
 	"id": "fred"
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -146,23 +144,18 @@ Create a new user.
 
 ## Example
 
-```
-POST /api/users
-```
-
+{{< request "POST" "/api/users" >}}
 ```json
 {
 	"user_id": "bill",
 	"password": "foobar"
 }
 ```
+{{< /response >}}
 
 ## Response
 
-```
-Status: 201 Created
-```
-
+{{< response "Status: 201 Created" "Location: /api/users/bill" >}}
 ```json
 {
 	"force_reset": true,
@@ -187,6 +180,7 @@ Status: 201 Created
 	"id": "bill"
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -220,23 +214,18 @@ Adminstrators cannot modify their own administrative status.
 
 ## Example
 
-```
-PATCH /api/users/fred
-```
-
+{{< request "PATCH" "/api/users/fred" >}}
 ```json
 {
     "force_reset": true,
 	"password": "foobar"
 }
 ```
+{{< /request >}}
 
 ## Response
 
-```
-Status: 200 OK
-```
-
+{{< response "Status: 200 OK" >}}
 ```json
 {
 	"groups": [],
@@ -261,6 +250,7 @@ Status: 200 OK
 	"id": "fred"
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -286,15 +276,11 @@ Remove a user account.
 
 ## Example
 
-```
-DELETE /api/users/bill
-```
+{{< request "DELETE" "/api/users/bill" />}}
 
 ## Response
 
-```
-Status: 204 No content
-```
+{{< response "Status: 204 No content" />}}
 
 ## Errors
 

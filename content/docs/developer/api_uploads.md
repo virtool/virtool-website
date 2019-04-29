@@ -32,16 +32,11 @@ Uploads a file into Virtool file manager. The file will given a unique ID compos
 
 ## Example
 
-```
-POST /upload/reads?name=test.fq.gz
-```
+{{< request "POST" "/upload/reads?name=test.fq.gz" />}}
 
 ## Response
 
-```
-Status: 201 Created
-```
-
+{{< response "Status: 201 Created" "Location: /api/files/juqleoir-test.fq.gz" >}}
 ```json
 {
 	"name": "test.fq.gz",
@@ -55,6 +50,7 @@ Status: 201 Created
 	"id": "juqleoir-test.fq.gz"
 }
 ```
+{{< /response >}}
 
 ## Errors
 
@@ -73,11 +69,12 @@ Delete a previously uploaded file.
 
 {{< endpoint "DELETE" "/api/files/:id" >}}
 
+## Example
+{{< request "DELETE" "/api/files/juqleoir-test.fq.gz" />}}
+
 ## Response
 
-```
-Status: 204 No content
-```
+{{< response "Status: 204 No content" />}}
 
 ## Errors
 
