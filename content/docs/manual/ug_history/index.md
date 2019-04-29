@@ -12,9 +12,7 @@ Changes can be considered in several different contexts. One is at the OTU-level
 
 Here is an example of a change being recorded when an isolate is removed from an OTU:
 
-<video autoplay muted loop>
-  <source src="demo.mp4" type="video/mp4" />
-</video>
+{{< video "demo.mp4" >}}
 
 # Viewing OTU Changes
 
@@ -60,9 +58,7 @@ The history for this OTU shows that it was cloned from another reference, then o
 
 Click <i class="fas fa-undo"></i> to revert a change. It and any successive changes will be removed.
 
-<video autoplay muted loop>
-  <source src="revert.mp4" type="video/mp4" />
-</video>
+{{< video "revert.mp4" >}}
 
 Navigating back to the _OTU_ tab will show that the reversions have been reflected in the OTU.
 

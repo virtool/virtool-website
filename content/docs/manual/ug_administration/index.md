@@ -44,7 +44,7 @@ Once installed, Virtool can be check for and apply software updates automaticall
 
 An update is available is when the <i class="fa fa-arrow-alt-circle-up"></i> icon is pulsing in the main navigation bar:
 
-<video autoplay muted loop><source src="pulsing.mp4" type="video/mp4" /></video>
+{{< video "pulsing.mp4" >}}
 
 You can see further information about the update by clicking the pulsing icon or navigating to _Administration_ | _Updates_.
 

@@ -101,7 +101,7 @@ Click one of the group items to toggle membership in it.
 
 Notice that the user's permissions are changed when group membership is toggled.
 
-<video autoplay muted loop><source src="toggle_group.mp4" type="video/mp4" /></video>
+{{< video "toggle_group.mp4" >}}
 
 # Change a User's Primary Group
 
@@ -149,11 +149,11 @@ Open the group management interface and select the group you want to change perm
 
 Toggle permission by clicking them.
 
-<video autoplay muted loop><source src="groups_permissions.mp4" type="video/mp4" /></video>
+{{< video "groups_permissions.mp4" >}}
 
 Users added to the _managers_ group will inherit the toggled permissions.
 
-<video autoplay muted loop><source src="groups_permissions_demo.mp4" type="video/mp4" /></video>
+{{< video "groups_permissions_demo.mp4" >}}
 
 # Remove a Group
 

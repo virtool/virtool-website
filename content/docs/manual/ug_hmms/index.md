@@ -12,29 +12,32 @@ Profile hidden Markov models (HMM) are used in Virtool to discover potential nov
 
 We highly recommend using the official models and annotations. It is very easy to obtain and use this data without leaving Virtool.
 
-1. Go to _HMM_ in the main navigation bar.
+Go to _HMM_ in the main navigation bar.
+
    ![HHM in Main Navigation Bar](nav.png)
 
-2. If no HMM reference data has been installed, you will see the following:
+If no HMM reference data has been installed, you will see the following:
+
    ![No HMM Data Found](/docs/manual/tut_hmms/no_data.png)
 
-3. Click the **Download Official** button to begin downloading the data. This could take some time.
+Click the **Download Official** button to begin downloading the data. This could take some time.
+
    ![Installing HMMs](/docs/manual/tut_hmms/installing.png)
 
-4. When the download is complete, the data will be imported into Virtool and you can browse the annotations and use the NuVs analysis algorithm.
+When the download is complete, the data will be imported into Virtool and you can browse the annotations and use the NuVs analysis algorithm.
    ![Browse HMMs](/docs/manual/tut_hmms/top.png)
 
 # Exploring Annotations {#annotations}
 
 You can browse the annotations used in NuVs results.
 
-1. After HMM data has been installed, go to _HMM_ in the main navigation bar.
+After HMM data has been installed, go to _HMM_ in the main navigation bar.
    ![Browse HMMs](browse.png)
 
-2. Use the search bar to find HMMs by annotative name (_eg_. RNA replicase).
-   <video autoplay muted loop><source src="replicase.mp4" type="video/mp4" /></video>
+Use the search bar to find HMMs by annotative name (_eg_. RNA replicase).
+   {{< video"replicase.mp4" >}}
 
-3. Click on an HMM item to view its details.
+Click on an HMM item to view its details.
    ![Browse HMMs](detail.png)
 
 ## Annotation Fields

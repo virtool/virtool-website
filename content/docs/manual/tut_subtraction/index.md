@@ -31,9 +31,7 @@ Click on the **Files** link in the left sidebar to go to the subtraction file ma
 
 Upload the previously obtained FASTA file.
 
-<video autoplay muted loop>
-  <source src="upload.mp4" type="video/mp4" />
-</video>
+{{< video "upload.mp4" >}}
 
 # Create Subtraction {#creating}
 
