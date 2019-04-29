@@ -1,26 +1,3 @@
-// Float
-
-.is-clearfix
-  +clearfix
-
-.is-pulled-left
-  float: left !important
-
-.is-pulled-right
-  float: right !important
-
-// Overflow
-
-.is-clipped
-  overflow: hidden !important
-
-// Overlay
-
-.is-overlay
-  @extend %overlay
-
-// Typography
-
 =typography-size($target:'')
   @each $size in $sizes
     $i: index($sizes, $size)
