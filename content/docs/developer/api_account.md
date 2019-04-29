@@ -7,7 +7,7 @@ menu:
     parent: API
 ---
 
-Unauthorized clients will receive `401 Unauthorized` for calls to all account endpoints.
+Unauthorized clients will receive {{< inline-status 401 >}} for calls to all account endpoints.
 
 # Get
 

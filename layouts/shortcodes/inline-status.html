@@ -2,6 +2,8 @@
 <span class="inline-status inline-status-{{ (substr $status 0 1) }}">    
     {{ if eq $status "200" }}200 OK{{ end }}
     {{ if eq $status "400" }}400 Bad Request{{ end }}
+    {{ if eq $status "401" }}401 Unauthorized{{ end }}
+    {{ if eq $status "403" }}403 Forbidden{{ end }}
     {{ if eq $status "409" }}409 Conflict{{ end }}
     {{ if eq $status "422" }}422 Unprocessable Entity{{ end }}
 </span>

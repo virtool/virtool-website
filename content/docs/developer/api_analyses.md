@@ -90,7 +90,7 @@ This request will fail if the analysis is still in progress. Cancel the associat
 
 BLAST a contig that was generated as part of a NuVs analysis.
 
-Calling this endpoint for a sequence that has already been BLASTed will result in the old result being overwritten. This request will fail with `400 Bad Request` for non-NuVs analyses.
+Calling this endpoint for a sequence that has already been BLASTed will result in the old result being overwritten. This request will fail with {{< inline-status 400 >}} for non-NuVs analyses.
 
 {{< endpoint "PUT" "/api/analyses/:id/:sequence_index/blast" >}}
 

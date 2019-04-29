@@ -9,7 +9,7 @@ menu:
 
 # Explanation
 
-Virtool uses API keys for authentication. All API endpoints will return ``403 Unauthorized`` for requests without valid authentication.
+Virtool uses API keys for authentication. All API endpoints will return {{< inline-status 401 >}} for requests without valid authentication.
 
 First, you will need to create an API key with the a permission scope defined by you. See the [account documentation](/account#api_key) to learn how to create API keys.
 
