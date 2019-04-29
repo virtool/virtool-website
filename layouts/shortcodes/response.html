@@ -1,9 +1,7 @@
 <div class="response">
     <div class="response-headers">
         {{ range .Params }}
-        <div>
-            {{ . }}
-        </div>
+        <p>{{ . }}</p>
         {{ end }}
     </div>
     {{ markdownify .Inner }}
