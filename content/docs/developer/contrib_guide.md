@@ -6,4 +6,4 @@ menu:
     weight: 10
 ---
 
-Hello
+{{< construction >}}
