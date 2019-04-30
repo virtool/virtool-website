@@ -3,12 +3,12 @@
 <div class="docs-overview-card">
     {{ $firstItem := index (.Children) 0 }}
 
-    <a class="docs-overview-header" href="{{ $firstItem.URL }}">
+    <a class="docs-overview-header" href="{{ $firstItem.RelPermalink }}">
         {{ .Name }}
     </a>
     {{ range .Children }}
     <div class="docs-overview-item">
-        <a href="{{ .URL }}">
+        <a href="{{ .RelPermalink }}">
             {{ .Name }}
         </a>
 
