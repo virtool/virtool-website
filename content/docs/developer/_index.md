@@ -1,3 +1,3 @@
 ---
-title: "Developer Guide"
+title: "Developer"
 ---

@@ -1,7 +1,6 @@
 ---
 title: "Account"
 description: "Query and modify the client user."
-type: "api"
 menu:
   developer:
     parent: API

@@ -1,3 +1,68 @@
 {{ define "main" }}
-  {{ partial "doc.html" . }}
+<div class="container">
+
+  {{ $currentPage := . }}
+  {{ $parentTitle := .Parent.Title }}
+  
+
+    <div class="docs {{ if eq $parentTitle "Developer" }}docs-api{{ end }}">
+      <nav class="breadcrumbs" aria-label="breadcrumbs">
+        <ul>
+          <li><a class="title is-4" href="/docs">Docs</a></li>
+          <li><a class="title is-5" href="{{.Parent.RelPermalink}}">{{.Parent.Title}}</a></li>
+          
+          {{ if eq $parentTitle "Manual"}}
+            {{ range .Site.Menus.manual }}
+              {{ if $currentPage.HasMenuCurrent "manual" . }}
+                <li><a href="{{.URL}}">{{ .Name }}</a></li>
+              {{ end }}
+            {{ end }}            
+          {{ end }}
+
+          {{ if eq $parentTitle "Developer"}}
+            {{ range .Site.Menus.developer }}
+              {{ if $currentPage.HasMenuCurrent "developer" . }}
+                <li><a href="{{.URL}}">{{ .Name }}</a></li>
+              {{ end }}
+            {{ end }}            
+          {{ end }}
+
+          <li><a href="{{.RelPermalink}}">{{.Title}}</a></li>
+        </ul>
+      </nav>
+  
+      <div class="spread">
+        <div class="sidenav">
+          {{ if eq $parentTitle "Manual"}}
+            {{ partial "side.html" (dict "CurrentPage" . "MenuName" "manual") }}
+          {{ end }}
+
+          {{ if eq $parentTitle "Developer"}}
+            {{ partial "side.html" (dict "CurrentPage" . "MenuName" "developer") }}
+          {{ end }}
+        </div>
+  
+        <div class="docs-reader">
+          <div class="docs-header">
+            <span class="docs-title">{{ .Name }}</span>
+            <span class="docs-updated">Updated {{ .GitInfo.AuthorDate.Format "January 2, 2006" }}</span>
+          </div>
+  
+          <div class="toc-inline">
+            {{ .TableOfContents }}
+          </div>
+  
+          <div class="docs-content">
+            {{ .Content }}
+          </div>
+        </div>
+  
+        <div class="toc-side">
+          <h5>PAGE CONTENTS</h5>
+          <div>{{ .TableOfContents }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 {{ end }}

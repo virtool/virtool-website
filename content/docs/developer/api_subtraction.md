@@ -1,7 +1,6 @@
 ---
 title: "Subtraction"
 description: "Query, create, edit, and remove subtractions."
-type: "api"
 menu:
     developer:
         parent: API

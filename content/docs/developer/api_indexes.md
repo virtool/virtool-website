@@ -1,7 +1,6 @@
 ---
 title: "Indexes"
 description: "Query and create virus indexes."
-type: "api"
 menu:
   developer:
     parent: API

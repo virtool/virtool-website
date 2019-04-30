@@ -1,7 +1,6 @@
 ---
 title: "References"
 description: "Browse, create, and manage references."
-type: "api"
 menu:
   developer:
     parent: API

@@ -1,7 +1,6 @@
 ---
 title: "Authentication"
 description: "Authenticate clients using API keys."
-type: "api"
 menu:
     developer:
         parent: API

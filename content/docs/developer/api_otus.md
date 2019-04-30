@@ -1,7 +1,6 @@
 ---
 title: "OTUs"
 description: "Query, create, edit, and remove OTUs."
-type: "api"
 menu:
     developer:
         parent: API

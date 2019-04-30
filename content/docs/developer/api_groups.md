@@ -1,7 +1,6 @@
 ---
 title: "Groups"
 description: "Manage user groups."
-type: "api"
 menu:
   developer:
     parent: API

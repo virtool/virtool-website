@@ -1,7 +1,6 @@
 ---
 title: "Processes"
 description: "View and remove processes."
-type: "api"
 menu:
     developer:
         parent: API

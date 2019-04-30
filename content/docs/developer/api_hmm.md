@@ -1,7 +1,6 @@
 ---
 title: "HMM"
 description: "Manage and query HMM annotations and files."
-type: "api"
 menu:
   developer:
     parent: API

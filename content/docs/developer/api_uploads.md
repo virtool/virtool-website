@@ -1,7 +1,6 @@
 ---
 title: "Uploads"
 description: "Upload and manage bioinformatic data files."
-type: "api"
 menu:
     developer:
         parent: API

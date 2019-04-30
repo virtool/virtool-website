@@ -1,7 +1,6 @@
 ---
 title: "Settings"
 description: "Manage administrative settings."
-type: "api"
 menu:
     developer:
         parent: API

@@ -1,7 +1,6 @@
 ---
 title: "Samples"
 description: "Query, create, edit, and analyze samples."
-type: "api"
 menu:
     developer:
         parent: API

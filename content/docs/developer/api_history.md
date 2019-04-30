@@ -1,7 +1,6 @@
 ---
 title: "History"
 description: "Read and revert virus history."
-type: "api"
 menu:
   developer:
     parent: API

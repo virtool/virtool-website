@@ -1,6 +1,5 @@
 ---
 title: "Guide"
-type: "api"
 menu:
   developer:
     parent: "Contributing"

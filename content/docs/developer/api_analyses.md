@@ -1,7 +1,6 @@
 ---
 title: "Analyses"
 description: "Query and modify analyses."
-type: "api"
 menu:
   developer:
     parent: API

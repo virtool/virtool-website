@@ -1,7 +1,6 @@
 ---
 title: "Jobs"
 description: "Query, cancel, and remove jobs."
-type: "api"
 menu:
     developer:
         parent: API
