@@ -12,17 +12,71 @@ Selecting _Samples_ on the top menu brings up the main sample managment view. He
 
 !["Sample Manager"](/docs_images/samples_main.png)
 
-# Creating a Sample
 
-To create a sample, click on the <i class="i-new-entry"></i> button.
-
-# Browsing Samples
+# Browse Samples
 
 Once you have imported one or more samples, they can be browsed in the main sample managment view.
 
 Using the search bar, samples can be filtered by their names or the name of the user that originally imported the sample.
 
 Clicking on a sample item will navigate
+
+
+# Create a Sample
+
+Upload your sample FASTQ files in the under **Samples | Files** if you haven't yet.
+
+![Upload sample FASTQ files](upload.png)
+
+Click on the <i class="fas fa-plus-square"></i> button in the samples view to open the sample creation dialog.
+
+![Sample toolbar with create button](toolbar.png)
+
+The sample dialog will look something like this:
+
+![Create sample dialog empty](create_empty.png)
+
+The sample creation dialog allows you to set optional metadata including _isolate_, _locale_, and _true host_.
+
+You **must** set a unique sample _name_ and _read size_. _Read size_ can be set to either _normal_ or _sRNA_. Subsequent analysis workflows will run using significantly different parameters based on the _read size_ setting.
+
+An appropriate _subtraction host_ must be selected. This should be the [subtraction genome](/docs/manual/ug_subtraction) most closely related to the _true host_ for your sample.
+
+Here is an example using sRNA sequencing and _Malus domestica_ as a subtraction host:
+
+![Create sample dialog with non-file fields populated](create_filled_top.png)
+
+Paired or unpaired FASTQ data can be used to create a sample.
+
+Samples created from only one file are assumed to be unpaired. Paired samples must comprise two paired FASTQ files. **Interleaved FASTQ files are not currently supported**.
+
+For paired data, make sure the file orientation labels (left and right) are correct before you create a sample. You can use the <i class="fas fa-retweet"></i> button too swap orientations.
+
+{{< video "create_orientation.mp4" >}}
+
+Once required fields are populated and you have selected files, click the <i class="fas fa-save"></i> **Save** button to create the sample. Your sample will immediately be listed in the samples list. However, it will take some time for the sample data to be imported and processed.
+
+![Sample in list still being created](creating_state.png)
+
+A job will appear in the **Jobs** view to track the process of creating your sample.
+
+![Create sample job item](create_job.png)
+
+Your sample will look something like this when it is ready to use:
+
+![Sample item ready to use](ready_state.png)
+
+## What happens during sample creation?
+
+
+
+
+
+
+
+
+
+
 
 # Rights
 
