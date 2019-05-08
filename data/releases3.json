@@ -154,6 +154,18 @@
         },
         "releases": [
             {
+                "name": "v3.4.0-beta.2",
+                "body": "#### Added\r\n- add missing `Location` headers for some API responses\r\n\r\n\r\n#### Fixed\r\n- fix errors when handling certain real time updates in client (#1350, #1351, #1352)\r\n- fix crash when loading Pathoscope result\r\n- update some Javascript packages with security issues",
+                "prerelease": true,
+                "published_at": "2019-05-08T16:08:18Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.4.0-beta.2",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 45036340,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.4.0-beta.2/virtool.tar.gz",
+                "asset_error": false
+            },
+            {
                 "name": "v3.4.0-beta.1",
                 "body": "#### Added\r\n- allow explicit selection of paired read orientation during sample creation\r\n- allow export of Pathoscope reports in `csv` or `xlsx` formats (#1300)\r\n- allow replacement of trimmed sample data with original raw files (#1322, #1066)\r\n- new tab for downloading and viewing sample files and trim caches\r\n- show consensus coverage charts for OTUs (merged from isolates)\r\n- speed up sample data compression using `pigz` when available\r\n\r\n#### Changed\r\n- improve appearance of job detail view\r\n- improve appearance of pathoscope hits\r\n- make job stage names more consistent and meaningful\r\n- move read trimming step to analysis from sample creation\r\n- retain raw data for samples (#1066)\r\n- overhaul presentation of overall Pathoscope mapping result\r\n\r\n#### Fixed\r\n- fix rendered units for data sizes (_MiB_ -> _MB_)\r\n",
                 "prerelease": true,
