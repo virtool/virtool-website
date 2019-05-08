@@ -25,7 +25,7 @@ Navigate to the _Analyses_ tab. You should see an empty list if you haven't alre
 
 Click <i class="fa fa-plus-square"></i> to open the analysis creation dialog, select PathoscopeBowtie and a refernece to search against, and click <i class="fa fa-play"></i> **Start**.
 
-!["Analysis Dialog"](dialog.png)
+![Analysis Dialog](dialog.png)
 
 The dialog will close and you will immediately see your new analysis appear in the list.
 
