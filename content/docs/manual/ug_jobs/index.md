@@ -22,8 +22,6 @@ Jobs are started when a task is started in another view (_eg_. sample creation d
 
 # List Jobs
 
-## List
-
 The jobs list can be accessed by navigating to _Jobs_ in the top navigation bar.
 
 ![Jobs Navigation](nav.png)
