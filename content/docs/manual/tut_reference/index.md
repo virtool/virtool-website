@@ -9,17 +9,6 @@ menu:
 
 Virtool is built for detecting viruses and is capable of detecting other pathogens. Managing collections of pathogen sequences used for this purpose is a key feature of Virtool.
 
-{{% note %}}
-
-**Significant improvements were made this functionality for the [3.0.0](https://github.com/virtool/virtool/releases) release:**
-
-- individual pathogen species are referred to as organizational taxonomic units (OTUs) to leave the door open for non-virus pathogens
-- collections of OTUs are referred to as **_references_**
-- multiple references can be maintained and analyzed against on a single Virtool instance
-- the official Virtool plant virus reference can be automatically installed and updated from [GitHub](https://github.com/virtool/ref-plant-viruses)
-
-{{% /note %}}
-
 At least one non-empty reference must be created in order to start analyzing samples. One quick way to accomplish this is to install the [official plant virus reference](https://github.com/virtool/ref-plant-viruses).
 
 # Install the Official Reference {#installing}
@@ -46,17 +35,13 @@ Clicking on the reference card will bring you to a detail page for the reference
 
 Once the installation of the official reference is complete, you can browse the OTUs that are included in the reference.
 
-Look for the **OTUs** tab in the reference detail view.
+Click on the **OTUs** tab and you should see something like the following.
 
-!["Official Reference Detail Page"](installed_detail.png)
-
-Click on the OTUs tab and you should see something like the following:
-
-!["The OTUs tab"](otus.png)
+![The OTUs tab](otus.png)
 
 You can search OTUs by their names or abbreviations.
 
-!["Search OTUs"](search.png)
+![Search OTUs](search.png)
 
 Note the _There are unbuilt changes_ message. This means you have to **_build_** a new index for the reference before you can use it in analyses.
 
