@@ -14,7 +14,7 @@ Here is an example of a change being recorded when an isolate is removed from an
 
 {{< video "demo.mp4" >}}
 
-# Viewing OTU Changes
+# View OTU Changes
 
 The first case in which it is useful to view history data is reviewing changes to a single OTU. You can see the complete history for an OTU. Start by going to the OTU detail view.
 
@@ -24,7 +24,7 @@ Then click on the _History_ tab to view all changes associated with the OTU.
 
 ![GVT Complete History](gvt_history.png)
 
-# Viewing Index Changes
+# View Index Changes
 
 You can view all changes associated with an index. First navigate to the reference detail view.
 
@@ -42,7 +42,7 @@ View a detailed change list by clicking on _Changes_.
 
 ![Detailed Index Change List](index_changes.png)
 
-# Reverting Changes {#revert}
+# Revert Changes {#revert}
 
 You can revert any **unbuilt** changes made to an OTU. Changes included in a complete index build cannot be reverted, therefore it is a good idea to be certain of any changes before starting an index build.
 

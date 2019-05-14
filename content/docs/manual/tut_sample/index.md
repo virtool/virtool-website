@@ -7,7 +7,7 @@ menu:
     weight: 40
 ---
 
-# Uploading a FASTQ File
+# Upload a FASTQ File
 
 Go the _Samples_ view via the main navigation bar.
 
@@ -25,7 +25,7 @@ In the _Samples_ view, click <i class="fa fa-plus-square"></i> to open the sampl
 
 ![Sample Creator](create.png)
 
-# Creating a Sample
+# Create a Sample
 
 Fill out the fields in the sample creator. Only the sample name, subtraction host, and one or two read files are required.
 

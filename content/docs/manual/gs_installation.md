@@ -22,7 +22,7 @@ Higher CPU clock speeds and core counts will allow more operations to be run in 
 
 Virtool works best in modern browsers including Chrome, Firefox, Safari, and Edge. **Internet Explorer is not supported**.
 
-# Installing the Server
+# Install the Server
 
 Download the latest Virtool release from the [Virtool website](http://www.virtool.ca "Virtool Website") and unpack the downloaded archive.
 

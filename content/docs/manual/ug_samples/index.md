@@ -12,6 +12,9 @@ Selecting _Samples_ on the top menu brings up the main sample managment view. He
 
 !["Sample Manager"](/docs_images/samples_main.png)
 
+# Create a Sample
+
+# Browse Samples
 
 # Browse Samples
 
