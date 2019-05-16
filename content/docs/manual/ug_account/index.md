@@ -59,6 +59,6 @@ API keys are account-specific and are generated under the _API_ tab in the _Acco
 
 5. Use the key to access the API with the help of the [API documentation](/docs/developer/api_account/).
 
-{{% warning %}}
+{{< note color="yellow" >}}
 If permissions are removed from your account after the key is created, they will also be removed from the key.
-{{% /warning %}}
+{{< /note >}}

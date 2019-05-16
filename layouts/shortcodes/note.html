@@ -1,7 +1,11 @@
-<div class="note">
-    <div class="note-header">
-        Note
+{{ $color := default "blue" (.Get "color") }}
+
+<div class="note note-{{ $color }}">
+    {{ with .Get "title" }}
+    <div class="note-title">
+        {{ . }}
     </div>
+    {{ end }}
     <div class="note-body">
         {{ markdownify .Inner }}
     </div>
