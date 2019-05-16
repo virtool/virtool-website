@@ -10,33 +10,21 @@ The administration views can be accessed by clicking on the user dropdown at the
 
 User management is not covered in this page. See the [Users documentation](/docs/manual/ug_users).
 
-# Server Settings {#server}
+# Sentry
 
-Manage technical settings for the Virtool server.
-
-## Enabling the API
-
-Enabling this settings allows other applications to make use of Virtool's HTTP API. This can be done by checking <i class="far fa-square"></i> **Enable API**.
-
-See the [Account guide](/docs/manual/ug_account) for information on API authentication using keys.
-
-![Enable API](enable_api.png)
-
-## Enabling Sentry
-
-[Sentry](https://sentry.io) is a service Virtool developers use for tracking errors in instances of Virtool server and client software.
+[Sentry](https://sentry.io) is a service Virtool developers use for automatically gathering error reports from Virtool instances.
 
 It is possible to opt out of sending error reports by unchecking the <i class="far fa-check-square"></i> **Enable** button. This change requires a reload to take effect.
 
-Please consider leaving this setting enabled as it is invaluable for fixing bugs and improving the user experience.
+**Please consider leaving this setting enabled as it is invaluable for fixing bugs and improving the user experience.**
 
 ![Sentry](sentry.png)
 
-# Users {#users}
+# Users
 
 See the [Users Guide](/docs/manual/ug_users) for information on managing users.
 
-# Updates {#updates}
+# Updates
 
 Once installed, Virtool can be check for and apply software updates automatically.
 
@@ -60,7 +48,7 @@ Click the <i class="fa fa-download"></i> _Download_ button to open the update in
 
 ![Update install dialog](updates_install_dialog.png)
 
-Click the <i class="fa fa-download"></i> _Install_ button to install the updates. A progress dialog will appear.
+Click the <i class="fa fa-download"></i> **Install** button to install the updates. A progress dialog will appear.
 
 ![Update install progress dialog](updates_installing.png)
 
@@ -70,7 +58,7 @@ When the update download and install is complete, Virtool will restart. This can
 
 The updates view will look something like this when the instance is up-to-date:
 
-![Updates view when up-to-date](updates_up_to_date)
+![Updates view when up-to-date](updates-current.png)
 
 Check that the installation version is up-to-date after the server restart.
 
