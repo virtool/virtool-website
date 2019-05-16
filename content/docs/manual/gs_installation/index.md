@@ -42,9 +42,9 @@ Run in the background using `nohup`.
 nohup ./run &
 ```
 
-{{% note %}}
+{{< note title="Important" color="red" >}}
 We suggest running Virtool as a dedicated user.
-{{% /note %}}
+{{< /note >}}
 
 # MongoDB
 
