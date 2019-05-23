@@ -9,7 +9,7 @@ menu:
 
 This tutorial assumes you have already [created a sample](/docs/manual/tut_sample/), [created and built a reference](/docs/manual/tut_reference/), and [created a subtraction](/docs/manual/tut_subtraction/). You will use these data sources to run a bioinformatic pipeline for detecting, in a sample, known viruses from your virus database.
 
-# Starting an Analysis Job
+# Start an Analysis Job
 
 Navigate to the _Samples_ view.
 
@@ -25,7 +25,7 @@ Navigate to the _Analyses_ tab. You should see an empty list if you haven't alre
 
 Click <i class="fa fa-plus-square"></i> to open the analysis creation dialog, select PathoscopeBowtie and a refernece to search against, and click <i class="fa fa-play"></i> **Start**.
 
-!["Analysis Dialog"](dialog.png)
+![Analysis Dialog](dialog.png)
 
 The dialog will close and you will immediately see your new analysis appear in the list.
 
@@ -39,7 +39,7 @@ In the _Samples_ view, you will notice the sample entry is tagged to show that a
 
 !["Pathoscope Sample Tag"](tag.png)
 
-# Viewing Pathoscope Results
+# View Pathoscope Results
 
 Carrying on from the previous section, click on your recently created analysis. The list shows the viruses Virtool thinks are likely to be in the sample.
 

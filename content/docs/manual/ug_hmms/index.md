@@ -8,7 +8,7 @@ menu:
 
 Profile hidden Markov models (HMM) are used in Virtool to discover potential novel viruses using the [NuVs workflow](/docs/manual/sci_nuvs).
 
-# Installing Official Models {#official}
+# Install Official Models {#official}
 
 We highly recommend using the official models and annotations. It is very easy to obtain and use this data without leaving Virtool.
 
@@ -27,7 +27,7 @@ Click the **Download Official** button to begin downloading the data. This could
 When the download is complete, the data will be imported into Virtool and you can browse the annotations and use the NuVs analysis algorithm.
    ![Browse HMMs](/docs/manual/tut_hmms/top.png)
 
-# Exploring Annotations {#annotations}
+# Explore Annotations {#annotations}
 
 You can browse the annotations used in NuVs results.
 
@@ -44,35 +44,17 @@ Click on an HMM item to view its details.
 
 The fields in the HMM detail view describe the profile and the protein sequences that were used for its creation.
 
-#### Cluster
+|                      |                                                                                                                                        |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| **Cluster**          | A unique integer identifier for the cluster                                                                                            |
+| **Best Definitions** | The three most common protein definitions found in the cluster member protein annotations.                                             |
+| **Length**           | The length of the motif identified in the profile.                                                                                     |
+| **Mean Entropy**     |                                                                                                                                        |
+| **Total Entropy**    |                                                                                                                                        |
+| **Cluster Members**  | A list of the proteins included in the cluster used to construct the profile HMM.                                                      |
+| **Families**         | The taxonomic families represented in the cluster and their cluster member counts. Cluster members without families are tagged _None_. |
 
-A unique integer identifier for the cluster.
-
-#### Best Definitions
-
-The three most common protein definitions found in the cluster member protein annotations. |
-
-#### Length
-
-The length of the motif identified in the profile.
-
-#### Mean Entropy
-
-Undocumented
-
-#### Total Entropy
-
-Undocumented
-
-#### Cluster Members
-
-A list of the proteins included in the cluster used to construct the profile HMM. Each member is described by its NCBI accession number, name, and organism.
-
-#### Families
-
-The taxonomic families represented in the cluster and their cluster member counts. Cluster members without family annotations are grouped in _None_.
-
-# Finding Files on Disk
+# Find Files on Disk
 
 The profile HMMs used by Virtool are stored in the `hmm` subdirectory of your Virtool data location.
 

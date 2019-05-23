@@ -1,0 +1,19 @@
+<div class="workflow-step-container">
+    <div class="workflow-step">
+        <div class="workflow-title">
+            {{ with .Get 0 }}
+            <span>{{ . }}</span>
+            {{ end }}
+            {{ with .Get 1 }}
+            <span>{{ . }}</span>
+            {{ end }}
+        </div>
+
+        <div class="workflow-body">
+            {{ .Inner | markdownify }}
+        </div>
+    </div>
+
+    <i class="fas fa-arrow-down"></i>
+</div>
+

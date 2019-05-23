@@ -7,17 +7,22 @@
     border-left-width: 4px
     border-radius: 5px
     color: $blue
-    padding: 1rem 1rem 0.3rem 1rem
+    padding: 1rem
 
-.note-important
-    color: $red
+    ul:last-child, p:last-child
+        margin-bottom: 0
+        padding-bottom: 0.8rem
+
+.note-red
+    background-color: lighten($red, 37%)
     border-color: $red
+    color: $red
 
-.note-warning
-    background-color: lighten($yellow, 30%)
+.note-yellow
+    background-color: lighten($yellow, 32%)
     border-color: $yellow
     color: darken($yellow, 25%)
-    padding: 15px
 
-.note-header
+.note-title
     font-weight: bold
+    padding-bottom: 0.8rem

@@ -31,9 +31,9 @@ If you connect to the internet through a proxy, you can configure it here.
 
 !["Successful proxy configuration](proxy.png)
 
-{{% note %}}
+{{< note title="Important" color="red" >}}
 HTTPS proxies are not currently supported.
-{{% /note %}}
+{{< /note >}}
 
 # Connect to MongoDB
 
@@ -53,13 +53,13 @@ You will see something like the following when the connection is successful:
 
 ![MongoDB successful connection](mongo_success.png)
 
-{{% important %}}
+{{< note title="Important" color="red" >}}
 
 We highly recommend enabling authentication for MongoDB.
 
 The MongoDB connection string is stored in plaintext in the application configuration file. [Configure Virtool using environmental variables](/docs/manual/gs_configuration) to keep your connection string safe.
 
-{{% /important %}}
+{{< /note >}}
 
 # Add First User {#first_user}
 
@@ -71,9 +71,9 @@ When the form has been submitted successfully, you should see something like thi
 
 ![First user successfully created](user_success.png)
 
-{{% important %}}
+{{< note title="Important" color="red" >}}
 We strongly recommend **not** making this account a generic adminstrative account. Doing so defeats Virtool's built-in auditing, which is designed in accordance with [ISO 17025:2005](https://www.iso.org/standard/39883.html). Each account should correspond to an individual user.
-{{% /important %}}
+{{< /note >}}
 
 # Set Data Location {#data_path}
 
@@ -91,14 +91,14 @@ When the data path has been successfully configured, you should see something li
 
 ![Data path configuration successfull](data_success.png)
 
-{{% warning %}}
+{{< note >}}
 
 **Errors will occur if:**
 
 - the executing user does not have permission to write to the data path
 - the data path already exists and is not empty
 
-{{% /note %}}
+{{< /note >}}
 
 # Set Watch Location {#watch_path}
 
@@ -112,13 +112,7 @@ By default the data path will be set to `watch` and will be created in the Virto
 
 When the watch location has been successfully configured, you will see something like this:
 
-![Watch path configured successfully](watch_success.png)
-
-{{% important %}}
-Files dropped in the watch directory will be removed once they have been pulled into Virtool. Do not place your only copy of a sample FASTQ file in the watch path.
-
-There is an [issue open on GitHub](https://github.com/virtool/virtool/issues/1284) to change this.
-{{% /important %}}
+![Watch path configured successfully](watch_success.png)\
 
 # Save and Restart
 
@@ -132,8 +126,8 @@ It is possible to configure Virtool without completing the graphical setup proce
 
 Passing the `--no-setup` argument when running Virtool will skip the setup process and use default configuration values or values from [manual configuration sources](/docs/manual/gs_configuration/).
 
-{{% warning %}}
+{{< note >}}
 **It is not currently possible to create a user outside of setup.** [This will be fixed in the near future](https://github.com/virtool/virtool/issues/1314).
 
 For now, run the graphical setup to configure a user, then reconfigure Virtool manually.
-{{% /warning %}}
+{{</note >}}

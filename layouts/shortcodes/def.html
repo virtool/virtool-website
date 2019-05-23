@@ -1,0 +1,6 @@
+<tr>
+    {{ with .Get 0 }}
+    <td><em>{{ . }}</em></td>
+    {{ end }}
+    <td>{{ .Inner | markdownify }}</td>
+</tr>
