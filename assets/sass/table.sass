@@ -9,6 +9,25 @@ table
   color: $grey-darker
   width: 100%
 
+  &.defs
+    tr
+      td
+        br
+          height: 24px
+
+        
+        &:first-child
+          white-space: nowrap
+
+
+  thead
+    th:empty
+      display: none
+
+  tbody
+    th
+      font-weight: strong
+
   th,td
     border: 1px solid $grey-lighter
 
