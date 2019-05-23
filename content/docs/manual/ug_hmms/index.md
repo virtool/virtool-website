@@ -44,33 +44,15 @@ Click on an HMM item to view its details.
 
 The fields in the HMM detail view describe the profile and the protein sequences that were used for its creation.
 
-#### Cluster
-
-A unique integer identifier for the cluster.
-
-#### Best Definitions
-
-The three most common protein definitions found in the cluster member protein annotations. |
-
-#### Length
-
-The length of the motif identified in the profile.
-
-#### Mean Entropy
-
-Undocumented
-
-#### Total Entropy
-
-Undocumented
-
-#### Cluster Members
-
-A list of the proteins included in the cluster used to construct the profile HMM. Each member is described by its NCBI accession number, name, and organism.
-
-#### Families
-
-The taxonomic families represented in the cluster and their cluster member counts. Cluster members without family annotations are grouped in _None_.
+|                      |                                                                                                                                        |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| **Cluster**          | A unique integer identifier for the cluster                                                                                            |
+| **Best Definitions** | The three most common protein definitions found in the cluster member protein annotations.                                             |
+| **Length**           | The length of the motif identified in the profile.                                                                                     |
+| **Mean Entropy**     |                                                                                                                                        |
+| **Total Entropy**    |                                                                                                                                        |
+| **Cluster Members**  | A list of the proteins included in the cluster used to construct the profile HMM.                                                      |
+| **Families**         | The taxonomic families represented in the cluster and their cluster member counts. Cluster members without families are tagged _None_. |
 
 # Find Files on Disk
 
