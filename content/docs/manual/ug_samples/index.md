@@ -10,19 +10,33 @@ menu:
 
 Selecting _Samples_ on the top menu brings up the main sample managment view. Here, samples can be created, viewed, edited, analyzed, and removed.
 
-!["Sample Manager"](/docs_images/samples_main.png)
-
-# Create a Sample
-
-# Browse Samples
+![Sample Manager](browse.png)
 
 # Browse Samples
 
 Once you have imported one or more samples, they can be browsed in the main sample managment view.
 
+## Searching
+
 Using the search bar, samples can be filtered by their names or the name of the user that originally imported the sample.
 
-Clicking on a sample item will navigate
+{{< video "search.mp4" >}}
+
+It is also possible to search for samples based on the their analysis state.
+
+For each workflow (Pathoscope, NuVs), the sample can have:
+
+  - no analysis available
+  - analysis in progress
+  - at least one completed analysis
+  
+Set the checkboxes to match the profile of samples you are looking for.
+
+Here is an example looking for samples matching the text query _14SP_ that have **no pathoscope analysis**.
+
+![Searching for samples that have no pathoscope analysis and match text query '14SP'](filter_no_pathoscope.png)
+
+Clicking on a sample item will navigate to a detail
 
 
 # Create a Sample
@@ -71,15 +85,21 @@ Your sample will look something like this when it is ready to use:
 
 ## What happens during sample creation?
 
+{{< note title="Changes in 3.4.0" >}}
+Trimming was originally performed during sample creation.
 
+Starting in 3.4.0, raw sample data is instead retained during sample creation. Trimming is deferred to each analysis run and trimmed data are cached to maintain performance.
+{{< /note >}}
 
+Sample FASTQ files are copied into a new sample directory. The files will be compressed if necessary.
 
+Quality information is calculated from the library using [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) and committed to Virtool's database.
 
+The FASTQ files and quality data are used further analyses triggered by the user.
 
+# Quick Analyze
 
-
-
-
+Testing
 
 # Rights
 
@@ -91,21 +111,12 @@ Virtool allows for fine control of the rights users have to view or modify sampl
 
 Rights can apply at four different levels.
 
-- _administrators_
-
-  Members of the special administrator group. These users have full read and write access to all samples as well as the ability to manage the rights on any sample.
-
-- _owner_
-
-  The original sample creator. This user always has full read and write access to the sample as well as the ability to manage the rights on the sample.
-
-- _group_
-
-  The group that owns the sample. Read and write privileges can be independently set at this level.
-
-- _all users_
-
-  All users registered on the Virtool instance. Read and write privileges can be independently set at this level.
+|                  |                                                                                                                                                                    |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| _administrators_ |  Members of the special administrator group. These users have full read and write access to all samples as well as the ability to manage the rights on any sample. |
+| _owner_          | The original sample creator. This user always has full read and write access to the sample as well as the ability to manage the rights on the sample.              |
+| _group_          | The group that owns the sample. Read and write privileges can be independently set at this level.                                                                  |
+| _all users_      | All users registered on the Virtool instance. Read and write privileges can be independently set at this level.                                                    |
 
 ### Group Ownership
 
@@ -115,33 +126,35 @@ Samples are not required to have an owner group. The group can be set to `None`.
 
 ### Privileges
 
-- _none_
+<table class="defs">
+<tbody>
+{{< def "none" >}}
+  The management level (_eg_. group, all users) cannot read or write the sample. included users will never see the sample in the sample management interface.  
 
-  The management level (_eg_. group, all users) cannot read or write the sample. included users will never see the sample in the sample management interface. This privilege is useful for completely isolating samples between separate groups of users.
+  This privilege is useful for completely isolating samples between separate groups of users.
+{{< /def >}}
 
-- _read_
+{{< def "read" >}}
+The management level (_eg_. group, all users) can only read the sample. The included users will see the sample in the sample management interface and be able to view its general information, quality, and analyses.
 
-  The management level (_eg_. group, all users) can only read the sample. The included users will see the sample in the sample management interface and be able to view its general information, quality, and analyses.
+They will not be able to edit or remove the sample and they will not be able to create new analyses. The elements in the user interface associated with the described actions will be hidden.
+{{< /def >}}
 
-  They will not be able to edit or remove the sample and they will not be able to create new analyses. The elements in the user interface associated with the described actions will be hidden.
+{{< def "read & write" >}}
+The management level (_eg_. group, all users) can only read the sample. The included users will see the sample in the sample management interface and be able to view its general information, quality, and analyses.
 
-- _read & write_
+They will also be able to edit and remove the sample and create new analyses.
+{{< /def >}}
+</tbody>
+</table>
 
-  The management level (_eg_. group, all users) can only read the sample. The included users will see the sample in the sample management interface and be able to view its general information, quality, and analyses.
-
-  They will also be able to edit and remove the sample and create new analyses.
-
-## Management {#guide}
+## Management
 
 The access rights for a existing sample can be easily changed by the sample owner or an administrator.
 
-1. Click the key icon in the detail view for a sample
-   ![](/docs_images/sample_rights_key.png)
+Access the rights management controls by clicking the <i class="fas fa-key"></i> tab in the sample detail view.
 
-2. The rights management tab looks something like this
-   ![](/docs_images/samples_rights_view.png)
-
-3.
+![The sample rights view](samples_rights_view.png)
 
 ## Default Rights
 
