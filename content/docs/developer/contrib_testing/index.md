@@ -85,10 +85,6 @@ The output should resemble the following:
 
 Jest can automatically find test files to run if they are kept in a dedicated **\_\_tests\_\_** directory, or anywhere else if the files include a **.test.js** or **.spec.js** extension.
 
-{{< note >}}
-Virtool currently prefers to name test files with the **.test.js** extension, and to keep them adjacent to their corresponding implementation code files rather than in a single directory for better organization.
-{{< /note >}}
-
 Jest is also a testing platform with a diverse API to allow you to write tests without the need for external plugins. Tests generally take the form of the following:
 
 **virtool/client/src/js/errors/error-actions.test.js**
