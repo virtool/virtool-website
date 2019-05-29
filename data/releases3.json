@@ -141,18 +141,30 @@
     },
     "virtool": {
         "latest": {
-            "name": "v3.4.0",
-            "body": "#### Changed\r\n- automatically strip white space from API inputs where appropriate\r\n- remove unfinished (zombie) jobs on application start\r\n- remove unfinished analysis on application start",
+            "name": "v3.5.0",
+            "body": "#### Added\r\n- accept gzip-compressed subtraction FASTA files (#1373)\r\n- show alert about administrator API keys in API key creation dialog\r\n- show alert on sample quality page for samples with no raw data (#1364)\r\n- subtraction FASTA files are now retained; download will be introduced later (#1382)\r\n\r\n#### Changed\r\n- hide administration link in navigation drop down if user is not administrator\r\n- improve rendering of task arguments in job detail view\r\n- improve user interface tabs\r\n- make identicons circular\r\n- remove unused client styling code\r\n- simplify account page\r\n- update appearance of checkbox setting components\r\n\r\n#### Fixed\r\n- don't limit permissions for new administrator API keys\r\n- fix client crash when navigating to HMM settings\r\n- fix errors due to incorrect parsing of config files or values (#1348)\r\n- gracefully handle errors when inotify watches cannot be configured on start (#1349)",
             "prerelease": false,
-            "published_at": "2019-05-23T15:50:53Z",
-            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.4.0",
+            "published_at": "2019-05-29T20:22:25Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.5.0",
             "filename": "virtool.tar.gz",
             "content_type": "application/gzip",
-            "size": 45040103,
-            "download_url": "https://github.com/virtool/virtool/releases/download/v3.4.0/virtool.tar.gz",
+            "size": 45034813,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v3.5.0/virtool.tar.gz",
             "asset_error": false
         },
         "releases": [
+            {
+                "name": "v3.5.0",
+                "body": "#### Added\r\n- accept gzip-compressed subtraction FASTA files (#1373)\r\n- show alert about administrator API keys in API key creation dialog\r\n- show alert on sample quality page for samples with no raw data (#1364)\r\n- subtraction FASTA files are now retained; download will be introduced later (#1382)\r\n\r\n#### Changed\r\n- hide administration link in navigation drop down if user is not administrator\r\n- improve rendering of task arguments in job detail view\r\n- improve user interface tabs\r\n- make identicons circular\r\n- remove unused client styling code\r\n- simplify account page\r\n- update appearance of checkbox setting components\r\n\r\n#### Fixed\r\n- don't limit permissions for new administrator API keys\r\n- fix client crash when navigating to HMM settings\r\n- fix errors due to incorrect parsing of config files or values (#1348)\r\n- gracefully handle errors when inotify watches cannot be configured on start (#1349)",
+                "prerelease": false,
+                "published_at": "2019-05-29T20:22:25Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.5.0",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 45034813,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.5.0/virtool.tar.gz",
+                "asset_error": false
+            },
             {
                 "name": "v3.4.0",
                 "body": "#### Changed\r\n- automatically strip white space from API inputs where appropriate\r\n- remove unfinished (zombie) jobs on application start\r\n- remove unfinished analysis on application start",
