@@ -153,18 +153,30 @@
     },
     "virtool": {
         "latest": {
-            "name": "v3.5.1",
-            "body": "#### Changed\r\n- improve upload dialog\r\n\r\n#### Fixed\r\n- fix bugs in reference member management interface\r\n- fix bugs in sample file replacement upload interface (#1377)",
+            "name": "v3.5.2",
+            "body": "#### Changed\r\n- capitalize _organism_ field in manage reference view\r\n- remove all mention of barcodes from user interface; this will not be supported for now\r\n\r\n#### Fixed\r\n- fix incomplete job cleanup in analysis jobs\r\n- fix error in NuVs during _Reunite Pairs_ step (#1386)",
             "prerelease": false,
-            "published_at": "2019-06-04T19:33:15Z",
-            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.5.1",
+            "published_at": "2019-06-05T15:56:21Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.5.2",
             "filename": "virtool.tar.gz",
             "content_type": "application/gzip",
-            "size": 45037909,
-            "download_url": "https://github.com/virtool/virtool/releases/download/v3.5.1/virtool.tar.gz",
+            "size": 45037172,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v3.5.2/virtool.tar.gz",
             "asset_error": false
         },
         "releases": [
+            {
+                "name": "v3.5.2",
+                "body": "#### Changed\r\n- capitalize _organism_ field in manage reference view\r\n- remove all mention of barcodes from user interface; this will not be supported for now\r\n\r\n#### Fixed\r\n- fix incomplete job cleanup in analysis jobs\r\n- fix error in NuVs during _Reunite Pairs_ step (#1386)",
+                "prerelease": false,
+                "published_at": "2019-06-05T15:56:21Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.5.2",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 45037172,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.5.2/virtool.tar.gz",
+                "asset_error": false
+            },
             {
                 "name": "v3.5.1",
                 "body": "#### Changed\r\n- improve upload dialog\r\n\r\n#### Fixed\r\n- fix bugs in reference member management interface\r\n- fix bugs in sample file replacement upload interface (#1377)",
