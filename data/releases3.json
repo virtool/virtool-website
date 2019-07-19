@@ -166,6 +166,18 @@
         },
         "releases": [
             {
+                "name": "v3.6.0-beta.3",
+                "body": "#### Changed\r\n- make **Raw Data** and **Cached Trims** panels consistently styled in sample detail view\r\n\r\n#### Fixed\r\n- fix raw QC results being displayed as cache results\r\n- fix crash when switching between isolates in pathoscope viewer",
+                "prerelease": true,
+                "published_at": "2019-07-18T23:40:11Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.6.0-beta.3",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 45043613,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.6.0-beta.3/virtool.tar.gz",
+                "asset_error": false
+            },
+            {
                 "name": "v3.6.0-beta.2",
                 "body": "#### Added\r\n- add detailed logging for database connection failures during setup\r\n- write all log lines to `virtool.log`; previously only some lines were written\r\n\r\n#### Changes\r\n- overhaul NuVs result viewer\r\n\r\n#### Fixed\r\n- fix broken searching in NuVs viewer\r\n- fix buggy file manager list sorting\r\n",
                 "prerelease": true,
