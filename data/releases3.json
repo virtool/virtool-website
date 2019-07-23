@@ -153,18 +153,30 @@
     },
     "virtool": {
         "latest": {
-            "name": "v3.5.2",
-            "body": "#### Changed\r\n- capitalize _organism_ field in manage reference view\r\n- remove all mention of barcodes from user interface; this will not be supported for now\r\n\r\n#### Fixed\r\n- fix incomplete job cleanup in analysis jobs\r\n- fix error in NuVs during _Reunite Pairs_ step (#1386)",
+            "name": "v3.6.0",
+            "body": "#### Fixed\r\n- fix BLAST issues in NuVs interface\r\n- fix erroneously shown no OTU alert in indexes view\r\n- fix OTU coverage chart bug (#1410)",
             "prerelease": false,
-            "published_at": "2019-06-05T15:56:21Z",
-            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.5.2",
+            "published_at": "2019-07-23T21:10:17Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.6.0",
             "filename": "virtool.tar.gz",
             "content_type": "application/gzip",
-            "size": 45037172,
-            "download_url": "https://github.com/virtool/virtool/releases/download/v3.5.2/virtool.tar.gz",
+            "size": 45046394,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v3.6.0/virtool.tar.gz",
             "asset_error": false
         },
         "releases": [
+            {
+                "name": "v3.6.0",
+                "body": "#### Fixed\r\n- fix BLAST issues in NuVs interface\r\n- fix erroneously shown no OTU alert in indexes view\r\n- fix OTU coverage chart bug (#1410)",
+                "prerelease": false,
+                "published_at": "2019-07-23T21:10:17Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.6.0",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 45046394,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.6.0/virtool.tar.gz",
+                "asset_error": false
+            },
             {
                 "name": "v3.6.0-beta.3",
                 "body": "#### Changed\r\n- make **Raw Data** and **Cached Trims** panels consistently styled in sample detail view\r\n\r\n#### Fixed\r\n- fix raw QC results being displayed as cache results\r\n- fix crash when switching between isolates in pathoscope viewer",
