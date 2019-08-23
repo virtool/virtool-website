@@ -166,6 +166,18 @@
         },
         "releases": [
             {
+                "name": "v3.7.0-beta.2",
+                "body": "#### Changed\r\n- simplify file storage of oversized analysis records\r\n\r\n#### Fixed\r\n- fix incorrect pathoscope sorting when result viewer first renders\r\n- fixed spelling error in API creation dialog",
+                "prerelease": true,
+                "published_at": "2019-08-23T01:55:38Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.7.0-beta.2",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 44947059,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.7.0-beta.2/virtool.tar.gz",
+                "asset_error": false
+            },
+            {
                 "name": "v3.7.0-beta.1",
                 "body": "#### Changed\r\n- first user is now configured outside intial setup (#1314)\r\n- minor improvement to login and forced password change views\r\n\r\n#### Fixed\r\n- fix broken pathoscope result sorting (#1415)\r\n- fix issue in pathoscope median depth calculation (this may affect results in some cases)",
                 "prerelease": true,
