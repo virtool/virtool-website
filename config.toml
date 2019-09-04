@@ -41,9 +41,17 @@ pygmentsCodeFences = true
     weight = 40
 
   [[menu.developer]]
-    name = "API"
+    name = "Contributing"
     weight = 10
 
   [[menu.developer]]
-    name = "Contributing"
+    name = "API"
     weight = 20
+
+  [[menu.developer]]
+    name = "Backend"
+    weight = 30
+
+  [[menu.developer]]
+    name = "Frontend"
+    weight = 40
