@@ -1,61 +1,19 @@
 ---
-title: "Testing"
+title: "Frontend Testing"
 menu:
   developer:
-    parent: "Contributing"
-    weight: 40
+    parent: "Frontend"
+    weight: 30
 ---
 
-# Python
+Testing for the client side of Virtool involves writing tests for [React](https://reactjs.org/) components, modules that
+use [Redux](https://redux.js.org/), and [Redux-Saga](https://redux-saga.js.org/), and the [Virtool API](/docs/api).
 
-Tests are implemented using the [pytest](https://docs.pytest.org/en/latest/) framework.
-
-Tests can be quickly run by installing all dependencies and executing:
-
-```bash
-pytest
-```
-
-## Guidelines
-
-### API Tests
-
-As much logic as possible should happen outside of API handler functions. Functions called in API handlers can be mocked. A server instance is created for each test so writing a lot of API tests or creating large test matrices for API handlers can greatly increase testing time.
-
-### Order of funcargs
-
-For easy readability the order of funcargs passed to test functions follows the order:
-
-Values passed in from parametrization.
-Fixtures from `pytest` itself and plugin libraries.
-The `spawn_client` fixture if necessary.
-All Virtool fixtures in alphabetical order.
-
-**_Good_**
-
-```python
-@pytest.mark.parametrize("not_found", [False, True])
-async def test_get(not_found, mocker, spawn_client, resp_is, static_time):
-    client = await spawn_client(authorize=True)
-```
-
-**_Bad_**
-
-```python
-@pytest.mark.parametrize("not_found", [False, True])
-async def test_get(resp_is, not_found, static_time, spawn_client, mocker):
-    client = await spawn_client(authorize=True)
-```
-
-# Javascript
-
-Testing for the client side of Virtool involves writing tests for [React](https://reactjs.org/) components, modules that use [Redux](https://redux.js.org/) and [Redux-Saga](https://redux-saga.js.org/), and the [Virtool API](/docs/api).
-
-While there are many different ways to approach testing that are essentially equivalent, Virtool currently prefers using Jest, Enzyme, and Sinon for its unit tests.
+We use [Jest](https://jestjs.io/) and [Enzyme](https://airbnb.io/enzyme/) for testing.
 
 ## Jest
 
-Jest is a JavaScript testing framework developed by Facebook; you can find more information regarding the [Jest API](https://facebook.github.io/jest/docs/en/api.html) on their [website](https://facebook.github.io/jest).
+Jest is developed by Facebook and the natural choice for testing React applications.
 
 Testing dependencies, scripts, and Jest configuration settings can be found in the **package.json** file located in the **virtool/client** directory.
 Configuration and global variables used by tests are declared in a file called **setupTest.js** located under **virtool/client/src/tests**.
