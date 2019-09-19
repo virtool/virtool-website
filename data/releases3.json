@@ -153,21 +153,45 @@
     },
     "virtool": {
         "latest": {
-            "name": "v3.7.2",
-            "body": "#### Fixed\r\n- error when fetching list of jobs from server",
+            "name": "v3.7.4",
+            "body": "#### Fixed\r\n- fix server error when updating account (#1453)\r\n- potential fix for database setup error (#1403)",
             "prerelease": false,
-            "published_at": "2019-09-03T18:55:43Z",
-            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.7.2",
+            "published_at": "2019-09-19T17:53:36Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.7.4",
             "filename": "virtool.tar.gz",
             "content_type": "application/gzip",
-            "size": 44945903,
-            "download_url": "https://github.com/virtool/virtool/releases/download/v3.7.2/virtool.tar.gz",
+            "size": 44950648,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v3.7.4/virtool.tar.gz",
             "asset_error": false
         },
         "releases": [
             {
+                "name": "v3.7.4",
+                "body": "#### Fixed\r\n- fix server error when updating account (#1453)\r\n- potential fix for database setup error (#1403)",
+                "prerelease": false,
+                "published_at": "2019-09-19T17:53:36Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.7.4",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 44950648,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.7.4/virtool.tar.gz",
+                "asset_error": false
+            },
+            {
+                "name": "v3.7.3",
+                "body": "#### Fixed\r\n- fix HMM release installation bugs (#1454, #1455)",
+                "prerelease": false,
+                "published_at": "2019-09-06T17:19:17Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.7.3",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 44946313,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.7.3/virtool.tar.gz",
+                "asset_error": false
+            },
+            {
                 "name": "v3.7.2",
-                "body": "#### Fixed\r\n- error when fetching list of jobs from server",
+                "body": "#### Fixed\r\n- fix error when fetching list of jobs from server",
                 "prerelease": false,
                 "published_at": "2019-09-03T18:55:43Z",
                 "html_url": "https://github.com/virtool/virtool/releases/tag/v3.7.2",
