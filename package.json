@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "atomic-algolia": "^0.3.15",
-    "hugo-algolia": "^1.2.13"
+    "atomic-algolia": "^0.3.17",
+    "hugo-algolia": "^1.2.14"
   }
 }
