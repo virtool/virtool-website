@@ -153,18 +153,30 @@
     },
     "virtool": {
         "latest": {
-            "name": "v3.7.4",
-            "body": "#### Fixed\r\n- fix error during database setup (#1403)\r\n- fix server error when updating account (#1453)\r\n",
+            "name": "v3.7.5",
+            "body": "#### Added\r\n- add debug logging for BLASTing\r\n\r\n\r\n#### Changed\r\n- allow users to retry failed and successful NuVs BLASTs\r\n- show NCBI BLAST errors to users when they occurs\r\n- use 'No name' as NuVs BLAST result name when actual name missing from NCBI response (#1469)\r\n\r\n#### Fixed\r\n- fix debug messages not showing in `--dev` mode\r\n- fix unhandled `KeyError` when trying to retrieve record for importing sample via API (#1468)\r\n- fix unhandled `BadZipFile` error when fetching BLAST result from NCBI (#1456)",
             "prerelease": false,
-            "published_at": "2019-09-19T17:53:36Z",
-            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.7.4",
+            "published_at": "2019-09-25T22:16:47Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.7.5",
             "filename": "virtool.tar.gz",
             "content_type": "application/gzip",
-            "size": 44950648,
-            "download_url": "https://github.com/virtool/virtool/releases/download/v3.7.4/virtool.tar.gz",
+            "size": 44949608,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v3.7.5/virtool.tar.gz",
             "asset_error": false
         },
         "releases": [
+            {
+                "name": "v3.7.5",
+                "body": "#### Added\r\n- add debug logging for BLASTing\r\n\r\n\r\n#### Changed\r\n- allow users to retry failed and successful NuVs BLASTs\r\n- show NCBI BLAST errors to users when they occurs\r\n- use 'No name' as NuVs BLAST result name when actual name missing from NCBI response (#1469)\r\n\r\n#### Fixed\r\n- fix debug messages not showing in `--dev` mode\r\n- fix unhandled `KeyError` when trying to retrieve record for importing sample via API (#1468)\r\n- fix unhandled `BadZipFile` error when fetching BLAST result from NCBI (#1456)",
+                "prerelease": false,
+                "published_at": "2019-09-25T22:16:47Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.7.5",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 44949608,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.7.5/virtool.tar.gz",
+                "asset_error": false
+            },
             {
                 "name": "v3.7.4",
                 "body": "#### Fixed\r\n- fix error during database setup (#1403)\r\n- fix server error when updating account (#1453)\r\n",
