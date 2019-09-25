@@ -154,7 +154,7 @@
     "virtool": {
         "latest": {
             "name": "v3.7.4",
-            "body": "#### Fixed\r\n- fix server error when updating account (#1453)\r\n- potential fix for database setup error (#1403)",
+            "body": "#### Fixed\r\n- fix error during database setup (#1403)\r\n- fix server error when updating account (#1453)\r\n",
             "prerelease": false,
             "published_at": "2019-09-19T17:53:36Z",
             "html_url": "https://github.com/virtool/virtool/releases/tag/v3.7.4",
@@ -167,7 +167,7 @@
         "releases": [
             {
                 "name": "v3.7.4",
-                "body": "#### Fixed\r\n- fix server error when updating account (#1453)\r\n- potential fix for database setup error (#1403)",
+                "body": "#### Fixed\r\n- fix error during database setup (#1403)\r\n- fix server error when updating account (#1453)\r\n",
                 "prerelease": false,
                 "published_at": "2019-09-19T17:53:36Z",
                 "html_url": "https://github.com/virtool/virtool/releases/tag/v3.7.4",
