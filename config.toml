@@ -11,23 +11,14 @@ pygmentsCodeFences = true
   filename = "sitemap.xml"
 
 [outputs]
-  home = ["HTML","Algolia"]
+  home = ["HTML"]
   page = ["HTML"]
-
-[outputFormats.Algolia]
-  baseName = "algolia"
-  isPlainText = true
-  mediaType = "application/json"
-  notAlternative = true
-
-[params.algolia]
-  vars = ["title", "summary", "date", "publishdate", "expirydate", "permalink"]
-  params = ["categories", "tags"]
 
 [menu]
   [[menu.manual]]
     name = "Getting Started"
     weight = 10
+    
   [[menu.manual]]
     name = "Tutorials"
     weight = 20
