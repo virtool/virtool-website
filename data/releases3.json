@@ -166,6 +166,18 @@
         },
         "releases": [
             {
+                "name": "v3.8.0-beta.2",
+                "body": "#### Fixed\r\n- fix unwarranted no host error in create sample modal (#1504)",
+                "prerelease": true,
+                "published_at": "2019-10-15T16:43:16Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.8.0-beta.2",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 44951038,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.8.0-beta.2/virtool.tar.gz",
+                "asset_error": false
+            },
+            {
                 "name": "v3.8.0-beta.1",
                 "body": "#### Added\r\n- allow choice of different subtraction for each analysis (#1231)\r\n- samples have **Default Subtraction** setting instead of hard-linked **Subtraction Host** (#1231)\r\n- show warning when sample files are unusually small (#1483)\r\n\r\n#### Changed\r\n- update appearance of alerts\r\n- update appearance of isolate editor \r\n- update appearance of source type settings\r\n- update appearance of HMM, history, and files list items (#1473, #1492, #1481, #1461, #1472)\r\n- overhaul reference list items\r\n- minor changes and improvements to many user interface elements\r\n\r\n#### Fixed\r\n- fix text alignment in pathoscope mapping overview (#1474)\r\n- fix always depressed buttons\r\n- fix non-removal of FASTQ files after they are used to create a sample (#1484)\r\n",
                 "prerelease": true,
