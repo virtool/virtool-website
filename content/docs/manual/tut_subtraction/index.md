@@ -37,7 +37,7 @@ Upload the previously obtained FASTA file.
 
 Go to the _Subtraction_ view via the main navigation bar.
 
-![Subtraction Listing](subtraction.png)
+![Subtraction Listing](empty.png)
 
 Click the <i class="vtfont i-new-entry"></i> button to open the subtraction creation dialog.
 
