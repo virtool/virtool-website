@@ -54,7 +54,7 @@ From an analysis job, you can easily navigate to the analysis listing for the sa
 **New in v3.4.0**.
 {{< /note >}}
 
-Sample data is automatically trimmed during analysis. Trimmed data are cached so that data doesn't have to be re-run everytime a fucki
+Sample data is automatically trimmed during analysis. Trimmed data are cached so that data doesn't have to be re-run
 
 
 
