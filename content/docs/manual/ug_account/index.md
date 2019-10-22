@@ -28,14 +28,6 @@ You can change your password under the _General_ tab. By default, new passwords 
 
 ![Change Password](password.png)
 
-# Settings {#settings}
-
-Some settings are account-specific. These can be modified under the _Settings_ tab.
-
-Currently, the only account-specific settings is toggling the visibility of unique IDs in the user interface. They are useful for debugging purposes and are invisible by default.
-
-![Settings](settings.png)
-
 # API Keys {#api_keys}
 
 Virtool exposes a complete [JSON API](/docs/developer/api_account/). Access to the API is managed using [API keys](https://www.virtool.ca/docs/developer/api_authentication/).
