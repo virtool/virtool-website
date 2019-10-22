@@ -44,14 +44,17 @@ In the _Samples_ view, you will notice the sample entry is tagged to show that a
 Carrying on from the previous section, click on your recently created analysis. The list shows sequence fragments (contigs) that may be part of a novel virus.
 ![Filtered](filtered.png)
 
-During NuVs, sample libraries are assembled into contigs. Open reading frames (ORFs) are calculated from these and potential protein annotations are assigned using profile HMMs. Each sequence in a NuVs report is a contig. Clicking on a sequence will show the orientation and annotation of possible protein coding regions on the contig.
-![Expanded](expanded.png)
+During NuVs, sample libraries are assembled into contigs. Open reading frames (ORFs) are calculated from these and potential protein annotations are assigned using profile HMMs.
+![Expanded](focus.png)
 
-By default, ORFs with no HMM annotation are hidden. You can toggle the visibility of these by clicking <i class="fa fa-filter"></i>.
-![Unfiltered ORFs](unfiltered.png)
+By default, ORFs with no HMM annotation are hidden. You can toggle the visibility of these by clicking the <i class="fa fa-filter"></i> <strong>Filter ORFs</strong> button.
+![Unfiltered ORFs](unfiltered_orfs.png)
 
-4. Part of interpreting NuVs results is BLASTing contigs to make sure they are truly unknown. You can BLAST contigs by clicking **BLAST at NCBI**.
-   ![BLAST at NCBI](blast_running.png)
+Contigs without significant HMM hits are filtered out by default. Click <i class="fa fa-filter"></i> <strong>Filter Sequences</strong> to show all contig sequences.
+![Unfiltered Sequences](unfiltered_sequences.png)
 
-5. The BLAST results for this sequence show it is likely contamination from a technician.
-   ![BLAST Results](blast.png)
+Part of interpreting NuVs results is BLASTing contigs to make sure they are truly unknown. You can BLAST contigs by clicking **BLAST at NCBI**.
+![BLAST at NCBI](blast_running.png)
+
+The BLAST results for this sequence show it is likely contamination from a technician.
+![BLAST Results](blast.png)
