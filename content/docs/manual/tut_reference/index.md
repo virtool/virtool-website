@@ -53,7 +53,7 @@ Look for the **Indexes** tab in the reference detail view.
 
 !["Indexes tab"](indexes_tab.png)
 
-Click the **Rebuild** button to prepare an index build.
+Click the **Rebuild the index** link start preparing an index build.
 
 !["Empty Indexes List"](indexes.png)
 
