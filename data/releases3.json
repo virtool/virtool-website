@@ -153,18 +153,30 @@
     },
     "virtool": {
         "latest": {
-            "name": "v3.8.0",
-            "body": "#### Added\r\n- allow choice of different subtraction for each analysis (#1231)\r\n- samples have **Default Subtraction** setting instead of hard-linked **Subtraction Host** (#1231)\r\n- show warning when sample files are unusually small (#1483)\r\n\r\n#### Changed\r\n- slight changes to user group administration dialog\r\n- update appearance of alerts\r\n- update appearance of isolate editor \r\n- update appearance of source type settings\r\n- update appearance of HMM, history, and files list items (#1473, #1492, #1481, #1461, #1472)\r\n- overhaul reference list items\r\n- minor changes and improvements to many user interface elements\r\n\r\n#### Fixed\r\n- fix text alignment in pathoscope mapping overview (#1474)\r\n- fix always depressed buttons\r\n- fix non-removal of FASTQ files after they are used to create a sample (#1484)",
+            "name": "v3.8.1",
+            "body": "#### Changed\r\n- prevent first user setup dialog from being too wide on large displays\r\n\r\n#### Fixed\r\n- fix BLAST spinner (#1520)\r\n- fix link justification in reference user and groups settings\r\n- fix various errors when viewing reference details (#1527, #1511, #1516, #1500)",
             "prerelease": false,
-            "published_at": "2019-10-21T18:22:06Z",
-            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.8.0",
+            "published_at": "2019-11-01T21:41:16Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.8.1",
             "filename": "virtool.tar.gz",
             "content_type": "application/gzip",
-            "size": 44958715,
-            "download_url": "https://github.com/virtool/virtool/releases/download/v3.8.0/virtool.tar.gz",
+            "size": 44954699,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v3.8.1/virtool.tar.gz",
             "asset_error": false
         },
         "releases": [
+            {
+                "name": "v3.8.1",
+                "body": "#### Changed\r\n- prevent first user setup dialog from being too wide on large displays\r\n\r\n#### Fixed\r\n- fix BLAST spinner (#1520)\r\n- fix link justification in reference user and groups settings\r\n- fix various errors when viewing reference details (#1527, #1511, #1516, #1500)",
+                "prerelease": false,
+                "published_at": "2019-11-01T21:41:16Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.8.1",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 44954699,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.8.1/virtool.tar.gz",
+                "asset_error": false
+            },
             {
                 "name": "v3.8.0",
                 "body": "#### Added\r\n- allow choice of different subtraction for each analysis (#1231)\r\n- samples have **Default Subtraction** setting instead of hard-linked **Subtraction Host** (#1231)\r\n- show warning when sample files are unusually small (#1483)\r\n\r\n#### Changed\r\n- slight changes to user group administration dialog\r\n- update appearance of alerts\r\n- update appearance of isolate editor \r\n- update appearance of source type settings\r\n- update appearance of HMM, history, and files list items (#1473, #1492, #1481, #1461, #1472)\r\n- overhaul reference list items\r\n- minor changes and improvements to many user interface elements\r\n\r\n#### Fixed\r\n- fix text alignment in pathoscope mapping overview (#1474)\r\n- fix always depressed buttons\r\n- fix non-removal of FASTQ files after they are used to create a sample (#1484)",
