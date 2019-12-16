@@ -153,18 +153,42 @@
     },
     "virtool": {
         "latest": {
-            "name": "v3.8.2",
-            "body": "#### Changed\r\n- appearance improvements for some user interface components\r\n- prevent potential data loss when editing OTUs\r\n\r\n#### Fixed\r\n- fix incomplete parsing of Genbank definitions when fetching from NCBI (#1548)",
+            "name": "v3.8.4",
+            "body": "#### Added\r\n- show user alert when trim cache files cannot be found\r\n\r\n#### Changed\r\n- create new trim cache during analysis when cache file cannot be found",
             "prerelease": false,
-            "published_at": "2019-11-15T17:52:48Z",
-            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.8.2",
+            "published_at": "2019-12-16T19:58:29Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.8.4",
             "filename": "virtool.tar.gz",
             "content_type": "application/gzip",
-            "size": 50995600,
-            "download_url": "https://github.com/virtool/virtool/releases/download/v3.8.2/virtool.tar.gz",
+            "size": 50994357,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v3.8.4/virtool.tar.gz",
             "asset_error": false
         },
         "releases": [
+            {
+                "name": "v3.8.4",
+                "body": "#### Added\r\n- show user alert when trim cache files cannot be found\r\n\r\n#### Changed\r\n- create new trim cache during analysis when cache file cannot be found",
+                "prerelease": false,
+                "published_at": "2019-12-16T19:58:29Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.8.4",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 50994357,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.8.4/virtool.tar.gz",
+                "asset_error": false
+            },
+            {
+                "name": "v3.8.3",
+                "body": "#### Added\r\n- add API setting in web interface (#1558)\r\n\r\n#### Changed\r\n- fix checkbox alignment in source type form\r\n- improve application stability and testing\r\n- show Gitter chat link instead of Discord in navigation bar\r\n- update isolate editor appearance\r\n\r\n#### Removed\r\n- remove data table in OTU general info view\r\n\r\n#### Fixed\r\n- fix faulty API key authentication\r\n- fix faulty reference import functionality\r\n- fix security issue in `serialize-javascript` dependency\r\n- throttle sample creation requests to prevent duplicate submissions (#1547)\r\n- throttle remote reference creation requests to prevent duplicate submissions (#1569)\r\n",
+                "prerelease": false,
+                "published_at": "2019-12-11T00:08:10Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.8.3",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 50994614,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.8.3/virtool.tar.gz",
+                "asset_error": false
+            },
             {
                 "name": "v3.8.2",
                 "body": "#### Changed\r\n- appearance improvements for some user interface components\r\n- prevent potential data loss when editing OTUs\r\n\r\n#### Fixed\r\n- fix incomplete parsing of Genbank definitions when fetching from NCBI (#1548)",
