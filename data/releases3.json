@@ -153,18 +153,42 @@
     },
     "virtool": {
         "latest": {
-            "name": "v3.8.5",
-            "body": "#### Added\r\n- remove incomplete samples on application start\r\n\r\n#### Changed\r\n- improve job list item appearance\r\n- improve administrative user detail view\r\n\r\n#### Fixed\r\n- fix useless job remove and cancel icons (#1603)\r\n- fix visual bug in group list in administrative user interface (#1578)s",
+            "name": "v3.9.0",
+            "body": "#### Added\r\n- add keyboard-based navigation to NuVs result viewer\r\n\r\n#### Changed\r\n- ensure application data folder is intact on every server start\r\n- make clone and remote reference panels consistent in appearance with sibling panels (#1639)\r\n\r\n#### Fixed\r\n- fix appearance of API documentation link in administrative settings (#1627)\r\n- fix client crash when there is no significant NuVs hit\r\n- fix contradictory Sentry setup messages in log output\r\n- fix incorrect modified OTU count being calculated for references\r\n- fix refresh issue during setup that made it unclear the server was being restarted (#1570)\r\n- fix server crash when caches data directory cannot be found\r\n- fix unhandled exception when writing settings to database during setup (#1530)",
             "prerelease": false,
-            "published_at": "2019-12-19T20:47:28Z",
-            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.8.5",
+            "published_at": "2020-01-13T19:34:50Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.9.0",
             "filename": "virtool.tar.gz",
             "content_type": "application/gzip",
-            "size": 51000786,
-            "download_url": "https://github.com/virtool/virtool/releases/download/v3.8.5/virtool.tar.gz",
+            "size": 50940980,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v3.9.0/virtool.tar.gz",
             "asset_error": false
         },
         "releases": [
+            {
+                "name": "v3.9.0",
+                "body": "#### Added\r\n- add keyboard-based navigation to NuVs result viewer\r\n\r\n#### Changed\r\n- ensure application data folder is intact on every server start\r\n- make clone and remote reference panels consistent in appearance with sibling panels (#1639)\r\n\r\n#### Fixed\r\n- fix appearance of API documentation link in administrative settings (#1627)\r\n- fix client crash when there is no significant NuVs hit\r\n- fix contradictory Sentry setup messages in log output\r\n- fix incorrect modified OTU count being calculated for references\r\n- fix refresh issue during setup that made it unclear the server was being restarted (#1570)\r\n- fix server crash when caches data directory cannot be found\r\n- fix unhandled exception when writing settings to database during setup (#1530)",
+                "prerelease": false,
+                "published_at": "2020-01-13T19:34:50Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.9.0",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 50940980,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.9.0/virtool.tar.gz",
+                "asset_error": false
+            },
+            {
+                "name": "v3.8.6",
+                "body": "#### Fixed\r\n- resolve minor security issue in client",
+                "prerelease": false,
+                "published_at": "2020-01-06T19:18:37Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.8.6",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 51002502,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.8.6/virtool.tar.gz",
+                "asset_error": false
+            },
             {
                 "name": "v3.8.5",
                 "body": "#### Added\r\n- remove incomplete samples on application start\r\n\r\n#### Changed\r\n- improve job list item appearance\r\n- improve administrative user detail view\r\n\r\n#### Fixed\r\n- fix useless job remove and cancel icons (#1603)\r\n- fix visual bug in group list in administrative user interface (#1578)s",
