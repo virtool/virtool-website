@@ -153,18 +153,30 @@
     },
     "virtool": {
         "latest": {
-            "name": "v3.9.1",
-            "body": "#### Fixed\r\n- fix scrolling issue in large lists",
+            "name": "v3.9.2",
+            "body": "#### Fixed\r\n- fix crashes in some views that include times\r\n- fix non-function job cleanup on application start",
             "prerelease": false,
-            "published_at": "2020-01-13T21:22:32Z",
-            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.9.1",
+            "published_at": "2020-01-14T18:42:26Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.9.2",
             "filename": "virtool.tar.gz",
             "content_type": "application/gzip",
-            "size": 50945573,
-            "download_url": "https://github.com/virtool/virtool/releases/download/v3.9.1/virtool.tar.gz",
+            "size": 50930086,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v3.9.2/virtool.tar.gz",
             "asset_error": false
         },
         "releases": [
+            {
+                "name": "v3.9.2",
+                "body": "#### Fixed\r\n- fix crashes in some views that include times\r\n- fix non-function job cleanup on application start",
+                "prerelease": false,
+                "published_at": "2020-01-14T18:42:26Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.9.2",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 50930086,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.9.2/virtool.tar.gz",
+                "asset_error": false
+            },
             {
                 "name": "v3.9.1",
                 "body": "#### Fixed\r\n- fix scrolling issue in large lists",
