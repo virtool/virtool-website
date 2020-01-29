@@ -56,7 +56,7 @@ Navigate to the _History_ tab to view the history for the OTU.
 
 The history for this OTU shows that it was cloned from another reference, then one of its isolates was removed and the other was renamed.
 
-Click <i class="fas fa-undo"></i> to revert a change. It and any successive changes will be removed.
+Click <i class="fas fa-undo"></i> to revert a change. Any successive changes will be removed.
 
 {{< video "revert.mp4" >}}
 

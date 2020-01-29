@@ -38,7 +38,7 @@ Detailed information for a job can be viewed by clicking on its entry in the job
 
 # Cancel a Job {#cancel}
 
-Running and waiting can be cancelled. Cancellation entails forcibly stopping the job process and cleaning up any partial job data from the database and filesystem.
+Running and waiting jobs can be cancelled. Cancellation entails forcibly stopping the job process and cleaning up any partial job data from the database and file system.
 
 Jobs can be cancelled by clicking the <i class="fa fa-ban"></i> icon at the right end of the job list item.
 
