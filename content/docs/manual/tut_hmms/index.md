@@ -20,5 +20,5 @@ Click the **Install Official** button to begin downloading the data. This could 
 When the installation is complete, the HMM data will load and you will see a list of annotations.
 !["Installed Official HMM Data](top.png)
 
-Clicking on an HMM item will show the detailed information for that HMM profile and its biological annotation.
+Clicking on an HMM item will show detailed information for that HMM profile and its biological annotation.
 !["HMM Detail"](detail.png)

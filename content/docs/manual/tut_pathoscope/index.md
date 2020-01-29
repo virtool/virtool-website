@@ -23,7 +23,7 @@ Navigate to the _Analyses_ tab. You should see an empty list if you haven't alre
 
 !["Empty Analysis List](empty.png)
 
-Click <i class="fa fa-plus-square"></i> to open the analysis creation dialog, select PathoscopeBowtie and a refernece to search against, and click <i class="fa fa-play"></i> **Start**.
+Click <i class="fa fa-plus-square"></i> to open the analysis creation dialog. Select PathoscopeBowtie and a refernece to search against, and then click <i class="fa fa-play"></i> **Start**.
 
 ![Analysis Dialog](dialog.png)
 

@@ -47,10 +47,10 @@ Carrying on from the previous section, click on your recently created analysis. 
 During NuVs, sample libraries are assembled into contigs. Open reading frames (ORFs) are calculated from these and potential protein annotations are assigned using profile HMMs.
 ![Expanded](focus.png)
 
-By default, ORFs with no HMM annotation are hidden. You can toggle the visibility of these by clicking the <i class="fa fa-filter"></i> <strong>Filter ORFs</strong> button.
+By default, ORFs with no HMM annotation are hidden. You can toggle the visibility of these by clicking the <i class="fa fa-filter"></i> **Filter ORFs** button.
 ![Unfiltered ORFs](unfiltered_orfs.png)
 
-Contigs without significant HMM hits are filtered out by default. Click <i class="fa fa-filter"></i> <strong>Filter Sequences</strong> to show all contig sequences.
+Contigs without significant HMM hits are filtered out by default. Click <i class="fa fa-filter"></i> **Filter Sequences** to show all contig sequences.
 ![Unfiltered Sequences](unfiltered_sequences.png)
 
 Part of interpreting NuVs results is BLASTing contigs to make sure they are truly unknown. You can BLAST contigs by clicking **BLAST at NCBI**.

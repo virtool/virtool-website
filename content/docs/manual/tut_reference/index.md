@@ -23,7 +23,7 @@ Click the **Install** button to begin the installation process. A new card shoul
 
 !["Official Reference Installing"](installing.png)
 
-One the installation process is complete, the reference card should look something like this:
+Once the installation process is complete, the reference card should look something like this:
 
 !["Reference Installation Complete"](install_complete.png)
 
@@ -35,7 +35,7 @@ Clicking on the reference card will bring you to a detail page for the reference
 
 Once the installation of the official reference is complete, you can browse the OTUs that are included in the reference.
 
-Click on the **OTUs** tab and you should see something like the following.
+Click on the **OTUs** tab and you should see something like the following:
 
 ![The OTUs tab](otus.png)
 
@@ -53,11 +53,11 @@ Look for the **Indexes** tab in the reference detail view.
 
 !["Indexes tab"](indexes_tab.png)
 
-Click the **Rebuild the index** link start preparing an index build.
+Click the **Rebuild the index** link to start preparing an index build.
 
 !["Empty Indexes List"](indexes.png)
 
-A index creation dialog describing the changes to be built will appear.
+An index creation dialog describing the changes to be built will appear.
 
 !["Index Creation Dialog Top"](create_index_1.png)
 !["Index Creation Dialog Bottom"](create_index_2.png)

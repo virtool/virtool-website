@@ -13,7 +13,7 @@ Subtractions are whole genome references used for eliminating reads from the ana
 
 We will use the _Arabidopsis thaliana_ genome for this example.
 
-Go the Ensembl Genomes FTP site for Arabidopsis [here](ftp://ftp.ensemblgenomes.org/pub/plants/release-37/fasta/arabidopsis_thaliana/dna/). Download the unmasked version of the genome.
+Go to the Ensembl Genomes FTP site for Arabidopsis [here](ftp://ftp.ensemblgenomes.org/pub/plants/release-37/fasta/arabidopsis_thaliana/dna/). Download the unmasked version of the genome.
 
 !["Download Arabidopsis Genome"](download.png)
 
@@ -43,7 +43,7 @@ Click the <i class="vtfont i-new-entry"></i> button to open the subtraction crea
 
 ![Creation Dialog](create.png)
 
-Enter a unique name and an optional nickname, select the FASTA file, **Start** to start the job.
+Enter a unique name and an optional nickname, select the FASTA file, and click **Start** to start the job.
 
 ![Filled Creation Dialog](create_filled.png)
 
