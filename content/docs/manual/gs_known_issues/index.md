@@ -11,7 +11,7 @@ menu:
 
 ## Problem
 
-You see an fatal error message similar to the following when starting Virtool:
+You see a fatal error message similar to the following when starting Virtool:
 
 ```term
 inotify.calls.InotifyError: Call failed (should not be -1): (-1) ERRNO=(0)

@@ -45,7 +45,7 @@ Once MongoDB is ready, you can configure a connection to it using a [MongoDB con
 
 The placeholder values can be used by clicking <i class="fas fa-plug"></i> **Connect** without changing the form. You can also specify a different address, authentication, or authentication database for your connection by changing the connection string.
 
-Virtool will return and error if there is already a database with the provided **Database Name**.
+Virtool will return an error if there is already a database with the provided **Database Name**.
 
 ![MongoDB alternate connection parameters](mongo_filled.png)
 
