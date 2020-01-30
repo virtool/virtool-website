@@ -67,7 +67,7 @@ Paired or unpaired FASTQ data can be used to create a sample.
 
 Samples created from only one file are assumed to be unpaired. Paired samples must comprise two paired FASTQ files. **Interleaved FASTQ files are not currently supported**.
 
-For paired data, make sure the file orientation labels (left and right) are correct before you create a sample. You can use the <i class="fas fa-retweet"></i> button too swap orientations.
+For paired data, make sure the file orientation labels (left and right) are correct before you create a sample. You can use the <i class="fas fa-retweet"></i> button to swap orientations.
 
 {{< video "create_orientation.mp4" >}}
 
@@ -85,12 +85,6 @@ Your sample will look something like this when it is ready to use:
 
 ## What happens during sample creation?
 
-{{< note title="Changes in 3.4.0" >}}
-Trimming was originally performed during sample creation.
-
-Starting in 3.4.0, raw sample data is instead retained during sample creation. Trimming is deferred to each analysis run and trimmed data are cached to maintain performance.
-{{< /note >}}
-
 Sample FASTQ files are copied into a new sample directory. The files will be compressed if necessary.
 
 Quality information is calculated from the library using [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) and committed to Virtool's database.
@@ -99,11 +93,19 @@ The FASTQ files and quality data are used for further analyses triggered by the 
 
 # Quick Analyze
 
-Testing
+Quick analysis allows you to start analysis jobs for multiple samples at once. Select the samples of interest and click on the green <i class="fa fa-chart-area"></i> button. An _Analyze_ dialog box will appear.
+![Samples Selected](selected.png)
+
+Use this dialog you can choose the analysis algorithm (PathoscopeBowtie or NuVs), the subtraction, and the reference(s) you want to use to analyze your sample(s). Selecting multiple references will start a separate job for each sample-reference combination. Once these fields are specified, click the **Start** button to start the analysis.
+![Analyze](analyze.png)
+
+Once the analysis is running, you can view its progress under the _Jobs_ tab.
+![Progress](progress.png)
+
 
 # Rights
 
-## Concepts {#concepts}
+## Concepts
 
 Virtool allows for fine control of the rights users have to view or modify samples.
 
@@ -154,7 +156,7 @@ The access rights for an existing sample can be easily changed by the sample own
 
 Access the rights management controls by clicking the <i class="fas fa-key"></i> tab in the sample detail view.
 
-![The sample rights view](samples_rights_view.png)
+![The sample rights view](sample_rights_view.png)
 
 ## Default Rights
 
@@ -195,7 +197,7 @@ This setting determines how members of the owner group can interact with the sam
 
 This setting determines how members of the owner group can interact with the sample. If the owner group is _None_, this setting has no effect. Rights can be changed by sample owners and administrators at any time.
 
-!["Group Rights"](group_rights.png)
+!["Group Rights"](sample_rights_view.png)
 
 |                |                                                                                                                     |
 | -------------- | ------------------------------------------------------------------------------------------------------------------- |
