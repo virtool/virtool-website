@@ -20,7 +20,7 @@ If no HMM reference data has been installed, you will see the following:
 
    ![No HMM Data Found](/docs/manual/tut_hmms/no_data.png)
 
-Click the **Download Official** button to begin downloading the data. This could take some time.
+Click the **Install Official** button to begin downloading the data. This could take some time.
 
    ![Installing HMMs](/docs/manual/tut_hmms/installing.png)
 
@@ -70,5 +70,5 @@ You will be able to reinstall the HMM data once the deletion process is complete
 2. Click on _Settings_ in the left sidebar. You should see the following:
    ![Purge in Settings](purge.png)
 
-3. Click the **Purge** button. Navigating to _Browse_ in the left sidebar should now should an HMM installation alert.
+3. Click the **Purge** button. Navigating to _Browse_ in the left sidebar should now show an HMM installation alert.
    ![No HMM Data Found](/docs/manual/tut_hmms/no_data.png)

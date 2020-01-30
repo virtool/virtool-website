@@ -9,7 +9,7 @@ menu:
 
 # Upload a FASTQ File
 
-Go the _Samples_ view via the main navigation bar.
+Go to _Samples_ view via the main navigation bar.
 
 ![Empty Sample Manager](empty.png)
 

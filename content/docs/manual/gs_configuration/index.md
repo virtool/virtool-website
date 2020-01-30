@@ -23,7 +23,7 @@ The order of precendence for resolving option values is:
 | `--port`                 | `port`                 | `VT_PORT`                 | The port Virtool should listen on                    |
 | `--proxy`                | `proxy`                | `VT_PROXY`                | The amount of memory (GB) to use for small jobs      |
 | `--data-path`            | `data_path`            | `VT_DATA_PATH`            | The path to read and write data files to             |
-| `--watch-path`           | `watch_path`           | `VT_WATCH_PATH`           | The path to automatically retrive read file from     |
+| `--watch-path`           | `watch_path`           | `VT_WATCH_PATH`           | The path to automatically retrive read files from    |
 | `--proc`                 | `proc`                 | `VT_PROC`                 | The processor limit for the Virtool instance         |
 | `--mem`                  | `mem`                  | `VT_MEM`                  | The memory limit (GB) for the Virtool instance       |
 | `--lg-proc`              | `lg_proc`              | `VT_LG_PROC`              | The number of processors to use for large jobs       |

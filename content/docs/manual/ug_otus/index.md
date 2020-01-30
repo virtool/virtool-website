@@ -32,10 +32,10 @@ Here is the structure of a single viral OTU containing one isolate and its seque
 
 The OTUs that belong to a Virtool reference can be easily browsed and edited. To start browsing member OTUs for a given reference:
 
-1. Navigate to the references list by navigating to _References_ in the main navigation bar.
+1. Navigate to the references list by clicking on _References_ in the main navigation bar.
    ![References list](references.png)
 
-2. Navigate to a reference by clicking on it. We will look at _Banana Viruses_ here.
+2. Select the reference of interest by clicking on it. We will look at _Banana Viruses_ here.
    ![Banana Viruses reference](banana_viruses.png)
 
 3. Navigate to the OTUs tab to view the OTUs that belong to the reference.
@@ -59,7 +59,7 @@ Creating a new OTU for a given reference requires only a name. You can optionall
 2. The OTU creation dialog will appear. Enter a name and abbreviation for the new virus.
    !["Create OTU dialog](create_dialog.png)
 
-3. Save the new OTU. It should now appear in list of the OTUs for this reference.
+3. Save the new OTU. It should now appear in the list of OTUs for this reference.
    !["New OTU in modified state"](created_otu.png)
 
 4. Navigate to the newly created OTU by clicking on it. Notice that there is a warning indicating that the OTU is not ready for primetime.
@@ -67,7 +67,7 @@ Creating a new OTU for a given reference requires only a name. You can optionall
 
 # Edit an OTU {#edit}
 
-The name or abbreviation for an OTU can be created after its creation.
+The name or abbreviation for an OTU can be made after its creation.
 
 1. Navigate to the detail view for the OTU you want to edit.
    ![Bad Banana Detail](bad_banana.png)
@@ -75,7 +75,7 @@ The name or abbreviation for an OTU can be created after its creation.
 2. Click on the yellow pencil icon in the top-left of the view to show the edit dialog. **Note that you will not see this icon if you don't have modification rights on the parent reference**.
    ![Edit dialog](edit_dialog.png)
 
-3. Change any of the fields an click save. Will will change the abbreviation in this example.
+3. Change any of the fields and click save. We will change the abbreviation in this example.
    ![Edit dialog changes](edit_dialog_changed.png)
 
 # Remove an OTU {#remove}
@@ -98,21 +98,21 @@ Examples of source names are: _A_, _Canada_, _8801-VLH_, or anything really.
 
 4. Notice that the **Isolate Name** field changes with the other two fields. This will be the display name for the isolate.
 
-5. Save the changes. The new isolate appear in the isolate editor.
+5. Save the changes. The new isolate appears in the isolate editor.
    !["Virus detail with one empty isolate"](empty_isolate.png)
-6. You can edit or remove the isolate by clicking <i class="vtfont i-pencil"></i> and <i class="vtfont i-remove"></i>.
+6. You can edit or remove the isolate by clicking on the <i class="vtfont i-pencil"></i> yellow pencil icon <i class="vtfont i-remove"></i>.
 
-Open the dialog for adding an isolate by clicking the <i class="vtfont i-new-entry"></i> icon in the rights corner of the _Isolates_ header:
+Open the dialog for adding an isolate by clicking the <i class="vtfont i-new-entry"></i> icon in the right corner of the _Isolates_ header:
 
 ![Isolates Header](/docs_images/viruses_isolates_header.png)
 
-Fill the _Source Type_ and _Source Name_ fields. These fields are combined to create an isolate name. They are
+Fill the _Source Type_ and _Source Name_ fields. These fields are combined to create an isolate name. 
 
 ![Add Isolate Dialog](/docs_images/viruses_add_isolate.png)
 
-- both fields are optional and the isolate named will be **Unamed** if they are both empty
+- both fields are optional and the isolate name will be **Unnamed** if they are both empty
 - in a single virus, multiple isolates can have the same name
-- administrators can add new source types to the
+- administrators can add new source types to the isolate
 
 # Edit an Isolate {#edit_isolate}
 

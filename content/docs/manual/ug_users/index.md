@@ -57,7 +57,7 @@ Click the <i class="fas fa-user-plus"></i> button to open the user creation dial
 
 ![Create user dialog](create.png)
 
-Enter a username and password for the user. Clicking _Force user to rest password on login_ will display a password reset page for the user when they login for the first time.
+Enter a username and password for the user. Clicking _Force user to reset password on login_ will display a password reset page for the user when they login for the first time.
 
 ![Create user dialog with filled form](create_filled.png)
 
@@ -83,13 +83,13 @@ The _Last changed_ time will be updated if you successfully change the password.
 
 ![Password successfully changed](password_after.png)
 
-Clicking _Force user to reset password on login_ will invalidate all of the users existing sessions and require them to login and reset their password when the try to access Virtool.
+Clicking _Force user to reset password on login_ will invalidate all of the users existing sessions and require them to login and reset their password when they try to access Virtool.
 
 # Change a User's Group Membership
 
 Users' group membership can be changed easily.
 
-This may affect what rights the user has one certain samples and references. It can also affect their application permissions.
+This may affect what rights the user has on certain samples and references. It can also affect their application permissions.
 
 Locate the _Groups_ panel in the _Users_ tab.
 
@@ -105,7 +105,7 @@ Notice that the user's permissions are changed when group membership is toggled.
 
 # Change a User's Primary Group
 
-Samples a user creates can automatically be assigned to the creating user's primary user group.
+Samples that a user creates can automatically be assigned to the creating user's primary user group.
 
 How samples are assigned their initial user group is [configurable](/docs/manual/ug_samples/#settings).
 

@@ -16,13 +16,13 @@ See the [Indexes documentation](/docs/manual/ug_indexes)
 
 # Source Types
 
-Isolate names comprise a _source type_ and _source name_. When creating isolates, users can be forced to use certain source type values for naming isolates.
+Isolate names comprise a _source type_ and _source name_. Users can be forced to use certain source type values when creating isolates.
 
 Source type restrictions do not affect viruses that are imported into the database.
 
 ## Adding Source Types
 
-Source types can be added by entering a new source type in the text box and clicking <i class="fa fa-plus-square"></i>. Once source types are added to the list, the can be accessed in isolate editing forms.
+Source types can be added by entering a new source type in the text box and clicking <i class="fa fa-plus-square"></i>. Once the source types are added to the list, they can be accessed in isolate editing forms.
 
 !["Add Source Types"](add_source_types.gif)
 

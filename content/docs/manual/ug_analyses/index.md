@@ -18,7 +18,7 @@ When an analysis is started, the sample data is run through a series of bioinfor
 
 ## Reference Versions
 
-Analyses make use of [references](/docs/manual/ug_references) composed of pathogen sequences. Since references are modifiable and versioned, analyses are linked to specific versions of a reference. If a sample needs to be analyzed against a newer version of a new analysis must be created.
+Analyses make use of [references](/docs/manual/ug_references) composed of pathogen sequences. Since references are modifiable and versioned, analyses are linked to specific versions of a reference. If a sample needs to be analyzed against a newer version, a new analysis must be created.
 
 Here is an example of a sample with multiple analyses using different pipelines and different reference versions:
 
@@ -38,7 +38,7 @@ Virtool currently supports two built-in workflows/pipelines called PathoscopeBow
 
 # Analysis Jobs
 
-Analyzing sample data is most computationally intensive task Virtool performs. It can take minutes or hours to run analyses for large, complex sample libraries.
+Analyzing sample data is the most computationally intensive task Virtool performs. It can take minutes or hours to run analyses for large, complex sample libraries.
 
 Long-running analyses are therefore tracked in the **Jobs** view.
 

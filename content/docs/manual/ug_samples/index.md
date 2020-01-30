@@ -36,12 +36,12 @@ Here is an example looking for samples matching the text query _14SP_ that have 
 
 ![Searching for samples that have no pathoscope analysis and match text query '14SP'](filter_no_pathoscope.png)
 
-Clicking on a sample item will navigate to a detail
+Clicking on a sample item will navigate to a detailed description of the sample.
 
 
 # Create a Sample
 
-Upload your sample FASTQ files in the under **Samples | Files** if you haven't yet.
+Upload your sample FASTQ files under **Samples | Files** if you haven't yet.
 
 ![Upload sample FASTQ files](upload.png)
 
@@ -71,7 +71,7 @@ For paired data, make sure the file orientation labels (left and right) are corr
 
 {{< video "create_orientation.mp4" >}}
 
-Once required fields are populated and you have selected files, click the <i class="fas fa-save"></i> **Save** button to create the sample. Your sample will immediately be listed in the samples list. However, it will take some time for the sample data to be imported and processed.
+Once required fields are populated and you have selected the files, click the <i class="fas fa-save"></i> **Save** button to create the sample. Your sample will immediately be listed in the samples list. However, it will take some time for the sample data to be imported and processed.
 
 ![Sample in list still being created](creating_state.png)
 
@@ -95,7 +95,7 @@ Sample FASTQ files are copied into a new sample directory. The files will be com
 
 Quality information is calculated from the library using [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) and committed to Virtool's database.
 
-The FASTQ files and quality data are used further analyses triggered by the user.
+The FASTQ files and quality data are used for further analyses triggered by the user.
 
 # Quick Analyze
 
@@ -122,7 +122,7 @@ Rights can apply at four different levels.
 
 Each sample can be owned by a specific user group. This allows multiple groups of diagnosticians or researchers to keep their data private or safe from one another while sharing a single Virtool instance.
 
-Samples are not required to have an owner group. The group can be set to `None`. In this case group rights settings will have no effect.
+Samples are not required to have an owner group. The group can be set to `None`. In this case, group rights settings will have no effect.
 
 ### Privileges
 
@@ -150,7 +150,7 @@ They will also be able to edit and remove the sample and create new analyses.
 
 ## Management
 
-The access rights for a existing sample can be easily changed by the sample owner or an administrator.
+The access rights for an existing sample can be easily changed by the sample owner or an administrator.
 
 Access the rights management controls by clicking the <i class="fas fa-key"></i> tab in the sample detail view.
 
@@ -167,7 +167,7 @@ Samples have their initial access rights configured when they are first created.
 
 ## Unique Sample Names
 
-By default sample names must be unique to the sample manager. This prevents confusion with duplicately named samples. It is possible to disable this feature by clicking <i class="far fa-check-square"></i> **Enable**.
+By default, sample names must be unique to the sample manager. This prevents confusion with duplicately named samples. It is possible to disable this feature by clicking <i class="far fa-check-square"></i> **Enable**.
 
 !["Unique Sample Names Disabled"](unique_sample_names.png)
 
@@ -189,11 +189,11 @@ This determines how an owner group is applied to the sample when it is created.
 
 ### Group Rights
 
-This settings determines how members of the owner group can interact with the sample. If the owner group is _None_, this setting has no effect.
+This setting determines how members of the owner group can interact with the sample. If the owner group is _None_, this setting has no effect.
 
 ### Group Rights
 
-This setting determines how members of the owner group can interact with the sample. If the owner group is _None_, this setting has no effect. Rights can be changes by sample owners and administrators at any time.
+This setting determines how members of the owner group can interact with the sample. If the owner group is _None_, this setting has no effect. Rights can be changed by sample owners and administrators at any time.
 
 !["Group Rights"](group_rights.png)
 
@@ -205,4 +205,4 @@ This setting determines how members of the owner group can interact with the sam
 
 ### All Users' Rights
 
-This settings determines how any Virtool user can interact with the sample. Rights for all users behave exactly as they do in **Group Rights**. Rights can be changes by sample owners and administrators at any time.
+This settings determines how any Virtool user can interact with the sample. Rights for all users behave exactly as they do in **Group Rights**. Rights can be changed by sample owners and administrators at any time.
