@@ -67,7 +67,7 @@ Paired or unpaired FASTQ data can be used to create a sample.
 
 Samples created from only one file are assumed to be unpaired. Paired samples must comprise two paired FASTQ files. **Interleaved FASTQ files are not currently supported**.
 
-For paired data, make sure the file orientation labels (left and right) are correct before you create a sample. You can use the <i class="fas fa-retweet"></i> button too swap orientations.
+For paired data, make sure the file orientation labels (left and right) are correct before you create a sample. You can use the <i class="fas fa-retweet"></i> button to swap orientations.
 
 {{< video "create_orientation.mp4" >}}
 
@@ -99,7 +99,21 @@ The FASTQ files and quality data are used for further analyses triggered by the 
 
 # Quick Analyze
 
-Testing
+The _Quick Analyze_ section can be used by clicking on the green graph icon that is shown on the right side of the sample. If you want to analyze multiple samples at once, simply checkbox the samples of interest and click on the graph icon on the top right next to _samples selected_. An _Analyze_ dialog box will appear.
+![Samples Selected](selected.png)
+
+From this box you can choose the type of algorithm (PathoscopeBowtie or NuVs), the subtraction, and the reference you want to use to analyze your sample(s). Once these fields are specified, you can click the **Start** button to start the analysis.
+![Analyze](analyze.png)
+
+Once the analysis is running, you can view its progress under the _Jobs_ tab.
+![Progress](progress.png)
+
+A checkmark will appear next to the job that has been completed. To view detailed information for a job, you can click on its entry in the job list which will bring you to a page looking like this:
+![Job Analysis](analysis.png)
+
+To examine full results for the job, click on the blue link on the right of _Analysis_. Here you will see mapping of possible pathogens that may be present in your sample.
+![Results](results.png)
+
 
 # Rights
 
@@ -154,7 +168,7 @@ The access rights for an existing sample can be easily changed by the sample own
 
 Access the rights management controls by clicking the <i class="fas fa-key"></i> tab in the sample detail view.
 
-![The sample rights view](samples_rights_view.png)
+![The sample rights view](sample_rights_view.png)
 
 ## Default Rights
 
@@ -195,7 +209,7 @@ This setting determines how members of the owner group can interact with the sam
 
 This setting determines how members of the owner group can interact with the sample. If the owner group is _None_, this setting has no effect. Rights can be changed by sample owners and administrators at any time.
 
-!["Group Rights"](group_rights.png)
+!["Group Rights"](sample_rights_view.png)
 
 |                |                                                                                                                     |
 | -------------- | ------------------------------------------------------------------------------------------------------------------- |
