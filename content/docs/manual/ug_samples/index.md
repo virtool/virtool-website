@@ -85,12 +85,6 @@ Your sample will look something like this when it is ready to use:
 
 ## What happens during sample creation?
 
-{{< note title="Changes in 3.4.0" >}}
-Trimming was originally performed during sample creation.
-
-Starting in 3.4.0, raw sample data is instead retained during sample creation. Trimming is deferred to each analysis run and trimmed data are cached to maintain performance.
-{{< /note >}}
-
 Sample FASTQ files are copied into a new sample directory. The files will be compressed if necessary.
 
 Quality information is calculated from the library using [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) and committed to Virtool's database.
@@ -99,25 +93,19 @@ The FASTQ files and quality data are used for further analyses triggered by the 
 
 # Quick Analyze
 
-The _Quick Analyze_ section can be used by clicking on the green graph icon that is shown on the right side of the sample. If you want to analyze multiple samples at once, simply checkbox the samples of interest and click on the graph icon on the top right next to _samples selected_. An _Analyze_ dialog box will appear.
+Quick analysis allows you to start analysis jobs for multiple samples at once. Select the samples of interest and click on the green <i class="fa fa-chart-area"></i> button. An _Analyze_ dialog box will appear.
 ![Samples Selected](selected.png)
 
-From this box you can choose the type of algorithm (PathoscopeBowtie or NuVs), the subtraction, and the reference you want to use to analyze your sample(s). Once these fields are specified, you can click the **Start** button to start the analysis.
+Use this dialog you can choose the analysis algorithm (PathoscopeBowtie or NuVs), the subtraction, and the reference(s) you want to use to analyze your sample(s). Selecting multiple references will start a separate job for each sample-reference combination. Once these fields are specified, click the **Start** button to start the analysis.
 ![Analyze](analyze.png)
 
 Once the analysis is running, you can view its progress under the _Jobs_ tab.
 ![Progress](progress.png)
 
-A checkmark will appear next to the job that has been completed. To view detailed information for a job, you can click on its entry in the job list which will bring you to a page looking like this:
-![Job Analysis](analysis.png)
-
-To examine full results for the job, click on the blue link on the right of _Analysis_. Here you will see mapping of possible pathogens that may be present in your sample.
-![Results](results.png)
-
 
 # Rights
 
-## Concepts {#concepts}
+## Concepts
 
 Virtool allows for fine control of the rights users have to view or modify samples.
 
