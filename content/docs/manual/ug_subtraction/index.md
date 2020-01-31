@@ -61,4 +61,6 @@ Once a subtraction is made, the Unique Name and File cannot be changed. You are 
 
 # Delete a Subtraction
 
-A subtraction can be deleted by clicking on the red trash can icon on the subtraction details page. Once you start using subtractions in samples and they become _Linked Samples_, you will not be able to delete the subtraction.
+Select the subtraction that you wish to delete. A subtraction can be deleted by clicking on the red trash can icon on the subtraction details page. A dialog box will then pop up to confirm the deletion; select **Confirm**. Once you start using subtractions in samples and they become _Linked Samples_, you will not be able to delete the subtraction.
+
+{{< video "delete_subtraction.mp4" >}}
