@@ -10,15 +10,6 @@ menu:
 Subtractions are whole genome references used for eliminating reads from the analysis that are likely to have originated from the host genome or non-pathogenic organisms associated with the host such as insects or fungi. A list of subtractions made can be found on the Subtraction Overview page.
 ![Subtraction Overview](subtraction_overview.png)
 
-# Find Source FASTA
-
-We will use the _Arabidopsis thaliana_ genome for this example.
-
-Go to the Ensembl Genomes FTP site for Arabidopsis [here](ftp://ftp.ensemblgenomes.org/pub/plants/release-37/fasta/arabidopsis_thaliana/dna/). Download the unmasked version of the genome.
-
-!["Download Arabidopsis Genome"](download.png)
-
-Decompress the downloaded file. Virtool does not currently accept GZIP-compressed subtraction FASTA data.
 
 # Upload FASTA {#uploading}
 
@@ -46,7 +37,7 @@ To create a new subtraction select the blue plus icon next to the search bar. Th
 Enter a unique name and an optional nickname, select the FASTA file, and click **Start** to start the job.
 ![Filled create subtraction dialog box](create_filled.png)
 
-While the subtraction is being cretaed it will have an **Importing** label.
+While the subtraction is being created it will have an **Importing** label.
 ![Importing](importing.png)
 
 Wait for the job to complete before trying to use the new subtraction. You can view its progress by going to the _Jobs_ view.
@@ -55,16 +46,16 @@ Wait for the job to complete before trying to use the new subtraction. You can v
 The subtraction will have the **Ready** label when it is ready to use.
 ![Subtraction Ready](ready.png)
 
-# View Subtraction
+# View a Subtraction
 
 View detailed information about the subtraction by clicking on it. As you use the subtraction in samples, they will be added to the **Linked Samples** list.
 ![Subtraction Details](detail.png)
 
-# Edit Subtraction
+# Edit a Subtraction
 
 Click on the pencil icon on the subtraction details page to bring up the _Edit Subtraction_ dialog box. Once a subtraction is made, the Unique Name and File cannot be changed. You are however, allowed to change the nickname of the subtraction.
-![Edit Subtraction](edit.png)
+![Edit a Subtraction](edit.png)
 
-# Deleting Subtractions
+# Delete a Subtraction
 
 A subtraction can be deleted by clicking on the red trash can icon on the subtraction details page. Once you start using subtractions in samples and they become _Linked Samples_, you will not be able to delete the subtraction.
