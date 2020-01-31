@@ -46,3 +46,8 @@ pygmentsCodeFences = true
   [[menu.developer]]
     name = "Frontend"
     weight = 40
+    
+[markup]
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 1
