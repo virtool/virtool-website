@@ -53,8 +53,11 @@ View detailed information about the subtraction by clicking on it. As you use th
 
 # Edit a Subtraction
 
-Click on the pencil icon on the subtraction details page to bring up the _Edit Subtraction_ dialog box. Once a subtraction is made, the Unique Name and File cannot be changed. You are however, allowed to change the nickname of the subtraction.
+Click on the pencil icon on the subtraction details page to bring up the _Edit Subtraction_ dialog box. 
 ![Edit a Subtraction](edit.png)
+
+Once a subtraction is made, the Unique Name and File cannot be changed. You are however, allowed to change the nickname of the subtraction.
+{{< video "nickname.mp4" >}}
 
 # Delete a Subtraction
 
