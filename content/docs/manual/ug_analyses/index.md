@@ -58,9 +58,9 @@ You can read more about creating and managing subtractions:
 
 Virtool currently supports two built-in workflows/pipelines called PathoscopeBowtie and NuVs.
 
-## List of Analysis 
+## List of Analyses 
 
-A list of analysis can be found under your sample of interest. Select your sample and click on the blue _Analysis_ tab.
+A list of analyses can be found under your sample of interest. Select your sample and click on the blue _Analysis_ tab.
 {{< video "analysis.mp4" >}}
 
 This page will list all the analyses that have been run on or currently running on this sample. The following image shows one analysis that has been completed, and one that is currently running.
@@ -68,7 +68,7 @@ This page will list all the analyses that have been run on or currently running 
 
 ## Create an Analysis
 
-Select the sample of interest and click on the blue _Analyses_ tab, as shown above under _List of Analysis_.
+Select the sample of interest and click on the blue _Analyses_ tab, as shown above under _List of Analyses_.
 
 To create a new analysis for this sample, click on the blue plus icon on the right and a dialog box will appear.
 
@@ -85,9 +85,10 @@ A guide on creating a _Quick Analysis_ can be found [here](/docs/manual/ug_sampl
 
 ## Delete an Analysis
 
-Under the _Samples_ tab, select the sample whose analysis you want to delete. Then click on _Analyses_ as shown above under _List of Analysis_. 
+Under the _Samples_ tab, select the sample whose analysis you want to delete. Then click on _Analyses_ as shown above under _List of Analyses_. 
 
 
 Click on the red trash can icon on the right of the analysis you wish to delete. 
+{{< video "delete_analysis.mp4" >}}
 
 Note that once an analysis is deleted, it cannot be retreived back.
