@@ -28,17 +28,15 @@ From an analysis job, you can easily navigate to the analysis listing for the sa
 
 Sample data is automatically trimmed during analysis. Trimmed data are cached so that data doesn't have to be re-run
 
-
-
 ![Sample files with no cache created](files-no-cache.png)
 
-## What are analyses?
+# What are analyses?
 
 Analyses are the results of running a bioinformatic workflow on sample data.
 
 When an analysis is started, the sample data is run through a series of bioinformatic tools to produce a meaningful result that is made available to the user.
 
-## Reference Versions
+# Reference Versions
 
 Analyses make use of [references](/docs/manual/ug_references) composed of pathogen sequences. Since references are modifiable and versioned, analyses are linked to specific versions of a reference. If a sample needs to be analyzed against a newer version, a new analysis must be created.
 
@@ -47,7 +45,7 @@ Here is an example of a sample with multiple analyses using different pipelines 
 ![Multi-analysis sample with different pipelines and index versions](multiple-analyses.png)
 
 
-## Subtractions
+# Subtractions
 
 Subtractions are sets of host or non-pest sequence data used to eliminiate non-pathogen reads from analysis results.
 
@@ -58,43 +56,38 @@ You can read more about creating and managing subtractions:
 
 Virtool currently supports two built-in workflows/pipelines called PathoscopeBowtie and NuVs.
 
-## List of Analyses 
+# List of Analyses 
 
-A list of analyses can be found under your sample of interest. Select your sample and click on the blue _Analysis_ tab.
+A list of analyses can be found under your sample of interest. Click on your sample and select Analyses on the blue _Analysis_ tab.
 {{< video "analysis.mp4" >}}
 
 This page will list all the analyses that have been run on or currently running on this sample. The following image shows one analysis that has been completed, and one that is currently running.
 ![List of Analysis](list_analyses.png)
 
-## Create an Analysis
+# Create an Analysis
 
-Select the sample of interest and click on the blue _Analyses_ tab.
-![List of Analysis](list_analyses.png)
+Click on your sample of interest and select the blue _Analyses_ tab.
 
 To create a new analysis for this sample, click on the blue plus icon on the right and a dialog box will appear.
 
-![Add Analysis](add.png)
 
-Use this dialog to choose the analysis algorithm (PathoscopeBowtie or NuVs), the subtraction, and the reference(s) you want to use to analyze your sample(s). Selecting multiple references will start a separate job for each sample-reference combination. Once these fields are specified, click the **Start** button to start the analysis.
-![Analyze](analyze.png)
+Use this dialog box to choose the analysis algorithm (PathoscopeBowtie or NuVs), the subtraction, and the reference(s) you want to use to analyze your sample(s). Once these fields are specified, click the **Start** button to start the analysis.
 
 Once the analysis is running, you can view its progress under the _Jobs_ tab.
-![Progress](progress.png)
 
 A guide on creating a _Quick Analysis_ can be found [here](/docs/manual/ug_samples).
 
 
-## Delete an Analysis
+# Delete an Analysis
 
 {{< note color="red" >}}
 Note that once an analysis is deleted, it cannot be retreived back.
 {{< /note >}}
 
-Under the _Samples_ tab, select the sample whose analysis you want to delete.
-![Samples](samples.png)
+Under the _Samples_ tab, click on the sample whose analysis you want to delete.
+
 
  Then click on _Analyses_. 
-![Click on Analyses](analyses.png)
+
 
 Click on the red trash can icon next to the analysis you wish to delete. 
-![Red Trash Can](red_trash_can.png)
