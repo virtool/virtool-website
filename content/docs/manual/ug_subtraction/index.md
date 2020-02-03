@@ -57,10 +57,20 @@ Click on the pencil icon on the subtraction details page to bring up the _Edit S
 ![Edit a Subtraction](edit.png)
 
 Once a subtraction is made, the Unique Name and File cannot be changed. You are however, allowed to change the nickname of the subtraction.
-{{< video "nickname.mp4" >}}
+![Nickname Added](cabbage.png)
 
 # Delete a Subtraction
 
-Select the subtraction that you wish to delete. A subtraction can be deleted by clicking on the red trash can icon on the subtraction details page. A dialog box will then pop up to confirm the deletion; select **Confirm**. Once you start using subtractions in samples and they become _Linked Samples_, you will not be able to delete the subtraction.
+Select the subtraction that you wish to delete. 
+![Subtraction Overview](subtraction_overview.png)
 
-{{< video "delete_subtraction.mp4" >}}
+A subtraction can be deleted by clicking on the red trash can icon on the subtraction details page. 
+![Delete Subtraction](red_trash_can.png)
+
+A dialog box will then pop up to confirm the deletion; select **Confirm**.
+![Confirm Deletion of Subtraction](confirm.png)
+
+Once you start using subtractions in samples and they become _Linked Samples_, you will not be able to delete the subtraction.
+![Linked Samples](linked.png)
+
+Notice in the image above there are 346 _Linked Samples_ therefore the trash can icon is not available to delete the subtraction.
