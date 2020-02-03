@@ -68,7 +68,8 @@ This page will list all the analyses that have been run on or currently running 
 
 ## Create an Analysis
 
-Select the sample of interest and click on the blue _Analyses_ tab, as shown above under _List of Analyses_.
+Select the sample of interest and click on the blue _Analyses_ tab.
+![List of Analysis](list_analyses.png)
 
 To create a new analysis for this sample, click on the blue plus icon on the right and a dialog box will appear.
 
@@ -80,15 +81,18 @@ Use this dialog to choose the analysis algorithm (PathoscopeBowtie or NuVs), the
 Once the analysis is running, you can view its progress under the _Jobs_ tab.
 ![Progress](progress.png)
 
-A guide on creating a _Quick Analysis_ can be found [here](/docs/manual/ug_sample).
+A guide on creating a _Quick Analysis_ can be found [here](/docs/manual/ug_samples).
 
 
 ## Delete an Analysis
 
-Under the _Samples_ tab, select the sample whose analysis you want to delete. Then click on _Analyses_ as shown above under _List of Analyses_. 
+Under the _Samples_ tab, select the sample whose analysis you want to delete.
+![Samples](samples.png)
 
+ Then click on _Analyses_. 
+![Click on Analyses](analyses.png)
 
-Click on the red trash can icon on the right of the analysis you wish to delete. 
-{{< video "delete_analysis.mp4" >}}
+Click on the red trash can icon next to the analysis you wish to delete. 
+![Red Trash Can](red_trash_can.png)
 
 Note that once an analysis is deleted, it cannot be retreived back.
