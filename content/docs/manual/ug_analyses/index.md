@@ -86,6 +86,10 @@ A guide on creating a _Quick Analysis_ can be found [here](/docs/manual/ug_sampl
 
 ## Delete an Analysis
 
+{{< note color="red" >}}
+Note that once an analysis is deleted, it cannot be retreived back.
+{{< /note >}}
+
 Under the _Samples_ tab, select the sample whose analysis you want to delete.
 ![Samples](samples.png)
 
@@ -94,5 +98,3 @@ Under the _Samples_ tab, select the sample whose analysis you want to delete.
 
 Click on the red trash can icon next to the analysis you wish to delete. 
 ![Red Trash Can](red_trash_can.png)
-
-Note that once an analysis is deleted, it cannot be retreived back.
