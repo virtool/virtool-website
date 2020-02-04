@@ -53,22 +53,31 @@ View detailed information about the subtraction by clicking on it. As you use th
 
 # Edit a Subtraction
 
+Click on _Subtraction_ in the main navigational bar and click on the subtraction you would like to edit.
+![Overview of Subtraction](edit1.png)
+
 Click on the pencil icon on the subtraction details page to bring up the _Edit Subtraction_ dialog box. 
 ![Edit a Subtraction](edit.png)
 
 Once a subtraction is made, the Unique Name and File cannot be changed. You are however, allowed to change the nickname of the subtraction.
 ![Nickname Added](cabbage.png)
 
+The edits made on the subtraction will show up on the subtraction details page.
+![Edits Shown on Subtractions Detail Page](text_filled.png)
+
 # Delete a Subtraction
 
-Select the subtraction that you wish to delete. 
+Click on _Subtraction_ in the main navigational bar and click on the subtraction that you wish to delete. 
 ![Subtraction Overview](subtraction_overview.png)
 
-A subtraction can be deleted by clicking on the red trash can icon on the subtraction details page. 
+To delete the subtraction click on the red trash can icon on the subtraction details page. 
 ![Delete Subtraction](red_trash_can.png)
 
 A dialog box will then pop up to confirm the deletion; select **Confirm**.
 ![Confirm Deletion of Subtraction](confirm.png)
+
+After confirming the deletion of a subtraction, it will no longer be shown on the subtraction overview page. 
+![Post Deletion](post_deletion.png)
 
 Once you start using subtractions in samples and they become _Linked Samples_, you will not be able to delete the subtraction.
 ![Linked Samples](linked.png)
