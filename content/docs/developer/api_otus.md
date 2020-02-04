@@ -153,10 +153,10 @@ OTU names and abbreviations must be unique within the database. Uniqueness tests
 
 ## Input
 
-| Name         | Type   | Optional | Description                   |
+| Name         | Type   | Required | Description                   |
 | :----------- | :----- | :------- | :---------------------------- |
-| name         | string | False    | the virus name                |
-| abbreviation | string | True     | an abbreviation for the virus |
+| name         | string | true     | the virus name                |
+| abbreviation | string | false    | an abbreviation for the virus |
 
 ## Example
 
@@ -229,11 +229,11 @@ Virus names and abbreviations must be unique within the database. Requesting a n
 
 ## Input
 
-| Name         | Type   | Optional | Description            |
+| Name         | Type   | Required | Description            |
 | :----------- | :----- | :------- | :--------------------- |
-| name         | string | true     | the virus name         |
-| abbreviation | string | true     | the virus abbreviation |
-| schema       | array  | true     | a sequence schema      |
+| name         | string | false    | the virus name         |
+| abbreviation | string | false    | the virus abbreviation |
+| schema       | array  | false    | a sequence schema      |
 
 ## Example
 
@@ -426,11 +426,11 @@ Setting the isolate to default will steal default status from any existing defau
 
 ## Input
 
-| Name         | Type    | Optional | Description                          |
+| Name         | Type    | Required | Description                          |
 | :----------- | :------ | :------- | :----------------------------------- |
-| source_type  | string  | True     | a source type (eg. isolate, variant) |
-| source_name  | string  | True     | a source name (eg. 8816-v2, Jal-01)  |
-| default      | boolean | True     | set the isolate as default           |
+| source_type  | string  | false    | a source type (eg. isolate, variant) |
+| source_name  | string  | false    | a source name (eg. 8816-v2, Jal-01)  |
+| default      | boolean | false    | set the isolate as default           |
 
 
 ## Example
@@ -478,10 +478,10 @@ Edit an existing isolate.
 
 ## Input
 
-| Name        | Type    | Optional | Description                          |
+| Name        | Type    | Required | Description                          |
 | :---------- | :------ | :------- | :----------------------------------- |
-| source_type | string  | True     | a source type (eg. isolate, variant) |
-| source_name | string  | True     | a source name (eg. 8816-v2, Jal-01)  |
+| source_type | string  | false    | a source type (eg. isolate, variant) |
+| source_name | string  | false    | a source name (eg. 8816-v2, Jal-01)  |
 
 ## Example
 
