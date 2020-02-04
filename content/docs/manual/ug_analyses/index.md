@@ -61,7 +61,7 @@ Virtool currently supports two built-in workflows/pipelines called PathoscopeBow
 A list of analyses can be found under your sample of interest. Click on your sample and select Analyses on the blue _Analysis_ tab.
 ![Sample of Interest](sample_of_interest.png)
 
-This page will list all the analyses that have been run on or currently running on this sample. The following image shows one analysis that has been completed.
+This page will list all the analyses that have been created or currently running on this sample. The following image shows one analysis that has been completed.
 ![List of Analysis](list_analyses.png)
 
 # Create an Analysis
