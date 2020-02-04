@@ -59,23 +59,27 @@ Virtool currently supports two built-in workflows/pipelines called PathoscopeBow
 # List of Analyses 
 
 A list of analyses can be found under your sample of interest. Click on your sample and select Analyses on the blue _Analysis_ tab.
-{{< video "analysis.mp4" >}}
+![Sample of Interest](sample_of_interest.png)
 
 This page will list all the analyses that have been run on or currently running on this sample. The following image shows one analysis that has been completed, and one that is currently running.
 ![List of Analysis](list_analyses.png)
 
 # Create an Analysis
 
-Click on your sample of interest and select the blue _Analyses_ tab.
+Under _Samples_ in the main navigational bar, click on your sample of interest and select the blue _Analyses_ tab.
+![Analyses](analyses2.png)
 
 To create a new analysis for this sample, click on the blue plus icon on the right and a dialog box will appear.
+![Dialog Box](dialog.png)
 
 
-Use this dialog box to choose the analysis algorithm (PathoscopeBowtie or NuVs), the subtraction, and the reference(s) you want to use to analyze your sample(s). Once these fields are specified, click the **Start** button to start the analysis.
+Use this dialog box to choose the analysis algorithm (PathoscopeBowtie or NuVs), the subtraction, and the reference you want to use to analyze your sample. Once these fields are specified, click the **Start** button to start the analysis.
+![Filled Dialog Box](filleddialog.png)
 
 Once the analysis is running, you can view its progress under the _Jobs_ tab.
+![Jobs](jobs2.png)
 
-A guide on creating a _Quick Analysis_ can be found [here](/docs/manual/ug_samples).
+If you would like to start analysis jobs for multiple samples at once, **Quick Analyses** allows you to do that. A guide on creating _Quick Analyses_ can be found [here](/docs/manual/ug_samples).
 
 
 # Delete an Analysis
@@ -85,9 +89,10 @@ Note that once an analysis is deleted, it cannot be retreived back.
 {{< /note >}}
 
 Under the _Samples_ tab, click on the sample whose analysis you want to delete.
+![Delete](delete.png)
 
-
- Then click on _Analyses_. 
-
+Then click on _Analyses_. 
+![Analysis](delete2.png)
 
 Click on the red trash can icon next to the analysis you wish to delete. 
+![Analyses](analyses2.png)
