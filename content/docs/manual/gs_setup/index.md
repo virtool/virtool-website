@@ -118,7 +118,11 @@ When the watch location has been successfully configured, you will see something
 
 Once all setup sections have been completed, a summary will be displayed and a {{< icon "fas fa-redo-alt" >}} **Save and Restart** button will be be enabled.
 
+![Server setup summary](finish.png)
+
 Clicking the button will apply all of the summarized actions and restart the server. You can login for the first time with the user profile you created during setup.
+
+![Server restarting after setup](loading.png)
 
 # Manual Setup
 
