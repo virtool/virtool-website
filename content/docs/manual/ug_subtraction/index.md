@@ -28,7 +28,7 @@ Upload the previously obtained FASTA file.
 
 # Create a Subtraction
 
-Click on the **Subtraction** tab on the main navigation bar.
+Click on the **Subtraction** tab in the main navigation bar.
 ![New Subtraction](empty.png)
 
 To create a new subtraction click the {{< icon "fas fa-plus-square" >}} button next to the search bar. This will open up the subtraction creation dialog.
