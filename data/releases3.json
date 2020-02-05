@@ -153,18 +153,30 @@
     },
     "virtool": {
         "latest": {
-            "name": "v3.9.3",
-            "body": "#### Changed\r\n- allow browser uploads when file manager is disabled on server (supports MacOS hosts)\r\n- don't run file manager on start when operating system is incompatible (supports MacOS hosts)\r\n\r\n#### Fixed\r\n- fix client crashes in job detail view (#1651)\r\n- prevent flash of previously loaded analysis list or analysis detail (#1574)",
+            "name": "v3.9.4",
+            "body": "#### Fixed\r\n- fix error when exporting pathoscope results\r\n- fix non-functional browser back (#1189, #1575)",
             "prerelease": false,
-            "published_at": "2020-01-21T22:37:24Z",
-            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.9.3",
+            "published_at": "2020-02-04T23:57:39Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.9.4",
             "filename": "virtool.tar.gz",
             "content_type": "application/gzip",
-            "size": 50941782,
-            "download_url": "https://github.com/virtool/virtool/releases/download/v3.9.3/virtool.tar.gz",
+            "size": 50935287,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v3.9.4/virtool.tar.gz",
             "asset_error": false
         },
         "releases": [
+            {
+                "name": "v3.9.4",
+                "body": "#### Fixed\r\n- fix error when exporting pathoscope results\r\n- fix non-functional browser back (#1189, #1575)",
+                "prerelease": false,
+                "published_at": "2020-02-04T23:57:39Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.9.4",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 50935287,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.9.4/virtool.tar.gz",
+                "asset_error": false
+            },
             {
                 "name": "v3.9.3",
                 "body": "#### Changed\r\n- allow browser uploads when file manager is disabled on server (supports MacOS hosts)\r\n- don't run file manager on start when operating system is incompatible (supports MacOS hosts)\r\n\r\n#### Fixed\r\n- fix client crashes in job detail view (#1651)\r\n- prevent flash of previously loaded analysis list or analysis detail (#1574)",
