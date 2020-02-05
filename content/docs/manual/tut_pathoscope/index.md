@@ -23,7 +23,7 @@ Navigate to the _Analyses_ tab. You should see an empty list if you haven't alre
 
 !["Empty Analysis List](empty.png)
 
-Click <i class="fa fa-plus-square"></i> to open the analysis creation dialog. Select PathoscopeBowtie and a refernece to search against, and then click <i class="fa fa-play"></i> **Start**.
+Click {{< icon "fa fa-plus-square" >}} to open the analysis creation dialog. Select PathoscopeBowtie and a refernece to search against, and then click {{< icon "fa fa-play" >}}**Start**.
 
 ![Analysis Dialog](dialog.png)
 
@@ -45,7 +45,7 @@ Carrying on from the previous section, click on your recently created analysis. 
 
 ![Filtered](filtered.png)
 
-By default, viruses with low coverage or weight (relative abundance) are filtered out. They can be made visible by clicking <i class="fa fa-filter"></i>.
+By default, viruses with low coverage or weight (relative abundance) are filtered out. They can be made visible by clicking {{< icon "fa fa-filter" >}}.
 
 ![Unfiltered](unfiltered.png)
 
@@ -57,5 +57,5 @@ Clicking a virus shows sequencing coverage charts for the isolates that may be i
 - Shallow, wide, and broken coverage is suggestive of intra-plate contamination. Hits due to contamination also typically have low weights.
 - Isolates with high weight, and deep localized coverage are typical of low-complexity or host-similar regions in the isolate genome and do not indicate true infections.
 
-Filtering of low weight and coverage isolates is toggled by clicking <i class="fa fa-filter"></i>. Virtool excels at detecting virus infections at the isolate-level. In this case, it is clear that **Isolate Q65b** is the infective isolate rather than **Isolate Nanjing**.
+Filtering of low weight and coverage isolates is toggled by clicking {{< icon "fa fa-filter" >}}. Virtool excels at detecting virus infections at the isolate-level. In this case, it is clear that **Isolate Q65b** is the infective isolate rather than **Isolate Nanjing**.
 !["Pathoscope unfiltered"](coverage_unfiltered.png)

@@ -45,7 +45,7 @@ Upload your sample FASTQ files under **Samples | Files** if you haven't yet.
 
 ![Upload sample FASTQ files](upload.png)
 
-Click on the <i class="fas fa-plus-square"></i> button in the samples view to open the sample creation dialog.
+Click on the {{< icon "fa fa-plus-square" >}} button in the samples view to open the sample creation dialog.
 
 ![Sample toolbar with create button](toolbar.png)
 
@@ -67,11 +67,11 @@ Paired or unpaired FASTQ data can be used to create a sample.
 
 Samples created from only one file are assumed to be unpaired. Paired samples must comprise two paired FASTQ files. **Interleaved FASTQ files are not currently supported**.
 
-For paired data, make sure the file orientation labels (left and right) are correct before you create a sample. You can use the <i class="fas fa-retweet"></i> button to swap orientations.
+For paired data, make sure the file orientation labels (left and right) are correct before you create a sample. You can use the {{< icon "fas fa-retweet" >}} button to swap orientations.
 
 {{< video "create_orientation.mp4" >}}
 
-Once required fields are populated and you have selected the files, click the <i class="fas fa-save"></i> **Save** button to create the sample. Your sample will immediately be listed in the samples list. However, it will take some time for the sample data to be imported and processed.
+Once required fields are populated and you have selected the files, click the {{< icon "fas fa-save" >}} **Save** button to create the sample. Your sample will immediately be listed in the samples list. However, it will take some time for the sample data to be imported and processed.
 
 ![Sample in list still being created](creating_state.png)
 
@@ -93,7 +93,7 @@ The FASTQ files and quality data are used for further analyses triggered by the 
 
 # Quick Analyze
 
-Quick analysis allows you to start analysis jobs for multiple samples at once. Select the samples of interest and click on the green <i class="fa fa-chart-area"></i> button. An _Analyze_ dialog box will appear.
+Quick analysis allows you to start analysis jobs for multiple samples at once. Select the samples of interest and click on the {{< icon "fa fa-chart-area" >}} button. An _Analyze_ dialog box will appear.
 ![Samples Selected](selected.png)
 
 Use this dialog you can choose the analysis algorithm (PathoscopeBowtie or NuVs), the subtraction, and the reference(s) you want to use to analyze your sample(s). Selecting multiple references will start a separate job for each sample-reference combination. Once these fields are specified, click the **Start** button to start the analysis.
@@ -154,7 +154,7 @@ They will also be able to edit and remove the sample and create new analyses.
 
 The access rights for an existing sample can be easily changed by the sample owner or an administrator.
 
-Access the rights management controls by clicking the <i class="fas fa-key"></i> tab in the sample detail view.
+Access the rights management controls by clicking the {{< icon "fas fa-key" >}} tab in the sample detail view.
 
 ![The sample rights view](sample_rights_view.png)
 
@@ -169,7 +169,7 @@ Samples have their initial access rights configured when they are first created.
 
 ## Unique Sample Names
 
-By default, sample names must be unique to the sample manager. This prevents confusion with duplicately named samples. It is possible to disable this feature by clicking <i class="far fa-check-square"></i> **Enable**.
+By default, sample names must be unique to the sample manager. This prevents confusion with duplicately named samples. It is possible to disable this feature by clicking {{< icon "far fa-check-square" >}} **Enable**.
 
 !["Unique Sample Names Disabled"](unique_sample_names.png)
 

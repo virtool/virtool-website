@@ -22,13 +22,13 @@ Source type restrictions do not affect viruses that are imported into the databa
 
 ## Adding Source Types
 
-Source types can be added by entering a new source type in the text box and clicking <i class="fa fa-plus-square"></i>. Once the source types are added to the list, they can be accessed in isolate editing forms.
+Source types can be added by entering a new source type in the text box and clicking {{< icon "fa fa-plus-square" >}}. Once the source types are added to the list, they can be accessed in isolate editing forms.
 
 !["Add Source Types"](add_source_types.gif)
 
 ## Removing Source Types
 
-Source types can be removed by clicking <i class="fa fa-trash"></i>. Source types that were assigned to isolates before removal will still be assigned to those isolates.
+Source types can be removed by clicking {{< icon "fa fa-trash" >}}. Source types that were assigned to isolates before removal will still be assigned to those isolates.
 
 ## Disabling Restriction
 

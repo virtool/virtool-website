@@ -53,7 +53,7 @@ Administrators automatically pass all permission and right checks. They can also
 
 # Create a User
 
-Click the <i class="fas fa-user-plus"></i> button to open the user creation dialog.
+Click the {{< icon "fas fa-user-plus" >}} button to open the user creation dialog.
 
 ![Create user dialog](create.png)
 
@@ -61,7 +61,7 @@ Enter a username and password for the user. Clicking _Force user to reset passwo
 
 ![Create user dialog with filled form](create_filled.png)
 
-Click <i class="fas fa-save"></i> _Save_ to add the user. They will appear in the list of users.
+Click {{< icon "fas fa-save" >}} _Save_ to add the user. They will appear in the list of users.
 
 ![New user added - Bill](bill_added.png)
 
@@ -75,7 +75,7 @@ Locate the _Change Password_ panel in the _Users_ tab.
 
 ![Password panel](password.png)
 
-Enter a new password and click <i class="fas fa-save"></i> _Save_.
+Enter a new password and click {{< icon "fas fa-save" >}} _Save_.
 
 ![Password panel with filled form](password_filled.png)
 
@@ -123,7 +123,7 @@ The display group is the user's primary group.
 
 # Manage Groups
 
-The group management interface can be acessed by clicking the <i class="fas fa-users"></i> button to the right of the search bar in _Users_ tab.
+The group management interface can be acessed by clicking the {{< icon "fas fa-users" >}} button to the right of the search bar in _Users_ tab.
 
 ![Manage groups button](groups_button.png)
 
@@ -133,7 +133,7 @@ The group management interface looks like this:
 
 # Create a Group
 
-Open the group management interface. Enter a name for the new group in the input at the top of dialog and click the <i class="fas fa-plus-square"></i> button.
+Open the group management interface. Enter a name for the new group in the input at the top of dialog and click the {{< icon "fas fa-plus-square" >}} button.
 
 ![New group input filled](groups_add_filled.png)
 
@@ -161,6 +161,6 @@ Open the group management interface and select the group you want to remove.
 
 ![Managers selected in groups interface](groups_selected.png)
 
-Click the <i class="fas fa-remove"></i> _Remove Group_ button to remove the group.
+Click the {{< icon "fas fa-trash" >}} _Remove Group_ button to remove the group.
 
 ![Managers removed](groups_management.png)

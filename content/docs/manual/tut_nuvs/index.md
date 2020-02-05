@@ -23,7 +23,7 @@ Navigate to the _Analyses_ tab to see a list of analyses for the sample.
 
 !["Empty Analysis List](list.png)
 
-Click <i class="fa fa-plus-square"></i> to open the analysis creation dialog, select **NuVs** and a reference against which to eliminate known sequences, and click <i class="fa fa-play"></i> **Start**.
+Click {{< icon "fa fa-plus-square" >}} to open the analysis creation dialog, select **NuVs** and a reference against which to eliminate known sequences, and click {{< icon "fa fa-play" >}}**Start**.
 
 !["Analysis Dialog"](dialog.png)
 
@@ -47,10 +47,10 @@ Carrying on from the previous section, click on your recently created analysis. 
 During NuVs, sample libraries are assembled into contigs. Open reading frames (ORFs) are calculated from these and potential protein annotations are assigned using profile HMMs.
 ![Expanded](focus.png)
 
-By default, ORFs with no HMM annotation are hidden. You can toggle the visibility of these by clicking the <i class="fa fa-filter"></i> **Filter ORFs** button.
+By default, ORFs with no HMM annotation are hidden. You can toggle the visibility of these by clicking the {{< icon "fa fa-filter" >}} **Filter ORFs** button.
 ![Unfiltered ORFs](unfiltered_orfs.png)
 
-Contigs without significant HMM hits are filtered out by default. Click <i class="fa fa-filter"></i> **Filter Sequences** to show all contig sequences.
+Contigs without significant HMM hits are filtered out by default. Click {{< icon "fa fa-filter" >}} **Filter Sequences** to show all contig sequences.
 ![Unfiltered Sequences](unfiltered_sequences.png)
 
 Part of interpreting NuVs results is BLASTing contigs to make sure they are truly unknown. You can BLAST contigs by clicking **BLAST at NCBI**.
