@@ -8,6 +8,29 @@ menu:
 
 # Overview
 
+# Analysis Jobs
+
+Analyzing sample data is the most computationally intensive task Virtool performs. It can take minutes or hours to run analyses for large, complex sample libraries.
+
+Long-running analyses are therefore tracked in the **Jobs** view.
+
+![Finished and running analysis jobs](jobs.png)
+
+From an analysis job, you can easily navigate to the analysis listing for the sample being analyzed.
+
+{{< video "job-to-analysis.mp4" >}}
+
+# Caching
+
+{{< note >}}
+**New in v3.4.0**.
+{{< /note >}}
+
+Sample data is automatically trimmed during analysis. Trimmed data are cached so that data doesn't have to be re-run
+
+
+
+![Sample files with no cache created](files-no-cache.png)
 
 
 ## What are analyses?
@@ -36,26 +59,3 @@ You can read more about creating and managing subtractions:
 
 Virtool currently supports two built-in workflows/pipelines called PathoscopeBowtie and NuVs.
 
-# Analysis Jobs
-
-Analyzing sample data is the most computationally intensive task Virtool performs. It can take minutes or hours to run analyses for large, complex sample libraries.
-
-Long-running analyses are therefore tracked in the **Jobs** view.
-
-![Finished and running analysis jobs](jobs.png)
-
-From an analysis job, you can easily navigate to the analysis listing for the sample being analyzed.
-
-{{< video "job-to-analysis.mp4" >}}
-
-# Caching
-
-{{< note >}}
-**New in v3.4.0**.
-{{< /note >}}
-
-Sample data is automatically trimmed during analysis. Trimmed data are cached so that data doesn't have to be re-run
-
-
-
-![Sample files with no cache created](files-no-cache.png)
