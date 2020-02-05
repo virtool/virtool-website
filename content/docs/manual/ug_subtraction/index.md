@@ -13,7 +13,7 @@ Subtractions are whole genome references used for eliminating reads from the ana
 
 # Upload FASTA {#uploading}
 
-Go to the _Subtraction_ view via the main navigation bar. You should see the following:
+Go to the **Subtraction** view via the main navigation bar. You should see the following:
 
 !["Main Subtraction View"](empty.png)
 
@@ -28,10 +28,10 @@ Upload the previously obtained FASTA file.
 
 # Create a Subtraction
 
-Click on the _Subtraction_ tab on the main navigation bar.
+Click on the **Subtraction** tab on the main navigation bar.
 ![New Subtraction](empty.png)
 
-To create a new subtraction select the blue plus icon next to the search bar. This will open up the subtraction creation dialog.
+To create a new subtraction click the {{< icon "fas fa-plus-square" >}} button next to the search bar. This will open up the subtraction creation dialog.
 ![Create Subtraction](create_subtraction.png)
 
 Enter a unique name and an optional nickname, select the FASTA file, and click **Start** to start the job.
@@ -40,7 +40,7 @@ Enter a unique name and an optional nickname, select the FASTA file, and click *
 While the subtraction is being created it will have an **Importing** label.
 ![Importing](importing.png)
 
-Wait for the job to complete before trying to use the new subtraction. You can view its progress by going to the _Jobs_ view.
+Wait for the job to complete before trying to use the new subtraction. You can view its progress by going to the **Jobs** view.
 ![Jobs View](job.png)
 
 The subtraction will have the **Ready** label when it is ready to use.
@@ -53,10 +53,10 @@ View detailed information about the subtraction by clicking on it. As you use th
 
 # Edit a Subtraction
 
-Click on _Subtraction_ in the main navigational bar and click on the subtraction you would like to edit.
+Click on **Subtraction** in the main navigation bar and click on the subtraction you would like to edit.
 ![Overview of Subtraction](edit1.png)
 
-Click on the pencil icon on the subtraction details page to bring up the _Edit Subtraction_ dialog box. 
+Click on the {{< icon "fas fa-pencil-alt" >}} icon on the subtraction details page to bring up the **Edit Subtraction** dialog box. 
 ![Edit a Subtraction](edit.png)
 
 Once a subtraction is made, the Unique Name and File cannot be changed. You are however, allowed to change the nickname of the subtraction.
@@ -67,10 +67,10 @@ The edits made on the subtraction will show up on the subtraction details page.
 
 # Delete a Subtraction
 
-Click on _Subtraction_ in the main navigational bar and click on the subtraction that you wish to delete. 
+Click on **Subtraction** in the main navigation bar and click on the subtraction that you wish to delete. 
 ![Subtraction Overview](subtraction_overview.png)
 
-To delete the subtraction click on the red trash can icon on the subtraction details page. 
+To delete the subtraction click on the {{< icon "fas fa-trash" >}} icon on the subtraction details page. 
 ![Delete Subtraction](red_trash_can.png)
 
 A dialog box will then pop up to confirm the deletion; select **Confirm**.
@@ -79,7 +79,7 @@ A dialog box will then pop up to confirm the deletion; select **Confirm**.
 After confirming the deletion of a subtraction, it will no longer be shown on the subtraction overview page. 
 ![Post Deletion](post_deletion.png)
 
-Once you start using subtractions in samples and they become _Linked Samples_, you will not be able to delete the subtraction.
+Once you start using subtractions in samples and they become **Linked Samples**, you will not be able to delete the subtraction.
 ![Linked Samples](linked.png)
 
-Notice in the image above there are 346 _Linked Samples_ therefore the trash can icon is not available to delete the subtraction.
+Notice in the image above there are 346 **Linked Samples** therefore the {{< icon "fas fa-trash" >}} icon is not available to delete the subtraction.
