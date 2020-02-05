@@ -61,20 +61,6 @@ The MongoDB connection string is stored in plaintext in the application configur
 
 {{< /note >}}
 
-# Add First User {#first_user}
-
-An administrative user account must be created during setup. After setup, this account can be used to add more user accounts and populate Virtool with data. The first user account can be added using the following form.
-
-![Filled out first user form](user.png)
-
-When the form has been submitted successfully, you should see something like this:
-
-![First user successfully created](user_success.png)
-
-{{< note title="Important" color="red" >}}
-We strongly recommend **not** making this account a generic adminstrative account. Doing so defeats Virtool's built-in auditing, which is designed in accordance with [ISO 17025:2005](https://www.iso.org/standard/39883.html). Each account should correspond to an individual user.
-{{< /note >}}
-
 # Set Data Location {#data_path}
 
 The data location is where Virtool stores bioinformatic data including uploaded Illumina libraries, imported sample data, and reference indexes. The path should be located on a storage device that offers good speed, capacity, and redundancy.
@@ -130,8 +116,24 @@ It is possible to configure Virtool without completing the graphical setup proce
 
 Passing the `--no-setup` argument when running Virtool will skip the setup process and use default configuration values or values from [manual configuration sources](/docs/manual/gs_configuration/).
 
-{{< note >}}
-**It is not currently possible to create a user outside of setup.** [This will be fixed in the near future](https://github.com/virtool/virtool/issues/1314).
+# Add First User {#first_user}
 
-For now, run the graphical setup to configure a user, then reconfigure Virtool manually.
-{{</note >}}
+Once the server has been setup, you have to create an initial user. This user will be automatically given an administrative role.
+
+This form will appear if no users are present in the configured database:
+
+![Empty user form](user.png)
+
+Fill out the form with an administrator username and password and click {{< icon "fas fa-user-plus" >}} **Create User**:
+
+![Filled out user form](user_filled.png)
+
+The Virtool application should load and automatically log in as the new user:
+
+![First user successfully created](user_success.png)
+
+{{< note title="Important" color="red" >}}
+We strongly recommend **not** making the account a generic adminstrative account.
+
+Doing so defeats Virtool's built-in auditing, which is designed in accordance with [ISO 17025:2005](https://www.iso.org/standard/39883.html). Each account should correspond to an individual user.
+{{< /note >}}
