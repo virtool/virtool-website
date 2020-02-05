@@ -21,7 +21,7 @@ Upload a FASTQ read file.
 
 {{< video "upload.mp4" >}}
 
-In the _Samples_ view, click <i class="fa fa-plus-square"></i> to open the sample creator. The file you uploaded should now be available in file list.
+In the _Samples_ view, click {{< icon "fa fa-plus-square" >}} to open the sample creator. The file you uploaded should now be available in file list.
 
 ![Sample Creator](create.png)
 
@@ -31,7 +31,7 @@ Fill out the fields in the sample creator. Only the sample name, subtraction hos
 
 ![Sample Creator Filled](filled.png)
 
-Click <i class="fas fa-save"></i> **Save** and you should immediately see a placeholder for your sample in the _Samples_ view. The spinner indicates that the sample
+Click {{< icon "fas fa-save" >}} **Save** and you should immediately see a placeholder for your sample in the _Samples_ view. The spinner indicates that the sample
 is still being created.
 
 ![Sample Creator Filled](creating.png)

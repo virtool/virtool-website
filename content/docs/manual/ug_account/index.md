@@ -38,13 +38,13 @@ API keys are account-specific and are generated under the _API_ tab in the _Acco
 
 ## Create an API Key
 
-Click <i class="fas fa-key"></i> **Create** to show the API key creation form.
+Click {{< icon "fas fa-key" >}} **Create** to show the API key creation form.
 
 ![Create API Key](filled.png)
 
 Give the API key a name and select permissions you want the key to have. Permissions that are not granted to your account will be disabled and greyed out.
 
-Click <i class="fas fa-save"></i> **Save** to create the key. The key will be shown only once. Make sure you keep it somewhere safe.
+Click {{< icon "fas fa-save" >}} **Save** to create the key. The key will be shown only once. Make sure you keep it somewhere safe.
 
 ![Newly Created API Key](new.png)
 

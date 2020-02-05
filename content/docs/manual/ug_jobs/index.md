@@ -40,17 +40,17 @@ Detailed information for a job can be viewed by clicking on its entry in the job
 
 Running and waiting jobs can be cancelled. Cancellation entails forcibly stopping the job process and cleaning up any partial job data from the database and file system.
 
-Jobs can be cancelled by clicking the <i class="fa fa-ban"></i> icon at the right end of the job list item.
+Jobs can be cancelled by clicking the {{< icon "fa fa-ban" >}} icon at the right end of the job list item.
 
 ![Cancel Job from List](cancel.gif)
 
 # Delete a Job {#delete}
 
-Once a job is finished, either by completing, erroring, or being cancelled, its record can be deleted. Click the <i class="fa fa-trash"></i> icon in the job list to delete the job.
+Once a job is finished, either by completing, erroring, or being cancelled, its record can be deleted. Click the {{< icon "fa fa-trash" >}} icon in the job list to delete the job.
 
 ![Delete Job from List](delete.gif)
 
-Jobs can also be deleted via their detail page by clicking the <i class="fa fa-trash"></i> icon.
+Jobs can also be deleted via their detail page by clicking the {{< icon "fa fa-trash" >}} icon.
 
 ![Delete Job from Detail Page](delete_detail.gif)
 

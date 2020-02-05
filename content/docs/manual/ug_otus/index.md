@@ -53,7 +53,7 @@ In the virus database browser, you can:
 
 Creating a new OTU for a given reference requires only a name. You can optionally provide an abbreviation like those commonly used for viruses.
 
-1. Start by clicking <i class="fas fa-plus-square"></i> under the OTUs tab to bring up a dialog for creating OTUs.
+1. Start by clicking {{< icon "fas fa-plus-square" >}} under the OTUs tab to bring up a dialog for creating OTUs.
    !["Create OTU button](create_button.png)
 
 2. The OTU creation dialog will appear. Enter a name and abbreviation for the new virus.
@@ -93,16 +93,16 @@ Examples of source names are: _A_, _Canada_, _8801-VLH_, or anything really.
 
 2. Take note of the red notification at the top of the page. This indicates that the virus cannot be used in analyses until the listed issues are corrected.
 
-3. Click <i class="vtfont i-new-entry"></i> near the **Isolates** heading to bring up a dialog for creating isolates.
+3. Click on **Add Isolate** to the right of the **Isolates** heading to bring up a dialog for creating isolates.
    !["Isolate creation dialog"](create_isolate.png)
 
 4. Notice that the **Isolate Name** field changes with the other two fields. This will be the display name for the isolate.
 
 5. Save the changes. The new isolate appears in the isolate editor.
    !["Virus detail with one empty isolate"](empty_isolate.png)
-6. You can edit or remove the isolate by clicking on the <i class="vtfont i-pencil"></i> yellow pencil icon <i class="vtfont i-remove"></i>.
+6. You can edit or remove the isolate by clicking on the {{< icon "fas fa-pencil-alt" >}} or {{< icon "fas fa-trash" >}} icon respectively.
 
-Open the dialog for adding an isolate by clicking the <i class="vtfont i-new-entry"></i> icon in the right corner of the _Isolates_ header:
+Open the dialog for adding an isolate by clicking the {{< icon "fa fa-edit" >}} icon in the right corner of the _Isolates_ header:
 
 ![Isolates Header](/docs_images/viruses_isolates_header.png)
 
@@ -122,10 +122,10 @@ Fill the _Source Type_ and _Source Name_ fields. These fields are combined to cr
 
 Sequences are members of isolates. Many isolates will only have one sequence. If the virus in question is multipartite, more than one sequence would be assigned to each isolate.
 
-1. Click <i class="vtfont i-new-entry"></i> near the **Sequences** heading to bring up a dialog for creating sequences.
+1. Click {{< icon "fas fa-pencil-alt" >}} near the **Sequences** heading to bring up a dialog for creating sequences.
    !["Sequence addition dialog"](create_sequence.png)
 
-2. Fill out the form fields. The **Host** field is optional. You can pull sequence records from GenBank by entering a valid GenBank accession in the **Accession** field and clicking <i class="vtfont i-wand"></i>.
+2. Fill out the form fields. The **Host** field is optional. You can pull sequence records from GenBank by entering a valid GenBank accession in the **Accession** field and clicking {{< icon "fa fa-magic" >}}.
    !["Populate sequence addition dialog"](create_sequence_2.png)
 
 3. Save the new virus. It will appear in the isolate editor.

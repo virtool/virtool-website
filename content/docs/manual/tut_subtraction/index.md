@@ -39,7 +39,7 @@ Go to the _Subtraction_ view via the main navigation bar.
 
 ![Subtraction Listing](empty.png)
 
-Click the <i class="vtfont i-new-entry"></i> button to open the subtraction creation dialog.
+Click the {{< icon "fas fa-plus-square" >}} button to open the subtraction creation dialog.
 
 ![Creation Dialog](create.png)
 
@@ -55,7 +55,7 @@ Wait for the job to complete before trying to use the new subtraction. You can v
 
 ![Subtraction Job in Progress](job.png)
 
-The subtraction will have the <i class="vtfont i-checkmark"></i> **Ready** label when it is ready to use.
+The subtraction will have the {{< icon "fas fa-check" >}} **Ready** label when it is ready to use.
 
 ![Subtraction Ready](ready.png)
 

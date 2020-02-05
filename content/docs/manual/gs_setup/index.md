@@ -116,7 +116,7 @@ When the watch location has been successfully configured, you will see something
 
 # Save and Restart
 
-Once all setup sections have been completed, a summary will be displayed and a <i class="fas fa-redo-alt"></i> **Save and Restart** button will be be enabled.
+Once all setup sections have been completed, a summary will be displayed and a {{< icon "fas fa-redo-alt" >}} **Save and Restart** button will be be enabled.
 
 Clicking the button will apply all of the summarized actions and restart the server. You can login for the first time with the user profile you created during setup.
 
