@@ -166,6 +166,18 @@
         },
         "releases": [
             {
+                "name": "v4.0.0-alpha.1",
+                "body": "#### Added\r\n- add library type selection component in sample creation dialog (#1585)\r\n- add reference data type support to creation dialog (#1557)\r\n- add target editor component for barcode references (#1673 \r\n- check MongoDB server version on application start\r\n- support `library_type` input field for sample creation requests (replaces `srna` field`)\r\n- support `targets` input field for barcode reference edit requests for\r\n\r\n#### Changed\r\n- show **Library Type** in sample detail table (#1608)\r\n- show **Date Type** in reference detail table\r\n- support larger history records for large sequences or large remote reference OTUs\r\n- update **Build Index** job to support barcode analysis\r\n- update OTU editor to support barcode sequences (#1601, #1638)\r\n\r\n#### Fixed\r\n- fix uneven OTU editor sequence entry table column widths (#1665)\r\n- fix real-time updates that had incomplete information\r\n",
+                "prerelease": true,
+                "published_at": "2020-02-06T21:20:58Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v4.0.0-alpha.1",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 50945364,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v4.0.0-alpha.1/virtool.tar.gz",
+                "asset_error": false
+            },
+            {
                 "name": "v3.9.4",
                 "body": "#### Fixed\r\n- fix error when exporting pathoscope results\r\n- fix non-functional browser back (#1189, #1575)",
                 "prerelease": false,
