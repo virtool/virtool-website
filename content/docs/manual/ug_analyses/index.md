@@ -22,10 +22,6 @@ From an analysis job, you can easily navigate to the analysis listing for the sa
 
 # Caching
 
-{{< note >}}
-**New in v3.4.0**.
-{{< /note >}}
-
 Sample data is automatically trimmed during analysis. Trimmed data are cached so that data doesn't have to be re-run.
 
 ![Sample files with no cache created](files-no-cache.png)
@@ -56,43 +52,39 @@ You can read more about creating and managing subtractions from the links below:
 
 Virtool currently supports two built-in workflows/pipelines called PathoscopeBowtie and NuVs.
 
-# List of Analyses 
+# View Analyses 
 
-A list of analyses can be found under your sample of interest. Click on your sample and then click the blue **Analyses** tab.
+A list of analyses can be found under your sample of interest. Navigate to your sample and click the **Analyses** tab.
 ![Sample of Interest](sample_of_interest.png)
 
-This page will list all the analyses that have been created or currently running on your sample. The following image shows one analysis that has been completed.
+This page will list all the analyses that have been created or currently running on your sample. The following image shows that one analysis has been completed.
 ![List of Analysis](list_analyses.png)
 
 # Create an Analysis
 
-Under **Samples** in the main navigation bar, click on your sample of interest and then click the blue **Analyses** tab.
+Navigate to the analyses list for your sample of interest.
 ![Analyses](analyses2.png)
 
-To create a new analysis for this sample, click on the {{< icon "fas fa-plus-square" >}} button on the right and a dialog box will appear.
+Click on the {{< icon "fas fa-plus-square" >}} button to open the analysis creation dialog.
 ![Dialog Box](dialog.png)
 
 
-Use this dialog box to choose the analysis algorithm (PathoscopeBowtie or NuVs), the subtraction, and the reference you want to use to analyze your sample. Once these fields are specified, click the {{< icon "fas fa-play" >}}**Start** button to start the analysis.
+Use this dialog box to choose the analysis algorithm (PathoscopeBowtie or NuVs), the subtraction, and the reference you want to use to analyze your sample. Once these fields are specified, click the {{< icon "fas fa-play" >}} **Start** button to start the analysis.
 ![Filled Dialog Box](filleddialog.png)
 
 Once the analysis is running, you can view its progress under the **Jobs** tab.
 ![Jobs](jobs2.png)
 
-If you would like to start analysis jobs for multiple samples at once, **Quick Analyses** allows you to do that. A guide on creating **Quick Analyses** can be found [here](/docs/manual/ug_samples).
-
+Multiple samples can be analyzed at once using the quick analysis feature. [Read more about quick analyses](/docs/manual/ug_samples).
 
 # Delete an Analysis
 
 {{< note color="red" >}}
-Note that once an analysis is deleted, it cannot be retreived back.
+**Analysis deletion is permanent**. There is no way to recover a deleted analysis.
 {{< /note >}}
 
-Under the **Samples** tab, click on the sample whose analysis you want to delete.
-![Delete](delete.png)
+Navigate to the analysis listing for the sample whose analysis you want to delete. Click on the {{< icon "fas fa-trash" >}} icon on an analysis record to delete it. 
+![Analysis](delete.png)
 
-Then click on **Analyses**. 
-![Analysis](delete2.png)
-
-Click on the {{< icon " fas fa-trash" >}} icon next to the analysis you wish to delete. 
+The analysis record will be removed from the list.
 ![Analyses](analyses2.png)
