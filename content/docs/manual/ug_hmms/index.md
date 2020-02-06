@@ -12,7 +12,7 @@ Profile hidden Markov models (HMM) are used in Virtool to discover potential nov
 
 We highly recommend using the official models and annotations. It is very easy to obtain and use this data without leaving Virtool.
 
-Go to _HMM_ in the main navigation bar.
+Go to **HMM** in the main navigation bar.
 
    ![HHM in Main Navigation Bar](nav.png)
 
@@ -31,7 +31,7 @@ When the download is complete, the data will be imported into Virtool and you ca
 
 You can browse the annotations used in NuVs results.
 
-After HMM data has been installed, go to _HMM_ in the main navigation bar.
+After HMM data has been installed, go to **HMM** in the main navigation bar.
    ![Browse HMMs](browse.png)
 
 Use the search bar to find HMMs by annotative name (_eg_. RNA replicase).
@@ -64,11 +64,11 @@ It is possible to delete all HMM data from the disk and database. This is used p
 
 You will be able to reinstall the HMM data once the deletion process is complete.
 
-1. Go to _HMM_ in the main navigation bar.
+1. Go to **HMM** in the main navigation bar.
    ![HMM Navigation Bar](nav.png)
 
-2. Click on _Settings_ in the left sidebar. You should see the following:
+2. Click on **Settings** in the left sidebar. You should see the following:
    ![Purge in Settings](purge.png)
 
-3. Click the **Purge** button. Navigating to _Browse_ in the left sidebar should now show an HMM installation alert.
+3. Click the **Purge** button. Navigating to **Browse** in the left sidebar should now show an HMM installation alert.
    ![No HMM Data Found](/docs/manual/tut_hmms/no_data.png)

@@ -15,7 +15,7 @@ At least one non-empty reference must be created in order to start analyzing sam
 
 Instead of starting a virus database from scratch, you can use our [official plant virus reference](https://www.virtool.ca/downloads). Doing this will setup up **_remote_** connection to the reference on GitHub.
 
-Go to the _References_ view. If you have not yet installed the official reference, you should see this:
+Go to the **References** view. If you have not yet installed the official reference, you should see this:
 
 !["Official Reference Placeholder"](install_placeholder.png)
 

@@ -34,7 +34,7 @@ An update is available when the {{< icon "fa fa-arrow-alt-circle-up" >}} icon is
 
 {{< video "pulsing.mp4" >}}
 
-You can see further information about the update by clicking the pulsing icon or navigating to _Administration_ | _Updates_.
+You can see further information about the update by clicking {{< icon "fa fa-arrow-alt-circle-up" >}} or navigating to **Administration** | **Updates**.
 
 ![Update interface with three updates unapplied](updates_unapplied.png)
 
@@ -44,7 +44,7 @@ Clicking on a single update will show the changes made.
 
 ## Installing Updates
 
-Click the {{< icon "fa fa-download" >}} _Download_ button to open the update install dialog. This dialog shows the changes applied as a result of applying all available updates.
+Click the {{< icon "fa fa-download" >}} **Install** button to open the update install dialog. This dialog shows the changes applied as a result of applying all available updates.
 
 ![Update install dialog](updates_install_dialog.png)
 

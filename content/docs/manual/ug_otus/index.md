@@ -32,7 +32,7 @@ Here is the structure of a single viral OTU containing one isolate and its seque
 
 The OTUs that belong to a Virtool reference can be easily browsed and edited. To start browsing member OTUs for a given reference:
 
-1. Navigate to the references list by clicking on _References_ in the main navigation bar.
+1. Navigate to the references list by clicking on **References** in the main navigation bar.
    ![References list](references.png)
 
 2. Select the reference of interest by clicking on it. We will look at _Banana Viruses_ here.
@@ -72,10 +72,10 @@ The name or abbreviation for an OTU can be made after its creation.
 1. Navigate to the detail view for the OTU you want to edit.
    ![Bad Banana Detail](bad_banana.png)
 
-2. Click on the yellow pencil icon in the top-left of the view to show the edit dialog. **Note that you will not see this icon if you don't have modification rights on the parent reference**.
+2. Click on the {{< icon "fas fa-pencil-alt">}} icon in the top-right of the view to show the edit dialog. **Note that you will not see this icon if you don't have modification rights on the parent reference**.
    ![Edit dialog](edit_dialog.png)
 
-3. Change any of the fields and click save. We will change the abbreviation in this example.
+3. Change any of the fields and click {{< icon "fa fa-save" >}} **Save**. We will change the abbreviation in this example.
    ![Edit dialog changes](edit_dialog_changed.png)
 
 # Remove an OTU {#remove}
@@ -94,25 +94,19 @@ Examples of source names are: _A_, _Canada_, _8801-VLH_, or anything really.
 2. Take note of the red notification at the top of the page. This indicates that the virus cannot be used in analyses until the listed issues are corrected.
 
 3. Click on **Add Isolate** to the right of the **Isolates** heading to bring up a dialog for creating isolates.
-   !["Isolate creation dialog"](create_isolate.png)
+   !["Isolate creation dialog"](create_isolate2.png)
 
-4. Notice that the **Isolate Name** field changes with the other two fields. This will be the display name for the isolate.
+4. Notice that the **Isolate Name** field changes with the other two fields. This will be the display name for the isolate. 
 
-5. Save the changes. The new isolate appears in the isolate editor.
-   !["Virus detail with one empty isolate"](empty_isolate.png)
-6. You can edit or remove the isolate by clicking on the {{< icon "fas fa-pencil-alt" >}} or {{< icon "fas fa-trash" >}} icon respectively.
-
-Open the dialog for adding an isolate by clicking the {{< icon "fa fa-edit" >}} icon in the right corner of the _Isolates_ header:
-
-![Isolates Header](/docs_images/viruses_isolates_header.png)
-
-Fill the _Source Type_ and _Source Name_ fields. These fields are combined to create an isolate name. 
-
-![Add Isolate Dialog](/docs_images/viruses_add_isolate.png)
-
+    However, note: 
 - both fields are optional and the isolate name will be **Unnamed** if they are both empty
 - in a single virus, multiple isolates can have the same name
 - administrators can add new source types to the isolate
+
+5. Save the changes by clicking {{< icon "fa fa-save">}} **Save**. The new isolate appears in the isolate editor.
+   !["Virus detail with one empty isolate"](isolate_appears.png)
+6. You can edit or remove the isolate by clicking on the {{< icon "fas fa-pencil-alt" >}} or {{< icon "fas fa-trash" >}} icon respectively.
+
 
 # Edit an Isolate {#edit_isolate}
 

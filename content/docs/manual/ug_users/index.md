@@ -61,7 +61,7 @@ Enter a username and password for the user. Clicking _Force user to reset passwo
 
 ![Create user dialog with filled form](create_filled.png)
 
-Click {{< icon "fas fa-save" >}} _Save_ to add the user. They will appear in the list of users.
+Click {{< icon "fas fa-save" >}} **Save** to add the user. They will appear in the list of users.
 
 ![New user added - Bill](bill_added.png)
 
@@ -71,11 +71,11 @@ Administrators can forcefully change a users's password.
 
 This is useful when a user forgets their password or an old user account must be accessed.
 
-Locate the _Change Password_ panel in the _Users_ tab.
+Locate the **Change Password** panel in the **Users** tab.
 
 ![Password panel](password.png)
 
-Enter a new password and click {{< icon "fas fa-save" >}} _Save_.
+Enter a new password and click {{< icon "fas fa-save" >}} **Save**.
 
 ![Password panel with filled form](password_filled.png)
 
@@ -91,7 +91,7 @@ Users' group membership can be changed easily.
 
 This may affect what rights the user has on certain samples and references. It can also affect their application permissions.
 
-Locate the _Groups_ panel in the _Users_ tab.
+Locate the **Groups** panel in the **Users** tab.
 
 ![Groups Panel](groups.png)
 
@@ -109,7 +109,7 @@ Samples that a user creates can automatically be assigned to the creating user's
 
 How samples are assigned their initial user group is [configurable](/docs/manual/ug_samples/#settings).
 
-Locate the _Primary Group_ panel under the _Users_ tab.
+Locate the **Primary Group** panel under the _Users_ tab.
 
 ![Primary Group Panel](primary_group.png)
 
@@ -123,7 +123,7 @@ The display group is the user's primary group.
 
 # Manage Groups
 
-The group management interface can be acessed by clicking the {{< icon "fas fa-users" >}} button to the right of the search bar in _Users_ tab.
+The group management interface can be acessed by clicking the {{< icon "fas fa-users" >}} button to the right of the search bar in **Users** tab.
 
 ![Manage groups button](groups_button.png)
 
@@ -135,7 +135,7 @@ The group management interface looks like this:
 
 Open the group management interface. Enter a name for the new group in the input at the top of dialog and click the {{< icon "fas fa-plus-square" >}} button.
 
-![New group input filled](groups_add_filled.png)
+![New group input filled](groups_add_filled.png)s
 
 The new group will appear in the groups list.
 
@@ -151,7 +151,7 @@ Toggle permission by clicking them.
 
 {{< video "groups_permissions.mp4" >}}
 
-Users added to the _managers_ group will inherit the toggled permissions.
+Users added to the **Managers** group will inherit the toggled permissions.
 
 {{< video "groups_permissions_demo.mp4" >}}
 
@@ -161,6 +161,6 @@ Open the group management interface and select the group you want to remove.
 
 ![Managers selected in groups interface](groups_selected.png)
 
-Click the {{< icon "fas fa-trash" >}} _Remove Group_ button to remove the group.
+Click the {{< icon "fas fa-trash" >}} **Remove Group** button to remove the group.
 
 ![Managers removed](groups_management.png)

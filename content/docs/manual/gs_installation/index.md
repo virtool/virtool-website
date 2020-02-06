@@ -86,7 +86,7 @@ RedHat provides detailed information about `systemd` unit files. See [_Creating 
 
 ## Start the Service
 
-To start Virtool using `systemd` issue the following command:
+To start Virtool using `systemd`,  issue the following command:
 ```shell
 sudo systemctl start virtoold.service
 ```
@@ -156,7 +156,7 @@ Once you have installed MongoDB, ensure it is running by issuing the following c
 sudo systemctl status mongod.service
 ```
 
-You will receive output similar to the following if MongoDB is running:
+You will receive an output similar to the following if MongoDB is running:
 
 ```shell
 ● mongod.service - High-performance, schema-free document-oriented database

@@ -11,7 +11,7 @@ This tutorial assumes you have already [created a sample](/docs/manual/tut_sampl
 
 # Start an Analysis Job
 
-Navigate to the _Samples_ view.
+Navigate to the **Samples** view.
 
 ![Samples List View](samples.png)
 
@@ -19,7 +19,7 @@ Click on a sample. You will see the general information for the sample.
 
 ![Sample General](general.png)
 
-Navigate to the _Analyses_ tab. You should see an empty list if you haven't already created an analysis for this sample.
+Navigate to the **Analyses** tab. You should see an empty list if you haven't already created an analysis for this sample.
 
 !["Empty Analysis List](empty.png)
 
@@ -35,7 +35,7 @@ When the analysis is complete, the list item will look like this:
 
 !["Pathoscope Complete"](ready.png)
 
-In the _Samples_ view, you will notice the sample entry is tagged to show that a Pathoscope analysis has been completed.
+In the **Samples** view, you will notice the sample entry is tagged to show that a Pathoscope analysis has been completed.
 
 !["Pathoscope Sample Tag"](tag.png)
 

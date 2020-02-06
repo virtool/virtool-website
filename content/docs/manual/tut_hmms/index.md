@@ -14,7 +14,7 @@ In order to use the NuVs algorithm, you must first install HMM profiles and anno
 Navigate to the _HMMs_ view in the main navigation bar. You should see something like this if no HMM data have already been installed:
 !["No HMM data found"](no_data.png)
 
-Click the **Install Official** button to begin downloading the data. This could take some time. The page should look something like this:
+Click the {{< icon "fa fa-download" >}}**Install Official** button to begin downloading the data. This could take some time. The page should look something like this:
 !["Installing Official HMM Data"](installing.png)
 
 When the installation is complete, the HMM data will load and you will see a list of annotations.

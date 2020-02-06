@@ -20,7 +20,7 @@ The first case in which it is useful to view history data is reviewing changes t
 
 ![GVT Detail Page](gvt.png)
 
-Then click on the _History_ tab to view all changes associated with the OTU.
+Then click on the **History** tab to view all changes associated with the OTU.
 
 ![GVT Complete History](gvt_history.png)
 
@@ -30,7 +30,7 @@ You can view all changes associated with an index. First navigate to the referen
 
 ![Reference Detail](ref_detail.png)
 
-Navigate to the _Indexes_ tab to list the indexes for the reference.
+Navigate to the **Indexes** tab to list the indexes for the reference.
 
 ![Reference Indexes List](indexes.png)
 
@@ -38,7 +38,7 @@ Select an index. The index detail page will give an overview of the changes.
 
 ![Index Detail](index.png)
 
-View a detailed change list by clicking on _Changes_.
+View a detailed change list by clicking on **Changes**.
 
 ![Detailed Index Change List](index_changes.png)
 
@@ -50,7 +50,7 @@ Changes can be reverted by first navigating to the detail page for an OTU.
 
 ![OTU Detail Page](detail.png)
 
-Navigate to the _History_ tab to view the history for the OTU.
+Navigate to the **History** tab to view the history for the OTU.
 
 ![OTU History Page](history.png)
 
@@ -60,7 +60,7 @@ Click {{< icon "fas fa-undo" >}} to revert a change. Any successive changes will
 
 {{< video "revert.mp4" >}}
 
-Navigating back to the _OTU_ tab will show that the reversions have been reflected in the OTU.
+Navigating back to the **OTU** tab will show that the reversions have been reflected in the OTU.
 
 ![OTU with Reverted Changes](reverted.png)
 

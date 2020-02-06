@@ -8,7 +8,7 @@ menu:
 
 # Overview
 
-Selecting _Samples_ on the top menu brings up the main sample managment view. Here, samples can be created, viewed, edited, analyzed, and removed.
+Selecting **Samples** on the top menu brings up the main sample managment view. Here, samples can be created, viewed, edited, analyzed, and removed.
 
 ![Sample Manager](browse.png)
 
@@ -93,13 +93,13 @@ The FASTQ files and quality data are used for further analyses triggered by the 
 
 # Quick Analyze
 
-Quick analysis allows you to start analysis jobs for multiple samples at once. Select the samples of interest and click on the {{< icon "fa fa-chart-area" >}} button. An _Analyze_ dialog box will appear.
+Quick analyses allows you to start analysis jobs for multiple samples at once. Select the samples of interest and click on the {{< icon "fa fa-chart-area" >}} button. An _Analyze_ dialog box will appear.
 ![Samples Selected](selected.png)
 
 Use this dialog you can choose the analysis algorithm (PathoscopeBowtie or NuVs), the subtraction, and the reference(s) you want to use to analyze your sample(s). Selecting multiple references will start a separate job for each sample-reference combination. Once these fields are specified, click the **Start** button to start the analysis.
 ![Analyze](analyze.png)
 
-Once the analysis is running, you can view its progress under the _Jobs_ tab.
+Once the analysis is running, you can view its progress under the **Jobs** tab.
 ![Progress](progress.png)
 
 

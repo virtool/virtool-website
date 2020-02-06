@@ -22,7 +22,7 @@ Jobs are started when a task is started in another view (_eg_. sample creation d
 
 # List Jobs
 
-The jobs list can be accessed by navigating to _Jobs_ in the top navigation bar.
+The jobs list can be accessed by navigating to **Jobs** in the top navigation bar.
 
 ![Jobs Navigation](nav.png)
 
@@ -46,7 +46,7 @@ Jobs can be cancelled by clicking the {{< icon "fa fa-ban" >}} icon at the right
 
 # Delete a Job {#delete}
 
-Once a job is finished, either by completing, erroring, or being cancelled, its record can be deleted. Click the {{< icon "fa fa-trash" >}} icon in the job list to delete the job.
+Once a job is finished, either by completing, erroring, or being cancelled, its record can be deleted. Click the {{< icon "fa fa-trash" >}} icon in the jobs list to delete the job.
 
 ![Delete Job from List](delete.gif)
 
@@ -56,12 +56,12 @@ Jobs can also be deleted via their detail page by clicking the {{< icon "fa fa-t
 
 # Host Resources
 
-Host resource utilization numbers can be viewed by clicking the _Resources_ link in the left sidebar.
+Host resource utilization numbers can be viewed by clicking the **Resources** link in the left sidebar.
 
 ![Host Resource Settings](resources.png)
 
 # Settings
 
-Job-specific settings can be accessed by clicking the _Settings_ link in the left sidebar. This link will only be visible to administrators.
+Job-specific settings can be accessed by clicking the **Settings** link in the left sidebar. This link will only be visible to administrators.
 
-These settings
+
