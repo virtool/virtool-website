@@ -24,7 +24,7 @@ You can set or change you email address. Email addresses are currently unused, b
 
 # Change Password {#password}
 
-You can change your password under the _General_ tab. By default, new passwords must be a minimum of 8 characters. This setting could be changed by your administrator.
+You can change your password under the **General** tab. By default, new passwords must be a minimum of 8 characters. This setting could be changed by your administrator.
 
 ![Change Password](password.png)
 
@@ -32,7 +32,7 @@ You can change your password under the _General_ tab. By default, new passwords 
 
 Virtool exposes a complete [JSON API](/docs/developer/api_account/). Access to the API is managed using [API keys](https://www.virtool.ca/docs/developer/api_authentication/).
 
-API keys are account-specific and are generated under the _API_ tab in the _Account_ view.
+API keys are account-specific and are generated under the **API** tab in the **Account** view.
 
 ![API Key List](empty.png)
 

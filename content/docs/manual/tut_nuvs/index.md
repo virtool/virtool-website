@@ -11,7 +11,7 @@ This tutorial assumes you have already [created a sample](/docs/manual/tut_sampl
 
 # Start an Analysis Job
 
-Navigate to the _Samples_ view.
+Navigate to the **Samples** view.
 
 ![Samples List View](samples.png)
 
@@ -19,7 +19,7 @@ Click on a sample. You will see the general information for the sample.
 
 ![Sample General](general.png)
 
-Navigate to the _Analyses_ tab to see a list of analyses for the sample.
+Navigate to the **Analyses** tab to see a list of analyses for the sample.
 
 !["Empty Analysis List](list.png)
 
@@ -35,7 +35,7 @@ When the analysis is complete, the list item will look like this:
 
 !["Analysis Complete"](ready.png)
 
-In the _Samples_ view, you will notice the sample entry is tagged to show that a NuVs analysis has been completed.
+In the **Samples** view, you will notice the sample entry is tagged to show that a NuVs analysis has been completed.
 
 !["NuVs Sample Tag"](tag.png)
 
@@ -56,5 +56,5 @@ Contigs without significant HMM hits are filtered out by default. Click {{< icon
 Part of interpreting NuVs results is BLASTing contigs to make sure they are truly unknown. You can BLAST contigs by clicking **BLAST at NCBI**.
 ![BLAST at NCBI](blast_running.png)
 
-The BLAST results for this sequence show it is likely contamination from a technician.
+The BLAST results for this sequence show it is likely a contamination from a technician.
 ![BLAST Results](blast.png)

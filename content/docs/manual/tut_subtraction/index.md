@@ -21,7 +21,7 @@ Decompress the downloaded file. Virtool does not currently accept GZIP-compresse
 
 # Upload FASTA {#uploading}
 
-Go to the _Subtraction_ view via the main navigation bar. You should see the following:
+Go to the **Subtraction** view via the main navigation bar. You should see the following:
 
 !["Main Subtraction View"](empty.png)
 
@@ -35,7 +35,7 @@ Upload the previously obtained FASTA file.
 
 # Create Subtraction {#creating}
 
-Go to the _Subtraction_ view via the main navigation bar.
+Go to the **Subtraction** view via the main navigation bar.
 
 ![Subtraction Listing](empty.png)
 
@@ -51,7 +51,7 @@ While the subtraction is being created it will have an **Importing** label.
 
 ![Subtraction Importing](importing.png)
 
-Wait for the job to complete before trying to use the new subtraction. You can view its progress by going to the _Jobs_ view.
+Wait for the job to complete before trying to use the new subtraction. You can view its progress by going to the **Jobs** view.
 
 ![Subtraction Job in Progress](job.png)
 

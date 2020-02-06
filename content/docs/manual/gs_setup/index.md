@@ -21,7 +21,7 @@ By default, the server listens at `localhost:9950`. When you visit this address 
 
 !["Setup page overview"](overview.png)
 
-This will allow you to configure the essential settings required for Virtool to run. Click the _Setup_ button to begin.
+This will allow you to configure the essential settings required for Virtool to run. Click the **Setup** button to begin.
 
 # Connect to a Proxy
 
@@ -95,7 +95,7 @@ When the data path has been successfully configured, you should see something li
 
 **Errors will occur if:**
 
-- the executing user does not have permission to write to the data path
+- the executing user does not have permission to write the data path
 - the data path already exists and is not empty
 
 {{< /note >}}
@@ -112,7 +112,7 @@ By default the data path will be set to `watch` and will be created in the Virto
 
 When the watch location has been successfully configured, you will see something like this:
 
-![Watch path configured successfully](watch_success.png)\
+![Watch path configured successfully](watch_success.png)
 
 # Save and Restart
 
