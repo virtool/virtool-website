@@ -5,6 +5,20 @@ menu:
   manual:
     parent: "User Guide"
 ---
+# Overview
+
+## OTUs
+
+The Virtool OTU (Organization taxonomic unit) reference is a fully editable and tracked collection of viruses, viral isolates, and their genome sequences. The data in the virus reference is used to identify potential viral infections in Illumina libraries derived from your samples.
+
+See the [OTUs documentation](/docs/manual/ug_otus) for more information.
+
+## Indexes
+
+An Index contains a list of all OTUs available to a specific reference. When changes are made to an OTU(s), the index is rebuilt to include those new changes for future jobs.
+
+See the [Indexes documentation](/docs/manual/ug_indexes) for more information.
+
 # Searching a Reference
 
 Click on **References** in the main navigation bar to go to the Reference Overview page. 
@@ -202,18 +216,6 @@ To modify rights for users and groups, click on {{< icon "fas fa-edit" >}} next 
 
 Click on {{< icon "far fa-lg fa-square" >}} next to the permissions you would like to assign the user or group and click **Add** 
 ![Modified Permissions](modified.png)
-
-# OTUs
-
-The Virtool OTU (Organization taxonomic unit) reference is a fully editable and tracked collection of viruses, viral isolates, and their genome sequences. The data in the virus reference is used to identify potential viral infections in Illumina libraries derived from your samples.
-
-See the [OTUs documentation](/docs/manual/ug_otus) for more information.
-
-# Indexes
-
-An Index contains a list of all OTUs available to a specific reference. When changes are made to an OTU(s), the index is rebuilt to include those new changes for future jobs.
-
-See the [Indexes documentation](/docs/manual/ug_indexes) for more information.
 
 # Internal Control
 
