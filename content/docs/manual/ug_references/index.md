@@ -7,13 +7,17 @@ menu:
 ---
 # Overview
 
-## OTUs
+Virtool is built for detecting viruses and is capable of detecting other pathogens. Managing collections of pathogen sequences used for this purpose is a key feature of Virtool.
+
+At least one non-empty reference must be created in order to start analyzing samples. 
+
+# OTUs
 
 The Virtool OTU (Organization taxonomic unit) reference is a fully editable and tracked collection of viruses, viral isolates, and their genome sequences. The data in the virus reference is used to identify potential viral infections in Illumina libraries derived from your samples.
 
 See the [OTUs documentation](/docs/manual/ug_otus) for more information.
 
-## Indexes
+# Indexes
 
 An Index contains a list of all OTUs available to a specific reference. When changes are made to an OTU(s), the index is rebuilt to include those new changes for future jobs.
 
@@ -32,15 +36,13 @@ Click on your reference to view detailed information about it.
 
 # Creating References
 
-## Installing an Official (Remote) Reference
+# Installing an Official (Remote) Reference
 
-Virtool is built for detecting viruses and is capable of detecting other pathogens. Managing collections of pathogen sequences used for this purpose is a key feature of Virtool.
-
-At least one non-empty reference must be created in order to start analyzing samples. One quick way to accomplish this is to install the [official plant virus reference](https://github.com/virtool/ref-plant-viruses).
+One quick way to accomplish this is to install the [official plant virus reference](https://github.com/virtool/ref-plant-viruses).
 
 To see a a step-by-step tutorial on installing an official reference click [here](/docs/manual/tut_reference).
 
-## Creating a Blank Reference
+# Creating a Blank Reference
 Click on **References** in the main navigation bar to go to the References Overview page. 
 ![Reference Overview Page](reference_overview.png)
 
@@ -53,7 +55,7 @@ Give your new reference a name, the organism to which it belongs, and an optiona
 Your new reference will now appear in the References Overview page.
 ![Reference Overview Page](reference_overview2.png)
 
-## Cloning a Reference
+# Cloning a Reference
 
 Click on **References** in the main navigation bar to go to the Reference Overview page.
 ![Reference Overview Page](reference_overview2.png)
@@ -69,14 +71,12 @@ In the dialog box, click on the **Source Reference** you want to clone. Clicking
 Once the fields in the dialog box are specified, click {{< icon "fa fa-save" >}} **Clone**. Your Banana Viruses clone will be added to the references list.
 ![Clone Complete](clone_complete.png)
 
-## Cloning Shortcut
-
-Another way to clone a particular reference is by using the cloning shortcut button {{< icon "fa fa-clone" >}}. Click on {{< icon "fa fa-clone" >}} and a **Clone** dialog box will appear.
+An alternative way to clone a particular reference is by using the cloning shortcut button {{< icon "fa fa-clone" >}}. Click on {{< icon "fa fa-clone" >}} and a **Clone** dialog box will appear.
 ![Cloning shortcut tab](clone_shortcut.png)
 
 Follow the steps above to complete the cloning process.
 
-## Exporting a Reference
+# Exporting a Reference
 
 To export a reference, click on **References** in the main navigation bar. 
 ![References Overview](clone_complete.png)
@@ -89,7 +89,7 @@ On the top right click the {{< icon "fas fa-download" >}} button.
 
 To export the reference with the local OTU IDs, click **Normal**. This will begin the downloading process of that reference.
 
-## Importing a Reference
+# Importing a Reference
 
 Click on **References** in the main navigation bar to go to the Reference Overview page.
 ![Reference Overview Page](clone_complete.png)
@@ -108,11 +108,11 @@ Click {{< icon "fa fa-save" >}} **Import** to import the reference. The importin
 
 # Manage References
 
-## Edit a Reference
+# Edit a Reference
 
 The name of a reference cannot be changed once it has been made. You are however, allowed to make changes to the OTUs and its isolates. 
 
-## Update Official (Remote) Reference
+# Update Official (Remote) Reference
 
 Your remote reference is the first reference you downloaded that is in sync with a reference published on GitHub. When changes are made to the reference on GitHub, your official reference on Virtool also needs to be updated.
 
@@ -130,25 +130,15 @@ Once the installation is complete, you will see {{< icon "fa fa-check" >}} **Up-
 
 To check for other available updates click {{< icon "fas fa-sync" >}}.
 
-## Rebuild Index
+# Rebuild Index
 
-After making an update on your remote reference there may be unbuilt changes on your index. To rebuild your index after the update click the **Indexes** tab on the detailed view page of your official reference.
-![Rebuild Index](rebuild_index.png) 
+After making an update on your remote reference there may be unbuilt changes on your index. To learn how to rebuild your index, click on the link below.
 
-Then click the blue **Rebuild the index** link. 
-
-A **Rebuild Index** dialog box will appear that will list all the changes that are going to be made. 
-![Rebuild index dialog box](rebuild_index_dialog.png)
-
-To start making these changes and rebuilding the index, click {{< icon "fa fa-wrench" >}} **Start** on the bottom of the dialog box.
-![Start button to rebuild index](start_rebuild.png)
-
-Once the changes have been made, you will see a new index version that is now {{< icon "fa fa-check" >}} **Active**.  
-![Version 1 index active](active_index.png)
+[Rebuild Index](/docs/manual/ug_indexes/)
 
 # Settings
 
-## Source Types
+# Source Types
 
 Isolate names comprise a _source type_ and _source name_. Users can be forced to use certain source type values when creating isolates.
 
@@ -160,7 +150,7 @@ Click the reference of interest under the **References** tab in the main navigat
 Click the blue **Settings** tab to see a list of **Source Types** that users are allowed to choose from to create an isolate.
 ![Settings](settings.png) 
 
-## Adding a Source Type
+# Adding a Source Type
 
 Currenlty, the only source types that are allowed to be used in creating an isolate are **Isolate** and **Strain**.
 
@@ -173,7 +163,7 @@ In the text bar that is now disabled, type the name of the new source type.
 Click {{< icon "fas fa-plus-square" >}} to add the new source type to the list.
 ![Variant added to source type](variant_added.png)
 
-## Deleting a Source Type
+# Deleting a Source Type
 
 Click on {{< icon "far fa-lg fa-square" >}} **Enable** to disable the source type feature.
 ![Variant added to source type](variant_added.png)
@@ -184,7 +174,9 @@ To delete a source type, click on {{< icon "fa fa-trash" >}} next to the source 
 Adding and deleting source types can also be done using the **Settings** link on the side bar under **References**.
 ![Setting in sidebar](settings2.png)
 
-## User Management
+# Rights
+
+# User Management
 
 To add a new user that can manage a reference, click on **Add User** on the right of the **Users** heading. 
 ![Users](users.png)
@@ -195,7 +187,7 @@ A dialog box like the one shown below will show up.
 Click on the the user to add them on the users list.  
 ![User Added](user_added.png)
 
-## Group Management
+# Group Management
 
 Similarly, to add a group click on **Add Group** on the right of the **Groups** heading.
 ![Groups](groups.png)
@@ -209,7 +201,7 @@ Click on the the group to add them on the groups list.
 To remove a user or group from managing a reference, click on {{< icon "fa fa-trash" >}} next to the user or group you want to remove. Here we will remove the user we previously added.
 ![User deleted](delete.png)
 
-## Modifying Rights for Users and Groups
+# Modifying Rights
 
 To modify rights for users and groups, click on {{< icon "fas fa-edit" >}} next to the user or groups whose rights you want to modify. A dialog box like the one below will show up.
 ![Modify rights](modify.png)
@@ -217,18 +209,3 @@ To modify rights for users and groups, click on {{< icon "fas fa-edit" >}} next 
 Click on {{< icon "far fa-lg fa-square" >}} next to the permissions you would like to assign the user or group and click **Add** 
 ![Modified Permissions](modified.png)
 
-# Internal Control
-
-If you are using an internal control during your lab procedures, the control virus can be provided to Virtool. This setting is not currently in use, but may be used for scaling results or flagging irregular samples in the future.
-
-## Selecting Internal Control
-
-The internal control can be selected from the virus database by selecting the virus name in the dropdown text box.
-
-!["Internal Control"](internal_control.gif)
-
-## Disabling Internal Control
-
-This can be done by clicking off the checkbox in the header of the **Internal Control** setting section. This has no effect for now.
-
-!["Internal Control Disabled"](internal_control_disabled.png)
