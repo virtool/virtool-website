@@ -9,21 +9,25 @@ menu:
 
 Virtool is built for detecting viruses and is capable of detecting other pathogens. Managing collections of pathogen sequences used for this purpose is a key feature of Virtool.
 
-At least one non-empty reference must be created in order to start analyzing samples. 
+At least one non-empty reference must be created in order to start analyzing samples.
 
-# OTUs
+## OTUs
 
-The Virtool OTU (Organization taxonomic unit) reference is a fully editable and tracked collection of viruses, viral isolates, and their genome sequences. The data in the virus reference is used to identify potential viral infections in Illumina libraries derived from your samples.
+The reference is a fully editable and tracked collection of pathogens, pathogen isolates, and their genome sequences. The data in the virus reference is used to identify potential viral infections in Illumina libraries derived from your samples.
+
+In Virtool, pathogen records are called OTUs (organizational taxonomic unit). This leaves the organization of the reference up to the user. Generally, OTU is synonymous with pathogen species.
 
 See the [OTUs documentation](/docs/manual/ug_otus) for more information.
 
-# Indexes
+## Indexes
 
-An Index contains a list of all OTUs available to a specific reference. When changes are made to an OTU(s), the index is rebuilt to include those new changes for future jobs.
+Indexes are versioned snapshots of all of the OTUs in a reference at points in time. In the background, indexes are associated with optimized read mapping indicies managed by Virtool.
+
+When changes are made to OTUs, the index is rebuilt to include those changes in future analysis jobs. Each analysis is tied to a specific index (version) of its target reference.
 
 See the [Indexes documentation](/docs/manual/ug_indexes) for more information.
 
-# Searching a Reference
+# Finding a Reference
 
 Click on **References** in the main navigation bar to go to the Reference Overview page. 
 ![Reference Overview Page](reference_overview.png)
@@ -34,15 +38,13 @@ Then type in the name of the reference in the search bar.
 Click on your reference to view detailed information about it.
 ![Detailed Information](detail_info.png)
 
-# Creating References
-
-# Installing an Official (Remote) Reference
+# Installing the Official Reference
 
 One quick way to accomplish this is to install the [official plant virus reference](https://github.com/virtool/ref-plant-viruses).
 
 To see a a step-by-step tutorial on installing an official reference click [here](/docs/manual/tut_reference).
 
-# Creating a Blank Reference
+# Creating an Empty Reference
 Click on **References** in the main navigation bar to go to the References Overview page. 
 ![Reference Overview Page](reference_overview.png)
 
@@ -106,13 +108,11 @@ Click the {{< icon "fas fa-upload" >}} **Upload** button and open the reference 
 Click {{< icon "fa fa-save" >}} **Import** to import the reference. The importing progress can be seen under the **References** tab.
 ![Import Progress](import_progress.png)
 
-# Manage References
-
 # Edit a Reference
 
 The name of a reference cannot be changed once it has been made. You are however, allowed to make changes to the OTUs and its isolates. 
 
-# Update Official (Remote) Reference
+# Update the Official Reference
 
 Your remote reference is the first reference you downloaded that is in sync with a reference published on GitHub. When changes are made to the reference on GitHub, your official reference on Virtool also needs to be updated.
 
@@ -130,13 +130,11 @@ Once the installation is complete, you will see {{< icon "fa fa-check" >}} **Up-
 
 To check for other available updates click {{< icon "fas fa-sync" >}}.
 
-# Rebuild Index
+# Building an Index
 
 After making an update on your remote reference there may be unbuilt changes on your index. To learn how to rebuild your index, click on the link below.
 
 [Rebuild Index](/docs/manual/ug_indexes/)
-
-# Settings
 
 # Source Types
 
@@ -150,7 +148,7 @@ Click the reference of interest under the **References** tab in the main navigat
 Click the blue **Settings** tab to see a list of **Source Types** that users are allowed to choose from to create an isolate.
 ![Settings](settings.png) 
 
-# Adding a Source Type
+## Adding a Source Type
 
 Currenlty, the only source types that are allowed to be used in creating an isolate are **Isolate** and **Strain**.
 
@@ -163,7 +161,7 @@ In the text bar that is now disabled, type the name of the new source type.
 Click {{< icon "fas fa-plus-square" >}} to add the new source type to the list.
 ![Variant added to source type](variant_added.png)
 
-# Deleting a Source Type
+## Deleting a Source Type
 
 Click on {{< icon "far fa-lg fa-square" >}} **Enable** to disable the source type feature.
 ![Variant added to source type](variant_added.png)
@@ -176,7 +174,7 @@ Adding and deleting source types can also be done using the **Settings** link on
 
 # Rights
 
-# User Management
+## Add a User
 
 To add a new user that can manage a reference, click on **Add User** on the right of the **Users** heading. 
 ![Users](users.png)
@@ -187,7 +185,7 @@ A dialog box like the one shown below will show up.
 Click on the the user to add them on the users list.  
 ![User Added](user_added.png)
 
-# Group Management
+## Add a Group
 
 Similarly, to add a group click on **Add Group** on the right of the **Groups** heading.
 ![Groups](groups.png)
@@ -198,13 +196,15 @@ A dialog box like the one shown below will show up.
 Click on the the group to add them on the groups list.  
 ![User Added](group_Added.png)
 
-To remove a user or group from managing a reference, click on {{< icon "fa fa-trash" >}} next to the user or group you want to remove. Here we will remove the user we previously added.
-![User deleted](delete.png)
+## Remove a User or Group
 
-# Modifying Rights
+To remove a user or group from managing a reference, click on {{< icon "fa fa-trash" >}} next to the user or group you want to remove. Here we will remove the user we previously added.
+![User deleted](user_delete.png)
+
+## Modifying Rights
 
 To modify rights for users and groups, click on {{< icon "fas fa-edit" >}} next to the user or groups whose rights you want to modify. A dialog box like the one below will show up.
-![Modify rights](modify.png)
+![Modify rights](rights_modify.png)
 
 Click on {{< icon "far fa-lg fa-square" >}} next to the permissions you would like to assign the user or group and click **Add** 
 ![Modified Permissions](modified.png)
