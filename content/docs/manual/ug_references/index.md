@@ -49,10 +49,10 @@ Click on **References** in the main navigation bar to go to the References Overv
 ![Reference Overview Page](reference_overview.png)
 
 To create a new empty reference, click on the {{< icon "fas fa fa-plus-square" >}} button. A dialog box like the one below will show up.
-![Empty Reference Box](empty_ref.png)
+![Empty Reference Box](reference_empty.png)
 
 Give your new reference a name, the organism to which it belongs, and an optional description. Once the fields in the dialog box are filled out, click {{< icon "fa fa-save" >}} **Save**.
-![Filled Reference Dialog](filled_ref_dialog.png)
+![Filled Reference Dialog](reference_dialog_filled.png)
 
 Your new reference will now appear in the References Overview page.
 ![Reference Overview Page](reference_overview2.png)
@@ -63,7 +63,7 @@ Click on **References** in the main navigation bar to go to the Reference Overvi
 ![Reference Overview Page](reference_overview2.png)
 
 To clone a reference click on the {{< icon "fas fa fa-plus-square" >}} button. A dialog box like the one below will show up.
-![Empty Reference Box](empty_ref.png) 
+![Empty Reference Box](reference_empty.png) 
 
 Click on the blue **Clone** tab.
 
@@ -117,16 +117,16 @@ The name of a reference cannot be changed once it has been made. You are however
 Your remote reference is the first reference you downloaded that is in sync with a reference published on GitHub. When changes are made to the reference on GitHub, your official reference on Virtool also needs to be updated.
 
 To view if any updates are required, click on your official reference under the **References** tab. In this case our official reference is named as **Plant Viruses**.
-![Update Official Reference](update.png)
+![Update Official Reference](remote_ref_update.png)
 
 Under the **Remote Reference** heading, we see that there is one update available.
 ![Remote Reference](remote_ref.png)
 
 Click on the {{< icon "fas fa-download" >}} **Install** button to install the update. The progress of the installation is shown below.
-![Remote reference uploading progress](progress_remote_ref_update.png)
+![Remote reference uploading progress](remote_ref_update_progress.png)
 
 Once the installation is complete, you will see {{< icon "fa fa-check" >}} **Up-to-date** under the **Remote Reference** heading.
-![Remote reference is up to date](up_to_date.png)
+![Remote reference is up to date](remote_ref_up_to_date.png)
 
 To check for other available updates click {{< icon "fas fa-sync" >}}.
 
@@ -146,31 +146,31 @@ Click the reference of interest under the **References** tab in the main navigat
 ![Source Type Reference](source_ref.png)
 
 Click the blue **Settings** tab to see a list of **Source Types** that users are allowed to choose from to create an isolate.
-![Settings](settings.png) 
+![Settings](source_settings.png) 
 
 ## Adding a Source Type
 
 Currenlty, the only source types that are allowed to be used in creating an isolate are **Isolate** and **Strain**.
 
 To add a new source type, click on {{< icon "far fa-lg fa-square" >}} **Enable** to disable the source type feature. 
-![Source type feature disabled](disabled.png)
+![Source type feature disabled](source_disabled.png)
 
 In the text bar that is now disabled, type the name of the new source type. 
-![Variant Source Type](variant.png)
+![Variant Source Type](source_variant.png)
 
 Click {{< icon "fas fa-plus-square" >}} to add the new source type to the list.
-![Variant added to source type](variant_added.png)
+![Variant added to source type](source_variant_added.png)
 
 ## Deleting a Source Type
 
 Click on {{< icon "far fa-lg fa-square" >}} **Enable** to disable the source type feature.
-![Variant added to source type](variant_added.png)
+![Variant added to source type](source_variant_added.png)
 
 To delete a source type, click on {{< icon "fa fa-trash" >}} next to the source type you would like to delete. Here we will delete the source type **Variant**. 
-![Variant Deleted](disabled.png)
+![Variant Deleted](source_disabled.png)
 
 Adding and deleting source types can also be done using the **Settings** link on the side bar under **References**.
-![Setting in sidebar](settings2.png)
+![Setting in sidebar](source_settings2.png)
 
 # Rights
 
@@ -180,7 +180,7 @@ To add a new user that can manage a reference, click on **Add User** on the righ
 ![Users](users.png)
 
 A dialog box like the one shown below will show up.
-![Add User](add_user.png)
+![Add User](user_add.png)
 
 Click on the the user to add them on the users list.  
 ![User Added](user_added.png)
@@ -191,7 +191,7 @@ Similarly, to add a group click on **Add Group** on the right of the **Groups** 
 ![Groups](groups.png)
 
 A dialog box like the one shown below will show up.
-![Add Group](add_group.png)
+![Add Group](group_add.png)
 
 Click on the the group to add them on the groups list.  
 ![User Added](group_Added.png)
@@ -207,5 +207,5 @@ To modify rights for users and groups, click on {{< icon "fas fa-edit" >}} next 
 ![Modify rights](rights_modify.png)
 
 Click on {{< icon "far fa-lg fa-square" >}} next to the permissions you would like to assign the user or group and click **Add** 
-![Modified Permissions](modified.png)
+![Modified Permissions](rights_modified.png)
 
