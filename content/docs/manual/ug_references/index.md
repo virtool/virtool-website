@@ -33,10 +33,10 @@ Click on **References** in the main navigation bar to go to the Reference Overvi
 ![Reference Overview Page](reference_overview.png)
 
 Then type in the name of the reference in the search bar.
-![Search](search.png)
+![Search](reference_search.png)
 
 Click on your reference to view detailed information about it.
-![Detailed Information](detail_info.png)
+![Detailed Information](reference_detail_info.png)
 
 # Installing the Official Reference
 
