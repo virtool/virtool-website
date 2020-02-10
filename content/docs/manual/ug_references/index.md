@@ -97,7 +97,7 @@ Click on **References** in the main navigation bar to go to the Reference Overvi
 ![Reference Overview Page](clone_complete.png)
 
 To import a new reference, click on the {{< icon "fas fa fa-plus-square" >}} button. A dialog box like the one below will show up.
-![Empty Reference Box](empty_ref.png)
+![Empty Reference Box](reference_empty.png)
 
 Click on the blue **Import** tab.
 ![Import Tab](import_tab.png)
@@ -198,8 +198,8 @@ Click on the the group to add them on the groups list.
 
 ## Remove a User or Group
 
-To remove a user or group from managing a reference, click on {{< icon "fa fa-trash" >}} next to the user or group you want to remove. Here we will remove the user we previously added.
-![User deleted](user_delete.png)
+To remove a user or group from managing a reference, click on {{< icon "fa fa-trash" >}} next to the user or group you want to remove. 
+{{< video "user_delete.mp4" >}}
 
 ## Modifying Rights
 
