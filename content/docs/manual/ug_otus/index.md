@@ -181,7 +181,7 @@ Click on the {{< icon "fa fa-trash" >}} next to the isolates name. A dialog box 
 
 # History
 
-Under this tab a user can track down every change that has been made to an OTU. **Built Changes** are not reversible, but you can reverse **Unbuilt Changes** by clicking on the {{< icon "fa fa-reload" >}}button.
+Under this tab a user can track down every change that has been made to an OTU. **Built Changes** are not reversible, but you can reverse **Unbuilt Changes** by clicking on the {{< icon "fa fa-undo" >}} button.
 
 Each change causes the virus's version to increase by one and is recorded with a timestamp and the user's name.
 
