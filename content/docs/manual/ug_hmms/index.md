@@ -64,11 +64,11 @@ It is possible to delete all HMM data from the disk and database. This is used p
 
 You will be able to reinstall the HMM data once the deletion process is complete.
 
-1. Go to **HMM** in the main navigation bar.
+Go to **HMM** in the main navigation bar.
    ![HMM Navigation Bar](nav.png)
 
-2. Click on **Settings** in the left sidebar. You should see the following:
+Click on **Settings** in the left sidebar. You should see the following:
    ![Purge in Settings](purge.png)
 
-3. Click the **Purge** button. Navigating to **Browse** in the left sidebar should now show an HMM installation alert.
+Click the **Purge** button. Navigating to **Browse** in the left sidebar should now show an HMM installation alert.
    ![No HMM Data Found](/docs/manual/tut_hmms/no_data.png)
