@@ -12,6 +12,14 @@ Selecting **Samples** on the top menu brings up the main sample managment view. 
 
 ![Sample Manager](browse.png)
 
+# Caching
+
+Caching is the process of storing data in a cache (a temporary storage area). The purpose of cache memory is to store program instructions and data that are used repeatedly in the operation of programs or information that the CPU is likely to need next. 
+
+Sample data is automatically trimmed during analysis. Trimmed data are cached so that data doesn't have to be re-run.
+
+For example, when a new sample is run using a subtraction that has already been used, the host genome that has already been analyzed and eliminated will not have to go through the same process again. Instead the reads belonging to the host genome or non-pathogenic organisms associated with the host such as insects or fungi will already be cached. This makes the analyzing process for a sample(s) happen a lot faster and decreases the amount of work the server has to perform.
+
 # Browse Samples
 
 Once you have imported one or more samples, they can be browsed in the main sample managment view.
@@ -38,6 +46,29 @@ Here is an example looking for samples matching the text query _14SP_ that have 
 
 Clicking on a sample item will navigate to a detailed description of the sample.
 
+# Upload a FASTQ File
+
+To upload a FASTQ file, click on **Samples** in the top navigaiton bar.
+![Samples Overview](samples_overview3.png)
+
+On the left sidebar click **Files**. 
+![Files Overview](files.png)
+
+Click on the {{< icon "fa fa-upload" >}} **Upload** button to choose a file from your computer. Here we will choose the **large.fq** file.
+![File large.fq](large_fq.png)
+
+The uploaded file will then be visible under the **Read Files** overview page.
+![Uploaded FASTQ File](uploaded_file.png)
+
+# Paired and Unpaired FASTQ Data
+
+Paired or unpaired FASTQ data can be used to create a sample.
+
+Samples created from only one file are assumed to be unpaired. Paired samples must comprise two paired FASTQ files. **Interleaved FASTQ files are not currently supported**.
+
+For paired data, make sure the file orientation labels (left and right) are correct before you create a sample. You can use the {{< icon "fas fa-retweet" >}} button to swap orientations.
+
+{{< video "create_orientation.mp4" >}}
 
 # Create a Sample
 
@@ -59,17 +90,9 @@ You **must** set a unique sample _name_ and _read size_. _Read size_ can be set 
 
 An appropriate _subtraction host_ must be selected. This should be the [subtraction genome](/docs/manual/ug_subtraction) most closely related to the _true host_ for your sample.
 
-Here is an example using sRNA sequencing and _Malus domestica_ as a subtraction host:
+Here is an example using normal sequencing and _Banana_ as a subtraction host:
 
 ![Create sample dialog with non-file fields populated](create_filled_top.png)
-
-Paired or unpaired FASTQ data can be used to create a sample.
-
-Samples created from only one file are assumed to be unpaired. Paired samples must comprise two paired FASTQ files. **Interleaved FASTQ files are not currently supported**.
-
-For paired data, make sure the file orientation labels (left and right) are correct before you create a sample. You can use the {{< icon "fas fa-retweet" >}} button to swap orientations.
-
-{{< video "create_orientation.mp4" >}}
 
 Once required fields are populated and you have selected the files, click the {{< icon "fas fa-save" >}} **Save** button to create the sample. Your sample will immediately be listed in the samples list. However, it will take some time for the sample data to be imported and processed.
 
@@ -91,17 +114,114 @@ Quality information is calculated from the library using [FastQC](https://www.bi
 
 The FASTQ files and quality data are used for further analyses triggered by the user.
 
+## Default Subtraction
+
+The default subtraction for a sample that will be used when creating an analysis can be found on the bottom of the detailed view of that sample.
+![Default Subtraction](default_subtraction.png)
+
+For the Banana bunchy top virus shown above, the default subtraction is **Banana**. This was the same subtraction that was selected when first creating this sample. Once a default subtraction has been made for a sample, you cannot change it. If you would like your sample to have a different default subtraction, you will have to create another sample with the new subtraction.
+
+Additionally, when you do a quick analysis on a sample, the default subtraction will already be pre-selected. 
+![Default Subtraction Dialog](default_subtraction_dialog.png)
+
 # Quick Analyze
 
-Quick analyses allows you to start analysis jobs for multiple samples at once. Select the samples of interest and click on the {{< icon "fa fa-chart-area" >}} button. An _Analyze_ dialog box will appear.
+Quick analyses allows you to start analysis jobs for multiple samples at once. Select the samples of interest and click on the {{< icon "fa fa-chart-area" >}} button. An **Analyze** dialog box will appear.
 ![Samples Selected](selected.png)
 
-Use this dialog you can choose the analysis algorithm (PathoscopeBowtie or NuVs), the subtraction, and the reference(s) you want to use to analyze your sample(s). Selecting multiple references will start a separate job for each sample-reference combination. Once these fields are specified, click the **Start** button to start the analysis.
+In this dialog you can choose the analysis algorithm (PathoscopeBowtie or NuVs), the subtraction, and the reference(s) you want to use to analyze your sample(s). Selecting multiple references will start a separate job for each sample-reference combination. Once these fields are specified, click the {{< icon "fa fa-play" >}} **Start** button to start the analysis.
 ![Analyze](analyze.png)
 
 Once the analysis is running, you can view its progress under the **Jobs** tab.
 ![Progress](progress.png)
 
+# Edit a Samples
+
+Click on **Samples** in the top navigation bar to see a list of available samples.
+![Samples List Overview](edit_sample_overview.png)
+
+Click on the sample you would like to edit. Here we will choose **Apple Stem Pitting Virus**.
+![Apple Stem Pitting Virus](apple_stem.png)
+
+On the top right beside the name of the sample, click {{< icon " fa fa-pencil-alt" >}} to edit the sample. A dialog box like the one below will show up.
+![Apple stem pitting virus dialog box](apple_stem_dialog.png)
+
+The name, isolate, host, and locale can all be edited here. After making the changes click {{< icon "fa fa-save" >}} **Save**.
+![Apple stem pitting virus dialog box](apple_stem_dialog_edited.png)
+
+These edits will then be displayed on the sample detail view page as shown below.
+![Apple stem pitting virus edited](apple_stem_edited.png)
+
+# Delete a Sample
+
+Click on **Samples** in the top navigation bar to see a list of available samples.
+![Samples List Overview](samples_overview.png)
+
+Click on the sample you wish to delete. Here we will delete **Test A**.
+![Test A](Test_A.png)
+
+Click on the {{< icon "fa fa-trash" >}} to delete the sample. A dialog box such as the one below will show up to confirm the deletion of the sample. 
+![Test A Deletion](test_A_deletion.png)
+
+Click {{< icon "fa fa-check" >}} **Confirm**. The sample will now be removed from the samples list.
+![Samples List Overview](samples_overview2.png)
+
+# Quality
+
+# Sample Quality
+
+The quaity assessment of a sample is generated using FASTQC and can be visualized under the **Quality** tab.
+![Quality](quality.png)
+
+You will see three different graphs on this page as shown below.
+
+## Quality Distribution at Read Positions
+
+![Quality Distribution at Read Positions](quality_dist_at_read_positions.png)
+
+This graph shows the quality of your sample library. The Y-axis shows the quality score, the higher the better. The quality tends to decrease as the run progresses. 
+
+Median values of less than 25 or a lower quartile of less than 10 is concerning. In the case of the sample above, the quality of our sample library is fine and further analysis can take place.
+
+## Nucleotide Composition at Read Positions
+
+![Nucleotide Composition at Read Positions](nuc_comp_at_read_positions.png)
+
+This plot shows the proportion of each base's position in a file. In general, one should expect A/T to be roughly equal and G/C to be roughly equal. Viruses genomes are often unevenly distributed in composition and are usually A/T rich. 
+
+With all of the things being equal in a diverse library, you should see an even distribution of the four bases which doesn't change with base position. Although the relative amount of G/C content will be determined by your library, but what you should see on the graph are parallel lines going across the plot.
+
+## Read-wise Quality Occurrence
+
+![Read-wise Quality Occurrence](read_wise_quality_occurrence.png)
+
+In this case we are taking every sequence and looking at the mean score across all the bases in that particular sequence. The distribution of those means are then plotted as shown above. All sequences should form one tight distribution (sharp curve) with universally high quality and no sequences of low quality. This sharp curve is the average quality per read. A mean quality below 27 is a cause for concern.
+
+# Cache Quality Analysis
+
+Cache quality analysis is determined by running Pathoscope and/or NuVs on your sample of interest. These analyses can be found under the **Analyses** tab.
+![Cache quality analysis](cache_quality.png)
+
+Click on the **PathoscopeBowtie** to view its analyses.
+![PathoscopeBowtie](pathoscopebowtie.png)
+
+Pathoscope is the primary tool in Virtool used for determining whether a known virus is present in a sample. A number of statistics are used to determine the presence of a pathogen.
+
+Generally, approximately 5 million reads is a good base line for a dsRNA library, however the percentage of mapped reads is of greater importance. For dsRNA, percentages can range from less than 1% to greater than 80%. The greater the enrichment of viral RNA (i.e. the higher the percent of mapped reads) the less number of total reads are required. For example, 2% of 5 million reads or 100 000 mapped reads is good.
+
+Additional statistics include:
+
+**Coverage:** a measure for how well the mapped reads cover the viral genome. In general, coverage of greater than 0.5 indicates positve detection and coverage less than 0.2 indicates negative detection.
+
+**Depth:** a measure of how many times a genome is covered by mapped reads.
+
+**Weight:** the calculated proportion of reads mapping to a virus. The weight is roughly proportional to the titre. Higher the titre, higher the weight. A weight greater than 0.001 is a strong indicator of positive detection.
+
+![Pathoscope Analyses](pathoscope_analyses.png)
+
+In the analyses shown above, three pathogens are likely to be in the sample. Although the total number of mapped reads is less than 5 million, the percentage of mapped reads is 8.12% therefore this is a good indicator of enrichment of viral RNA. Additionally, all three pathogens have high weight, depth, and coverage values, therefore we can confidently say that indeed these pathogens are present in the sample.
+
+The results from Pathoscope were successful in identifying the pathogens present in the sample, therefore further analysis using NuVs is not necessary. An indication that would result in using NuVs would be if our results showed high weight and depth values in combination with low coverage values. This would indicate that the virus sequence in the sample may be significantly different than what is in the database. This may represent a new genotype or possibly a new, closely related virus.
 
 # Rights
 
@@ -169,7 +289,10 @@ Samples have their initial access rights configured when they are first created.
 
 ## Unique Sample Names
 
-By default, sample names must be unique to the sample manager. This prevents confusion with duplicately named samples. It is possible to disable this feature by clicking {{< icon "far fa-check-square" >}} **Enable**.
+By default, sample names must be unique to the sample manager. This prevents confusion with duplicately named samples. It is possible to disable this feature. To do so, click **Settings** on the left sidebar under the samples overview page.
+![Samples Overview](samples_overview3.png)
+
+Click {{< icon "far fa-check-square" >}} in the **Unique Sample Names** box to ensure that every created sample has a unique name.
 
 !["Unique Sample Names Disabled"](unique_sample_names.png)
 

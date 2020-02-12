@@ -154,8 +154,6 @@ Save the new virus. It will appear in the isolate editor.
 Click on the sequence entry to expand it and view all the data associated with the sequence record.
 ![Sequence Record](sequence_record.png)
 
-# Fetch a Genbank Sequence
-
 # Edit a Sequence
 
 To edit a sequence, click on the {{< icon "fas fa-pencil alt" >}} next to the sequence entry. An **Edit Sequence** dialog will appear as shown below.
