@@ -12,39 +12,44 @@ Selecting **Samples** on the top menu brings up the main sample managment view. 
 
 ![Sample Manager](browse.png)
 
-# Caching
+## What happens during sample creation?
 
-Caching is the process of storing data in a cache (a temporary storage area). The purpose of cache memory is to store program instructions and data that are used repeatedly in the operation of programs or information that the CPU is likely to need next. 
+Sample FASTQ files are copied into a new sample directory. The files will be compressed if necessary. Files associated with the sample can be viewed and downloaded under the sample detail tab.
 
-Sample data is automatically trimmed during analysis. Trimmed data are cached so that data doesn't have to be re-run.
+Quality information is calculated from the library using [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) and committed to Virtool's database.
 
-For example, when a new sample is run using a subtraction that has already been used, the host genome that has already been analyzed and eliminated will not have to go through the same process again. Instead the reads belonging to the host genome or non-pathogenic organisms associated with the host such as insects or fungi will already be cached. This makes the analyzing process for a sample(s) happen a lot faster and decreases the amount of work the server has to perform.
+The FASTQ files and quality data are used for further analyses triggered by the user.
 
 # Browse Samples
 
 Once you have imported one or more samples, they can be browsed in the main sample managment view.
 
-## Searching
-
 Using the search bar, samples can be filtered by their names or the name of the user that originally imported the sample.
 
 {{< video "search.mp4" >}}
 
-It is also possible to search for samples based on the their analysis state.
-
-For each workflow (Pathoscope, NuVs), the sample can have:
+It is also possible to search for samples based on the their analysis state. For each workflow (Pathoscope, NuVs), the sample can have:
 
   - no analysis available
   - analysis in progress
   - at least one completed analysis
   
-Set the checkboxes to match the profile of samples you are looking for.
-
-Here is an example looking for samples matching the text query _14SP_ that have **no pathoscope analysis**.
+Set the checkboxes to match the profile of samples you are looking for. Here is an example looking for samples matching the text query _14SP_ that have **no pathoscope analysis**:
 
 ![Searching for samples that have no pathoscope analysis and match text query '14SP'](filter_no_pathoscope.png)
 
 Clicking on a sample item will navigate to a detailed description of the sample.
+
+# Quick Analysis
+
+Quick analyses allows you to start analysis jobs for multiple samples at once. Select the samples of interest and click on the {{< icon "fa fa-chart-area" >}} button. An **Analyze** dialog box will appear.
+![Samples Selected](selected.png)
+
+In this dialog you can choose the analysis algorithm (PathoscopeBowtie or NuVs), the subtraction, and the reference(s) you want to use to analyze your sample(s). Selecting multiple references will start a separate job for each sample-reference combination. Once these fields are specified, click the {{< icon "fa fa-play" >}} **Start** button to start the analysis.
+![Analyze](analyze.png)
+
+Once the analysis is running, you can view its progress under the **Jobs** tab.
+![Progress](progress.png)
 
 # Upload a FASTQ File
 
@@ -59,16 +64,6 @@ Click on the {{< icon "fa fa-upload" >}} **Upload** button to choose a file from
 
 The uploaded file will then be visible under the **Read Files** overview page.
 ![Uploaded FASTQ File](uploaded_file.png)
-
-# Paired and Unpaired FASTQ Data
-
-Paired or unpaired FASTQ data can be used to create a sample.
-
-Samples created from only one file are assumed to be unpaired. Paired samples must comprise two paired FASTQ files. **Interleaved FASTQ files are not currently supported**.
-
-For paired data, make sure the file orientation labels (left and right) are correct before you create a sample. You can use the {{< icon "fas fa-retweet" >}} button to swap orientations.
-
-{{< video "create_orientation.mp4" >}}
 
 # Create a Sample
 
@@ -106,13 +101,6 @@ Your sample will look something like this when it is ready to use:
 
 ![Sample item ready to use](ready_state.png)
 
-## What happens during sample creation?
-
-Sample FASTQ files are copied into a new sample directory. The files will be compressed if necessary.
-
-Quality information is calculated from the library using [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) and committed to Virtool's database.
-
-The FASTQ files and quality data are used for further analyses triggered by the user.
 
 ## Default Subtraction
 
@@ -124,18 +112,49 @@ For the Banana bunchy top virus shown above, the default subtraction is **Banana
 Additionally, when you do a quick analysis on a sample, the default subtraction will already be pre-selected. 
 ![Default Subtraction Dialog](default_subtraction_dialog.png)
 
-# Quick Analyze
+## Paired and Unpaired FASTQ Data
 
-Quick analyses allows you to start analysis jobs for multiple samples at once. Select the samples of interest and click on the {{< icon "fa fa-chart-area" >}} button. An **Analyze** dialog box will appear.
-![Samples Selected](selected.png)
+Paired or unpaired FASTQ data can be used to create a sample.
 
-In this dialog you can choose the analysis algorithm (PathoscopeBowtie or NuVs), the subtraction, and the reference(s) you want to use to analyze your sample(s). Selecting multiple references will start a separate job for each sample-reference combination. Once these fields are specified, click the {{< icon "fa fa-play" >}} **Start** button to start the analysis.
-![Analyze](analyze.png)
+Samples created from only one file are assumed to be unpaired. Paired samples must comprise two paired FASTQ files. **Interleaved FASTQ files are not currently supported**.
 
-Once the analysis is running, you can view its progress under the **Jobs** tab.
-![Progress](progress.png)
+For paired data, make sure the file orientation labels (left and right) are correct before you create a sample. You can use the {{< icon "fas fa-retweet" >}} button to swap orientations.
 
-# Edit a Samples
+{{< video "create_orientation.mp4" >}}
+
+# Quality
+
+Quality metrics are calculated using [FASTQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc) during the sample creation process. These metrics are based on the raw data provided by the user.
+
+The quality information can be viewed under the **Quality** tab:
+
+![Quality](quality.png)
+
+You will see three different graphs on this page as shown below.
+
+## Quality Distribution at Read Positions
+
+![Quality Distribution at Read Positions](quality_dist_at_read_positions.png)
+
+This graph shows the quality of your sample library. The Y-axis shows the quality score, the higher the better. The quality tends to decrease as the run progresses. 
+
+Median values of less than 25 or a lower quartile of less than 10 is concerning. In the case of the sample above, the quality of our sample library is fine and further analysis can take place.
+
+## Nucleotide Composition at Read Positions
+
+![Nucleotide Composition at Read Positions](nuc_comp_at_read_positions.png)
+
+This plot shows the proportion of each base's position in a file. In general, one should expect A/T to be roughly equal and G/C to be roughly equal. Viruses genomes are often unevenly distributed in composition and are usually A/T rich.
+
+With all of the things being equal in a diverse library, you should see an even distribution of the four bases which doesn't change with base position. Although the relative amount of G/C content will be determined by your library, but what you should see on the graph are parallel lines going across the plot.
+
+## Read-wise Quality Occurrence
+
+![Read-wise Quality Occurrence](read_wise_quality_occurrence.png)
+
+In this case we are taking every sequence and looking at the mean score across all the bases in that particular sequence. The distribution of those means are then plotted as shown above. All sequences should form one tight distribution (sharp curve) with universally high quality and no sequences of low quality. This sharp curve is the average quality per read. A mean quality below 27 is a cause for concern.
+
+# Edit a Sample
 
 Click on **Samples** in the top navigation bar to see a list of available samples.
 ![Samples List Overview](edit_sample_overview.png)
@@ -166,36 +185,27 @@ Click on the {{< icon "fa fa-trash" >}} to delete the sample. A dialog box such 
 Click {{< icon "fa fa-check" >}} **Confirm**. The sample will now be removed from the samples list.
 ![Samples List Overview](samples_overview2.png)
 
-# Quality
+# Download a FASTQ File
 
-# Sample Quality
+You can download the original FASTQ files used to create a sample...
 
-The quaity assessment of a sample is generated using FASTQC and can be visualized under the **Quality** tab.
-![Quality](quality.png)
+# Trim Caches
 
-You will see three different graphs on this page as shown below.
+Sample data is automatically trimmed during analysis to remove sequencing artefacts and low quality regions. After the first analysis, the trimmed data are cached for reuse in future analyses that use the same trimming parameters. This saves running the trimming workflow steps for every analysis for a given sample.
 
-## Quality Distribution at Read Positions
+A sample that has not yet been analyzed will not have any caches associated with it.
 
-![Quality Distribution at Read Positions](quality_dist_at_read_positions.png)
+_PICTURE_
 
-This graph shows the quality of your sample library. The Y-axis shows the quality score, the higher the better. The quality tends to decrease as the run progresses. 
+Running an analysis for this sample will create an analysis job. During the job the raw sample reads will be trimmed and cached for future analyses. As soon as trimming is complete the cache will be created.
 
-Median values of less than 25 or a lower quartile of less than 10 is concerning. In the case of the sample above, the quality of our sample library is fine and further analysis can take place.
+_PICTURE_
 
-## Nucleotide Composition at Read Positions
 
-![Nucleotide Composition at Read Positions](nuc_comp_at_read_positions.png)
 
-This plot shows the proportion of each base's position in a file. In general, one should expect A/T to be roughly equal and G/C to be roughly equal. Viruses genomes are often unevenly distributed in composition and are usually A/T rich. 
 
-With all of the things being equal in a diverse library, you should see an even distribution of the four bases which doesn't change with base position. Although the relative amount of G/C content will be determined by your library, but what you should see on the graph are parallel lines going across the plot.
 
-## Read-wise Quality Occurrence
-
-![Read-wise Quality Occurrence](read_wise_quality_occurrence.png)
-
-In this case we are taking every sequence and looking at the mean score across all the bases in that particular sequence. The distribution of those means are then plotted as shown above. All sequences should form one tight distribution (sharp curve) with universally high quality and no sequences of low quality. This sharp curve is the average quality per read. A mean quality below 27 is a cause for concern.
+For example, when a new sample is run using a subtraction that has already been used, the host genome that has already been analyzed and eliminated will not have to go through the same process again. Instead the reads belonging to the host genome or non-pathogenic organisms associated with the host such as insects or fungi will already be cached. This makes the analyzing process for a sample(s) happen a lot faster and decreases the amount of work the server has to perform.
 
 # Cache Quality Analysis
 
