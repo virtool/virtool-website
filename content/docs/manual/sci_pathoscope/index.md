@@ -20,3 +20,29 @@ The second step begins with the creation of a Bowtie2 mapping index containing a
 A major complication of this diagnostic method is multi-mapping, the situation in which single reads find multiple mapping positions in a set of reference sequences. We can make the assumption that there are only a small number of real source sequences in the sample. In practice, reads with a single real source sequence find multiple mapping locations in Virtool references. This is especially true when OTUs contain large numbers of similar isolates.
 
 Virtool uses the [Pathoscope2 Python library](https://github.com/PathoScope/PathoScope) to reassign multi-mapped reads to their most likely source sequences. An expectation maximization (EM) algorithm is used to perform the reassignment. Pathoscope makes the assumption that source sequences with high numbers of **uniquely mapped** (not multi-mapped) reads are most likely to be real source sequences. Read counts are reassigned fractionally when it is assigned to multiple genomes after reassignment.
+
+# Cache Quality Analysis
+
+Cache quality analysis is determined by running Pathoscope and/or NuVs on your sample of interest. These analyses can be found under the **Analyses** tab.
+![Cache quality analysis](cache_quality.png)
+
+Click on the **PathoscopeBowtie** to view its analyses.
+![PathoscopeBowtie](pathoscopebowtie.png)
+
+Pathoscope is the primary tool in Virtool used for determining whether a known virus is present in a sample. A number of statistics are used to determine the presence of a pathogen.
+
+Generally, approximately 5 million reads is a good base line for a dsRNA library, however the percentage of mapped reads is of greater importance. For dsRNA, percentages can range from less than 1% to greater than 80%. The greater the enrichment of viral RNA (i.e. the higher the percent of mapped reads) the less number of total reads are required. For example, 2% of 5 million reads or 100 000 mapped reads is good.
+
+Additional statistics include:
+
+**Coverage:** a measure for how well the mapped reads cover the viral genome. In general, coverage of greater than 0.5 indicates positve detection and coverage less than 0.2 indicates negative detection.
+
+**Depth:** a measure of how many times a genome is covered by mapped reads.
+
+**Weight:** the calculated proportion of reads mapping to a virus. The weight is roughly proportional to the titre. Higher the titre, higher the weight. A weight greater than 0.001 is a strong indicator of positive detection.
+
+![Pathoscope Analyses](pathoscope_analyses.png)
+
+In the analyses shown above, three pathogens are likely to be in the sample. Although the total number of mapped reads is less than 5 million, the percentage of mapped reads is 8.12% therefore this is a good indicator of enrichment of viral RNA. Additionally, all three pathogens have high weight, depth, and coverage values, therefore we can confidently say that indeed these pathogens are present in the sample.
+
+The results from Pathoscope were successful in identifying the pathogens present in the sample, therefore further analysis using NuVs is not necessary. An indication that would result in using NuVs would be if our results showed high weight and depth values in combination with low coverage values. This would indicate that the virus sequence in the sample may be significantly different than what is in the database. This may represent a new genotype or possibly a new, closely related virus.

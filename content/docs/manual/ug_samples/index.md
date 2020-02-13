@@ -85,7 +85,7 @@ You **must** set a unique sample _name_ and _read size_. _Read size_ can be set 
 
 An appropriate _subtraction host_ must be selected. This should be the [subtraction genome](/docs/manual/ug_subtraction) most closely related to the _true host_ for your sample.
 
-Here is an example using normal sequencing and _Banana_ as a subtraction host:
+Here is an example using normal sequencing and _Banana_ as a **Default Subtraction** host:
 
 ![Create sample dialog with non-file fields populated](create_filled_top.png)
 
@@ -101,17 +101,6 @@ Your sample will look something like this when it is ready to use:
 
 ![Sample item ready to use](ready_state.png)
 
-
-## Default Subtraction
-
-The default subtraction for a sample that will be used when creating an analysis can be found on the bottom of the detailed view of that sample.
-![Default Subtraction](default_subtraction.png)
-
-For the Banana bunchy top virus shown above, the default subtraction is **Banana**. This was the same subtraction that was selected when first creating this sample. Once a default subtraction has been made for a sample, you cannot change it. If you would like your sample to have a different default subtraction, you will have to create another sample with the new subtraction.
-
-Additionally, when you do a quick analysis on a sample, the default subtraction will already be pre-selected. 
-![Default Subtraction Dialog](default_subtraction_dialog.png)
-
 ## Paired and Unpaired FASTQ Data
 
 Paired or unpaired FASTQ data can be used to create a sample.
@@ -122,7 +111,17 @@ For paired data, make sure the file orientation labels (left and right) are corr
 
 {{< video "create_orientation.mp4" >}}
 
-# Quality
+## Default Subtraction
+
+The default subtraction for a sample that will be used when creating an analysis can be found on the bottom of the detailed view of that sample.
+![Default Subtraction](default_subtraction.png)
+
+For the Banana bunchy top virus shown above, the default subtraction is **Banana**. This was the same subtraction that was selected when first creating this sample. Once a default subtraction has been made for a sample, you cannot change it. If you would like your sample to have a different default subtraction, you will have to create another sample with the new subtraction.
+
+Additionally, when you do an analysis on a sample, the default subtraction will already be pre-selected. 
+![Default Subtraction Dialog](default_subtraction_dialog.png)
+
+# Sample Quality
 
 Quality metrics are calculated using [FASTQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc) during the sample creation process. These metrics are based on the raw data provided by the user.
 
@@ -187,51 +186,48 @@ Click {{< icon "fa fa-check" >}} **Confirm**. The sample will now be removed fro
 
 # Download a FASTQ File
 
-You can download the original FASTQ files used to create a sample...
+You can download the original FASTQ files used to create a sample. To do so, click on the sample of interest and then click **Files**. 
+![Sample of Interest](files2.png)
+
+Click the link under **Raw Data** to download the FASTQ file that was originally used to create the sample. The file should appear on the bottom of your screen once it is downloaded.
+![Downloaded File](downloaded_file.png)
 
 # Trim Caches
 
 Sample data is automatically trimmed during analysis to remove sequencing artefacts and low quality regions. After the first analysis, the trimmed data are cached for reuse in future analyses that use the same trimming parameters. This saves running the trimming workflow steps for every analysis for a given sample.
 
 A sample that has not yet been analyzed will not have any caches associated with it.
-
-_PICTURE_
+![No Cache](no_cache.png)
 
 Running an analysis for this sample will create an analysis job. During the job the raw sample reads will be trimmed and cached for future analyses. As soon as trimming is complete the cache will be created.
+![Cache](cache.png)
 
-_PICTURE_
+In the image above you will notice that the size of the **Cached Trims** is smaller that the **Raw Data**. This is becuase all the low quality reads have been removed.
 
+When you click on the link under **Cached Trims** you will see all the parameters used in the trimming process.
+![Trimming Parameters](cache_parameters.png)
 
+Additionally, below the parameters you will see the quality of the data that has been trimmed and cached.
+![Quality of Trimmed Data](quality2.png)
 
+# Sample Quality vs Cache Quality Comparison
 
+## Quality Distribution at Read Positions - Sample Quality
 
-For example, when a new sample is run using a subtraction that has already been used, the host genome that has already been analyzed and eliminated will not have to go through the same process again. Instead the reads belonging to the host genome or non-pathogenic organisms associated with the host such as insects or fungi will already be cached. This makes the analyzing process for a sample(s) happen a lot faster and decreases the amount of work the server has to perform.
+![Quality of Sample](quality3.png)
 
-# Cache Quality Analysis
+## Quality Distribution at Read Positions - Cache Quality
+![Quality after Trimming](quality5.png)
 
-Cache quality analysis is determined by running Pathoscope and/or NuVs on your sample of interest. These analyses can be found under the **Analyses** tab.
-![Cache quality analysis](cache_quality.png)
+In the **Sample Quality** image we see that the mean quality of our sample library starts to degrade after the 70th read position. When an analysis is done, the good quality data is trimmed off and cached for future runs. This data that will be used for future runs is shown in the second image above.
 
-Click on the **PathoscopeBowtie** to view its analyses.
-![PathoscopeBowtie](pathoscopebowtie.png)
+## Read-wise Quality Occurrence - Sample Quality
+![Read-wise Quality of Sample](quality4.png)
 
-Pathoscope is the primary tool in Virtool used for determining whether a known virus is present in a sample. A number of statistics are used to determine the presence of a pathogen.
+## Read-wise Quality Occurrence - Cache Quality
+![Read-wise Quality after Trimming](quality6.png)
 
-Generally, approximately 5 million reads is a good base line for a dsRNA library, however the percentage of mapped reads is of greater importance. For dsRNA, percentages can range from less than 1% to greater than 80%. The greater the enrichment of viral RNA (i.e. the higher the percent of mapped reads) the less number of total reads are required. For example, 2% of 5 million reads or 100 000 mapped reads is good.
-
-Additional statistics include:
-
-**Coverage:** a measure for how well the mapped reads cover the viral genome. In general, coverage of greater than 0.5 indicates positve detection and coverage less than 0.2 indicates negative detection.
-
-**Depth:** a measure of how many times a genome is covered by mapped reads.
-
-**Weight:** the calculated proportion of reads mapping to a virus. The weight is roughly proportional to the titre. Higher the titre, higher the weight. A weight greater than 0.001 is a strong indicator of positive detection.
-
-![Pathoscope Analyses](pathoscope_analyses.png)
-
-In the analyses shown above, three pathogens are likely to be in the sample. Although the total number of mapped reads is less than 5 million, the percentage of mapped reads is 8.12% therefore this is a good indicator of enrichment of viral RNA. Additionally, all three pathogens have high weight, depth, and coverage values, therefore we can confidently say that indeed these pathogens are present in the sample.
-
-The results from Pathoscope were successful in identifying the pathogens present in the sample, therefore further analysis using NuVs is not necessary. An indication that would result in using NuVs would be if our results showed high weight and depth values in combination with low coverage values. This would indicate that the virus sequence in the sample may be significantly different than what is in the database. This may represent a new genotype or possibly a new, closely related virus.
+In the **Sample Quality** image we see one small curve before a sharp peak. The first small curve is due to the sequences of lower quality hence these will be eliminated once an analysis has been run. The cache quality will only store reads that are of good quality and this is represented by the single sharp peak in the second image above.
 
 # Rights
 
