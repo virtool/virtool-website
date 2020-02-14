@@ -113,12 +113,12 @@ For paired data, make sure the file orientation labels (left and right) are corr
 
 ## Default Subtraction
 
-The default subtraction for a sample that will be used when creating an analysis can be found on the bottom of the detailed view of that sample.
+The default subtraction for a sample will be pre-selected as whenever you create an analysis for that sample. You can find the default subtraction for a given sample at the bottom of its detail view.
+
+For Banana bunchy top virus below, the default subtraction is **Banana**. This was the same subtraction that was selected when first creating this sample. Once a default subtraction has been made for a sample, you cannot change it.
 ![Default Subtraction](default_subtraction.png)
 
-For the Banana bunchy top virus shown above, the default subtraction is **Banana**. This was the same subtraction that was selected when first creating this sample. Once a default subtraction has been made for a sample, you cannot change it. If you would like your sample to have a different default subtraction, you will have to create another sample with the new subtraction.
-
-Additionally, when you do an analysis on a sample, the default subtraction will already be pre-selected. 
+When you open an analysis creation dialog for the sample, the default subtraction (**Banana**) will already be pre-selected.
 ![Default Subtraction Dialog](default_subtraction_dialog.png)
 
 # Sample Quality
@@ -189,7 +189,7 @@ Click {{< icon "fa fa-check" >}} **Confirm**. The sample will now be removed fro
 You can download the original FASTQ files used to create a sample. To do so, click on the sample of interest and then click **Files**. 
 ![Sample of Interest](files2.png)
 
-Click the link under **Raw Data** to download the FASTQ file that was originally used to create the sample. The file should appear on the bottom of your screen once it is downloaded.
+Click the link under **Raw Data** to download the FASTQ file that was originally used to create the sample.
 ![Downloaded File](downloaded_file.png)
 
 # Trim Caches
@@ -200,34 +200,34 @@ A sample that has not yet been analyzed will not have any caches associated with
 ![No Cache](no_cache.png)
 
 Running an analysis for this sample will create an analysis job. During the job the raw sample reads will be trimmed and cached for future analyses. As soon as trimming is complete the cache will be created.
+Caches are always smaller than the raw data. This library was reduced from 220.8 MB to 153.9 MB. This is due to removal of low quality reads and localized shortening of reads with low quality ends.
 ![Cache](cache.png)
 
-In the image above you will notice that the size of the **Cached Trims** is smaller that the **Raw Data**. This is becuase all the low quality reads have been removed.
-
-When you click on the link under **Cached Trims** you will see all the parameters used in the trimming process.
+When you click on the link under **Cached Trims** you will see all the parameters used by the trimming program as well as the name of the trimming command (`skewer-0.2.2`). The _hash_ is a unique identifier for the program-parameters combination used to trim this cache.
 ![Trimming Parameters](cache_parameters.png)
 
 Additionally, below the parameters you will see the quality of the data that has been trimmed and cached.
 ![Quality of Trimmed Data](quality2.png)
 
-# Sample Quality vs Cache Quality Comparison
+## Trim Cache Quality
 
-## Quality Distribution at Read Positions - Sample Quality
+Quality metrics are recalculated for reads trimmed during an analysis. The quality information is associated with the generated trim cache. Since low quality reads are discarded and low quality ends are removed, we expected the trim cache quality metrics to improve over those for the raw data.
 
+### Quality Distribution at Read Positions - Raw
 ![Quality of Sample](quality3.png)
 
-## Quality Distribution at Read Positions - Cache Quality
+### Quality Distribution at Read Positions - Trimmed
 ![Quality after Trimming](quality5.png)
 
-In the **Sample Quality** image we see that the mean quality of our sample library starts to degrade after the 70th read position. When an analysis is done, the good quality data is trimmed off and cached for future runs. This data that will be used for future runs is shown in the second image above.
+In the **Quality Distribution at Read Positions - Raw** chart we see that the mean base quality degrades as we get closer to the end of the read. This is a common issue in Illumina libraries. In the **Trimmed** charts we can see that low quality ends were removed resulting in a higher mean and minimum base quality.
 
-## Read-wise Quality Occurrence - Sample Quality
+### Read-wise Quality Occurrence - Raw
 ![Read-wise Quality of Sample](quality4.png)
 
-## Read-wise Quality Occurrence - Cache Quality
+### Read-wise Quality Occurrence - Trimmed
 ![Read-wise Quality after Trimming](quality6.png)
 
-In the **Sample Quality** image we see one small curve before a sharp peak. The first small curve is due to the sequences of lower quality hence these will be eliminated once an analysis has been run. The cache quality will only store reads that are of good quality and this is represented by the single sharp peak in the second image above.
+In the **Read-wise Quality Occurrence - Raw** image we see one small curve before a sharp peak. This is due to a significant number of reads with low mean quality being present in the library. The trimming process discards reads with low mean qualities. This is reflected in the **Trimmed** chart where the smaller peak is no longer present.
 
 # Rights
 
