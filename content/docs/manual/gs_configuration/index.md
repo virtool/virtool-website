@@ -17,30 +17,30 @@ The order of precendence for resolving option values is:
 
 # Reference
 
-| Command Line             | Configuration          | Environment               | Description                                          |
-| ------------------------ | ---------------------- | ------------------------- | ---------------------------------------------------- |
-| `--host`                 | `host`                 | `VT_HOST`                 | The host Virtool should listen on                    |
-| `--port`                 | `port`                 | `VT_PORT`                 | The port Virtool should listen on                    |
-| `--proxy`                | `proxy`                | `VT_PROXY`                | The amount of memory (GB) to use for small jobs      |
-| `--data-path`            | `data_path`            | `VT_DATA_PATH`            | The path to read and write data files to             |
-| `--watch-path`           | `watch_path`           | `VT_WATCH_PATH`           | The path to automatically retrive read files from    |
-| `--proc`                 | `proc`                 | `VT_PROC`                 | The processor limit for the Virtool instance         |
-| `--mem`                  | `mem`                  | `VT_MEM`                  | The memory limit (GB) for the Virtool instance       |
-| `--lg-proc`              | `lg_proc`              | `VT_LG_PROC`              | The number of processors to use for large jobs       |
-| `--lg-mem`               | `lg_mem`               | `VT_LG_MEM`               | The amount of memory (GB) to use for large jobs      |
-| `--sm-proc`              | `sm_proc`              | `VT_SM_PROC`              | The number of processors to use for small jobs       |
-| `--sm-mem`               | `sm_mem`               | `VT_SM_MEM`               | The amount of memory (GB) to use for small jobs      |
-| `--db-connection-string` | `db_connection_string` | `VT_DB_CONNECTION_STRING` | The host MongoDB is listening on                     |
-| `--db-name`              | `db_name`              | `VT_DB_NAME`              | The name of the MongoDB database to use              |
-| `--dev`                  | `dev`                  | `VT_DEV`                  | Run in development mode                              |
-| `--force-version`        | `force_version`        | `VT_FORCE_VERSION`        | Force the instance to think it is the passed version |
-| `--no-db-checks`         | `no_db_checks`         | `VT_NO_DB_CHECKS`         | Do not run database checks on start                  |
-| `--no-file-manager`      | `no_file_manager`      | `VT_NO_FILE_MANAGER`      | Do not initialize the file manager on start          |
-| `--no-job-manager`       | `no_job_manager`       | `VT_NO_JOB_MANAGER`       | Do not initialize the job manager on start           |
-| `--no-refreshing`        | `no_refreshing`        | `VT_NO_REFRESHING`        | Do not automatically check for remote resources      |
-| `--no-sentry`            | `no_sentry`            | `VT_NO_SENTRY`            | Do not initialize Sentry on start                    |
-| `--no-setup`             | `no_setup`             | `VT_NO_SETUP`             | Do not enter first-time setup on start               |
-| `--verbose`              | `verbose`              | `VT_VERBOSE`              | Log debug messages                                   |
+| Command Line             | Configuration          | Environment               | Description                                            |
+| ------------------------ | ---------------------- | ------------------------- | ------------------------------------------------------ |
+| `--host`                 | `host`                 | `VT_HOST`                 | The host Virtool should listen on                      |
+| `--port`                 | `port`                 | `VT_PORT`                 | The port Virtool should listen on                      |
+| `--proxy`                | `proxy`                | `VT_PROXY`                | The address of a proxy server Virtool should use       |
+| `--data-path`            | `data_path`            | `VT_DATA_PATH`            | The path to read and write data files to               |
+| `--watch-path`           | `watch_path`           | `VT_WATCH_PATH`           | The path to automatically retrive read files from      |
+| `--proc`                 | `proc`                 | `VT_PROC`                 | The processor limit for the Virtool instance           |
+| `--mem`                  | `mem`                  | `VT_MEM`                  | The memory limit (GB) for the Virtool instance         |
+| `--lg-proc`              | `lg_proc`              | `VT_LG_PROC`              | The number of processors to use for large jobs         |
+| `--lg-mem`               | `lg_mem`               | `VT_LG_MEM`               | The amount of memory (GB) to use for large jobs        |
+| `--sm-proc`              | `sm_proc`              | `VT_SM_PROC`              | The number of processors to use for small jobs         |
+| `--sm-mem`               | `sm_mem`               | `VT_SM_MEM`               | The amount of memory (GB) to use for small jobs        |
+| `--db-connection-string` | `db_connection_string` | `VT_DB_CONNECTION_STRING` | The MongoDB connection string for the Virtool database |
+| `--db-name`              | `db_name`              | `VT_DB_NAME`              | The name of the MongoDB database to use                |
+| `--dev`                  | `dev`                  | `VT_DEV`                  | Run in development mode                                |
+| `--force-version`        | `force_version`        | `VT_FORCE_VERSION`        | Force the instance to think it is the passed version   |
+| `--no-db-checks`         | `no_db_checks`         | `VT_NO_DB_CHECKS`         | Do not run database checks on start                    |
+| `--no-file-manager`      | `no_file_manager`      | `VT_NO_FILE_MANAGER`      | Do not initialize the file manager on start            |
+| `--no-job-manager`       | `no_job_manager`       | `VT_NO_JOB_MANAGER`       | Do not initialize the job manager on start             |
+| `--no-refreshing`        | `no_refreshing`        | `VT_NO_REFRESHING`        | Do not automatically check for remote resources        |
+| `--no-sentry`            | `no_sentry`            | `VT_NO_SENTRY`            | Do not initialize Sentry on start                      |
+| `--no-setup`             | `no_setup`             | `VT_NO_SETUP`             | Do not enter first-time setup on start                 |
+| `--verbose`              | `verbose`              | `VT_VERBOSE`              | Log debug messages                                     |
 
 # HTTP
 
