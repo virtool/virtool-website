@@ -108,11 +108,25 @@ Click the {{< icon "fas fa-upload" >}} **Upload** button and open the reference 
 Click {{< icon "fa fa-save" >}} **Import** to import the reference. The importing progress can be seen under the **References** tab.
 ![Import Progress](import_progress.png)
 
-# Edit a Reference
+# Editing a Reference
 
 The name of a reference cannot be changed once it has been made. You are however, allowed to make changes to the OTUs and its isolates. 
 
-# Update the Official Reference
+# Deleting a Reference
+
+Click on the reference you would like to delete. In this example we will delete the _Apple Stem Pitting Virus_.
+![Delete Reference](ASPV.png)
+
+Click the **Settings** tab under the reference's name. 
+![ASPV Settings](ASPV_settings.png)
+
+To permanently delete the reference click on the red **Delete** button on the bottom. 
+![Permanently delete ASPV](permanently_delete.png)
+
+The deleted reference will no longer be shown on the References overview page.
+![References overview page](references_overview_page.png)
+
+# Updating the Official Reference
 
 Your remote reference is the first reference you downloaded that is in sync with a reference published on GitHub. When changes are made to the reference on GitHub, your official reference on Virtool also needs to be updated.
 
