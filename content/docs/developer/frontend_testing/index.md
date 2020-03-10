@@ -45,7 +45,7 @@ Jest can automatically find test files to run if they are kept in a dedicated `\
 
 Jest is also a testing platform with a diverse API to allow you to write tests without the need for external plugins. Tests generally take the form of the following:
 
-`virtool/client/src/js/errors/error-actions.test.js`
+{{< code_file "virtool/client/src/js/errors/error-actions.test.js" >}}
 
 ```javascript
 import { clearError } from "./actions";
@@ -66,7 +66,7 @@ The `describe()` block denotes a test suite for a particular unit under test, wh
 
 This test corresponds and resides next to the implementation file:
 
-`virtool/client/src/js/errors/actions.js`
+{{< code_file "virtool/client/src/js/errors/actions.js" >}}
 
 ```javascript
 import { CLEAR_ERROR } from "../actionTypes";
@@ -95,7 +95,7 @@ npm test Sample.test.js -u
 
 Virtool uses Enzyme to render components, and the `enzyme-to-json` library to parse snapshots into an easily readable file.
 
-`Sample.test.js.snap`
+{{< code_file "Sample.test.js.snap" >}}
 
 ```markdown
 // Jest Snapshot v1, https://goo.gl/fbAQLP
@@ -113,6 +113,8 @@ tipPlacement="top"
 ```
 
 which corresponds to the implementation's `render()` output of `Sample.js`.
+
+{{< code_file "Sample.js" >}}
 
 ```jsx
   render () {
@@ -148,7 +150,7 @@ Coverage details for each file is stored in a dedicated directory that is genera
 The coverage directory and coverage files are **not** committed to repositories.
 {{< /note >}}
 
-## Enzyme
+# Enzyme
 
 [Enzyme](http://airbnb.io/enzyme/) is a JavaScript testing utility developed specifically for React whose [API](http://airbnb.io/enzyme/docs/api/) allows for rendering React components and asserting, manipulating, and traversing their output.
 
