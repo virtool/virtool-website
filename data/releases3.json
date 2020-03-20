@@ -166,6 +166,18 @@
         },
         "releases": [
             {
+                "name": "v3.9.7-beta.1",
+                "body": "#### Fixed\r\n- fix incorrect subtraction counts for Pathoscope analyses (#1747)\r\n- fix platform-specific issues due to `cx-Freeze` package\r\n- upgrade packages with security issues\r\n",
+                "prerelease": true,
+                "published_at": "2020-03-20T00:18:38Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.9.7-beta.1",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 64542303,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.9.7-beta.1/virtool.tar.gz",
+                "asset_error": false
+            },
+            {
                 "name": "v3.9.6",
                 "body": "#### Fixed\r\n- fix `0` always being shown as subtracted read count in Pathoscope viewer (#1735)\r\n- fix crash in browser when navigating to reference index list\r\n- fix default subtraction always being used for new analysis (#1735)\r\n- fix default subtraction name always shown in pathoscope viewer (#1735)\r\n- fix default subtraction always returned when fetching analysis from API (#1735)",
                 "prerelease": false,
