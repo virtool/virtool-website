@@ -166,15 +166,15 @@
         },
         "releases": [
             {
-                "name": "v4.0.0-alpha.2",
+                "name": "v4.0.0-alpha.3",
                 "body": "#### Added\r\n- add AODP result viewer (#1743)\r\n- add AODP analysis option in creation dialog (#1748)\r\n- implement AODP as a analysis algorithm\r\n\r\n#### Changed\r\n- update application appearance (#1685, #1703, #1711, #1712, #1714, #1717, #1729, #1736, #1743, #1749)\r\n- make view headers consistent\r\n- overhaul input interfaces\r\n- return `data_type` from API when fetching ready indexes\r\n- show 'None Found' when no targets assigned for barcode reference (#1720)\r\n\r\n#### Fixed\r\n- fix crash when client loads sample settings\r\n- fix error in remove schema segment dialog (#1724)\r\n- fix error when editing OTU sequence\r\n- fix error when OTU schema tab is viewed (#1709)\r\n- fix issues importing and exporting references (#1741)\r\n- fix issues in clone reference dialog (#1690)",
                 "prerelease": true,
-                "published_at": "2020-03-25T18:18:30Z",
-                "html_url": "https://github.com/virtool/virtool/releases/tag/v4.0.0-alpha.2",
+                "published_at": "2020-03-30T20:34:29Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v4.0.0-alpha.3",
                 "filename": "virtool.tar.gz",
                 "content_type": "application/gzip",
-                "size": 64546460,
-                "download_url": "https://github.com/virtool/virtool/releases/download/v4.0.0-alpha.2/virtool.tar.gz",
+                "size": 69049803,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v4.0.0-alpha.3/virtool.tar.gz",
                 "asset_error": false
             },
             {
