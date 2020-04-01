@@ -4,10 +4,10 @@ description: "Fix issues encountered by other users and developers."
 menu:
   manual:
     parent: "Getting Started"
-    weight: 50
+    weight: 60
 ---
 
-# Inotify exception
+# `InotifyError` exception
 
 ## Problem
 

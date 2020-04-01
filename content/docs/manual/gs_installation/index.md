@@ -139,40 +139,6 @@ This can be undone by disabling the service:
 sudo systemctl disable virtoold.service
 ```
 
-# MongoDB
-
-Virtool uses MongoDB v3.6.0+ as a database service. You will have to get MongoDB running before starting Virtool. We highly recommend installing and updating MongoDB through your Linux package manager.
-
-The MongoDB documentation provides step-by-step instructions for installing MongoDB on common Linux distributions:
-
-- [Install on Ubuntu](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/>)
-- [Install on Debian](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-debian/>)
-- [Install on SUSE](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-suse/>)
-- [Install on Red Hat](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat/>)
-
-Once you have installed MongoDB, ensure it is running by issuing the following command:
-
-```shell
-sudo systemctl status mongod.service
-```
-
-You will receive an output similar to the following if MongoDB is running:
-
-```shell
-● mongod.service - High-performance, schema-free document-oriented database
-   Loaded: loaded (/etc/systemd/system/mongod.service; disabled; vendor preset: enabled)
-   Active: active (running) since Fri 2017-04-21 15:55:59 PDT; 2s ago
- Main PID: 11844 (mongod)
-    Tasks: 14
-   Memory: 31.1M
-      CPU: 95ms
-   CGroup: /system.slice/mongod.service
-           └─11844 /usr/bin/mongod --quiet --config /etc/mongod.conf
-```
-
-
-
-
 # External Software
 
 Virtool relies on a number of common bioinformatics programs. These should be available in your `PATH` so Virtool can find them. You will encounter errors if these programs are not available.
