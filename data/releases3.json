@@ -153,18 +153,30 @@
     },
     "virtool": {
         "latest": {
-            "name": "v3.9.6",
-            "body": "#### Fixed\r\n- fix `0` always being shown as subtracted read count in Pathoscope viewer (#1735)\r\n- fix crash in browser when navigating to reference index list\r\n- fix default subtraction always being used for new analysis (#1735)\r\n- fix default subtraction name always shown in pathoscope viewer (#1735)\r\n- fix default subtraction always returned when fetching analysis from API (#1735)",
+            "name": "v3.9.7",
+            "body": "#### Changed\r\n- include software libraries in distributable that are missing on some platforms\r\n- provide failing quality line when raising error during FastQC parsing",
             "prerelease": false,
-            "published_at": "2020-02-28T20:15:45Z",
-            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.9.6",
+            "published_at": "2020-04-01T15:27:13Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v3.9.7",
             "filename": "virtool.tar.gz",
             "content_type": "application/gzip",
-            "size": 50935040,
-            "download_url": "https://github.com/virtool/virtool/releases/download/v3.9.6/virtool.tar.gz",
+            "size": 69146122,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v3.9.7/virtool.tar.gz",
             "asset_error": false
         },
         "releases": [
+            {
+                "name": "v3.9.7",
+                "body": "#### Changed\r\n- include software libraries in distributable that are missing on some platforms\r\n- provide failing quality line when raising error during FastQC parsing",
+                "prerelease": false,
+                "published_at": "2020-04-01T15:27:13Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v3.9.7",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 69146122,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v3.9.7/virtool.tar.gz",
+                "asset_error": false
+            },
             {
                 "name": "v4.0.0-alpha.4",
                 "body": "#### Changed\r\n- update Pathoscope viewer\r\n\r\n#### Fixed\r\n- fix crash when displaying AODP result\r\n- fix index list item appearance (#1770)\r\n- fix navigation bar appearance (#1768)\r\n",
