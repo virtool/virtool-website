@@ -166,6 +166,18 @@
         },
         "releases": [
             {
+                "name": "v4.0.0-alpha.5",
+                "body": "#### Changed\r\n- show _no matches_ message when no AODP hits meet identity filter\r\n\r\n#### Fixed\r\n- fix crash when no AODP hits meet identity filter\r\n- prevent misleading fatal `git` error from writing to console during startup\r\n",
+                "prerelease": true,
+                "published_at": "2020-04-01T23:31:27Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v4.0.0-alpha.5",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 68830921,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v4.0.0-alpha.5/virtool.tar.gz",
+                "asset_error": false
+            },
+            {
                 "name": "v3.9.7",
                 "body": "#### Changed\r\n- include software libraries in distributable that are missing on some platforms\r\n- provide failing quality line when raising error during FastQC parsing",
                 "prerelease": false,
