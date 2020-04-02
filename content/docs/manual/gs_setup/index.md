@@ -4,7 +4,7 @@ description: "Setup a Virtool installation using the web interface"
 menu:
   manual:
     parent: "Getting Started"
-    weight: 30
+    weight: 40
 ---
 
 # Run
