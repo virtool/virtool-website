@@ -166,6 +166,18 @@
         },
         "releases": [
             {
+                "name": "v4.0.0-alpha.6",
+                "body": "#### Added\r\n- add descriptions for all AODP job steps\r\n\r\n#### Changed\r\n- filter AODP results by maximum OTU identity instead of minimum\r\n\r\n#### Fixed\r\n- fix clipping on sequence x-axis labels in NuVs viewer\r\n- fix problem with ORF graphics in NuVs viewer not resizing when window size changes\r\n- fix tiny tiny font size for login dialog error (#1786)\r\n",
+                "prerelease": true,
+                "published_at": "2020-04-06T21:20:57Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v4.0.0-alpha.6",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 68824514,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v4.0.0-alpha.6/virtool.tar.gz",
+                "asset_error": false
+            },
+            {
                 "name": "v3.9.8",
                 "body": "#### Added\r\n- report MongoDB version in API responses\r\n- add support and upgrade information to **Home** view\r\n\r\n#### Fixed\r\n- fix exception when creating samples with FASTQ files containing a lot of 3' Ns\r\n- resolve client security issue in dependency",
                 "prerelease": false,
