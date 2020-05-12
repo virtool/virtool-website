@@ -166,6 +166,18 @@
         },
         "releases": [
             {
+                "name": "v4.0.0-beta.2",
+                "body": "#### Fixed\r\n- fix exception about missing `sentry_sdk` module",
+                "prerelease": true,
+                "published_at": "2020-04-25T19:14:46Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v4.0.0-beta.2",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 69015717,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v4.0.0-beta.2/virtool.tar.gz",
+                "asset_error": false
+            },
+            {
                 "name": "v4.0.0-beta.1",
                 "body": "#### Added\r\n- allow subtraction renaming\r\n- allow deletion of any subtraction, not just unused ones\r\n- automatically reconnect when server connection is lost (#1787, #1750)\r\n- make default subtractions for samples optional\r\n\r\n#### Changed\r\n- format JSON different depending on the request's `Accept` header\r\n- improve appearance of AODP joining chart y-axis (#1801)\r\n- improve appearance of OTU editor\r\n- improve appearance of user permission list\r\n- improve and harmonize appearance of analysis sorting buttons (#1779)\r\n- the term _Workflow_ will now replace _Algorithm_\r\n\r\n#### Fixed\r\n- fix appearance of pathoscope mapping overview\r\n- fix appearance of sequence close button in OTU editor (#1807)\r\n- fix broken coloring of history information icons\r\n- fix incorrect values in root (`GET /api`) response\r\n- fix revert icon being shown for history items that cannot be reverted (built changes)\r\n- fix gap in reference creation dialog (#1800)\r\n- fix Pathoscope analysis sort order for coverage and depth\r\n- improve speed of fetching Pathoscope results using caching (#1295)\r\n- improve and fix display of official reference installation message",
                 "prerelease": true,
