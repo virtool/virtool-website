@@ -166,6 +166,18 @@
         },
         "releases": [
             {
+                "name": "v4.0.0-beta.3",
+                "body": "#### Added\r\n- support browser caching of analysis retrieval (`GET`) requests\r\n\r\n#### Changed\r\n- miscellaneous minor aesthetic improvements\r\n- simplify unnecessarily complicated reference export mechanism\r\n\r\n#### Fixed\r\n- fix **Add Sequence** dialog not opening\r\n- fix bad subtraction link in Pathoscope mapping overview\r\n- fix missing settings errors when starting with `--no-setup`\r\n- fix unrounded median values (#1833)",
+                "prerelease": true,
+                "published_at": "2020-05-13T16:44:13Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v4.0.0-beta.3",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 69015400,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v4.0.0-beta.3/virtool.tar.gz",
+                "asset_error": false
+            },
+            {
                 "name": "v4.0.0-beta.2",
                 "body": "#### Fixed\r\n- fix exception about missing `sentry_sdk` module",
                 "prerelease": true,
