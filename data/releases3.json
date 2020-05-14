@@ -166,6 +166,18 @@
         },
         "releases": [
             {
+                "name": "v4.0.0-beta.4",
+                "body": "#### Fixed\r\n- fix broken websocket connection in browser\r\n- fix error in Pathoscope workflows during subtraction step\r\n- fix missing **Add Isolate** link in empty OTUs\r\n- fix missing styles due to problem with content security policy",
+                "prerelease": true,
+                "published_at": "2020-05-14T23:41:57Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v4.0.0-beta.4",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 69017682,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v4.0.0-beta.4/virtool.tar.gz",
+                "asset_error": false
+            },
+            {
                 "name": "v4.0.0-beta.3",
                 "body": "#### Added\r\n- support browser caching of analysis retrieval (`GET`) requests\r\n\r\n#### Changed\r\n- miscellaneous minor aesthetic improvements\r\n- simplify unnecessarily complicated reference export mechanism\r\n\r\n#### Fixed\r\n- fix **Add Sequence** dialog not opening\r\n- fix bad subtraction link in Pathoscope mapping overview\r\n- fix missing settings errors when starting with `--no-setup`\r\n- fix unrounded median values (#1833)",
                 "prerelease": true,
