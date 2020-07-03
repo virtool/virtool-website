@@ -166,6 +166,18 @@
         },
         "releases": [
             {
+                "name": "v4.0.0-beta.5",
+                "body": "#### Added\r\n- improved quick analysis dialog with support for multiple sample library types\r\n\r\n#### Changed\r\n- always show _Pathoscope_ instead of _PathoscopeBowtie_\r\n- improve appearance of checkboxes\r\n- improve appearance of dialogs\r\n- improve appearance of sample list items\r\n\r\n#### Fixed\r\n- fix errors when removing cancelled jobs\r\n- fix poor performance during file uploads",
+                "prerelease": true,
+                "published_at": "2020-07-03T18:25:40Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v4.0.0-beta.5",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 69020756,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v4.0.0-beta.5/virtool.tar.gz",
+                "asset_error": false
+            },
+            {
                 "name": "v4.0.0-beta.4",
                 "body": "#### Fixed\r\n- fix broken websocket connection in browser\r\n- fix error in Pathoscope workflows during subtraction step\r\n- fix missing **Add Isolate** link in empty OTUs\r\n- fix missing styles due to problem with content security policy",
                 "prerelease": true,
