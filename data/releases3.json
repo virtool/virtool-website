@@ -166,6 +166,18 @@
         },
         "releases": [
             {
+                "name": "v4.0.0-beta.6",
+                "body": "#### Changed\r\n- generally improve consistency of user interface\r\n- improve checkbox appearance\r\n- make fonts more legible by adjusting size and weight\r\n- restyle user interface alerts\r\n\r\n#### Fixed\r\n- fix non-functional quick analyze icon button on sample list items\r\n- fix subtraction creation file selector\r\n- fix broken NuVs BLAST user flow\r\n- fix upload progress bars\r\n- show missing cache link in analysis viewers",
+                "prerelease": true,
+                "published_at": "2020-08-06T00:29:10Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v4.0.0-beta.6",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 69016083,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v4.0.0-beta.6/virtool.tar.gz",
+                "asset_error": false
+            },
+            {
                 "name": "v4.0.0-beta.5",
                 "body": "#### Added\r\n- improved quick analysis dialog with support for multiple sample library types\r\n\r\n#### Changed\r\n- always show _Pathoscope_ instead of _PathoscopeBowtie_\r\n- improve appearance of checkboxes\r\n- improve appearance of dialogs\r\n- improve appearance of sample list items\r\n\r\n#### Fixed\r\n- fix errors when removing cancelled jobs\r\n- fix poor performance during file uploads",
                 "prerelease": true,
