@@ -153,18 +153,30 @@
     },
     "virtool": {
         "latest": {
-            "name": "v4.0.0",
-            "body": "Changes below are collated from all pre-releases.\r\n\r\n# Added\r\n- add barcode-based analysis workflow based on AODP\r\n- allow subtraction renaming\r\n- allow deletion of any subtraction, not just unused ones\r\n- automatically reconnect when server connection is lost (#1787, #1673 \r\n- check MongoDB version on start and exit if it is not supported\r\n- improved quick analysis dialog with support for multiple sample library types\r\n- improve analysis retrieval using caching\r\n- make default subtractions for samples optional\r\n- report MongoDB version in API responses\r\n- show support and upgrade information to Home view\r\n- support for amplicon sample library types\r\n- support for barcode references\r\n\r\n# Changed\r\n- always show _Pathoscope_ instead of _PathoscopeBowtie_\r\n- improve appearance and consistency of user interface\r\n- format JSON returned from HTTP API appropriately depending on the request's `Accept` header\r\n- replace the term _Algorithm_ with _Workflow_\r\n- overhaul setup user interface\r\n\r\n# Fixed\r\n- fix poor performance during file uploads\r\n- fix missing cache link in analysis viewers\r\n- fix user sessions expiring too early\r\n- prevent misleading fatal git error from writing to console during startup\r\n",
+            "name": "v4.0.1",
+            "body": "# Fixed\r\n- fix error on start related to `static` path",
             "prerelease": false,
-            "published_at": "2020-09-01T20:27:04Z",
-            "html_url": "https://github.com/virtool/virtool/releases/tag/v4.0.0",
+            "published_at": "2020-09-01T21:39:50Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v4.0.1",
             "filename": "virtool.tar.gz",
             "content_type": "application/gzip",
-            "size": 69082189,
-            "download_url": "https://github.com/virtool/virtool/releases/download/v4.0.0/virtool.tar.gz",
+            "size": 69079123,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v4.0.1/virtool.tar.gz",
             "asset_error": false
         },
         "releases": [
+            {
+                "name": "v4.0.1",
+                "body": "# Fixed\r\n- fix error on start related to `static` path",
+                "prerelease": false,
+                "published_at": "2020-09-01T21:39:50Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v4.0.1",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 69079123,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v4.0.1/virtool.tar.gz",
+                "asset_error": false
+            },
             {
                 "name": "v4.0.0",
                 "body": "Changes below are collated from all pre-releases.\r\n\r\n# Added\r\n- add barcode-based analysis workflow based on AODP\r\n- allow subtraction renaming\r\n- allow deletion of any subtraction, not just unused ones\r\n- automatically reconnect when server connection is lost (#1787, #1673 \r\n- check MongoDB version on start and exit if it is not supported\r\n- improved quick analysis dialog with support for multiple sample library types\r\n- improve analysis retrieval using caching\r\n- make default subtractions for samples optional\r\n- report MongoDB version in API responses\r\n- show support and upgrade information to Home view\r\n- support for amplicon sample library types\r\n- support for barcode references\r\n\r\n# Changed\r\n- always show _Pathoscope_ instead of _PathoscopeBowtie_\r\n- improve appearance and consistency of user interface\r\n- format JSON returned from HTTP API appropriately depending on the request's `Accept` header\r\n- replace the term _Algorithm_ with _Workflow_\r\n- overhaul setup user interface\r\n\r\n# Fixed\r\n- fix poor performance during file uploads\r\n- fix missing cache link in analysis viewers\r\n- fix user sessions expiring too early\r\n- prevent misleading fatal git error from writing to console during startup\r\n",
