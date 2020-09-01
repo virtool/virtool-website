@@ -1,54 +1,50 @@
 {{ define "main" }}
 <div class="container">
-  <nav class="breadcrumbs" aria-label="breadcrumbs">
-    <ul>
-      <li><a class="title is-4" href="/docs">Docs</a></li>
-      {{ if eq .Title "Manual" }}
-      <li><a class="title is-5" href="/docs/manual">Manual</a></li>
-      {{ end }}
-      {{ if eq .Title "Developer" }}
-      <li><a class="title is-5" href="/docs/developer">Developer</a></li>
-      {{ end }}
-    </ul>
-  </nav>
+  <div class="spacer">
+    <h1 class="title">Docs</h1>
 
-  {{ if eq .RelPermalink "/docs/" }}
-  <div class="docs-landing">
-    <div class="docs-landing-card">
-      <div class="docs-landing-header">
-        <a href="/docs/manual">
-          <i class="fas fa-book"></i> Manual
-        </a>
+    {{ if eq .RelPermalink "/docs/" }}
+    <div class="docs-landing">
+      <div class="box docs-landing-card">
+        <h2>
+          <a href="/docs/manual">
+            <i class="fas fa-book"></i> Manual
+          </a>
+        </h2>
         <p>
-          A manual for Virtool users.
+          For general Virtool users.
         </p>
-      </div>
 
-      {{ range .Site.Menus.manual }}
-      {{ $firstItem := (index .Children 0)}}
-      <div class="docs-landing-item">
-        <a href={{ $firstItem.URL }}>{{ .Name }}</a>
+        <ul>
+          {{ range .Site.Menus.manual }}
+          {{ $firstItem := (index .Children 0)}}
+          <li>
+            <a href={{ $firstItem.URL }}>{{ .Name }}</a>
+          </li>
+          {{ end }}
+        </ul>
       </div>
-      {{ end }}
-    </div>
-    <div class="docs-landing-card">
-      <div class="docs-landing-header">
-        <a href="/docs/developer">
-          <i class="fas fa-code"></i> Developer
-        </a>
+      <div class="box docs-landing-card">
+        <h2>
+          <a href="/docs/developer">
+            <i class="fas fa-code"></i> Developer
+          </a>
+        </h2>
         <p>
-          Documentation for users of the Virtool API and Virtool contributors.
+          For API users and contributors
         </p>
-      </div>
 
-      {{ range .Site.Menus.developer }}
-      {{ $firstItem := (index .Children 0)}}
-      <div class="docs-landing-item">
-        <a href={{ $firstItem.URL }}>{{ .Name }}</a>
+        <ul>
+          {{ range .Site.Menus.developer }}
+          {{ $firstItem := (index .Children 0)}}
+          <li>
+            <a href={{ $firstItem.URL }}>{{ .Name }}</a>
+          </li>
+          {{ end }}
+        </ul>
       </div>
-      {{ end }}
     </div>
+    {{ end }}
   </div>
-  {{ end }}
 </div>
 {{ end }}

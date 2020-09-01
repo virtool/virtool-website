@@ -1,274 +1,110 @@
 {{ define "main" }}
 <div class="container">
-  <h1>Features</h1>
+  <div class="spacer">
+    <h1>Features</h1>
 
-  <div class="feature">
-    <h1 class="title">Sample Management</h1>
+    <h2>Sample Management</h2>
+    <ul>
+      <li>Create samples from paired and unpaired FASTQ files</li>
+      <li>Track samples from creation to analysis</li>
+      <li>Quickly and easily search and filter sample records</li>
+      <li>
+        Error correction, trimming, and quality assessment is performed
+        automatically
+      </li>
+      <li>
+        View sample quality metrics generated during import in clean,
+        readable graphics. Analysis and graphics based on
+        <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a>, the most commonly used
+        next-gen QC tool
+      </li>
+    </ul>
 
-    <div class="feature-item">
-      <div class="feature-header">
-        Management
-      </div>
-      <div class="feature-body">
-        <ul>
-          <li>Track samples from creation to analysis</li>
-          <li>Quickly and easily search and filter sample records</li>
-        </ul>
-        <img src="/images/sample-manager.png" />
-      </div>
-    </div>
-  </div>
+    <h2>Bioinformatic Analysis</h2>
+    <ul>
+      <li>Detect Known Viruses</li>
+      <li>
+        Quickly assess sample libraries for the presence of viruses in
+        Virtool's reference database.
+      </li>
+      <li>
+        Based on tools such as
+        <a href="http://bowtie-bio.sourceforge.net/bowtie2/index.shtml">Bowtie2</a>
+        and
+        <a href="https://sourceforge.net/projects/pathoscope/files/">Pathoscope</a>
+      </li>
+      <li>Discover Novel Viruses</li>
+      <li>
+        Use our novel analytical pipeline, NuVs, to find previously unknown viruses
+      </li>
+      <li>
+        Uses <a href="http://cab.spbu.ru/software/spades/">SPAdes</a> and
+        <a href="http://hmmer.org/">HMMER</a>
+      </li>
+      <li>
+        Inspired by
+        <a href="http://derisilab.ucsf.edu/software/vFam/">vFAM</a>
+      </li>
+    </ul>
 
-  <div class="feature-item">
-    <div class="feature-header">Creation</div>
-    <div class="feature-body">
-      <ul>
-        <li>Create sample records from paired and unpaired FASTQ files</li>
-        <li>
-          Error correction, trimming, and quality assessment is performed
-          automatically
-        </li>
-      </ul>
-      <img src="/images/sample-creation.png" />
-    </div>
-  </div>
+    <h2>Reference Management</h2>
+    <ul>
+      <li>Maintain multiple reference sets for different classes of pathogens or
+        pests
+      </li>
+      <li>Manage OTUs</li>
+      <li>
+        Easily browse and edit the organizational taxonomic units (OTUs) in a
+        reference
+      </li>
+      <li>Easily create and edit OTUs without touching a text file</li>
+      <li>Track and detect multiple isolates or strains of an OTU</li>
+      <li>
+        Enter multiple sequence segments and automatically retrieve data
+        based on Genbank accessions
+      </li>
+      <li>Track every change ever made to an OTU</li>
+      <li>Easily revert uncommitted changes</li>
+      <li>
+        Follow a natural versioning lifecycle by building optimized mapping
+        indexes when valid changes have been made to the reference
+      </li>
+    </ul>
 
-  <div class="feature-item">
-    <div class="feature-header">QA</div>
-    <div class="feature-body">
-      <ul>
-        <li>
-          View sample quality metrics generated during import in clean,
-          readable graphics
-        </li>
-        <li>
-          Analysis and graphics based on
-          <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a>, the most commonly used
-          next-gen QC tool
-        </li>
-        <li>Export quality graphics to PDF</li>
-      </ul>
-      <img src="/images/sample-quality.png" />
-    </div>
-  </div>
-
-  <div class="feature">
-    <h1 class="title">Analysis</h1>
-    <div class="feature-item">
-      <div class="feature-header">Detect Known Viruses</div>
-      <div class="feature-body">
-        <ul>
-          <li>
-            Quickly assess sample libraries for the presence of viruses in
-            Virtool's reference database.
-          </li>
-          <li>
-            Based on tools such as
-            <a href="http://bowtie-bio.sourceforge.net/bowtie2/index.shtml">Bowtie2</a>
-            and
-            <a href="https://sourceforge.net/projects/pathoscope/files/">Pathoscope</a>
-          </li>
-        </ul>
-        <img src="/images/pathoscope-viewer.png" />
-      </div>
-    </div>
-
-    <div class="feature-item">
-      <div class="feature-header">Discover Novel Viruses</div>
-      <div class="feature-body">
-        <ul>
-          <li>
-            Use our novel analytical pipeline, NuVs, to find previously unknown viruses
-          </li>
-          <li>
-            Uses <a href="http://cab.spbu.ru/software/spades/">SPAdes</a> and
-            <a href="http://hmmer.org/">HMMER</a>
-          </li>
-          <li>
-            Inspired by
-            <a href="http://derisilab.ucsf.edu/software/vFam/">vFAM</a>
-          </li>
-        </ul>
-        <img src="/images/nuvs.png" />
-      </div>
-    </div>
-  </div>
-
-  <div class="feature">
-    <h1>References</h1>
-
-
-    <div class="feature-item">
-      <div class="feature-header">
-        Multiple References
-      </div>
-      <div class="feature-body">
-        <ul>
-          <li>Maintain multiple reference sets for different classes of pathogens or
-            pests
-          </li>
-        </ul>
-        <img src="/images/refs-cards.png" />
-      </div>
-    </div>
-
-    <div class="feature-item">
-      <div class="feature-header">
-        Manage OTUs
-      </div>
-      <div class="feature-body">
-        <ul>
-          <li>
-            Easily browse and edit the organizational taxonomic units (OTUs) in a
-            reference
-          </li>
-        </ul>
-        <img src="/images/refs-otu-list.png" />
-      </div>
-    </div>
-
-    <div class="feature-item">
-      <div class="feature-header">
-        Structured OTUs
-      </div>
-      <div class="feature-body">
-        <ul>
-          <li>Easily create and edit OTUs without editing files</li>
-          <li>Track and detect multiple isolates or strains of an OTU</li>
-          <li>
-            Enter multiple sequence segments and automatically retrieve data
-            based on Genbank accessions
-          </li>
-        </ul>
-        <img src="/images/refs-otu-detail.png" />
-      </div>
-    </div>
-
-    <div class="feature-item">
-      <div class="feature-header">History</div>
-      <div class="feature-body">
-        <ul>
-          <li>Track every change ever made to an OTU</li>
-          <li>Easily revert uncommitted changes</li>
-        </ul>
-        <img src="/images/refs-otu-history.png" />
-      </div>
-    </div>
-
-
-    <div class="feature-item">
-      <div class="feature-header">Versioning</div>
-      <div class="feature-body">
-        <ul>
-          <li>
-            Follow a natural versioning lifecycle by building optimized mapping
-            indexes when valid changes have been made to the reference
-          </li>
-        </ul>
-        <img src="/images/refs-indexes.png" />
-      </div>
-    </div>
-  </div>
-
-  <div class="feature">
-    <h1>Subtractions</h1>
-
-    <div class="feature-item">
-      <div class="feature-header">
+    <h2>Subtractions</h2>
+    <ul>
+      <li>
         Create Subtractions
-      </div>
-      <div class="feature-body">
-        <ul>
-          <li>
-            Create subtraction indexes for removing unwanted sequencing data
-            from analyses
-          </li>
-        </ul>
-        <img src="/images/subtractions-list.png" />
-      </div>
-    </div>
-  </div>
+      </li>
+      <li>
+        Create subtraction indexes for removing unwanted sequencing data
+        from analyses
+      </li>
+    </ul>
 
-  <div class="feature">
-    <h1>Job Management</h1>
+    <h2>Job Management</h2>
+    <ul>
+      <li>
+        Manage and track resource-intensive tasks such as analyses or sample
+        creation
+      </li>
+      <li>Find out where indiviual jobs are in their lifecycles</li>
+    </ul>
 
-
-    <div class="feature-item">
-      <div class="feature-header">
-        Tracking
-      </div>
-      <div class="feature-body">
-        <ul>
-          <li>
-            Manage and track resource-intensive tasks such as analyses or sample
-            creation
-          </li>
-        </ul>
-        <img src="/images/jobs-list.png" />
-      </div>
-    </div>
-
-    <div class="feature-item">
-      <div class="feature-header">
-        Staging
-      </div>
-      <div class="feature-body">
-        <ul>
-          <li>Find out where indiviual jobs are in their lifecycles</li>
-        </ul>
-        <img src="/images/jobs-detail.png" />
-      </div>
-    </div>
-  </div>
-
-  <div class="feature">
-    <h1>User Management</h1>
-
-    <div class="feature-item">
-      <div class="feature-header">
-        Manage Users
-      </div>
-      <div class="feature-body">
-        <ul>
-          <li>
-            Add or remove users and control their access and permissions
-          </li>
-        </ul>
-        <img src="/images/users-list.png" />
-      </div>
-    </div>
-
-    <div class="feature-item">
-      <div class="feature-header">
+    <h2>User Management</h2>
+    <ul>
+      <li>
+        Add or remove users and control their access and permissions
+      </li>
+      <li>
         Control Activity Using Groups
-      </div>
-      <div class="feature-body">
-        <ul>
-          <li>Assign group ownership and rights to samples</li>
-          <li>
-            Control reference access and modification rights by user and group
-          </li>
-          <li>Restrict activity using group permissions</li>
-        </ul>
-        <img src="/images/users-groups.png" />
-      </div>
-    </div>
-  </div>
-
-  <div class="feature">
-    <h1>Software Updates</h1>
-
-    <h2>Easily Track and Install Software Updates</h2>
-    <div class="feature-item">
-      <div class="feature-header">Easily Track and Install Software Updates</div>
-      <div class="feature-body">
-        <ul>
-          <li>Automatically track software updates for Virtool</li>
-          <li>Install updates from within the web interface</li>
-        </ul>
-        <img src="/images/software-updates.png" />
-      </div>
-    </div>
+      </li>
+      <li>Assign group ownership and rights to samples</li>
+      <li>
+        Control reference access and modification rights by user and group
+      </li>
+      <li>Restrict activity using group permissions</li>
+    </ul>
   </div>
 </div>
 {{ end }}

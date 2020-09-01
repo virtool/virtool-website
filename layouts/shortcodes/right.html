@@ -1,6 +1,6 @@
 {{ with .Get 0 }}
-    <div class="permission">
-        <span class="permission-label">Right</span>
-        <span class="permission-name">{{ . }}</span>
-    </div>
+<div class="permission">
+    <span class="permission-label">Requires</span>
+    <span class="permission-name">{{ . }} rights on reference</span>
+</div>
 {{ end }}

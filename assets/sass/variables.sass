@@ -1,55 +1,73 @@
 // Virtool-specific
-$box-shadow-sm: 0 2px 4px 0 rgba(0,0,0,0.10);
-$box-shadow-md: 0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08);
+$box-shadow-sm: 0 2px 4px 0 rgba(0,0,0,0.10)
+$box-shadow-md: 0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08)
+$box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)
+$box-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)
 
-$border-radius-sm: 3px
-$border-radius-md: 5px
+$border-radius-sm: 2px
+$border-radius-md: 4px
+$border-radius-lg: 6px
 
-$green: hsl(141, 71%,  48%)
-$green-bkgd: lighten($green, 25%)
-    
-// Colors
 $black:        hsl(0, 0%, 4%)
 $black-bis:    hsl(0, 0%, 7%)
 $black-ter:    hsl(0, 0%, 14%)
 
-$grey-darker:  hsl(0, 0%, 21%)
-$grey-dark:    hsl(0, 0%, 29%)
-$grey:         hsl(0, 0%, 48%)
-$grey-light:   hsl(0, 0%, 71%)
-$grey-lighter: hsl(0, 0%, 86%)
+$grey: #A0AEC0
+$grey-dark: #718096
+$grey-darker: #4A5568
+$grey-light: #CBD5E0
+$grey-lighter: #EDF2F7
 
 $white-ter:    hsl(0, 0%, 96%)
 $white-bis:    hsl(0, 0%, 98%)
-$white:        hsl(0, 0%, 100%)
-$orange:       hsl(14,  100%, 53%)
-$yellow:       hsl(48,  100%, 67%)
-$turquoise:    hsl(171, 100%, 41%)
-$cyan:         hsl(204, 86%,  53%)
-$blue:         hsl(217, 71%,  53%)
-$purple:       hsl(271, 100%, 71%)
-$red:          hsl(348, 100%, 61%)
+$white:        #ffffff
 
-// $primary: $turquoise
+$yellow: #FFE030
+$yellow-light: #FFF082
+$yellow-lighter: #FFFBD5
+$yellow-dark: #DBBC23
+$yellow-darker: #B79A18
+
+$green: #1DAD57
+$green-dark: #159455
+$green-darker: #096449
+$green-light: #73E68A
+$green-lighter: #D1FAD1
+
+$blue: #0B7FE5
+$blue-dark: #0862C4
+$blue-darker: #033384
+$blue-light: #6AC4F7
+$blue-lighter: #CDF1FD
+
+$orange: #F7A000
+$orange-light: #FCD265
+$orange-lighter: #FEF4CB
+$orange-dark: #D48100
+$orange-darker: #B16600
+
+$purple: #9F7AEA
+$purple-dark: #805AD5
+$purple-darker: #553C9A
+$purple-light: #D6BCFA
+$purple-lighter: #FAF5FF
+
+$red: #E0282E
+$red-dark: #C01D30
+$red-darker: #A11431
+$red-light: #F58E7C
+$red-lighter: #FDE1D3
+
 $primary: #3c8786
-
-// $info: $cyan
-$info: hsl(200, 49%, 43%)
-
-// $success: $green
-$success: #60af98
-
-// $warning: $yellow
-$warning: #dfb561
-
-// $danger: $red
-$danger: #d44b40
+$success: $green
+$warning: $yellow
+$danger: $red
 
 $light: $white-ter
 $dark: $grey-darker
 
 // General colors
-$background: $white-ter
+$background: #f7fafc
 $border: $grey-lighter
 $border-hover: $grey-light
 
@@ -66,11 +84,9 @@ $pre: $text
 $pre-background: $background
 
 // Link colors
-// $link: $blue
-$link: #387fa3
-$link-visited: $purple
-
-$link-hover: $grey-darker
+$link: $blue-dark
+$link-visited: $purple-dark
+$link-hover: $blue-darker
 $link-hover-border: $grey-light
 
 $link-focus: $grey-darker
@@ -81,7 +97,7 @@ $link-active-border: $grey-dark
 
 // Typography
 $family-sans-serif: "IBM Plex Sans", BlinkMacSystemFont, -apple-system, "Segoe UI", "Ubuntu", "Cantarell", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-$family-monospace: "IBM Plex Mono", monospace;
+$family-monospace: "IBM Plex Mono", monospace
 $render-mode: optimizeLegibility
 
 $family-primary: $family-sans-serif
@@ -103,9 +119,6 @@ $size-large: $size-4
 // Lists and maps
 $custom-colors: null
 $custom-shades: null
-
-$colors: mergeColorMaps(("white": ($white, $black), "black": ($black, $white), "light": ($light, $light), "dark": ($dark, $dark), "primary": ($primary, $white), "link": ($link, $white), "info": ($info, $white), "success": ($success, $white), "warning": ($warning, $white), "danger": ($danger, $white)), $custom-colors)
-$shades: mergeColorMaps(("black-bis": $black-bis, "black-ter": $black-ter, "grey-darker": $grey-darker, "grey-dark": $grey-dark, "grey": $grey, "grey-light": $grey-light, "grey-lighter": $grey-lighter, "white-ter": $white-ter, "white-bis": $white-bis), $custom-shades)
 
 $sizes: $size-1 $size-2 $size-3 $size-4 $size-5 $size-6 $size-7
 
@@ -130,24 +143,5 @@ $widescreen-enabled: true
 $fullhd: 1344px + (2 * $gap)
 $fullhd-enabled: true
 
-// Miscellaneous
-$easing: ease-out
-$radius-small: 2px
-$radius: 4px
-$radius-large: 6px
-$radius-rounded: 290486px
-$speed: 86ms
-
 // Flags
 $variable-columns: true
-
-$control-radius: $radius
-$control-radius-small: $radius-small
-
-$control-border-width: 1px
-
-$control-height: 2.25em
-$control-line-height: 1.5
-
-$control-padding-vertical: calc(0.375em - #{$control-border-width})
-$control-padding-horizontal: calc(0.625em - #{$control-border-width})

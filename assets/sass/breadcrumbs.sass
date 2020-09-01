@@ -1,41 +1,40 @@
 nav.breadcrumbs
-    font-size: $size-normal
     white-space: nowrap
     user-select: none
 
     a
         align-items: center
-        color: $info
         display: flex
         justify-content: center
-        padding: 0 0.75rem
-        text-decoration: none
 
-        &:hover
-            color: $link-hover
+        +landscape
+            padding: 0 0.75rem
 
     ul
         align-items: center
         display: flex
         flex-wrap: wrap
         list-style: none
+        margin: 0
         padding: 0
-        justify-content: flex-start
-        
+
     li
         align-items: center
         display: flex
-        font-weight: bold
+        font-weight: 600
+        font-size: $size-5
 
         & + li::before
-            color: $grey-light
+            color: $grey-dark
             content: "\0002f"
 
         &:first-child
+            font-size: $size-3
+            font-weight: bold
+
             a
-                font-size: $size-4
                 padding-left: 0
 
         &:nth-child(2)
             a
-                font-size: $size-5 
+                font-size: $size-4

@@ -5,30 +5,30 @@
     background-color: white
     border: 1px solid $blue
     border-left-width: 4px
-    border-radius: 5px
-    color: $blue
+    border-radius: $border-radius-sm
+    color: $blue-darker
     padding: 1rem
 
     strong
-        font-weight: 600;
+        font-weight: 600
 
     ul:last-child, p:last-child
         margin-bottom: 0
         padding-bottom: 0.8rem
 
 .note-red
-    background-color: lighten($red, 37%)
+    background-color: $red-lighter
     border-color: $red
-    color: $red
+    color: $red-darker
 
 .note-yellow
-    background-color: lighten($yellow, 32%)
+    background-color: $yellow-lighter
     border-color: $yellow
-    color: darken($yellow, 25%)
+    color: $yellow-darker
 
 .note-title
     font-weight: bold
     padding-bottom: 0.8rem
 
-h2 + .note 
+h2 + .note
     margin-bottom: 32px
