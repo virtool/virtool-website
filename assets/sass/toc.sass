@@ -1,21 +1,23 @@
 nav#TableOfContents
-    background-color: $white
     color: $black
     position: relative
+
     ul
         li
             display: list-item
+
             ul
                 display: none
 
 .toc-inline
     display: block
-    
+
     +landscape
         display: none
 
 .toc-side
     align-self: flex-start
+    background: none
     display: none
     flex: 0 0 auto
     width: 8rem
@@ -25,24 +27,23 @@ nav#TableOfContents
 
     +landscape
         display: block
-        
-    h5  
+
+    h5
         font-size: $size-7
         font-weight: bold
         margin: 0
 
-    a   
-        color: $info
-        cursor: pointer       
+    a
+        cursor: pointer
         text-decoration: none
 
         &:hover
             color: $link-hover
-    
+
     ul
         list-style: none
         padding-left: 0
 
     li
-        font-size: 12px
+        font-size: $size-7
         padding-bottom: 0.5rem

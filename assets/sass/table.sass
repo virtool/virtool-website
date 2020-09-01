@@ -1,12 +1,16 @@
+$table-border: 1px solid $black
 $table-cell-padding: 0.5em 0.75em
 $table-head-cell-border-width: 0 0 2px
 $table-foot-cell-color: $text-strong
 
 table
-  @extend %block
   background-color: $white
-  border-collapse: collapse
-  color: $grey-darker
+  border: $table-border
+  border-radius: $border-radius-lg
+  border-spacing: 0
+  color: $black
+  overflow: hidden
+  margin-bottom: 2rem
   width: 100%
 
   &.defs
@@ -15,10 +19,8 @@ table
         br
           height: 24px
 
-        
         &:first-child
           white-space: nowrap
-
 
   thead
     th:empty
@@ -28,21 +30,12 @@ table
     th
       font-weight: strong
 
-  th,td
-    border: 1px solid $grey-lighter
+    tr:nth-child(odd)
+      background-color: $white-bis
 
   th
-    color: $text-strong
     padding: $table-cell-padding
     text-align: left
 
   td
     padding: $table-cell-padding
-
-  tr
-    &:nth-child(even)
-      background-color: $white-bis
-
-    &:last-child
-      th,td
-        border-bottom:

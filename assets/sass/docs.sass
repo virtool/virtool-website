@@ -1,107 +1,93 @@
 .docs-landing
     display: grid
-    grid-gap: 25px
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr))
+    grid-gap: 2rem
+    grid-template-columns: 1fr
 
-.docs-landing-card
-    border: 1px solid $grey-lighter
-    border-radius: 5px
-    box-shadow: $box-shadow-sm
+    +landscape
+        grid-template-columns: 1fr 1fr
 
-.docs-landing-header
-    font-weight: bold
-    margin: 0
-    padding: 15px 20px
+    .box
+        padding-left: 2rem
+
+    h2
+        font-size: $size-4
+        margin: 0.4rem 0 0.6rem
+
+    ul
+
+        padding: 0 2rem
+
+    li
+        line-height: 2rem
 
     a
-        font-size: 20px
+        font-weight: 600
         text-decoration: none
 
     p
-        color: $grey
-        font-size: 14px
-        margin: 7px 0 0
-
-.docs-landing-item
-    border-top: 1px solid $grey-lighter
-    padding: 15px 20px
-
-    a
-        font-weight: bold
-        text-decoration: none
-
-    p
-        color: $grey-dark
-        margin: 10px 0 20px 0
+        color: $grey-darker
+        font-weight: 600
+        margin-top: 0
 
 div.docs
     width: 100%
 
-    div.spread
-        display: flex
-        max-width: 100%
-        width: 100%
+div.spread
+    display: flex
+    max-width: 100%
+    width: 100%
 
-        div.sidenav
-            display: none
-            flex: 0 0 0
-            max-width: 12rem
-            min-width: 12rem
+div.sidenav
+    display: none
+    flex: 0 0 0
+    max-width: 12rem
+    min-width: 12rem
 
-            +landscape
-                display: block
+    +landscape
+        display: block
 
-            ul
-                list-style: none
-                padding: 0
-                position: sticky
-                text-decoration: none
-                top: 5rem
+    a
+        cursor: pointer
 
-                a
-                    color: $info
-                    cursor: pointer
-                    text-decoration: none
+    ul
+        list-style: none
+        padding: 0
+        position: sticky
+        text-decoration: none
+        top: 5rem
 
-                li.side-sub
-                    border-left: 0.1rem solid $grey-light
-                    padding-left: 0.8rem
+        li.side-sub
+            border-left: 0.1rem solid $grey
+            padding-left: 0.8rem
 
-                    & > a
-                        font-size: 0.9rem
+            > a
+                font-size: 0.9rem
+                font-weight: bold
+                margin-bottom: 0.3rem
+                text-transform: uppercase
+
+            > ul
+                display: none
+                font-size: 0.85rem
+                padding: 0.3rem 0.6rem 0.3rem 0.3rem
+
+                & > li
+                    padding-bottom: 0.3rem
+                    .is-active
                         font-weight: bold
-                        margin-bottom: 0.3rem
-                        text-transform: uppercase
 
-                    & > ul
-                        display: none
-                        font-size: 0.85rem
-                        padding: 0.3rem 0.6rem 0.3rem 0.3rem
+            &.is-active
+                border-left-color: $primary
 
-                        & > li
-                            padding-bottom: 0.3rem
-                            .is-active
-                                font-weight: bold
+                ul
+                    display: block
 
-                    &.is-active
-                        border-left-color: $primary
-
-                        ul
-                            display: block
-
-    p, li
-        code
-            background-color: #EDF2F7
-            border-radius: 2px
-            color: #4A5568
-            padding: 3px 4px
-
-.docs-reader
+div.docs-reader
     flex: 1 1 0
     max-width: 100%
     overflow: hidden
 
-.docs-header
+div.docs-header
     align-items: center
     border-bottom: 0.1rem solid black
     display: flex
@@ -117,18 +103,27 @@ div.docs
     flex: 0 1 auto
     font-size: $size-6
 
-.docs-content
+div.docs-content
+    // Offset for <h1> elements navigated to as targets (hash link).
+    > :target::before
+        content: ""
+        display: block
+        height: 67px
 
     h1
         font-size: $size-4
-        margin-top: 3rem
+        margin-top: 5rem
+
+        &:first-child
+            margin-top: 3rem
 
     h2
         font-size: $size-5
+        margin-top: 3rem
 
     h3
         font-size: $size-6
-        font-weight: 600;
+        font-weight: 600
         margin: 20px 0 10px
 
     ul
@@ -138,10 +133,33 @@ div.docs
         list-style-position: inside
 
     ol
+        counter-reset: step-counter
+        list-style: none
+        margin-top: 2rem
         padding-left: 1.3rem
 
-        li
-            margin-bottom: 2.3rem
+        & > li
+            counter-increment: step-counter
+            margin-bottom: 3.5rem
+            position: relative
+
+            p
+                margin: 0.8rem 0
+                position: relative
+
+                &:first-child
+                    font-weight: 600
+
+                    strong
+                        color: $grey-darker
+
+            &::before
+                color: $grey-darker
+                content: counter(step-counter)
+                margin-left: -1.3rem
+                font-weight: 600
+                position: absolute
+                width: 1.3rem
 
     article.message
         margin-top: 0.6rem
@@ -152,10 +170,11 @@ div.docs
     li
         line-height: 1.7
 
-        img
-            margin-top: 0.6rem
+        img, video
+            margin-top: 0.7rem
 
     img, video
+        border-radius: $border-radius-md
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08)
 
     p
@@ -165,4 +184,4 @@ div.docs
             margin-top: 25px
 
         strong
-            font-weight: 600;
+            font-weight: 600

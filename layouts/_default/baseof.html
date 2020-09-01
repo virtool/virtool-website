@@ -23,8 +23,8 @@
   <meta property="og:url" content="https://www.virtool.ca" />
   <meta property="og:image" content="https://www.virtool.ca/logo-og.png" />
   <meta property="og:type" content="website" />
-  
-  <title>{{ .Site.Title }}</title>
+
+  <title>{{ if .Title}}{{ .Title }} - {{end}}{{ .Site.Title }}</title>
   <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}" media="screen" />
   <link rel="icon" href="/favicon.ico?v=123213" type="image/x-icon" />
 </head>
@@ -41,9 +41,7 @@
 
   <div class="buffer">
     {{ partial "header.html" . }}
-
     {{ block "main" . }}
-
     {{ end }}
   </div>
 
@@ -55,8 +53,8 @@
     </div>
   </footer>
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
-    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+    integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
   <script defer src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearchLite.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/algoliasearch.helper/2/algoliasearch.helper.min.js"></script>
   <script defer src="/main.js"></script>

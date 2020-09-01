@@ -1,5 +1,5 @@
-{{ with .Get 0 }}
-<video autoplay muted loop>
+<video autoplay muted loop {{ with .Get 1}}title="{{ . }}" {{ end }}>
+    {{ with .Get 0 }}
     <source src="{{ . }}" type="video/mp4" />
+    {{ end }}
 </video>
-{{ end }}

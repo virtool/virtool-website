@@ -1,0 +1,23 @@
+div.blurb
+    display: grid
+    grid-template-columns: 1fr
+    grid-column-gap: 2rem
+    grid-row-gap: 1rem
+    margin: 2rem auto 1rem
+
+    +landscape
+        grid-template-columns: 1fr 1fr
+        grid-row-gap: 2rem
+
+div.blurb-section
+    align-items: center
+    display: flex
+    font-weight: 600
+    padding: 1rem
+
+    img
+        width: 50px
+        margin: 0
+
+    p
+        padding-left: 1.4rem

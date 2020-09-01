@@ -1,0 +1,31 @@
+span.example-button
+    align-items: center
+    border: 1px solid $grey
+    border-radius: 0.2rem
+    box-shadow: $box-shadow-sm
+    color: $white
+    display: inline-block
+    font-size: 12px
+    font-weight: 600
+    padding: 2px 8px
+    position: relative
+
+    & > i
+
+        min-height: 12px
+
+        & + span
+            margin-right: 3px
+
+    &.example-button-blue
+        background-color: $blue
+        border-color: $blue
+
+    &.example-button-grey
+        background-color: $white
+        border-color: transparent
+        color: $black
+
+    &.example-button-red
+        background-color: $red
+        border-color: $red

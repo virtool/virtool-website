@@ -1,5 +1,8 @@
-$api-padding: 10px 15px
-$endpoint-border: 1px solid $blue
+$api-border-radius: $border-radius-md
+$api-padding: 0.8rem 1.2rem
+$api-font-size: 1rem
+
+$endpoint-color: $primary
 $example-border: 1px solid $black
 
 .docs-api
@@ -8,35 +11,38 @@ $example-border: 1px solid $black
 
     h2
         font-size: $size-5
+        font-weight: 600
         margin-top: 2rem
-    
+
 .endpoint
     align-items: center
+    border: 1px solid $endpoint-color
+    border-radius: $api-border-radius
     display: flex
-    font-size: 14px
+    font-size: $api-font-size
     margin: 1rem 0
+    overflow: hidden
     padding: 0
     white-space: nowrap
 
 .endpoint-method
-    background-color: $blue    
-    border: $endpoint-border
+    background-color: $endpoint-color
     color: $white
     flex: 0 0 auto
-    font-weight: bold
+    font-weight: 600
     padding: $api-padding
 
 .endpoint-path
     background-color: $white
-    border: $endpoint-border
-    border-left: none
     flex: 1 0 auto
     font-family: $family-monospace
     padding: $api-padding
 
 .request
+    background-color: $white
     border: $example-border
-    font-size: 14px
+    border-radius: $api-border-radius
+    overflow: hidden
 
 .request-url
     background-color: $white
@@ -44,58 +50,61 @@ $example-border: 1px solid $black
     padding: $api-padding
 
 .response
-    border-radius: 5px
-    font-size: 14px
-
-.response-headers
     background-color: $white
     border: $example-border
+    border-radius: $api-border-radius
+    font-size: $api-font-size
+    overflow: hidden
+
+    div, pre
+        border-radius: 0 !important
+
+.response-headers
     font-family: $family-monospace
     padding: $api-padding
-    
+
     p
         margin: 5px 0
 
 .inline-status
-    border: 1px solid $grey
-    border-radius: 3px
+    background-color: $green
+    border-radius: $border-radius-md
+    color: $white
     display: inline-block
     font-family: $family-monospace
-    font-size: 12px
-    padding: 0 4px
-    vertical-align: middle
+    font-size: $size-7
+    padding: 0 0.4rem
 
-.inline-status-2
-    background-color: lighten($green, 25%)
-    border-color: $green
-
-.inline-status-4
-    background-color: lighten($red, 25%)
-    border-color: $red
+.inline-status-error
+    background-color: $red
+    color: $white
 
 .permission
-  align-items: center
-  display: inline-flex
-  font-size: 12px
-  height: 14px
-  justify-content: center
-  white-space: nowrap
+    align-items: stretch
+    display: inline-flex
+    font-size: $size-7
+    font-weight: 600
+    justify-content: center
+    white-space: nowrap
 
 .permission-label
     background-color: $red
     border: 1px solid $red
     border-radius: $border-radius-sm 0 0 $border-radius-sm
-    color: $white    
+    color: $white
     padding: 3px 6px
 
 .permission-name
-    background-color: $background
-    border: 1px solid $background
+    background-color: $white
+    border: 1px solid $red
     border-left: none
     border-radius: 0 $border-radius-sm $border-radius-sm 0
     color: $black
     font-family: $family-monospace
     padding: 3px 6px
+
+    &::first-letter
+        text-transform: uppercase
 
 .label
     background-color: $yellow

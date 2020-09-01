@@ -1,0 +1,14 @@
+<h1>
+    {{ with .Get 0 }}
+    <span>{{ . }}</span>
+    {{ end }}
+
+    {{ with .Get 1 }}
+    <div class="permission">
+        <span class="permission-label">Requires</span>
+        <span class="permission-name">
+            {{ . }} rights on reference
+        </span>
+    </div>
+    {{ end }}
+</h1>

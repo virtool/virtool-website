@@ -1,0 +1,40 @@
+.feature
+    align-items: center
+    display: flex
+    flex-wrap: wrap
+
+    +landscape
+        flex-wrap: nowrap
+
+    div
+        padding: 0
+
+    h2
+        font-size: 1.2rem
+        font-weight: 600
+        margin-top: 0
+
+    img
+        border-radius: $border-radius-md
+        box-shadow: $box-shadow-xl
+        margin: 0
+        max-width: 100%
+        overflow: hidden
+
+    &:nth-of-type(even)
+        +landscape
+            flex-direction: row-reverse
+
+            div:first-child
+                padding-left: 1rem
+
+            div:last-child
+                padding-right: 1rem
+
+    &:nth-of-type(odd) > div
+        +landscape
+            &:first-child
+                padding-right: 1rem
+
+            &:last-child
+                padding-left: 1rem

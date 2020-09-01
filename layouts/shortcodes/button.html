@@ -1,0 +1,11 @@
+{{ $color := default "blue" (.Get "color") }}
+{{ $style := default "fas" (.Get "style") }}
+
+<span class="example-button example-button-{{ $color }}">
+    {{ with .Get "icon" }}
+    <i class="{{ $style }} fa-{{ . }} fa-fw"></i>
+    {{ end }}
+    {{ with .Get "label" }}
+    <span>{{ . }}</span>
+    {{ end }}
+</span>

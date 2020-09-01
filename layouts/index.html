@@ -1,7 +1,17 @@
 {{ define "main" }}
-<div>
-  <div class="landing">
-    <div class="container">
+
+
+<div class="version-4">
+  <div class="container">
+    <div class="spacer">
+      <strong>Version 4 Released - <a href="/docs/manual/start/mongo/#upgrade-mongodb">Read important information</a></strong>
+    </div>
+  </div>
+</div>
+
+<div class="landing">
+  <div class="container">
+    <div class="spacer">
       <h1>Virtool</h1>
       <h2>Viral infection diagnostics using next-generation sequencing.</h2>
 
@@ -17,19 +27,158 @@
       </div>
     </div>
   </div>
+</div>
 
-  <div class="container">
+<div class="container">
+  <div class="spacer">
     <div class="blurb">
-      <div>
-        <p>Skip the command line for data pre-processing, complex analytical workflows, and sample managment.</p>
-        <p>Easily manage multiple, large sets of pathogen reference sequences without folders or FASTA files.</p>
-        <p>Control access to data and keep track of your users.</p>
+      <div class="box blurb-section">
+        <img src="/images/terminal.svg" />
+        <p>No command line experience required</p>
       </div>
-      <div class="blurb-image">
-        <img src="/images/splash.png" />
+      <div class="box blurb-section">
+        <img src="/images/samples.svg" />
+        <p>First-class sample managment system</p>
+      </div>
+      <div class="box blurb-section">
+        <img src="/images/abacus.svg" />
+        <p>Built-in bioinformatic workflows with result visualization</p>
+      </div>
+
+      <div class="box blurb-section">
+        <img src="/images/vault.svg" />
+        <p>Track and control user access and activity</p>
+      </div>
+    </div>
+
+    {{ partial "wave.html" . }}
+
+    <div class="feature">
+      <div>
+        <h2>
+          Detect Known Pathogens
+        </h2>
+        <p>
+          Use our fast detection workflow and simple result visualization.
+        </p>
+      </div>
+      <div>
+        <img src="/images/pathoscope.png" />
+      </div>
+    </div>
+
+    {{ partial "wave.html" . }}
+
+    <div class="feature">
+      <div>
+        <h2>
+          Detect Novel Pathogens
+        </h2>
+        <p>
+          Use our assembly and profile hidden Markov model workflow to predict novel viral sequences
+        </p>
+      </div>
+      <div>
+        <img src="/images/nuvs.png" />
+      </div>
+    </div>
+
+    {{ partial "wave.html" . }}
+
+    <div class="feature">
+      <div>
+        <h2>
+          Sample Management
+        </h2>
+        <p>
+          Intuitively manage samples and their analyses
+        </p>
+      </div>
+      <div>
+        <img src="/images/samples.png" />
+      </div>
+    </div>
+
+    {{ partial "wave.html" . }}
+
+    <div class="feature">
+      <div>
+        <h2>
+          QC
+        </h2>
+        <p>
+          Automatically run and view FastQC-based quality control (QC) on sample data
+        </p>
+      </div>
+      <div>
+        <img src="/images/quality.png" />
+      </div>
+    </div>
+
+    {{ partial "wave.html" . }}
+
+    <div class="feature">
+      <div>
+        <h2>
+          Sequence References
+        </h2>
+        <p>
+          Construct collections of sequences organized into organization taxonomic units (OTU)</li>
+        </p>
+      </div>
+      <div class="feature-side">
+        <img src="/images/references.png" />
+      </div>
+    </div>
+
+    {{ partial "wave.html" . }}
+
+    <div class="feature">
+      <div>
+        <h2>
+          OTU Records
+        </h2>
+        <p>
+          Organize pathogens into organization taxonmic units (OTU), the fundamental building block of
+          references.
+        </p>
+      </div>
+      <div>
+        <img src="/images/otus.png" />
+      </div>
+    </div>
+
+    {{ partial "wave.html" . }}
+
+    <div class="feature">
+      <div>
+        <h2>
+          Hidden Markov Models
+        </h2>
+        <p>
+          Explore the profile hidden Markov models used to predict novel viral sequences.
+        </p>
+      </div>
+      <div>
+        <img src="/images/hmm.png" />
+      </div>
+    </div>
+
+    {{ partial "wave.html" . }}
+
+    <div class="feature">
+      <div>
+        <h2>
+          Subtraction Genomes
+        </h2>
+        <p>
+          Manage genomes for eliminating non-pathogen reads from analysis workflows.
+        </p>
+      </div>
+      <div>
+        <img src="/images/subtraction.png" />
       </div>
     </div>
   </div>
 </div>
-
 {{ end }}
