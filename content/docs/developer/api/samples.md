@@ -345,12 +345,6 @@ Edit the access rights for a sample.
 | `404`  | Not found                             | `sample_id` in URL does not exist                     |
 | `422`  | Invalid input                         | request body JSON failed validation                   |
 
-# Replace Files
-
-{{< right write >}} {{< new_in "v3.4.0" >}}
-
-Replace old trimmed files with original raw files.
-
 # Remove
 
 {{< administrator_owner >}}
