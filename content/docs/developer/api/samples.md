@@ -8,7 +8,7 @@ menu:
 
 # Find
 
-Find samples based on the sample name or creator username.
+Find samples based on the sample name, creator username or labels.
 
 {{< endpoint "GET" "/api/samples" >}}
 
@@ -17,12 +17,13 @@ Find samples based on the sample name or creator username.
 | Name     | Type    | Default | Description                            |
 | :------- | :------ | :------ | :------------------------------------- |
 | find     | string  |         | sample name or username to filter by   |
+| filter   | string  |         | one or more labels ``id`` to filter by |
 | page     | integer | 1       | page number of results to return       |
 | per_page | integer | 15      | number of documents to return per page |
 
 ## Example
 
-{{< request "GET" "/api/samples?find=test&page=1" />}}
+{{< request "GET" "/api/samples?find=test&filter=ahdnsdfr&page=1" />}}
 
 ## Response
 
@@ -43,7 +44,9 @@ Find samples based on the sample name or creator username.
             "user": {
                 "id": "igboyes"
             },
-            "id": "htosefxu"
+            "id": "htosefxu",
+            "notes": "This is a note.",
+            "labels": ["ahdnsdfr"]
         }
     ],
     "total_count": 1,
@@ -124,7 +127,9 @@ Get the complete representation of a sample.
 	"user": {
 		"id": "igboyes"
 	},
-	"id": "htosefxu"
+	"id": "htosefxu",
+    "notes": "This is a note.",
+    "labels": ["ahdnsdfr"]
 }
 ```
 
@@ -157,6 +162,7 @@ The array of files must contain **only one or two items**. Samples with arrays c
 | locale      | string | false    | the location in which the sample was collected       |
 | subtraction | string | true     | the `id` of a previously imported subtraction genome |
 | files       | array  | true     | ids of previously uploaded files                     |
+| notes       | string | false    | a note for the sample                                |
 
 ## Example
 
@@ -169,7 +175,8 @@ The array of files must contain **only one or two items**. Samples with arrays c
     "isolate": "Isolate A-1",
     "locale": "Earth",
     "subtraction": "Arabidopsis",
-    "files": ["sibvzhqc-S00196E_AGTCAA_L007_R1.fq"]
+    "files": ["sibvzhqc-S00196E_AGTCAA_L007_R1.fq"],
+    "notes": "This is a note."
 }
 ```
 
@@ -206,7 +213,8 @@ The array of files must contain **only one or two items**. Samples with arrays c
     "user": {
         "id": "igboyes"
     },
-    "id": "oggjipxw"
+    "id": "oggjipxw",
+    "notes": "This is a note."
 }
 ```
 
@@ -240,6 +248,8 @@ Update modifiable fields of a sample.
 | host    | string | the exact \(not subtraction\) host             |
 | isolate | string | the originating isolate                        |
 | locale  | string | the location in which the sample was collected |
+| notes   | string | the sample notes                               |
+| labels  | list   | the sample labels                              |
 
 ## Example
 
@@ -250,7 +260,9 @@ Update modifiable fields of a sample.
     "name": "Test A",
     "host": "Vine",
     "isolate": "Isolate A1",
-    "locale": ""
+    "locale": "",
+    "notes": "This is the first test.",
+    "labels": ["fndjfkfn", "djfnkdhf"]
 }
 ```
 
@@ -273,7 +285,9 @@ Update modifiable fields of a sample.
     "user": {
         "id": "igboyes"
     },
-    "id": "oggjipxw"
+    "id": "oggjipxw",
+    "notes": "This is the first test.",
+    "labels": ["fndjfkfn", "djfnkdhf"]
 }
 ```
 
@@ -284,6 +298,7 @@ Update modifiable fields of a sample.
 | Status | Message                       | Reason                                                        |
 | :----- | :---------------------------- | :------------------------------------------------------------ |
 | `400`  | Sample name is already in use | the provided `name` is already assigned to an existing sample |
+| `400`  | Labels do not exist           | the label ``id`` could not be found                           |
 | `403`  | Insufficient rights           | client does not have the required rights to edit the sample   |
 | `404`  | Not found                     | `sample_id` in URL does not exist                             |
 | `422`  | Invalid input                 | request body JSON failed validation                           |
