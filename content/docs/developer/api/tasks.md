@@ -1,6 +1,6 @@
 ---
-title: "Processes"
-description: "View and remove processes."
+title: "Tasks"
+description: "View and remove tasks."
 menu:
     developer:
         parent: API
@@ -8,13 +8,13 @@ menu:
 
 # List
 
-All all existing processes.
+List all existing tasks.
 
-{{< endpoint "GET" "/api/processes" >}}
+{{< endpoint "GET" "/api/tasks" >}}
 
 ## Example
 
-{{< request "GET" "/api/processes" />}}
+{{< request "GET" "/api/tasks" />}}
 
 ## Response
 
@@ -43,13 +43,13 @@ All all existing processes.
 
 # Get
 
-Get a single process.
+Get a single task.
 
-{{< endpoint "GET" "/api/processes/:id" >}}
+{{< endpoint "GET" "/api/tasks/:id" >}}
 
 ## Example
 
-{{< request "GET" "/api/processes/pqbed16v" />}}
+{{< request "GET" "/api/tasks/pqbed16v" />}}
 
 ## Response
 
