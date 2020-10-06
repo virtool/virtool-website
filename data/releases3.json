@@ -153,18 +153,30 @@
     },
     "virtool": {
         "latest": {
-            "name": "v4.0.1",
-            "body": "# Fixed\r\n- fix error on start related to `static` path",
+            "name": "v4.0.2",
+            "body": "# Changed\r\n- resolve security issues in browser client",
             "prerelease": false,
-            "published_at": "2020-09-01T21:39:50Z",
-            "html_url": "https://github.com/virtool/virtool/releases/tag/v4.0.1",
+            "published_at": "2020-10-06T15:33:21Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v4.0.2",
             "filename": "virtool.tar.gz",
             "content_type": "application/gzip",
-            "size": 69079123,
-            "download_url": "https://github.com/virtool/virtool/releases/download/v4.0.1/virtool.tar.gz",
+            "size": 69100667,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v4.0.2/virtool.tar.gz",
             "asset_error": false
         },
         "releases": [
+            {
+                "name": "v4.0.2",
+                "body": "# Changed\r\n- resolve security issues in browser client",
+                "prerelease": false,
+                "published_at": "2020-10-06T15:33:21Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v4.0.2",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 69100667,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v4.0.2/virtool.tar.gz",
+                "asset_error": false
+            },
             {
                 "name": "v4.0.1",
                 "body": "# Fixed\r\n- fix error on start related to `static` path",
