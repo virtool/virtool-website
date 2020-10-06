@@ -77,7 +77,7 @@ The response data also includes information about the installation state of the 
                 "id": "igboyes"
             }
         },
-        "process": {
+        "task": {
             "id": "bzfk2t76"
         },
         "release": {
@@ -170,7 +170,7 @@ When the `release.newer` is `true` the release can be used to [update the HMM in
 
 When `updating` is `true` there is already an update proces in progress.
 
-The `process.id` describes the [process document](/docs/developer/api/processes) that describes the HMM installation process.
+The `task.id` describes the [task document](/docs/developer/api/tasks) that describes the HMM installation task.
 
 {{< endpoint "GET" "/api/hmms/status" >}}
 
@@ -197,7 +197,7 @@ The `process.id` describes the [process document](/docs/developer/api/processes)
             "id": "igboyes"
         }
     },
-    "process": {
+    "task": {
         "id": "bzfk2t76"
     },
     "release": {
