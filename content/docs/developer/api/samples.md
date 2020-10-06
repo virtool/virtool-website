@@ -17,7 +17,7 @@ Find samples based on the sample name, creator username or labels.
 | Name     | Type    | Default | Description                            |
 | :------- | :------ | :------ | :------------------------------------- |
 | find     | string  |         | sample name or username to filter by   |
-| filter   | string  |         | one or more labels ``id`` to filter by |
+| filter   | string  |         | one or more label IDs to filter by     |
 | page     | integer | 1       | page number of results to return       |
 | per_page | integer | 15      | number of documents to return per page |
 
@@ -249,7 +249,7 @@ Update modifiable fields of a sample.
 | isolate | string | the originating isolate                        |
 | locale  | string | the location in which the sample was collected |
 | notes   | string | the sample notes                               |
-| labels  | list   | the sample labels                              |
+| labels  | array  | the sample labels                              |
 
 ## Example
 
