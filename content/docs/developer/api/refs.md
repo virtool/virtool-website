@@ -114,7 +114,7 @@ Get the complete representation of a single reference.
     "retrieved_at": "2018-06-14T19:58:23.839000Z",
     "newer": true
   },
-  "process": {
+  "task": {
     "id": "he1nxm2c"
   },
   "contributors": [
@@ -273,7 +273,7 @@ For now, only the [official reference](https://github.com/virtool/virtool-databa
     "id": "pe6vunzl",
     "name": "Test 1"
   },
-  "process": {
+  "task": {
     "id": "434xa87m"
   },
   "contributors": [],
@@ -330,7 +330,7 @@ For now, only the [official reference](https://github.com/virtool/virtool-databa
     },
     "id": "dembqmby-reference.json.gz"
   },
-  "process": {
+  "task": {
     "id": "40cswp4m"
   },
   "contributors": [],
@@ -386,7 +386,7 @@ For now, only the [official reference](https://github.com/virtool/virtool-databa
     "last_checked": "2018-05-28T22:35:36.443000Z",
     "last_updated": "2018-05-28T22:35:36.443000Z"
   },
-  "process": {
+  "task": {
     "id": "iq3h8ru8"
   },
   "contributors": [],
@@ -460,7 +460,7 @@ Currently, only _genome_ is accepted as a value for `data_type`.
     },
     "id": "5d8gpaam-reference.json.gz"
   },
-  "process": {
+  "task": {
     "id": "d9tn5khk"
   },
   "internal_control": {
