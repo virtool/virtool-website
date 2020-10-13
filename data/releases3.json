@@ -153,18 +153,30 @@
     },
     "virtool": {
         "latest": {
-            "name": "v4.0.2",
-            "body": "# Changed\r\n- resolve security issues in browser client",
+            "name": "v4.1.0",
+            "body": "# Changed\r\n- add gap between vertically stack info bubbles in reference list items\r\n- improve accessibility of dropdowns (#1912)\r\n\r\n# Fixed\r\n- fix application crash in browser when user attempts to edit an OTU (#1917)\r\n- fix problem where dropdown wouldn't open when clicked (#1912, #1906)\r\n- fix situation where uploaded file would still be visible in list when upload was aborted (#1908)",
             "prerelease": false,
-            "published_at": "2020-10-06T15:33:21Z",
-            "html_url": "https://github.com/virtool/virtool/releases/tag/v4.0.2",
+            "published_at": "2020-10-13T21:48:29Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v4.1.0",
             "filename": "virtool.tar.gz",
             "content_type": "application/gzip",
-            "size": 69100667,
-            "download_url": "https://github.com/virtool/virtool/releases/download/v4.0.2/virtool.tar.gz",
+            "size": 69105568,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v4.1.0/virtool.tar.gz",
             "asset_error": false
         },
         "releases": [
+            {
+                "name": "v4.1.0",
+                "body": "# Changed\r\n- add gap between vertically stack info bubbles in reference list items\r\n- improve accessibility of dropdowns (#1912)\r\n\r\n# Fixed\r\n- fix application crash in browser when user attempts to edit an OTU (#1917)\r\n- fix problem where dropdown wouldn't open when clicked (#1912, #1906)\r\n- fix situation where uploaded file would still be visible in list when upload was aborted (#1908)",
+                "prerelease": false,
+                "published_at": "2020-10-13T21:48:29Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v4.1.0",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 69105568,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v4.1.0/virtool.tar.gz",
+                "asset_error": false
+            },
             {
                 "name": "v4.0.2",
                 "body": "# Changed\r\n- resolve security issues in browser client",
