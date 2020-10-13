@@ -7,10 +7,12 @@ import semver
 
 
 MIN_VERSIONS = [
-    ("virtool", "3.0.0"),
+    ("virtool", "4.0.0"),
     ("ref-plant-viruses", "1.0.0"),
     ("virtool-hmm", "0.2.0")
 ]
+
+RELEASE_FILE_NUMBER = 4
 
 RELEASE_KEYS = [
     "name",
@@ -116,8 +118,8 @@ if __name__ == "__main__":
             "releases": releases
         }
 
-    with open("data/releases3.json", "w") as f:
+    with open(f"data/releases{RELEASE_FILE_NUMBER}.json", "w") as f:
         json.dump(data, f, indent=4)
 
-    with open("static/releases3", "w") as f:
+    with open(f"static/releases{RELEASE_FILE_NUMBER}", "w") as f:
         json.dump({key: data[key]["releases"] for key in data}, f)
