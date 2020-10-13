@@ -336,11 +336,10 @@ We provide **opinionated** instructions for installing the external software req
     ```
 
 [skewer]: https://github.com/relipmoc/skewer
-[fastqc]: http://bowtie-bio.sourceforge.net/bowtie2/index.shtml
+[fastqc]: https://www.bioinformatics.babraham.ac.uk/projects/fastqc
 [bowtie2]: http://bowtie-bio.sourceforge.net/bowtie2/index.shtml
 [spades]: http://bioinf.spbau.ru/spades
 [hmmer]: http://hmmer.org/
-[fastqc]: http://www.bioinformatics.babraham.ac.uk/projects/fastqc
 [flash]: https://ccb.jhu.edu/software/FLASH/#:~:text=About%20FLASH&text=FLASH%20is%20designed%20to%20merge,to%20merge%20RNA%2Dseq%20data.
 [aodp]: https://bitbucket.org/wenchen_aafc/aodp_v2.0_release/src/master
 
