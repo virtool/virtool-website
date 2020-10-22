@@ -153,18 +153,30 @@
     },
     "virtool": {
         "latest": {
-            "name": "v4.1.0",
-            "body": "# Changed\r\n- add gap between vertically stack info bubbles in reference list items\r\n- improve accessibility of dropdowns (#1912)\r\n\r\n# Fixed\r\n- fix application crash in browser when user attempts to edit an OTU (#1917)\r\n- fix problem where dropdown wouldn't open when clicked (#1912, #1906)\r\n- fix situation where uploaded file would still be visible in list when upload was aborted (#1908)",
+            "name": "v4.1.1",
+            "body": "# Fixed\r\n- fix exception about missing `dnspython` package (#1923)\r\n- fix exception on start related to the `indexes` collection not existing (#1935)\r\n- fix jobs for the same sample failing when run concurrently (#1877)\r\n- fix subtractions disappearing immediately after creation (#1939)\r\n- fix only the first subtraction being selectable in the quick analysis dialog (#1891)",
             "prerelease": false,
-            "published_at": "2020-10-13T21:48:29Z",
-            "html_url": "https://github.com/virtool/virtool/releases/tag/v4.1.0",
+            "published_at": "2020-10-21T22:43:23Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v4.1.1",
             "filename": "virtool.tar.gz",
             "content_type": "application/gzip",
-            "size": 69105568,
-            "download_url": "https://github.com/virtool/virtool/releases/download/v4.1.0/virtool.tar.gz",
+            "size": 71926689,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v4.1.1/virtool.tar.gz",
             "asset_error": false
         },
         "releases": [
+            {
+                "name": "v4.1.1",
+                "body": "# Fixed\r\n- fix exception about missing `dnspython` package (#1923)\r\n- fix exception on start related to the `indexes` collection not existing (#1935)\r\n- fix jobs for the same sample failing when run concurrently (#1877)\r\n- fix subtractions disappearing immediately after creation (#1939)\r\n- fix only the first subtraction being selectable in the quick analysis dialog (#1891)",
+                "prerelease": false,
+                "published_at": "2020-10-21T22:43:23Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v4.1.1",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 71926689,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v4.1.1/virtool.tar.gz",
+                "asset_error": false
+            },
             {
                 "name": "v4.1.0",
                 "body": "# Changed\r\n- add gap between vertically stack info bubbles in reference list items\r\n- improve accessibility of dropdowns (#1912)\r\n\r\n# Fixed\r\n- fix application crash in browser when user attempts to edit an OTU (#1917)\r\n- fix problem where dropdown wouldn't open when clicked (#1912, #1906)\r\n- fix situation where uploaded file would still be visible in list when upload was aborted (#1908)",
