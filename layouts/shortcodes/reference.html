@@ -1,0 +1,5 @@
+{{ $doi := .Get "doi" }}
+
+<p class="box literature-reference">
+    <strong>{{ .Get "authors" }}</strong>. {{ .Get "year" }}. {{ .Get "title" }}. {{ .Get "journal"}}: {{ .Get "issue" }}. doi: <a href="https://doi.org/{{ $doi }}">{{ $doi }}</a>.
+</p>
