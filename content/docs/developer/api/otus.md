@@ -151,7 +151,7 @@ Create a new OTU given a name and abbreviation.
 
 OTU names and abbreviations must be unique within the database. Uniqueness tests for virus names are **case-insensitive**. Isolates and sequence data must be added in separate requests.
 
-{{< endpoint "POST" "/api/refs/otus/:id" >}}
+{{< endpoint "POST" "/api/refs/:id/otus/:id" >}}
 
 ## Input
 
