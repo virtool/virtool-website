@@ -598,7 +598,7 @@ Removes an isolate and its sequences. If it is the default isolate, the first is
 
 Add a sequence to an isolate.
 
-Sequence `id` values must be globally unique and should be GenBank accessions where possible.
+Sequence `accession` values must be globally unique and should be GenBank accessions where possible.
 
 Providing a value for `segment` will have no effect unless the parents virus has a schema configured. If a schema is configured, the value provided for `segment` must be one of the segments names defined in the schema.
 
@@ -610,7 +610,7 @@ Values provided for `sequence` must be plain text, **not** FASTA formatted. Sequ
 
 | Name       | Type   | Required | Description                                  |
 | :--------- | :----- | :------- | :------------------------------------------- |
-| id         | string | true     | an id for the sequence                       |
+| accession  | string | true     | an id for the sequence                       |
 | definition | string | true     | a descriptive definition                     |
 | host       | string | false    | the host of origin                           |
 | segment    | string | false    | the schema segment associated with the virus |
