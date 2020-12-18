@@ -44,6 +44,12 @@ Get a complete analysis document.
     "user": {
         "id": "igboyes"
     },
+    "subtractions": [
+      {
+        "id": "yhxoynb0",
+        "name": "Arabidopsis Thaliana"
+      }
+    ],
     "read_count": 23953,
     "diagnosis": [...]
 ```

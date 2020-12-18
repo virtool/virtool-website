@@ -423,6 +423,12 @@ Returned documents do not include diagnostic data. Use the [analyses](/docs/deve
             "user": {
                 "id": "igboyes"
             },
+            "subtractions": [
+              {
+                "id": "yhxoynb0",
+                "name": "Arabidopsis Thaliana"
+              }
+            ],
             "id": "yzgqgbld"
         },
         {
@@ -443,6 +449,12 @@ Returned documents do not include diagnostic data. Use the [analyses](/docs/deve
             "user": {
                 "id": "igboyes"
             },
+            "subtractions": [
+              {
+                "id": "yhxoynb0",
+                "name": "Arabidopsis Thaliana"
+              }
+            ],
             "id": "xfvpxvwi"
         }
     ]
@@ -468,10 +480,11 @@ Immediately create and placeholder analysis record for a sample and start an ana
 
 ## Input
 
-| Name      | Type   | Required | Description                                    |
-| :-------- | :----- | -------- | :--------------------------------------------- |
-| algorithm | string | True     | the algorithm name \(_eg_. pathoscope_bowtie\) |
-| ref_id    | string | True     | the reference to run the analysis against      |
+| Name        | Type   | Required | Description                                    |
+| :-----------| :----- | -------- | :--------------------------------------------- |
+| algorithm   | string | True     | the algorithm name \(_eg_. pathoscope_bowtie\) |
+| ref_id      | string | True     | the reference to run the analysis against      |
+| subtractions| array  | False    | an array of subtraction IDs                    |
 
 ## Example
 
@@ -480,7 +493,8 @@ Immediately create and placeholder analysis record for a sample and start an ana
 ```json
 {
     "algorithm": "pathoscope_bowtie",
-    "ref_id": "foo"
+    "ref_id": "foo",
+    "subtractions": ["yhxoynb0", "qlwf5l01"]
 }
 ```
 
@@ -508,6 +522,7 @@ Immediately create and placeholder analysis record for a sample and start an ana
     "user": {
         "id": "igboyes"
     },
+    "subtractions": ["yhxoynb0", "qlwf5l01"],
     "id": "fbzypgva"
 }
 ```
