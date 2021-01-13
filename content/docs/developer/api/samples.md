@@ -480,11 +480,11 @@ Immediately create and placeholder analysis record for a sample and start an ana
 
 ## Input
 
-| Name        | Type   | Required | Description                                    |
-| :-----------| :----- | -------- | :--------------------------------------------- |
-| algorithm   | string | True     | the algorithm name \(_eg_. pathoscope_bowtie\) |
-| ref_id      | string | True     | the reference to run the analysis against      |
-| subtractions| array  | False    | an array of subtraction IDs                    |
+| Name        | Type   | Required | Description                                                       |
+| :-----------| :----- | -------- | :-----------------------------------------------------------------|
+| algorithm   | string | True     | the algorithm name \(_eg_. pathoscope_bowtie\)                    |
+| ref_id      | string | True     | the reference to run the analysis against                         |
+| subtractions| array  | False    | the IDs of default subtractions to set for analyses of the sample |
 
 ## Example
 
