@@ -282,25 +282,33 @@ Jobs represent runs of bioinformatic workflows.
 
 ## Document
 
-| Field                | Type       | Description                                     |
-| :------------------- | :--------- | :---------------------------------------------- |
-| `_id`                | `string`   | The unique ID for the job                       |
-| `args`               | `document` | When the cache was created                      |
-| `mem`                | `integer`  | The memory (GB) available for the job           |
-| `proc`               | `integer`  | The processes to be used by the job             |
-| [`status`](#status") | `array`    | The status log for the job                      |
-| `task`               | `string`   | The name of the workflow                        |
-| [`user`](#job_user)  | `document` | Information about the user that started the job |
+| Field                | Type       | Description                                       |
+| :------------------- | :--------- | :------------------------------------------------ |
+| `_id`                | `string`   | The unique ID for the job                         |
+| `args`               | `document` | Key-value pairs that will be available in the job |
+| `mem`                | `integer`  | The memory (GB) available for the job             |
+| `proc`               | `integer`  | The processes to be used by the job               |
+| [`status`](#status") | `array`    | The status log for the job                        |
+| `task`               | `string`   | The name of the workflow                          |
+| [`user`](#job_user)  | `document` | Information about the user that started the job   |
 
 ## `status`
 
-| Field       | Type     | Description                                               |
-| :---------- | :------- | :-------------------------------------------------------- |
-| `error`     | `string` | The unique public accession for the sequence              |
-| `progress`  | `float`  | The progress value for the job                            |
-| `stage`     | `string` | The step the job is at                                    |
-| `state`     | `string` | The state of the job (waiting, running. error, cancelled) |
-| `timestamp` | `date`   | When the status record was created                        |
+| Field                    | Type       | Description                                               |
+| :----------------------- | :--------- | :-------------------------------------------------------- |
+| [`error`](#status_error) | `document` | Error information if the job encountered an error         |
+| `progress`               | `float`    | The progress value for the job                            |
+| `stage`                  | `string`   | The step the job is at                                    |
+| `state`                  | `string`   | The state of the job (waiting, running. error, cancelled) |
+| `timestamp`              | `date`     | When the status record was created                        |
+
+### `status.error` {#status_error}
+
+| Field       | Type     | Description                                                             |
+| :---------- | :------- | :---------------------------------------------------------------------- |
+| `type`      | `string` | The Python exception name (eg. `KeyError`)                              |
+| `traceback` | `string` | A Python traceback to help diagnose the issue                           |
+| `details`   | `string` | The exception detail (eg. Can't convert 'int' object to str implicitly) |
  
 ## `user` {#job_user}
 
