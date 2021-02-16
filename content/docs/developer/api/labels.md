@@ -27,13 +27,16 @@ List all labels. Takes no query or input.
     "id": "hfnreidj",
     "name": "Bug",
     "color": "#A83432",
+    "count": 4,
     "description": "This is a bug"
   },
   {
     "id": "djgnwksd",
-    "name": "Improvement",
     "color": "#03FC20",
-    "description": "Needs to improve"
+    "count": 23,
+    "description": "Needs to improve",
+    "name": "Improvement"  
+    
   }
 ]
 ```
@@ -60,6 +63,7 @@ Get the complete representation of a label.
   "id": "hfnreidj",
   "name": "Bug",
   "color": "#A83432",
+  "count": 4,
   "description": "This is a bug"
 }
 ```
@@ -68,9 +72,9 @@ Get the complete representation of a label.
 
 ## Errors
 
-| Status | Message   | Reason                                        |
-| :----- | :-------- | :-------------------------------------------- |
-| `404`  | Not found | Label does not exist                          |
+| Status | Message   | Reason               |
+| :----- | :-------- | :------------------- |
+| `404`  | Not found | Label does not exist |
 
 
 # Create
@@ -81,11 +85,11 @@ Create a new label.
 
 ## Input
 
-| Name        | Type   | Required | Description                                      |
-| :---------- | :----- | :------- | :----------------------------------------------- |
-| name        | String | True     | a unique name for the label                      |
-| color       | String | False    | the color for the label (default=``#A0AEC0``)    |
-| description | String | False    | the description about the label                  |
+| Name        | Type   | Required | Description                                   |
+| :---------- | :----- | :------- | :-------------------------------------------- |
+| name        | String | True     | a unique name for the label                   |
+| color       | String | False    | the color for the label (default=``#A0AEC0``) |
+| description | String | False    | the description about the label               |
 
 ## Example
 
@@ -107,6 +111,7 @@ Create a new label.
   "id": "dhifhgfh",
   "name": "Question",
   "color": "#A83232",
+  "count" 0,
   "description": "Question from a user"
 }
 ```
@@ -114,10 +119,10 @@ Create a new label.
 
 ## Errors
 
-| Status | Message                                   | Reason                                               |
-| :----- | :---------------------------------------- | :--------------------------------------------------- |
-| `400`  | Label name already exists                 | `name` is already in use                             |
-| `422`  | Invalid input                             | JSON request body is invalid                         |
+| Status | Message                   | Reason                       |
+| :----- | :------------------------ | :--------------------------- |
+| `400`  | Label name already exists | `name` is already in use     |
+| `422`  | Invalid input             | JSON request body is invalid |
 
 
 # Edit
@@ -128,11 +133,11 @@ Change the name, color, or description of an existing label.
 
 ## Input
 
-| Name        | Type   | Required | Description                                      |
-| :---------- | :----- | :------- | :----------------------------------------------- |
-| name        | String | False    | the label name                                   |
-| color       | String | False    | the label color (default=``#A0AEC0``)            |
-| description | String | False    | the label description                            |  
+| Name        | Type   | Required | Description                           |
+| :---------- | :----- | :------- | :------------------------------------ |
+| name        | String | False    | the label name                        |
+| color       | String | False    | the label color (default=``#A0AEC0``) |
+| description | String | False    | the label description                 |
 
 ## Example
 
@@ -152,6 +157,7 @@ Change the name, color, or description of an existing label.
   "id": "dhifhgfh",
   "name": "Question",
   "color": "#F53337",
+  "count": 12,
   "description": "Question from a user"
 }
 ```
@@ -159,11 +165,11 @@ Change the name, color, or description of an existing label.
 
 ## Errors
 
-| Status | Message                                             | Reason                                               |
-| :----- | :-------------------------------------------------- | :--------------------------------------------------- |
-| `400`  | Label name already exists                           | `name` is already in use                             |
-| `404`  | Not found                                           | Label does not exist                                 |
-| `422`  | Invalid input                                       | JSON request body is invalid                         |
+| Status | Message                   | Reason                       |
+| :----- | :------------------------ | :--------------------------- |
+| `400`  | Label name already exists | `name` is already in use     |
+| `404`  | Not found                 | Label does not exist         |
+| `422`  | Invalid input             | JSON request body is invalid |
 
 
 # Remove
@@ -182,6 +188,6 @@ Remove a label.
 
 ## Errors
 
-| Status | Message                   | Reason                                        |
-| :----- | :------------------------ | :-------------------------------------------- |
-| `404`  | Not found                 | Label does not exist                           |
+| Status | Message   | Reason               |
+| :----- | :-------- | :------------------- |
+| `404`  | Not found | Label does not exist |
