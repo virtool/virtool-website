@@ -5,37 +5,34 @@ menu:
     developer:
         parent: API
 ---
-
-When uploads are required in Virtool, they should be targeted at ``/upload``. The available endpoints are:
-
-| Situation                                  | Endpoint      |
-| ------------------------------------------ | ------------- |
-| Upload a Virtool reference file for import | /upload/ref   |
-| Upload a Illumina read file                | /upload/reads |
-| Upload a .hmm file for use with NuVs       | /upload/hmm   |
-| Upload a host FASTA file                   | /upload/host  |
+These endpoints are used to upload files to Virtool for use in sample, subtraction, and reference creation.
 
 # Upload File
 
 {{< permission upload_file >}}
 
-Uploads a file into Virtool file manager. The file will given a unique ID composed of an 8-character random alphanumeric string and the supplied ``name`` query parameter separated by a dash.
+Uploads a file to be used in Virtool.
 
-{{< endpoint "POST" "/upload/:file_type" >}}
+The upload request is expected to use the encoding type `multipart/form-data`. The upload file should be accessible under the `file` key.
+
+Additional input including the file's `name` and `type` should be included in the query string.
+
+{{< endpoint "POST" "/api/uploads" >}}
 
 ## Parameters
 
-| Name | Type   | Required | Description                   |
-| :--- | :----- | :------- | :---------------------------- |
-| name | string | true     | the display name for the file |
+| Name | Type   | Required | Description                                                 |
+| :--- | :----- | :------- | :---------------------------------------------------------- |
+| name | string | true     | the display name for the file                               |
+| type | string | false    | the file type (one of: `reads`, `subtraction`, `reference`) |
 
 ## Example
 
-{{< request "POST" "/upload/reads?name=test.fq.gz" />}}
+{{< request "POST" "/api/uploads?name=test.fq.gz&type=reads" />}}
 
 ## Response
 
-{{< response "Status: 201 Created" "Location: /api/files/juqleoir-test.fq.gz" >}}
+{{< response "Status: 201 Created" "Location: /api/uploads/0-test.fq.gz" >}}
 ```json
 {
 	"name": "test.fq.gz",
@@ -44,20 +41,34 @@ Uploads a file into Virtool file manager. The file will given a unique ID compos
 	},
 	"uploaded_at": "2018-03-02T22:52:09.152000Z",
 	"type": "reads",
-	"ready": false,
+	"ready": true,
 	"reserved": false,
-	"id": "juqleoir-test.fq.gz"
+	"id": "0-test.fq.gz"
 }
 ```
 {{< /response >}}
 
+# Download File
+
+Download a previously uploaded file.
+
+{{< endpoint "GET" "/api/uploads/:id" >}}
+
+## Example
+
+{{< request "GET" "/api/uploads/23" />}}
+
+## Response
+
+{{< response "Status: 200 OK" />}}
+
+
+
 ## Errors
 
-| Status | Message                | Reason                                                          |
-| :----- | :--------------------- | :-------------------------------------------------------------- |
-| `401`  | Requires authorization | request is not associated with an authorized session or API key |
-| `403`  | Not permitted          | client doesn't have the `upload_file` permission                |
-| `404`  | Not found              | `file_type` does not exist                                      |
+| Status | Message   | Reason                    |
+| :----- | :-------- | :------------------------ |
+| `404`  | Not found | The upload does not exist |
 
 
 # Delete File
@@ -66,10 +77,10 @@ Uploads a file into Virtool file manager. The file will given a unique ID compos
 
 Delete a previously uploaded file.
 
-{{< endpoint "DELETE" "/api/files/:id" >}}
+{{< endpoint "DELETE" "/api/uploads/:id" >}}
 
 ## Example
-{{< request "DELETE" "/api/files/juqleoir-test.fq.gz" />}}
+{{< request "DELETE" "/api/uploads/0-test.fq.gz" />}}
 
 ## Response
 
