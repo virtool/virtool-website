@@ -179,8 +179,8 @@ For now, only the [official reference](https://github.com/virtool/virtool-databa
 | :---------- | :------ | :------------------------------------------------------------------------------------------------- |
 | name        | string  | the virus name                                                                                     |
 | description | string  | a longer description for the reference                                                             |
-| data_type   | string  | the sequence data type (only _genome_ is currently supported)                                      |
-| organism    | string  | the sequence data type (only _genome_ is currently supported)                                      |
+| data_type   | string  | the sequence data type (one of _genome_ or _barcode_)                                              |
+| organism    | string  | the organism the reference represents (eg. viruses)                                                |
 | public      | boolean | make the reference viewable and usable by all users (default=`False`)                              |
 | clone_from  | string  | a valid `ref_id` that the new reference should be cloned from                                      |
 | import_from | string  | a valid `file_id` that the new reference should be imported from                                   |
@@ -423,8 +423,8 @@ Currently, only _genome_ is accepted as a value for `data_type`.
 | :--------------- | :------ | :------- | :---------------------------------------------------------------------------------- |
 | name             | string  | False    | the virus name                                                                      |
 | description      | string  | False    | a longer description for the reference                                              |
-| data_type        | string  | False    | the sequence data type (only _genome_ is currently supported)                       |
-| organism         | string  | False    | the sequence data type (only _genome_ is currently supported)                       |
+| data_type        | string  | False    | the sequence data type (one of _genome_ or _barcode_)                               |
+| organism         | string  | False    | the organism the reference represents (eg. viruses)                                 |
 | public           | boolean | False    | make the reference viewable and usable by all users (default=`False`)               |
 | internal_control | string  | False    | set the OTU identified by the passed `id` as the internal control for the reference |
 
