@@ -1,53 +1,57 @@
 baseURL = "/"
 languageCode = "en-us"
-title = "Virtool"
-theme = "virtool"
 staticDir = ["static"]
+theme = "virtool"
+title = "Virtool"
 
 enableGitInfo = true
 pygmentsCodeFences = true
 
 [sitemap]
-  filename = "sitemap.xml"
+filename = "sitemap.xml"
 
 [outputs]
-  home = ["HTML"]
-  page = ["HTML"]
+home = ["HTML"]
+page = ["HTML"]
 
 [menu]
-  [[menu.manual]]
-    name = "Getting Started"
-    weight = 10
-    
-  [[menu.manual]]
-    name = "Tutorials"
-    weight = 20
+[[menu.manual]]
 
-  [[menu.manual]]
-    name = "User Guide"
-    weight = 30
+name = "Getting Started"
+weight = 10
+[[menu.manual]]
+name = "Tutorials"
+weight = 20
 
-  [[menu.manual]]
-    name = "Science"
-    weight = 40
+[[menu.manual]]
+name = "User Guide"
+weight = 30
 
-  [[menu.developer]]
-    name = "Contributing"
-    weight = 10
+[[menu.manual]]
+name = "Science"
+weight = 40
 
-  [[menu.developer]]
-    name = "API"
-    weight = 20
+[[menu.developer]]
+name = "Contributing"
+weight = 10
 
-  [[menu.developer]]
-    name = "Backend"
-    weight = 30
+[[menu.developer]]
+name = "API"
+weight = 20
 
-  [[menu.developer]]
-    name = "Frontend"
-    weight = 40
-    
+[[menu.developer]]
+name = "Job API"
+weight = 30
+
+[[menu.developer]]
+name = "Backend"
+weight = 40
+
+[[menu.developer]]
+
+name = "Frontend"
+weight = 50
 [markup]
-  [markup.tableOfContents]
-    startLevel = 1
-    endLevel = 1
+[markup.tableOfContents]
+endLevel = 1
+startLevel = 1
