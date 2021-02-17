@@ -87,10 +87,10 @@ Uploaded files will be available for download via the API or browser client.
 
 ## Parameters
 
-| Name   | Type   | Required  | Description                             |
-| :---   | :----- | :-------- | :-------------------------------------- |
-| name   | string | Yes       | An original name to retain for the file |
-| format | string | No        | The analysis file format                |
+| Name   | Type   | Required  | Description                                                                             |
+| :---   | :----- | :-------- | :-------------------------------------------------------------------------------------- |
+| name   | string | Yes       | An original name to retain for the file                                                 |
+| format | string | No        | The analysis file format (one of: `sam`, `bam`, `fasta`, `fastq`, `csv`, `tsv`, `json`) |
 
 ## Example
 
