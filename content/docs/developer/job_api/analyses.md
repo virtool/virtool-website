@@ -33,6 +33,18 @@ Only analysis jobs have access to this endpoint and only on the analysis the are
     "job": {
         "id": "afovbrnx"
     },
+    "files": [
+      {
+        "analysis": "uskrqsxm",
+        "description": null,
+        "format": "fasta",
+        "id": 1,
+        "name": "results.fa",
+        "name_on_disk": "1-results.fa",
+        "size": 20466,
+        "uploaded_at": "2017-10-03T21:35:54.813000Z"
+      }
+    ],
     "workflow": "pathoscope_bowtie",
     "sample": {
         "id": "kigvhuql",
@@ -67,8 +79,6 @@ Only analysis jobs have access to this endpoint and only on the analysis the are
 
 # Upload File
 
-**NOT IMPLEMENTED**
-
 Upload a file that should be persisted with the analysis.
 
 Uploaded files will be available for download via the API or browser client.
@@ -77,11 +87,72 @@ Uploaded files will be available for download via the API or browser client.
 
 ## Parameters
 
-| Name | Type   | Default   | Description                             |
-| :--- | :----- | :-------- | :-------------------------------------- |
-| name | string |           | an original name to retain for the file |
-| type | string | `unknown` | the upload type                         |
+| Name   | Type   | Required  | Description                             |
+| :---   | :----- | :-------- | :-------------------------------------- |
+| name   | string | Yes       | An original name to retain for the file |
+| format | string | No        | The analysis file format                |
 
+## Example
+
+{{< request "POST" "/api/analyses/uskrqsxm/files" >}}
+```json
+{
+    "name": "results.fa",
+    "format": "fasta"
+}
+```
+{{< /request >}}
+
+## Response
+
+{{< response "Status: 201 OK" >}}
+```json
+{
+  "analysis": "uskrqsxm",
+  "description": null,
+  "format": "fasta",
+  "id": 1,
+  "name": "results.fa",
+  "name_on_disk": "1-results.fa",
+  "size": 20466,
+  "uploaded_at": "2017-10-03T21:35:54.813000Z"
+}
+```
+{{</ response >}}
+
+## Errors
+
+| Status | Message                                  | Reason                                                                               |
+| :----- | :--------------------------------------- | :----------------------------------------------------------------------------------- |
+| `400`  | Unsupported analysis file format         | Given format not an acceptable format                                                |
+| `403`  | Insufficient rights                      | Upload file rights required                                                          |
+| `404`  | Not found                                | The analysis does not exist                                                          |
+| `409`  | File is already associated with analysis | File name was found in the analysis document                                         |
+| `422`  | Invalid query                            | `name` is a required field                                                           |
+
+# Download File
+
+Download an analysis file that is associated with the given analysis.
+
+The file `id` corresponds to a row `id` in the `analysis_files` SQL table.
+
+{{< endpoint "GET" "/api/analyses/:id/files/:id" >}}
+
+## Example
+
+{{< request "GET" "/api/analyses/uskrqsxm/files/1" />}}
+
+## Response
+
+{{< response "Status: 200 OK" >}}
+{{</ response >}}
+
+## Errors
+
+| Status | Message                                      | Reason                                                     |
+| :----- | :------------------------------------------- | :--------------------------------------------------------- |
+| `404`  | Not found                                    | The analysis file does not exist                           |
+| `404`  | Uploaded file not found at expected location | The file was not found in the local `analyses` data folder |
 
 # Finalize
 
