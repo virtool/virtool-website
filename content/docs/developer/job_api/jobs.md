@@ -193,5 +193,5 @@ Get the representation of a job, along with an API key.
 
 | Status | Message             | Reason                                                         |
 | :----- | :------------------ | :------------------------------------------------------------- |
-| `400`  | Job already acquired |  The job has already been acquired. |
-| `404`  | Not found           | The job does not exist                                         |
+| `400`  | Bad Request         |  The job has already been acquired                             | 
+| `404`  | Not found           |  The job does not exist                                        |
