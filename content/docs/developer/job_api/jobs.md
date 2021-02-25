@@ -143,6 +143,7 @@ Get the representation of a job, along with an API key.
 
 {{< response "Status: 200 OK" >}}
 ```json
+{
     "task": "create_subtraction",
     "args": {
         "subtraction_id": "Thale",
@@ -183,8 +184,8 @@ Get the representation of a job, along with an API key.
             "timestamp": "2018-02-06T22:16:15.637000Z"
         }
     ],
-    "id": "zzpugkyt"
-    "key": "92488e1e3eeecdf99f3ed2ce59233efb4b4fb612d5655c0ce9ea52b5a502e655",
+    "id": "zzpugkyt",
+    "key": "92488e1e3eeecdf99f3ed2ce59233efb4b4fb612d5655c0ce9ea52b5a502e655"
 }
 ```
 {{< /response >}}
@@ -193,5 +194,6 @@ Get the representation of a job, along with an API key.
 
 | Status | Message             | Reason                                                         |
 | :----- | :------------------ | :------------------------------------------------------------- |
-| `400`  | Bad Request         |  The job has already been acquired                             | 
+| `400`  | Bad request         |  The job has already been acquired                             | 
 | `404`  | Not found           |  The job does not exist                                        |
+| `422`  | Unprocessable entity |  The JSON body of the request is invalid                      |
