@@ -24,47 +24,47 @@ Jobs can only retrieve data for themselves.
 {{< response "Status: 200 OK" >}}
 ```json
 {
-	"task": "create_subtraction",
-	"args": {
-		"subtraction_id": "Thale",
-		"file_id": "vlekszor-ATgenomeTAIR9.171"
-	},
-	"proc": 2,
-	"mem": 4,
-	"user": {
-		"id": "igboyes"
-	},
-	"status": [
-		{
-			"state": "waiting",
-			"stage": null,
-			"error": null,
-			"progress": 0,
-			"timestamp": "2018-02-06T22:15:52.664000Z"
-		},
-		{
-			"state": "running",
-			"stage": "mk_subtraction_dir",
-			"error": null,
-			"progress": 0.2,
-			"timestamp": "2018-02-06T22:16:11.166000Z"
-		},
-		{
-			"state": "running",
-			"stage": "set_stats",
-			"error": null,
-			"progress": 0.4,
-			"timestamp": "2018-02-06T22:16:11.169000Z"
-		},
-		{
-			"state": "running",
-			"stage": "bowtie_build",
-			"error": null,
-			"progress": 0.6,
-			"timestamp": "2018-02-06T22:16:15.637000Z"
-		}
-	],
-	"id": "zzpugkyt"
+    "task": "create_subtraction",
+    "args": {
+        "subtraction_id": "Thale",
+        "file_id": "vlekszor-ATgenomeTAIR9.171"
+    },
+    "proc": 2,
+    "mem": 4,
+    "user": {
+        "id": "igboyes"
+    },
+    "status": [
+        {
+            "state": "waiting",
+            "stage": null,
+            "error": null,
+            "progress": 0,
+            "timestamp": "2018-02-06T22:15:52.664000Z"
+        },
+        {
+            "state": "running",
+            "stage": "mk_subtraction_dir",
+            "error": null,
+            "progress": 0.2,
+            "timestamp": "2018-02-06T22:16:11.166000Z"
+        },
+        {
+            "state": "running",
+            "stage": "set_stats",
+            "error": null,
+            "progress": 0.4,
+            "timestamp": "2018-02-06T22:16:11.169000Z"
+        },
+        {
+            "state": "running",
+            "stage": "bowtie_build",
+            "error": null,
+            "progress": 0.6,
+            "timestamp": "2018-02-06T22:16:15.637000Z"
+        }
+    ],
+    "id": "zzpugkyt"
 }
 ```
 {{< /response >}}
@@ -124,4 +124,74 @@ Jobs can only push status to their on job resource.
 | Status | Message             | Reason                                                         |
 | :----- | :------------------ | :------------------------------------------------------------- |
 | `403`  | Insufficient rights | The job does not have the right to read jobs other than itself |
+| `404`  | Not found           | The job does not exist                                         |
+
+# Acquire Job
+
+Get the representation of a job, along with an API key.
+
+## Example
+
+{{< request "PATCH" "/api/jobs/zzpugkyt" />}}
+```json
+{
+  "acquired": true
+}
+```
+
+## Response
+
+{{< response "Status: 200 OK" >}}
+```json
+    "task": "create_subtraction",
+    "args": {
+        "subtraction_id": "Thale",
+        "file_id": "vlekszor-ATgenomeTAIR9.171"
+    },
+    "proc": 2,
+    "mem": 4,
+    "user": {
+        "id": "igboyes"
+    },
+    "status": [
+        {
+            "state": "waiting",
+            "stage": null,
+            "error": null,
+            "progress": 0,
+            "timestamp": "2018-02-06T22:15:52.664000Z"
+        },
+        {
+            "state": "running",
+            "stage": "mk_subtraction_dir",
+            "error": null,
+            "progress": 0.2,
+            "timestamp": "2018-02-06T22:16:11.166000Z"
+        },
+        {
+            "state": "running",
+            "stage": "set_stats",
+            "error": null,
+            "progress": 0.4,
+            "timestamp": "2018-02-06T22:16:11.169000Z"
+        },
+        {
+            "state": "running",
+            "stage": "bowtie_build",
+            "error": null,
+            "progress": 0.6,
+            "timestamp": "2018-02-06T22:16:15.637000Z"
+        }
+    ],
+    "id": "zzpugkyt"
+    "key": "92488e1e3eeecdf99f3ed2ce59233efb4b4fb612d5655c0ce9ea52b5a502e655",
+}
+```
+{{< /response >}}
+
+## Errors
+
+| Status | Message             | Reason                                                         |
+| :----- | :------------------ | :------------------------------------------------------------- |
+| `400`  | Job already acquired |  The job has already been acquired. |
 | `404`  | Not found           | The job does not exist                                         |
