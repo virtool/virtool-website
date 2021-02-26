@@ -134,7 +134,7 @@ Uploaded files will be available for download via the API or browser client.
 
 Download an analysis file that is associated with the given analysis.
 
-The file `id` corresponds to a row `id` in the `analysis_files` SQL table.
+The file `id` corresponds to the `id` of a file found in the `files` list of a `GET` response.
 
 {{< endpoint "GET" "/api/analyses/:id/files/:id" >}}
 
