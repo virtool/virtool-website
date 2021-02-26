@@ -8,7 +8,7 @@ menu:
         
 ---
 
-# Upload
+# Upload File
 
 Upload a new subtraction file to associate with an existing subtraction.
 
