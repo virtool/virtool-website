@@ -48,6 +48,14 @@ Additional input including the file's `name` and `type` should be included in th
 ```
 {{< /response >}}
 
+## Errors
+
+| Status | Message                 | Reason                                                  |
+| :----- | :---------------------- | :------------------------------------------------------ |
+| `400`  | Unsupported upload type | Given file not an acceptable type, see `type` parameter |
+| `403`  | Not permitted           | user does not have `upload_file` permission             |
+| `422`  | Invalid query           | `name` is a required field                              |
+
 # Download File
 
 Download a previously uploaded file.
@@ -80,7 +88,7 @@ Delete a previously uploaded file.
 {{< endpoint "DELETE" "/api/uploads/:id" >}}
 
 ## Example
-{{< request "DELETE" "/api/uploads/0-test.fq.gz" />}}
+{{< request "DELETE" "/api/uploads/23" />}}
 
 ## Response
 
