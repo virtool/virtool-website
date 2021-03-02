@@ -58,19 +58,27 @@ Get the complete representation of an index.
 
 # Upload File
 
-{{< permission upload_file >}}
+Upload a file that should be persisted with an index.
 
-Upload files that can be used in an index build job.
+The upload request is expected to use the encoding type `multipart/form-data`. The file data should be made accessible under the `file` key.
 
-The upload request is expected to use the encoding type `multipart/form-data`. The upload file should be accessible under the `file` key.
+The name of the file to be uploaded must be be one of the following:
+* `reference.json.gz`
+* `reference.fa.gz`
+* `reference.1.bt2`
+* `reference.2.bt2`
+* `reference.3.bt2`
+* `reference.4.bt4`
+* `reference.rev.1.bt2`
+* `reference.rev.2.bt2`
 
 {{< endpoint "POST" "/api/indexes/:id/files" >}}
 
 ## Parameters
 
-| Name   | Type   | Required  | Description                                                                             |
-| :---   | :----- | :-------- | :-------------------------------------------------------------------------------------- |
-| name   | string | Yes       | Name of a index file to upload (one of: `reference.json.gz`, `reference.fa.gz`, `reference.1.bt2`, `reference.2.bt2`, `reference.3.bt2`, `reference.4.bt4`, `reference.rev.1.bt2`, `reference.rev.2.bt2`)                                                 |
+| Name   | Type   | Required  | Description                                                                |
+| :---   | :----- | :-------- | :------------------------------------------------------------------------- |
+| name   | string | Yes       | Name of a index file to upload (must be one of the file names listed above)|
 
 ## Example
 
