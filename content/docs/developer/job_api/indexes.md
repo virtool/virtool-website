@@ -58,9 +58,48 @@ Get the complete representation of an index.
 
 # Upload File
 
-**Not Implemented**
+{{< permission upload_file >}}
 
-Upload files that
+Upload files that can be used in an index build job.
+
+The upload request is expected to use the encoding type `multipart/form-data`. The upload file should be accessible under the `file` key.
+
+{{< endpoint "POST" "/api/indexes/:id/files" >}}
+
+## Parameters
+
+| Name   | Type   | Required  | Description                                                                             |
+| :---   | :----- | :-------- | :-------------------------------------------------------------------------------------- |
+| name   | string | Yes       | Name of a index file to upload (one of: `reference.json.gz`, `reference.fa.gz`, `reference.1.bt2`, `reference.2.bt2`, `reference.3.bt2`, `reference.4.bt4`, `reference.rev.1.bt2`, `reference.rev.2.bt2`)                                                 |
+
+## Example
+
+{{< request "POST" "/api/indexes/uskrqsxm/files?name=reference.fa.gz" >}}
+{{< /request >}}
+
+## Response
+
+{{< response "Status: 201 OK" >}}
+```json
+{
+  "id": 1,
+  "name": "reference.fa.gz",
+  "reference": "bar",
+  "size": 7205747,
+  "type": "fasta"
+}
+```
+{{</ response >}}
+
+## Errors
+
+| Status | Message                     | Reason                                                                 |
+| :----- | :-------------------------- | :--------------------------------------------------------------------- |
+| `400`  | Unsupported index file name | Given file is not one of the accepted file names, see `name` parameter |
+| `403`  | Insufficient rights         | Upload file rights required                                            |
+| `404`  | Not found                   | Index does not exist                                                   |
+| `409`  | File name already exists    | File is already associated with this index                             |
+| `422`  | Invalid query               | `name` is a required field
 
 # Finalize
 
@@ -69,9 +108,3 @@ Upload files that
 Finish an index build job.
 
 {{< endpoint "PATCH" "/api/indexes/:id" >}}
-
-## Example
-
-```
-PATCH /api/indexes/:id
-```
