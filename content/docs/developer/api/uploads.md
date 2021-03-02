@@ -13,7 +13,7 @@ These endpoints are used to upload files to Virtool for use in sample, subtracti
 
 Uploads a file to be used in Virtool.
 
-The upload request is expected to use the encoding type `multipart/form-data`. The upload file should be accessible under the `file` key.
+The upload request is expected to use the encoding type `multipart/form-data`. The file should be made accessible under the `file` key.
 
 Additional input including the file's `name` and `type` should be included in the query string.
 
