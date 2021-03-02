@@ -83,6 +83,10 @@ Upload a file that should be persisted with the analysis.
 
 Uploaded files will be available for download via the API or browser client.
 
+The upload request is expected to use the encoding type `multipart/form-data`. The upload file should be accessible under the `file` key.
+
+Additional input including the file's `name` and `format` should be included in the query string.
+
 {{< endpoint "POST" "/api/analyses/:id/files" >}}
 
 ## Parameters
@@ -94,13 +98,7 @@ Uploaded files will be available for download via the API or browser client.
 
 ## Example
 
-{{< request "POST" "/api/analyses/uskrqsxm/files" >}}
-```json
-{
-    "name": "results.fa",
-    "format": "fasta"
-}
-```
+{{< request "POST" "/api/analyses/uskrqsxm/files?name=results.fa&format=fasta" >}}
 {{< /request >}}
 
 ## Response
@@ -122,13 +120,13 @@ Uploaded files will be available for download via the API or browser client.
 
 ## Errors
 
-| Status | Message                                  | Reason                                                                               |
-| :----- | :--------------------------------------- | :----------------------------------------------------------------------------------- |
-| `400`  | Unsupported analysis file format         | Given format not an acceptable format                                                |
-| `403`  | Insufficient rights                      | Upload file rights required                                                          |
-| `404`  | Not found                                | The analysis does not exist                                                          |
-| `409`  | File is already associated with analysis | File name was found in the analysis document                                         |
-| `422`  | Invalid query                            | `name` is a required field                                                           |
+| Status | Message                                  | Reason                                       |
+| :----- | :--------------------------------------- | :------------------------------------------- |
+| `400`  | Unsupported analysis file format         | Given format not an acceptable format        |
+| `403`  | Insufficient rights                      | Upload file rights required                  |
+| `404`  | Not found                                | The analysis does not exist                  |
+| `409`  | File is already associated with analysis | File name was found in the analysis document |
+| `422`  | Invalid query                            | `name` is a required field                   |
 
 # Download File
 
