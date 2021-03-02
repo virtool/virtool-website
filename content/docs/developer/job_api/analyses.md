@@ -79,8 +79,6 @@ Only analysis jobs have access to this endpoint and only on the analysis the are
 
 # Upload File
 
-{{< permission upload_file >}}
-
 Upload a file that should be persisted with the analysis.
 
 Uploaded files will be available for download via the API or browser client.
