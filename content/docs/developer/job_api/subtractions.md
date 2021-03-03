@@ -12,7 +12,17 @@ menu:
 
 Upload a new subtraction file to associate with an existing subtraction.
 
-It will automatically resolve the type of subtraction file, but a `type` can be sent in a request to override this. 
+It will automatically resolve the type of subtraction file, but a `type` can be sent in a request to override this.
+
+The name of the file to be uploaded must be be one of the following:
+* `reference.json.gz`
+* `reference.fa.gz`
+* `reference.1.bt2`
+* `reference.2.bt2`
+* `reference.3.bt2`
+* `reference.4.bt4`
+* `reference.rev.1.bt2`
+* `reference.rev.2.bt2`
 
 {{< endpoint "POST" "/api/subtractions/:id/files" >}}
 
@@ -20,8 +30,8 @@ It will automatically resolve the type of subtraction file, but a `type` can be 
 
 | Name   | Type   | Required  | Description                                                                             |
 | :---   | :----- | :-------- | :-------------------------------------------------------------------------------------- |
-| name   | string | Yes       | The name of the subtraction file to upload (one of: `subtraction.fa.gz`, `subtraction.1.bt2`, `subtraction.2.bt2`, `subtraction.3.bt2`, `subtraction.4.bt2`, `subtraction.rev.1.bt2`, `subtraction.rev.2.bt2`)                                                 |
-| type   | string | No        | The type of the subtraction file
+| name   | string | Yes       | The name of the subtraction file to upload (must be one of the file names listed above) |
+| type   | string | No        | The type of the subtraction file                                                        |
 
 ## Example
 
@@ -53,7 +63,39 @@ It will automatically resolve the type of subtraction file, but a `type` can be 
 | :----- | :---------------------------------| :----------------------------------------------------------------------|
 | `400`  | Unsupported subtraction file name | File does not have one of the accepted filenames, see `name` parameter |
 | `400`  | File name already exists          | File name is already associated with this subtraction                  |
-| `403`  | Insufficient rights               | Modify subtraction rights required                                     |
 | `404`  | Not found                         | Subtraction does not exist                                             |
 | `422`  | Invalid query                     | `name` is a required parameter                                         |
 
+
+# Finalize
+
+Finalize a subtraction by setting `ready` to `True` and setting `gc` based on request data.
+
+The request expects an encoded `json`, and the data should be made accessible under a `gc` key.
+
+## Example
+
+{{< request "PATCH" "/api/subtractions/ndflgjsl" >}}
+```json
+{
+  "gc": {
+    "a": 0.319,
+    "c": 0.18,
+    "g": 0.18,
+    "n": 0.002,
+    "t": 0.319
+  },
+  "id": "ndflgjsl",
+  "name": "foo",
+  "ready": true
+}
+```
+{{< /request >}}
+
+## Errors
+
+ Status | Message                                 | Reason                                                                 |
+| :----- | :--------------------------------------| :----------------------------------------------------------------------|
+| `404`  | Not found                              | Subtraction does not exist                                             |
+| `409`  | Subtraction has already been finalized | Finalize has already been called on this subtraction                   |
+| `422`  | Invalid input                          | `gc` key was not found in the given `json`                             |

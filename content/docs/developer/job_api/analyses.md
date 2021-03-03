@@ -220,7 +220,6 @@ This request will fail with `409` on analyses that have already been finalized.
 
 | Status | Message                                     | Reason                                                 |
 | :----- | :------------------------------------------ | :----------------------------------------------------- |
-| `403`  | Insufficient rights                         | The job does not have the modify right on the analysis |
 | `404`  | Not found                                   | Analysis does not exist                                |
 | `409`  | There is already a result for this analysis | Analysis job is already finalized                      |
 
@@ -247,6 +246,5 @@ Finalized analyses cannot be removed over the jobs API. This must be done via th
 
 | Status | Message               | Reason                                                                                         |
 | :----- | :-------------------- | :--------------------------------------------------------------------------------------------- |
-| `403`  | Insufficient rights   | Client does not have the required sample rights to remove the analysis                         |
 | `404`  | Not found             | Analysis does not exist                                                                        |
 | `409`  | Analysis is finalized | Analysis job is finalized with `ready` set `true`. It can only be removed from the regular API |
