@@ -35,12 +35,7 @@ The name of the file to be uploaded must be be one of the following:
 
 ## Example
 
-{{< request "POST" "/api/subtractions/jrosgvey/files" >}}
-```json
-{
-  "name": "subtraction.1.bt2"
-}
-```
+{{< request "POST" "/api/subtractions/jrosgvey/files?name=subtraction.1.bt2" >}}
 {{< /request >}}
 
 ## Response
@@ -69,7 +64,9 @@ The name of the file to be uploaded must be be one of the following:
 
 # Finalize
 
-Finalize a subtraction by setting `ready` to `True` and setting `gc` based on request data.
+Finalize a subtraction by setting `ready` to `true` and setting a sample's `gc` field based on request data.
+
+`gc` is an object that describes the ratios of nucleotides in subtraction sequence data.
 
 The request expects an encoded `json`, and the data should be made accessible under a `gc` key.
 
@@ -84,13 +81,40 @@ The request expects an encoded `json`, and the data should be made accessible un
     "g": 0.18,
     "n": 0.002,
     "t": 0.319
-  },
-  "id": "ndflgjsl",
-  "name": "foo",
-  "ready": true
+  }
 }
 ```
 {{< /request >}}
+
+## Response
+
+{{< response "Status: 201 OK" >}}
+```json
+{
+  "ready": true,
+	"is_host": true,
+	"file": {
+		"id": "djbxvhmy-ATgenomeTAIR9.171",
+		"name": "ATgenomeTAIR9.171"
+	},
+	"user": {
+		"id": "igboyes"
+	},
+	"job": {
+		"id": "rjbszwmm"
+	},
+	"nickname": "Foobar",
+	"id": "ndflgjsl",
+  "gc": {
+    "a": 0.319,
+    "c": 0.18,
+    "g": 0.18,
+    "n": 0.002,
+    "t": 0.319
+  }
+}
+```
+{{</ response >}}
 
 ## Errors
 
