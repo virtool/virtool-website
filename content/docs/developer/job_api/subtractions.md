@@ -35,8 +35,7 @@ The name of the file to be uploaded must be be one of the following:
 
 ## Example
 
-{{< request "POST" "/api/subtractions/jrosgvey/files?name=subtraction.1.bt2" >}}
-{{< /request >}}
+{{< request "POST" "/api/subtractions/jrosgvey/files?name=subtraction.1.bt2" />}}
 
 ## Response
 

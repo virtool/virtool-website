@@ -12,8 +12,6 @@ menu:
 
 Finalize a sample being created by setting `ready` to `true` and setting `quality` based on request data.
 
-The request expects an encoded `json` that has a single key named `quality`.
-
 ## Parameters
 
 | Name    | Type   | Required  | Description                                                                   |
