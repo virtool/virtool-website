@@ -3,7 +3,7 @@ title: "References"
 description: "Query references."
 menu:
     developer:
-        identifier: job_api_jobs
+        identifier: job_api_references
         parent: Job API
 ---
 
