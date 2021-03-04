@@ -61,6 +61,8 @@ Get the complete representation for a single reference.
 }
 ```
 
+{{< /response >}}
+
 ## Errors
 
 | Status | Message             | Reason                                                         |
