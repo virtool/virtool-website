@@ -82,7 +82,7 @@ The name of the file to be uploaded must be be one of the following:
 
 ## Example
 
-{{< request "POST" "/api/indexes/uskrqsxm/files?name=reference.fa.gz" >}}
+{{< request "POST" "/api/indexes/uskrqsxm/files?name=reference.fa.gz" />}}
 
 ## Response
 
@@ -125,7 +125,7 @@ Download index files. The accepted filenames are:
 
 ## Example
 
-{{< request "GET" "/api/indexes/uskrqsxm/files/reference.json.gz" >}}
+{{< request "GET" "/api/indexes/uskrqsxm/files/reference.json.gz" />}}
 
 ## Response 
 
