@@ -109,6 +109,36 @@ The name of the file to be uploaded must be be one of the following:
 | `409`  | File name already exists    | File is already associated with this index                             |
 | `422`  | Invalid query               | `name` is a required field
 
+# Download Files
+
+Download index files. The accepted filenames are:
+
+- reference.json.gz
+- reference.fa.gz
+- reference.1.bt2
+- reference.2.bt2
+- reference.3.bt2
+- reference.4.bt4
+- reference.rev.1.bt2
+- reference.rev.2.bt2
+
+{{< endpoint "GET" "/api/indexes/:id/files/:filename" >}}
+
+## Examples
+
+{{< request "GET" "/api/indexes/uskrqsxm/files/reference.json.gz >}}
+{{< /request >}}
+
+## Response 
+
+{{< response "Status: 200 OK" >}}
+
+
+| Status | Message                     | Reason                                                                 |
+| :----- | :-------------------------- | :--------------------------------------------------------------------- |
+| `404`  | Not found                   | The file or index does not exist                                       |
+
+
 # Finalize
 
 **Not Implemented**
