@@ -133,6 +133,7 @@ Download index files. The accepted filenames are:
 
 {{< response "Status: 200 OK" >}}
 
+## Errors
 
 | Status | Message                     | Reason                                                                 |
 | :----- | :-------------------------- | :--------------------------------------------------------------------- |
