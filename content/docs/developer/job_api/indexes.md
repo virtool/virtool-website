@@ -83,7 +83,6 @@ The name of the file to be uploaded must be be one of the following:
 ## Example
 
 {{< request "POST" "/api/indexes/uskrqsxm/files?name=reference.fa.gz" >}}
-{{< /request >}}
 
 ## Response
 
