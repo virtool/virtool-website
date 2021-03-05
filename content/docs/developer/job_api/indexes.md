@@ -123,10 +123,9 @@ Download index files. The accepted filenames are:
 
 {{< endpoint "GET" "/api/indexes/:id/files/:filename" >}}
 
-## Examples
+## Example
 
 {{< request "GET" "/api/indexes/uskrqsxm/files/reference.json.gz" >}}
-{{< /request >}}
 
 ## Response 
 
