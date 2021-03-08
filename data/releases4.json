@@ -166,6 +166,18 @@
         },
         "releases": [
             {
+                "name": "v4.2.0-beta.1",
+                "body": "# Changed\r\n- improve user experience when selecting in barcode targets and genome segments\r\n\r\n# Fixed\r\n- fixed unuseable target field when adding barcode reference sequences",
+                "prerelease": true,
+                "published_at": "2021-03-08T20:33:31Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v4.2.0-beta.1",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 71927436,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v4.2.0-beta.1/virtool.tar.gz",
+                "asset_error": false
+            },
+            {
                 "name": "v4.1.2",
                 "body": "# Fixed\r\n- fix failing analyses for legacy samples\r\n- updated dependencies to resolve security issues",
                 "prerelease": false,
