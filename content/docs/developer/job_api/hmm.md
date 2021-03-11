@@ -84,7 +84,7 @@ Get the `profiles.hmm` used in analysis workflows requiring `hmmer`.
 
 {{< response "Status: 200 OK" />}}
 
-## Error
+## Errors
 
 | Status | Message   | Reason                                                          |
 | :----- | :-------- | :-------------------------------------------------------------- |
