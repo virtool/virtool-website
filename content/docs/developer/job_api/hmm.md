@@ -71,8 +71,6 @@ Get the complete representation of a single HMM annotation.
 
 # Download Profiles
 
-**NOT IMPLEMENTED**
-
 Get the `profiles.hmm` used in analysis workflows requiring `hmmer`.
 
 {{< endpoint "GET" "/download/hmms/profiles.hmm" >}}
@@ -84,6 +82,12 @@ Get the `profiles.hmm` used in analysis workflows requiring `hmmer`.
 ## Response
 
 {{< response "Status: 200 OK" />}}
+
+## Errors
+
+| Status | Message   | Reason                             |
+| :----- | :-------- | :--------------------------------- |
+| `404`  | Not found | HMM profiles data is not available |
 
 # Download HMM Annotations
 
