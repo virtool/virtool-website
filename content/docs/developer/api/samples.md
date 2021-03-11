@@ -303,11 +303,12 @@ Update modifiable fields of a sample.
 | `404`  | Not found                     | `sample_id` in URL does not exist                             |
 | `422`  | Invalid input                 | request body JSON failed validation                           |
 
-# Edit Rights
+
+# Set Rights
 
 {{< administrator_owner >}}
 
-Edit the access rights for a sample.
+Set the access rights for a sample.
 
 {{< endpoint "PATCH" "/api/samples/:id/rights" >}}
 

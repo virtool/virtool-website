@@ -3,7 +3,8 @@ title: "HMM"
 description: "Manage and query HMM annotations and files."
 menu:
 developer:
-identifier: job_api_hmm parent: Job API
+identifier: job_api_hmm 
+parent: Job API
 ---
 
 # Get {#get}
@@ -83,11 +84,11 @@ Get the `profiles.hmm` used in analysis workflows requiring `hmmer`.
 
 {{< response "Status: 200 OK" />}}
 
-## Errors
+## Error
 
-| Status | Message   | Reason                             |
-| :----- | :-------- | :--------------------------------- |
-| `404`  | Not found | HMM profiles data is not available |
+| Status | Message   | Reason                                                          |
+| :----- | :-------- | :-------------------------------------------------------------- |
+| `404`  | Not found | HMM data hasn't been installed or `profiles.hmm` does not exist |
 
 # Download HMM Annotations
 
@@ -100,5 +101,6 @@ Get a gzipped JSON file `annotations.json.gz` containing a list of representatio
 ## Response
 
 {{< response "Status: 200 OK" />}}
+
 
 

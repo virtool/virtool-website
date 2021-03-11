@@ -83,6 +83,10 @@ Upload a file that should be persisted with the analysis.
 
 Uploaded files will be available for download via the API or browser client.
 
+The upload request is expected to use the encoding type `multipart/form-data`. The upload file should be accessible under the `file` key.
+
+Additional input including the file's `name` and `format` should be included in the query string.
+
 {{< endpoint "POST" "/api/analyses/:id/files" >}}
 
 ## Parameters
@@ -94,13 +98,7 @@ Uploaded files will be available for download via the API or browser client.
 
 ## Example
 
-{{< request "POST" "/api/analyses/uskrqsxm/files" >}}
-```json
-{
-    "name": "results.fa",
-    "format": "fasta"
-}
-```
+{{< request "POST" "/api/analyses/uskrqsxm/files?name=results.fa&format=fasta" >}}
 {{< /request >}}
 
 ## Response
@@ -122,19 +120,19 @@ Uploaded files will be available for download via the API or browser client.
 
 ## Errors
 
-| Status | Message                                  | Reason                                                                               |
-| :----- | :--------------------------------------- | :----------------------------------------------------------------------------------- |
-| `400`  | Unsupported analysis file format         | Given format not an acceptable format                                                |
-| `403`  | Insufficient rights                      | Upload file rights required                                                          |
-| `404`  | Not found                                | The analysis does not exist                                                          |
-| `409`  | File is already associated with analysis | File name was found in the analysis document                                         |
-| `422`  | Invalid query                            | `name` is a required field                                                           |
+| Status | Message                                  | Reason                                       |
+| :----- | :--------------------------------------- | :------------------------------------------- |
+| `400`  | Unsupported analysis file format         | Given format not an acceptable format        |
+| `403`  | Insufficient rights                      | Upload file rights required                  |
+| `404`  | Not found                                | The analysis does not exist                  |
+| `409`  | File is already associated with analysis | File name was found in the analysis document |
+| `422`  | Invalid query                            | `name` is a required field                   |
 
 # Download File
 
 Download an analysis file that is associated with the given analysis.
 
-The file `id` corresponds to a row `id` in the `analysis_files` SQL table.
+The file `id` corresponds to the `id` of a file found in the `files` list of a `GET` response.
 
 {{< endpoint "GET" "/api/analyses/:id/files/:id" >}}
 
@@ -222,7 +220,6 @@ This request will fail with `409` on analyses that have already been finalized.
 
 | Status | Message                                     | Reason                                                 |
 | :----- | :------------------------------------------ | :----------------------------------------------------- |
-| `403`  | Insufficient rights                         | The job does not have the modify right on the analysis |
 | `404`  | Not found                                   | Analysis does not exist                                |
 | `409`  | There is already a result for this analysis | Analysis job is already finalized                      |
 
@@ -249,6 +246,5 @@ Finalized analyses cannot be removed over the jobs API. This must be done via th
 
 | Status | Message               | Reason                                                                                         |
 | :----- | :-------------------- | :--------------------------------------------------------------------------------------------- |
-| `403`  | Insufficient rights   | Client does not have the required sample rights to remove the analysis                         |
 | `404`  | Not found             | Analysis does not exist                                                                        |
 | `409`  | Analysis is finalized | Analysis job is finalized with `ready` set `true`. It can only be removed from the regular API |

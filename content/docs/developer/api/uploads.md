@@ -13,7 +13,7 @@ These endpoints are used to upload files to Virtool for use in sample, subtracti
 
 Uploads a file to be used in Virtool.
 
-The upload request is expected to use the encoding type `multipart/form-data`. The upload file should be accessible under the `file` key.
+The upload request is expected to use the encoding type `multipart/form-data`. The file should be made accessible under a `file` key.
 
 Additional input including the file's `name` and `type` should be included in the query string.
 
@@ -48,6 +48,14 @@ Additional input including the file's `name` and `type` should be included in th
 ```
 {{< /response >}}
 
+## Errors
+
+| Status | Message                 | Reason                                                  |
+| :----- | :---------------------- | :------------------------------------------------------ |
+| `400`  | Unsupported upload type | Given file not an acceptable type, see `type` parameter |
+| `403`  | Not permitted           | user does not have `upload_file` permission             |
+| `422`  | Invalid query           | `name` is a required field                              |
+
 # Download File
 
 Download a previously uploaded file.
@@ -80,7 +88,7 @@ Delete a previously uploaded file.
 {{< endpoint "DELETE" "/api/uploads/:id" >}}
 
 ## Example
-{{< request "DELETE" "/api/uploads/0-test.fq.gz" />}}
+{{< request "DELETE" "/api/uploads/23" />}}
 
 ## Response
 
