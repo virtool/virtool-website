@@ -3,8 +3,8 @@ title: "HMM"
 description: "Manage and query HMM annotations and files."
 menu:
     developer:
-       identifier: job_api_hmm 
-       parent: Job API
+        identifier: job_api_hmm 
+        parent: Job API
 ---
 
 # Get {#get}
