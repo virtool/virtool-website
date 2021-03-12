@@ -74,11 +74,11 @@ Get the complete representation of a single HMM annotation.
 
 Get the `profiles.hmm` used in analysis workflows requiring `hmmer`.
 
-{{< endpoint "GET" "/download/hmms/profiles.hmm" >}}
+{{< endpoint "GET" "/api/hmms/files/profiles.hmm" >}}
 
 ## Example
 
-{{< request "GET" "/download/hmms/profiles.hmm" />}}
+{{< request "GET" "/api/hmms/files/profiles.hmm" />}}
 
 ## Response
 
