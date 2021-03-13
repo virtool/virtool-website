@@ -166,8 +166,20 @@
         },
         "releases": [
             {
+                "name": "v4.2.0-beta.2",
+                "body": "# Added\r\n- compress legacy samples in the background (#2154)\r\n\r\n# Changed\r\n- improve usability of isolate and sequence download links\r\n- improve startup time by removing unnecessary database and file checks (#2156)\r\n\r\n# Fixed\r\n- fix non-functional sequence FASTA download link (#2155)",
+                "prerelease": true,
+                "published_at": "2021-03-13T15:51:05Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v4.2.0-beta.2",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 71927597,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v4.2.0-beta.2/virtool.tar.gz",
+                "asset_error": false
+            },
+            {
                 "name": "v4.2.0-beta.1",
-                "body": "# Changed\r\n- improve user experience when selecting in barcode targets and genome segments\r\n\r\n# Fixed\r\n- fixed unuseable target field when adding barcode reference sequences",
+                "body": "# Changed\r\n- improve user experience when selecting barcode targets and genome segments\r\n\r\n# Fixed\r\n- fixed unuseable target field when adding barcode reference sequences",
                 "prerelease": true,
                 "published_at": "2021-03-08T20:33:31Z",
                 "html_url": "https://github.com/virtool/virtool/releases/tag/v4.2.0-beta.1",
