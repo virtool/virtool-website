@@ -90,7 +90,7 @@ Get the `profiles.hmm` used in analysis workflows requiring `hmmer`.
 | :----- | :-------- | :-------------------------------------------------------------- |
 | `404`  | Not found | HMM data hasn't been installed or `profiles.hmm` does not exist |
 
-# Download HMM Annotations
+# Download Annotations
 
 Get a gzipped JSON file `annotations.json.gz` containing a list of representations of all HMM annotations.
 
