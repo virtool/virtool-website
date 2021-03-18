@@ -5,7 +5,7 @@ menu:
     developer:
         identifier: job_api_analyses
         parent: Job API
-        
+
 ---
 
 Analyses are the results of a given Virtool analytical workflows on a single sample.

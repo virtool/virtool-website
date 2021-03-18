@@ -224,7 +224,7 @@ The array of files must contain **only one or two items**. Samples with arrays c
 
 | Status | Message                                  | Reason                                                                       |
 | :----- | :--------------------------------------- | :--------------------------------------------------------------------------- |
-| `400`  | File does not exist                      | the provided `file_id` does not exist                                        |
+| `400`  | File does not exist                      | the provided `upload_id` does not exist                                        |
 | `400`  | Group does not exist                     | `group` in POST body does not exist                                          |
 | `400`  | Group value required for sample creation | the server is configured to required group assignment of samples on creation |
 | `400`  | Sample name is already in use            | the provided `name` is already assigned to an existing sample                |
