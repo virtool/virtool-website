@@ -5,7 +5,7 @@ menu:
     developer:
         identifier: job_api_subtractions
         parent: Job API
-        
+
 ---
 
 # Upload File

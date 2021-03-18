@@ -125,7 +125,7 @@ Create a new subtraction from a file that has previously been uploaded into the 
 | :------------- | :----- | -------- | :----------------------------------------------------- |
 | subtraction_id | string | true     | a unique name for the host (eg. Arabidopsis)           |
 | nickname       | string | false    | a nickname for the host                                |
-| file_id        | string | true     | the unique id of the host FASTA file                   |
+| upload_id      | string | true     | the unique id of the host FASTA file                   |
 
 ## Example
 
@@ -134,7 +134,7 @@ Create a new subtraction from a file that has previously been uploaded into the 
 {
 	"subtraction_id": "Test 1",
 	"nickname": "Foobar",
-	"file_id": "djbxvhmy-ATgenomeTAIR9.171"
+	"upload_id": "djbxvhmy-ATgenomeTAIR9.171"
 }
 ```
 {{< /request >}}
@@ -166,7 +166,7 @@ Create a new subtraction from a file that has previously been uploaded into the 
 
 | Status | Message                       | Reason                                                   |
 | :----- | :---------------------------- | :------------------------------------------------------- |
-| `400`  | File does not exist           | file identified by `file_id` does not exist              |
+| `400`  | File does not exist           | file identified by `upload_id` does not exist              |
 | `400`  | Subtraction id already exists | `id` is already in use by an existing subtraction        |
 | `403`  | Not permitted                 | client does not have the 'modify_subtraction` permission |
 | `422`  | Invalid input                 | JSON request body is invalid                             |
