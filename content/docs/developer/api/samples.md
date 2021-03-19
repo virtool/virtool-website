@@ -224,7 +224,7 @@ The array of files must contain **only one or two items**. Samples with arrays c
 
 | Status | Message                                  | Reason                                                                       |
 | :----- | :--------------------------------------- | :--------------------------------------------------------------------------- |
-| `400`  | File does not exist                      | the provided `upload_id` does not exist                                        |
+| `400`  | File does not exist                      | the provided `upload_id` does not exist                                      |
 | `400`  | Group does not exist                     | `group` in POST body does not exist                                          |
 | `400`  | Group value required for sample creation | the server is configured to required group assignment of samples on creation |
 | `400`  | Sample name is already in use            | the provided `name` is already assigned to an existing sample                |
@@ -481,11 +481,11 @@ Immediately create and placeholder analysis record for a sample and start an ana
 
 ## Input
 
-| Name        | Type   | Required | Description                                                       |
-| :-----------| :----- | -------- | :-----------------------------------------------------------------|
-| algorithm   | string | True     | the algorithm name \(_eg_. pathoscope_bowtie\)                    |
-| ref_id      | string | True     | the reference to run the analysis against                         |
-| subtractions| array  | False    | the IDs of default subtractions to set for analyses of the sample |
+| Name         | Type   | Required | Description                                                       |
+| :----------- | :----- | -------- | :---------------------------------------------------------------- |
+| algorithm    | string | True     | the algorithm name \(_eg_. pathoscope_bowtie\)                    |
+| ref_id       | string | True     | the reference to run the analysis against                         |
+| subtractions | array  | False    | the IDs of default subtractions to set for analyses of the sample |
 
 ## Example
 
@@ -539,3 +539,43 @@ Immediately create and placeholder analysis record for a sample and start an ana
 | `403`  | Insufficient rights                 | client does not have the required rights to create a new analysis for the sample |
 | `404`  | Not found                           | `sample_id` in URL does not exist                                                |
 | `422`  | Invalid input                       | the JSON request body is invalid                                                 |
+
+
+# Download Reads
+
+Download a sample reads file.
+
+The only files available to download are `reads_1.fq.gz` and `reads_2.fq.gz`.
+
+{{< endpoint "GET" "/api/samples/:id/reads/:filename" >}}
+
+## Example
+{{< request "GET" "/api/samples/foo/reads/reads_1.fq.gz" />}}
+
+## Response
+{{< response "Status: 200 OK" />}}
+
+## Errors
+
+| Status | Message                             | Reason                                                                           |
+| :----- | :---------------------------------- | :------------------------------------------------------------------------------- |
+| `404`  | Not found                           | Either the sample or file does not exist                                         |
+
+
+# Download Artifacts
+
+Download a sample artifact file.
+
+{{< endpoint "GET" "/api/samples/:id/artifacts/:filename" >}}
+
+## Example
+{{< request "GET" "/api/samples/foo/artifacts/reads_1.fq.gz" />}}
+
+## Response
+{{< response "Status: 200 OK" />}}
+
+## Errors
+
+| Status | Message                             | Reason                                                                           |
+| :----- | :---------------------------------- | :------------------------------------------------------------------------------- |
+| `404`  | Not found                           | Either the sample or file does not exist                                         |
