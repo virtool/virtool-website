@@ -59,3 +59,42 @@ Finalize a sample being created by setting `ready` to `true` and setting `qualit
 | Status | Message                       | Reason        |
 | :----- | :------------ | :---------------------------- |
 | `422`  | Invalid input | `quality` is a required field |
+
+# Download Reads
+
+Download a sample reads file.
+
+The only files available to download are `reads_1.fq.gz` and `reads_2.fq.gz`.
+
+{{< endpoint "GET" "/api/samples/:id/reads/:filename" >}}
+
+## Example
+{{< request "GET" "/api/samples/foo/reads/reads_1.fq.gz" />}}
+
+## Response
+{{< response "Status: 200 OK" />}}
+
+## Errors
+
+| Status | Message                             | Reason                                                                           |
+| :----- | :---------------------------------- | :------------------------------------------------------------------------------- |
+| `404`  | Not found                           | Either the sample or file does not exist                                         |
+
+
+# Download Artifacts
+
+Download a sample artifact file.
+
+{{< endpoint "GET" "/api/samples/:id/artifacts/:filename" >}}
+
+## Example
+{{< request "GET" "/api/samples/foo/artifacts/reads_1.fq.gz" />}}
+
+## Response
+{{< response "Status: 200 OK" />}}
+
+## Errors
+
+| Status | Message                             | Reason                                                                           |
+| :----- | :---------------------------------- | :------------------------------------------------------------------------------- |
+| `404`  | Not found                           | Either the sample or file does not exist                                         |
