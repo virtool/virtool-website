@@ -15,7 +15,6 @@ Upload a new subtraction file to associate with an existing subtraction.
 It will automatically resolve the type of subtraction file, but a `type` can be sent in a request to override this.
 
 The name of the file to be uploaded must be be one of the following:
-* `reference.json.gz`
 * `reference.fa.gz`
 * `reference.1.bt2`
 * `reference.2.bt2`
@@ -122,3 +121,25 @@ The request expects an encoded `json`, and the data should be made accessible un
 | `404`  | Not found                              | Subtraction does not exist                                             |
 | `409`  | Subtraction has already been finalized | Finalize has already been called on this subtraction                   |
 | `422`  | Invalid input                          | `gc` key was not found in the given `json`                             |
+
+
+# Download
+
+Download a Bowtie2 index file or a FASTA file for a given subtraction.
+
+The name of the file must be one of the accepted files described in [Upload File](#upload-file).
+
+## Example
+
+{{< request "GET" "/api/subtractions/ndflgjsl/files/subtraction.fa.gz" />}}
+
+## Response
+
+{{< response "Status: 200 OK" />}}
+
+## Errors
+
+ Status | Message                                 | Reason                                          |
+| :----- | :--------------------------------------| :-----------------------------------------------|
+| `400`  | Unsupported subtraction file name      | File name not of one of the accepted file names |
+| `404`  | Not found                              | Subtraction or subtraction file does not exist  |
