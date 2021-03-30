@@ -127,9 +127,9 @@ Download index files. The accepted filenames are:
 
 {{< request "GET" "/api/indexes/uskrqsxm/files/reference.json.gz" />}}
 
-## Response 
+## Response
 
-{{< response "Status: 200 OK" >}}
+{{< response "Status: 200 OK" />}}
 
 ## Errors
 
@@ -140,8 +140,43 @@ Download index files. The accepted filenames are:
 
 # Finalize
 
-**Not Implemented**
-
 Finish an index build job.
 
 {{< endpoint "PATCH" "/api/indexes/:id" >}}
+
+## Example
+
+{{< request "PATCH" "/api/indexes/uskrqsxm" />}}
+
+## Response
+
+{{< request "PATCH" "/api/indexes/uskrqsxm" >}}
+```json
+{
+    "created_at": "2015-10-06T20:00:00Z",
+    "has_files": true,
+    "has_json": false,
+    "id": "u3cuwaoq",
+    "job": {
+        "id": "xjqvxigh"
+    },
+    "manifest": "manifest",
+    "ready": true,
+    "reference": {
+        "id": "foo"
+    },
+    "user": {
+        "id": "test"
+    },
+    "version": 9
+}
+```
+{{</ response >}}
+
+## Errors
+| Status | Message                                                             | Reason                                                                |
+| :----- | :-------------------------------------------------------------------| :---------------------------------------------------------------------|
+| `404`  | Index does not exist                                                | No index associated with given id                                     |
+| `404`  | Reference associated with index does not exist                      | Reference id linked to index does not exist                           |
+| `409`  | A FASTA file must be uploaded in order to finalize index            | A `reference.fa.gz` file is required to finalize any index            |
+| `409`  | Reference requires that all Bowtie2 index files have been uploaded  | Genome references require that all BT2 index files have been uploaded |
