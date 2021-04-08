@@ -212,3 +212,27 @@ The file `id` corresponds to the `id` of a file found in the `files` list of a `
 | :----- | :------------------------------------------- | :--------------------------------------------------------- |
 | `404`  | Not found                                    | The analysis file does not exist                           |
 | `404`  | Uploaded file not found at expected location | The file was not found in the local `analyses` data folder |
+
+
+# Download Analysis Document
+
+Download a CSV or Excel file that represents an pathoscope analysis document.
+
+Supports `csv` or `xlsx` extensions.
+
+{{< endpoint "GET" "/api/analyses/document/:id.extension" >}}
+
+## Example
+
+{{< request "GET" "/api/analyses/document/uskrqsxm.csv" />}}
+
+## Response
+
+{{< response "Status: 200 OK" >}}
+{{</ response >}}
+
+## Errors
+
+| Status | Message                                      | Reason                      |
+| :----- | :------------------------------------------- | :---------------------------|
+| `404`  | Not found                                    | The analysis does not exist |
