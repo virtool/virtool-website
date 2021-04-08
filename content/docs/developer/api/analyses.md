@@ -136,3 +136,26 @@ Calling this endpoint for a sequence that has already been BLASTed will result i
 | `404`  | Sequence not found           | sequence does not exist                                                |
 | `409`  | Not a NuVs analysis          | analysis cannot be BLASTed because it is not a NuVs analysis           |
 | `409`  | Analysis is still running    | analysis job is still in progress and cannot be BLASTed                |
+
+# Download Analysis Document
+
+Download a CSV or Excel file that represents an pathoscope analysis document.
+
+Supports `csv` or `xlsx` extensions.
+
+{{< endpoint "GET" "/api/analyses/document/:id.extension" >}}
+
+## Example
+
+{{< request "GET" "/api/analyses/document/uskrqsxm.csv" />}}
+
+## Response
+
+{{< response "Status: 200 OK" >}}
+{{</ response >}}
+
+## Errors
+
+| Status | Message                                      | Reason                      |
+| :----- | :------------------------------------------- | :---------------------------|
+| `404`  | Not found                                    | The analysis does not exist |
