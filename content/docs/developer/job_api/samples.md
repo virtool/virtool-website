@@ -12,6 +12,8 @@ menu:
 
 Finalize a sample being created by setting `ready` to `true` and setting `quality` based on request data.
 
+{{< endpoint "PATCH" "/api/samples/:id" >}}
+
 ## Parameters
 
 | Name    | Type   | Required  | Description                                                                   |
@@ -67,6 +69,8 @@ Upload a sample reads file.
 
 The file must be one of `reads_1.fq.gz` or `reads_2.fq.gz`.
 
+{{< endpoint "PUT" "/api/samples/:id/reads/:name" >}}
+
 ## Example
 
 {{< request "PUT" "/api/samples/foo/reads/reads_1.fq.gz" />}}
@@ -101,15 +105,17 @@ The file must be one of `reads_1.fq.gz` or `reads_2.fq.gz`.
 
 Upload a sample artifact file.
 
+{{< endpoint "POST" "/api/samples/:id/artifacts/" >}}
+
 ### Restrictions
 File type must be one of the following:
-* `sam`
-* `bam`
-* `fasta`
-* `fastq`
-* `csv`
-* `tsv`
-* `json`
+- sam
+- bam
+- fasta
+- fastq
+- csv
+- tsv
+- json
 
 ## Parameters
 
