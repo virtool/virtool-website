@@ -71,6 +71,12 @@ The file must be one of `reads_1.fq.gz` or `reads_2.fq.gz`.
 
 {{< endpoint "PUT" "/api/samples/:id/reads/:name" >}}
 
+## Parameters
+
+| Name    | Type   | Required | Description                                                           |
+| :---    | :----- | :--------| :---------------------------------------------------------------------|
+| upload  | string | No       | An `id` that corresponds to a upload to be paired with the reads file |
+
 ## Example
 
 {{< request "PUT" "/api/samples/foo/reads/reads_1.fq.gz" />}}
