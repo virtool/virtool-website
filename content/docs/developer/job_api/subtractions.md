@@ -68,6 +68,8 @@ Finalize a subtraction by setting `ready` to `true` and setting a sample's `gc` 
 
 The request expects an encoded `json`, and the data should be made accessible under a `gc` key.
 
+{{< endpoint "PATCH" "/api/subtractions/:id" >}}
+
 ## Example
 
 {{< request "PATCH" "/api/subtractions/ndflgjsl" >}}
@@ -128,6 +130,8 @@ The request expects an encoded `json`, and the data should be made accessible un
 Download a Bowtie2 index file or a FASTA file for a given subtraction.
 
 The name of the file must be one of the accepted files described in [Upload File](#upload-file).
+
+{{< endpoint "GET" "/api/subtractions/:id/files/:name" >}}
 
 ## Example
 

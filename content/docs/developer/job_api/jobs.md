@@ -128,16 +128,22 @@ Jobs can only push status to their on job resource.
 
 # Acquire Job
 
-Get the representation of a job, along with an API key.
+Sets the acquired field on the job document.
+
+This is used to let the server know that a job process has accepted the ID and needs to have
+the secure token returned to it.
+
+{{< endpoint "GET" "/api/jobs/:id" >}}
 
 ## Example
 
-{{< request "PATCH" "/api/jobs/zzpugkyt" />}}
+{{< request "PATCH" "/api/jobs/zzpugkyt" >}}
 ```json
 {
   "acquired": true
 }
 ```
+{{< /response >}}
 
 ## Response
 

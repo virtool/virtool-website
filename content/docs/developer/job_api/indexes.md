@@ -63,14 +63,14 @@ Upload a file that should be persisted with an index.
 The upload request is expected to use the encoding type `multipart/form-data`. The file data should be made accessible under the `file` key.
 
 The name of the file to be uploaded must be be one of the following:
-* `reference.json.gz`
-* `reference.fa.gz`
-* `reference.1.bt2`
-* `reference.2.bt2`
-* `reference.3.bt2`
-* `reference.4.bt4`
-* `reference.rev.1.bt2`
-* `reference.rev.2.bt2`
+- reference.json.gz
+- reference.fa.gz
+- reference.1.bt2
+- reference.2.bt2
+- reference.3.bt2
+- reference.4.bt4
+- reference.rev.1.bt2
+- reference.rev.2.bt2
 
 {{< endpoint "POST" "/api/indexes/:id/files" >}}
 

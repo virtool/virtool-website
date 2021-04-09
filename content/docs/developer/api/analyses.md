@@ -152,8 +152,7 @@ Supports `csv` or `xlsx` extensions.
 
 ## Response
 
-{{< response "Status: 200 OK" >}}
-{{</ response >}}
+{{< response "Status: 200 OK" />}}
 
 ## Errors
 

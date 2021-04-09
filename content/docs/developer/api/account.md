@@ -405,8 +405,4 @@ Logout by invalidating the current session. It will have no effect for connectio
 
 ## Response
 
-{{< response "Status: 204 No Content" >}}
-
-## Errors
-
-_None_
+{{< response "Status: 204 No Content" />}}
