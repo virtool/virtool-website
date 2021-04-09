@@ -69,7 +69,7 @@ The file must be one of `reads_1.fq.gz` or `reads_2.fq.gz`.
 
 ## Example
 
-{{< request "POST" "/api/samples/foo/reads/reads_1.fq.gz" />}}
+{{< request "PUT" "/api/samples/foo/reads/reads_1.fq.gz" />}}
 
 ## Response
 
