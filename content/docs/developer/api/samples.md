@@ -17,13 +17,13 @@ Find samples based on the sample name, creator username or labels.
 | Name     | Type    | Default | Description                            |
 | :------- | :------ | :------ | :------------------------------------- |
 | find     | string  |         | sample name or username to filter by   |
-| filter   | string  |         | one or more label IDs to filter by     |
+| label    | integer |         | one or more label IDs to filter by     |
 | page     | integer | 1       | page number of results to return       |
 | per_page | integer | 15      | number of documents to return per page |
 
 ## Example
 
-{{< request "GET" "/api/samples?find=test&filter=ahdnsdfr&page=1" />}}
+{{< request "GET" "/api/samples?find=test&label=1&page=1" />}}
 
 ## Response
 
@@ -46,7 +46,7 @@ Find samples based on the sample name, creator username or labels.
             },
             "id": "htosefxu",
             "notes": "This is a note.",
-            "labels": ["ahdnsdfr"]
+            "labels": [1]
         }
     ],
     "total_count": 1,
