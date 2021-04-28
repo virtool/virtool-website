@@ -917,3 +917,24 @@ See [history endpoints](/docs/developer/api/history/) for more advanced querying
 | Status | Message   | Reason               |
 | :----- | :-------- | :------------------- |
 | `404`  | Not found | virus does not exist |
+
+# Download
+
+Download a FASTA file for a given OTU.
+
+{{< endpoint "GET" "/api/otus/:id.fa" >}}
+
+## Example
+
+{{< request "GET" "/api/otus/uxusjtcl.fa" />}}
+
+## Response
+
+{{< response "Status: 200 OK" />}}
+
+## Errors
+
+ Status | Message                                 | Reason                                          |
+| :----- | :--------------------------------------| :-----------------------------------------------|
+| `404`  | OTU not found                          | OTU does not exist                              |
+| `404`  | Sequence not found                     | Sequence dose not exist                         |
