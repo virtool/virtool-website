@@ -12,29 +12,20 @@ menu:
 
 Upload a new subtraction file to associate with an existing subtraction.
 
-It will automatically resolve the type of subtraction file, but a `type` can be sent in a request to override this.
+The name of the file to be uploaded must be one of the following:
+* `subtraction.fa.gz`
+* `subtraction.1.bt2`
+* `subtraction.2.bt2`
+* `subtraction.3.bt2`
+* `subtraction.4.bt4`
+* `subtraction.rev.1.bt2`
+* `subtraction.rev.2.bt2`
 
-The name of the file to be uploaded must be be one of the following:
-* `reference.fa.gz`
-* `reference.1.bt2`
-* `reference.2.bt2`
-* `reference.3.bt2`
-* `reference.4.bt4`
-* `reference.rev.1.bt2`
-* `reference.rev.2.bt2`
-
-{{< endpoint "POST" "/api/subtractions/:id/files" >}}
-
-## Parameters
-
-| Name   | Type   | Required  | Description                                                                             |
-| :---   | :----- | :-------- | :-------------------------------------------------------------------------------------- |
-| name   | string | Yes       | The name of the subtraction file to upload (must be one of the file names listed above) |
-| type   | string | No        | The type of the subtraction file                                                        |
+{{< endpoint "PUT" "/api/subtractions/:id/files/:name" >}}
 
 ## Example
 
-{{< request "POST" "/api/subtractions/jrosgvey/files?name=subtraction.1.bt2" />}}
+{{< request "PUT" "/api/subtractions/jrosgvey/files/subtraction.1.bt2" />}}
 
 ## Response
 
@@ -54,10 +45,9 @@ The name of the file to be uploaded must be be one of the following:
 
  Status | Message                            | Reason                                                                 |
 | :----- | :---------------------------------| :----------------------------------------------------------------------|
-| `400`  | Unsupported subtraction file name | File does not have one of the accepted filenames, see `name` parameter |
-| `400`  | File name already exists          | File name is already associated with this subtraction                  |
 | `404`  | Not found                         | Subtraction does not exist                                             |
-| `422`  | Invalid query                     | `name` is a required parameter                                         |
+| `404`  | Unsupported subtraction file name | File does not have one of the accepted filenames                       |
+| `409`  | File name already exists          | File name is already associated with this subtraction                  |
 
 
 # Finalize
