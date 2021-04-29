@@ -937,4 +937,3 @@ Download a FASTA file for a given OTU.
  Status | Message                                 | Reason                                          |
 | :----- | :--------------------------------------| :-----------------------------------------------|
 | `404`  | OTU not found                          | OTU does not exist                              |
-| `404`  | Sequence not found                     | Sequence dose not exist                         |
