@@ -153,18 +153,30 @@
     },
     "virtool": {
         "latest": {
-            "name": "v4.1.2",
-            "body": "# Fixed\r\n- fix failing analyses for legacy samples\r\n- updated dependencies to resolve security issues",
+            "name": "v4.2.0",
+            "body": "# Fixed\r\n* Resolved failure when analyzing legacy samples\r\n",
             "prerelease": false,
-            "published_at": "2020-12-07T02:35:35Z",
-            "html_url": "https://github.com/virtool/virtool/releases/tag/v4.1.2",
+            "published_at": "2021-05-20T23:01:29Z",
+            "html_url": "https://github.com/virtool/virtool/releases/tag/v4.2.0",
             "filename": "virtool.tar.gz",
             "content_type": "application/gzip",
-            "size": 71920620,
-            "download_url": "https://github.com/virtool/virtool/releases/download/v4.1.2/virtool.tar.gz",
+            "size": 76312577,
+            "download_url": "https://github.com/virtool/virtool/releases/download/v4.2.0/virtool.tar.gz",
             "asset_error": false
         },
         "releases": [
+            {
+                "name": "v4.2.0",
+                "body": "# Fixed\r\n* Resolved failure when analyzing legacy samples\r\n",
+                "prerelease": false,
+                "published_at": "2021-05-20T23:01:29Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v4.2.0",
+                "filename": "virtool.tar.gz",
+                "content_type": "application/gzip",
+                "size": 76312577,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v4.2.0/virtool.tar.gz",
+                "asset_error": false
+            },
             {
                 "name": "v4.2.0-beta.2",
                 "body": "# Added\r\n- compress legacy samples in the background (#2154)\r\n\r\n# Changed\r\n- improve usability of isolate and sequence download links\r\n- improve startup time by removing unnecessary database and file checks (#2156)\r\n\r\n# Fixed\r\n- fix non-functional sequence FASTA download link (#2155)",
