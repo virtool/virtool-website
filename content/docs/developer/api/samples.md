@@ -10,20 +10,41 @@ menu:
 
 Find samples based on the sample name, creator username or labels.
 
+### Filtering by Workflow
+
+Search results can be filtered by the state of analysis workflows associated with the sample.
+
+Workflow queries look like this: `?workflows=pathoscope%3Aready+nuvs%3Aready`
+
+The query must be provided as the `workflows` URL parameter. Workflow-state pairs must be listed with a joining percent-encoded colon (`%3A`) and separated by a space (represented above by `+`).
+
+If no `workflows` parameter is provided, no workflow filtering is performed. When a `workflows` query is provided, only matching workflows are returned.
+
 {{< endpoint "GET" "/api/samples" >}}
+
+
+
+## Workflow States
+
+|           |                                                       |
+| --------- | ----------------------------------------------------- |
+| `none`    | no analyses for the workflow                          |
+| `pending` | one or more analyses running for the workflow         |
+| `ready`   | (one or more analyses have finished for the workflow) |
 
 ## Parameters
 
-| Name     | Type    | Default | Description                            |
-| :------- | :------ | :------ | :------------------------------------- |
-| find     | string  |         | sample name or username to filter by   |
-| label    | integer |         | one or more label IDs to filter by     |
-| page     | integer | 1       | page number of results to return       |
-| per_page | integer | 15      | number of documents to return per page |
+| Name      | Type    | Default | Description                                                       |
+| :-------- | :------ | :------ | :---------------------------------------------------------------- |
+| find      | string  |         | sample name or username to filter by                              |
+| label     | integer |         | one or more label IDs to filter by                                |
+| workflows | string  |         | a special query for filtering samples by analysis workflow status |
+| page      | integer | 1       | page number of results to return                                  |
+| per_page  | integer | 15      | number of documents to return per page                            |
 
 ## Example
 
-{{< request "GET" "/api/samples?find=test&label=1&page=1" />}}
+{{< request "GET" "/api/samples?find=test&label=1&workflows?pathoscope%3Aready" />}}
 
 ## Response
 
@@ -557,9 +578,9 @@ The only files available to download are `reads_1.fq.gz` and `reads_2.fq.gz`.
 
 ## Errors
 
-| Status | Message                             | Reason                                                                           |
-| :----- | :---------------------------------- | :------------------------------------------------------------------------------- |
-| `404`  | Not found                           | Either the sample or file does not exist                                         |
+| Status | Message   | Reason                                   |
+| :----- | :-------- | :--------------------------------------- |
+| `404`  | Not found | Either the sample or file does not exist |
 
 
 # Download Artifacts
@@ -576,6 +597,6 @@ Download a sample artifact file.
 
 ## Errors
 
-| Status | Message                             | Reason                                                                           |
-| :----- | :---------------------------------- | :------------------------------------------------------------------------------- |
-| `404`  | Not found                           | Either the sample or file does not exist                                         |
+| Status | Message   | Reason                                   |
+| :----- | :-------- | :--------------------------------------- |
+| `404`  | Not found | Either the sample or file does not exist |
