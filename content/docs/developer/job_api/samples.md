@@ -16,9 +16,9 @@ Finalize a sample being created by setting `ready` to `true` and setting `qualit
 
 ## Parameters
 
-| Name    | Type   | Required  | Description                                                                   |
-| :---    | :----- | :-------- | :---------------------------------------------------------------------------- |
-| quality | object | Yes       | An object containing data that will be assigned to a sample's `quality` field |
+| Name    | Type   | Required | Description                                                                   |
+| :------ | :----- | :------- | :---------------------------------------------------------------------------- |
+| quality | object | Yes      | An object containing data that will be assigned to a sample's `quality` field |
 
 ## Example
 
@@ -58,7 +58,7 @@ Finalize a sample being created by setting `ready` to `true` and setting `qualit
 
 ## Errors
 
-| Status | Message                       | Reason        |
+| Status | Message       | Reason                        |
 | :----- | :------------ | :---------------------------- |
 | `422`  | Invalid input | `quality` is a required field |
 
@@ -73,9 +73,9 @@ The file must be one of `reads_1.fq.gz` or `reads_2.fq.gz`.
 
 ## Parameters
 
-| Name    | Type   | Required | Description                                                           |
-| :---    | :----- | :--------| :---------------------------------------------------------------------|
-| upload  | string | No       | An `id` that corresponds to a upload to be paired with the reads file |
+| Name   | Type   | Required | Description                                                           |
+| :----- | :----- | :------- | :-------------------------------------------------------------------- |
+| upload | string | No       | An `id` that corresponds to a upload to be paired with the reads file |
 
 ## Example
 
@@ -100,7 +100,7 @@ The file must be one of `reads_1.fq.gz` or `reads_2.fq.gz`.
 ## Errors
 
 | Status | Message                                           | Reason                                                     |
-| :----- | :-------------------------------------------------| :----------------------------------------------------------|
+| :----- | :------------------------------------------------ | :--------------------------------------------------------- |
 | `400`  | File name is not an accepted reads file           | File name must be one of `reads_1.fq.gz` or `reads_2.fq.gz |
 | `400`  | File is not compressed                            | File must be `gzip` compressed                             |
 | `404`  | Not found                                         | Sample does not exist                                      |
@@ -125,10 +125,10 @@ File type must be one of the following:
 
 ## Parameters
 
-| Name    | Type   | Required | Description                         |
-| :---    | :----- | :--------| :-----------------------------------|
-| name    | string | Yes      | The name of the file to be uplaoded |
-| type    | string | No       | The type of file being uploaded     |
+| Name | Type   | Required | Description                         |
+| :--- | :----- | :------- | :---------------------------------- |
+| name | string | Yes      | The name of the file to be uplaoded |
+| type | string | No       | The type of file being uploaded     |
 
 ## Example
 
@@ -152,11 +152,11 @@ File type must be one of the following:
 
 ## Errors
 
-| Status | Message                                           | Reason                                                                       |
-| :----- | :-------------------------------------------------| :----------------------------------------------------------------------------|
-| `400`  | Unsupported sample artifact type                  | File type is not one of the allowed types, see [Restrictions](#restrictions) |
-| `404`  | Not found                                         | Sample does not exist                                                        |
-| `422`  | Invalid query                                     | `name` is a required field                                                   |
+| Status | Message                          | Reason                                                                       |
+| :----- | :------------------------------- | :--------------------------------------------------------------------------- |
+| `400`  | Unsupported sample artifact type | File type is not one of the allowed types, see [Restrictions](#restrictions) |
+| `404`  | Not found                        | Sample does not exist                                                        |
+| `422`  | Invalid query                    | `name` is a required field                                                   |
 
 
 # Download Reads
@@ -169,7 +169,7 @@ The only files available to download are `reads_1.fq.gz` and `reads_2.fq.gz`.
 
 ## Example
 
-{{< request "POST" "/api/samples/foo/artifacts" />}}
+{{< request "GET" "/api/samples/foo/reads/reads_1.fq.gz" />}}
 
 ## Response
 
@@ -177,9 +177,9 @@ The only files available to download are `reads_1.fq.gz` and `reads_2.fq.gz`.
 
 ## Errors
 
-| Status | Message                             | Reason                                                                           |
-| :----- | :---------------------------------- | :------------------------------------------------------------------------------- |
-| `404`  | Not found                           | Either the sample or file does not exist                                         |
+| Status | Message   | Reason                                   |
+| :----- | :-------- | :--------------------------------------- |
+| `404`  | Not found | Either the sample or file does not exist |
 
 
 # Download Artifacts
@@ -189,13 +189,13 @@ Download a sample artifact file.
 {{< endpoint "GET" "/api/samples/:id/artifacts/:filename" >}}
 
 ## Example
-{{< request "GET" "/api/samples/foo/artifacts/reads_1.fq.gz" />}}
+{{< request "GET" "/api/samples/foo/artifacts/quality.tsv" />}}
 
 ## Response
 {{< response "Status: 200 OK" />}}
 
 ## Errors
 
-| Status | Message                             | Reason                                                                           |
-| :----- | :---------------------------------- | :------------------------------------------------------------------------------- |
-| `404`  | Not found                           | Either the sample or file does not exist                                         |
+| Status | Message   | Reason                                   |
+| :----- | :-------- | :--------------------------------------- |
+| `404`  | Not found | Either the sample or file does not exist |
