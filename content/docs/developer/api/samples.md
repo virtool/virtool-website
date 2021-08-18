@@ -171,19 +171,22 @@ Creates a sample record and starts a job that populates the record from a FASTQ 
 
 The array of files must contain **only one or two items**. Samples with arrays containing one item will be assumed to by derived from single-end libraries, while arrays with two items will correspond to paired-end libraries.
 
+The `group` input value is only required if the Virtool instance is configured to require a group choice during sample creation.
+
 {{< endpoint "POST" "/api/samples" >}}
 
 ## Input
 
-| Name        | Type   | Required | Description                                          |
-| :---------- | :----- | -------- | :--------------------------------------------------- |
-| name        | string | true     | a **unique** name for the sample                     |
-| host        | string | false    | the exact \(not subtraction\) host                   |
-| isolate     | string | false    | the originating isolate                              |
-| locale      | string | false    | the location in which the sample was collected       |
-| subtraction | string | true     | the `id` of a previously imported subtraction genome |
-| files       | array  | true     | ids of previously uploaded files                     |
-| notes       | string | false    | a note for the sample                                |
+| Name         | Type          | Required | Description                                            |
+| :----------- | :------------ | -------- | :----------------------------------------------------- |
+| name         | string        | true     | a **unique** name for the sample                       |
+| files        | array         | true     | ids of previously uploaded files                       |
+| group        | string        | false    | a group ID the sample should be owned by               |
+| host         | string        | false    | the exact \(not subtraction\) host                     |
+| isolate      | string        | false    | the originating isolate                                |
+| locale       | string        | false    | the location in which the sample was collected         |
+| notes        | string        | false    | a note for the sample                                  |
+| subtractions | array[string] | true     | an array of IDs of default subtractions for the sample |
 
 ## Example
 
@@ -195,7 +198,10 @@ The array of files must contain **only one or two items**. Samples with arrays c
     "host": "Tree",
     "isolate": "Isolate A-1",
     "locale": "Earth",
-    "subtraction": "Arabidopsis",
+    "subtractions": [
+        "foo",
+        "bar"
+    ],
     "files": ["sibvzhqc-S00196E_AGTCAA_L007_R1.fq"],
     "notes": "This is a note."
 }
@@ -213,9 +219,16 @@ The array of files must contain **only one or two items**. Samples with arrays c
     "host": "Tree",
     "isolate": "Isolate A-1",
     "locale": "Earth",
-    "subtraction": {
-        "id": "Arabidopsis"
-    },
+    "subtractions": [
+        {
+            "id": "foo",
+            "name": "Arabidopsis thaliana"
+        },
+        {
+            "id": "bar",
+            "name": "Malus domestica"
+        }
+    ],
     "files": ["sibvzhqc-S00196E_AGTCAA_L007_R1.fq"],
     "group": "none",
     "nuvs": false,
@@ -249,7 +262,7 @@ The array of files must contain **only one or two items**. Samples with arrays c
 | `400`  | Group does not exist                     | `group` in POST body does not exist                                          |
 | `400`  | Group value required for sample creation | the server is configured to required group assignment of samples on creation |
 | `400`  | Sample name is already in use            | the provided `name` is already assigned to an existing sample                |
-| `400`  | Subtraction does not exist               | `subtraction` in POST body does not exist                                    |
+| `400`  | Subtraction does not exist               | one or more IDs in `subtractions` does not exist                             |
 | `403`  | Not permitted                            | client does not have the `create_sample` permission                          |
 | `422`  | Invalid input                            | JSON request body is invalid                                                 |
 
@@ -263,14 +276,15 @@ Update modifiable fields of a sample.
 
 ## Input
 
-| Name    | Type   | Description                                    |
-| :------ | :----- | :--------------------------------------------- |
-| name    | string | the sample name                                |
-| host    | string | the exact \(not subtraction\) host             |
-| isolate | string | the originating isolate                        |
-| locale  | string | the location in which the sample was collected |
-| notes   | string | the sample notes                               |
-| labels  | array  | the sample labels                              |
+| Name         | Type          | Description                                            |
+| :----------- | :------------ | :----------------------------------------------------- |
+| name         | string        | the sample name                                        |
+| host         | string        | the exact \(not subtraction\) host                     |
+| isolate      | string        | the originating isolate                                |
+| labels       | array         | the sample labels                                      |
+| locale       | string        | the location in which the sample was collected         |
+| notes        | string        | the sample notes                                       |
+| subtractions | array[string] | an array of IDs of default subtractions for the sample |
 
 ## Example
 
