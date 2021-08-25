@@ -24,7 +24,7 @@ Jobs can only retrieve data for themselves.
 {{< response "Status: 200 OK" >}}
 ```json
 {
-    "task": "create_subtraction",
+    "workflow": "create_subtraction",
     "args": {
         "subtraction_id": "Thale",
         "file_id": "vlekszor-ATgenomeTAIR9.171"
@@ -150,7 +150,7 @@ the secure token returned to it.
 {{< response "Status: 200 OK" >}}
 ```json
 {
-    "task": "create_subtraction",
+    "workflow": "create_subtraction",
     "args": {
         "subtraction_id": "Thale",
         "file_id": "vlekszor-ATgenomeTAIR9.171"
