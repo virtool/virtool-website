@@ -8,7 +8,7 @@ menu:
 
 # Find
 
-Find jobs by task name or the originating username.
+Find jobs by workflow name or the originating username.
 
 {{< endpoint "GET" "/api/jobs" >}}
 
@@ -31,7 +31,7 @@ Find jobs by task name or the originating username.
 {
 	"documents": [
 		{
-			"task": "pathoscope_bowtie",
+			"workflow": "pathoscope_bowtie",
 			"proc": 6,
 			"mem": 16,
 			"user": {
@@ -44,7 +44,7 @@ Find jobs by task name or the originating username.
 			"progress": 1
 		},
 		{
-			"task": "create_subtraction",
+			"workflow": "create_subtraction",
 			"proc": 2,
 			"mem": 4,
 			"user": {
@@ -88,7 +88,7 @@ Get the complete representation for a single job.
 {{< response "Status: 200 OK" >}}
 ```json
 {
-	"task": "create_subtraction",
+	"workflow": "create_subtraction",
 	"args": {
 		"subtraction_id": "Thale",
 		"file_id": "vlekszor-ATgenomeTAIR9.171"
@@ -162,7 +162,7 @@ Attempting to cancel a job more than once or cancel a finished job will result i
 {{< response "Status: 200 OK" >}}
 ```json
 {
-	"task": "create_subtraction",
+	"workflow": "create_subtraction",
 	"args": {
 		"subtraction_id": "Thale",
 		"file_id": "vlekszor-ATgenomeTAIR9.171"
