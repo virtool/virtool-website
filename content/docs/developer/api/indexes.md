@@ -155,6 +155,37 @@ Get the complete representation of an index.
 | :----- | :-------- | :-------------------------------------------- |
 | `404`  | Not found | index identified by `index_id` does not exist |
 
+# Download Files
+
+{{< right read >}}
+
+Download index files. The accepted filenames are:
+
+- reference.json.gz
+- reference.fa.gz
+- reference.1.bt2
+- reference.2.bt2
+- reference.3.bt2
+- reference.4.bt4
+- reference.rev.1.bt2
+- reference.rev.2.bt2
+
+{{< endpoint "GET" "/api/indexes/:id/files/:filename" >}}
+
+## Example
+
+{{< request "GET" "/api/indexes/uskrqsxm/files/reference.json.gz" />}}
+
+## Response
+
+{{< response "Status: 200 OK" />}}
+
+## Errors
+
+| Status | Message                     | Reason                                                                 |
+| :----- | :-------------------------- | :--------------------------------------------------------------------- |
+| `404`  | Not found                   | The file or index does not exist              
+| `403`  | Insufficient Rights         | User does not have read rights on reference 
 # Create
 
 See [**References** API Documentation](/docs/developer/api/refs/#create-index)
