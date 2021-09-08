@@ -187,6 +187,7 @@ The `group` input value is only required if the Virtool instance is configured t
 | locale       | string        | false    | the location in which the sample was collected         |
 | notes        | string        | false    | a note for the sample                                  |
 | subtractions | array[string] | true     | an array of IDs of default subtractions for the sample |
+| labels       | array         | false    | an array of labels for the sample                      |
 
 ## Example
 
