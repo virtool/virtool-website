@@ -15,6 +15,7 @@ MIN_VERSIONS = [
 RELEASE_FILE_NUMBER = 4
 
 RELEASE_KEYS = [
+    "id",
     "name",
     "body",
     "prerelease",
