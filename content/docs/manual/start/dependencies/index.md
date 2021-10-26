@@ -345,16 +345,16 @@ We provide **opinionated** instructions for installing the external software req
     You should see the following output:
 
     ```text
-aodp (Automated Oligonucleotide Design Pipeline) 2.5.0.1
+    aodp (Automated Oligonucleotide Design Pipeline) 2.5.0.1
 
-(C) HER MAJESTY THE QUEEN IN RIGHT OF CANADA (2014-2018)
-(C) Manuel Zahariev mz@alumni.sfu.ca (2000-2008,2014-2018)
+    (C) HER MAJESTY THE QUEEN IN RIGHT OF CANADA (2014-2018)
+    (C) Manuel Zahariev mz@alumni.sfu.ca (2000-2008,2014-2018)
 
-License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.
+    License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+    This is free software: you are free to change and redistribute it.
+    There is NO WARRANTY, to the extent permitted by law.
 
-author: Manuel Zahariev, mz@alumni.sfu.ca
+    author: Manuel Zahariev, mz@alumni.sfu.ca
     ```
 
 [skewer]: https://github.com/relipmoc/skewer
@@ -364,7 +364,3 @@ author: Manuel Zahariev, mz@alumni.sfu.ca
 [hmmer]: http://hmmer.org/
 [flash]: https://ccb.jhu.edu/software/FLASH/#:~:text=About%20FLASH&text=FLASH%20is%20designed%20to%20merge,to%20merge%20RNA%2Dseq%20data.
 [aodp]: https://bitbucket.org/wenchen_aafc/aodp_v2.0_release/src/master
-
-```
-
-```
