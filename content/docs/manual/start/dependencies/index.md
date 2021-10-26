@@ -332,7 +332,7 @@ We provide **opinionated** instructions for installing the external software req
 6. Move the binary to a directory that is in `PATH` \(eg. /usr/local/bin\)
 
     ```shell
-    mv
+    mv b/aodp /usr/local/bin/
     ```
 
 [skewer]: https://github.com/relipmoc/skewer
