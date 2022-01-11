@@ -1,5 +1,4 @@
 import argparse
-import base64
 import json
 import os
 import requests
@@ -9,7 +8,7 @@ import semver
 MIN_VERSIONS = [
     ("virtool", "4.0.0"),
     ("ref-plant-viruses", "1.0.0"),
-    ("virtool-hmm", "0.2.0")
+    ("virtool-hmm", "0.2.0"),
 ]
 
 RELEASE_FILE_NUMBER = 4
@@ -48,12 +47,14 @@ def format_release(release):
     try:
         asset = release["assets"][0]
 
-        formatted.update({
-            "filename": asset["name"],
-            "content_type": asset["content_type"],
-            "size": asset["size"],
-            "download_url": asset["browser_download_url"]
-        })
+        formatted.update(
+            {
+                "filename": asset["name"],
+                "content_type": asset["content_type"],
+                "size": asset["size"],
+                "download_url": asset["browser_download_url"],
+            }
+        )
     except (KeyError, IndexError):
         asset_error = True
 
@@ -66,9 +67,9 @@ def get_release_data(username, token):
     release_data = dict()
 
     for repo, min_version in MIN_VERSIONS:
-        key = repo.replace("-", "_")
+        repo_key = repo.replace("-", "_")
 
-        releases = list()
+        repo_releases = list()
 
         for page in range(1, 5):
             url = f"https://api.github.com/repos/virtool/{repo}/releases?per_page=100&page={page}"
@@ -79,12 +80,17 @@ def get_release_data(username, token):
                 break
 
             for release in body:
-                if semver.compare(release["name"].replace("v", ""), min_version) > -1:                  
-                    releases.append(release)
+                release_name: str = release["name"]
 
-        releases = [format_release(r) for r in releases if r["assets"] and not r["draft"]]
+                if repo_key == "virtool" and not release_name.startswith("v4"):
+                    continue
 
-        release_data[key] = releases
+                if semver.compare(release_name.replace("v", ""), min_version) > -1:
+                    repo_releases.append(release)
+
+        release_data[repo_key] = [
+            format_release(r) for r in repo_releases if r["assets"] and not r["draft"]
+        ]
 
     return release_data
 
@@ -96,14 +102,14 @@ if __name__ == "__main__":
         "-u",
         dest="github_username",
         help="username for accessing github API",
-        default=os.environ["GITHUB_USERNAME"]
+        default=os.environ["GITHUB_USERNAME"],
     )
 
     parser.add_argument(
         "-t",
         dest="github_token",
         help="personal auth token for querying API",
-        default=os.environ["GITHUB_TOKEN"]
+        default=os.environ["GITHUB_TOKEN"],
     )
 
     args = parser.parse_args()
@@ -114,10 +120,8 @@ if __name__ == "__main__":
 
     for key in ["ref_plant_viruses", "virtool_hmm", "virtool"]:
         releases = downloaded[key]
-        data[key] = {
-            "latest": get_latest(releases),
-            "releases": releases
-        }
+
+        data[key] = {"latest": get_latest(releases), "releases": releases}
 
     with open(f"data/releases{RELEASE_FILE_NUMBER}.json", "w") as f:
         json.dump(data, f, indent=4)
