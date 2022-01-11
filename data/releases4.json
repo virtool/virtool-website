@@ -179,6 +179,19 @@
         },
         "releases": [
             {
+                "id": 56763759,
+                "name": "v4.3.0-beta.1",
+                "body": "## v4.3.0-beta.1 (2022-01-07)\r\n\r\n### Features\r\n* log errors during GitHub release fetching ([d9dec6f](https://github.com/virtool/virtool/commit/d9dec6f30b1b348b71eaf66a7821e7fe66b5e04f))",
+                "prerelease": true,
+                "published_at": "2022-01-10T18:34:00Z",
+                "html_url": "https://github.com/virtool/virtool/releases/tag/v4.3.0-beta.1",
+                "filename": "virtool.tar.gz",
+                "content_type": "binary/octet-stream",
+                "size": 72824045,
+                "download_url": "https://github.com/virtool/virtool/releases/download/v4.3.0-beta.1/virtool.tar.gz",
+                "asset_error": false
+            },
+            {
                 "id": 44379931,
                 "name": "v4.2.1",
                 "body": "# Fixed\r\n- prevent application hang due to `ConnectionResetError`",
