@@ -16,7 +16,8 @@ menu:
 
 # Structure
 
-For the most part, Virtool client source code is [organized by feature](https://reactjs.org/docs/faq-structure.html#grouping-by-features-or-routes). Most feature folders will have the following files or directories:
+## Common file naming patterns
+For the most part, Virtool client source code is [organized by feature](https://reactjs.org/docs/faq-structure.html#grouping-by-features-or-routes). Most feature folders will have custom versions of the following files or directories:
 
 ### `components` directory
 
@@ -46,21 +47,25 @@ Saga code for the feature. Contains watch setup for handling actions (eg. `watch
 
 Miscellaneous utility functions for the feature.
 
+
+## Important Files/Modules
+
+
+### `index.js``
+
+Webpack entry point. Code here is run prior to React being initialized and only once per full page load. 
+
+### `nonce.js`
+
+Sets a `__webpack_nonce__` value based on a value passed in from the server via `index.html.`
+
 ### `app` module
 
 Contains submodules related to app initializiation and whole-application functionality.
 
 ### `base` module
 
-Common base components for reuse in user interface.
-
-### `index.js``
-
-Webpack entry point.
-
-### `nonce.js`
-
-Sets a `__webpack_nonce__` value based on a value passed in from the server via `index.html.`
+Contains common base components designed for reuse when building the user interface.
 
 ### `utils` module
 
