@@ -1,5 +1,5 @@
 ---
-title: "Testing the Backend"
+title: "Testing"
 menu:
   developer:
     parent: "Backend"
@@ -8,41 +8,65 @@ menu:
 
 Tests are implemented using the [pytest](https://docs.pytest.org/en/latest/) framework.
 
-Tests can be quickly run by installing all dependencies and executing:
+# Running Tests
 
-```bash
+## Services
+
+The following services must be running first:
+
+* `postgresql >= 16`
+* `mongodb == 4.4`
+* `redis == 6.0`
+
+You can start these services using Docker Compose:
+
+1. Ensure `docker` and the `compose` plugin are installed.
+
+2. Clone the Virtool [compose](https://github.com/virtool/compose) respository:
+
+   ```sh
+   git clone https://github.com/virtool/compose.git
+   ```
+
+3. Start up containers using the `test` profile:
+
+   ```sh
+   docker-compose -p virtool --profile test up -d
+   ```
+
+
+
+## Testing
+
+Run tests from the source directory root:
+
+```sh
 pytest
 ```
 
-# API Tests
+# Snapshots
 
-As much logic as possible should happen outside of API handler functions. Functions called in API handlers can be mocked. A server instance and backing MongoDB database is created for each test so writing a lot of API tests or creating large test matrices for API handlers can greatly increase testing time.
+Snapshots are used for tests were large outputs or API responses are validated.
 
-## Order of funcargs
+Snapshots are data files saved to the repository that can be automatically:
+* written the first time a test runs
+* loaded to validate output in future runs of the same test
 
-For easy readability the order of funcargs passed to test functions follows the order:
+We use [syrupy](https://tophat.github.io/syrupy/) for snapshot testing in Python. Be familiar with its API and features.
 
-- values passed in from parametrization
-- fixtures from `pytest` itself and plugin libraries
-- the `spawn_client` fixture if necessary
-- all Virtool fixtures in alphabetical order
+## Rules
 
-**_Good_**
+1. Never blindly update a snapshot.
 
-```python3
-@pytest.mark.parametrize("not_found", [False, True])
-async def test_get(not_found, mocker, spawn_client, resp_is, static_time):
-    client = await spawn_client(authorize=True)
-```
+   Read through every snapshot diff to see why it is failing. You should rarely have a total mismatch between your test output and the stored snapshot.
 
-**_Bad_**
+   Blindly accepting snapshot updates can lead to insidious bugs that will not be picked up in test runs for other commits.
 
-```python3
-@pytest.mark.parametrize("not_found", [False, True])
-async def test_get(resp_is, not_found, static_time, spawn_client, mocker):
-    client = await spawn_client(authorize=True)
-```
+2. Test and update snapshots as you go.
 
-## Error responses
+   Whenever you make a change in code. Run the corresponding tests and update the snapshots accordingly. It is no fun making a lot of code changes then attempting to comb through reams of confusing snapshot diffs.
 
-All potential error responses for an API endpoint should be tested.
+3. Test and update one module or subpackage at a time.
+
+   You can narrow the focus of `pytest` by passing it a path to the tests you want to run. Do this instead of running the entire suite and
+   trying to update all snapshots.
