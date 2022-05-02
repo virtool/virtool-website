@@ -1,5 +1,5 @@
 ---
-title: "Backend Resources"
+title: "Learning Resources"
 menu:
   developer:
     parent: "Backend"
@@ -39,16 +39,13 @@ The `aiohttp` client has minimal use in Virtool. It is used for making simple re
 
 ## [MongoDB](https://docs.mongodb.com/v3.6/)
 
-Virtool currently uses MongoDB >=3.6.
+Virtool currently uses MongoDB >= 4.4.
 
 The official MongoDB documentation includes detailed information about the following:
 
 - [CRUD Operations](https://docs.mongodb.com/v3.6/crud/)
 - [Aggregation](https://docs.mongodb.com/v3.6/aggregation/)
 - [Indexes](https://docs.mongodb.com/v3.6/indexes/)
-
-If you are working on Virtool-MongoDB security, see the following:
-
 - [Security](https://docs.mongodb.com/v3.6/security/)
 
 ### `motor`
@@ -62,4 +59,17 @@ You have to refer to the [`asyncio`-focussed API documentation for `motor`](http
 - [`AsyncIOMotorCollection`](https://motor.readthedocs.io/en/stable/api-asyncio/asyncio_motor_collection.html)
 - [`AsyncIOMotorCursor`](https://motor.readthedocs.io/en/stable/api-asyncio/cursors.html)
 
-## 
+## PostgreSQL
+
+We use [SQLAlchemy](https://www.sqlalchemy.org/) as a Postgres database and object-relation mapping (ORM) library.
+
+**Always use Postgres asyncio support when executing queries**.
+
+## Redis
+
+We use [aioredis==1.3.1](https://aioredis.readthedocs.io/en/v1.3.1/) for connecting to Redis with asyncio support.
+
+We use a limited set of Redis features:
+
+* PubSub for telling jobs to cancel themselves. Job IDs published to `channel:cancel` should be cancelled.
+* Redis lists with names like `jobs_pathoscope` and `jobs_create_sample` to queue up job IDs that should be taken up by job runners.
