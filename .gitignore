@@ -1,10 +1,11 @@
 _site
-.sass-cache
-node_modules/
-public/
 .env
-.vscode
-resources
+.hugo_build.lock
 .idea
+.sass-cache
+.vscode
 env
+node_modules
+public
+resources
 venv
