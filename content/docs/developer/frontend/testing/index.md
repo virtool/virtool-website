@@ -9,7 +9,7 @@ menu:
 Testing for the client side of Virtool involves writing tests for [React](https://reactjs.org/) components, modules that
 use [Redux](https://redux.js.org/), and [Redux-Saga](https://redux-saga.js.org/), and the [Virtool API](/docs/developer/api).
 
-We use [Jest](https://jestjs.io/) and [Enzyme](https://airbnb.io/enzyme/) for testing.
+We use [Jest](https://jestjs.io/), [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) and [Enzyme](https://enzymejs.github.io/enzyme/) for testing.
 
 # Jest
 
@@ -130,7 +130,56 @@ which corresponds to the implementation's `render()` output of `Sample.js`.
 Since snapshot files are used alongside testing, they should be committed with test files to Virtool's github repository.
 {{< /note >}}
 
-## 3. Coverage Report
+## 3. Functional Testing
+
+The goal of a functional test is to ensure that the page responds correctly to user interaction. To ensure consistent behaviour with 
+the production page, most pages render downstream DOM elements. As a results, some tests will be unit tests while others are integration tests. 
+
+In a simple case where the component has no child components. For example, a components which displays a single button:
+
+```jsx
+export const Button = (onConfirm) => {
+  return <button onClick={onConfirm}>Confirm</button>;
+};
+```
+
+Checking for the existence of the button somewhere in the page can be done as follows:
+
+```jsx
+describe("<button>", () => {
+  it("should render confirmation button", () => {
+    renderWithProviders(<Button />);
+    expect(screen.getByRole("button", { name: "Confirm" })).toBeInTheDocument();
+  });
+});
+
+```
+
+To instead check that the button functions as expected when clicked the test can be modified as follows:
+
+```jsx
+describe("<button>", () => {
+  it("should call onConfirm when button is clicked", () => {
+    const onConfirm = jest.fn();
+    renderWithProviders(<Button onConfirm={onConfirm} />);
+    userEvent.click(screen.getByRole("button", { name: "Confirm" }));
+    expect(onConfirm).toHaveBeenCalled();
+  });
+});
+```
+
+This second approach is useful as it ensures that the button behaves how it should when interacted with. A similar approach can also be used to check the behaviour of other interactable elements.
+For more complex components the `expect` matcher can be customised to check for more specific properties (e.g., exact parameters being passed and current values of a given dom element). 
+
+For additional information regarding specific DOM queries reference [RTL Cheatsheet](https://testing-library.com/docs/react-testing-library/cheatsheet). For additional `expect` matchers see [Jest Expect](https://jestjs.io/docs/expect). 
+For additional information regarding the usage of mocked functions such as `jest.fn`  see [Mock functions](https://jestjs.io/docs/mock-functions).
+
+Rendering the whole DOM tree can introduce complications when downstream components require values from a specific [React Context](https://reactjs.org/docs/context.html).
+Virtool is configured to globally define the helper function `renderWithProviders` for all test files. Calling `renderWithProviders` wraps the passed UI elements in the essential providers prior to rendering the component. 
+In most cases this is sufficient, but further configuration may be needed if the tested component requires additional contexts.
+
+
+## 4. Coverage Report
 
 Jest also has built in coverage reporting that collects information from tested and untested files from the entire `virtool/client/src` directory.
 
@@ -150,11 +199,31 @@ Coverage details for each file is stored in a dedicated directory that is genera
 The coverage directory and coverage files are **not** committed to repositories.
 {{< /note >}}
 
+# React Testing Library
+
+[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) (RTL) is a testing library based on the [DOM Testing Library](https://testing-library.com/docs/dom-testing-library/intro/). RTL is designed to 
+facilitate creation of robust tests which mimic the way a real user would interact with a page. DOM elements are selected using [queries](https://testing-library.com/docs/queries/about), which are designed to find DOM nodes using accessible elements including labels, text contents, and role. 
+Simulating user interactions is handled by the companion library [user-event](https://testing-library.com/docs/user-event/intro) which offers utility functions that mimic a wide variety of user interactions.
+
+Test written using RTL typically require rendering the entire DOM tree under the component being tested. This often requires the use of [React Context](https://reactjs.org/docs/context.html) as many components expect to have access to specific context values.
+Tests written for RTL should utilize the globally defined function `renderWithProviders` for rendering, as it handles providing context for theming elements.
+
+```jsx
+it("React Testing Library Example", () => {
+    const onConfirm = jest.fn();
+    
+    renderWithProviders(<Button onConfirm={onConfirm} />);
+    userEvent.click(screen.getByRole("button", { name: "Confirm" }));
+    
+    expect(onConfirm).toHaveBeenCalled();
+  });
+```
+
 # Enzyme
 
-[Enzyme](http://airbnb.io/enzyme/) is a JavaScript testing utility developed specifically for React whose [API](http://airbnb.io/enzyme/docs/api/) allows for rendering React components and asserting, manipulating, and traversing their output.
+[Enzyme](https://enzymejs.github.io/enzyme/) is a JavaScript testing utility developed specifically for React whose [API](https://enzymejs.github.io/enzyme/docs/api/) allows for rendering React components and asserting, manipulating, and traversing their output.
 
-Enzyme is already installed and configured to work, with [shallow rendering](http://airbnb.io/enzyme/docs/api/shallow.html), [full DOM rendering](http://airbnb.io/enzyme/docs/api/mount.html), and [static rendering](http://airbnb.io/enzyme/docs/api/render.html) functions declared as globals in the `setupTest.js` file.
+Enzyme is already installed and configured to work, with [shallow rendering](https://enzymejs.github.io/enzyme/docs/api/shallow.html), [full DOM rendering](https://enzymejs.github.io/enzyme/docs/api/mount.html), and [static rendering](https://enzymejs.github.io/enzyme/docs/api/render.html) functions declared as globals in the `setupTest.js` file.
 
 Enzyme is primarily used to render React components and simulate events.
 
