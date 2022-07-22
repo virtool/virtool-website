@@ -1,0 +1,244 @@
+<!-- 
+hugo OpenAPI reference documentation generator
+
+Params:
+  endpoint: Must be exact name of specified endpoint as defined in the JSON file.
+    Ex. "/groups/{group_id}"
+  method: The desired method for a particular endpoint.
+    Ex. "get"
+  example: The desired example for a particular endpoint.
+    Ex. "/subtraction/Arabdidopsis"
+
+
+To test an alternative OpenAI specification, replace the url next to getJSON in the $openapi variable declaration.
+Or, store a copy of your OpenAPI specification in the root-level site /data folder and
+replace the first line with:
+
+    {{ $openapi := .Site.Data.fileName }}
+
+where fileName is the file's name with '.json' removed from the end
+ -->
+ {{ $openapi := getJSON "https://github.com/virtool/virtool/releases/latest/download/oas.json" }}
+
+ {{ range $path, $pathMethods := $openapi.paths }}
+
+<!--    {{/*  Loop through paths, only work with information for specified endpoint given from Params.  */}}-->
+
+     {{ with $.Params.endpoint }}
+
+         {{ if eq $.Params.endpoint $path }}
+
+             {{ range $pathMethod, $pathDetails := $pathMethods }}
+
+<!--             {{/*  Loop through path methods, only work with information for specified method given from Params.  */}}-->
+
+                 {{ with $.Params.method }}
+
+                     {{ if eq $.Params.method $pathMethod }}
+
+<!--                        {{/*  Print description and endpoint header for method  */}}-->
+
+                         <div>
+                             <p>{{ $pathDetails.description | markdownify }}</p>
+                         </div>
+
+
+                         <div class="endpoint">
+                             <span class="endpoint-method", style="text-transform: uppercase;">
+                                 {{$pathMethod}}
+                             </span>
+                             <span class="endpoint-path">
+                                {{ $path }}
+                             </span>
+                         </div>
+
+                         {{ with $pathDetails.requestBody }}
+
+<!--                            {{/*  If there is a request body, setup dynamic input table which changes in size-->
+<!--                                depending on the number of properties in the request body schema.  */}}-->
+
+
+                             <h2> Input </h2>
+
+                             <table>
+                                 <tr>
+                                     <th>Name</th>
+                                     <th>Type</th>
+                                     <th>Description</th>
+                                 </tr>
+
+                                 {{ $requestBody := $pathDetails.requestBody}}
+                                 {{ $schema := (index $requestBody.content "application/json").schema }}
+                                 {{ $schema_properties := $schema.properties}}
+
+                                 {{ range $property, $property_details := $schema_properties}}
+
+<!--                                    {{/*  Looping through request body schema properties and adding to the table as needed  */}}-->
+
+                                     <tr>
+                                         <td>
+                                             {{ $property }}
+                                         </td>
+                                         {{ with $property_details.type }}
+                                             <td>
+                                                 {{ $property_details.type }}
+                                             </td>
+                                         {{ else }}
+                                             <td>
+                                                 object
+                                             </td>
+                                         {{ end }}
+                                         <td>
+                                             {{ $property_details.description }}
+                                         </td>
+                                     </tr>
+                                 {{ end }}
+                             </table>
+
+                         {{ end }}
+
+<!--                         {{/*  Print example header as specified by Params.  */}}-->
+
+                         <h2> Example </h2>
+
+                         {{ with $.Params.example }}
+                             {{ $upperMethod := upper $.Params.method}}
+                             <div class="request">
+                                 <div class="request-url">
+                                     {{ $upperMethod }} {{ $.Params.example }}
+                                 </div>
+                             </div>
+                         {{ end }}
+
+                         {{ with $pathDetails.requestBody }}
+
+                             {{ $requestBody := $pathDetails.requestBody}}
+                             {{ $schema := (index $requestBody.content "application/json").schema }}
+
+                             {{ with $schema.example }}
+
+<!--                           {{/*  If there is a request body and example for the schema, display formatted json.  */}}-->
+
+
+                                 {{ $example := $schema.example | jsonify (dict "indent" "  ") }}
+
+
+                                 <div class="response">
+                                     {{transform.Highlight $example "json"}}
+                                 </div>
+
+                             {{ end }}
+                         {{ end }}
+
+
+<!--                      {{/*  Declare $hasErrors which has a value of 0 if the method has no errors and 1 if it does have errors.  */}}-->
+
+                         {{ $hasErrors := 0 }}
+
+                         {{ range $responseCode, $responseDetails := $pathDetails.responses }}
+
+                             {{ with $responseDetails.content }}
+
+<!--                                 {{/*  If there is content, then a response body must be generated  */}}-->
+
+                                 {{ with (index $responseDetails.content "application/json").schema }}
+
+                                     {{ $schema := (index $responseDetails.content "application/json").schema }}
+
+<!--                                     {{/*  Must check for "items" in JSON as this is added
+                                         when response is defined as List[r201[SampleView]]  */}}-->
+
+                                     {{ $example := $schema.example }}
+
+                                     {{ with $schema.items}}
+                                         {{ $example = $schema.items.example }}
+                                     {{ end }}
+
+                                     {{ $response := $example | jsonify (dict "indent" "  ") }}
+
+<!--                                     {{/*  Example is found - display response below.
+                                         If an example is not provided, null will be shown.  */}}-->
+
+                                     <h2> Response </h2>
+                                     <div class="response">
+                                         <div class="response-headers">
+                                             <p> Status: {{ $responseCode }} {{ $responseDetails.description}} </p>
+                                         </div>
+                                         {{transform.Highlight $response "json"}}
+                                     </div>
+
+                                 {{ end }}
+
+                             {{ else }}
+
+<!--                                {{/*  No content was found for the response code. If it is a 204 response, -->
+<!--                                this may be intended and a header is still shown. Otherwise, a 400+ code indicates this is an error. -->
+<!--                                If PydanticModels are provided for 400+ error codes in the future,-->
+<!--                                this code will need to be changed.    */}}-->
+
+                                 {{ if lt $responseCode 300}}
+                                     <h2> Response </h2>
+                                     <div class="response">
+                                         <div class="response-headers">
+                                             <p> Status: {{ $responseCode }} {{ $responseDetails.description}} </p>
+                                         </div>
+
+                                     </div>
+                                 {{ else }}
+                                     {{ $hasErrors = 1}}
+                                 {{ end }}
+
+                             {{ end }}
+
+                         {{ end }}
+
+<!--                         {{/*  If there are no errors, print None. Otherwise, setup dynamic error table -->
+<!--                            which changes in size depending on the number of errors  */}}-->
+
+                         <h2> Errors </h2>
+
+                         {{ if eq $hasErrors 0 }}
+                             <i> None </i>
+                         {{ else }}
+
+                             <table>
+
+                                 <tr>
+                                     <th> Status </th>
+                                     <th> Message </th>
+                                 </tr>
+
+
+                                 {{ range $responseCode, $responseDetails := $pathDetails.responses }}
+
+                                     {{ with not $responseDetails.content }}
+
+                                         {{ if gt $responseCode 300 }}
+
+                                             <tr>
+                                                 <td> {{ $responseCode }} </td>
+                                                 <td> {{ $responseDetails.description }} </td>
+                                             </tr>
+
+
+                                         {{ end }}
+
+                                     {{ end }}
+
+
+                                 {{ end }}
+
+                             </table>
+
+                         {{ end }}
+                     {{ end }}
+                 {{ end }}
+             {{ end }}
+         {{ end }}
+     {{ end }}
+ {{ end }}
+
+
+
+
+
